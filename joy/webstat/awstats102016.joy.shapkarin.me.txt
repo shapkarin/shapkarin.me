@@ -1,0 +1,1051 @@
+AWSTATS DATA FILE 7.0 (build 1.971)
+# If you remove this file, all statistics for date 201610 will be lost/reset.
+# Last config file used to build this data file was /etc/awstats/awstats.joy.shapkarin.me.conf.
+
+# Position (offset in bytes) in this file for beginning of each section for
+# direct I/O access. If you made changes somewhere in this file, you should
+# also remove completely the MAP section (AWStats will rewrite it at next
+# update).
+BEGIN_MAP 27
+POS_GENERAL 1996                
+POS_TIME 2654                
+POS_VISITOR 25388               
+POS_DAY 33844               
+POS_DOMAIN 3469                
+POS_LOGIN 3701                
+POS_ROBOT 3856                
+POS_WORMS 4612                
+POS_EMAILSENDER 4743                
+POS_EMAILRECEIVER 4886                
+POS_SESSION 34662               
+POS_SIDER 34852               
+POS_FILETYPES 5021                
+POS_DOWNLOADS 5163                
+POS_OS 5318                
+POS_BROWSER 5498                
+POS_SCREENSIZE 6457                
+POS_UNKNOWNREFERER 6531                
+POS_UNKNOWNREFERERBROWSER 7712                
+POS_ORIGIN 8444                
+POS_SEREFERRALS 8582                
+POS_PAGEREFS 8737                
+POS_SEARCHWORDS 9166                
+POS_KEYWORDS 9318                
+POS_MISC 2318                
+POS_ERRORS 9377                
+POS_CLUSTER 3557                
+POS_SIDER_404 9539                
+END_MAP
+
+# LastLine    = Date of last record processed - Last record line number in last log - Last record offset in last log - Last record signature value
+# FirstTime   = Date of first visit for history file
+# LastTime    = Date of last visit for history file
+# LastUpdate  = Date of last update - Nb of parsed records - Nb of parsed old records - Nb of parsed new records - Nb of parsed corrupted - Nb of parsed dropped
+# TotalVisits = Number of visits
+# TotalUnique = Number of unique visitors
+# MonthHostsKnown   = Number of hosts known
+# MonthHostsUnKnown = Number of hosts unknown
+BEGIN_GENERAL 8
+LastLine 20161101003150 1 0 7876473760881
+FirstTime 0
+LastTime 20161031210437
+LastUpdate 20161101010210 1 0 0 0 0
+TotalVisits 301                 
+TotalUnique 200                 
+MonthHostsKnown 0                   
+MonthHostsUnknown 226                 
+END_GENERAL
+
+# Misc ID - Pages - Hits - Bandwidth
+BEGIN_MISC 10
+QuickTimeSupport 0 0 0
+JavaEnabled 0 0 0
+JavascriptDisabled 0 0 0
+PDFSupport 0 0 0
+WindowsMediaPlayerSupport 0 0 0
+AddToFavourites 0 6 0
+RealPlayerSupport 0 0 0
+TotalMisc 0 0 0
+DirectorSupport 0 0 0
+FlashSupport 0 0 0
+END_MISC
+
+# Hour - Pages - Hits - Bandwidth - Not viewed Pages - Not viewed Hits - Not viewed Bandwidth
+BEGIN_TIME 24
+0 98 138 2976897 325 428 836309
+1 14 30 8853327 23 29 38794
+2 5 5 8430 23 32 64054
+3 20 38 18436845 29 37 73818
+4 8 19 8720032 26 44 92188
+5 12 33 173584 45 65 125992
+6 7 12 50133 22 32 65694
+7 18 38 268520 113 138 386307
+8 15 21 149121 26 35 58744
+9 18 44 8851885 27 39 73494
+10 18 23 68679 37 44 110320
+11 14 24 98580 22 37 67194
+12 16 22 115275 294 305 847135
+13 11 21 95208 26 45 117359
+14 20 31 8740264 22 41 112211
+15 20 67 52121374 30 47 63788
+16 63 74 8812762 56 70 133074
+17 25 36 8710363 44 61 144863
+18 22 34 17373518 32 48 97643
+19 17 23 8695189 36 44 91940
+20 10 10 16860 17 35 123568
+21 15 32 17361716 30 38 78900
+22 10 16 8685073 45 53 124444
+23 19 30 4031328 27 46 133025
+END_TIME
+
+# Domain - Pages - Hits - Bandwidth
+# The 10 first Pages must be first (order not required for others)
+BEGIN_DOMAIN 1
+ip 495 821 183414963
+END_DOMAIN
+
+# Cluster ID - Pages - Hits - Bandwidth
+BEGIN_CLUSTER 0
+END_CLUSTER
+
+# Login - Pages - Hits - Bandwidth - Last visit
+# The 10 first Pages must be first (order not required for others)
+BEGIN_LOGIN 0
+END_LOGIN
+
+# Robot ID - Hits - Bandwidth - Last visit - Hits on robots.txt
+# The 10 first Hits must be first (order not required for others)
+BEGIN_ROBOT 18
+no_user_agent 113 119706 20161031084211 0
+googlebot 53 169755 20161029110235 0
+bot[\s_+:,\.\;\/\\-] 41 221733 20161030135154 0
+wget 31 52266 20161030190746 0
+baiduspider 25 25290 20161031203033 0
+yandex 21 35406 20161031160238 0
+python 15 23604 20161010073129 0
+phantom 12 164882 20161010002644 0
+spider 4 6744 20161027025522 0
+robot 4 6856 20161027025523 0
+ia_archiver 1 1686 20161009133548 0
+libwww 3 5058 20161010002745 0
+lwp\-trivial 1 1686 20161010002738 0
+surveybot 4 6744 20161019102408 0
+favicon 1 1686 20161027013823 0
+scanner 1 1686 20161018163954 0
+netcraft 3 3372 20161016110855 0
+crawl 3 5058 20161010002756 0
+END_ROBOT
+
+# Worm ID - Hits - Bandwidth - Last visit
+# The 5 first Hits must be first (order not required for others)
+BEGIN_WORMS 0
+END_WORMS
+
+# EMail - Hits - Bandwidth - Last visit
+# The 20 first Hits must be first (order not required for others)
+BEGIN_EMAILSENDER 0
+END_EMAILSENDER
+
+# EMail - Hits - Bandwidth - Last visit
+# The 20 first hits must be first (order not required for others)
+BEGIN_EMAILRECEIVER 0
+END_EMAILRECEIVER
+
+# Files type - Hits - Bandwidth - Bandwidth without compression - Bandwidth after compression
+BEGIN_FILETYPES 4
+css 64 262687 0 0
+mp3 23 177598608 0 0
+html 495 781344 0 0
+js 239 4772324 0 0
+END_FILETYPES
+
+# Downloads - Hits - Bandwidth
+BEGIN_DOWNLOADS 1
+/data/%D0%9F%D0%BE%D0%BB%D0%B8%D0%BD%D0%B0%20%D0%AD%D0%BB%D1%8C%D1%81%D1%82%D0%B5%D1%80.mp3 23 0 177598608
+END_DOWNLOADS
+
+# OS ID - Hits
+BEGIN_OS 13
+blackberry 1
+linuxandroid 9
+winlong 27
+winxp 117
+win2000 36
+winnt 49
+winvista 37
+linux 28
+win7 144
+win16 2
+macosx 218
+win2003 4
+Unknown 149
+END_OS
+
+# Browser ID - Hits
+BEGIN_BROWSER 55
+safari7.0 70
+msie6.0 38
+firefox28.0 3
+firefox5.0 1
+chrome52.0.2743.116 7
+chrome34.0.1847.137 8
+chrome41.0.2251.0 2
+firefox18.0 2
+opera6.05 1
+firefox4.0 2
+chrome31.0.1650.57 1
+firefox49.0 44
+firefox34.0 3
+chrome31.0.1650.63 18
+safari9.1.2 7
+curl 16
+opera9.80 1
+firefox31.0 9
+msie8.0 47
+chrome53.0.2785.89 1
+chrome24.0.1312.57 2
+firefox43.0 7
+chrome53.0.2785.124 8
+msie7.0 4
+chrome37.0.2062.120 1
+chrome27.0.1453.90 5
+chrome50.0.2661.102 4
+chrome34.0.1847.116 1
+chrome17.0.1025.133 1
+chrome53.0.2785.116 7
+firefox9.0.1 76
+msie9.0 7
+Unknown 34
+chrome54.0.2840.59 6
+chrome20.0.1090.0 1
+blackberry 1
+msie5.01 1
+chrome53.0.2785.143 83
+safari10.0 13
+chrome53.0.2785.101 7
+firefox46.0 8
+firefox30.0 2
+firefox47.0 29
+firefox1.0.7 34
+chrome54.0.2840.71 37
+safari9.0 7
+mozilla 109
+chrome45.0.2454.101 10
+netscape5.0 15
+firefox14.0.1 2
+msie10.0 6
+firefox3.6.28 5
+firefox3.6.12 2
+chrome41.0.2228.0 3
+chrome21.0.1180.89 2
+END_BROWSER
+
+# Screen size - Hits
+BEGIN_SCREENSIZE 0
+END_SCREENSIZE
+
+# Unknown referer OS - Last visit date
+BEGIN_UNKNOWNREFERER 25
+KickFire 20161022175029
+Zend_Http_Client 20161010002759
+PHP/ 20161010002750
+Mozilla/5.0_(compatible;_Dataprovider/6.101;__https://www.dataprovider.com/) 20161024162056
+Snoopy 20161010002750
+masscan/1.0_(https://github.com/robertdavidgraham/masscan) 20161019094415
+http_client 20161010002759
+Mozilla/5.0_Project_25499_(project25499.com) 20161012100227
+Mozilla/5.0_zgrab/0.x 20161031031616
+Cloud_mapping_experiment._Contact_research@pdrlabs.net 20161020113634
+HTTP::Lite 20161010002755
+WWW-Mechanize/1.34 20161010002802
+Mozilla/3.0_(compatible;_Indy_Library) 20161009205026
+Scanbot 20161019172050
+MFC_Tear_Sample 20161010002745
+User-Agent 20161006183302
+URI::Fetch 20161010002746
+GT::WWW 20161010002752
+PECL::HTTP 20161010002801
+Riddler_(http://riddler.io/about) 20161016171446
+Mozilla/5.0 20161013170435
+Mozilla/5.0_(compatible;_Nmap_Scripting_Engine;_http://nmap.org/book/nse.html) 20161023195731
+SalesIntelligent_(_https://www.salesintelligent.com) 20161013142308
+libcurl-agent/1.0 20161010002743
+Mozilla/5.0_(compatible;_Nmap_Scripting_Engine;_https://nmap.org/book/nse.html) 20161010002835
+END_UNKNOWNREFERER
+
+# Unknown referer Browser - Last visit date
+BEGIN_UNKNOWNREFERERBROWSER 18
+KickFire 20161022175029
+Zend_Http_Client 20161010002759
+PHP/ 20161010002750
+Snoopy 20161010002750
+masscan/1.0_(https://github.com/robertdavidgraham/masscan) 20161019094415
+http_client 20161010002759
+AnyConnect_Darwin_i386_3.1.05160 20161010002720
+Cloud_mapping_experiment._Contact_research@pdrlabs.net 20161020113634
+HTTP::Lite 20161010002755
+WWW-Mechanize/1.34 20161010002802
+Scanbot 20161019172050
+User-Agent 20161006183302
+MFC_Tear_Sample 20161010002745
+URI::Fetch 20161010002746
+PECL::HTTP 20161010002801
+GT::WWW 20161010002752
+Riddler_(http://riddler.io/about) 20161016171446
+SalesIntelligent_(_https://www.salesintelligent.com) 20161013142308
+END_UNKNOWNREFERERBROWSER
+
+# Origin - Pages - Hits 
+BEGIN_ORIGIN 6
+From0 478 535
+From1 0 0
+From2 4 4
+From3 13 89
+From4 0 193
+From5 0 0
+END_ORIGIN
+
+# Search engine referers ID - Pages - Hits
+BEGIN_SEREFERRALS 1
+yandex 4 4
+END_SEREFERRALS
+
+# External page referers - Pages - Hits
+# The 10 first Pages must be first (order not required for others)
+BEGIN_PAGEREFS 8
+https://freevpn.ninja 7 7
+http://laserserver.org 2 57
+http://burger-imperia.com 1 1
+http://vk.com/away.php 1 1
+http://m.vk.com/away.php 1 1
+http://\xe1\xe8\xe7\xed\xe5\xf1-\xea\xee\xed\xf1\xfc\xe5\xf0\xe6.\xf0\xf4 1 1
+http://www.laserserver.pro 0 5
+http://www.laserserver.org 0 16
+END_PAGEREFS
+
+# Search keyphrases - Number of search
+# The 10 first number of search must be first (order not required for others)
+BEGIN_SEARCHWORDS 0
+END_SEARCHWORDS
+
+# Search keywords - Number of search
+# The 10 first number of search must be first (order not required for others)
+BEGIN_KEYWORDS 0
+END_KEYWORDS
+
+# Errors - Hits - Bandwidth
+BEGIN_ERRORS 7
+403 6 17352
+206 1 1686
+405 95 29855
+400 5 1535
+500 7 17400
+404 1259 3047360
+301 6 1936
+END_ERRORS
+
+# URL with 404 errors - Hits - Last URL referer
+BEGIN_SIDER_404 412
+/mysql/admin/ 1 -
+/admin/config.php 5 -
+/db/phpmyadmin/ 1 -
+/phpMyAdmin-4.2.1-english 2 -
+/js/a[b]}return 3 -
+/test/sqlite/SQLiteManager-1.2.0/SQLiteManager-1.2.0/main.php 2 http://151.248.119.250/
+/mysql/dbadmin/ 1 -
+/phpMyAdmin-2.6.4-pl1/ 2 http://151.248.119.250:8080/
+/mysqladmin/ 3 http://151.248.119.250:8080/
+/hosting_static_403/html5shiv.js~ 2 -
+/phpMyAdmin-2.8.0/ 2 http://151.248.119.250:8080/
+/fckeditor/fckeditor.js 1 -
+/hosting_static_404/favicon.ico.~1~ 1 -
+/hosting_static_403/favicon.ico.1 2 -
+/js/three.min.bak 2 -
+/phpMyAdmin-2.7.0-pl1/ 2 http://151.248.119.250:8080/
+/js/this.blendSrc.1 1 -
+/phpMyAdmin-2.6.2-pl1/ 2 http://151.248.119.250:8080/
+/xmlrpc.php 56 -
+/js/Copy%20(2)%20of%20visualizer.js 2 -
+/hosting_static_403/a.url,c.onload=c.onreadystatechange=function(a,e){(e||!c.readyState||/loaded|complete/Copy%20(2)%20of%20a.url,c.onload=c.onreadystatechange=function(a,e){(e||!c.readyState||/loaded|complete/.test(c.readyState))&&(c.onload=c.onreadystate 2 -
+http://54.90.189.128/hello 1 -
+/shopdb/ 1 -
+/js/jquery-2.0.0.min%20copy.js 2 -
+/%20\"https:/mc.yandex.ru/metrika/watch.js\" 2 -
+http://www.msftncsi.com/ncsi.txt 5 http://151.248.119.250:8080/
+/phpMyAdmin-2.8.0.3/ 2 http://151.248.119.250:8080/
+/administrator/web/ 1 -
+/msd1.24stable 4 -
+/axis2 12 -
+/js/three.min.js~ 2 -
+/phpMyAdmin3/ 1 -
+//wp-login.php 2 -
+/sql/phpMyAdmin/ 1 -
+/phpMyAdmin-2.6.4-pl3/ 2 http://151.248.119.250:8080/
+/hosting_static_403/style.css.~1~ 2 -
+/db/db-admin/ 1 -
+/mysql 8 -
+/hosting_static_404/script.js~ 1 -
+/HNAP1/ 73 http://151.248.119.250/
+/hosting_static_404/script.js.1 1 -
+/admin/module-builtin.xml 1 -
+/js/u}}function 3 -
+/phpMyAdmin-2.6.4-pl2/ 2 http://151.248.119.250:8080/
+/stats 2 -
+/login.do 1 -
+/sql/phpmyadmin2/ 1 -
+/login 2 -
+/wp-login.php 3 -
+/upload/%D0%A8%D0%9A%D0%90%D0%A4%D0%AB/%D0%BC%D0%B5%D1%80%D0%BE%D0%BF%D1%80%D0%B8%D1%8F%D1%82%D0%B8%D1%8F/IMG_9095.JPG 1 https://www.google.ru/
+/sql/sqladmin/ 1 -
+/css/cake.generic.css 1 -
+/phpmy/ 1 -
+/login.action 1 -
+/SQLite/main.php 2 http://151.248.119.250/
+/cgi-bin/php 2 -
+/jenkins/login 2 -
+/js/Copy%20of%20this.blendSrc 1 -
+/sqlweb/ 2 http://151.248.119.250:8080/
+/hosting_static_404/favicon.ico.1 1 -
+/phpMyAdmin-2.6.0-pl2/ 2 http://151.248.119.250:8080/
+/hosting_static_403/favicon%20copy.ico 2 -
+/Blog/wp-login.php 2 -
+/SQLiteManager/main.php 6 -
+/phppma/ 1 -
+/js/jquery-2.0.0.min.js.1 2 -
+/hosting_static_403/script.bak 2 -
+/sql/webadmin/ 1 -
+/db/webdb/ 1 -
+//admin/config.php 2 -
+/jmx-console/HtmlAdaptor 3 http://151.248.119.250:8080/jmx-console/HtmlAdaptor
+/sql/sqlweb/ 1 -
+/SQLite/SQLiteManager-1.2.4/main.php 4 -
+/js/Copy%20of%20OrbitControls.js 2 -
+/phpMyAdmin-2.6.0/ 2 http://151.248.119.250:8080/
+/hosting_static_403/style%20copy.css 2 -
+/license.php 1 -
+http://www.teddybrinkofski.com/ip_json.php 3 -
+/phpMyAdmin-2.6.4/ 2 http://151.248.119.250:8080/
+/js/this.blendSrc~ 1 -
+/phpMyAdmin-2.6.0-rc3/ 2 http://151.248.119.250:8080/
+/mysql/pMA/ 1 -
+/PMA/ 3 http://151.248.119.250:8080/
+/css/stylesheet.bak 3 -
+/db/phpMyAdmin3/ 1 -
+/mysql/db/ 1 -
+/phpMyAdmin-2.6.0-pl1/ 2 http://151.248.119.250:8080/
+/hosting_static_403/html5shiv%20copy.js 2 -
+/wp-includes/js/wp-util.js 1 -
+http://www.luisaranguren.com/azenv.php 2 -
+/js/this.blendSrc.~1~ 1 -
+/db/dbweb/ 1 -
+/adminManager!login 1 -
+/jmx-console/ 2 -
+/hosting_static_403/modernizr.js.1 2 -
+/ncsi.txt 5 http://151.248.119.250/
+/mnews.htm 5 -
+/upload/%D0%A8%D0%9A%D0%90%D0%A4%D0%AB/%D1%81%D1%82%D0%B0%D0%BD%D0%B4%D0%B0%D1%80%D1%82%D0%BD%D1%8B%D0%B5/%D1%81%D1%82%D0%B0%D0%BD%D0%B4%D0%B0%D1%80%D1%82%D0%BD%D0%B0%D1%8F-%D0%BC%D0%B5%D0%B1%D0%B5%D0%BB%D1%8C-12.jpg 2 https://www.google.ru/
+/hosting_static_403/script.js.~1~ 2 -
+/phpMyAdmin-2.6.1-rc1/ 2 http://151.248.119.250:8080/
+/index 2 -
+/phpMyAdmin-2.5.4/ 2 http://151.248.119.250:8080/
+/js/Copy%20(2)%20of%20this.blendSrc 1 -
+/js/audio%20copy.js 2 -
+/robots.txt 113 -
+/hosting_static_404/favicon.bak 1 -
+/main.php 2 http://151.248.119.250/
+/hosting_static_403/script.js~ 2 -
+/sql/sql/ 1 -
+/phpMyAdmin-2.6.1/ 2 http://151.248.119.250:8080/
+/Main.action 1 -
+/web-console/ServerInfo.jsp 2 151.248.119.250/web-console/ServerInfo.jsp
+/hosting_static_403/a.url,c.onload=c.onreadystatechange=function(a,e){(e||!c.readyState||/loaded|complete/.test(c.readyState))&&(c.onload=c.onreadystatechange=null,d&&c.parentNode&&d.removeChild(c),c=b,e||f(200,\"success\"))},d.insertBefore(c,d.firstChild) 3 -
+/db/ 1 -
+/js/visualizer.bak 2 -
+/wordpress/wp-login.php 3 -
+/hosting_static_403/a.url,c.onload=c.onreadystatechange=function(a,e){(e||!c.readyState||/loaded|complete/a.url,c.onload=c.onreadystatechange=function(a,e){(e||!c.readyState||/loaded|complete/.test(c.readyState))&&(c.onload=c.onreadystatechange=null,d&&c.p 6 -
+/MyAdmin/ 1 -
+/.git/config 1 -
+/cms/administrator 2 -
+/hosting_static_403/Copy%20of%20style.css 2 -
+/index.action 1 -
+/phpMyAdmin-2.6.3-pl1/ 2 http://151.248.119.250:8080/
+/css/stylesheet%20copy.css 2 -
+/2phpmyadmin/ 1 -
+/sql/phpMyAdmin2/ 1 -
+/joomla/administrator 2 -
+/sql/webdb/ 1 -
+/hosting_static_403/modernizr.js.~1~ 2 -
+/mysql/mysqlmanager/ 1 -
+/hosting_static_403/Copy%20of%20script.js 2 -
+/websql/ 2 http://151.248.119.250:8080/
+/phpMyAdmin-2.6.0-beta2/ 2 http://151.248.119.250:8080/
+/img/cake.icon.png 2 -
+/phpMyAdmin-2.7.0-beta1/ 2 http://151.248.119.250:8080/
+/prox_ch.php 3 -
+/phpmyadmin2/ 3 http://151.248.119.250:8080/
+/hosting_static_404/Copy%20(2)%20of%20script.js 1 -
+/hosting_static_403/favicon.bak 2 -
+/hosting_static_403/style.bak 2 -
+/sql/php-myadmin/ 1 -
+/phpMyAdmin-2.6.1-rc2/ 2 http://151.248.119.250:8080/
+/a 3 -
+/sql/sql-admin/ 1 -
+/admin/sqladmin/ 1 -
+/msd 4 -
+/hosting_static_403/Copy%20(2)%20of%20style.css 2 -
+/admin/ 3 http://151.248.119.250:8080/
+/js/jquery-2.0.0.min.js~ 2 -
+/js/OrbitControls%20copy.js 2 -
+/js/audio.js.~1~ 2 -
+/nmaplowercheck1476073631 2 -
+/php-my-admin/ 3 http://151.248.119.250:8080/
+/mysql/pma/ 1 -
+/hosting_static_404/script.bak 1 -
+/hello 2 -
+/js/jquery-2.0.0.min.js.~1~ 2 -
+/phpMyAdmin-2.5.5-rc2/ 2 http://151.248.119.250:8080/
+/admin//config.php 1 -
+/phpMyAdmin-2.6.0-pl3/ 2 http://151.248.119.250:8080/
+/phpMyAdmin-2.2.6/ 2 http://151.248.119.250:8080/
+/hosting_static_403/a.url,c.onload=c.onreadystatechange=function(a,e){(e||!c.readyState||/loaded|complete/Copy%20of%20a.url,c.onload=c.onreadystatechange=function(a,e){(e||!c.readyState||/loaded|complete/.test(c.readyState))&&(c.onload=c.onreadystatechange 2 -
+/redirect.php 1 -
+/blog/ 1 http://laserserver.org/blog/
+/robots 2 -
+/nmaplowercheck1476073644 1 -
+/phpMyAdmin-2.6.4-rc1/ 2 http://151.248.119.250:8080/
+/db/myadmin/ 1 -
+/db/websql/ 1 -
+/mysqldumper 4 -
+/js/Copy%20of%20audio.js 2 -
+/status 6 -
+/nmaplowercheck1476073603 1 -
+/azenv.php 1 -
+/phpMyAdmin4/ 1 -
+/js/visualizer%20copy.js 2 -
+/Joomla/administrator 2 -
+/sql/myadmin/ 1 -
+/css/stylesheet.css.~1~ 2 -
+//a2billing/customer/templates/default/header.tpl 1 -
+/upload/%D0%A8%D0%9A%D0%90%D0%A4%D0%AB/%D1%81%D1%82%D0%B0%D0%BD%D0%B4%D0%B0%D1%80%D1%82%D0%BD%D1%8B%D0%B5/%D1%81%D1%82%D0%B0%D0%BD%D0%B4%D0%B0%D1%80%D1%82%D0%BD%D0%B0%D1%8F-%D0%BC%D0%B5%D0%B1%D0%B5%D0%BB%D1%8C-14.jpg 2 https://www.google.ru/
+/administrator/db/ 1 -
+/js/Copy%20of%20three.min.js 2 -
+/agSearch/SQlite/main.php 2 http://151.248.119.250:8080/
+/mysql/web/ 1 -
+/sql/phpmy-admin/ 1 -
+/js/OrbitControls.js~ 2 -
+/hosting_static_403/style.css~ 2 -
+/phpMyAdmin/ 3 http://151.248.119.250:8080/
+/mysql-admin/ 3 http://151.248.119.250:8080/
+/apple-app-site-association 4 -
+/hosting_static_403/Copy%20(2)%20of%20modernizr.js 2 -
+/admin/db/ 1 -
+/phpmyadmin/index.php 2 http://151.248.119.250/phpmyadmin/index.php
+/etc/lib/pChart2/examples/imageMap/index.php 2 -
+/phpMyAdmin-2.8.2/ 2 http://151.248.119.250:8080/
+/js/OrbitControls.bak 2 -
+/phpmanager/ 3 http://151.248.119.250:8080/
+/db/webadmin/ 1 -
+/clientaccesspolicy.xml 1 -
+/css/Copy%20of%20stylesheet.css 2 -
+/script 25 -
+/check_proxy 3 -
+/.git/HEAD 3 -
+/phpMyAdmin-4.2.1-all-languages 2 -
+/js/this%20copy.blendSrc 1 -
+/cgi/common.cgi 18 -
+/.well-known/apple-app-site-association 7 -
+/stssys.htm 18 -
+/invoker/JMXInvokerServlet 2 151.248.119.250/invoker/JMXInvokerServlet
+http://www.baidu.com/cache/global/img/gs.gif 42 -
+/phpMyAdmin-2.6.1-pl3/ 2 http://151.248.119.250:8080/
+/hosting_static_403/html5shiv.bak 2 -
+/register.do 1 -
+/admin/phpMyAdmin/ 1 -
+//MyAdmin/scripts/setup.php 2 -
+/language/Swedish${IFS}&&echo${IFS}610cker>qt&&tar${IFS}/string.js 10 -
+/webadmin/ 2 http://151.248.119.250:8080/
+/blog 1 -
+/nmaplowercheck1476073590 1 -
+/hosting_static_403/Copy%20of%20modernizr.js 2 -
+/admin/pMA/ 1 -
+/js/Copy%20(2)%20of%20audio.js 2 -
+/administrator/pma/ 1 -
+/hosting_static_403/a.url,c.onload=c.onreadystatechange=function(a,e){(e||!c.readyState||/loaded|complete/a.url,c.onload=c.onreadystatechange=function(a,e){(e||!c.bak 2 -
+/phpMyAdmin-2.7.0-pl2/ 2 http://151.248.119.250:8080/
+/js/Copy%20of%20visualizer.js 2 -
+/pma/ 3 http://151.248.119.250:8080/
+/pma2012/ 1 -
+/upload/%D0%A8%D0%9A%D0%90%D0%A4%D0%AB/6-1.jpg 1 https://www.google.ru/
+/hosting_static_403/a.url,c.onload=c.onreadystatechange=function(a,e){(e||!c.readyState||/loaded|complete/a.url,c.onload=c.onreadystatechange=function(a,e){(e||!c%20copy.readyState||/loaded|complete/.test(c.readyState))&&(c.onload=c.onreadystatechange=null 2 -
+/phpMyadmin/ 1 -
+/phpMyAdmin2/ 3 http://151.248.119.250:8080/
+/ZbKf 1 -
+/administrator/admin/ 1 -
+/phpMyAdmin-2.5.6-rc1/ 2 http://151.248.119.250:8080/
+/db/phpMyAdmin-3/ 1 -
+/sql/websql/ 1 -
+/phpMyAdmin-2.8.1/ 2 http://151.248.119.250:8080/
+/program/ 1 -
+/HNAP1 3 -
+/phpMyAdmin-2.5.5-pl1/ 2 http://151.248.119.250:8080/
+/js/Copy%20(2)%20of%20three.min.js 2 -
+/phpMyAdmin-2.8.0-rc1/ 2 http://151.248.119.250:8080/
+/phpMyAdmin-2.6.3/ 4 http://151.248.119.250:8080/
+/upload/%D0%A8%D0%9A%D0%90%D0%A4%D0%AB/%D0%B8%D0%BA%D0%BE%D0%BD%D0%BA%D0%B8/%D0%9B%D0%A8%20%D0%B8%D0%BA%D0%BE%D0%BD%D0%BA%D0%B8%20%D0%BD%D0%B0%20%D1%81%D0%B0%D0%B9%D1%82_2-10.png 1 https://www.google.ru/
+/phpMyAdmin-2.8.0.2/ 2 http://151.248.119.250:8080/
+/js/jquery-2.0.0.min.bak 2 -
+//webfig/ 1 -
+/phpmyAdmin/ 1 -
+//pma/scripts/setup.php 2 -
+/js/Copy%20of%20jquery-2.0.0.min.js 1 -
+/hosting_static_403/favicon.ico.~1~ 2 -
+//phpmyadmin/scripts/setup.php 2 -
+/cgi-bin/authLogin.cgi 3 -
+/css/stylesheet.css.1 2 -
+/phpMyAdmin-2.5.6/ 2 http://151.248.119.250:8080/
+/SQlite/main.php 6 -
+/phpMyAdmin-2.6.2-rc1/ 4 http://151.248.119.250:8080/
+/index.jsp 1 -
+/js/OrbitControls.js.~1~ 2 -
+/phpMyAdmin-2.6.0-rc1/ 2 http://151.248.119.250:8080/
+http://www.sbjudge3.com/azenv.php 1 -
+//mysqladmin/scripts/setup.php 2 -
+/pma2005/ 2 http://151.248.119.250:8080/
+/phpMyAdmin-2.6.4-pl4/ 2 http://151.248.119.250:8080/
+/admin/phpmyadmin/ 1 -
+/hosting_static_403/script.js.1 2 -
+http://www.microsoft.com/robots.txt 1 -
+//myadmin/scripts/setup.php 2 -
+/mySqlDumper 4 -
+/nmaplowercheck1476073602 3 -
+/sqlitemanager/main.php 6 -
+/nmaplowercheck1476073632 1 -
+/hosting_static_404/favicon.ico~ 1 -
+/hosting_static_403/html5shiv.js.~1~ 2 -
+/phpmyadmin3/ 1 -
+/hosting_static_404/script.js.~1~ 1 -
+/phpMyAdmin 4 -
+/hosting_static_403/favicon.ico~ 2 -
+/phpMyAdmin-2.2.3/ 2 http://151.248.119.250:8080/
+/hosting_static_404/script%20copy.js 1 -
+/hosting_static_403/Copy%20(2)%20of%20html5shiv.js 2 -
+/css/Copy%20(2)%20of%20stylesheet.css 2 -
+http://www.sbjudge1.com/azenv.php 2 -
+/phpmyadmin4/ 1 -
+/js/vendors.php 3 -
+/doLogin.do 1 -
+/php-myadmin/ 3 http://151.248.119.250:8080/
+/img/cake.icon.gif 2 -
+/hosting_static_403/Copy%20(2)%20of%20script.js 2 -
+/phpMyAdmin-2.5.5-rc1/ 2 http://151.248.119.250:8080/
+/pools 3 -
+/admin/web/ 1 -
+/phpMyAdmin-2.8.1-rc1/ 2 http://151.248.119.250:8080/
+/css/stylesheet.css~ 2 -
+/nmaplowercheck1476073633 1 -
+/loginUI.action 1 -
+/tokmail/env.pl 2 -
+/phpmyadmin 7 -
+/admin/sysadmin/ 1 -
+/phpMyAdmin-2.8.0-beta1/ 2 http://151.248.119.250:8080/
+/jenkins/script 2 -
+/unAuthorizedAccess.action 1 -
+/phpMyAdmin-2.6.0-rc2/ 2 http://151.248.119.250:8080/
+/upload/%D0%A8%D0%9A%D0%90%D0%A4%D0%AB/%D0%B8%D0%BA%D0%BE%D0%BD%D0%BA%D0%B8/%D0%9B%D0%A8%20%D0%B8%D0%BA%D0%BE%D0%BD%D0%BA%D0%B8%20%D0%BD%D0%B0%20%D1%81%D0%B0%D0%B9%D1%82_2-13.png 1 https://www.google.com.ua/
+/msd1.24.4 4 -
+/hosting_static_403/html5shiv.js.1 2 -
+/sitemap.xml 5 -
+/jmx-console 4 -
+/hosting_static_403/modernizr.js~ 2 -
+/PMA2005/ 2 http://151.248.119.250:8080/
+/PMA2012/ 1 -
+/hosting_static_403/Copy%20(2)%20of%20favicon.ico 2 -
+/phpMyAdmin-2.5.6-rc2/ 2 http://151.248.119.250:8080/
+/js/a}} 3 -
+/MySQLDumper 4 -
+/phpMyAdmin-2.6.0-alpha2/ 2 http://151.248.119.250:8080/
+http://www.proxyjudge.info/azenv.php 3 -
+http://www.sbjudge2.com/azenv.php 5 -
+/hosting_static_403/Copy%20of%20html5shiv.js 2 -
+/phpmy-admin/ 3 http://151.248.119.250:8080/
+/administrator/phpmyadmin/ 1 -
+/phpMyAdmin-3/ 1 -
+/pma2011/ 1 -
+/phpMyAdmin-2.6.0-alpha/ 2 http://151.248.119.250:8080/
+/admin/i18n/readme.txt 6 -
+/hosting_static_404/Copy%20of%20favicon.ico 1 -
+http://82.146.38.46:8080/prox_ch.php 3 -
+/phpmyadmin/ 3 http://151.248.119.250:8080/
+/mysqlmanager/ 3 http://151.248.119.250:8080/
+/hosting_static_403/Copy%20of%20favicon.ico 2 -
+/mysql/ 3 http://151.248.119.250:8080/
+/db/phpmyadmin3/ 1 -
+/phpMyAdmin-2.6.1-pl2/ 2 http://151.248.119.250:8080/
+/js/OrbitControls.js.1 2 -
+/sql 8 -
+//administrator 2 -
+/db/dbadmin/ 1 -
+/webdav 2 -
+/js/visualizer.js.~1~ 2 -
+/phpMyAdmin-2.6.2/ 2 http://151.248.119.250:8080/
+/phpMyAdmin-2.6.0-beta1/ 2 http://151.248.119.250:8080/
+/hosting_static_403/style.css.1 2 -
+/phpMyAdmin-2.5.7-pl1/ 2 http://151.248.119.250:8080/
+/hosting_static_404/Copy%20(2)%20of%20favicon.ico 1 -
+/blog/wp-login.php 3 -
+/administrator/PMA/ 1 -
+/js/three.min%20copy.js 2 -
+/home 3 -
+/sql/phpmanager/ 1 -
+/cgi-bin/test-cgi 1 -
+/phpMyAdmin-2/ 2 http://151.248.119.250:8080/
+/js/visualizer.js~ 2 -
+/scripts/WPnBr.dll 3 -
+/OA_HTML/OA.jsp 1 -
+/phpMyAdmin-2.8.0.1/ 2 http://151.248.119.250:8080/
+/js/audio.js.1 2 -
+/js/audio.js~ 2 -
+/.well-known/assetlinks.json 4 -
+/PMA2011/ 1 -
+/cgi-bin/php5 2 -
+/js/Copy%20(2)%20of%20jquery-2.0.0.min.js 2 -
+/phpMyAdmin-2.5.7/ 2 http://151.248.119.250:8080/
+/phpMyAdmin-2.6.1-pl1/ 2 http://151.248.119.250:8080/
+http://www.google.com/reader/about/ 18 -
+/database/ 1 -
+/hosting_static_403/modernizr%20copy.js 2 -
+/SQLiteManager-1.2.4/main.php 6 -
+/phpmyadmin/scripts/setup.php 5 -
+/phpMyAdmin-2.8.0-rc2/ 2 http://151.248.119.250:8080/
+/phpMyAdmin-2.7.0-rc1/ 2 http://151.248.119.250:8080/
+/muieblackcat 2 -
+/webdb/ 2 http://151.248.119.250:8080/
+/hosting_static_404/favicon%20copy.ico 1 -
+/phpMyAdmin-2.8.0.4/ 2 http://151.248.119.250:8080/
+/hudson/login 2 -
+/js/visualizer.js.1 2 -
+/hosting_static_403/script%20copy.js 2 -
+http://180.163.113.82/check_proxy 2 -
+/wp/wp-login.php 3 -
+/mysql/sqlmanager/ 1 -
+/phpMyAdmin-2.5.1/ 2 http://151.248.119.250:8080/
+/db/phpMyAdmin/ 1 -
+/hosting_static_404/Copy%20of%20script.js 1 -
+/cgi-bin/nobody/Machine.cgi 1 -
+/Wordpress/wp-login.php 2 -
+/hosting_static_403/modernizr.bak 2 -
+/command.php 18 -
+/openserver/phpmyadmin/ 2 http://151.248.119.250:8080/
+/sqlmanager/ 3 http://151.248.119.250:8080/
+/phpMyAdmin-2.6.2-beta1/ 2 http://151.248.119.250:8080/
+/administrator/phpMyAdmin/ 1 -
+/hudson/script 16 -
+/p/m/a/ 2 http://151.248.119.250:8080/
+/phpMyAdmin-2.6.3-rc1/ 2 http://151.248.119.250:8080/
+/pools/default/buckets 1 -
+/js/this.bak 2 -
+/manager/html 28 -
+/js/Copy%20(2)%20of%20OrbitControls.js 1 -
+/index.php 4 -
+/sqlite/main.php 6 -
+//phpMyAdmin/scripts/setup.php 2 -
+//mysql/scripts/setup.php 2 -
+/js/three.min.js.1 2 -
+/js/this.blendSrc 3 -
+/engine/log.txt 1 -
+/js/three.min.js.~1~ 2 -
+/js/audio.bak 2 -
+/phpMyAdmin-2.7.0/ 2 http://151.248.119.250:8080/
+/phpMyAdmin-2.5.5/ 2 http://151.248.119.250:8080/
+/dbadmin/ 3 http://151.248.119.250:8080/
+END_SIDER_404
+
+# Host - Pages - Hits - Bandwidth - Last visit date - [Start date of last visit] - [Last page of last visit]
+# [Start date of last visit] and [Last page of last visit] are saved only if session is not finished
+# The 10 first Hits must be first (order not required for others)
+BEGIN_VISITOR 226
+213.222.233.180 81 120 2946521 20161010002829
+87.79.124.244 32 32 53952 20161014165246
+183.129.160.229 29 29 48894 20161027231103
+212.129.62.79 18 18 30348 20161030054154
+195.154.41.132 16 16 26976 20161030054152
+109.111.183.33 12 12 20232 20161029125917
+62.138.8.31 10 10 16860 20161031170916
+185.153.197.75 8 8 13488 20161030194033
+139.162.13.205 7 7 11802 20161029092331
+139.59.149.57 7 7 11802 20161014025658
+37.144.82.119 1 7 8669899 20161031183731
+169.56.71.36 1 1 1686 20161008110937
+113.23.95.147 1 1 1686 20161021081844
+198.204.255.75 1 1 1686 20161014120025
+80.82.64.102 1 1 1686 20161026091907
+91.215.152.21 1 1 1686 20161024034403
+69.58.178.58 2 2 3372 20161007051213
+213.110.20.125 1 1 1686 20161013170435
+98.158.190.167 1 1 1686 20161022085100
+77.40.61.176 1 7 8669899 20161018152912
+54.224.31.249 1 1 1686 20161018030758
+192.187.101.234 1 1 1686 20161027183501
+66.102.9.24 1 4 37514 20161016034621
+66.240.219.146 1 1 1686 20161027184136
+204.12.217.6 2 2 3372 20161009223319
+81.88.197.20 2 2 3372 20161020112951
+38.100.21.66 1 2 3400 20161013051501
+5.228.114.96 1 7 8669899 20161026032935
+187.52.98.40 1 1 1686 20161010141808
+47.197.177.118 3 3 5058 20161024060441
+93.174.93.210 2 2 3372 20161005211844
+193.124.183.56 2 2 3372 20161017221831
+95.24.49.129 1 6 40017 20161016145357
+217.23.180.102 1 1 1686 20161015161612
+84.20.87.171 2 2 3372 20161021113444
+199.30.24.33 0 5 38331 
+188.126.81.155 2 2 3372 20161022095341
+5.158.108.159 1 7 8669899 20161021220012
+208.110.84.66 1 1 1686 20161005181855
+208.100.26.232 1 1 0 20161015050400
+46.4.94.226 1 1 1686 20161014210156
+188.190.55.239 2 2 3372 20161020031603
+142.54.174.83 1 1 1686 20161024105001
+52.198.96.87 1 1 1686 20161027134712
+131.253.25.156 0 1 27737 
+173.208.213.195 1 1 1686 20161008181229
+131.253.27.135 0 1 1714 
+52.87.221.117 1 1 1686 20161013142308
+188.32.212.131 1 6 40017 20161012015023
+131.253.27.115 0 1 5447 
+122.174.49.68 1 1 1686 20161027015114
+88.201.150.164 2 2 3372 20161014230942
+185.159.37.8 4 4 6744 20161019095908
+192.187.118.22 1 1 1686 20161011185700
+131.253.27.124 0 1 5216 
+82.165.153.13 2 2 3372 20161012163449
+176.195.112.164 1 6 40017 20161021102143
+131.253.27.12 0 2 88512 
+195.154.214.162 1 1 1686 20161013232028
+63.141.242.194 2 2 3372 20161029222619
+182.118.60.16 1 1 1686 20161031191549
+54.215.180.86 1 1 1686 20161007151737
+131.253.27.190 0 5 38331 
+5.18.220.178 1 7 8669899 20161014012626
+185.159.37.7 4 4 6744 20161007162124
+131.253.27.86 0 5 38331 
+98.143.148.107 1 1 1686 20161012100227
+79.2.60.225 2 2 3372 20161030100447
+177.184.249.18 2 2 3372 20161013085318
+91.210.146.24 1 1 1686 20161019012959
+158.69.225.34 3 3 5058 20161024162057
+45.56.152.10 1 6 40017 20161026132209
+62.138.7.79 4 4 6744 20161027235258
+46.188.121.108 3 15 8712254 20161014080027
+5.134.217.102 4 16 17343170 20161027152659
+47.197.167.26 2 2 3372 20161015233548
+46.172.91.20 3 3 5058 20161019172050
+208.100.26.231 1 1 0 20161023195731
+139.162.45.31 2 2 3372 20161026175731
+81.161.59.17 1 2 3400 20161029005757
+71.6.146.185 2 2 3372 20161027184131
+212.117.180.21 1 1 1686 20161019221658
+173.208.213.196 1 1 1686 20161026185543
+195.62.53.168 1 1 1686 20161026004112
+80.255.25.20 2 13 8671585 20161017171822
+198.204.255.78 1 1 1686 20161009185859
+146.0.74.195 1 1 1686 20161012012918
+83.149.44.129 1 7 89985 20161018125404
+168.181.80.117 2 2 3372 20161004173556
+69.58.178.59 1 1 1686 20161007015620
+46.188.121.128 2 13 8671585 20161025210310
+188.94.227.194 1 7 8669899 20161017164530
+120.24.237.246 1 1 1686 20161027194233
+31.172.130.208 4 25 8789950 20161031161452
+95.211.97.198 1 1 1686 20161019094415
+104.193.169.16 1 7 3962649 20161003230852
+66.240.236.119 1 1 1686 20161004040015
+89.136.119.165 1 1 1686 20161012235438
+192.187.118.20 1 1 1686 20161025091605
+141.212.122.112 1 1 1686 20161019100159
+65.55.210.53 0 5 38331 
+185.153.197.23 4 4 6744 20161020233309
+185.159.37.9 4 4 6744 20161022171734
+185.153.198.239 4 4 6744 20161029131619
+63.141.231.210 2 2 3372 20161012100029
+46.23.74.150 1 1 1686 20161030220401
+192.187.118.66 1 1 1686 20161005121044
+156.3.171.20 1 1 1686 20161009205026
+63.141.242.198 2 2 3372 20161030102634
+177.87.188.253 2 2 3372 20161009151904
+199.30.25.121 0 5 38331 
+142.54.180.66 1 1 1686 20161025185452
+94.102.49.193 1 1 1686 20161025152538
+80.84.122.163 1 7 8669899 20161018153427
+192.187.109.59 3 3 5058 20161011080139
+131.253.27.94 0 2 6930 
+199.30.24.78 0 5 38331 
+54.67.51.97 1 1 1686 20161015213314
+46.242.4.47 1 7 8669899 20161025211152
+113.240.250.156 2 2 3372 20161024003256
+185.9.84.124 1 6 40017 20161018112244
+66.102.9.20 0 2 2503 
+131.253.27.22 0 1 27737 
+195.144.231.198 1 6 40017 20161028114418
+62.210.247.93 1 1 1686 20161016171446
+173.238.248.209 1 6 40017 20161016074148
+70.21.253.45 1 1 1686 20161023171004
+8.36.123.216 1 1 1686 20161022082730
+141.212.121.224 1 1 1686 20161026194643
+173.208.213.198 1 1 1686 20161026100036
+46.229.170.197 2 2 3372 20161021174903
+109.225.41.161 2 2 3372 20161012123300
+69.12.92.205 2 2 3372 20161006183302
+131.253.25.211 0 1 27737 
+131.253.27.35 0 1 5447 
+142.54.180.68 1 1 1686 20161009103649
+61.48.107.252 1 1 1686 20161031174752
+212.117.180.130 1 1 1686 20161029190038
+82.74.42.69 2 2 3372 20161024192648
+14.63.163.20 1 1 1686 20161028074717
+37.53.109.179 1 1 1686 20161028102148
+173.208.198.12 1 1 1686 20161024182329
+8.36.123.218 2 2 3372 20161014193940
+141.212.122.96 1 1 1686 20161011155817
+5.19.9.34 1 7 8669899 20161026091013
+131.253.27.45 0 2 6930 
+169.54.233.125 1 1 1686 20161020084053
+213.24.125.233 1 6 40017 20161030230048
+104.148.71.26 1 1 1686 20161008095203
+209.128.119.81 1 1 1686 20161022175029
+66.102.9.22 0 1 1028368 
+185.129.148.216 1 1 1686 20161003104931
+23.101.61.176 2 2 3372 20161018105114
+192.187.118.68 1 1 1686 20161004102509
+192.187.109.60 2 2 3372 20161005163346
+141.212.122.16 1 1 1686 20161001230756
+93.119.35.180 2 2 3372 20161031210437
+176.120.61.39 2 2 3372 20161019151348
+91.107.17.226 1 7 8669899 20161019155534
+169.56.71.62 1 1 1686 20161006073652
+173.208.213.197 1 1 1686 20161008084329
+192.187.109.62 2 2 3372 20161006160640
+182.118.60.13 1 1 1686 20161031194417
+120.27.29.137 1 1 1686 20161029003310
+109.172.15.9 0 1 8629882 
+54.85.117.83 1 1 1686 20161023210951
+173.208.198.10 1 1 1686 20161025134919
+78.26.141.102 1 1 1686 20161005203403
+78.49.20.193 1 1 1686 20161015205605
+54.196.97.44 1 1 0 20161020113634
+63.143.57.26 1 1 1686 20161018191228
+212.92.127.172 4 4 6744 20161019073902
+71.6.158.166 1 1 1686 20161027184123
+37.144.88.217 1 7 8669899 20161014041610
+169.54.233.120 1 1 1686 20161022022120
+77.247.181.163 1 1 1686 20161025163936
+192.187.109.58 1 1 1686 20161002143243
+89.169.3.104 1 1 1686 20161013163632
+54.206.98.177 1 1 1686 20161025140405
+54.75.14.167 1 1 1686 20161031031616
+134.249.159.113 1 1 1686 20161020165741
+109.229.69.81 2 2 3372 20161016124913
+199.30.24.52 0 5 38331 
+63.141.231.213 1 1 1686 20161010064355
+46.42.131.142 1 6 40017 20161011031100
+192.187.101.236 1 1 1686 20161007075537
+157.55.2.165 0 5 38331 
+199.30.24.232 0 5 38331 
+5.79.105.140 1 1 1686 20161016135440
+131.253.27.78 0 1 83065 
+198.204.247.218 2 2 3372 20161028090114
+141.212.121.32 1 1 1686 20161006034830
+175.42.45.188 1 1 1686 20161009222800
+185.159.37.6 4 4 6744 20161027033359
+198.204.255.74 2 2 3372 20161014075343
+213.136.74.235 1 1 1686 20161014114204
+149.202.206.103 1 1 1686 20161029164513
+178.66.39.136 1 7 8669899 20161002150530
+94.23.75.242 2 2 3372 20161029133503
+71.6.165.200 1 1 1686 20161023004241
+52.53.194.98 1 1 1686 20161011120215
+131.253.27.83 0 5 38331 
+141.212.122.32 1 1 1686 20161005180242
+142.54.174.85 1 1 1686 20161025151805
+157.55.12.82 0 5 38331 
+80.82.79.26 1 1 1686 20161027002850
+38.100.21.61 1 2 3400 20161013155707
+198.20.69.74 2 2 3372 20161031090422
+195.128.124.231 1 1 1686 20161024190817
+131.253.25.136 0 1 83065 
+212.92.127.201 4 4 6744 20161019194901
+192.187.118.69 1 1 1686 20161005065248
+79.52.224.198 1 1 1686 20161012013039
+109.163.234.9 1 1 1686 20161018202201
+198.20.87.98 1 1 1686 20161027184131
+185.93.185.10 1 1 1686 20161003234726
+141.212.122.48 1 1 1686 20161014140903
+195.91.216.208 1 6 40017 20161018091245
+192.187.118.19 1 1 1686 20161010005653
+185.153.198.238 2 2 3372 20161025041837
+195.218.194.166 2 8 8671585 20161028145526
+208.110.84.68 2 2 3372 20161011164632
+75.149.221.170 2 2 3372 20161015143106
+173.208.150.118 1 1 1686 20161001160504
+128.197.41.97 1 1 1686 20161017032752
+198.20.69.98 1 1 1686 20161011062652
+END_VISITOR
+
+# Date - Pages - Hits - Bandwidth - Visits
+BEGIN_DAY 31
+20161001 8 8 13488 8
+20161002 8 14 8681701 7
+20161003 5 11 3969393 5
+20161004 11 16 56877 9
+20161005 12 12 20232 10
+20161006 11 21 95208 9
+20161007 13 13 21918 10
+20161008 7 12 134981 6
+20161009 12 12 20232 10
+20161010 86 130 2993282 6
+20161011 19 24 70365 14
+20161012 17 27 105324 13
+20161013 22 30 8708733 16
+20161014 45 63 17536127 13
+20161015 10 10 15174 8
+20161016 11 33 9830120 9
+20161017 8 25 17349914 5
+20161018 13 46 17561636 12
+20161019 15 21 8693503 11
+20161020 16 27 8731834 12
+20161021 9 20 8721718 7
+20161022 13 18 60249 11
+20161023 5 5 6744 5
+20161024 13 18 145097 10
+20161025 15 32 17361716 13
+20161026 14 46 17513354 12
+20161027 28 40 17383634 17
+20161028 9 25 8760049 6
+20161029 13 14 23632 10
+20161030 10 20 93522 7
+20161031 17 28 8735206 10
+END_DAY
+
+# Session range - Number of visits
+BEGIN_SESSION 5
+15mn-30mn 2
+2mn-5mn 2
+30s-2mn 7
+0s-30s 288
+30mn-1h 2
+END_SESSION
+
+# URL - Pages - Bandwidth - Entry - Exit
+# The 10 first Pages must be first (order not required for others)
+BEGIN_SIDER 9
+/ 451 704748 291 290
+http://www.google.com/ 32 53952 1 1
+http://httpheader.net/ 5 8430 4 4
+/hosting_static_403/ 2 5784 0 1
+http://www.baidu.com/ 1 1686 1 1
+http://www.ip138.com/ 1 1686 1 1
+// 1 1686 1 1
+http://azenv.net/ 1 1686 1 1
+http://proxyjudge.us/ 1 1686 1 1
+END_SIDER

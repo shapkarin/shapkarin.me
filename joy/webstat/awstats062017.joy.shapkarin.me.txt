@@ -1,0 +1,1289 @@
+AWSTATS DATA FILE 7.0 (build 1.971)
+# If you remove this file, all statistics for date 201706 will be lost/reset.
+# Last config file used to build this data file was /etc/awstats/awstats.joy.shapkarin.me.conf.
+
+# Position (offset in bytes) in this file for beginning of each section for
+# direct I/O access. If you made changes somewhere in this file, you should
+# also remove completely the MAP section (AWStats will rewrite it at next
+# update).
+BEGIN_MAP 27
+POS_GENERAL 1996                
+POS_TIME 2667                
+POS_VISITOR 30065               
+POS_DAY 41320               
+POS_DOMAIN 3481                
+POS_LOGIN 3712                
+POS_ROBOT 3867                
+POS_WORMS 4646                
+POS_EMAILSENDER 4777                
+POS_EMAILRECEIVER 4920                
+POS_SESSION 42057               
+POS_SIDER 42264               
+POS_FILETYPES 5055                
+POS_DOWNLOADS 5209                
+POS_OS 5362                
+POS_BROWSER 5540                
+POS_SCREENSIZE 7016                
+POS_UNKNOWNREFERER 7090                
+POS_UNKNOWNREFERERBROWSER 7999                
+POS_ORIGIN 8400                
+POS_SEREFERRALS 8541                
+POS_PAGEREFS 8709                
+POS_SEARCHWORDS 10075               
+POS_KEYWORDS 10245               
+POS_MISC 2331                
+POS_ERRORS 10322               
+POS_CLUSTER 3568                
+POS_SIDER_404 10435               
+END_MAP
+
+# LastLine    = Date of last record processed - Last record line number in last log - Last record offset in last log - Last record signature value
+# FirstTime   = Date of first visit for history file
+# LastTime    = Date of last visit for history file
+# LastUpdate  = Date of last update - Nb of parsed records - Nb of parsed old records - Nb of parsed new records - Nb of parsed corrupted - Nb of parsed dropped
+# TotalVisits = Number of visits
+# TotalUnique = Number of unique visitors
+# MonthHostsKnown   = Number of hosts known
+# MonthHostsUnKnown = Number of hosts unknown
+BEGIN_GENERAL 8
+LastLine 20170701011127 1 0 9473412930716
+FirstTime 20170601002113
+LastTime 20170628054645
+LastUpdate 20170701020204 1 0 0 0 0
+TotalVisits 454                 
+TotalUnique 262                 
+MonthHostsKnown 0                   
+MonthHostsUnknown 309                 
+END_GENERAL
+
+# Misc ID - Pages - Hits - Bandwidth
+BEGIN_MISC 10
+QuickTimeSupport 0 0 0
+JavaEnabled 0 0 0
+JavascriptDisabled 0 0 0
+PDFSupport 0 0 0
+WindowsMediaPlayerSupport 0 0 0
+AddToFavourites 0 0 0
+RealPlayerSupport 0 0 0
+TotalMisc 0 0 0
+DirectorSupport 0 0 0
+FlashSupport 0 0 0
+END_MISC
+
+# Hour - Pages - Hits - Bandwidth - Not viewed Pages - Not viewed Hits - Not viewed Bandwidth
+BEGIN_TIME 24
+0 15 19 34562 136 159 119877
+1 28 28 47208 38 69 172553
+2 21 26 73737 25 57 151961
+3 31 41 295252 14 37 112176
+4 22 27 75423 48 76 268090
+5 17 22 66993 24 39 125189
+6 17 29 17365088 27 66 254885
+7 16 34 347602 38 69 208233
+8 23 29 78960 37 76 347063
+9 20 34 316695 17 47 195835
+10 27 60 452734 27 61 190520
+11 24 44 8910301 52 91 244478
+12 28 38 207032 49 73 207525
+13 32 42 130614 57 99 312041
+14 18 18 30348 107 130 388456
+15 28 38 123870 22 40 93114
+16 40 62 17480528 40 59 156027
+17 29 29 48894 284 316 907789
+18 23 40 156137 29 55 149263
+19 28 28 47208 40 67 192502
+20 18 18 30348 43 80 333310
+21 23 23 38778 163 206 532900
+22 11 17 3871809 27 48 132305
+23 14 14 23604 25 66 231085
+END_TIME
+
+# Domain - Pages - Hits - Bandwidth
+# The 10 first Pages must be first (order not required for others)
+BEGIN_DOMAIN 1
+ip 553 760 50253725
+END_DOMAIN
+
+# Cluster ID - Pages - Hits - Bandwidth
+BEGIN_CLUSTER 0
+END_CLUSTER
+
+# Login - Pages - Hits - Bandwidth - Last visit
+# The 10 first Pages must be first (order not required for others)
+BEGIN_LOGIN 0
+END_LOGIN
+
+# Robot ID - Hits - Bandwidth - Last visit - Hits on robots.txt
+# The 10 first Hits must be first (order not required for others)
+BEGIN_ROBOT 18
+yandex 200 986835 20170627234458 0
+bot[\s_+:,\.\;\/\\-] 131 519099 20170623161150 0
+no_user_agent 109 182088 20170626133249 0
+googlebot 68 184705 20170627013138 0
+baiduspider 65 287580 20170630223121 0
+python 15 25290 20170619171800 0
+wget 11 18546 20170625045949 0
+mj12bot 8 13488 20170621133226 0
+crawl 8 10116 20170623212830 0
+archive\.org_bot 6 124865 20170620204738 0
+ia_archiver 1 1686 20170622222603 0
+[\s_+:,\.\;\/\\-]bot 3 5058 20170608105107 0
+mail\.ru 1 1686 20170615183218 0
+slurp 1 1686 20170605193340 0
+robot 5 8430 20170617084520 0
+surveybot 3 5058 20170607040805 0
+favicon 1 1686 20170621013546 0
+netcraft 4 5058 20170609165055 0
+END_ROBOT
+
+# Worm ID - Hits - Bandwidth - Last visit
+# The 5 first Hits must be first (order not required for others)
+BEGIN_WORMS 0
+END_WORMS
+
+# EMail - Hits - Bandwidth - Last visit
+# The 20 first Hits must be first (order not required for others)
+BEGIN_EMAILSENDER 0
+END_EMAILSENDER
+
+# EMail - Hits - Bandwidth - Last visit
+# The 20 first hits must be first (order not required for others)
+BEGIN_EMAILRECEIVER 0
+END_EMAILRECEIVER
+
+# Files type - Hits - Bandwidth - Bandwidth without compression - Bandwidth after compression
+BEGIN_FILETYPES 5
+css 41 38414 0 0
+mp3 6 46966028 0 0
+html 550 920556 0 0
+js 160 2323669 0 0
+com 3 5058 0 0
+END_FILETYPES
+
+# Downloads - Hits - Bandwidth
+BEGIN_DOWNLOADS 1
+/data/%D0%9F%D0%BE%D0%BB%D0%B8%D0%BD%D0%B0%20%D0%AD%D0%BB%D1%8C%D1%81%D1%82%D0%B5%D1%80.mp3 6 0 46966028
+END_DOWNLOADS
+
+# OS ID - Hits
+BEGIN_OS 13
+linuxandroid 8
+winlong 13
+winxp 67
+unix 1
+win2000 4
+winnt 117
+linuxubuntu 1
+winvista 8
+linux 56
+win7 145
+macosx 216
+win2003 6
+Unknown 118
+END_OS
+
+# Browser ID - Hits
+BEGIN_BROWSER 82
+safari7.0.3 1
+msie6.0 29
+chrome34.0.1847.137 4
+firefox44.0 1
+firefox26.0 6
+firefox18.0 1
+chrome31.0.1650.57 25
+curl 14
+chrome31.0.1650.63 6
+chrome58.0.3029.110 52
+msie8.0 12
+firefox43.0 5
+msie7.0 2
+chrome50.0.2661.102 39
+chrome37.0.2062.120 29
+firefox41.0 1
+firefox9.0.1 8
+chrome49.0.2623.112 1
+firefox50.0 2
+chrome39.0.2171.96 1
+chrome55.0.2883.87 6
+firefox53.0 9
+chrome33.0.1750.152 10
+firefox48.0 3
+msie5.01 2
+firefox3.0 1
+firefox21.0 1
+firefox29.0 1
+firefox7.0.1 8
+firefox12.0 1
+chrome49.0.2623.75 1
+chrome51.0.2704.63 1
+firefox47.0 48
+firefox45.0 1
+chrome35.0.1916.114 1
+chrome36.0.1985.143 7
+firefox33.0 2
+mozilla 15
+netscape5.0 27
+chrome33.0.1750.117 1
+chrome42.0.2311.135 1
+chrome57.0.2987.133 12
+firefox3.6.3 2
+chrome41.0.2228.0 12
+firefox36.0 3
+firefox35.0 1
+firefox15.0.1 1
+chrome21.0.1180.89 1
+safari7.0 110
+chrome59.0.3071.86 4
+android 1
+chrome58.0.3029.81 1
+chrome48.0.2564.116 4
+firefox52.0 10
+chrome56.0.2924.87 19
+opera9.80 4
+chrome57.0.2987.98 2
+firefox31.0 11
+firefox3.5.0 14
+chrome34.0.1847.116 1
+chrome55.0.2883.95 2
+chrome57.4.0349.5611 3
+chrome58.0.3029.96 4
+chrome33.0.1750.154 1
+msie9.0 22
+Unknown 80
+chrome30.0.1599.101 3
+chrome43.0.2357.65 1
+iceweasel 1
+safari10.0 1
+firefox30.0 2
+chrome28.0.1500.71 2
+chrome43.0.2357.132 3
+safari10.1.1 1
+chrome41.0.2227.1 1
+chrome45.0.2454.94 7
+chrome45.0.2454.101 6
+chrome48.0.2564.109 1
+firefox3.6.28 7
+firefox51.0 1
+chrome31.0.1650.16 1
+chrome59.0.3071.104 11
+END_BROWSER
+
+# Screen size - Hits
+BEGIN_SCREENSIZE 0
+END_SCREENSIZE
+
+# Unknown referer OS - Last visit date
+BEGIN_UNKNOWNREFERER 25
+curl/7.29.0 20170613191312
+a.pr-cy.ru 20170606225919
+mh 20170607211402
+yn 20170606144348
+Ruby 20170626033235
+eg 20170613161309
+curl/7.50.1 20170604185214
+<a_href=\ 20170606022634
+Mozilla/5.0_zgrab/0.x 20170624054808
+ek 20170613130154
+Iceweasel/15.0 20170609151714
+(KHTML,_like_Gecko)_Chrome/41.0.2227.1_Safari/537.36 20170602114033
+wz 20170620170326
+Scanbot 20170625170940
+si 20170624163042
+jc 20170621130942
+et 20170613202129
+Go_1.1_package_http 20170623033539
+Mozilla/5.0_(compatible;_ips-agent) 20170622063241
+Mozilla/5.0 20170625043226
+dj 20170620194954
+Mozilla/5.0_(compatible;_vkShare;__http://vk.com/dev/Share) 20170606064147
+Mozilla/5.0_(compatible;_Nmap_Scripting_Engine;_https://nmap.org/book/nse.html) 20170602030819
+GuzzleHttp/6.1.0_curl/7.35.0_PHP/5.5.9-1ubuntu4.14 20170622143258
+masscan/1.0 20170624165130
+END_UNKNOWNREFERER
+
+# Unknown referer Browser - Last visit date
+BEGIN_UNKNOWNREFERERBROWSER 15
+jc 20170621130942
+a.pr-cy.ru 20170606225919
+et 20170613202129
+si 20170624163042
+mh 20170607211402
+yn 20170606144348
+Ruby 20170626033235
+eg 20170613161309
+Go_1.1_package_http 20170623033539
+<a_href=\ 20170606022634
+dj 20170620194954
+ek 20170613130154
+wz 20170620170326
+masscan/1.0 20170624165130
+Scanbot 20170625170940
+END_UNKNOWNREFERERBROWSER
+
+# Origin - Pages - Hits 
+BEGIN_ORIGIN 6
+From0 413 467
+From1 1 1
+From2 24 24
+From3 111 214
+From4 4 54
+From5 0 0
+END_ORIGIN
+
+# Search engine referers ID - Pages - Hits
+BEGIN_SEREFERRALS 2
+google 20 20
+yandex 4 4
+END_SEREFERRALS
+
+# External page referers - Pages - Hits
+# The 10 first Pages must be first (order not required for others)
+BEGIN_PAGEREFS 37
+http://burger-imperia.com 18 18
+http://laserserver.su 12 12
+http://pizza-tycoon.com 9 9
+http://mail.nawserial.ru 9 9
+http://laserserver.org 5 49
+http://blog.havejob.ru 4 4
+http://wp.havejob.ru 4 4
+http://test.havejob.ru 4 4
+http://forum.havejob.ru 4 4
+http://www.laserserver.pro/wp-admin/ 4 4
+http://wp.olzi-tehnolux.ru 1 1
+https://a.pr-cy.ru/promo.olzi-tehnolux.ru 1 1
+http://hostx.ru 2 2
+http://hvd-store.com 1 1
+http://blog.xn----7sbbabznt2bvpo1c.xn--p1ai 2 2
+http://www.laserserver.pro 0 9
+http://havejob.ru 3 3
+http://hundejo.com 1 1
+http://1col.ru/90ECC8/blue-color-balance 1 1
+http://wpadmin.xn----7sbbabznt2bvpo1c.xn--p1ai 1 1
+http://www.antennplus.ru 3 3
+http://wp.xn----7sbbabznt2bvpo1c.xn--p1ai 3 3
+http://test.olzi-tehnolux.ru 1 1
+http://laserserver.org/wp-admin/ 2 2
+http://mail.eft-arenda.ru 0 5
+http://insoleshop.ru 0 6
+http://arenda.eft-travel.ru 0 16
+http://ping-admin.ru 1 1
+http://away.vk.com/away.php 1 1
+http://151.248.119.250:8080 2 2
+http://agent.olzi-tehnolux.ru/wp-admin/ 4 4
+http://payeer.ssve.ru/laserserver.su 2 2
+http://anonymizeme.pro/go/hide.cgi 2 2
+http://laserserver.pro 0 18
+http://151.248.119.250 1 6
+http://test.xn----7sbbabznt2bvpo1c.xn--p1ai 2 2
+http://blog.olzi-tehnolux.ru 1 1
+END_PAGEREFS
+
+# Search keyphrases - Number of search
+# The 10 first number of search must be first (order not required for others)
+BEGIN_SEARCHWORDS 1
+sharebutton.net 1
+END_SEARCHWORDS
+
+# Search keywords - Number of search
+# The 10 first number of search must be first (order not required for others)
+BEGIN_KEYWORDS 1
+sharebutton.net 1
+END_KEYWORDS
+
+# Errors - Hits - Bandwidth
+BEGIN_ERRORS 3
+405 1 317
+400 5 1540
+404 1384 3642360
+END_ERRORS
+
+# URL with 404 errors - Hits - Last URL referer
+BEGIN_SIDER_404 518
+/phpMyAdmin-3.1.2.0-english/scripts/setup.php 1 -
+/hooks/post-commit 1 -
+/tags/%C2%E8%F0%E4%E6%E8%ED%E8%FF+%DD%F4%E8%F0%E0 1 -
+/db/phpmyadmin/ 2 -
+/mysql/dbadmin/ 2 -
+/mysqladmin/ 3 -
+/user/AshleaFluosy/ 1 http://mail.nawserial.ru/
+/phpMyAdmin-2.8.3/scripts/setup.php 1 -
+/user/AshleaFluosy/\",\"\",\"\",\"\",\" 1 http://mail.nawserial.ru/
+/wp-content/themes/u-design/style.css 1 http://agent.olzi-tehnolux.ru/wp-content/themes/u-design/style.css
+/administrator/components/com_joommyadmin/phpmyadmin/scripts/setup.php 1 -
+/xmlrpc.php 1 -
+/phpMyAdmin2/scripts/setup.php 1 -
+/mscms/ 1 http://laserserver.su/mscms/
+//sys-temp/ 1 -
+/upload/%D0%A8%D0%9A%D0%90%D0%A4%D0%AB/%D0%BA%D0%B0%D1%82%D0%B0%D0%BB%D0%BE%D0%B3/%D0%B3%D0%B0%D1%80%D0%B4%D0%B5%D1%80%D0%BE%D0%B1%D0%BD%D1%8B%D0%B5/16996036_1942258209338704_6198546296893793023_n.jpg 2 -
+/shopdb/ 2 -
+/administrator/web/ 2 -
+/nbproject/private/config.properties 1 -
+/build/signin/.ftppass 1 -
+/sql/phpMyAdmin/ 2 -
+//wp-login.php 5 -
+/db/db-admin/ 2 -
+/mysql/main.php 2 -
+/pma2016/ 1 -
+/login 1 -
+/sql/sqladmin/ 2 -
+/upload/%D0%A8%D0%9A%D0%90%D0%A4%D0%AB/%D0%BC%D0%B5%D1%80%D0%BE%D0%BF%D1%80%D0%B8%D1%8F%D1%82%D0%B8%D1%8F/b7LGS72uP5w.jpg 1 https://www.google.ru/
+/phpMyAdmin-3.1.0.0-english/scripts/setup.php 1 -
+/cgi-bin/php 2 -
+/phpMyAdmin-3.0.1.0/scripts/setup.php 1 -
+/upload/%D0%A8%D0%9A%D0%90%D0%A4%D0%AB/%D0%BC%D0%B5%D1%80%D0%BE%D0%BF%D1%80%D0%B8%D1%8F%D1%82%D0%B8%D1%8F/Prixogaja_3.jpg 2 https://www.google.ru/
+/sql/sqlweb/ 2 -
+/user/EmeliaFluosy/ 1 -
+/SQLite/SQLiteManager-1.2.4/main.php 4 -
+/phpMyAdmin-2.9.0/scripts/setup.php 1 -
+/phpMyAdmin-2.11.11.3/scripts/setup.php 1 -
+/user/ThomasCync/ 1 -
+/stat 1 -
+/mysql/pMA/ 2 -
+/phpMyAdmin-2.10.1.0/scripts/setup.php 1 -
+/upload/%D0%A8%D0%9A%D0%90%D0%A4%D0%AB/%D0%BA%D0%B0%D1%82%D0%B0%D0%BB%D0%BE%D0%B3/%D0%B3%D0%B0%D1%80%D0%B4%D0%B5%D1%80%D0%BE%D0%B1%D0%BD%D1%8B%D0%B5/20-1.jpg 2 https://www.google.ru/
+/mysql/db/ 2 -
+/.git/FETCH_HEAD 1 -
+/upload/%D0%A8%D0%9A%D0%90%D0%A4%D0%AB/%D0%BA%D0%B0%D1%82%D0%B0%D0%BB%D0%BE%D0%B3/%D0%B3%D0%B0%D1%80%D0%B4%D0%B5%D1%80%D0%BE%D0%B1%D0%BD%D1%8B%D0%B5/dirYjvBXr0o.jpg 1 https://www.google.com/
+/phpMyAdmin-2/scripts/setup.php 2 -
+/uploaded/taxeometr-sokkia-set-530rk3_139.jpg 1 -
+/phpMyAdmin-2.9.0.1/scripts/setup.php 1 -
+/hooks 1 -
+/phpmyadmin%20 3 http://151.248.119.250/phpmyadmin
+/admin/phpmyadmin/scripts/setup.php 1 -
+/%20 1 http://151.248.119.250:8080/
+/app/gruntfile.js 1 -
+/sql/sql/ 2 -
+/test-for-404-page 1 -
+/db/ 2 -
+/.modman 1 -
+/media/system/js/core.js 1 http://laserserver.su/media/system/js/core.js
+/upload/%D0%A8%D0%9A%D0%90%D0%A4%D0%AB/%D0%BC%D0%B5%D1%80%D0%BE%D0%BF%D1%80%D0%B8%D1%8F%D1%82%D0%B8%D1%8F/Prixogaja_4.jpg 1 -
+/cms/administrator 2 -
+/phpMyAdmin-2.10.0.1/scripts/setup.php 1 -
+/sql/phpMyAdmin2/ 2 -
+/sql/webdb/ 2 -
+/phpMyAdmin-2.7.5/scripts/setup.php 1 -
+/wp//wp-login.php 1 -
+/bitrix/admin/index.php 1 http://laserserver.su/bitrix/admin/index.php
+/administrator/scripts/setup.php 1 -
+/prox_ch.php 6 -
+/phpMyAdmin-2.7.6/scripts/setup.php 1 -
+/2012/08/21/ 1 -
+/phpMyAdmin-2.9.0.2/scripts/setup.php 1 -
+/administrator 1 http://laserserver.su/administrator
+/phpmyadmin4 3 -
+/sql/sql-admin/ 2 -
+/gdefon/oboi/full/2181-oboi-dlya-rabocheho-stola 2 http://mail.nawserial.ru/gdefon/oboi/full/2181-oboi-dlya-rabocheho-stola
+/phpmyadmin2013/ 1 -
+/log/access_log 1 -
+/mysql/pma/ 2 -
+/bower.json 1 -
+/phpMyAdmin-3.4.3.1/scripts/setup.php 1 -
+/netcat/ 1 http://laserserver.su/netcat/
+/.idea 1 -
+//a2billing/common/javascript/misc.js 5 -
+/phpMyAdmin-3.0.1.0-english/scripts/setup.php 1 -
+/wp/ 1 -
+/nbproject/private/private.properties 1 -
+/web/phpMyAdmin/scripts/setup.php 1 -
+/log/access.log 1 -
+/upload/%D0%A8%D0%9A%D0%90%D0%A4%D0%AB/%D0%BA%D0%B0%D1%82%D0%B0%D0%BB%D0%BE%D0%B3/%D0%B3%D0%B0%D1%80%D0%B4%D0%B5%D1%80%D0%BE%D0%B1%D0%BD%D1%8B%D0%B5/cE6yVrFjY_4.jpg 1 https://www.google.kz/
+/recordings/index.php 2 -
+/db/websql/ 2 -
+/admin 1 http://laserserver.su/admin
+/sitemap_index.xml 1 -
+/.modgit 1 -
+/pma/scripts/setup.php 2 -
+/hooks/pre-rebase 1 -
+/cgi 1 -
+/sql/phpmy-admin/ 2 -
+/app/etc/enterprise.xml 1 -
+/CVS/Entries 1 -
+/.ssh 1 -
+/shell 2 http://151.248.119.250:80/shell
+/mysql-admin/ 2 -
+/.git/logs/HEAD 1 -
+/admin/db/ 2 -
+/phpmanager/ 2 -
+/db/webadmin/ 2 -
+/modules/account/prod.log 1 -
+//robots.txt 1 -
+/log/error_log 1 -
+/phpMyAdmin-3.1.2.0-all-languages/scripts/setup.php 1 -
+/errors/local.xml 1 -
+/upload/%D0%A8%D0%9A%D0%90%D0%A4%D0%AB/%D0%BC%D0%B5%D1%80%D0%BE%D0%BF%D1%80%D0%B8%D1%8F%D1%82%D0%B8%D1%8F/Prixogaja_8.jpg 1 https://www.google.ru/
+/check_proxy 2 -
+/cgi/common.cgi 9 -
+/stssys.htm 8 -
+/upload/%D0%A8%D0%9A%D0%90%D0%A4%D0%AB/%D0%BC%D0%B5%D1%80%D0%BE%D0%BF%D1%80%D0%B8%D1%8F%D1%82%D0%B8%D1%8F/RRuleeWHDK0.jpg 1 https://www.google.ru/
+/.sublime-project 1 -
+/.svnignore 1 -
+/joomla/robots.txt 1 -
+/.svn/wc.db 1 -
+/user/RoselleFluosy/ 1 -
+/PMA2018/ 1 -
+/imex/putImages.php 1 -
+/.idea/dataSource.xml 1 -
+/admin/pMA/ 2 -
+/administrator/pma/ 2 -
+/phpMyAdmin-2.8.5/scripts/setup.php 1 -
+/vam_rss2_info.php 1 http://laserserver.su/vam_rss2_info.php
+/user/Achonwor/ 5 -
+/phpMyAdmin-2.7.0-pl2/scripts/setup.php 1 -
+/pma2012/ 6 -
+/a2billing/common/javascript/misc.js 1 -
+/user/register 2 -
+/administrator/admin/ 2 -
+/db/phpMyAdmin-3/ 2 -
+/apps/ippbx/recordings/recordings.php 1 -
+/phpMyAdmin-2.9.1/scripts/setup.php 1 -
+/phpMyAdmin/scripts/setup.php 6 -
+/upload/%D0%A8%D0%9A%D0%90%D0%A4%D0%AB/%D0%B8%D0%BA%D0%BE%D0%BD%D0%BA%D0%B8/%D0%9B%D0%A8%20%D0%B8%D0%BA%D0%BE%D0%BD%D0%BA%D0%B8%20%D0%BD%D0%B0%20%D1%81%D0%B0%D0%B9%D1%82_2-23.png 1 -
+/_vagrant/.vagrant 1 -
+/pma2013/ 1 -
+/.jshintrc 1 -
+/.phpstorm.meta.php 1 -
+/_phpmyadmin/scripts/setup.php 1 -
+/phpMyAdmin-3.0.1.1/scripts/setup.php 1 -
+/logs/access.log 1 -
+//pma/ 1 -
+/mysql/scripts/setup.php 2 -
+/userlogin/login.aspx 3 -
+/user/Torturban/ 2 -
+/var/phpunit/junit.xml 1 -
+/upload/%D0%A8%D0%9A%D0%90%D0%A4%D0%AB/%D0%BA%D0%B0%D1%82%D0%B0%D0%BB%D0%BE%D0%B3/%D0%BF%D1%80%D0%B8%D1%85%D0%BE%D0%B6%D0%B8%D0%B5/003.jpg 2 -
+/wp-admin/admin-ajax.php 14 http://www.laserserver.pro/wp-admin/
+/refs 1 -
+/user/Weirdight/ 2 -
+/phpMyAdmin-2.6.1-pl3/scripts/setup.php 1 -
+/upload/%D0%A8%D0%9A%D0%90%D0%A4%D0%AB/%D0%BC%D0%B5%D1%80%D0%BE%D0%BF%D1%80%D0%B8%D1%8F%D1%82%D0%B8%D1%8F/Prixogaja_7.jpg 1 https://www.google.com.ua/
+/phpMyAdmin-3.1.2.0/scripts/setup.php 1 -
+/tmUnblock.cgi 11 -
+/mySqlDumper 1 -
+/viewtopic.php 10 -
+/blog/administrator/index.php 1 -
+/phpMyAdmin-2.11.0.0/scripts/setup.php 1 -
+/hooks/commit-msg 1 -
+/refs/stash 1 -
+/current_config/Account1 5 -
+/phpmyadmin2016/ 1 -
+/pma2017/ 1 -
+/downloader/connect.cfg 1 -
+/hooks/post-update 1 -
+/phpmyadmin 3 http://151.248.119.250/phpmyadmin
+/jenkins/script 3 -
+/_db/latest.sql 1 -
+/msd1.24.4 1 -
+/sitemap.xml 6 -
+/jmx-console 1 -
+/phpMyAdmin-2.8.8/scripts/setup.php 1 -
+/admin/pma/scripts/setup.php 1 -
+/uploadify/uploadify.php 14 http://www.laserserver.pro/wp-admin/
+/a2billing/admin/Public/index.php 3 -
+/phpMyAdmin-2.8.2/scripts/setup.php 1 -
+/dumper/main.php 2 -
+/PMA2015/ 1 -
+/.metadata 1 -
+/administrator/phpmyadmin/ 2 -
+/phpMyAdmin-3/ 2 -
+/plugins/weathermap/editor.php 1 -
+/mysqlmanager/ 2 -
+/mysql/ 3 -
+/db/phpmyadmin3/ 2 -
+/debug 1 -
+/db/dbadmin/ 2 -
+/webdav 4 -
+/.project 1 -
+/phpmyadmin/import.php 2 -
+/upload/%D0%A8%D0%9A%D0%90%D0%A4%D0%AB/%D0%BA%D0%B0%D1%82%D0%B0%D0%BB%D0%BE%D0%B3/%D0%B4%D0%B5%D1%82%D1%81%D0%BA%D0%B8%D0%B5/Detskie_1.jpg 1 -
+/upload/%D0%A8%D0%9A%D0%90%D0%A4%D0%AB/%D0%BA%D0%B0%D1%82%D0%B0%D0%BB%D0%BE%D0%B3/%D0%B4%D0%B5%D1%82%D1%81%D0%BA%D0%B8%D0%B5/%D0%BA%D0%B0%D1%82%D0%B0%D0%BB%D0%BE%D0%B3%20%D0%BD%D0%B0%20%D1%81%D0%B0%D0%B9%D1%82%20_%20%D0%94%D0%B5%D1%82%D1%81%D0%BA%D0%B0%D1% 1 https://www.google.ru/
+/myadmin/scripts/setup.php 3 -
+/blog/wp-login.php 4 -
+/wordpress/wp-admin/setup-config.php 4 -
+/user/Trillold/ 1 -
+/downloader/cache.cfg 1 -
+/.svn/entries 1 -
+/logs 1 -
+/upload/%D0%A8%D0%9A%D0%90%D0%A4%D0%AB/%D1%80%D0%B0%D1%81%D0%BF%D1%80%D0%BE%D0%B4%D0%B0%D0%B6%D0%B0/%D0%BF%D0%BE%D0%B4%D0%B0%D1%80%D0%BA%D0%B8/oranzhevyj.jpg 1 -
+/mysqladmin/scripts/setup.php 5 -
+/reg.html 4 -
+/.idea/dataSources.xml 1 -
+/MyAdmin/scripts/setup.php 3 -
+/database/ 2 -
+/phpmyadmin/scripts/setup.php 9 -
+/muieblackcat 1 -
+/Streaming/channels/1/ 1 -
+/russkie-serialy-smotret-onlajn/print:page,1,349-zakrytaya-shkola-sezon-3-seriya-1-10-iz-40-smotret-besplatno-onlayn.html 1 -
+http://180.163.113.82/check_proxy 1 -
+/var/log/system.log 1 -
+/db/phpMyAdmin/ 2 -
+/mysqldumper/main.php 2 -
+/pma2018/ 1 -
+/blog/robots.txt 2 -
+/Wordpress/wp-login.php 2 -
+/pma/import.php 2 -
+/user/WesleyFali/ 1 -
+/logs/HEAD 1 -
+/wp-content/upgrade/theme-compat/popup-pomo.php 1 http://agent.olzi-tehnolux.ru/wp-content/upgrade/theme-compat/popup-pomo.php
+/app/config/routes.cfg 1 -
+/upload/%D0%A8%D0%9A%D0%90%D0%A4%D0%AB/%D0%B8%D0%BA%D0%BE%D0%BD%D0%BA%D0%B8/%D0%9B%D0%A8%20%D0%B8%D0%BA%D0%BE%D0%BD%D0%BA%D0%B8%20%D0%BD%D0%B0%20%D1%81%D0%B0%D0%B9%D1%82_2-17.png 1 -
+/manager/html 29 -
+/wordpress//wp-login.php 1 -
+/sqlmanager/import.php 2 -
+/sqlite/main.php 4 -
+/index.php 6 http://mail.nawserial.ru/index.php
+/phpMyAdmin-2.8.4/scripts/setup.php 1 -
+/phpMyAdmin-2.8.6/scripts/setup.php 1 -
+/modules/account/error_log 1 -
+/mysql/admin/ 2 -
+/hooks/prepare-commit-msg 1 -
+/wordpress/ 1 -
+/.vagrant 1 -
+/.bash_history 1 -
+/phpRedisAdmin 1 -
+/wp-content/plugins/portable-phpmyadmin/wp-pma-mod/ 1 -
+/phpMyAdmin-2.7.0-beta1/scripts/setup.php 1 -
+/config 1 -
+/oneskyssa/ 1 http://laserserver.su/oneskyssa/
+/phpMyAdmin-2.6.4-pl3/scripts/setup.php 1 -
+/app/config/system.cfg 1 -
+/phpMyAdmin-2.10.2.0/scripts/setup.php 1 -
+/phpMyAdmin-2.9.0-rc1/scripts/setup.php 1 -
+/msd1.24.4/main.php 2 -
+/includes/libs/kcaptcha/error_log 1 -
+/user/PaFluosy/%5D42732415%5B/url 1 -
+/refs/remotes 1 -
+/msd1.24stable 1 -
+/phpMyAdmin3/ 2 -
+/myadmin/ 3 -
+/HNAP1/ 1 http://151.248.119.250:8080/
+/sql/phpmyadmin2/ 2 -
+/build/gruntfile.js 1 -
+/wp-login.php 16 http://agent.olzi-tehnolux.ru/wp-login.php
+/phpMyAdmin-3.0.0.0-all-languages/scripts/setup.php 1 -
+/info/exclude 1 -
+/phpmy/ 2 -
+/login.action 1 -
+/img/gallery/gal1.jpg 1 -
+/build/signin/production.json 1 -
+/.idea/misc.xml 1 -
+/Blog/wp-login.php 2 -
+/SQLiteManager/main.php 4 -
+/phppma/ 2 -
+/sql/webadmin/ 2 -
+/db/webdb/ 2 -
+/phpMyAdmin-2.11.1.1/scripts/setup.php 1 -
+/phpMyAdmin-2.8.7/scripts/setup.php 1 -
+/downloader/index.php 1 -
+/var/dev.ini 1 -
+/cms/admin/ 1 http://laserserver.su/cms/admin/
+/license.php 14 http://www.laserserver.pro/wp-admin/
+/var/resource_config.json 1 -
+/apache-default/phpmyadmin/scripts/setup.php 1 -
+/hooks/update 1 -
+/PMA/ 2 -
+/templates/customer/strrife/slider/errors.log 1 -
+/db/phpMyAdmin3/ 2 -
+/wp/wp-admin/setup-config.php 4 -
+/gruntfile.js 1 -
+/cms/administrator/index.php 2 -
+/db/dbweb/ 2 -
+/web/scripts/setup.php 1 -
+/mnews.htm 13 -
+/.git/logs/head 1 -
+/.gitignore 1 -
+/index 1 -
+/administrator/phpmyadmin/scripts/setup.php 1 -
+/phpmyadmin2015/ 1 -
+/PMA2017/ 1 -
+/.eslintrc 1 -
+/app/config/db.php 1 -
+/userlogin/login.aspix 1 -
+/.bowerrc 1 -
+/robots.txt 350 -
+/PMA2013/ 1 -
+/phpMyAdmin/import.php 2 -
+/upload/%D0%A8%D0%9A%D0%90%D0%A4%D0%AB/%D0%BA%D0%B0%D1%82%D0%B0%D0%BB%D0%BE%D0%B3/%D0%B4%D0%B5%D1%82%D1%81%D0%BA%D0%B8%D0%B5/%D0%B4%D0%B5%D1%82%D1%81%D0%BA%D0%B0%D1%8F%20%D1%81%D0%B8%D0%BD%D1%8F%D1%8F%202.jpg 1 https://www.google.ru/
+/cli 2 -
+/index.php/admin123/ 1 http://laserserver.su/index.php/admin123/
+/desktop.ini 1 -
+/upload/%D0%A8%D0%9A%D0%90%D0%A4%D0%AB/%D0%BC%D0%B5%D1%80%D0%BE%D0%BF%D1%80%D0%B8%D1%8F%D1%82%D0%B8%D1%8F/Prixogaja_2.jpg 1 -
+/.git/COMMIT_EDITMSG 1 -
+//recordings/modules/phonefeatures.module 6 -
+/app/etc/config.xml 1 -
+/wordpress/wp-login.php 4 -
+/user/Morackray/ 3 -
+/downloader/config.ini 1 -
+/MyAdmin/ 2 -
+/phpMyAdmin-2.6.1-pl2/scripts/setup.php 1 -
+/.git/config 2 -
+/index.action 1 -
+/moo 2 -
+http://proxyjudge.info/azenv.php 1 -
+/scripts/setup.php 3 -
+/hooks/applypatch-msg 1 -
+/2phpmyadmin/ 2 -
+/joomla/administrator 1 -
+/.idea/dbnavigator.xml 1 -
+/mysql/mysqlmanager/ 1 -
+/phpMyAdmin-2.11.1.0/scripts/setup.php 1 -
+/upload/%D0%A8%D0%9A%D0%90%D0%A4%D0%AB/8.jpg 1 https://www.google.ru/
+/upload/%D0%A8%D0%9A%D0%90%D0%A4%D0%AB/%D0%BA%D0%B0%D1%82%D0%B0%D0%BB%D0%BE%D0%B3/%D0%B4%D0%B5%D1%82%D1%81%D0%BA%D0%B8%D0%B5/2f7e9e3b724e4e2b9d6024d892259742.jpg 2 https://www.google.ru/
+/phpmyadmin2/ 6 -
+/upload/%D0%A8%D0%9A%D0%90%D0%A4%D0%AB/%D0%BA%D0%B0%D1%82%D0%B0%D0%BB%D0%BE%D0%B3/%D0%BF%D1%80%D0%B8%D1%85%D0%BE%D0%B6%D0%B8%D0%B5/%D0%BD%D0%BE%D0%B2%D1%8B%D0%B5/23d961dbc0499d620db910ef985a4a74.jpg 1 https://www.google.ru/
+/sql/php-myadmin/ 2 -
+/events.txt 1 -
+/upload/%D0%A8%D0%9A%D0%90%D0%A4%D0%AB/%D0%BA%D0%B0%D1%82%D0%B0%D0%BB%D0%BE%D0%B3/%D1%81%D0%BF%D0%B0%D0%BB%D1%8C%D0%BD%D0%B8/Spalni_5.jpg 1 https://www.google.ru/
+/hooks/post-receive 1 -
+/manager 1 http://laserserver.su/manager
+/hooks/pre-commit 1 -
+/admin/sqladmin/ 2 -
+/msd 2 -
+/admin/ 4 -
+/.idea/dataSources.local.xml 1 -
+/php-my-admin/ 2 -
+/refs/heads/master 1 -
+/dbadmin/scripts/setup.php 1 -
+/protected/config/console.php 1 -
+/uploaded/radiomodem-eft-m1-403473mgcz_71.jpg 1 -
+/phpMyAdmin-2.8.2.3/scripts/setup.php 1 -
+/media/system/js/caption.js 1 http://laserserver.su/media/system/js/caption.js
+/log/error.log 1 -
+http://jagerman.com/env.cgi 1 -
+/phpMyAdmin-3.1.1.0-all-languages/scripts/setup.php 1 -
+/blog/ 3 -
+/.git/index 1 -
+/phpMyAdmin-2.11.11/scripts/setup.php 1 -
+/package.json 1 -
+/upload/%D0%A8%D0%9A%D0%90%D0%A4%D0%AB/%D0%BC%D0%B5%D1%80%D0%BE%D0%BF%D1%80%D0%B8%D1%8F%D1%82%D0%B8%D1%8F/003.jpg 2 https://www.google.kz/
+/pma2015/ 1 -
+/db/myadmin/ 2 -
+/config.ini 1 -
+/logs/refs 1 -
+/upload/%D0%A8%D0%9A%D0%90%D0%A4%D0%AB/%D1%80%D0%B0%D1%81%D0%BF%D1%80%D0%BE%D0%B4%D0%B0%D0%B6%D0%B0/%D0%BF%D0%BE%D0%B4%D0%B0%D1%80%D0%BA%D0%B8/Bolshoj-medved-Panda-135-sm-700x875.jpg 1 https://www.google.ru/
+/status 5 -
+/docs/document.pdf 1 -
+/phpMyAdmin4/ 2 -
+/azenv.php 5 https://proxyradar.com/
+/Joomla/administrator 2 -
+/sql/myadmin/ 2 -
+/upload/%D0%A8%D0%9A%D0%90%D0%A4%D0%AB/%D0%BC%D0%B5%D1%80%D0%BE%D0%BF%D1%80%D0%B8%D1%8F%D1%82%D0%B8%D1%8F/H2awlqmVBBk.jpg 4 https://www.google.ru/
+/administrator/db/ 2 -
+/mysql/web/ 2 -
+/phpMyAdmin-2.7.7/scripts/setup.php 1 -
+/phpMyAdmin/ 3 -
+/modules/product/error_log 1 -
+/app/etc/local.xml 1 -
+/phpMyAdmin-2.6.4-pl4/scripts/setup.php 1 -
+/phpmyadmin/index.php 1 http://151.248.119.250/phpmyadmin/index.php
+/.rnd 1 -
+/refs/heads 1 -
+/build/signin/local.json 1 -
+/sftp-config.json 2 -
+/script 8 -
+/PMA2016/ 1 -
+/.git/HEAD 1 -
+/CherryWeb 2 -
+/upload/%D0%A8%D0%9A%D0%90%D0%A4%D0%AB/%D0%BA%D0%B0%D1%82%D0%B0%D0%BB%D0%BE%D0%B3/%D0%B4%D0%B5%D1%82%D1%81%D0%BA%D0%B8%D0%B5/%D0%B4%D0%B5%D1%82%D1%81%D0%BA%D0%B0%D1%8F%20%D0%B7%D0%B5%D0%BB%D0%B5%D0%BD%D0%B0%D1%8F.jpg 1 https://www.google.ru/
+http://www.baidu.com/cache/global/img/gs.gif 21 -
+/info 2 -
+/dump.txt 1 -
+/phpMyAdmin-2.6.5/scripts/setup.php 1 -
+/blog/wp-admin/setup-config.php 4 -
+//MyAdmin/scripts/setup.php 1 -
+/admin/phpMyAdmin/ 2 -
+/phpMyAdmin-2.8.9/scripts/setup.php 1 -
+/description 1 -
+/phpMyAdmin3/scripts/setup.php 1 -
+//errors/logs/ 1 -
+/modules/reviews/error_log 1 -
+/app/config/own_params.php 1 -
+/CFIDE/administrator/ 1 -
+/phpMyAdmin-2.10.0.0/scripts/setup.php 1 -
+/pma/ 2 -
+/upload/%D0%A8%D0%9A%D0%90%D0%A4%D0%AB/6-1.jpg 1 -
+/socks_test_logger.php 1 -
+/phpMyAdmin2/ 2 -
+/phpMyadmin/ 2 -
+/phpmyadmin2012/ 1 -
+/upload/%D0%A8%D0%9A%D0%90%D0%A4%D0%AB/%D0%BA%D0%B0%D1%82%D0%B0%D0%BB%D0%BE%D0%B3/%D1%81%D1%82%D0%B5%D0%BB%D0%BB%D0%B0%D0%B6%D0%B8%20%D0%B8%20%D1%81%D1%82%D0%BE%D0%BB%D0%B8%D0%BA%D0%B8/Stellag_4.jpg 6 https://www.google.com.ua/
+/sql/websql/ 2 -
+/wp-content/themes/headway-166/style.css 1 http://agent.olzi-tehnolux.ru/wp-content/themes/headway-166/style.css
+/dump.sql 1 -
+/program/ 2 -
+/.viminfo 1 -
+/joomla/administrator/index.php 3 -
+/phpMyAdmin-2.11.1-all-languages/scripts/setup.php 1 -
+/phpmyAdmin/ 2 -
+/phpmyadmin2017/ 1 -
+//pma/scripts/setup.php 1 -
+//phpmyadmin/scripts/setup.php 1 -
+/SQlite/main.php 4 -
+/upload/%D0%A8%D0%9A%D0%90%D0%A4%D0%AB/%D0%BC%D0%B5%D1%80%D0%BE%D0%BF%D1%80%D0%B8%D1%8F%D1%82%D0%B8%D1%8F/FqPVRFrk0ic.jpg 1 -
+/nbproject/project.properties 1 -
+/phpMyAdmin-2.7.0-pl1/scripts/setup.php 1 -
+/libraries/sfn.php 3 -
+/Joomla/administrator/index.php 2 -
+/hooks/pre-applypatch 1 -
+/phpMyAdmin-3.1.0.0/scripts/setup.php 1 -
+/admin/phpmyadmin/ 2 -
+/phpMyAdmin-2.6.6/scripts/setup.php 1 -
+http://birdingonthe.net/cgi-bin/env.pl 2 -
+/pear 1 -
+/blog//wp-login.php 1 -
+/phpmyadmin2018/ 1 -
+/phpMyAdmin-2.6.9/scripts/setup.php 1 -
+//myadmin/scripts/setup.php 1 -
+/crc32.dat 1 -
+/sqlitemanager/main.php 4 -
+/admin/scripts/setup.php 1 -
+/phpmyadmin3/ 6 -
+/phpMyAdmin 1 -
+/objects 1 -
+/administrator/index.php 3 -
+/phpmyadmin4/ 3 -
+/php-myadmin/ 2 -
+/.mysql_history 1 -
+/refs/tags 1 -
+/admin/web/ 2 -
+/admin/images/tango.png 1 -
+/admin/sysadmin/ 2 -
+/downloader/.cache 1 -
+/.cvsignore 1 -
+/upload/%D0%A8%D0%9A%D0%90%D0%A4%D0%AB/%D0%BA%D0%B0%D1%82%D0%B0%D0%BB%D0%BE%D0%B3/%D0%BF%D1%80%D0%B8%D1%85%D0%BE%D0%B6%D0%B8%D0%B5/%D0%BD%D0%BE%D0%B2%D1%8B%D0%B5/8ecddd8f67a432dac8fbda5f31eb472a.jpg 2 https://www.google.ru/
+//umibackup/ 1 -
+/logs/error_log 1 -
+/phpMyAdmin-2.10.0.2/scripts/setup.php 1 -
+/sitemap.txt 1 -
+/admin/login.php 1 http://laserserver.su/admin/login.php
+/PMA2012/ 6 -
+/var/log/exception.log 1 -
+/phpMyAdmin-2.7.0-rc1/scripts/setup.php 1 -
+/pma2014/ 1 -
+/upload/%D0%A8%D0%9A%D0%90%D0%A4%D0%AB/%D0%BA%D0%B0%D1%82%D0%B0%D0%BB%D0%BE%D0%B3/%D0%B3%D0%B0%D1%80%D0%B4%D0%B5%D1%80%D0%BE%D0%B1%D0%BD%D1%8B%D0%B5/157-e1422105711659.jpg 2 -
+/phpmy-admin/ 2 -
+//a2billing/customer/templates/default/footer.tpl 17 -
+/.idea/workspace.xml 1 -
+/adminzone 1 http://laserserver.su/adminzone
+/pma2011/ 6 -
+/branches 1 -
+/logs/error.log 1 -
+/adminer.php 1 -
+http://82.146.38.46:8080/prox_ch.php 6 -
+/phpmyadmin/ 1 -
+/phpMyAdmin-2.11.1.2/scripts/setup.php 1 -
+//administrator 2 -
+/phpmyadmin2011/ 1 -
+/.idea/dataSources.ids 1 -
+/upload/%D0%A8%D0%9A%D0%90%D0%A4%D0%AB/%D0%BA%D0%B0%D1%82%D0%B0%D0%BB%D0%BE%D0%B3/%D1%81%D0%BF%D0%B0%D0%BB%D1%8C%D0%BD%D0%B8/Spalni_4.jpg 1 https://www.google.ru/
+/PMA2014/ 1 -
+/upload/%D0%A8%D0%9A%D0%90%D0%A4%D0%AB/%D0%BA%D0%B0%D1%82%D0%B0%D0%BB%D0%BE%D0%B3/%D0%B4%D0%B5%D1%82%D1%81%D0%BA%D0%B8%D0%B5/Detskie_6.jpg 1 -
+/phpMyAdmin-2.10.0/scripts/setup.php 1 -
+/administrator/PMA/ 2 -
+/.gitconfig 1 -
+/phpMyAdmin-2.6.4-rc1/scripts/setup.php 1 -
+/msd/main.php 2 -
+/sql/phpmanager/ 2 -
+/w00tw00t.at.blackhats.romanian.anti-sec:) 5 -
+/phpMyAdmin-3.0.0-rc1-english/scripts/setup.php 1 -
+/mysql/import.php 2 -
+/hndUnblock.cgi 11 -
+/cgi-bin/php5 1 -
+/PMA2011/ 6 -
+/themes/blackmin/help.css 1 -
+/SQLiteManager-1.2.4/main.php 4 -
+/phpMyAdmin-2.9.2/scripts/setup.php 1 -
+/old/wp-admin/setup-config.php 4 -
+/wp-content/uploads/51217766.php 14 -
+/wp/wp-login.php 4 -
+/mysql/sqlmanager/ 2 -
+/.git-credentials 1 -
+/nbproject/project.xml 1 -
+/test/wp-admin/setup-config.php 4 -
+/command.php 8 -
+/sqlmanager/ 2 -
+/administrator/phpMyAdmin/ 3 -
+/upload/%D0%A8%D0%9A%D0%90%D0%A4%D0%AB/%D0%BA%D0%B0%D1%82%D0%B0%D0%BB%D0%BE%D0%B3/%D0%B3%D0%B0%D1%80%D0%B4%D0%B5%D1%80%D0%BE%D0%B1%D0%BD%D1%8B%D0%B5/17362805_1955382588026266_1038430102948946481_n.jpg 1 https://www.google.com.ua/
+/logs/access_log 1 -
+/db.sql 1 -
+/user/Williamphob/ 1 -
+/cms/ 1 http://laserserver.su/cms/
+/.settings 1 -
+/db/scripts/setup.php 2 -
+/bakcup.sh 1 -
+//phpMyAdmin/scripts/setup.php 1 -
+/favicon.png 1 -
+/upload/%D0%A8%D0%9A%D0%90%D0%A4%D0%AB/%D0%BC%D0%B5%D1%80%D0%BE%D0%BF%D1%80%D0%B8%D1%8F%D1%82%D0%B8%D1%8F/mCaSRfysSd4.jpg 2 -
+/dbadmin/ 2 -
+/uploaded/taxeometr-sokkia-set-530rk3_157.jpg 1 -
+/.git/ORIG_HEAD 1 -
+END_SIDER_404
+
+# Host - Pages - Hits - Bandwidth - Last visit date - [Start date of last visit] - [Last page of last visit]
+# [Start date of last visit] and [Last page of last visit] are saved only if session is not finished
+# The 10 first Hits must be first (order not required for others)
+BEGIN_VISITOR 309
+60.191.38.77 25 25 42150 20170625220955
+183.129.160.229 23 23 38778 20170623013030
+185.110.132.239 22 22 37092 20170625170940
+71.6.202.204 15 15 25290 20170623093925
+91.236.75.4 13 13 21918 20170626161411
+93.79.148.21 12 12 20232 20170622113944
+139.162.79.87 10 10 16860 20170625043226
+139.162.111.98 9 9 15174 20170625145654
+163.172.4.153 9 9 15174 20170623081132
+139.162.124.167 8 8 13488 20170619172854
+213.202.254.136 1 1 1686 20170617175845
+69.58.178.56 1 1 1686 20170613202608
+34.203.208.181 1 1 1686 20170607212050
+180.234.25.163 1 1 1686 20170603234502
+89.28.89.11 1 6 40017 20170619181649
+115.196.91.164 6 6 10116 20170620190036
+46.0.232.177 0 5 38331 
+185.62.195.98 1 6 40017 20170619135555
+194.44.247.218 2 2 3372 20170613155808
+196.54.55.41 1 1 1686 20170602212800
+5.18.201.215 1 1 1686 20170623144339
+178.215.93.60 4 4 6744 20170615083519
+217.69.143.217 1 1 1686 20170613222140
+199.30.24.243 0 1 5447 
+199.30.25.67 0 1 83065 
+52.87.86.158 2 2 3372 20170623041324
+62.109.24.115 1 1 1686 20170621035746
+178.137.88.27 1 1 1686 20170611214927
+66.240.219.146 1 1 1686 20170608132515
+191.101.200.123 1 1 1686 20170601172501
+54.193.104.83 2 2 1686 20170626033240
+185.35.63.160 1 1 1686 20170613202129
+196.52.43.56 1 1 1686 20170617004745
+91.210.144.200 3 3 5058 20170613235329
+65.55.210.9 0 5 38331 
+195.88.209.6 1 1 1686 20170621011319
+78.109.23.1 1 1 1686 20170601144549
+199.30.25.64 0 1 5447 
+95.143.221.24 2 2 3372 20170608103757
+35.188.35.126 1 1 1686 20170616121137
+5.248.165.238 3 3 5058 20170623160723
+87.118.122.51 1 1 1686 20170615124751
+199.30.25.138 0 1 5447 
+139.162.113.204 6 6 10116 20170625211409
+79.137.85.189 2 2 3372 20170607120249
+169.54.233.119 1 1 1686 20170602134236
+90.154.83.150 1 6 40017 20170618151756
+85.93.89.135 1 1 1686 20170613141019
+118.89.113.57 1 1 1686 20170616000902
+54.160.230.206 1 1 1686 20170620052112
+162.247.72.27 1 1 1686 20170621163139
+82.221.105.6 1 1 1686 20170623184942
+104.154.216.145 1 1 1686 20170616171956
+199.30.24.80 0 4 9272 
+89.163.152.135 2 2 3372 20170619120105
+82.146.58.161 2 2 3372 20170615235506
+91.210.146.5 3 3 5058 20170616150925
+185.35.63.155 1 1 1686 20170606144348
+122.228.208.113 1 1 1686 20170622031034
+37.48.122.242 1 1 1686 20170608160708
+79.134.218.13 1 1 1686 20170606022634
+192.186.2.10 1 1 1686 20170605234735
+35.192.42.167 1 1 1686 20170616181053
+176.126.252.11 1 1 1686 20170613070353
+187.34.218.68 2 2 3372 20170615101403
+35.192.26.118 1 1 1686 20170616132948
+91.107.98.24 1 7 8669899 20170606064945
+65.55.210.104 0 1 1851 
+89.179.245.247 1 1 1686 20170620124853
+35.187.17.182 3 3 5058 20170611182457
+66.180.193.219 1 1 1686 20170621031356
+35.192.3.159 1 1 1686 20170615193103
+80.82.77.139 1 1 1686 20170603070359
+208.110.66.130 2 2 3372 20170608172307
+40.77.178.184 0 5 123179 
+54.188.40.107 2 2 3372 20170605133543
+187.41.156.200 1 6 40017 20170620160509
+180.234.71.158 5 5 8430 20170624165130
+37.46.128.41 1 1 1686 20170608163301
+146.185.144.64 1 1 1686 20170611121042
+47.203.93.185 2 2 3372 20170605025815
+89.250.159.118 1 1 1686 20170618115337
+148.251.48.178 1 1 1686 20170622143258
+199.30.25.2 0 1 1714 
+131.253.25.206 0 5 38331 
+35.192.26.43 1 1 1686 20170614190120
+54.91.244.212 1 1 1686 20170619071334
+65.19.167.131 1 1 1686 20170618210744
+195.154.252.41 2 2 3372 20170602025857
+199.30.25.129 0 1 27737 
+61.164.149.209 3 3 5058 20170614060145
+173.208.244.98 1 1 1686 20170612064916
+40.77.178.249 0 1 5216 
+80.82.77.33 1 1 1686 20170603010303
+61.160.212.14 1 1 1686 20170610024402
+139.162.119.197 1 1 1686 20170623013303
+37.48.68.247 1 1 1686 20170607135320
+110.8.84.231 2 2 3372 20170608210015
+91.103.75.199 1 1 0 20170615125332
+185.65.205.10 1 1 1686 20170610121012
+199.30.24.217 0 6 121396 
+199.30.24.46 0 1 5216 
+199.30.24.189 0 5 38331 
+162.209.168.87 1 1 1686 20170603124705
+110.90.95.163 2 2 3372 20170620002329
+54.193.70.65 1 1 1686 20170621031912
+65.55.210.131 0 1 5216 
+170.250.140.52 2 2 3372 20170622162253
+77.87.42.14 1 1 1686 20170617181417
+46.229.170.197 1 1 1686 20170614105303
+199.30.24.12 0 5 38331 
+65.55.210.183 0 1 5447 
+131.253.25.211 0 3 116249 
+180.234.93.11 1 1 1686 20170606164807
+141.212.122.96 1 1 1686 20170608075152
+69.197.179.2 1 1 1686 20170625133949
+91.210.146.42 3 3 5058 20170610034827
+199.30.25.131 0 1 83065 
+94.159.26.6 1 7 8669899 20170613160434
+79.165.174.154 1 6 40017 20170624164929
+199.30.24.76 0 1 5216 
+208.100.26.229 1 1 0 20170602030819
+50.109.132.27 2 2 3372 20170614133958
+178.62.4.246 1 1 1686 20170621070428
+158.85.81.120 2 2 3372 20170623113752
+139.162.116.133 6 6 10116 20170621155816
+175.192.42.186 2 2 3372 20170611045608
+216.218.222.11 1 1 1686 20170620163520
+141.170.2.53 2 2 3372 20170610005737
+65.55.210.39 0 3 90226 
+38.107.180.164 1 1 1686 20170619010924
+209.126.136.4 6 6 10116 20170626160241
+109.62.154.86 1 1 1686 20170621014132
+95.27.85.157 1 6 40017 20170628054645
+185.35.63.150 1 1 1686 20170620170326
+104.198.191.163 1 1 1686 20170615165903
+212.33.255.53 1 1 1686 20170608044229
+188.165.2.183 1 1 1686 20170620121801
+46.38.44.81 2 2 3372 20170616161548
+65.55.210.94 0 5 38331 
+37.59.253.230 1 1 1686 20170604074933
+95.65.118.25 2 13 80686 20170619181441
+65.19.167.130 2 2 3372 20170619085201
+40.77.177.6 0 5 123179 
+71.6.165.200 1 1 1686 20170613182620
+93.188.37.174 1 1 1686 20170611202809
+141.212.122.32 2 2 3372 20170620175404
+198.20.69.74 1 1 1686 20170612104902
+139.162.106.181 1 1 1686 20170607081325
+163.172.105.72 1 1 1686 20170616090553
+79.137.223.57 2 2 3372 20170614211122
+8.36.123.219 1 1 1686 20170613020131
+67.207.89.164 1 1 1686 20170621133847
+40.77.178.89 0 5 123179 
+51.15.3.151 2 2 3372 20170613191312
+61.164.149.205 1 1 1686 20170610145052
+169.53.184.23 1 1 1686 20170615223559
+180.234.16.59 1 1 1686 20170601054836
+5.188.211.103 1 1 1686 20170619051909
+107.22.58.209 1 1 1686 20170604094428
+185.35.63.152 1 1 1686 20170607211402
+65.55.210.81 0 1 27737 
+35.188.132.191 1 1 1686 20170614200343
+178.251.180.83 1 1 1686 20170625215121
+122.228.208.106 1 1 1686 20170616013322
+185.35.63.189 1 1 1686 20170620194954
+62.196.78.31 2 2 3372 20170609161923
+131.253.27.0 0 5 38331 
+176.108.160.98 2 14 17339798 20170615111200
+69.58.178.58 1 1 1686 20170601213651
+167.114.243.147 1 1 1686 20170606075111
+111.206.36.8 1 1 1686 20170618115446
+47.203.89.144 3 3 5058 20170615034206
+85.248.227.164 1 1 1686 20170615081500
+199.30.25.25 0 5 38331 
+65.55.210.6 0 1 5216 
+131.253.25.189 0 3 35937 
+185.35.63.23 1 1 1686 20170613130154
+45.248.86.238 1 1 1686 20170620032117
+65.55.210.102 0 1 5216 
+37.46.128.186 1 1 1686 20170611230859
+217.223.71.250 6 6 10116 20170613170225
+170.79.119.238 6 6 10116 20170619044832
+40.77.177.59 0 5 123179 
+82.146.57.90 1 1 1686 20170610022409
+23.248.219.6 1 1 1686 20170612221323
+138.197.96.171 1 1 1686 20170602051833
+178.33.39.197 2 2 3372 20170614092734
+199.30.24.102 0 1 1714 
+65.55.210.199 0 1 1714 
+54.174.109.143 1 1 1686 20170608002154
+209.126.136.5 1 1 1686 20170606001437
+185.35.63.107 1 1 1686 20170613161309
+77.37.156.208 1 1 1686 20170615171619
+139.162.108.53 5 5 8430 20170618014936
+37.218.245.25 3 3 5058 20170610121008
+37.46.133.249 4 4 6744 20170623033539
+168.1.128.53 1 1 1686 20170608103445
+38.100.21.64 1 2 3400 20170611184846
+35.192.32.13 1 1 1686 20170615201106
+159.203.174.228 1 1 1686 20170617050633
+66.70.217.179 1 1 1686 20170620032129
+199.30.25.155 0 5 38331 
+146.185.223.122 1 1 1686 20170612110058
+111.206.36.9 1 1 1686 20170618115444
+217.144.52.233 2 2 3372 20170622125557
+66.240.192.138 1 1 1686 20170621091913
+142.54.183.226 8 8 13488 20170610122603
+69.84.207.250 1 1 1686 20170607162711
+196.52.43.54 1 1 1686 20170601200852
+94.177.236.7 3 3 5058 20170606152249
+139.162.78.135 6 6 10116 20170626023108
+46.48.13.161 4 4 6744 20170620195524
+61.164.149.128 1 1 1686 20170609031907
+131.253.27.75 0 5 38331 
+69.30.243.60 2 2 3372 20170616090200
+112.230.43.105 1 1 1686 20170616064132
+106.75.101.163 1 1 1686 20170605233157
+131.253.25.248 0 3 7530 
+69.58.178.57 1 1 1686 20170622063241
+66.240.236.119 1 1 1686 20170621091915
+65.55.210.32 0 1 1714 
+192.99.13.206 1 1 1686 20170609053550
+118.193.31.222 4 4 6744 20170621073216
+195.211.23.219 1 1 1686 20170606064147
+139.162.114.70 5 5 8430 20170622112955
+180.97.215.45 1 1 1686 20170621060335
+62.102.148.67 1 1 1686 20170622055827
+93.115.95.202 1 1 1686 20170606164501
+199.30.24.185 0 1 83065 
+116.113.50.213 1 1 1686 20170614025943
+94.102.49.193 1 1 1686 20170610132057
+196.52.43.66 1 1 1686 20170624001917
+45.55.239.150 1 1 1686 20170619114214
+209.126.136.6 1 1 1686 20170615194737
+46.105.100.149 1 1 1686 20170603034244
+118.89.165.145 1 1 1686 20170608092312
+118.193.31.179 2 2 3372 20170625163654
+213.159.38.90 2 2 3372 20170606130830
+50.3.197.69 1 1 1686 20170608043849
+199.30.25.230 0 1 1714 
+216.218.222.13 1 1 1686 20170622111950
+91.210.146.39 3 3 5058 20170620214134
+46.29.248.238 1 1 1686 20170617172610
+92.63.99.19 1 1 1686 20170614044130
+89.32.127.178 4 4 6744 20170612013537
+169.229.3.91 2 2 3372 20170624054808
+217.182.195.9 2 2 3372 20170615204636
+192.187.100.58 4 4 6744 20170627114440
+178.33.54.161 1 1 1686 20170623093035
+8.36.123.218 1 1 1686 20170605012648
+92.63.99.123 2 2 3372 20170606171840
+5.228.5.190 1 1 1686 20170604104908
+199.30.24.7 0 1 27737 
+95.191.254.109 5 11 8676643 20170606161133
+81.35.179.245 1 1 1686 20170611152949
+5.188.211.68 2 2 3372 20170601211002
+85.248.227.163 1 1 1686 20170613153637
+164.52.7.132 2 2 3372 20170621071401
+185.35.63.139 1 1 1686 20170621130942
+199.30.24.147 0 1 27737 
+163.172.104.224 1 1 1686 20170615012346
+94.23.75.60 1 1 1686 20170602001006
+61.164.149.133 1 1 1686 20170614014515
+54.167.97.82 1 1 1686 20170605085533
+91.219.171.24 1 1 1686 20170618212507
+173.208.249.226 4 4 6744 20170608104339
+80.233.134.39 1 1 1686 20170611204030
+122.228.208.112 1 1 1686 20170616033057
+155.133.82.119 1 1 1686 20170611104704
+123.249.27.213 1 1 1686 20170624150010
+94.23.171.176 1 1 1686 20170611020449
+106.91.208.224 1 1 1686 20170616055213
+5.228.7.130 1 1 1686 20170602133810
+91.210.145.242 1 1 1686 20170614011231
+177.101.44.114 5 5 8430 20170601133338
+89.255.69.166 1 1 1686 20170606052015
+91.203.146.90 2 2 3372 20170604185214
+128.72.221.187 1 6 40017 20170620090724
+34.223.218.57 1 1 1686 20170618053659
+54.160.194.145 1 1 1686 20170607171104
+169.54.233.123 1 1 1686 20170609124617
+199.30.24.64 0 1 27737 
+72.52.75.27 1 1 1686 20170615161954
+158.69.229.69 1 1 1686 20170623053838
+23.108.172.87 2 2 3372 20170601172507
+185.35.63.128 1 1 1686 20170624163042
+217.144.52.210 1 1 1686 20170626081144
+199.30.25.82 0 2 10663 
+91.218.244.88 1 1 1686 20170616044831
+79.146.34.240 2 2 3372 20170603143121
+91.189.112.7 6 6 10116 20170620145756
+217.144.52.29 1 1 1686 20170625010746
+66.212.156.174 1 7 3856635 20170609221744
+176.196.67.143 3 3 5058 20170605091551
+146.120.204.103 1 1 0 20170606225919
+199.30.25.31 0 1 27737 
+23.89.132.105 1 1 1686 20170621080544
+222.186.21.220 1 1 1686 20170610015122
+131.253.25.136 0 5 38331 
+217.182.195.10 1 1 1686 20170602114033
+178.217.187.39 4 4 6744 20170615072647
+35.188.213.50 1 1 1686 20170614165840
+92.63.111.195 1 1 1686 20170610040919
+93.170.187.41 2 2 3372 20170606100158
+168.1.128.35 1 1 1686 20170621025912
+8.36.123.217 1 1 1686 20170620074729
+47.203.91.13 2 2 3372 20170608105001
+193.70.46.94 1 1 1686 20170602041743
+END_VISITOR
+
+# Date - Pages - Hits - Bandwidth - Visits
+BEGIN_DAY 28
+20170601 23 23 38778 18
+20170602 20 25 155213 20
+20170603 15 15 25290 14
+20170604 9 19 176684 8
+20170605 20 20 33720 17
+20170606 27 55 26209985 20
+20170607 13 13 21918 12
+20170608 33 43 217148 24
+20170609 13 19 3876867 11
+20170610 28 36 93069 19
+20170611 18 20 37278 15
+20170612 21 31 112068 16
+20170613 32 39 8724016 23
+20170614 22 32 198602 19
+20170615 35 44 8761474 31
+20170616 30 49 344541 24
+20170617 16 16 26976 14
+20170618 16 35 182083 16
+20170619 31 52 206242 24
+20170620 31 51 290438 23
+20170621 27 27 45522 25
+20170622 19 29 193544 14
+20170623 17 20 144911 17
+20170624 15 20 63621 11
+20170625 12 12 20232 11
+20170626 7 7 10116 6
+20170627 2 2 3372 1
+20170628 1 6 40017 1
+END_DAY
+
+# Session range - Number of visits
+BEGIN_SESSION 7
+1h+ 1
+5mn-15mn 1
+0s-30s 439
+15mn-30mn 1
+30s-2mn 6
+2mn-5mn 2
+30mn-1h 4
+END_SESSION
+
+# URL - Pages - Bandwidth - Entry - Exit
+# The 10 first Pages must be first (order not required for others)
+BEGIN_SIDER 6
+/ 522 873348 426 425
+http://www.google.com/ 13 21918 13 13
+http://www.server110.com/ 8 13488 7 8
+http://httpheader.net/ 6 10116 4 5
+http://www.123cha.com 3 5058 3 3
+http://www.baidu.com/ 1 1686 1 0
+END_SIDER
