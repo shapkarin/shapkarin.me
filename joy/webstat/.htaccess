@@ -1,7 +1,0 @@
-AuthType Basic
-AuthName "/www/joy.shapkarin.me/webstat"
-AuthUserFile /var/www/u0104784/data/etc/66992712.passwd
-DirectoryIndex index.html
-<Limit GET POST>
-	require valid-user
-</Limit>
