@@ -1,28 +1,27 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { Switch, Route, Redirect } from 'react-router-dom';
+import PropTypes from 'prop-types';
+import { hot } from 'react-hot-loader';
 
-class App extends Component {
-  render() {
+import Menu from 'Components/Menu';
+import Github from 'Pages/Github';
+import Projects from 'Pages/Projects'
+
+export default hot(module)(function ({ some, prop }) {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
-  }
-}
+        <>
+            <Menu />
 
-export default App;
+            <Switch>
+                <Route
+                path="/github"
+                component={ Github }
+                />
+                <Route
+                path="/projects"
+                component={ Projects }
+                />
+            </Switch>
+        </>
+    );
+})
