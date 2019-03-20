@@ -11,7 +11,7 @@ import Menu from 'Components/Menu';
 import Github from 'Pages/Github';
 import Projects from 'Pages/Projects'
 
-const App = function () {
+export default function () {
     return (
         <Provider store={ store }>
           <Router history={ createHistory() }>
@@ -30,5 +30,3 @@ const App = function () {
         </Provider>
     );
 };
-
-export default App;
