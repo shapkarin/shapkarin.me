@@ -1,0 +1,24 @@
+/* 
+    if you want to cancel reqest by saga worker cancelling 
+    read that https://gist.github.com/shapkarin/5dfb7dd134fca1e51fdcef1fd24a8adf
+*/
+import axios, { CancelToken } from 'axios';
+import { CANCEL } from 'redux-saga';
+
+import urls from './mock/urls';
+import initMock from './mock/init';
+
+const request = axios.create();
+initMock(request);
+
+export const fetchGithub = () => {
+    return axios.get(urls.github);
+};
+
+export const fetchProjects = () => {
+    return axios.get(urls.projects);
+};
+
+export const fetchAbout = () => {
+    return axios.get(urls.about);
+};
