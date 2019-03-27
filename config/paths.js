@@ -84,7 +84,7 @@ module.exports = {
   servedPath: getServedPath(resolveApp('package.json')),
   Pages: resolveApp('src/Pages'),
   Components: resolveApp('src/Components'),
-  Utils: resolveApp('src/utils'),
+  Utils: resolveApp('src/Utils'),
 };
 
 

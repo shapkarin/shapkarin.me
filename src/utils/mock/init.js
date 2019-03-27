@@ -17,7 +17,7 @@ export default function (axios) {
     .reply(() => (
       new Promise((resolve) => {
         setTimeout(() => {
-          resolve([120, github()]);
+          resolve([200, github()]);
         }, delay);
       })
     ))
@@ -26,7 +26,7 @@ export default function (axios) {
     .reply(() => (
       new Promise((resolve) => {
         setTimeout(() => {
-          resolve([120, projects()]);
+          resolve([200, projects()]);
         }, delay);
       })
     ))
@@ -35,7 +35,7 @@ export default function (axios) {
     .reply(() => (
       new Promise((resolve) => {
         setTimeout(() => {
-          resolve([120, about]);
+          resolve([200, about]);
         }, delay);
       })
     ));

@@ -3,16 +3,16 @@ import random from 'lodash/random';
 
 export const github = () => (
   [...Array(random(1, 25))].map(() => ({
-    id: random(1000,100000),
-    name: faker.hacker(),
-    url: faker.url(),
+    id: random(1000, 100000),
+    name: faker.hacker.abbreviation(),
+    url: faker.hacker.abbreviation(),
   }))
 );
 
 export const projects = () => (
   [...Array(random(1, 25))].map(() => ({
-    projectName: faker.hacker(),
-    url: faker.url(),
+    projectName: faker.hacker.abbreviation(),
+    url: faker.hacker.abbreviation(),
   }))
 );
 

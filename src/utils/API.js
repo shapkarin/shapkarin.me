@@ -4,20 +4,20 @@
 */
 import axios from 'axios';
 
-import urls from './mock/urls';
-import initMock from './mock/init';
+import urls from './Mock/urls';
+import initMock from './Mock/init';
 
 const request = axios.create();
 initMock(request);
 
 export const fetchGithub = () => (
-  axios.get(urls.github)
+  request.get(urls.github)
 );
 
 export const fetchProjects = () => (
-  axios.get(urls.projects)
+  request.get(urls.projects)
 );
 
 export const fetchAbout = () => (
-  axios.get(urls.about)
+  request.get(urls.about)
 );
