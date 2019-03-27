@@ -1,11 +1,13 @@
+// TODO: maybe move to the separate file Github.js
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import { fetchRepositories } from './actions';
+import Loading from 'Components/Loading';
 
 const mapStateToProps = (state) => {
-  const { github: { repositories } } = state;
-  return { repositories };
+  const { github: { loading, repositories } } = state;
+  return { loading, repositories };
 };
 
 const mapDispatchToProps = {
@@ -18,11 +20,15 @@ const mapDispatchToProps = {
 )
 export default class Github extends Component {
   render () {
-    const { load } = this.props;
+    const { load, loading, repositories } = this.props;
     return (
       <>
-        <div>ALIVE</div>
         <button onClick={load}>Load</button>
+        <Loading loading={loading} loaderSize={ 50 }>
+          {repositories.map(({name}, index) =>(
+            <div key={index}>{name}</div>
+          ))}
+        </Loading>
       </>
     )
   }

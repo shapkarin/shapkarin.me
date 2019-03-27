@@ -1,3 +1,3 @@
 Personal page
 
-it's personal so I can use decorators and other proposals
+it's personal so I can use decorators and other ES proposals

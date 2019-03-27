@@ -1,4 +1,4 @@
-import { fork, takeEvery } from 'redux-saga/effects';
+import { fork, takeLatest } from 'redux-saga/effects';
 
 import { fetchGithub } from 'Utils/API';
 
@@ -23,5 +23,5 @@ function* getRepositories(action) {
 }
 
 export default function* mySaga () {
-  yield takeEvery(FETCH_REPOSITORIES, getRepositories);
+  yield takeLatest(FETCH_REPOSITORIES, getRepositories);
 }

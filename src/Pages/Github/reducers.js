@@ -24,7 +24,8 @@ export default function showsReducer(state = initialState, action) {
     case LOAD_REPOSITORIES_SUCCESS:
       return {
         ...state,
-        repositories: action.response
+        repositories: action.response,
+        loading: false
       };
     case LOAD_REPOSITORIES_ERROR:
       return {
