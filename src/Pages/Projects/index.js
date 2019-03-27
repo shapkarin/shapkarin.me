@@ -2,8 +2,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
+
 import { fetchProjects, fetchProjectInfo } from './actions';
 import Loading from 'Components/Loading';
+import Collapse from 'Components/Collapse';
 
 const mapStateToProps = (state) => {
   const { projects: { loading, data } } = state;
@@ -33,20 +35,22 @@ export default class Projects extends Component {
   }
 
   render () {
-    const { loading, projects, fetch, fetchInfo } = this.props;
+    const { loading, projects, fetchInfo } = this.props;
     return (
       <>
         <Loading loading={loading}>
           <div>
-            {projects.map(({name, url, id, loading, info}) =>(
+            {projects.map(({name, url, id, loading, info, open}) =>(
               <div key={id}>
                 <a href={url}>
                   {name}: {id}
                 </a>
                 <br/>
-                <button onClick={() => fetchInfo(id)}>show info</button>
+                <button onClick={() => fetchInfo(id)}>{open ? 'close' : 'open'}</button>
                 <Loading loading={loading}>
-                  <div>{info}</div>
+                  <Collapse open={ true }>
+                    <div>{info}</div>
+                  </Collapse>
                 </Loading>
               </div>
             ))}
