@@ -5,39 +5,38 @@ import urls from './urls';
 import {
   github,
   projects,
-  about
+  about,
 } from './fakeData';
 
 export default function (axios) {
   const mock = new MockAdapter(axios);
-  const delay = 500;
+  const delay = 300;
 
   mock
     .onGet(urls.github)
-    .reply(function () {
-      return new Promise(function (resolve) {
-        setTimeout(function () {
+    .reply(() => (
+      new Promise((resolve) => {
+        setTimeout(() => {
           resolve([120, github()]);
         }, delay);
-      });
-    })
+      })
+    ))
 
     .onGet(urls.projects)
-    .reply(function () {
-      return new Promise(function (resolve) {
-        setTimeout(function () {
+    .reply(() => (
+      new Promise((resolve) => {
+        setTimeout(() => {
           resolve([120, projects()]);
         }, delay);
-      });
-    })
+      })
+    ))
 
     .onGet(urls.about)
-    .reply(function () {
-      return new Promise(function (resolve) {
-        setTimeout(function () {
+    .reply(() => (
+      new Promise((resolve) => {
+        setTimeout(() => {
           resolve([120, about]);
         }, delay);
-      });
-    });
-
+      })
+    ));
 }

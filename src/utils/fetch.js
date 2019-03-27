@@ -16,16 +16,16 @@ export default function* fetch ({ action, method, start, succes, error }){
     }
 }
 
-function* fetchSomeData (action) {
-    yield fork(fetch, {
-        action,
-        method: fetchSomeData,
-        start: loadSomeDataStart,
-        succes: loadSomeDataSucces,
-        error: loadSomeDataError
-    });
-}
+// function* fetchSomeData (action) {
+//     yield fork(fetch, {
+//         action,
+//         method: fetchSomeData,
+//         start: loadSomeDataStart,
+//         succes: loadSomeDataSucces,
+//         error: loadSomeDataError
+//     });
+// }
 
-function* mySaga () {
-    yield takeEvery('GET_SOME_DATA', fetchSomeData);
-}
+// function* mySaga () {
+//     yield takeEvery('GET_SOME_DATA', fetchSomeData);
+// }
