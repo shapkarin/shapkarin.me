@@ -13,7 +13,7 @@ const initialState = {
   repositories: [],
 };
 
-export default function showsReducer(state = initialState, action) {
+export default function (state = initialState, action) {
   switch (action.type) {
     case LOAD_REPOSITORIES_START:
       return {

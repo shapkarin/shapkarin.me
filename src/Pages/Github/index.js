@@ -11,7 +11,7 @@ const mapStateToProps = (state) => {
 };
 
 const mapDispatchToProps = {
-  load: fetchRepositories,
+  fetch: fetchRepositories,
 };
 
 @connect(
@@ -19,15 +19,26 @@ const mapDispatchToProps = {
   mapDispatchToProps
 )
 export default class Github extends Component {
+  componentDidMount(){
+    // todo
+    const { fetch } = this.props;
+    if(this.props.repositories.length === 0){
+      fetch()
+    }
+  }
+
   render () {
-    const { load, loading, repositories } = this.props;
+    const { loading, repositories } = this.props;
     return (
       <>
-        <button onClick={load}>Load</button>
         <Loading loading={loading} loaderSize={ 50 }>
-          {repositories.map(({name}, index) =>(
-            <div key={index}>{name}</div>
-          ))}
+          <div>
+            {repositories.map(({name, url, id}) =>(
+              <div>
+                <a href={url} key={id}>{name}</a>
+              </div>
+            ))}
+          </div>
         </Loading>
       </>
     )

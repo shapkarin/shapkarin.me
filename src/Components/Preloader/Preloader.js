@@ -3,17 +3,13 @@ import PropTypes from 'prop-types';
 
 export default class Preloader extends PureComponent {
   static propTypes = {
-    size: PropTypes.number,
-  };
-
-  static defaultProps = {
-    size: 150
+    size: PropTypes.number.isRequired
   };
 
   render() {
     const { size } = this.props;
     return (
-      <div style={{ fontSie: size}}>
+      <div style={{ fontSize: '50px' }}>
         LOADING....
       </div>
     );
