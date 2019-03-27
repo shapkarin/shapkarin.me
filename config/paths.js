@@ -82,6 +82,7 @@ module.exports = {
   appNodeModules: resolveApp('node_modules'),
   publicUrl: getPublicUrl(resolveApp('package.json')),
   servedPath: getServedPath(resolveApp('package.json')),
+  // TODO: eslint webpack resolve
   Pages: resolveApp('src/Pages'),
   Components: resolveApp('src/Components'),
   Utils: resolveApp('src/Utils'),

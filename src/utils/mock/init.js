@@ -5,7 +5,8 @@ import urls from './urls';
 import {
   github,
   projects,
-  about,
+  projectInfo,
+  about
 } from './fakeData';
 
 export default function (axios) {
@@ -27,6 +28,15 @@ export default function (axios) {
       new Promise((resolve) => {
         setTimeout(() => {
           resolve([200, projects()]);
+        }, delay);
+      })
+    ))
+
+    .onGet(urls.projectInfo)
+    .reply(() => (
+      new Promise((resolve) => {
+        setTimeout(() => {
+          resolve([200, projectInfo()]);
         }, delay);
       })
     ))

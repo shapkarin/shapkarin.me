@@ -11,9 +11,12 @@ export const github = () => (
 
 export const projects = () => (
   [...Array(random(1, 25))].map(() => ({
-    projectName: faker.hacker.abbreviation(),
-    url: faker.hacker.abbreviation(),
+    id: random(1000, 100000),
+    name: faker.lorem.word(),
+    url: faker.internet.url(),
   }))
 );
+
+export const projectInfo = () => faker.lorem.paragraph();
 
 export const about = 'Some info about me';

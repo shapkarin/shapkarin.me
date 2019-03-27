@@ -1,26 +1,52 @@
-import { fork, takeEvery } from 'redux-saga/effects';
-
-import { fetchGithub } from 'Utils/API';
+import {
+  fork,
+  all,
+  put,
+  call,
+  takeEvery,
+  takeLatest
+} from 'redux-saga/effects';
 
 import fetch from 'Utils/fetch';
+import { fetchProjects, fetchProjectInfo } from 'Utils/API';
 import {
-  loadRepositoriesStart,
-  loadRepositoriesSuccess,
-  loadRepositoriesError
+  loadProjectsStart,
+  loadProjectsSuccess,
+  loadProjectsError,
+  loadProjectInfoStart,
+  loadProjectInfoSuccess,
+  loadProjectInfoError
 } from './actions';
-import { FETCH_REPOSITORIES } from './constants';
+import {
+  FETCH_PROJECTS,
+  FETCH_PROJECT_INFO
+} from './constants';
 
-
-function* getRepositories(action) {
+function* getProjects(action) {
   yield fork(fetch, {
     action,
-    method: fetchGithub,
-    start: loadRepositoriesStart,
-    succes: loadRepositoriesSuccess,
-    error: loadRepositoriesError
+    method: fetchProjects,
+    start: loadProjectsStart,
+    succes: loadProjectsSuccess,
+    error: loadProjectsError
   });
 }
 
+// TODO: usually we have id in responce
+function* getProjectInfo(action) {
+  try {
+    const { id } = action;
+    yield put(loadProjectInfoStart(id));
+    const { data } = yield call(fetchProjectInfo, action);
+    yield put(loadProjectInfoSuccess(data, id));
+  } catch (err) {
+    yield put(loadProjectsError(err));
+  }
+}
+
 export default function* () {
-  yield takeEvery(FETCH_REPOSITORIES, getRepositories);
+  yield all([
+    takeEvery(FETCH_PROJECTS, getProjects),
+    takeLatest(FETCH_PROJECT_INFO, getProjectInfo)
+  ]);
 }

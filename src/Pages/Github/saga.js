@@ -1,8 +1,7 @@
 import { fork, takeEvery } from 'redux-saga/effects';
 
-import { fetchGithub } from 'Utils/API';
-
 import fetch from 'Utils/fetch';
+import { fetchGithub } from 'Utils/API';
 import {
   loadRepositoriesStart,
   loadRepositoriesSuccess,

@@ -27,18 +27,21 @@ export const loadProjectsError = error => ({
   error
 });
 
+
 export const fetchProjectInfo = id => ({
   type: FETCH_PROJECT_INFO,
   id
 });
 
-export const loadProjectInfoStart = () => ({
-  type: LOAD_PROJECT_INFO_START
+export const loadProjectInfoStart = id => ({
+  type: LOAD_PROJECT_INFO_START,
+  id
 });
 
-export const loadProjectInfoSuccess = response => ({
+export const loadProjectInfoSuccess = (response, id) => ({
   type: LOAD_PROJECT_INFO_SUCCESS,
-  response
+  response,
+  id
 });
 
 export const loadProjectInfoError = error => ({

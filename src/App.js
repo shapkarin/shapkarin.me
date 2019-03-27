@@ -4,7 +4,6 @@ import {
 } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { createBrowserHistory } from 'history';
-// import { hot } from 'react-hot-loader';
 
 import store from './Store';
 import Menu from 'Components/Menu';
@@ -22,10 +21,10 @@ export default function () {
             path="/github"
             component={Github}
           />
-          {/* <Route
+          <Route
             path="/projects"
             component={Projects}
-          /> */}
+          />
         </Switch>
       </Router>
     </Provider>
