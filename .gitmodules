@@ -1,0 +1,4 @@
+[submodule "new"]
+	path = new
+	url = https://github.com/shapkarin/shapkarin.me.git
+	branch = redux
