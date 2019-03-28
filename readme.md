@@ -1,0 +1,1 @@
+## New version is under development at [redux branch](https://github.com/shapkarin/shapkarin.me/tree/redux)
