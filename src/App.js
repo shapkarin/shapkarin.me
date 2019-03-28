@@ -14,6 +14,7 @@ import Projects from 'Pages/Projects'
 export default function () {
   return (
     <Provider store={store}>
+      
       <Router history={createBrowserHistory()}>
         <Menu />
         <Switch>
