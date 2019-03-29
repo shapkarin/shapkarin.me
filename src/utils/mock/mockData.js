@@ -19,4 +19,4 @@ export const projects = () => (
 
 export const projectInfo = () => faker.lorem.paragraph();
 
-export const about = 'Some info about me';
+export const about = "Hello. It's nice to see you at my new home page.";

@@ -7,7 +7,7 @@ import {
   projects,
   projectInfo,
   about
-} from './fakeData';
+} from './mockData';
 
 export default function (axios) {
   const mock = new MockAdapter(axios);

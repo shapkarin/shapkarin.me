@@ -1,9 +1,11 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
+import './Menu.less';
+
 const links = [
   {
-    title: 'Githib',
+    title: 'Github',
     url: '/github',
   },
   {
@@ -20,8 +22,8 @@ export default () => (
         <NavLink
           key={title}
           to={url}
-          className="main-menu__item main-menu__item--link"
-          activeClassName="active"
+          className="Menu__Item"
+          activeClassName="Menu__Item--active"
         >
           { title }
         </NavLink>

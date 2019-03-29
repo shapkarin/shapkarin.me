@@ -6,6 +6,7 @@ import { Provider } from 'react-redux';
 import { createBrowserHistory } from 'history';
 
 import store from './Store';
+import About from 'Components/About';
 import Menu from 'Components/Menu';
 import Github from 'Pages/Github';
 import Projects from 'Pages/Projects'
@@ -14,7 +15,7 @@ import Projects from 'Pages/Projects'
 export default function () {
   return (
     <Provider store={store}>
-      
+      <About />
       <Router history={createBrowserHistory()}>
         <Menu />
         <Switch>

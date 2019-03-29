@@ -2,8 +2,8 @@ import { createStore, applyMiddleware, compose } from 'redux';
 import createSagaMiddleware from 'redux-saga';
 import thunkMiddleware from 'redux-thunk';
 
-import rootReducer from '../rootReducer';
-import rootSaga from '../rootSaga';
+import rootReducer from '../Roots/rootReducer';
+import rootSaga from '../Roots/rootSaga';
 
 const DEBUG = process.env.NODE_ENV !== 'production';
 
