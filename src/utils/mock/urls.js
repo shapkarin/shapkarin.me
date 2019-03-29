@@ -5,4 +5,5 @@ export default {
   projects: '/projects',
   projectInfo: pathToRegexp('/projects/:id'),
   about: '/about',
+  mockExample: '/example'
 };

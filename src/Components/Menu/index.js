@@ -11,6 +11,10 @@ const links = [
   {
     title: 'Projects',
     url: '/projects',
+  },
+  {
+    title: 'Mock Example',
+    url: '/example'
   }
 ];
 

@@ -5,11 +5,12 @@ import {
 import { Provider } from 'react-redux';
 import { createBrowserHistory } from 'history';
 
-import store from './Store';
 import About from 'Components/About';
 import Menu from 'Components/Menu';
 import Github from 'Pages/Github';
-import Projects from 'Pages/Projects'
+import Projects from 'Pages/Projects';
+import Example from 'Pages/MockExample';
+import store from './Store';
 
 // TODO: use names
 export default function () {
@@ -26,6 +27,10 @@ export default function () {
           <Route
             path="/projects"
             component={Projects}
+          />
+          <Route
+            path="/example"
+            component={Example}
           />
         </Switch>
       </Router>

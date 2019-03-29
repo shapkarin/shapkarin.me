@@ -6,8 +6,9 @@ import {
   github,
   projects,
   projectInfo,
-  about
-} from './mockData';
+  about,
+  mockExample
+} from './data';
 
 export default function (axios) {
   const mock = new MockAdapter(axios);
@@ -46,6 +47,15 @@ export default function (axios) {
       new Promise((resolve) => {
         setTimeout(() => {
           resolve([200, about]);
+        }, delay);
+      })
+    ))
+
+    .onGet(urls.mockExample)
+    .reply(() => (
+      new Promise((resolve) => {
+        setTimeout(() => {
+          resolve([200, mockExample()]);
         }, delay);
       })
     ));
