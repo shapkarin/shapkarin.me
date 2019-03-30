@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 
-import Preloader from '../Preloader';
+import Preloader from './Preloader';
 
 export default class Loading extends PureComponent {
   static propTypes = {
