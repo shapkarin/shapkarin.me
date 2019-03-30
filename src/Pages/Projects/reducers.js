@@ -4,7 +4,7 @@ import {
   LOAD_PROJECTS_ERROR,
   LOAD_PROJECT_INFO_START,
   LOAD_PROJECT_INFO_SUCCESS,
-  LOAD_PROJECT_INFO_ERROR
+  TOGGLE_PROJECT_INFO
 } from './constants';
 
 import { normalize, schema } from 'normalizr';
@@ -41,6 +41,20 @@ export default function (state = initialState, action) {
         ...state,
         error: action.error
       };
+    case TOGGLE_PROJECT_INFO: {
+      const { id } = action;
+      const project = state.data[id];
+      return {
+        ...state,
+        data: {
+          ...state.data,
+          [id]: {
+            ...project,
+            open: !project.open
+          }
+        }
+      };
+    }
     case LOAD_PROJECT_INFO_START: {
       const { id } = action;
       const project = state.data[id];
@@ -67,7 +81,8 @@ export default function (state = initialState, action) {
           [id]: {
             ...project,
             info: action.response,
-            loading: false
+            loading: false,
+            fetched: true
           }
         }
       };

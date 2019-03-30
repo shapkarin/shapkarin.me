@@ -6,7 +6,8 @@ import {
   FETCH_PROJECT_INFO,
   LOAD_PROJECT_INFO_START,
   LOAD_PROJECT_INFO_SUCCESS,
-  LOAD_PROJECT_INFO_ERROR
+  LOAD_PROJECT_INFO_ERROR,
+  TOGGLE_PROJECT_INFO
 } from './constants';
 
 export const fetchProjects = () => ({
@@ -28,9 +29,10 @@ export const loadProjectsError = error => ({
 });
 
 
-export const fetchProjectInfo = id => ({
+export const fetchProjectInfo = ({ id, fetched }) => ({
   type: FETCH_PROJECT_INFO,
-  id
+  id,
+  fetched
 });
 
 export const loadProjectInfoStart = id => ({
@@ -47,4 +49,9 @@ export const loadProjectInfoSuccess = (response, id) => ({
 export const loadProjectInfoError = error => ({
   type: LOAD_PROJECT_INFO_ERROR,
   error
+});
+
+export const toggleProjectInfo = id => ({
+  type: TOGGLE_PROJECT_INFO,
+  id
 });

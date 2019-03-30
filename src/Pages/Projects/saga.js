@@ -15,7 +15,8 @@ import {
   loadProjectsError,
   loadProjectInfoStart,
   loadProjectInfoSuccess,
-  loadProjectInfoError
+  loadProjectInfoError,
+  toggleProjectInfo
 } from './actions';
 import {
   FETCH_PROJECTS,
@@ -32,15 +33,21 @@ function* getProjects(action) {
   });
 }
 
-// TODO: usually we have id in responce
+/*
+  usually we have id in responce
+  TODO: maybe rename to toggle
+*/
 function* getProjectInfo(action) {
   try {
-    const { id } = action;
-    yield put(loadProjectInfoStart(id));
-    const { data } = yield call(fetchProjectInfo, action);
-    yield put(loadProjectInfoSuccess(data, id));
+    const { id, fetched } = action;
+    if (yield !fetched) {
+      yield put(loadProjectInfoStart(id));
+      const { data } = yield call(fetchProjectInfo, action);
+      yield put(loadProjectInfoSuccess(data, id));
+    }
+    yield put(toggleProjectInfo(id));
   } catch (err) {
-    yield put(loadProjectsError(err));
+    yield put(loadProjectInfoError(err));
   }
 }
 

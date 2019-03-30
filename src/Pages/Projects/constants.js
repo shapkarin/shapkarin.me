@@ -1,5 +1,6 @@
 export const FETCH_PROJECTS = 'projects/FETCH_PROJECTS';
 export const FETCH_PROJECT_INFO = 'projects/FETCH_PROJECT_INFO';
+export const TOGGLE_PROJECT_INFO = 'projects/TOGGLE_PROJECT_INFO';
 
 export const LOAD_PROJECTS_START = 'projects/LOAD_PROJECTS_START';
 export const LOAD_PROJECTS_SUCCESS = 'projects/LOAD_PROJECTS_SUCCESS';

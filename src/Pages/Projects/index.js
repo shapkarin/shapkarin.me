@@ -19,7 +19,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = {
   fetch: fetchProjects,
-  fetchInfo: fetchProjectInfo
+  toggleInfo: fetchProjectInfo
 };
 
 @connect(
@@ -35,20 +35,22 @@ export default class Projects extends Component {
   }
 
   render () {
-    const { loading, projects, fetchInfo } = this.props;
+    const { loading, projects, toggleInfo } = this.props;
     return (
       <>
         <Loading loading={loading}>
           <div>
-            {projects.map(({name, url, id, loading, info, open}) =>(
+            {projects.map(({
+              name, url, id, loading, info, open, fetched
+            }) =>(
               <div key={id}>
                 <a href={url}>
                   {name}: {id}
                 </a>
                 <br/>
-                <button onClick={() => fetchInfo(id)}>{open ? 'close' : 'open'}</button>
+                <button onClick={() => toggleInfo({id, fetched})}>{open ? 'close' : 'open'}</button>
                 <Loading loading={loading}>
-                  <Collapse open={ true }>
+                  <Collapse open={open}>
                     <div>{info}</div>
                   </Collapse>
                 </Loading>
