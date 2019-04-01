@@ -1,4 +1,3 @@
-// TODO: maybe move to the separate file Github.js
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 

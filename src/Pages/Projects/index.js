@@ -1,4 +1,3 @@
-// TODO: maybe move to the separate file Github.js
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
@@ -45,7 +44,7 @@ export default class Projects extends Component {
             }) =>(
               <div key={id}>
                 <a href={url}>
-                  {name}: {id}
+                  {name}
                 </a>
                 <br/>
                 <button onClick={() => toggleInfo({id, fetched})}>{open ? 'close' : 'open'}</button>
