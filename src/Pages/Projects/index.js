@@ -41,7 +41,7 @@ export default class Projects extends Component {
         <Loading loading={loading}>
           <div>
             {projects.map(({
-              name, url, id, loading, info, open, fetched
+              name, url, id, loading = false, info, open = false, fetched
             }) =>(
               <div key={id}>
                 <a href={url}>
@@ -51,7 +51,7 @@ export default class Projects extends Component {
                 <button onClick={() => toggleInfo({id, fetched})}>{open ? 'close' : 'open'}</button>
                 <Loading loading={loading}>
                   <Collapse open={open}>
-                    <div>{info}</div>
+                    <div dangerouslySetInnerHTML={info} />
                   </Collapse>
                 </Loading>
               </div>

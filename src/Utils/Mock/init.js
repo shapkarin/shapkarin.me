@@ -34,10 +34,10 @@ export default function (axios) {
     ))
 
     .onGet(urls.projectInfo)
-    .reply(() => (
+    .reply(({ url }) => (
       new Promise((resolve) => {
         setTimeout(() => {
-          resolve([200, projectInfo()]);
+          resolve([200, projectInfo(url)]);
         }, delay);
       })
     ))
