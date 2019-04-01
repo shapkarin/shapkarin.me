@@ -1,1 +1,7 @@
-## New version is under development at [redux branch](https://github.com/shapkarin/shapkarin.me/tree/redux)
+Personal page
+
+it's personal so I can use decorators and other ES proposals
+
+```
+npm start
+```
