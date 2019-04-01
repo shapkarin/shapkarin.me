@@ -47,7 +47,7 @@ export default class Projects extends Component {
                   {name}
                 </a>
                 <br/>
-                <div onClick={() => toggleInfo({id, fetched})}>{open ? 'close' : 'show'} info</div>
+                <div style={{cursor: 'pointer'}}onClick={() => toggleInfo({id, fetched})}>{open ? 'close' : 'show'} info</div>
                 <Loading loading={loading}>
                   <Collapse open={open}>
                     <div dangerouslySetInnerHTML={info} />

@@ -28,6 +28,7 @@ export default class About extends Component {
       <>
         <Loading loading={loading}>
           <div>
+            [it's new ver. under dev.]<br/>
             {text}
           </div>
         </Loading>
