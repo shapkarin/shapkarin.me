@@ -28,7 +28,7 @@ export default class About extends Component {
       <>
         <Loading loading={loading}>
           <div>
-            [it's new ver. under dev.]<br/>
+            [it's new ver. under dev. <a href="https://github.com/shapkarin/shapkarin.me">Github</a>]<br/>
             {text}
           </div>
         </Loading>
