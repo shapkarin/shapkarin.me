@@ -50,7 +50,7 @@ export const projects = () => (
     },
     {
       id: 3,
-      name: 'some other',
+      name: 'other',
       url: ''
     }
   ]
@@ -82,10 +82,10 @@ const infos = {
     webpack, jest, webpack SVG sprites, git hooks and etc'
   },
   2: {
-    __html: 'Some description'
+    __html: 'Internet library'
   },
   3: {
-    __html: 'Some description'
+    __html: 'TODO: add more'
   }
 };
 

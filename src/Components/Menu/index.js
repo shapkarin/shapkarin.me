@@ -19,7 +19,7 @@ const links = [
 ];
 
 export default () => (
-  <nav>
+  <nav className="Menu">
     {links.map((link) => {
       const { title, url } = link;
       return (

@@ -9,7 +9,7 @@ export default class Preloader extends PureComponent {
   render() {
     const { size } = this.props;
     return (
-      <div style={{ fontSize: '50px' }}>
+      <div style={{ fontSize: '15px' }}>
         LOADING....
       </div>
     );

@@ -42,12 +42,12 @@ export default class Projects extends Component {
             {projects.map(({
               name, url, id, loading = false, info, open = false, fetched
             }) =>(
-              <div key={id}>
+              <div key={id} style={{marginBottom: '10px'}}>
                 <a href={url}>
                   {name}
                 </a>
                 <br/>
-                <button onClick={() => toggleInfo({id, fetched})}>{open ? 'close' : 'open'}</button>
+                <div onClick={() => toggleInfo({id, fetched})}>{open ? 'close' : 'show'} info</div>
                 <Loading loading={loading}>
                   <Collapse open={open}>
                     <div dangerouslySetInnerHTML={info} />

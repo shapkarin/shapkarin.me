@@ -12,6 +12,10 @@ import Projects from 'Pages/Projects';
 import Example from 'Pages/MockExample';
 import store from './Store';
 
+import './App.less';
+import 'Components/Background';
+
+
 // TODO: use names
 export default function () {
   return (
