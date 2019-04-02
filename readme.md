@@ -1,7 +1,1 @@
-Personal page
-
-it's personal so I can use decorators and other ES proposals
-
-```
-npm start
-```
+[Source code](https://github.com/shapkarin/shapkarin.me/tree/redux)
