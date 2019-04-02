@@ -22,21 +22,25 @@ export default function () {
     <Provider store={store}>
       <About />
       <Router history={createBrowserHistory()}>
-        <Menu />
-        <Switch>
-          <Route
-            path="/github"
-            component={Github}
-          />
-          <Route
-            path="/projects"
-            component={Projects}
-          />
-          <Route
-            path="/example"
-            component={Example}
-          />
-        </Switch>
+        <div className="Wrap">
+          <Menu />
+          <div className="Page">
+            <Switch>
+              <Route
+                path="/github"
+                component={Github}
+              />
+              <Route
+                path="/projects"
+                component={Projects}
+              />
+              <Route
+                path="/example"
+                component={Example}
+              />
+            </Switch>
+          </div>
+        </div>
       </Router>
     </Provider>
   );

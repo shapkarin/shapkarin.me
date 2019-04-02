@@ -4,6 +4,8 @@ import { connect } from 'react-redux';
 import { fetchAbout } from './actions';
 import Loading from 'Components/Loading';
 
+import './style.less';
+
 const mapStateToProps = (state) => {
   const { about: { loading, text } } = state;
   return { loading, text };
@@ -27,7 +29,7 @@ export default class About extends Component {
     return (
       <>
         <Loading loading={loading}>
-          <div>
+          <div className="About">
             [it's new ver. under dev. <a href="https://github.com/shapkarin/shapkarin.me">Github</a>]<br/>
             {text}
           </div>

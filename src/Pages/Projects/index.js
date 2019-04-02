@@ -6,6 +6,8 @@ import { fetchProjects, fetchProjectInfo } from './actions';
 import Loading from 'Components/Loading';
 import Collapse from 'Components/Collapse';
 
+import './style.less';
+
 const mapStateToProps = (state) => {
   const { projects: { loading, data } } = state;
   const projectsArray = Object.keys(data).map(key => data[key]);
@@ -38,7 +40,7 @@ export default class Projects extends Component {
     return (
       <>
         <Loading loading={loading}>
-          <div>
+          <div className="Project">
             {projects.map(({
               name, url, id, loading = false, info, open = false, fetched
             }) =>(
@@ -50,7 +52,10 @@ export default class Projects extends Component {
                 <div style={{cursor: 'pointer'}}onClick={() => toggleInfo({id, fetched})}>{open ? 'close' : 'show'} info</div>
                 <Loading loading={loading}>
                   <Collapse open={open}>
-                    <div dangerouslySetInnerHTML={info} />
+                    <div
+                      className="Project__Info"
+                      dangerouslySetInnerHTML={info}
+                    />
                   </Collapse>
                 </Loading>
               </div>
