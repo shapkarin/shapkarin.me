@@ -1,4 +1,8 @@
-// TODO: refact
+/*
+  TODO: other animation.
+  maybe rotating and wawing flat
+  like on prev site but with spheres.
+*/
 import * as THREE from 'three';
 
 import './style.less';
