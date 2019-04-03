@@ -8,7 +8,7 @@ export const github = () => [
   },
   {
     name: 'redux-scaffolder',
-    url: 'https://github.com/shapkarin/redux-scaffolders'
+    url: 'https://github.com/shapkarin/redux-scaffolder'
   },
   {
     name: 'react-scaffolder',
