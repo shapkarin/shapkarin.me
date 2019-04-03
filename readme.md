@@ -1,1 +1,0 @@
-[Source code](https://github.com/shapkarin/shapkarin.me/tree/redux) 
