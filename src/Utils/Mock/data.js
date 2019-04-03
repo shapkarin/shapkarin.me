@@ -7,6 +7,10 @@ export const github = () => [
     url: 'https://github.com/shapkarin/imba-todo'
   },
   {
+    name: 'redux-scaffolder',
+    url: 'https://github.com/shapkarin/redux-scaffolders'
+  },
+  {
     name: 'react-scaffolder',
     url: 'https://github.com/shapkarin/react-scaffolder'
   },
