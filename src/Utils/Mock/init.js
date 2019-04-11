@@ -15,14 +15,14 @@ export default function (axios) {
   const delay = 300;
 
   mock
-    .onGet(urls.github)
-    .reply(() => (
-      new Promise((resolve) => {
-        setTimeout(() => {
-          resolve([200, github()]);
-        }, delay);
-      })
-    ))
+    // .onGet(urls.github)
+    // .reply(() => (
+    //   new Promise((resolve) => {
+    //     setTimeout(() => {
+    //       resolve([200, github()]);
+    //     }, delay);
+    //   })
+    // ))
 
     .onGet(urls.projects)
     .reply(() => (

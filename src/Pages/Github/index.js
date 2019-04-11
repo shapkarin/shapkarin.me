@@ -32,9 +32,9 @@ export default class Github extends Component {
       <>
         <Loading loading={loading}>
           <div>
-            {repositories.map(({name, url, id}) =>(
-              <div key={id}>
-                <a href={url}>{name}</a>
+            {repositories.map(({id, name, html_url, description}) =>(
+              <div key={id} style={{marginBottom: '5px'}}>
+                <a href={html_url} title={description}>{name}</a>
               </div>
             ))}
           </div>

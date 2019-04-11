@@ -10,7 +10,7 @@ import initMock from './Mock/init';
 const request = axios.create();
 initMock(request);
 
-export const fetchGithub = () => request.get(urls.github);
+export const fetchGithub = () => axios.get(urls.github);
 
 export const fetchProjects = () => request.get(urls.projects);
 
