@@ -10,7 +10,7 @@ import {
 import { FETCH_MOCK_EXAMPLE } from './constants';
 
 
-function* getRepositories(action) {
+function* getMockExamples(action) {
   yield fork(fetch, {
     action,
     method: fetchMockExample,
@@ -21,5 +21,5 @@ function* getRepositories(action) {
 }
 
 export default function* () {
-  yield takeEvery(FETCH_MOCK_EXAMPLE, getRepositories);
+  yield takeEvery(FETCH_MOCK_EXAMPLE, getMockExamples);
 }
