@@ -30,7 +30,8 @@ export default function (state = initialState, action) {
     case LOAD_REPOSITORIES_ERROR:
       return {
         ...state,
-        error: action.error
+        error: action.error,
+        loading: false
       };
     default:
       return state;

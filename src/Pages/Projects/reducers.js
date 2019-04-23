@@ -39,7 +39,8 @@ export default function (state = initialState, action) {
     case LOAD_PROJECTS_ERROR:
       return {
         ...state,
-        error: action.error
+        error: action.error,
+        loading: false
       };
     case TOGGLE_PROJECT_INFO: {
       const { id } = action;

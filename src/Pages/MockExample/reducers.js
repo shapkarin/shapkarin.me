@@ -26,7 +26,8 @@ export default function (state = initialState, action) {
     case LOAD_MOCK_EXAMPLE_ERROR:
       return {
         ...state,
-        error: action.error
+        error: action.error,
+        loading: false
       };
     default:
       return state;
