@@ -1,6 +1,9 @@
 import React from 'react';
 import {
-  Switch, Router, Route 
+  Switch,
+  Router,
+  Route,
+  Redirect
 } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { createBrowserHistory } from 'history';
@@ -13,8 +16,7 @@ import Example from 'Pages/MockExample';
 import store from './Store';
 
 import './App.less';
-import 'Components/Background';
-
+// import 'Components/Background';
 
 // TODO: use names
 export default function () {
@@ -38,6 +40,7 @@ export default function () {
                 path="/example"
                 component={Example}
               />
+              <Redirect to='/github'/>
             </Switch>
           </div>
         </div>
