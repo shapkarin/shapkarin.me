@@ -19,12 +19,7 @@ const mapDispatchToProps = {
 )
 export default class Github extends Component {
   componentDidMount(){
-    const { fetch, repositories } = this.props;
-    // also I can use _.memoize but maybe only without saga
-    // https://codesandbox.io/s/72qw583y21
-    if(repositories.length === 0){
-      fetch()
-    }
+    this.props.fetch();
   }
 
   render () {

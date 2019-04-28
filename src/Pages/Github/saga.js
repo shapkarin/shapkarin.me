@@ -1,4 +1,4 @@
-import { fork, takeEvery } from 'redux-saga/effects';
+import { fork, take } from 'redux-saga/effects';
 
 import fetch from 'Utils/fetch';
 import { fetchGithub } from 'Utils/API';
@@ -8,7 +8,6 @@ import {
   loadRepositoriesError
 } from './actions';
 import { FETCH_REPOSITORIES } from './constants';
-
 
 function* getRepositories(action) {
   yield fork(fetch, {
@@ -21,5 +20,6 @@ function* getRepositories(action) {
 }
 
 export default function* () {
-  yield takeEvery(FETCH_REPOSITORIES, getRepositories);
+  yield take(FETCH_REPOSITORIES);
+  yield fork(getRepositories);
 }
