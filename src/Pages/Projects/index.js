@@ -46,9 +46,7 @@ export default class Projects extends Component {
               name, url, id, loading = false, info, open = false, fetched
             }) =>(
               <div key={id} style={{marginBottom: '10px'}}>
-                <a href={url}>
-                  {name}
-                </a>
+                {name}
                 <br/>
                 <div style={{cursor: 'pointer'}}onClick={() => toggleInfo({id, fetched})}>{open ? 'close' : 'show'} info</div>
                 <Loading loading={loading}>
