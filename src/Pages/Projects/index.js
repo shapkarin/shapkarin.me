@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { GoChevronRight, GoChevronDown } from "react-icons/go";
 
 
 import { fetchProjects, fetchProjectInfo } from './actions';
@@ -48,7 +49,7 @@ export default class Projects extends Component {
               <div key={id} style={{marginBottom: '10px'}}>
                 {name}
                 <br/>
-                <div style={{cursor: 'pointer'}}onClick={() => toggleInfo({id, fetched})}>{open ? 'close' : 'show'} info</div>
+                <div style={{cursor: 'pointer'}} onClick={() => toggleInfo({id, fetched})}>more info {open ? <GoChevronDown /> : <GoChevronRight />}</div>
                 <Loading loading={loading}>
                   <Collapse open={open}>
                     <div
