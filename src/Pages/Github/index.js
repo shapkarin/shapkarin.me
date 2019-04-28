@@ -38,14 +38,14 @@ export default class Github extends Component {
             homepage,
             fork,
             updated_at,
-            issues_url
+            language
           }) =>(
             <div key={id} style={{marginBottom: '10px'}}>
-              <a href={html_url}>{name}{fork && <GoRepoForked />}</a>
+              <a href={html_url} target="_blank">{name}{fork && <GoRepoForked />}</a>
               <div style={{width: '300px'}}>{description}</div>
               <div><GoPulse /> {(new Date(updated_at)).toLocaleDateString('ru-RU')}</div>
-              <div><GoIssueOpened /> open issues <a href={issues_url}>{open_issues_count}</a></div>
-              <div><MdWeb /> <a href={{homepage}}>homepage</a></div>
+              <div><GoIssueOpened /> open issues <a href={`${html_url}/issues`} target="_blank">{open_issues_count}</a></div>
+              {homepage && <div><MdWeb /> <a href={homepage} target="_blank">homepage</a></div>}
             </div>
           ))}
         </div>
