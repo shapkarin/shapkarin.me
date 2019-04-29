@@ -40,7 +40,6 @@ export default function () {
                 path="/example"
                 component={Example}
               />
-              <Redirect to='/github'/>
             </Switch>
           </div>
         </div>
