@@ -15,7 +15,7 @@ import Example from 'Pages/MockExample';
 import store from './Store';
 
 import './App.less';
-// import 'Components/Background';
+import 'Components/Background';
 
 // TODO: use names
 export default function () {
