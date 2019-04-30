@@ -24,6 +24,9 @@ export default class Scene {
     // this.ctx.fillStyle = "";
     this.array2D = this.createArray();
     this.draw();
+    this.canvas.addEventListener('click', () => {
+      this.draw();
+    })
   }
 
   //  TODO..
@@ -42,10 +45,10 @@ export default class Scene {
     let rowI = 0;
     let colI = 0;
 
-    for (var x = 20; x < this.width - 20; x += 20) {
+    for (var x = 10; x < this.width - 10; x += 20) {
       colI = 0;
       result.push([]);
-      for (var y = 20; y < this.height - 20; y += 20) {
+      for (var y = 10; y < this.height - 10; y += 20) {
         result[rowI].push(
           new Shape({ x, y, ctx: this.ctx, row: rowI, col: colI })
         );
@@ -59,6 +62,8 @@ export default class Scene {
 
   // TODO..
   draw = () => {
+    this.ctx.fillStyle = '#17293a';
+    this.ctx.fillRect(0, 0, this.width, this.height);
     for (let rowI = 0; rowI < this.array2D.length; rowI++) {
       for (let colI = 0; colI < this.array2D[rowI].length; colI++) {
         const shape = this.array2D[rowI][colI];
@@ -90,5 +95,6 @@ export default class Scene {
     this.ctx.stroke();
     this.ctx.closePath();
   }
+
   
 }
