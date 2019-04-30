@@ -18,13 +18,13 @@ export default class Shape {
 
   drawCircle = () => {
     this.ctx.beginPath();
-    this.ctx.strokeStyle = `rgba(255, 255, 255, ${random(0.03, 0.06)})`;
+    this.ctx.strokeStyle = `rgba(255, 255, 255, ${random(0.03, 0.05)})`;
     this.ctx.arc(this.x, this.y, this.radius, 0, 2 * Math.PI);
     this.ctx.stroke();
   }
 
   drawRect = () => {
-    this.ctx.strokeStyle = `rgba(255, 255, 255, ${random(0.03, 0.06)})`;
+    this.ctx.strokeStyle = `rgba(255, 255, 255, ${random(0.03, 0.05)})`;
     this.ctx.rect(this.x - this.size / 2, this.y - this.size / 2, this.size, this.size);
     this.ctx.stroke();
   }
