@@ -2,7 +2,8 @@ import React from 'react';
 import {
   Switch,
   Router,
-  Route
+  Route,
+  Redirect
 } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { createBrowserHistory } from 'history';
@@ -39,6 +40,7 @@ export default function () {
                 path="/example"
                 component={Example}
               />
+              <Redirect to="/github" />
             </Switch>
           </div>
         </div>

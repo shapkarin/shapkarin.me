@@ -76,7 +76,7 @@ export default class Scene {
     
     const randomItem = getRandomItem();
     // const randomItem = this.array2D[4][4];
-    this.ctx.strokeStyle = `rgba(255, 255, 255, ${random(0.05, 0.15)})`;
+    this.ctx.strokeStyle = `rgba(255, 255, 255, ${random(0.05, 0.1)})`;
     this.ctx.beginPath();
     this.ctx.moveTo(randomItem.x, randomItem.y);
     const nextCol = randomItem.col + random(this.countX - randomItem.col - 1);
