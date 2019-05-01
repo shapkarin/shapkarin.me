@@ -24,6 +24,10 @@ export default class Scene {
     // this.ctx.fillStyle = "";
     this.array2D = this.createArray();
     this.draw();
+    this.canvas.addEventListener('click', () => {
+      this.randomizeAll();
+      this.draw();
+    });
   }
 
   //  TODO..
@@ -42,10 +46,10 @@ export default class Scene {
     let rowI = 0;
     let colI = 0;
 
-    for (var x = 20; x < this.width - 20; x += 20) {
+    for (let x = 10; x < this.width - 10; x += 20) {
       colI = 0;
       result.push([]);
-      for (var y = 20; y < this.height - 20; y += 20) {
+      for (let y = 10; y < this.height - 10; y += 20) {
         result[rowI].push(
           new Shape({ x, y, ctx: this.ctx, row: rowI, col: colI })
         );
@@ -59,22 +63,25 @@ export default class Scene {
 
   // TODO..
   draw = () => {
+    this.ctx.fillStyle = '#17293a';
+    this.ctx.fillRect(0, 0, this.width, this.height);
     for (let rowI = 0; rowI < this.array2D.length; rowI++) {
       for (let colI = 0; colI < this.array2D[rowI].length; colI++) {
         const shape = this.array2D[rowI][colI];
         shape.draw();
       }
     }
-    const times = random(5, 50);
-    for(let i = 0; i < 28; i++){
+    const times = random(20, 28);
+    for(let i = 0; i < times; i++){
       this.drawCross();
     }
+    // window.requestAnimationFrame(this.draw);
   }
 
+  getRandomItem = () => this.array2D[random(1, this.array2D.length - 1)][random(1, this.countX - 1)];
+
   drawCross = () => {
-    const getRandomItem = () => this.array2D[random(1, this.array2D.length - 1)][random(1, this.countX - 1)];
-    
-    const randomItem = getRandomItem();
+    const randomItem = this.getRandomItem();
     // const randomItem = this.array2D[4][4];
     this.ctx.strokeStyle = `rgba(255, 255, 255, ${random(0.05, 0.1)})`;
     this.ctx.beginPath();
@@ -90,5 +97,18 @@ export default class Scene {
     this.ctx.stroke();
     this.ctx.closePath();
   }
-  
+
+  randomizeAll = () => {
+    for (let rowI = 0; rowI < this.array2D.length; rowI++) {
+      for (let colI = 0; colI < this.array2D[rowI].length; colI++) {
+        const shape = this.array2D[rowI][colI];
+        shape.randomize();
+      }
+    }
+  }
+
+  randomizeSome = () => {
+    const item = this.getRandomItem();
+    item.randomize();
+  }
 }

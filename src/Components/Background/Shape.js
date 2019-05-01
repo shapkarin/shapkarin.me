@@ -2,6 +2,8 @@ import random from 'lodash/random';
 
 export default class Shape {
   constructor(props) {
+    this.methods = ['drawCircle', 'drawRect', 'drawNothing'];
+    this.type = this.methods[random(this.methods.length - 1)];
     this.x = props.x;
     this.y = props.y;
     this.row = props.row;
@@ -9,11 +11,11 @@ export default class Shape {
     this.radius = random(4, 9);
     this.size = random(6, 16);
     this.ctx = props.ctx;
+    this.dir = 1;
   }
 
   draw = () => {
-    const methods = ['drawCircle', 'drawRect', 'drawNothing'];
-    this[methods[random(methods.length - 1)]]();
+    this[this.type]();
   }
 
   drawCircle = () => {
@@ -33,4 +35,30 @@ export default class Shape {
     return 'heh';
   }
 
+  //TODO: refact
+  animate = () => {
+    if (this.type === 'drawCircle') { 
+      this.radius += 0.05 * this.dir;
+      if (this.radius >= 9) {
+        this.dir = -1;
+      }
+      if (this.radius <= 4) {
+        this.dir = 1;
+      }
+    } else {
+      this.size += 0.05 * this.dir;
+      if (this.size >= 16) {
+        this.dir = -1;
+      }
+      if (this.size <= 6) {
+        this.dir = 1;
+      }
+    }
+  }
+
+  randomize = () => {
+    this.radius = random(4, 9);
+    this.size = random(6, 16);
+    this.type = this.methods[random(this.methods.length - 1)];
+  }
 }
