@@ -4,6 +4,7 @@ const fs = require('fs');
 const path = require('path');
 const webpack = require('webpack');
 const resolve = require('resolve');
+const autoprefixer = require('autoprefixer');
 const PnpWebpackPlugin = require('pnp-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin');
@@ -465,6 +466,17 @@ module.exports = function(webpackEnv) {
               use: [
                 'style-loader',
                 'css-loader',
+                {
+                  loader: 'postcss-loader',
+                  options: {
+                      plugins: [
+                          autoprefixer({
+                              browsers:['ie >= 10', 'last 2 version']
+                          })
+                      ],
+                      sourceMap: true
+                  }
+                },
                 {
                   loader: 'less-loader',
                   options: {

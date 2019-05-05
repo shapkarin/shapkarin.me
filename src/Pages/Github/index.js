@@ -6,6 +6,8 @@ import { MdWeb } from 'react-icons/md';
 import { fetchRepositories } from './actions';
 import Loading from 'Components/Loading';
 
+import './style.less';
+
 const mapStateToProps = (state) => {
   const { github: { loading, repositories } } = state;
   return { loading, repositories };
@@ -28,7 +30,7 @@ export default class Github extends Component {
     const { loading, repositories } = this.props;
     return (
       <Loading loading={loading}>
-        <div>
+        <div className="Page__Github">
           {repositories.map(({
             id,
             name,
@@ -37,15 +39,16 @@ export default class Github extends Component {
             open_issues_count,
             homepage,
             fork,
-            updated_at,
-            language
+            updated_at
           }) =>(
-            <div key={id} style={{marginBottom: '10px'}}>
-              <a href={html_url} target="_blank">{name}{fork && <GoRepoForked />}</a>
-              <div style={{width: '300px'}}>{description}</div>
-              <div><GoPulse /> {(new Date(updated_at)).toLocaleDateString('ru-RU')}</div>
-              <div><GoIssueOpened /> open issues <a href={`${html_url}/issues`} target="_blank">{open_issues_count}</a></div>
-              {homepage && <div><MdWeb /> <a href={homepage} target="_blank">homepage</a></div>}
+            <div key={id} className="Page__GithubItem">
+              <div className="Page__GithubItemInner">
+                <a className="GithubItem__Link centered-label" href={html_url} target="_blank">{name}{fork && <GoRepoForked />}</a>
+                <div className="centered-label" style={{maxWidth: '250px', marginBottom: '7px'}}>{description}</div>
+                <div className="centered-label" style={{marginBottom: '7px'}}><GoPulse /> {(new Date(updated_at)).toLocaleDateString('ru-RU')}</div>
+                <div className="centered-label" style={{marginBottom: '7px'}}><GoIssueOpened /> open issues <a href={`${html_url}/issues`} target="_blank">{open_issues_count}</a></div>
+                {homepage && <div className="centered-label" ><MdWeb /> <a href={homepage} target="_blank">homepage</a></div>}
+              </div>
             </div>
           ))}
         </div>

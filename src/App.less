@@ -1,6 +1,8 @@
-// TODO: add resets
+@import 'reset';
+
 body {
   background-color: #17293a;
+  font-family: 'Lato', sans-serif;
   &, a {
     color: white;
   }
@@ -8,12 +10,37 @@ body {
 
 // rename later
 .Wrap {
+  padding: 20px;
   @media (min-width: 700px) {
-    padding-top: 20px;
     display: flex;
   }
 }
 
+.Page {
+  padding-top: 15px;
+  @media (min-width: 700px) {
+    padding-top: 0;
+  }
+}
+
+// TODO
+// .Page {
+//   &__Github {
+//     @media (min-width: 700px) {
+//       width: 600px;
+//       display: flex;
+//       flex-direction: row;
+//       justify-content: center;
+//       align-content: center;
+//       &Item {
+//         height: 200px;
+//         flex: 1;
+//       }
+//     }
+//   }
+// }
+
+//todo: fix
 #background {
   position: fixed;
   z-index: -1;
@@ -22,3 +49,4 @@ body {
   bottom: 0;
   left: 0;
 }
+

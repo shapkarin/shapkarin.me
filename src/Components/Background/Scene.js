@@ -63,6 +63,7 @@ export default class Scene {
 
   // TODO..
   draw = () => {
+    this.ctx.beginPath();
     this.ctx.fillStyle = '#17293a';
     this.ctx.fillRect(0, 0, this.width, this.height);
     for (let rowI = 0; rowI < this.array2D.length; rowI++) {
@@ -75,6 +76,7 @@ export default class Scene {
     for(let i = 0; i < times; i++){
       this.drawCross();
     }
+    this.ctx.closePath();
     // window.requestAnimationFrame(this.draw);
   }
 
@@ -110,5 +112,20 @@ export default class Scene {
   randomizeSome = () => {
     const item = this.getRandomItem();
     item.randomize();
+  }
+
+  randomTimes = () => random(10) > 1 ? [1] : [2, 20]
+
+  animation = () => {
+    const delay = random(1000, 3000);
+    const times = this.randomTimes();
+    setTimeout(() => {
+      for (let i = 0; i < random.apply(this, [100,1000]); i++) {
+        // this.getRandomItem().animate();
+        this.randomizeSome();
+      }
+      this.draw();
+      this.animation();
+    }, delay);
   }
 }

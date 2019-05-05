@@ -1,16 +1,27 @@
 .Menu {
-  padding: 10px 0;
   @media (min-width: 700px) {
     display: flex;
     flex-direction: column;
-    padding: 0 10px;
+    margin-right: 20px;
+    min-width: 110px;
   }
   &__Item {
-    text-decoration: none;
+    text-decoration: underline;
     color: white;
     margin-right: 10px;
+    @media (min-width: 700px) {
+      margin-bottom: 10px;
+    }
     &--active {
-      text-decoration: underline;
+      text-decoration: none;
+      &::after {
+        content: " ↓";
+      }
+      @media (min-width: 700px) {
+        &::after {
+          content: " →";
+        }
+      }
     }
   }
 
