@@ -1,4 +1,6 @@
 // TODO: refact
+import paper from 'paper';
+
 import Shape from './Shape';
 import random from 'lodash/random';
 
@@ -19,15 +21,35 @@ export default class Scene {
     this.canvas.height = this.height;
     document.body.appendChild(this.canvas);
 
-    this.ctx = this.canvas.getContext('2d');
-    this.ctx.lineWidth = 1;
-    // this.ctx.fillStyle = "";
+    paper.setup(this.canvas);
     this.array2D = this.createArray();
+    this.animatingItems = [];
     this.draw();
-    this.canvas.addEventListener('click', () => {
-      this.randomizeAll();
-      this.draw();
-    });
+    this.animation();
+    
+    let item;
+    paper.view.onFrame = () => { 
+      for(let i = 0; i < this.animatingItems.length; i++){
+        item = this.animatingItems[i];
+        if(item.type === 'drawRect' && item.isAnimate){
+          item.shape.rotate(5);
+        }
+      }
+    }
+    
+    // this.ctx = this.canvas.getContext('2d');
+    // this.ctx.lineWidth = 1;
+    // this.ctx.fillStyle = "";
+    // maybe I'll refact to the flat array
+    
+    // this.draw();
+    // this.canvas.addEventListener('click', () => {
+    //   this.randomizeAll();
+    //   this.draw();
+    // });
+    // this.animation();
+
+    // TODO: background color
   }
 
   //  TODO..
@@ -38,8 +60,6 @@ export default class Scene {
     // this.countX = countX;
     this.countX = 50;
     const itemH = itemW;
-    // it works too, functional:
-    // return [...Array(countY)].map((row, rowI) => [...Array(countX)].map((cell, colI) => new Shape({ x: itemW * colI, y: itemH * rowI, ctx: this.ctx, row: rowI, col: colI })));
     
     // as an example
     const result = [];
@@ -63,20 +83,21 @@ export default class Scene {
 
   // TODO..
   draw = () => {
-    this.ctx.beginPath();
-    this.ctx.fillStyle = '#17293a';
-    this.ctx.fillRect(0, 0, this.width, this.height);
+    // this.ctx.beginPath();
+    // this.ctx.fillStyle = '#17293a';
+    // this.ctx.closePath();
+    // this.ctx.fillRect(0, 0, this.width, this.height);
     for (let rowI = 0; rowI < this.array2D.length; rowI++) {
       for (let colI = 0; colI < this.array2D[rowI].length; colI++) {
         const shape = this.array2D[rowI][colI];
         shape.draw();
       }
     }
-    const times = random(20, 28);
-    for(let i = 0; i < times; i++){
-      this.drawCross();
-    }
-    this.ctx.closePath();
+    // const times = random(20, 28);
+    // for(let i = 0; i < times; i++){
+    //   this.drawCross();
+    // }
+    
     // window.requestAnimationFrame(this.draw);
   }
 
@@ -117,14 +138,20 @@ export default class Scene {
   randomTimes = () => random(10) > 1 ? [1] : [2, 20]
 
   animation = () => {
-    const delay = random(1000, 3000);
+    const delay = random(100, 200);
     const times = this.randomTimes();
     setTimeout(() => {
-      for (let i = 0; i < random.apply(this, [100,1000]); i++) {
-        // this.getRandomItem().animate();
-        this.randomizeSome();
+      for (let i = 0; i < random.apply(this, [50,200]); i++) {
+        const shape = this.getRandomItem();
+        if (!shape.isAnimate) {
+          shape.isAnimate = true;
+          this.animatingItems.push(shape);
+        } else {
+          shape.isAnimate = false;
+        }
+        //this.randomizeSome();
       }
-      this.draw();
+      //this.draw();
       this.animation();
     }, delay);
   }

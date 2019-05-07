@@ -1,4 +1,6 @@
+import paper from 'paper';
 import random from 'lodash/random';
+
 
 export default class Shape {
   constructor(props) {
@@ -14,6 +16,8 @@ export default class Shape {
     this.dir = 1;
     //todo
     this.opacity = this.randomOpacity();
+    this.isAnimate = false;
+    this.shape = {};
   }
 
   randomOpacity = () => random(10) > 1 ? random(0.03, 0.07) : random(0.1, 0.22)
@@ -22,20 +26,16 @@ export default class Shape {
     this[this.type]();
   }
 
+  randomColor = () => `rgba(255, 255, 255, ${this.opacity})`;
+
   drawCircle = () => {
-    this.ctx.beginPath();
-    this.ctx.strokeStyle = `rgba(255, 255, 255, ${this.opacity})`;
-    this.ctx.arc(this.x, this.y, this.radius, 0, 2 * Math.PI);
-    this.ctx.stroke();
-    this.ctx.closePath();
+    this.shape = new paper.Path.Circle(new paper.Point(this.x, this.y), this.radius);
+    this.shape.strokeColor = this.randomColor();
   }
 
   drawRect = () => {
-    this.ctx.beginPath();
-    this.ctx.strokeStyle = `rgba(255, 255, 255, ${this.opacity})`;
-    this.ctx.rect(this.x - this.size / 2, this.y - this.size / 2, this.size, this.size);
-    this.ctx.stroke();
-    this.ctx.closePath();
+    this.shape = new paper.Path.Rectangle(this.x - this.size / 2, this.y - this.size / 2, this.size, this.size);
+    this.shape.strokeColor = this.randomColor();
   }
 
   drawNothing(){
