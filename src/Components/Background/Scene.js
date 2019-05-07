@@ -29,10 +29,12 @@ export default class Scene {
     
     let item;
     paper.view.onFrame = () => { 
-      for(let i = 0; i < this.animatingItems.length; i++){
-        item = this.animatingItems[i];
-        if(item.type === 'drawRect' && item.isAnimate){
-          item.shape.rotate(5);
+      for (let rowI = 0; rowI < this.array2D.length; rowI++) {
+        for (let colI = 0; colI < this.array2D[rowI].length; colI++) {
+          item = this.array2D[rowI][colI];
+          if(item.type === 'drawRect' && item.isAnimate){
+            item.shape.rotate(2);
+          }
         }
       }
     }
@@ -145,7 +147,6 @@ export default class Scene {
         const shape = this.getRandomItem();
         if (!shape.isAnimate) {
           shape.isAnimate = true;
-          this.animatingItems.push(shape);
         } else {
           shape.isAnimate = false;
         }
