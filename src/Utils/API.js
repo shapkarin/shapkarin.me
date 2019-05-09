@@ -18,4 +18,4 @@ export const fetchProjectInfo = ({ id }) => request.get(`/projects/${id}`);
 
 export const fetchAbout = () => request.get(urls.about);
 
-export const fetchMockExample = () => request.get(urls.mockExample);
+export const fetchLikes = () => axios.get(urls.likes);

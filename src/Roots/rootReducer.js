@@ -3,7 +3,7 @@ import { combineReducers } from 'redux';
 import aboutReducer from 'Components/About/reducers';
 import githubReducer from 'Pages/Github/reducers';
 import projectsReducer from 'Pages/Projects/reducers';
-import mockExampleReducer from 'Pages/MockExample/reducers';
+import mockExampleReducer from 'Pages/Liked/reducers';
 
 const rootReducer = combineReducers({
   about: aboutReducer,

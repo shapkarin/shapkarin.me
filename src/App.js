@@ -2,7 +2,8 @@ import React from 'react';
 import {
   Switch,
   Router,
-  Route
+  Route,
+  Redirect
 } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { createBrowserHistory } from 'history';
@@ -11,7 +12,7 @@ import About from 'Components/About';
 import Menu from 'Components/Menu';
 import Github from 'Pages/Github';
 import Projects from 'Pages/Projects';
-import Example from 'Pages/MockExample';
+import Liked from 'Pages/Liked';
 import store from './Store';
 
 import './App.less';
@@ -28,17 +29,22 @@ export default function () {
           <div className="Page">
             <Switch>
               <Route
-                path="/github"
+                path="/repositories"
                 component={Github}
+              />
+              <Redirect
+                from="/github"
+                to="/repositories"
               />
               <Route
                 path="/projects"
                 component={Projects}
               />
               <Route
-                path="/example"
-                component={Example}
+                path="/liked"
+                component={Liked}
               />
+              
             </Switch>
           </div>
         </div>

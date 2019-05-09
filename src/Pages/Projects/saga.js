@@ -6,8 +6,8 @@ import {
   takeEvery,
   takeLatest
 } from 'redux-saga/effects';
+import fetch from 'saga-fetch';
 
-import fetch from 'Utils/fetch';
 import { fetchProjects, fetchProjectInfo } from 'Utils/API';
 import {
   loadProjectsStart,
@@ -28,7 +28,7 @@ function* getProjects(action) {
     action,
     method: fetchProjects,
     start: loadProjectsStart,
-    succes: loadProjectsSuccess,
+    success: loadProjectsSuccess,
     error: loadProjectsError
   });
 }
