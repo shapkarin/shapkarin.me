@@ -51,6 +51,11 @@ export default class Github extends Component {
               </div>
             </div>
           ))}
+          <div className="Page__GithubItem" style={{flexBasis: '100%'}}>
+            <div className="Page__GithubItemInner">
+              <a href="https://github.com/shapkarin?tab=repositories" target="_blank" className="GithubItem__Link">More at Github...</a>
+            </div>
+          </div>
         </div>
       </Loading>
     )
