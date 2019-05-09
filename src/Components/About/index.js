@@ -31,7 +31,9 @@ export default class About extends Component {
         <Loading loading={loading}>
           <div className="About">
             {text}
-            <div>links</div>
+            <div>
+              <a hre="https://github.com/shapkarin">My github</a>
+            </div>
           </div>
         </Loading>
       </>

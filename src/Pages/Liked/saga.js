@@ -1,4 +1,4 @@
-import { fork, takeEvery } from 'redux-saga/effects';
+import { fork, take } from 'redux-saga/effects';
 import fetch from 'saga-fetch';
 
 import { fetchLikes } from 'Utils/API';
@@ -21,5 +21,6 @@ function* getMockExamples(action) {
 }
 
 export default function* () {
-  yield takeEvery(FETCH_MOCK_EXAMPLE, getMockExamples);
+  yield take(FETCH_MOCK_EXAMPLE);
+  yield fork(getMockExamples);
 }
