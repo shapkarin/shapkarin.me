@@ -32,7 +32,7 @@ export default class About extends Component {
           <div className="About">
             {text}
             <div>
-              <a hre="https://github.com/shapkarin">My github</a>
+              <a href="https://github.com/shapkarin" target="_blank">My github</a>
             </div>
           </div>
         </Loading>
