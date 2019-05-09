@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { IoIosRefresh } from "react-icons/io";
 
 import { CHANGE_BACKGROUND } from './constants';
+import './style.less';
 
 const mapDispatchToProps = ({
   do_change: () => ({ type: CHANGE_BACKGROUND })
@@ -10,7 +11,7 @@ const mapDispatchToProps = ({
 
 const Controls = (props) => {
   return (
-    <span onClick={() => props.do_change()} style={{cursor: 'pointer', userSelect: 'none', marginTop: '1em'}} >
+    <span onClick={() => props.do_change()} className="Menu__Item--bckg">
       <IoIosRefresh/> Background
     </span>
   )
