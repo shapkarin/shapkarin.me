@@ -1,6 +1,6 @@
 import { fork, take } from 'redux-saga/effects';
+import fetch from 'saga-fetch';
 
-import fetch from 'Utils/fetch';
 import { fetchGithub } from 'Utils/API';
 import {
   loadRepositoriesStart,
@@ -14,7 +14,7 @@ function* getRepositories(action) {
     action,
     method: fetchGithub,
     start: loadRepositoriesStart,
-    succes: loadRepositoriesSuccess,
+    success: loadRepositoriesSuccess,
     error: loadRepositoriesError
   });
 }

@@ -98,4 +98,4 @@ export const projectInfo = (url) => {
   return infos[id];
 };
 
-export const about = "I create different front-end and backend apps. Used different stack and from time to time research for some new. In production: React, Redux, Backbone, ROR, Koa, Webpack, Grunt, Gulp. Also used stylus, less, jade(pug), haml, twig, underscore, ejs.";
+export const about = "I like to code. That what I used for that: React, Redux, Backbone, ROR, Koa, Webpack, Grunt, Gulp. Also used stylus, less, jade(pug), haml, twig, underscore, ejs.";

@@ -1,9 +1,13 @@
 import pathToRegexp from 'path-to-regexp';
 
+const github = {
+  user: 'https://api.github.com/users/shapkarin'
+};
+
 export default {
-  github: 'https://api.github.com/users/shapkarin/repos?sort=updated&limit=3',
+  github: `${github.user}/repos?sort=updated&limit=3`,
   projects: '/projects',
   projectInfo: pathToRegexp('/projects/:id'),
   about: '/about',
-  mockExample: '/example'
+  likes: `${github.user}/starred`
 };

@@ -5,17 +5,17 @@ import './Menu.less';
 
 const links = [
   {
-    title: 'Github',
-    url: '/github',
+    title: 'Repositories',
+    url: '/repositories',
+  },
+  {
+    title: 'Liked',
+    url: '/liked'
   },
   {
     title: 'Projects',
     url: '/projects',
   },
-  {
-    title: 'Mock Example',
-    url: '/example'
-  }
 ];
 
 export default () => (

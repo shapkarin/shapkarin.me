@@ -1,7 +1,7 @@
 import { fork, takeEvery } from 'redux-saga/effects';
+import fetch from 'saga-fetch';
 
-import fetch from 'Utils/fetch';
-import { fetchMockExample } from 'Utils/API';
+import { fetchLikes } from 'Utils/API';
 import {
   loadMockExampleStart,
   loadMockExampleSuccess,
@@ -13,9 +13,9 @@ import { FETCH_MOCK_EXAMPLE } from './constants';
 function* getMockExamples(action) {
   yield fork(fetch, {
     action,
-    method: fetchMockExample,
+    method: fetchLikes,
     start: loadMockExampleStart,
-    succes: loadMockExampleSuccess,
+    success: loadMockExampleSuccess,
     error: loadMockExampleError
   });
 }
