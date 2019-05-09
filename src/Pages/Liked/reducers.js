@@ -1,7 +1,7 @@
 import {
-  LOAD_MOCK_EXAMPLE_START,
-  LOAD_MOCK_EXAMPLE_SUCCESS,
-  LOAD_MOCK_EXAMPLE_ERROR,
+  LOAD_LIKED_START,
+  LOAD_LIKED_SUCCESS,
+  LOAD_LIKED_ERROR,
 } from './constants';
 
 const initialState = {
@@ -11,19 +11,19 @@ const initialState = {
 
 export default function (state = initialState, action) {
   switch (action.type) {
-    case LOAD_MOCK_EXAMPLE_START:
+    case LOAD_LIKED_START:
       return {
         ...state,
         loading: true,
         error: initialState.error
       };
-    case LOAD_MOCK_EXAMPLE_SUCCESS:
+    case LOAD_LIKED_SUCCESS:
       return {
         ...state,
         list: action.response,
         loading: false
       };
-    case LOAD_MOCK_EXAMPLE_ERROR:
+    case LOAD_LIKED_ERROR:
       return {
         ...state,
         error: action.error,

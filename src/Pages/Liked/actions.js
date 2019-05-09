@@ -1,24 +1,24 @@
 import {
-  FETCH_MOCK_EXAMPLE,
-  LOAD_MOCK_EXAMPLE_START,
-  LOAD_MOCK_EXAMPLE_SUCCESS,
-  LOAD_MOCK_EXAMPLE_ERROR,
+  FETCH_LIKED,
+  LOAD_LIKED_START,
+  LOAD_LIKED_SUCCESS,
+  LOAD_LIKED_ERROR,
 } from './constants';
 
-export const fetchMockExample = () => ({
-  type: FETCH_MOCK_EXAMPLE
+export const fetchLiked = () => ({
+  type: FETCH_LIKED
 });
 
-export const loadMockExampleStart = () => ({
-  type: LOAD_MOCK_EXAMPLE_START
+export const loadLikedStart = () => ({
+  type: LOAD_LIKED_START
 });
 
-export const loadMockExampleSuccess = response => ({
-  type: LOAD_MOCK_EXAMPLE_SUCCESS,
+export const loadLikedSuccess = response => ({
+  type: LOAD_LIKED_SUCCESS,
   response
 });
 
-export const loadMockExampleError = error => ({
-  type: LOAD_MOCK_EXAMPLE_ERROR,
+export const loadLikedError = error => ({
+  type: LOAD_LIKED_ERROR,
   error
 });
