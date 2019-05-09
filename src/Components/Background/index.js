@@ -1,3 +1,5 @@
 import Scene from './Scene';
 
-new Scene();
+const scene = new Scene();
+
+export default scene;

@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { GoRepoForked, GoPulse, GoIssueOpened } from 'react-icons/go';
 import { MdWeb } from 'react-icons/md';
 
-import { fetchMockExample } from './actions';
+import { fetchLiked } from './actions';
 import Loading from 'Components/Loading';
 
 const mapStateToProps = (state) => {
@@ -12,7 +12,7 @@ const mapStateToProps = (state) => {
 };
 
 const mapDispatchToProps = {
-  fetch: fetchMockExample
+  fetch: fetchLiked
 };
 
 @connect(

@@ -24,10 +24,10 @@ export default class Scene {
     // this.ctx.fillStyle = "";
     this.array2D = this.createArray();
     this.draw();
-    this.canvas.addEventListener('click', () => {
-      this.randomizeAll();
-      this.draw();
-    });
+    // this.canvas.addEventListener('click', () => {
+    //   this.randomizeAll();
+    //   this.draw();
+    // });
   }
 
   //  TODO..

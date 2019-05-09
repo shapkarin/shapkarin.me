@@ -3,24 +3,24 @@ import fetch from 'saga-fetch';
 
 import { fetchLikes } from 'Utils/API';
 import {
-  loadMockExampleStart,
-  loadMockExampleSuccess,
-  loadMockExampleError,
+  loadLikedStart,
+  loadLikedSuccess,
+  loadLikedError,
 } from './actions';
-import { FETCH_MOCK_EXAMPLE } from './constants';
+import { FETCH_LIKED } from './constants';
 
 
 function* getMockExamples(action) {
   yield fork(fetch, {
     action,
     method: fetchLikes,
-    start: loadMockExampleStart,
-    success: loadMockExampleSuccess,
-    error: loadMockExampleError
+    start: loadLikedStart,
+    success: loadLikedSuccess,
+    error: loadLikedError
   });
 }
 
 export default function* () {
-  yield take(FETCH_MOCK_EXAMPLE);
+  yield take(FETCH_LIKED);
   yield fork(getMockExamples);
 }
