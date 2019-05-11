@@ -16,15 +16,17 @@ export default class Shape {
     this.opacity = this.randomOpacity();
   }
 
-  randomOpacity = () => random(10) > 1 ? random(0.03, 0.07) : random(0.1, 0.22)
+  randomOpacity = () => random(10) > 1 ? random(0.04, 0.1) : random(0.2, 0.4)
 
   draw = () => {
     this[this.type]();
   }
 
+  color = () => `rgba(255, 255, 255, ${this.opacity})`
+
   drawCircle = () => {
     this.ctx.beginPath();
-    this.ctx.strokeStyle = `rgba(255, 255, 255, ${this.opacity})`;
+    this.ctx.strokeStyle = this.color();
     this.ctx.arc(this.x, this.y, this.radius, 0, 2 * Math.PI);
     this.ctx.stroke();
     this.ctx.closePath();
@@ -32,7 +34,7 @@ export default class Shape {
 
   drawRect = () => {
     this.ctx.beginPath();
-    this.ctx.strokeStyle = `rgba(255, 255, 255, ${this.opacity})`;
+    this.ctx.strokeStyle = this.color();
     this.ctx.rect(this.x - this.size / 2, this.y - this.size / 2, this.size, this.size);
     this.ctx.stroke();
     this.ctx.closePath();
