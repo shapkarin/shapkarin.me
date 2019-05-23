@@ -7,6 +7,7 @@ import {
 } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { createBrowserHistory } from 'history';
+import { StickyContainer, Sticky } from 'react-sticky';
 
 import About from 'Components/About';
 import Menu from 'Components/Menu';
