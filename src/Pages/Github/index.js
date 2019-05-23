@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { GoRepoForked, GoPulse, GoIssueOpened } from 'react-icons/go';
 import { MdWeb } from 'react-icons/md';
-import {Emojify} from 'react-emojione';
 
 import { fetchRepositories } from './actions';
 import Loading from 'Components/Loading';
