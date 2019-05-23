@@ -1,3 +1,4 @@
+// TODO: move out of Mock folder
 import pathToRegexp from 'path-to-regexp';
 
 const github = {
@@ -5,7 +6,7 @@ const github = {
 };
 
 export default {
-  github: `${github.user}/repos?sort=updated&limit=3`,
+  github: `${github.user}/repos?sort=updated`,
   projects: '/projects',
   projectInfo: pathToRegexp('/projects/:id'),
   about: '/about',
