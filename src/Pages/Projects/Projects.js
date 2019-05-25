@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import { GoChevronRight, GoChevronDown } from "react-icons/go";
 
-import { toggleProjectInfo } from './actions';
 import Loading from 'Components/Loading';
 import Collapse from 'Components/Collapse';
 import { projects, info } from './routines';
@@ -29,6 +29,13 @@ const mapDispatchToProps = {
   mapDispatchToProps
 )
 export default class Projects extends Component {
+  static propTypes = {
+    loading: PropTypes.bool.isRequired,
+    fetch: PropTypes.func.isRequired,
+    projects: PropTypes.array.isRequired,
+    toggleInfo: PropTypes.func.isRequired,
+  }
+
   componentDidMount(){
     // TODO: use just take() saga effect as in Github page
     const { fetch, projects } = this.props;

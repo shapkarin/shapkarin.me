@@ -1,6 +1,3 @@
-import faker from 'faker';
-import random from 'lodash/random';
-
 export const projects = () => (
   [
     {

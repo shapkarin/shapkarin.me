@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import { GoRepoForked, GoPulse, GoIssueOpened } from 'react-icons/go';
 import { MdWeb } from 'react-icons/md';
 
@@ -20,6 +21,12 @@ const mapDispatchToProps = {
   mapDispatchToProps
 )
 export default class Github extends Component {
+  static propTypes = {
+    loading: PropTypes.bool.isRequired,
+    list: PropTypes.array.isRequired,
+    fetch: PropTypes.func.isRequired
+  }
+
   componentDidMount(){
     this.props.fetch()
   }

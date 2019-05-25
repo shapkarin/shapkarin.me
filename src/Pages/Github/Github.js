@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import { GoRepoForked, GoPulse, GoIssueOpened } from 'react-icons/go';
 import { MdWeb } from 'react-icons/md';
 
@@ -9,8 +10,8 @@ import repositories from './routines';
 import './style.less';
 
 const mapStateToProps = (state) => {
-  const { github: { loading, repositories } } = state;
-  return { loading, repositories };
+  const { github: { loading, repositories: list } } = state;
+  return { loading, list };
 };
 
 const mapDispatchToProps = {
@@ -22,16 +23,22 @@ const mapDispatchToProps = {
   mapDispatchToProps
 )
 export default class Github extends Component {
+  static propTypes = {
+    loading: PropTypes.bool.isRequired,
+    list: PropTypes.array.isRequired,
+    fetch: PropTypes.func.isRequired
+  }
+  
   componentDidMount(){
     this.props.fetch();
   }
 
   render () {
-    const { loading, repositories } = this.props;
+    const { loading, list } = this.props;
     return (
       <Loading loading={loading}>
         <div className="Page__Github">
-          {repositories.map(({
+          {list.map(({
             id,
             name,
             html_url,

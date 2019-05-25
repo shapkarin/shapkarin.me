@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { IoIosRefresh } from "react-icons/io";
 import PropTypes from 'prop-types';
+import { IoIosRefresh } from "react-icons/io";
 
 import { changeBackground } from './actions';
 import './style.less';
