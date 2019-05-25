@@ -10,26 +10,17 @@ import fetch from 'saga-fetch';
 
 import { fetchProjects, fetchProjectInfo } from 'Utils/API';
 import {
-  loadProjectsStart,
-  loadProjectsSuccess,
-  loadProjectsError,
-  loadProjectInfoStart,
-  loadProjectInfoSuccess,
-  loadProjectInfoError,
   toggleProjectInfo
 } from './actions';
-import {
-  FETCH_PROJECTS,
-  FETCH_PROJECT_INFO
-} from './constants';
+import { projects, info } from './routines';
 
 function* getProjects(action) {
   yield fork(fetch, {
     action,
     method: fetchProjects,
-    start: loadProjectsStart,
-    success: loadProjectsSuccess,
-    error: loadProjectsError
+    start: projects.request,
+    success: projects.success,
+    error: projects.failure
   });
 }
 
@@ -39,21 +30,21 @@ function* getProjects(action) {
 */
 function* getProjectInfo(action) {
   try {
-    const { id, fetched } = action;
+    const { id, fetched } = action.payload;
     if (yield !fetched) {
-      yield put(loadProjectInfoStart(id));
+      yield put(info.request({id}));
       const { data } = yield call(fetchProjectInfo, action);
-      yield put(loadProjectInfoSuccess(data, id));
+      yield put(info.success({data, id}));
     }
     yield put(toggleProjectInfo(id));
   } catch (err) {
-    yield put(loadProjectInfoError(err));
+    yield put(info.failure(err));
   }
 }
 
 export default function* () {
   yield all([
-    takeEvery(FETCH_PROJECTS, getProjects),
-    takeLatest(FETCH_PROJECT_INFO, getProjectInfo)
+    takeEvery(projects.TRIGGER, getProjects),
+    takeLatest(info.TRIGGER, getProjectInfo)
   ]);
 }

@@ -3,8 +3,8 @@ import { connect } from 'react-redux';
 import { GoRepoForked, GoPulse, GoIssueOpened } from 'react-icons/go';
 import { MdWeb } from 'react-icons/md';
 
-import { fetchLiked } from './actions';
 import Loading from 'Components/Loading';
+import liked from './routines';
 
 const mapStateToProps = (state) => {
   const { example: { loading, list } } = state;
@@ -12,7 +12,7 @@ const mapStateToProps = (state) => {
 };
 
 const mapDispatchToProps = {
-  fetch: fetchLiked
+  fetch: liked
 };
 
 @connect(

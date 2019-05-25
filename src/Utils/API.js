@@ -14,7 +14,7 @@ export const fetchGithub = () => axios.get(urls.github);
 
 export const fetchProjects = () => request.get(urls.projects);
 
-export const fetchProjectInfo = ({ id }) => request.get(`/projects/${id}`);
+export const fetchProjectInfo = ({ payload: { id } }) => request.get(`/projects/${id}`);
 
 export const fetchAbout = () => request.get(urls.about);
 

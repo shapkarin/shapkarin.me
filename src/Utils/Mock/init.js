@@ -3,11 +3,9 @@ import MockAdapter from 'axios-mock-adapter';
 import urls from './urls';
 
 import {
-  github,
   projects,
   projectInfo,
-  about,
-  mockExample
+  about
 } from './data';
 
 export default function (axios) {
@@ -15,15 +13,6 @@ export default function (axios) {
   const delay = 300;
 
   mock
-    // .onGet(urls.github)
-    // .reply(() => (
-    //   new Promise((resolve) => {
-    //     setTimeout(() => {
-    //       resolve([200, github()]);
-    //     }, delay);
-    //   })
-    // ))
-
     .onGet(urls.projects)
     .reply(() => (
       new Promise((resolve) => {
@@ -51,12 +40,4 @@ export default function (axios) {
       })
     ))
 
-    .onGet(urls.mockExample)
-    .reply(() => (
-      new Promise((resolve) => {
-        setTimeout(() => {
-          resolve([200, mockExample()]);
-        }, delay);
-      })
-    ));
 }

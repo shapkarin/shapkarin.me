@@ -2,25 +2,19 @@ import { fork, take } from 'redux-saga/effects';
 import fetch from 'saga-fetch';
 
 import { fetchLikes } from 'Utils/API';
-import {
-  loadLikedStart,
-  loadLikedSuccess,
-  loadLikedError,
-} from './actions';
-import { FETCH_LIKED } from './constants';
+import liked from './routines';
 
-
-function* getMockExamples(action) {
+function* getLiked(action) {
   yield fork(fetch, {
     action,
     method: fetchLikes,
-    start: loadLikedStart,
-    success: loadLikedSuccess,
-    error: loadLikedError
+    start: liked.request,
+    success: liked.success,
+    error: liked.failure
   });
 }
 
 export default function* () {
-  yield take(FETCH_LIKED);
-  yield fork(getMockExamples);
+  yield take(liked.TRIGGER);
+  yield fork(getLiked);
 }

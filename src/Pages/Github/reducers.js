@@ -1,8 +1,4 @@
-import {
-  LOAD_REPOSITORIES_START,
-  LOAD_REPOSITORIES_SUCCESS,
-  LOAD_REPOSITORIES_ERROR,
-} from './constants';
+import repositories from './routines';
 
 const initialState = {
   loading: false,
@@ -15,22 +11,21 @@ const initialState = {
 
 export default function (state = initialState, action) {
   switch (action.type) {
-    case LOAD_REPOSITORIES_START:
+    case repositories.REQUEST:
       return {
         ...state,
-        loading: true,
-        error: initialState.error
+        loading: true
       };
-    case LOAD_REPOSITORIES_SUCCESS:
+    case repositories.SUCCESS:
       return {
         ...state,
-        repositories: action.response,
+        repositories: action.payload,
         loading: false
       };
-    case LOAD_REPOSITORIES_ERROR:
+    case repositories.FAILURE:
       return {
         ...state,
-        error: action.error,
+        error: action.payload,
         loading: false
       };
     default:

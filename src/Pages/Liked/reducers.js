@@ -1,8 +1,4 @@
-import {
-  LOAD_LIKED_START,
-  LOAD_LIKED_SUCCESS,
-  LOAD_LIKED_ERROR,
-} from './constants';
+import liked from './routines';
 
 const initialState = {
   loading: false,
@@ -11,22 +7,21 @@ const initialState = {
 
 export default function (state = initialState, action) {
   switch (action.type) {
-    case LOAD_LIKED_START:
+    case liked.REQUEST:
       return {
         ...state,
-        loading: true,
-        error: initialState.error
+        loading: true
       };
-    case LOAD_LIKED_SUCCESS:
+    case liked.SUCCESS:
       return {
         ...state,
-        list: action.response,
+        list: action.payload,
         loading: false
       };
-    case LOAD_LIKED_ERROR:
+    case liked.FAILURE:
       return {
         ...state,
-        error: action.error,
+        error: action.payload,
         loading: false
       };
     default:

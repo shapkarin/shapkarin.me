@@ -1,11 +1,7 @@
 import {
-  LOAD_PROJECTS_START,
-  LOAD_PROJECTS_SUCCESS,
-  LOAD_PROJECTS_ERROR,
-  LOAD_PROJECT_INFO_START,
-  LOAD_PROJECT_INFO_SUCCESS,
   TOGGLE_PROJECT_INFO
 } from './constants';
+import { projects, info } from './routines';
 
 import { normalize, schema } from 'normalizr';
 
@@ -21,25 +17,24 @@ const initialState = {
 // TODO: use dufferent reducers and then combine
 export default function (state = initialState, action) {
   switch (action.type) {
-    case LOAD_PROJECTS_START:
+    case projects.REQUEST:
       return {
         ...state,
-        loading: true,
-        error: initialState.error
+        loading: true
       };
-    case LOAD_PROJECTS_SUCCESS: {
+    case projects.SUCCESS: {
       const schem = new schema.Entity('obj');
-      const normalized = normalize(action.response, [schem]);
+      const normalized = normalize(action.payload, [schem]);
       return {
         ...state,
         data: normalized.entities.obj,
         loading: false
       };
     }
-    case LOAD_PROJECTS_ERROR:
+    case projects.FAILURE:
       return {
         ...state,
-        error: action.error,
+        error: action.payload,
         loading: false
       };
     case TOGGLE_PROJECT_INFO: {
@@ -56,8 +51,8 @@ export default function (state = initialState, action) {
         }
       };
     }
-    case LOAD_PROJECT_INFO_START: {
-      const { id } = action;
+    case info.REQUEST: {
+      const { id } = action.payload;
       const project = state.data[id];
 
       return {
@@ -71,8 +66,8 @@ export default function (state = initialState, action) {
         }
       };
     }
-    case LOAD_PROJECT_INFO_SUCCESS: {
-      const { id } = action;
+    case info.SUCCESS: {
+      const { id } = action.payload;
       const project = state.data[id];
 
       return {
@@ -81,7 +76,7 @@ export default function (state = initialState, action) {
           ...state.data,
           [id]: {
             ...project,
-            info: action.response,
+            info: action.payload.data,
             loading: false,
             fetched: true
           }

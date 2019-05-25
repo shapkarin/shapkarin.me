@@ -3,8 +3,8 @@ import { connect } from 'react-redux';
 import { GoRepoForked, GoPulse, GoIssueOpened } from 'react-icons/go';
 import { MdWeb } from 'react-icons/md';
 
-import { fetchRepositories } from './actions';
 import Loading from 'Components/Loading';
+import repositories from './routines';
 
 import './style.less';
 
@@ -14,7 +14,7 @@ const mapStateToProps = (state) => {
 };
 
 const mapDispatchToProps = {
-  fetch: fetchRepositories
+  fetch: repositories
 };
 
 @connect(

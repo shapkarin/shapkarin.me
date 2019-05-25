@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { GoChevronRight, GoChevronDown } from "react-icons/go";
 
-
-import { fetchProjects, fetchProjectInfo } from './actions';
+import { toggleProjectInfo } from './actions';
 import Loading from 'Components/Loading';
 import Collapse from 'Components/Collapse';
+import { projects, info } from './routines';
 
 import './style.less';
 
@@ -20,8 +20,8 @@ const mapStateToProps = (state) => {
 };
 
 const mapDispatchToProps = {
-  fetch: fetchProjects,
-  toggleInfo: fetchProjectInfo
+  fetch: projects,
+  toggleInfo: info
 };
 
 @connect(
@@ -44,7 +44,7 @@ export default class Projects extends Component {
         <Loading loading={loading}>
           <div className="Project">
             {projects.map(({
-              name, url, id, loading = false, info, open = false, fetched
+              name, id, loading = false, info, open = false, fetched = false
             }) =>(
               <div key={id} style={{marginBottom: '10px'}}>
                 {name}
