@@ -7,7 +7,6 @@ import {
 } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { createBrowserHistory } from 'history';
-import { StickyContainer, Sticky } from 'react-sticky';
 
 import About from 'Components/About';
 import Menu from 'Components/Menu';
@@ -16,8 +15,8 @@ import Projects from 'Pages/Projects';
 import Liked from 'Pages/Liked';
 import store from './Store';
 
-import './App.less';
 import 'Components/Background';
+import './App.less';
 
 // TODO: use names
 export default function () {
@@ -45,7 +44,6 @@ export default function () {
                 path="/liked"
                 component={Liked}
               />
-              
             </Switch>
           </div>
         </div>
