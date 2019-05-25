@@ -1,6 +1,7 @@
 // TODO: refact
-import Shape from './Shape';
 import random from 'lodash/random';
+
+import Shape from './Shape';
 
 export default class Scene {
   constructor() {

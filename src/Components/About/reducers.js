@@ -1,8 +1,4 @@
-import {
-  LOAD_ABOUT_START,
-  LOAD_ABOUT_SUCCESS,
-  LOAD_ABOUT_ERROR,
-} from './constants';
+import about from './routines';
 
 const initialState = {
   loading: false,
@@ -11,22 +7,21 @@ const initialState = {
 
 export default function (state = initialState, action) {
   switch (action.type) {
-    case LOAD_ABOUT_START:
+    case about.REQUEST:
       return {
         ...state,
-        loading: true,
-        error: initialState.error
+        loading: true
       };
-    case LOAD_ABOUT_SUCCESS:
+    case about.SUCCESS:
       return {
         ...state,
-        text: action.response,
+        text: action.payload,
         loading: false
       };
-    case LOAD_ABOUT_ERROR:
+    case about.FAILURE:
       return {
         ...state,
-        error: action.error,
+        error: action.payload,
         loading: false
       };
     default:

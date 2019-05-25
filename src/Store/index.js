@@ -20,12 +20,6 @@ function configureStore() {
 
   sagaMiddleware.run(rootSaga);
 
-  // if (module.hot) {
-  //   module.hot.accept('../reducers', () => {
-  //     store.replaceReducer(rootReducer);
-  //   });
-  // }
-
   return store;
 }
 

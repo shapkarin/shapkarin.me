@@ -1,1 +1,1 @@
-export const CHANGE_BACKGROUND = "CHANGE_BACKGROUND";
+export const CHANGE_BACKGROUND = "background/CHANGE";

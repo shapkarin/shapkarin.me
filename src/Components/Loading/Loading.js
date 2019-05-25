@@ -10,8 +10,10 @@ export default class Loading extends PureComponent {
       code: PropTypes.number,
       message: PropTypes.string
     }),
-
-    loaderSize: PropTypes.number,
+    size: PropTypes.shape({
+      preloader: PropTypes.number,
+      text: PropTypes.number
+    }),
     loading: PropTypes.bool.isRequired
   };
 
@@ -20,27 +22,27 @@ export default class Loading extends PureComponent {
       code: 0,
       message: ''
     },
-    loaderSize: 150
+    size: {
+      preloader: 150,
+      text: 15
+    }
   };
 
   render() {
     const {
       children,
-      error: {
-        code,
-        message
-      },
-      loaderSize,
+      error,
+      size,
       loading,
       small
     } = this.props;
 
     if (loading) {
-      return <Preloader size={ loaderSize } />;
+      return <Preloader size={ size.text } />;
     }
 
-    if (code) {
-      return message;
+    if (error.code) {
+      return error.message;
     }
 
     return children;
