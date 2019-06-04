@@ -4,14 +4,14 @@ import aboutWorker from 'Components/About/saga';
 import controlsWorker from 'Components/Controls/saga';
 import githubWorker from 'Pages/Github/saga';
 import projectsWorker from 'Pages/Projects/saga';
-import mockExampleWorker from 'Pages/Liked/saga';
+import likedWorker from 'Pages/Liked/saga';
 
 export default function* rootSaga() {
   yield all([
     aboutWorker(),
-    controlsWorker(),
     githubWorker(),
+    likedWorker(),
     projectsWorker(),
-    mockExampleWorker(),
+    controlsWorker()
   ]);
 }
