@@ -8,7 +8,7 @@ import Loading from 'Components/Loading';
 import liked from './routines';
 
 const mapStateToProps = (state) => {
-  const { example: { loading, list } } = state;
+  const { liked: { loading, list } } = state;
   return { loading, list };
 };
 

@@ -9,7 +9,7 @@ const rootReducer = combineReducers({
   about: aboutReducer,
   github: githubReducer,
   projects: projectsReducer,
-  example: likedReducer
+  liked: likedReducer
 });
 
 export default rootReducer;

@@ -1,4 +1,4 @@
-import { debounce, take, fork } from 'redux-saga/effects';
+import { debounce } from 'redux-saga/effects';
 
 import { CHANGE_BACKGROUND } from './constants';
 import scene from '../Background';
