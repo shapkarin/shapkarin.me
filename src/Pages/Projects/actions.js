@@ -4,5 +4,5 @@ import {
 
 export const toggleProjectInfo = id => ({
   type: TOGGLE_PROJECT_INFO,
-  id
+  payload: { id }
 });

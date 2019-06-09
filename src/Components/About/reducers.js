@@ -12,11 +12,13 @@ export default handleActions({
     ...state,
     loading: true
   }),
+
   [about.SUCCESS]: (state, { payload: text }) => ({
     ...state,
     text,
     loading: false
   }),
+
   [about.FAILURE]: (state, { payload: error }) => ({
     ...state,
     error,

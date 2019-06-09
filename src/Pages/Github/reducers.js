@@ -1,3 +1,5 @@
+import { handleActions } from 'redux-actions';
+
 import repositories from './routines';
 
 const initialState = {
@@ -9,26 +11,22 @@ const initialState = {
   repositories: [],
 };
 
-export default function (state = initialState, action) {
-  switch (action.type) {
-    case repositories.REQUEST:
-      return {
-        ...state,
-        loading: true
-      };
-    case repositories.SUCCESS:
-      return {
-        ...state,
-        repositories: action.payload,
-        loading: false
-      };
-    case repositories.FAILURE:
-      return {
-        ...state,
-        error: action.payload,
-        loading: false
-      };
-    default:
-      return state;
-  }
-}
+export default handleActions({
+  [repositories.REQUEST]: state => ({
+    ...state,
+    loading: true
+  }),
+
+  [repositories.SUCCESS]: (state, { payload }) => ({
+    ...state,
+    repositories: payload,
+    loading: false
+  }),
+
+  [repositories.FAILURE]: (state, { payload: error }) => ({
+    ...state,
+    error,
+    loading: false
+  })
+},
+initialState);
