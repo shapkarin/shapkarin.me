@@ -1,1 +1,0 @@
-export const TOGGLE_PROJECT_INFO = 'projects/TOGGLE_PROJECT_INFO';

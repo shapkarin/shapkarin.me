@@ -1,4 +1,6 @@
 import { createRoutine } from 'redux-saga-routines';
 
-export const projects = createRoutine('projects');
+import extendRoutine from 'Utils/extendRoutine';
+
+export const projects = extendRoutine(createRoutine('projects'), ['TOGGLE_PROJECT_INFO']);
 export const info = createRoutine('info');
