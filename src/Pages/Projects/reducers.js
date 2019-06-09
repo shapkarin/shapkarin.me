@@ -39,7 +39,7 @@ export default handleActions({
     loading: false
   }),
 
-  [TOGGLE_PROJECT_INFO]: (state, { payload: { id }}) => {
+  [TOGGLE_PROJECT_INFO]: (state, { payload: { id } }) => {
     const project = state.data[id];
 
     return {
@@ -55,8 +55,7 @@ export default handleActions({
   },
 
   // project info
-  [info.REQUEST]: (state, { payload }) => {
-    const { id } = payload;
+  [info.REQUEST]: (state, { payload: { id } }) => {
     const project = state.data[id];
 
     return {
@@ -71,8 +70,7 @@ export default handleActions({
     };
   },
 
-  [info.SUCCESS]: (state, { payload }) => {
-    const { id } = payload;
+  [info.SUCCESS]: (state, { payload: { id, data } }) => {
     const project = state.data[id];
 
     return {
@@ -81,7 +79,7 @@ export default handleActions({
         ...state.data,
         [id]: {
           ...project,
-          info: payload.data,
+          info: data,
           loading: false,
           fetched: true
         }
