@@ -37,7 +37,6 @@ export default class Projects extends Component {
   }
 
   componentDidMount(){
-    // TODO: use just take() saga effect as in Github page
     const { fetch, projects } = this.props;
     if(projects.length === 0){
       fetch()

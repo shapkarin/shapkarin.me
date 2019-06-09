@@ -1,9 +1,6 @@
 import { handleActions } from 'redux-actions';
 import { normalize, schema } from 'normalizr';
 
-import {
-  TOGGLE_PROJECT_INFO
-} from './constants';
 import { projects, info } from './routines';
 
 const initialState = {
@@ -39,7 +36,7 @@ export default handleActions({
     loading: false
   }),
 
-  [TOGGLE_PROJECT_INFO]: (state, { payload: { id } }) => {
+  [projects.TOGGLE_PROJECT_INFO]: (state, { payload: { id } }) => {
     const project = state.data[id];
 
     return {

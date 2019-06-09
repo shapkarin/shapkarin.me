@@ -9,9 +9,6 @@ import {
 import fetch from 'saga-fetch';
 
 import { fetchProjects, fetchProjectInfo } from 'Utils/API';
-import {
-  toggleProjectInfo
-} from './actions';
 import { projects, info } from './routines';
 
 function* getProjects(action) {
@@ -32,11 +29,11 @@ function* getProjectInfo(action) {
   try {
     const { id, fetched } = action.payload;
     if (yield !fetched) {
-      yield put(info.request({id}));
+      yield put(info.request({ id }));
       const { data } = yield call(fetchProjectInfo, action);
-      yield put(info.success({data, id}));
+      yield put(info.success({ data, id }));
     }
-    yield put(toggleProjectInfo(id));
+    yield put(projects.toggle_project_info({ id }));
   } catch (err) {
     yield put(info.failure(err));
   }
