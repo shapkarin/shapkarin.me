@@ -1,9 +1,9 @@
+import { normalize, schema } from 'normalizr';
+
 import {
   TOGGLE_PROJECT_INFO
 } from './constants';
 import { projects, info } from './routines';
-
-import { normalize, schema } from 'normalizr';
 
 const initialState = {
   loading: false,

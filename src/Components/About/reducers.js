@@ -1,3 +1,5 @@
+import { handleActions } from 'redux-actions';
+
 import about from './routines';
 
 const initialState = {
@@ -5,26 +7,20 @@ const initialState = {
   text: ''
 };
 
-export default function (state = initialState, action) {
-  switch (action.type) {
-    case about.REQUEST:
-      return {
-        ...state,
-        loading: true
-      };
-    case about.SUCCESS:
-      return {
-        ...state,
-        text: action.payload,
-        loading: false
-      };
-    case about.FAILURE:
-      return {
-        ...state,
-        error: action.payload,
-        loading: false
-      };
-    default:
-      return state;
-  }
-}
+export default handleActions({
+  [about.REQUEST]: state => ({
+    ...state,
+    loading: true
+  }),
+  [about.SUCCESS]: (state, { payload: text }) => ({
+    ...state,
+    text,
+    loading: false
+  }),
+  [about.FAILURE]: (state, { payload: error }) => ({
+    ...state,
+    error,
+    loading: false
+  })
+},
+initialState);
