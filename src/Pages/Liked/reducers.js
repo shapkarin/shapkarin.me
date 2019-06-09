@@ -1,3 +1,5 @@
+import { handleActions } from 'redux-actions';
+
 import liked from './routines';
 
 const initialState = {
@@ -5,26 +7,22 @@ const initialState = {
   list: []
 };
 
-export default function (state = initialState, action) {
-  switch (action.type) {
-    case liked.REQUEST:
-      return {
-        ...state,
-        loading: true
-      };
-    case liked.SUCCESS:
-      return {
-        ...state,
-        list: action.payload,
-        loading: false
-      };
-    case liked.FAILURE:
-      return {
-        ...state,
-        error: action.payload,
-        loading: false
-      };
-    default:
-      return state;
-  }
-}
+export default handleActions({
+  [liked.REQUEST]: state => ({
+    ...state,
+    loading: true
+  }),
+
+  [liked.SUCCESS]: (state, { payload: list }) => ({
+    ...state,
+    list,
+    loading: false
+  }),
+
+  [liked.FAILURE]: (state, { payload: error }) => ({
+    ...state,
+    error,
+    loading: false
+  })
+},
+initialState);
