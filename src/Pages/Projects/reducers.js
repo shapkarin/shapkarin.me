@@ -21,7 +21,7 @@ export default handleActions({
 
   [projects.SUCCESS]: (state, { payload }) => {
     const schem = new schema.Entity('obj');
-    const { entities: {obj: data} } = normalize(payload, [schem]);
+    const { entities: { obj: data } } = normalize(payload, [schem]);
 
     return {
       ...state,
