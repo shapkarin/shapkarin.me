@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: /beer/
+Disallow: /ibank/
+Disallow: /xora/
+Disallow: /in/
+Disallow: /dreams/
