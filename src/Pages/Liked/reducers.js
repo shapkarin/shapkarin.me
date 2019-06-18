@@ -15,13 +15,16 @@ export default handleActions({
 
   [liked.SUCCESS]: (state, { payload: list }) => ({
     ...state,
-    list,
-    loading: false
+    list
   }),
 
   [liked.FAILURE]: (state, { payload: error }) => ({
     ...state,
-    error,
+    error
+  }),
+
+  [liked.FULFILL]: state => ({
+    ...state,
     loading: false
   })
 },

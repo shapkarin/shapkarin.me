@@ -19,13 +19,16 @@ export default handleActions({
 
   [repositories.SUCCESS]: (state, { payload }) => ({
     ...state,
-    repositories: payload,
-    loading: false
+    repositories: payload
   }),
 
   [repositories.FAILURE]: (state, { payload: error }) => ({
     ...state,
-    error,
+    error
+  }),
+
+  [repositories.FULFILL]: state => ({
+    ...state,
     loading: false
   })
 },

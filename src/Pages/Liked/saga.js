@@ -1,4 +1,4 @@
-import { fork, take } from 'redux-saga/effects';
+import { fork, takeEvery } from 'redux-saga/effects';
 import fetch from 'saga-fetch';
 
 import { fetchLikes } from 'Utils/API';
@@ -10,11 +10,11 @@ function* getLiked(action) {
     method: fetchLikes,
     start: liked.request,
     success: liked.success,
-    error: liked.failure
+    error: liked.failure,
+    fulfill: liked.fulfill
   });
 }
 
 export default function* () {
-  yield take(liked.TRIGGER);
-  yield fork(getLiked);
+  yield takeEvery(liked.TRIGGER, getLiked);
 }

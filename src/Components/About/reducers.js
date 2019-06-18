@@ -15,13 +15,16 @@ export default handleActions({
 
   [about.SUCCESS]: (state, { payload: text }) => ({
     ...state,
-    text,
-    loading: false
+    text
   }),
 
   [about.FAILURE]: (state, { payload: error }) => ({
     ...state,
-    error,
+    error
+  }),
+
+  [about.FULFILL]: state => ({
+    ...state,
     loading: false
   })
 },
