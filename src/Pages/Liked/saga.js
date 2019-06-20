@@ -1,4 +1,4 @@
-import { fork, takeEvery } from 'redux-saga/effects';
+import { fork, take } from 'redux-saga/effects';
 import fetch from 'saga-fetch';
 
 import { fetchLikes } from 'Utils/API';
@@ -16,5 +16,6 @@ function* getLiked(action) {
 }
 
 export default function* () {
-  yield takeEvery(liked.TRIGGER, getLiked);
+  const action = yield take(liked.TRIGGER);
+  yield getLiked(action);
 }
