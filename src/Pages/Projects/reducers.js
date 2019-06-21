@@ -36,7 +36,7 @@ export default handleActions({
     loading: false
   }),
 
-  [projects.TOGGLE_PROJECT_INFO]: (state, { payload: { id } }) => {
+  [info.TOGGLE]: (state, { payload: { id } }) => {
     const project = state.data[id];
 
     return {

@@ -33,7 +33,7 @@ function* getProjectInfo(action) {
       const { data } = yield call(fetchProjectInfo, action);
       yield put(info.success({ data, id }));
     }
-    yield put(projects.toggleProjectInfo({ id }));
+    yield put(info.toggle({ id }));
   } catch (err) {
     yield put(info.failure(err));
   }
