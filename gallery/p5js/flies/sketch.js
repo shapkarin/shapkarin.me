@@ -3,7 +3,8 @@ var count = 100;
   
 function setup() {
   createCanvas(window.innerWidth,window.innerHeight);
-
+  noStroke();
+  fill(200);
 
 for (var i = 0; i < count; i++) {
     flies.push(new Fly(width/2,height/2));
@@ -21,8 +22,18 @@ function draw() {
 function Fly(x,y) {
   this.pos = createVector(x,y);
   this.vel = createVector(0, 0);
+  //this.dir = ;
+  // todo
+  this.shape = random();
   
   this.update = function(){
+    // if(this.pos.x > width || this.pos.x < 0){
+    //   this.dir.mult(-1, 1);
+    // };
+    // if (this.pos.y > height || this.pos.y < 0){
+    //   this.dir.mult(1, -1);  
+    // };
+
     this.acc = p5.Vector.fromAngle(random(TWO_PI), random(TWO_PI));
     //this.acc.div(30);
     this.acc.mult(0.3);
@@ -31,8 +42,7 @@ function Fly(x,y) {
   }
   
   this.display = function(){
-    fill(255);
-    ellipse(this.pos.x, this.pos.y, 4, 4)
+    ellipse(this.pos.x, this.pos.y, 3, 3);
   }
     
 }
