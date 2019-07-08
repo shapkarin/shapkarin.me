@@ -1,11 +1,12 @@
 // todo: SPA canvas sketches gallery
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import { FaPlayCircle } from 'react-icons/fa';
 
 const Sketches = () => (
-  <a href="/gallery" style={{paddingTop: '40px'}} className="Menu__Item">
+  <NavLink to="/gallery" style={{paddingTop: '40px'}} className="Menu__Item">
     <FaPlayCircle/> Sketches
-  </a>
+  </NavLink>
 );
 
 export default Sketches;
