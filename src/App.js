@@ -13,6 +13,8 @@ import Menu from 'Components/Menu';
 import Github from 'Pages/Github';
 import Projects from 'Pages/Projects';
 import Liked from 'Pages/Liked';
+// TODO: rename
+import Sketches from 'Pages/Sketches';
 import store from './Store';
 
 import 'Components/Background';
@@ -43,6 +45,10 @@ export default function () {
               <Route
                 path="/liked"
                 component={Liked}
+              />
+              <Route
+                path="/sketches"
+                component={Sketches}
               />
             </Switch>
           </div>

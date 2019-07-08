@@ -10,11 +10,12 @@ function* getLiked(action) {
     method: fetchLikes,
     start: liked.request,
     success: liked.success,
-    error: liked.failure
+    error: liked.failure,
+    fulfill: liked.fulfill
   });
 }
 
 export default function* () {
-  yield take(liked.TRIGGER);
-  yield fork(getLiked);
+  const action = yield take(liked.TRIGGER);
+  yield getLiked(action);
 }

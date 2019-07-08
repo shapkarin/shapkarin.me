@@ -1,8 +1,8 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import { FaPlayCircle } from 'react-icons/fa';
 
 import Controls from 'Components/Controls';
-import Sketches from 'Components/Sketches';
 import links from './links';
 
 import './Menu.less';
@@ -18,14 +18,16 @@ const Menu = () => (
           className="Menu__Item"
           activeClassName="Menu__Item--active"
         >
-          {icon && icon()}
+          {icon()}
           {' '}
           { title }
         </NavLink>
       );
     })}
     <Controls />
-    <Sketches />
+    <NavLink to="/sketches" style={{paddingTop: '40px'}} className="Menu__Item">
+      <FaPlayCircle/> Sketches
+    </NavLink>
   </nav>
 );
 

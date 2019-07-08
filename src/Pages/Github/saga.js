@@ -10,11 +10,12 @@ function* getRepositories(action) {
     method: fetchGithub,
     start: repositories.request,
     success: repositories.success,
-    error: repositories.failure
+    error: repositories.failure,
+    fulfill: repositories.fulfill
   });
 }
 
 export default function* () {
-  yield take(repositories.TRIGGER);
-  yield fork(getRepositories);
+  const action = yield take(repositories.TRIGGER);
+  yield getRepositories(action);
 }
