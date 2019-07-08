@@ -25,7 +25,12 @@ const Menu = () => (
       );
     })}
     <Controls />
-    <NavLink to="/sketches" style={{paddingTop: '40px'}} className="Menu__Item">
+    <NavLink
+      to="/sketches"
+      style={{ paddingTop: '40px' }}
+      className="Menu__Item"
+      activeClassName="Menu__Item--active"
+    >
       <FaPlayCircle/> Sketches
     </NavLink>
   </nav>
