@@ -1,5 +1,5 @@
 import React from 'react';
-import { GoRepo, GoStar, GoProject } from "react-icons/go";
+import { GoRepo, GoStar, GoProject } from 'react-icons/go';
 
 const links = [
   {
