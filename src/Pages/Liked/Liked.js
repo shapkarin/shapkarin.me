@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { GoRepoForked, GoPulse, GoIssueOpened } from 'react-icons/go';
+import { GoRepoForked, GoPulse, GoIssueOpened, GoStar } from 'react-icons/go';
 import { MdWeb } from 'react-icons/md';
+import { TiStarOutline } from "react-icons/ti";
 
 import Loading from 'Components/Loading';
 import liked from './routines';
@@ -43,17 +44,19 @@ export default class Github extends Component {
             html_url,
             description,
             open_issues_count,
+            stargazers_count,
             homepage,
             fork,
             updated_at
           }) =>(
             <div key={id} className="Page__GithubItem">
-              <div className="Page__GithubItemInner">
-                <a className="GithubItem__Link centered-label" href={html_url} target="_blank">{full_name}{fork && <GoRepoForked />}</a>
-                <div className="centered-label" style={{maxWidth: '250px', marginBottom: '7px'}}>{description}</div>
-                <div className="centered-label" style={{marginBottom: '7px'}}><GoPulse /> {(new Date(updated_at)).toLocaleDateString('ru-RU')}</div>
-                <div className="centered-label" style={{marginBottom: '7px'}}><GoIssueOpened /> open issues <a className="IssuesCount" href={`${html_url}/issues`} target="_blank">{open_issues_count}</a></div>
-                {homepage && <div className="centered-label" ><MdWeb /> <a href={homepage} target="_blank">homepage</a></div>}
+              <div className="Page__GithubItemInner" style={{maxWidth: '250px'}}>
+                <a className="GithubItem__Link centered-label" href={html_url} target="_blank" style={{ whiteSpace: 'nowrap' }}>{full_name}{fork && <GoRepoForked />}</a>
+                <div className="centered-label" style={{lineHeight: "20px"}}>{description}</div>
+                <div className="centered-label"><GoPulse /> {(new Date(updated_at)).toLocaleDateString('ru-RU')}</div>
+                { open_issues_count > 0 && <div className="centered-label"><GoIssueOpened /> open issues <a className="IssuesCount" href={`${html_url}/issues`} target="_blank">{open_issues_count}</a></div> }
+                { homepage !== null && <div className="centered-label" ><MdWeb /> <a href={homepage} target="_blank">homepage</a></div> }
+                { stargazers_count > 0 && <div className="centered-label"><TiStarOutline size="18px" /> stars: {stargazers_count}</div>}
               </div>
             </div>
           ))}
