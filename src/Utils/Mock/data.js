@@ -3,16 +3,11 @@ export const projects = () => (
     {
       id: 1,
       name: 'Redkassa widget',
-      url: ''
+      url: 'https://widget.redkassa.ru'
     },
     {
       id: 2,
       name: 'Books.beeline.ru',
-      url: ''
-    },
-    {
-      id: 3,
-      name: 'Other',
       url: ''
     }
   ]
@@ -26,10 +21,7 @@ const infos = {
     webpack, jest, webpack SVG sprites, git hooks and etc'
   },
   2: {
-    __html: 'Internet library'
-  },
-  3: {
-    __html: 'TODO: someday add more'
+    __html: 'Internet library for <a href="https://beeline.ru" target="_blank">Beeline</a>'
   }
 };
 

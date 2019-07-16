@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { GoChevronRight, GoChevronDown } from "react-icons/go";
+import { FiExternalLink } from "react-icons/fi";
 
 import Loading from 'Components/Loading';
 import Collapse from 'Components/Collapse';
@@ -46,29 +47,44 @@ export default class Projects extends Component {
   render () {
     const { loading, projects, toggleInfo } = this.props;
     return (
-      <>
-        <Loading loading={loading}>
-          <div className="Project">
-            {projects.map(({
-              name, id, loading = false, info, open = false, fetched = false
-            }) =>(
-              <div key={id} style={{marginBottom: '10px'}}>
-                {name}
-                <br/>
-                <div style={{cursor: 'pointer'}} onClick={() => toggleInfo({id, fetched})}>more info {open ? <GoChevronDown /> : <GoChevronRight />}</div>
-                <Loading loading={loading}>
-                  <Collapse open={open}>
-                    <div
-                      className="Project__Info"
-                      dangerouslySetInnerHTML={info}
-                    />
-                  </Collapse>
-                </Loading>
+      <Loading loading={loading}>
+        <>
+          {projects.map(({
+            name,
+            url,
+            id,
+            loading = false,
+            open = false,
+            fetched = false,
+            info
+          }) =>(
+            <div key={id} className="Project">
+              {name}
+              {' '}
+              {url && <a target="_blank" href={url}><FiExternalLink /></a>}
+              <div
+                style={{cursor: 'pointer', marginTop: '7px'}}
+                onClick={() => toggleInfo({id, fetched})}
+              >
+                more info {open ? <GoChevronDown /> : <GoChevronRight />}
               </div>
-            ))}
+              <Loading loading={loading}>
+                <Collapse open={open}>
+                  <div
+                    className="Project__Info"
+                    dangerouslySetInnerHTML={info}
+                  />
+                </Collapse>
+              </Loading>
+            </div>
+          ))}
+          <div className="Project" style={{width: '70px'}}>
+            <a href="https://freelansim.ru/freelancers/yuryshapkarin/projects" target="_blank">
+              Older <FiExternalLink />
+            </a>
           </div>
-        </Loading>
-      </>
+        </>
+      </Loading>
     )
   }
 }
