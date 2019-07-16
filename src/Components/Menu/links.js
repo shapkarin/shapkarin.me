@@ -3,7 +3,12 @@ import { GoRepo, GoStar, GoProject } from 'react-icons/go';
 
 const links = [
   {
-    title: 'Repositories',
+    title: 'Projects',
+    url: '/projects',
+    icon: () => <GoProject />
+  },
+  {
+    title: 'Github',
     url: '/repositories',
     icon: () => <GoRepo />
   },
@@ -11,12 +16,7 @@ const links = [
     title: 'Liked',
     url: '/liked',
     icon: () => <GoStar />
-  },
-  {
-    title: 'Projects',
-    url: '/projects',
-    icon: () => <GoProject />
-  },
+  }
 ];
 
 export default links;

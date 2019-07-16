@@ -12,7 +12,7 @@ const mapDispatchToProps = ({
 
 const Controls = ({ randomize }) => (
   <span onClick={() => randomize()} className="Menu__Item--bckg">
-    <IoIosRefresh/> Background
+    <IoIosRefresh/> Random
   </span>
 )
 

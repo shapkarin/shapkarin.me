@@ -2,7 +2,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { FaPlayCircle } from 'react-icons/fa';
 
-import Controls from 'Components/Controls';
+import RandomButton from 'Components/RandomButton';
 import links from './links';
 
 import './Menu.less';
@@ -24,7 +24,7 @@ const Menu = () => (
         </NavLink>
       );
     })}
-    <Controls />
+    <RandomButton />
     <NavLink
       to="/sketches"
       style={{ paddingTop: '40px' }}
