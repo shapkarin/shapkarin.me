@@ -24,15 +24,14 @@ const Menu = () => (
         </NavLink>
       );
     })}
-    <RandomButton />
     <NavLink
       to="/sketches"
-      style={{ paddingTop: '40px' }}
       className="Menu__Item"
       activeClassName="Menu__Item--active"
     >
       <FaPlayCircle/> Sketches
     </NavLink>
+    <RandomButton />
   </nav>
 );
 
