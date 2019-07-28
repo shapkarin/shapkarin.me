@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import { CopyToClipboard } from 'react-copy-to-clipboard';
 
 import about from './routines';
 import Loading from 'Components/Loading';
@@ -25,13 +26,17 @@ export default class About extends Component {
     loading: PropTypes.bool.isRequired,
     text: PropTypes.string.isRequired,
   }
-
+  state = {
+    copied: false
+  }
+  
   componentDidMount(){
     this.props.fetch();
   }
 
   render () {
     const { loading, text } = this.props;
+    const email = 'yury@shapkarin.me';
     return (
       <>
         <Loading loading={loading}>
@@ -39,9 +44,21 @@ export default class About extends Component {
             {text}
             <div>
               <a href="https://github.com/shapkarin" target="_blank">My github</a>
+              <br/>
+              {
+                !this.state.copied ? 
+                <CopyToClipboard text={email}
+                  onCopy={() => this.setState({copied: true})}>
+                  <span style={{cursor: 'pointer', textDecoration: 'underline'}}>
+                    Copy my email to clipboard.
+                  </span>
+                </CopyToClipboard>
+              :
+              <span>You copied my email: <a href={`mailto:${email}`}>{email}</a></span>
+              }
             </div>
           </div>
-        </Loading>
+        </Loading>  
       </>
     )
   }
