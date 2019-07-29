@@ -1,3 +1,3 @@
-import { createRoutine } from 'redux-saga-routines';
+import { createExtendedRoutine } from 'extend-saga-routines';
 
-export default createRoutine('liked');
+export default createExtendedRoutine('liked', ['GO_TO', 'PREVIOUS', 'NEXT', 'FIRST', 'LAST']);
