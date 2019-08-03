@@ -44,7 +44,7 @@ export default class About extends Component {
             {text}
             <div style={{marginTop: '10px'}}>
               You can visit <a href="https://github.com/shapkarin" target="_blank">my github</a>
-              {!this.state.copied ? ' ' : '.'}
+              {!this.state.copied ? ' ' : '. '}
               {
                 !this.state.copied ?
                 <>
@@ -53,12 +53,12 @@ export default class About extends Component {
                   <CopyToClipboard text={email}
                     onCopy={() => this.setState({copied: true})}>
                     <span style={{cursor: 'pointer', textDecoration: 'underline'}}>
-                    to copy my email to the clipboard
+                      to copy my email to the clipboard
                     </span>
                   </CopyToClipboard>
                 </>
               :
-              <span>You copied my email: <a href={`mailto:${email}`}>{email}</a></span>
+              <span>My email: <a href={`mailto:${email}`}>{email}</a></span>
               }
             </div>
           </div>

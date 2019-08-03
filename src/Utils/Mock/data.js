@@ -31,9 +31,8 @@ export const projectInfo = (url) => {
   return infos[id];
 };
 
-export const about = ` \
-I like to code. \
+export const about = 'I like to code. \
 Stack in production: React, Redux, Redux-Saga, Backbone, \
 ROR, Koa, Webpack, Grunt, Gulp. Also used stylus, \
-less, jade(pug), haml, twig, underscore, ejs, etc..
-`;
+less, jade(pug), haml, twig, underscore, ejs \
+and explore much more.';
