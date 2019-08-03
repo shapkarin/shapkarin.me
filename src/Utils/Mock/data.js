@@ -1,3 +1,4 @@
+// todo: move to the specific component
 export const projects = () => (
   [
     {
@@ -30,4 +31,9 @@ export const projectInfo = (url) => {
   return infos[id];
 };
 
-export const about = "I like to code. Stack in production: React, Redux, Redux-Saga, Backbone, ROR, Koa, Webpack, Grunt, Gulp. Also used stylus, less, jade(pug), haml, twig, underscore, ejs.";
+export const about = ` \
+I like to code. \
+Stack in production: React, Redux, Redux-Saga, Backbone, \
+ROR, Koa, Webpack, Grunt, Gulp. Also used stylus, \
+less, jade(pug), haml, twig, underscore, ejs, etc..
+`;

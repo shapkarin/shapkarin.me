@@ -42,17 +42,21 @@ export default class About extends Component {
         <Loading loading={loading}>
           <div className="About">
             {text}
-            <div>
-              <a href="https://github.com/shapkarin" target="_blank">My github</a>
-              <br/>
+            <div style={{marginTop: '10px'}}>
+              You can visit <a href="https://github.com/shapkarin" target="_blank">my github</a>
+              {!this.state.copied ? ' ' : '.'}
               {
-                !this.state.copied ? 
-                <CopyToClipboard text={email}
-                  onCopy={() => this.setState({copied: true})}>
-                  <span style={{cursor: 'pointer', textDecoration: 'underline'}}>
-                    Copy my email to clipboard.
-                  </span>
-                </CopyToClipboard>
+                !this.state.copied ?
+                <>
+                  and maybe you need
+                  {' '}
+                  <CopyToClipboard text={email}
+                    onCopy={() => this.setState({copied: true})}>
+                    <span style={{cursor: 'pointer', textDecoration: 'underline'}}>
+                    to copy my email to the clipboard
+                    </span>
+                  </CopyToClipboard>
+                </>
               :
               <span>You copied my email: <a href={`mailto:${email}`}>{email}</a></span>
               }

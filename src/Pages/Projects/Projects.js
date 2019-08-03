@@ -80,7 +80,7 @@ export default class Projects extends Component {
           ))}
           <div className="Project" style={{width: '70px'}}>
             <a href="https://freelansim.ru/freelancers/yuryshapkarin/projects" target="_blank">
-              Older <FiExternalLink />
+              More <FiExternalLink />
             </a>
           </div>
         </>
