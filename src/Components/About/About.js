@@ -58,7 +58,7 @@ export default class About extends Component {
                   </CopyToClipboard>
                 </>
               :
-              <span>My email: <a href={`mailto:${email}`}>{email}</a></span>
+              <span>You copied my email: <a href={`mailto:${email}`}>{email}</a></span>
               }
             </div>
           </div>
