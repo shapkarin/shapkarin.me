@@ -60,7 +60,6 @@ export default class Projects extends Component {
           }) =>(
             <div key={id} className="Project">
               {name}
-              id =>>>> {id}
               {' '}
               {url && <a target="_blank" href={url}><FiExternalLink /></a>}
               <div
