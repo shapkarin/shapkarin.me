@@ -53,13 +53,14 @@ export default class Projects extends Component {
             name,
             url,
             id,
-            loading = false,
+            loading: projectIsLoading = false,
             open = false,
             fetched = false,
-            info
+            info = {}
           }) =>(
             <div key={id} className="Project">
               {name}
+              id =>>>> {id}
               {' '}
               {url && <a target="_blank" href={url}><FiExternalLink /></a>}
               <div
@@ -68,11 +69,11 @@ export default class Projects extends Component {
               >
                 more info {open ? <GoChevronDown /> : <GoChevronRight />}
               </div>
-              <Loading loading={loading}>
+              <Loading loading={projectIsLoading}>
                 <Collapse open={open}>
                   <div
                     className="Project__Info"
-                    dangerouslySetInnerHTML={info}
+                    dangerouslySetInnerHTML={info.content}
                   />
                 </Collapse>
               </Loading>

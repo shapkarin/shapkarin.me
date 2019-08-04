@@ -1,4 +1,4 @@
-// todo: move to the specific component
+// todo: move to the `Components`
 export const projects = () => (
   [
     {
@@ -14,21 +14,28 @@ export const projects = () => (
   ]
 );
 
-const infos = {
-  1: {
-    __html: 'App to buy tickets for events: shows, theaters, music concerts, etc. \
-    <br/> \
-    stack: react, redux, redux-saga, normalizr, axios, axios-mock-adapter, \
-    webpack, jest, webpack SVG sprites, git hooks and etc'
+const infos = [
+  {
+    id: 1,
+    content: {
+      __html: 'App to buy tickets for events: shows, theaters, music concerts, etc. \
+      <br/> \
+      stack: react, redux, redux-saga, normalizr, axios, axios-mock-adapter, \
+      webpack, jest, webpack SVG sprites, git hooks and etc',
+    }
   },
-  2: {
-    __html: 'Internet library for <a href="https://beeline.ru" target="_blank">Beeline</a>'
+  {
+    id: 2,
+    content: {
+      __html: 'Internet library for <a href="https://beeline.ru" target="_blank">Beeline</a>'
+    }
   }
-};
+];
 
 export const projectInfo = (url) => {
   const [id] = url.match(/[^/]+$/);
-  return infos[id];
+  console.log(infos.filter(el => el.id == id));
+  return infos.filter(el => el.id == id)[0];
 };
 
 export const about = 'I like to code. \

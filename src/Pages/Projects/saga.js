@@ -2,7 +2,6 @@ import {
   fork,
   all,
   put,
-  call,
   takeEvery,
   takeLatest
 } from 'redux-saga/effects';
@@ -24,14 +23,21 @@ function* getProjects(action) {
 /*
   usually we have id in responce
   TODO: maybe rename to toggle
+
+  I don't like `if (yield !fetched) {`
 */
 function* getProjectInfo(action) {
   try {
     const { id, fetched } = action.payload;
     if (yield !fetched) {
-      yield put(info.request({ id }));
-      const { data } = yield call(fetchProjectInfo, action);
-      yield put(info.success({ data, id }));
+      yield fork(fetch, {
+        action,
+        method: fetchProjectInfo,
+        start: info.request,
+        success: info.success,
+        error: info.failure,
+        fulfill: info.fulfill
+      });
     }
     yield put(info.toggle({ id }));
   } catch (err) {

@@ -1,8 +1,3 @@
-import { createRoutine, createRoutines } from 'redux-saga-routines';
-
-const { some } = createRoutines({ 'some': {'other': {'shit': there => there * 2 }} });
-
-console.log('SOME');
-console.log(some.SUCCESS);
+import { createRoutine } from 'redux-saga-routines';
 
 export default createRoutine('about');

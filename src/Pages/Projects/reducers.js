@@ -54,7 +54,6 @@ export default handleActions({
   // project info
   [info.REQUEST]: (state, { payload: { id } }) => {
     const project = state.data[id];
-
     return {
       ...state,
       data: {
@@ -67,7 +66,8 @@ export default handleActions({
     };
   },
 
-  [info.SUCCESS]: (state, { payload: { id, data } }) => {
+  [info.SUCCESS]: (state, { payload: data }) => {
+    const { id } = data;
     const project = state.data[id];
 
     return {
@@ -77,8 +77,22 @@ export default handleActions({
         [id]: {
           ...project,
           info: data,
-          loading: false,
           fetched: true
+        }
+      }
+    };
+  },
+
+  [info.FULFILL]: (state, { payload: { id } }) => {
+    const project = state.data[id];
+
+    return {
+      ...state,
+      data: {
+        ...state.data,
+        [id]: {
+          ...project,
+          loading: false
         }
       }
     };
