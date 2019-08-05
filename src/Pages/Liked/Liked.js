@@ -51,7 +51,7 @@ export default class Github extends Component {
           }) =>(
             <div key={id} className="Page__GithubItem">
               <div className="Page__GithubItemInner" style={{maxWidth: '250px'}}>
-                <a className="GithubItem__Link centered-label" href={html_url} target="_blank" style={{ whiteSpace: 'nowrap' }}>{full_name}{fork && <GoRepoForked />}</a>
+                <a className="GithubItem__Link centered-label" href={html_url} target="_blank">{full_name}{fork && <GoRepoForked />}</a>
                 <div className="centered-label" style={{lineHeight: "20px"}}>{description}</div>
                 <div className="centered-label"><GoPulse /> {(new Date(updated_at)).toLocaleDateString('ru-RU')}</div>
                 { open_issues_count > 0 && <div className="centered-label"><GoIssueOpened /> open issues <a className="IssuesCount" href={`${html_url}/issues`} target="_blank">{open_issues_count}</a></div> }
