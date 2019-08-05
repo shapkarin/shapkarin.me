@@ -20,12 +20,16 @@ export default handleActions({
   }),
 
   [projects.SUCCESS]: (state, { payload }) => {
-    const schem = new schema.Entity('obj');
-    const { entities: { obj: data } } = normalize(payload, [schem]);
+    const schem = new schema.Entity('collection');
+    const { entities: { collection }, result: order } = normalize(payload, [schem]);
 
     return {
       ...state,
-      data,
+      data: {
+        ...state.data,
+        collection,
+        order
+      },
       loading: false
     };
   },
@@ -37,15 +41,19 @@ export default handleActions({
   }),
 
   [info.TOGGLE]: (state, { payload: { id } }) => {
-    const project = state.data[id];
+    const { data: { collection } } = state;
+    const project = collection[id];
 
     return {
       ...state,
       data: {
         ...state.data,
-        [id]: {
-          ...project,
-          open: !project.open
+        collection: {
+          ...collection,
+          [id]: {
+            ...project,
+            open: !project.open
+          }
         }
       }
     };
@@ -53,46 +61,59 @@ export default handleActions({
 
   // project info
   [info.REQUEST]: (state, { payload: { id } }) => {
-    const project = state.data[id];
+    const { data: { collection } } = state;
+    const project = collection[id];
+
     return {
       ...state,
       data: {
         ...state.data,
-        [id]: {
-          ...project,
-          loading: true
+        collection: {
+          ...collection,
+          [id]: {
+            ...project,
+            loading: true
+          }
         }
       }
     };
   },
 
-  [info.SUCCESS]: (state, { payload: data }) => {
-    const { id } = data;
-    const project = state.data[id];
+  [info.SUCCESS]: (state, { payload }) => {
+    const { id } = payload;
+    const { data: { collection } } = state;
+    const project = collection[id];
 
     return {
       ...state,
       data: {
         ...state.data,
-        [id]: {
-          ...project,
-          info: data,
-          fetched: true
+        collection: {
+          ...collection,
+          [id]: {
+            ...project,
+            info: payload,
+            fetched: true
+          }
         }
       }
     };
   },
 
   [info.FULFILL]: (state, { payload: { id } }) => {
-    const project = state.data[id];
+    const { data: { collection } } = state;
+    const project = collection[id];
 
     return {
       ...state,
       data: {
         ...state.data,
-        [id]: {
-          ...project,
-          loading: false
+        collection: {
+          ...collection,
+          [id]: {
+            ...project,
+            loading: false
+          }
         }
       }
     };

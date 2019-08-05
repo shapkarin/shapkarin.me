@@ -20,7 +20,7 @@ function* getProjects(action) {
   });
 }
 
-function* getProjectInfo(action) {
+function* getProjectInfoOrToggle(action) {
   try {
     const { id, fetched } = action.payload;
     if (yield !fetched) {
@@ -42,6 +42,6 @@ function* getProjectInfo(action) {
 export default function* () {
   yield all([
     takeEvery(projects.TRIGGER, getProjects),
-    takeLatest(info.TRIGGER, getProjectInfo)
+    takeLatest(info.TRIGGER, getProjectInfoOrToggle)
   ]);
 }

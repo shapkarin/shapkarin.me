@@ -11,8 +11,8 @@ import { projects, info } from './routines';
 import './style.less';
 
 const mapStateToProps = (state) => {
-  const { projects: { loading, data } } = state;
-  const projectsArray = Object.keys(data).map(key => data[key]);
+  const { projects: { loading, data: { collection, order = [] } } } = state;
+  const projectsArray = order.map(key => collection[key]);
 
   return {
     loading,
