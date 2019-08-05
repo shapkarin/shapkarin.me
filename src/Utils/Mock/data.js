@@ -34,7 +34,6 @@ const infos = [
 
 export const projectInfo = (url) => {
   const [id] = url.match(/[^/]+$/);
-  console.log(infos.filter(el => el.id == id));
   return infos.filter(el => el.id == id)[0];
 };
 
