@@ -20,12 +20,6 @@ function* getProjects(action) {
   });
 }
 
-/*
-  usually we have id in responce
-  TODO: maybe rename to toggle
-
-  I don't like `if (yield !fetched) {`
-*/
 function* getProjectInfo(action) {
   try {
     const { id, fetched } = action.payload;
