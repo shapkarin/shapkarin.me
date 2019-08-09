@@ -1,8 +1,3 @@
-/*
-    // todo: move to `Components` too
-    if you want to cancel reqest by saga worker cancelling
-    read that https://gist.github.com/shapkarin/5dfb7dd134fca1e51fdcef1fd24a8adf
-*/
 import axios from 'axios';
 
 import urls from './urls';
