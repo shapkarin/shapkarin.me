@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
+import connect from 'react-redux-connect';
 import PropTypes from 'prop-types';
 import { GoChevronRight, GoChevronDown } from "react-icons/go";
 import { FiExternalLink } from "react-icons/fi";
@@ -10,37 +10,41 @@ import { projects, info } from './routines';
 
 import './style.less';
 
-const mapStateToProps = (state) => {
-  const { projects: { loading, data: { collection, order = [] } } } = state;
-  const projectsArray = order.map(key => collection[key]);
-
-  return {
+@connect
+class Projects extends Component {
+  static mapStateToProps = ({ projects: { loading, data: { collection, order = [] } } }) => ({
     loading,
-    projects: projectsArray 
-  };
-};
+    projects: order.map(key => collection[key])
+  })
 
-const mapDispatchToProps = {
-  fetch: projects,
-  toggleInfo: info
-};
+  static mapDispatchToProps = {
+    fetch: projects,
+    toggleInfo: info
+  }
 
-@connect(
-  mapStateToProps,
-  mapDispatchToProps
-)
-export default class Projects extends Component {
   static propTypes = {
     loading: PropTypes.bool.isRequired,
+    projects: PropTypes.arrayOf(PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      url: PropTypes.string.isRequired,
+      id: PropTypes.number.isRequired,
+      loading: PropTypes.bool,
+      open: PropTypes.bool,
+      fetched: PropTypes.bool,
+      info: PropTypes.shape({
+        id: PropTypes.number.isRequired,
+        name: PropTypes.string.isRequired,
+        url: PropTypes.string.isRequired
+      })
+    })).isRequired,
     fetch: PropTypes.func.isRequired,
-    projects: PropTypes.array.isRequired,
     toggleInfo: PropTypes.func.isRequired,
   }
 
-  componentDidMount(){
+  componentDidMount() {
     const { fetch, projects } = this.props;
-    if(projects.length === 0){
-      fetch()
+    if(projects.length === 0) {
+      fetch();
     }
   }
 
@@ -88,3 +92,5 @@ export default class Projects extends Component {
     )
   }
 }
+
+export default Projects;
