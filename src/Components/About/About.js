@@ -43,7 +43,7 @@ export default class About extends Component {
           <div className="About">
             {text}
             <div style={{marginTop: '10px'}}>
-              You can visit <a href="https://github.com/shapkarin" target="_blank">my github</a>
+              You can visit <a href="https://github.com/shapkarin" target="_blank">my Github</a>
               {!this.state.copied ? ' ' : '. '}
               {
                 !this.state.copied ?
