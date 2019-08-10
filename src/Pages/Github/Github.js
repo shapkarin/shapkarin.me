@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
+import connect from 'react-redux-connect';
 import PropTypes from 'prop-types';
 import { GoRepoForked, GoPulse, GoIssueOpened } from 'react-icons/go';
 import { MdWeb } from 'react-icons/md';
@@ -9,27 +9,25 @@ import repositories from './routines';
 
 import './style.less';
 
-const mapStateToProps = (state) => {
-  const { github: { loading, repositories: list } } = state;
-  return { loading, list };
-};
+@connect
+class Github extends Component {
+  static mapStateToProps = ({ github: { loading, repositories: list } }) => ({
+    loading,
+    list
+  })
 
-const mapDispatchToProps = {
-  fetch: repositories
-};
+  static mapDispatchToProps = {
+    fetch: repositories
+  }
 
-@connect(
-  mapStateToProps,
-  mapDispatchToProps
-)
-export default class Github extends Component {
   static propTypes = {
     loading: PropTypes.bool.isRequired,
+    //todo: arrayOf
     list: PropTypes.array.isRequired,
     fetch: PropTypes.func.isRequired
   }
-  
-  componentDidMount(){
+
+  componentDidMount() {
     this.props.fetch();
   }
 
@@ -68,3 +66,5 @@ export default class Github extends Component {
     )
   }
 }
+
+export default Github;

@@ -1,13 +1,11 @@
-## My home page
+## My home page :house_with_garden:
 
-### Clone with depth:
+### Install dependencies:
 ```
-git clone git@github.com:shapkarin/shapkarin.me.git --depth=3
-cd shapkarin.me
+npm i
 ```
 
 ### Run:
 ```
-npm i
 npm start
 ```

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
+import connect from 'react-redux-connect';
 import PropTypes from 'prop-types';
 import { GoRepoForked, GoPulse, GoIssueOpened } from 'react-icons/go';
 import { MdWeb } from 'react-icons/md';
@@ -8,32 +8,30 @@ import { TiStarOutline } from "react-icons/ti";
 import Loading from 'Components/Loading';
 import liked from './routines';
 
-const mapStateToProps = (state) => {
-  const { liked: { loading, list } } = state;
-  return { loading, list };
-};
+@connect
+class Github extends Component {
+  static mapStateToProps = ({ liked: { loading, list } }) => ({
+    loading,
+    list
+  })
 
-const mapDispatchToProps = {
-  fetch: liked
-};
+  static mapDispatchToProps = {
+    fetch: liked
+  }
 
-@connect(
-  mapStateToProps,
-  mapDispatchToProps
-)
-export default class Github extends Component {
   static propTypes = {
     loading: PropTypes.bool.isRequired,
+    // todo: arrayOf with shape, look at src/Pages/Projects/Projects.js
     list: PropTypes.array.isRequired,
     fetch: PropTypes.func.isRequired
   }
 
-  componentDidMount(){
-    this.props.fetch()
+  componentDidMount() {
+    this.props.fetch();
   }
 
-  render () {
-    const { loading, list } = this.props;
+  render() {
+    const { loading, list = [] } = this.props;
     return (
       <>
         <Loading loading={loading}>
@@ -71,3 +69,5 @@ export default class Github extends Component {
     )
   }
 }
+
+export default Github;
