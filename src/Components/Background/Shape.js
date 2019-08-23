@@ -16,7 +16,7 @@ export default class Shape {
     this.opacity = this.randomOpacity();
   }
 
-  randomOpacity = () => random(10) > 1 ? random(0.04, 0.1) : random(0.2, 0.4)
+  randomOpacity = () => Math.random() < 0.8 ? random(0.04, 0.1) : random(0.2, 0.4)
 
   draw = () => {
     this[this.type]();
