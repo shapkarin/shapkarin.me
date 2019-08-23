@@ -1,4 +1,6 @@
-## My home page :house_with_garden: https://shapkarin.me
+## My home page :house_with_garden:
+
+[visit online](https://shapkarin.me) :eyes:
 
 ### Install dependencies:
 ```
