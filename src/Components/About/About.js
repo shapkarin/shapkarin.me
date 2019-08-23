@@ -1,36 +1,36 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
+import connect from 'react-redux-connect';
 import PropTypes from 'prop-types';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
+import { IoIosCheckmarkCircleOutline as NotifyIcon } from "react-icons/io";
+import FlashMessage from 'react-flash-message';
 
 import about from './routines';
 import Loading from 'Components/Loading';
 
 import './style.less';
 
-const mapStateToProps = (state) => {
-  const { about: { loading, text } } = state;
-  return { loading, text };
-};
+@connect
+class About extends Component {
+  static mapStateToProps = ({ about: { loading, text } }) => ({
+    loading,
+    text
+  })
 
-const mapDispatchToProps = {
-  fetch: about
-};
+  static mapDispatchToProps = {
+    fetch: about
+  }
 
-@connect(
-  mapStateToProps,
-  mapDispatchToProps
-)
-export default class About extends Component {
   static propTypes = {
     loading: PropTypes.bool.isRequired,
     text: PropTypes.string.isRequired,
   }
+
   state = {
     copied: false
   }
   
-  componentDidMount(){
+  componentDidMount() {
     this.props.fetch();
   }
 
@@ -44,7 +44,7 @@ export default class About extends Component {
             {text}
             <div style={{marginTop: '10px'}}>
               You can visit <a href="https://github.com/shapkarin" target="_blank">my Github</a>
-              {!this.state.copied ? ' ' : '. '}
+              {!this.state.copied ? ' ' : ', '}
               {
                 !this.state.copied ?
                 <>
@@ -58,12 +58,16 @@ export default class About extends Component {
                   </CopyToClipboard>
                 </>
               :
-              <span>You copied my email: <a href={`mailto:${email}`}>{email}</a></span>
+              <span>
+                <FlashMessage duration={742}><NotifyIcon />You copied </FlashMessage>my email: <a href={`mailto:${email}`}>{email}</a>
+              </span>
               }
             </div>
           </div>
-        </Loading>  
+        </Loading>
       </>
     )
   }
 }
+
+export default About;

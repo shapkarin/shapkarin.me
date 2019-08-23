@@ -3,6 +3,7 @@ import connect from 'react-redux-connect';
 import PropTypes from 'prop-types';
 import { GoChevronRight, GoChevronDown } from "react-icons/go";
 import { FiExternalLink } from "react-icons/fi";
+import queryString from 'query-string';
 
 import Loading from 'Components/Loading';
 import Collapse from 'Components/Collapse';
@@ -46,6 +47,8 @@ class Projects extends Component {
     if(projects.length === 0) {
       fetch();
     }
+    const values = queryString.parse(this.props.location.search);
+    console.log(values);
   }
 
   render () {
