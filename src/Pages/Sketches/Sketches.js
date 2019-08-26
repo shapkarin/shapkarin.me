@@ -2,9 +2,66 @@ import React from 'react';
 
 import './Sketches.less';
 
+const links = {
+  2016: [
+    {
+      title: 'Cursor magic',
+      href: '/gallery/p5js/magic',
+    },
+    {
+      title: 'Flies',
+      href: '/gallery/p5js/flies',
+    },
+    {
+      title: 'Flies Mouse Acceleration',
+      href: '/gallery/p5js/flies-m-acc',
+    },
+    {
+      title: 'Draw Walk',
+      href: '/gallery/p5js/draw_walk',
+    },
+    {
+      title: 'Bubbles',
+      href: '/gallery/p5js/bubbles',
+    }
+  ],
+  2012: [
+    {
+      title: 'Networks',
+      href: '/gallery/older/networks',
+    },
+    {
+      title: 'Walkers',
+      href: '/gallery/older',
+    },
+    {
+      title: 'Painter Walk',
+      href: '/gallery/older/random_walker',
+    },
+    {
+      title: 'Dots',
+      href: '/gallery/older/dots',
+    }
+  ]
+}
+
 export default function() {
-  return <div style={{margin: "20px"}}>
-  <a className="Gal--Item" href="/gallery/p5js" target="_blank">P5.js ≈2016</a>
-  <a className="Gal--Item" href="/gallery/older" target="_blank">Pure JS ≈2012</a>
+  return <div style={{display: 'flex'}}>
+    {Object.keys(links).map(year => (
+      <div key={year} style={{display: 'flex', flexDirection: 'column'}}>
+        <h3>{`≈ ${year}`}</h3>
+        <br/> {/* :-) */}
+        {links[year].map((link, i) => (
+          <a
+            {...link}
+            key={`${year}-${i}`}
+            className="Gal--Item"
+            target="_blank"
+          >
+            {link.title}
+          </a>      
+        ))}
+      </div>
+    ))}
 </div>;
 };
