@@ -5,6 +5,10 @@ import './Sketches.less';
 const links = {
   2016: [
     {
+      title: 'Draw Walk',
+      href: '/gallery/p5js/draw_walk',
+    },
+    {
       title: 'Cursor magic',
       href: '/gallery/p5js/magic',
     },
@@ -17,22 +21,18 @@ const links = {
       href: '/gallery/p5js/flies-m-acc',
     },
     {
-      title: 'Draw Walk',
-      href: '/gallery/p5js/draw_walk',
-    },
-    {
       title: 'Bubbles',
       href: '/gallery/p5js/bubbles',
     }
   ],
   2012: [
     {
-      title: 'Networks',
-      href: '/gallery/older/networks',
-    },
-    {
       title: 'Walkers',
       href: '/gallery/older',
+    },
+    {
+      title: 'Networks',
+      href: '/gallery/older/networks',
     },
     {
       title: 'Painter Walk',
