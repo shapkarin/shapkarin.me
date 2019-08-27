@@ -33,8 +33,9 @@ class Projects extends Component {
       fetched: PropTypes.bool,
       info: PropTypes.shape({
         id: PropTypes.number.isRequired,
-        name: PropTypes.string.isRequired,
-        url: PropTypes.string.isRequired
+        content: PropTypes.shape({
+          __html: PropTypes.string.isRequired
+        }).isRequired,
       })
     })).isRequired,
     fetch: PropTypes.func.isRequired,
