@@ -3,13 +3,13 @@ import { NavLink } from 'react-router-dom';
 import { FaPlayCircle } from 'react-icons/fa';
 
 import RandomButton from 'Components/RandomButton';
-import links from './links';
+import pages from './pages';
 
 import './Menu.less';
 
 const Menu = () => (
   <nav className="Menu">
-    {links.map((link) => {
+    {pages.map((link) => {
       const { title, url, icon } = link;
       return (
         <NavLink

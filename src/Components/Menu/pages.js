@@ -1,7 +1,7 @@
 import React from 'react';
 import { GoRepo, GoStar, GoProject } from 'react-icons/go';
 
-const links = [
+const pages = [
   {
     title: 'Projects',
     url: '/projects',
@@ -19,4 +19,4 @@ const links = [
   }
 ];
 
-export default links;
+export default pages;
