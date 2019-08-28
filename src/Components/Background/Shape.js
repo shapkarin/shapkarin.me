@@ -1,32 +1,38 @@
+//TODO: refact
 import random from 'lodash/random';
 
 export default class Shape {
-  constructor(props) {
-    this.methods = ['drawCircle', 'drawRect', 'drawNothing'];
-    this.type = this.methods[random(this.methods.length - 1)];
-    this.x = props.x;
-    this.y = props.y;
-    this.row = props.row;
-    this.col = props.col;
+  constructor({x, y, row, col, ctx}) {
+    this.drawMethods = [
+      'drawCircle',
+      'drawRect',
+      'drawNothing'
+    ];
+    this.type = this.getRandomShape();
+    this.x = x;
+    this.y = y;
+    this.row = row;
+    this.col = col;
+    this.ctx = ctx;
+    // this.dir = 1;
     this.radius = random(4, 9);
     this.size = random(6, 16);
-    this.ctx = props.ctx;
-    this.dir = 1;
-    //todo
-    this.opacity = this.randomOpacity();
+    this.opacity = this.getRandomOpacity();
   }
 
-  randomOpacity = () => Math.random() < 0.8 ? random(0.04, 0.1) : random(0.2, 0.4)
+  getRandomShape = () => this.drawMethods[random(this.drawMethods.length - 1)]
+
+  getRandomOpacity = () => Math.random() < 0.8 ? random(0.04, 0.1) : random(0.2, 0.4)
+
+  getColor = () => `rgba(255, 255, 255, ${this.opacity})`
 
   draw = () => {
     this[this.type]();
   }
 
-  color = () => `rgba(255, 255, 255, ${this.opacity})`
-
   drawCircle = () => {
     this.ctx.beginPath();
-    this.ctx.strokeStyle = this.color();
+    this.ctx.strokeStyle = this.getColor();
     this.ctx.arc(this.x, this.y, this.radius, 0, 2 * Math.PI);
     this.ctx.stroke();
     this.ctx.closePath();
@@ -34,7 +40,7 @@ export default class Shape {
 
   drawRect = () => {
     this.ctx.beginPath();
-    this.ctx.strokeStyle = this.color();
+    this.ctx.strokeStyle = this.getColor();
     this.ctx.rect(this.x - this.size / 2, this.y - this.size / 2, this.size, this.size);
     this.ctx.stroke();
     this.ctx.closePath();
@@ -44,7 +50,7 @@ export default class Shape {
     return 'heh';
   }
 
-  //TODO: refact
+  
   animate = () => {
     if (this.type === 'drawCircle') {
       this.radius += 0.05 * this.dir;
@@ -70,7 +76,7 @@ export default class Shape {
   randomize = () => {
     this.radius = random(4, 9);
     this.size = random(6, 16);
-    this.type = this.methods[random(this.methods.length - 1)];
-    this.opacity = this.randomOpacity();
+    this.type = this.getRandomShape();
+    this.opacity = this.getRandomOpacity();
   }
 }

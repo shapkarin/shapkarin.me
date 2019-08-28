@@ -10,7 +10,6 @@
     "normalizr": "^3.3.0",
     "path-to-regexp": "^3.0.0",
     "react": "^16.8.2",
-    "react-app-polyfill": "^0.2.1",
     "react-copy-to-clipboard": "^5.0.1",
     "react-dev-utils": "^7.0.3",
     "react-dom": "^16.8.2",

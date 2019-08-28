@@ -3,7 +3,25 @@ import React from 'react';
 import './Sketches.less';
 
 const links = {
-  2016: [
+  'Archive ≈2012': [
+    {
+      title: 'Walkers',
+      href: '/gallery/older',
+    },
+    {
+      title: 'Networks',
+      href: '/gallery/older/networks',
+    },
+    {
+      title: 'Painter Walk',
+      href: '/gallery/older/random_walker',
+    },
+    {
+      title: 'Dots',
+      href: '/gallery/older/dots',
+    }
+  ],
+  'Archive ≈2016': [
     {
       title: 'Draw Walk',
       href: '/gallery/p5js/draw_walk',
@@ -25,36 +43,28 @@ const links = {
       href: '/gallery/p5js/bubbles',
     }
   ],
-  2012: [
+  'After': [
     {
-      title: 'Walkers',
-      href: '/gallery/older',
+      title: 'Sound Terrain',
+      href: 'http://joy.shapkarin.me',
     },
     {
-      title: 'Networks',
-      href: '/gallery/older/networks',
-    },
-    {
-      title: 'Painter Walk',
-      href: '/gallery/older/random_walker',
-    },
-    {
-      title: 'Dots',
-      href: '/gallery/older/dots',
+      title: 'Will upload to Github soon',
+      href: 'https://shapkarin.github.io/3d-first-person/index.html',
     }
   ]
 }
 
 export default function() {
   return <div style={{display: 'flex'}}>
-    {Object.keys(links).map(year => (
-      <div key={year} style={{display: 'flex', flexDirection: 'column'}}>
-        <h3>{`≈ ${year}`}</h3>
+    {Object.keys(links).map(category => (
+      <div key={category} style={{display: 'flex', flexDirection: 'column'}}>
+        <h3>{`${category}:`}</h3>
         <br/> {/* :-) */}
-        {links[year].map((link, i) => (
+        {links[category].map((link, i) => (
           <a
             {...link}
-            key={`${year}-${i}`}
+            key={`${category}-${i}`}
             className="Gal--Item"
             target="_blank"
           >
@@ -63,5 +73,5 @@ export default function() {
         ))}
       </div>
     ))}
-</div>;
+  </div>;
 };

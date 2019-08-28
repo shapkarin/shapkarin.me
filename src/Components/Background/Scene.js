@@ -25,20 +25,16 @@ export default class Scene {
     // this.ctx.fillStyle = "";
     this.array2D = this.createArray();
     this.draw();
-    // this.canvas.addEventListener('click', () => {
-    //   this.randomizeAll();
-    //   this.draw();
-    // });
   }
 
   //  TODO..
   createArray = () => {
     const countY = 40;
     const itemW = Math.floor(this.width / countY);
-    const countX = Math.floor(this.height / itemW);
+    //const countX = Math.floor(this.height / itemW);
     // this.countX = countX;
     this.countX = 50;
-    const itemH = itemW;
+    // const itemH = itemW;
     // it works too, functional:
     // return [...Array(countY)].map((row, rowI) => [...Array(countX)].map((cell, colI) => new Shape({ x: itemW * colI, y: itemH * rowI, ctx: this.ctx, row: rowI, col: colI })));
     
@@ -115,13 +111,13 @@ export default class Scene {
     item.randomize();
   }
 
-  randomTimes = () => random(10) > 1 ? [1] : [2, 20]
+  // randomTimes = () => random(10) > 1 ? [1] : [2, 20]
 
   animation = () => {
     const delay = random(1000, 3000);
-    const times = this.randomTimes();
+    // const times = this.randomTimes();
     setTimeout(() => {
-      for (let i = 0; i < random.apply(this, [100,1000]); i++) {
+      for (let i = 0; i < random.apply(this, [1,10]); i++) {
         // this.getRandomItem().animate();
         this.randomizeSome();
       }
