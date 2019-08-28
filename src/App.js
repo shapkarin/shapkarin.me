@@ -10,7 +10,6 @@ import { createBrowserHistory } from 'history';
 
 import About from 'Components/About';
 import Menu from 'Components/Menu';
-import Hide from 'Components/Hide';
 import Github from 'Pages/Github';
 import Projects from 'Pages/Projects';
 import Liked from 'Pages/Liked';
