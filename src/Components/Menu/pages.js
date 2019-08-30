@@ -1,7 +1,13 @@
 import React from 'react';
 import { GoRepo, GoStar, GoProject } from 'react-icons/go';
+import { FaPlayCircle } from 'react-icons/fa';
 
-const pages = [
+export default [
+  {
+    title: 'Sketches',
+    url: '/sketches',
+    icon: () => <FaPlayCircle />
+  },
   {
     title: 'Projects',
     url: '/projects',
@@ -16,7 +22,5 @@ const pages = [
     title: 'Liked',
     url: '/liked',
     icon: () => <GoStar />
-  }
+  },
 ];
-
-export default pages;

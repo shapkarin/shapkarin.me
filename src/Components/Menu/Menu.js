@@ -1,6 +1,5 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { FaPlayCircle } from 'react-icons/fa';
 
 import RandomButton from 'Components/RandomButton';
 import pages from './pages';
@@ -24,13 +23,6 @@ const Menu = () => (
         </NavLink>
       );
     })}
-    <NavLink
-      to="/sketches"
-      className="Menu__Item"
-      activeClassName="Menu__Item--active"
-    >
-      <FaPlayCircle/> Sketches
-    </NavLink>
     <RandomButton />
   </nav>
 );
