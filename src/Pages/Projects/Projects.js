@@ -68,7 +68,7 @@ class Projects extends Component {
               {' '}
               {url && <a target="_blank" href={url}><FiExternalLink /></a>}
               <div
-                style={{cursor: 'pointer', marginTop: '7px'}}
+                style={{cursor: 'pointer', margin: '7px 0 7px 0'}}
                 onClick={() => toggleInfo({id, fetched})}
               >
                 more info {open ? <GoChevronDown /> : <GoChevronRight />}
