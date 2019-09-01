@@ -1,25 +1,61 @@
-import React from 'react';
+import React, { Component } from 'react';
+import connect from 'react-redux-connect';
+import PropTypes from 'prop-types';
 
-import links from './catalog';
 import './Sketches.less';
 
-export default function() {
-  return <div style={{display: 'flex'}}>
-    {Object.keys(links).map(category => (
-      <div key={category} style={{display: 'flex', flexDirection: 'column'}}>
-        <h3>{`${category}:`}</h3>
-        <br/> {/* :-) */}
-        {links[category].map((link, i) => (
-          <a
-            {...link}
-            key={`${category}-${i}`}
-            className="Gal--Item"
-            target="_blank"
-          >
-            {link.title}
-          </a>      
-        ))}
-      </div>
-    ))}
-  </div>;
-};
+import Loading from 'Components/Loading';
+import sketches from './routines';
+
+@connect
+class Sketches extends Component {
+  static mapStateToProps = ({ sketches: { loading, catalog } }) => ({
+    loading,
+    catalog
+  })
+
+  static mapDispatchToProps = {
+    fetch: sketches
+  }
+
+  static propTypes = {
+    loading: PropTypes.bool.isRequired,
+    // todo: arrayOf with shape, look at src/Pages/Projects/Projects.js
+    catalog: PropTypes.array.isRequired,
+    fetch: PropTypes.func.isRequired
+  }
+
+  componentDidMount() {
+    this.props.fetch();
+  }
+
+  render() {
+    const { loading, catalog } = this.props;
+    return (
+      <>
+        <Loading loading={loading}>
+          <div style={{display: 'flex'}}>
+            {Object.keys(catalog).map(category => (
+              <div key={category} style={{display: 'flex', flexDirection: 'column'}}>
+                <h3>{`${category}:`}</h3>
+                <br/> {/* :-) */}
+                {catalog[category].map((link, i) => (
+                  <a
+                    {...link}
+                    key={`${category}-${i}`}
+                    className="Gal--Item"
+                    target="_blank"
+                  >
+                    {link.title}
+                  </a>      
+                ))}
+              </div>
+            ))}
+          </div>
+        </Loading>
+      </>
+    )
+  }
+}
+
+export default Sketches;

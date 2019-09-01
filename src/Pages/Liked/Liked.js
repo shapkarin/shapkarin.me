@@ -31,7 +31,7 @@ class Github extends Component {
   }
 
   render() {
-    const { loading, list = [] } = this.props;
+    const { loading, list } = this.props;
     return (
       <>
         <Loading loading={loading}>

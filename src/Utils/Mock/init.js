@@ -3,9 +3,10 @@ import MockAdapter from 'axios-mock-adapter';
 import urls from '../urls';
 
 import {
+  about,
+  sketches,
   projects,
-  projectInfo,
-  about
+  getProjectInfo,
 } from './data';
 
 export default function (axios) {
@@ -13,11 +14,20 @@ export default function (axios) {
   const delay = 300;
 
   mock
+    .onGet(urls.sketches)
+    .reply(() => (
+      new Promise((resolve) => {
+        setTimeout(() => {
+          resolve([200, sketches]);
+        }, delay);
+      })
+    ))
+
     .onGet(urls.projects)
     .reply(() => (
       new Promise((resolve) => {
         setTimeout(() => {
-          resolve([200, projects()]);
+          resolve([200, projects]);
         }, delay);
       })
     ))
@@ -26,7 +36,7 @@ export default function (axios) {
     .reply(({ url }) => (
       new Promise((resolve) => {
         setTimeout(() => {
-          resolve([200, projectInfo(url)]);
+          resolve([200, getProjectInfo(url)]);
         }, delay);
       })
     ))
@@ -38,6 +48,5 @@ export default function (axios) {
           resolve([200, about]);
         }, delay);
       })
-    ))
-
+    ));
 }

@@ -6,6 +6,8 @@ import initMock from './Mock/init';
 const mockedRequest = axios.create();
 initMock(mockedRequest);
 
+export const fetchSketches = () => mockedRequest.get(urls.sketches);
+
 export const fetchAbout = () => mockedRequest.get(urls.about);
 
 export const fetchProjects = () => mockedRequest.get(urls.projects);
