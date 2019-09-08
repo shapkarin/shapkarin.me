@@ -23,6 +23,10 @@ class Github extends Component {
     loading: PropTypes.bool.isRequired,
     // todo: arrayOf with shape, look at src/Pages/Projects/Projects.js
     list: PropTypes.array.isRequired,
+    error: PropTypes.shape({
+      code: PropTypes.number,
+      message: PropTypes.string
+    }),
     fetch: PropTypes.func.isRequired
   }
 
@@ -31,10 +35,11 @@ class Github extends Component {
   }
 
   render() {
-    const { loading, list } = this.props;
+    const { loading, error, list } = this.props;
+    const status = { loading, error };
     return (
       <>
-        <Loading loading={loading}>
+        <Loading {...status}>
           <div className="Page__Github">
           {list.map(({
             id,

@@ -21,7 +21,7 @@ class Sketches extends Component {
   static propTypes = {
     loading: PropTypes.bool.isRequired,
     // todo: arrayOf with shape, look at src/Pages/Projects/Projects.js
-    catalog: PropTypes.array.isRequired,
+    // catalog: PropTypes.array.isRequired,
     fetch: PropTypes.func.isRequired
   }
 
@@ -32,28 +32,26 @@ class Sketches extends Component {
   render() {
     const { loading, catalog } = this.props;
     return (
-      <>
-        <Loading loading={loading}>
-          <div style={{display: 'flex'}}>
-            {Object.keys(catalog).map(category => (
-              <div key={category} style={{display: 'flex', flexDirection: 'column'}}>
-                <h3>{`${category}:`}</h3>
-                <br/> {/* :-) */}
-                {catalog[category].map((link, i) => (
-                  <a
-                    {...link}
-                    key={`${category}-${i}`}
-                    className="Gal--Item"
-                    target="_blank"
-                  >
-                    {link.title}
-                  </a>      
-                ))}
-              </div>
-            ))}
-          </div>
-        </Loading>
-      </>
+      <Loading loading={loading}>
+        <div style={{display: 'flex'}}>
+          {Object.keys(catalog).map(category => (
+            <div key={category} style={{display: 'flex', flexDirection: 'column'}}>
+              <h3>{`${category}:`}</h3>
+              <br/> {/* :-) */}
+              {catalog[category].map((link, i) => (
+                <a
+                  {...link}
+                  key={`${category}-${i}`}
+                  className="Gal--Item"
+                  target="_blank"
+                >
+                  {link.title}
+                </a>      
+              ))}
+            </div>
+          ))}
+        </div>
+      </Loading>
     )
   }
 }
