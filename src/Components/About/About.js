@@ -53,7 +53,7 @@ export default class About extends Component {
                   <CopyToClipboard text={email}
                     onCopy={() => this.setState({copied: true})}>
                     <span style={{cursor: 'pointer', textDecoration: 'underline'}}>
-                      to copy my email to the clipboard
+                      to copy my email.
                     </span>
                   </CopyToClipboard>
                 </>

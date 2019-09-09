@@ -1,5 +1,3 @@
-// todo: move to the each component
-
 export const sketches = {
   'Archive ≈2012': [
     {
@@ -122,14 +120,14 @@ const infos = [
   {
     id: 5,
     content: {
-      __html: 'Generate three redux files from CLI: "constants.js, actions.js, reducers.js. <br/><br/> <img alt="npm" src="https://img.shields.io/npm/v/redux-scaffolder?style=social"> <img alt="npm" src="https://img.shields.io/npm/dt/redux-scaffolder?style=social"> <img alt="NPM" src="https://img.shields.io/npm/l/redux-scaffolder?style=social">'
+      __html: 'Generate three redux files by CLI: "constants.js, actions.js, reducers.js." <br/><br/> <img alt="npm" src="https://img.shields.io/npm/v/redux-scaffolder?style=social"> <img alt="npm" src="https://img.shields.io/npm/dt/redux-scaffolder?style=social"> <img alt="NPM" src="https://img.shields.io/npm/l/redux-scaffolder?style=social">'
     }
   }
 ];
 
 export const getProjectInfo = (url) => {
   const [id] = url.match(/[^/]+$/);
-  return infos.filter(el => el.id == id)[0];
+  return infos.find(el => el.id == id);
 };
 
 export const about = 'I like to code. \

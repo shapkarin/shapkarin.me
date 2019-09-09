@@ -1,4 +1,12 @@
-.Project {
+// todo: some common classes like: .PageFlex .PageFlex_Item .PageFlex__Item_rounded
+// todo: refact styles
+.PageProjects {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+
+.PageProjects__Item {
   border-radius: 8px;
   background-color: rgba(255,255,255,0.05);
   transition: background-color .3s linear;
@@ -9,5 +17,24 @@
   }
   @media (min-width: 700px) {
     width: 355px;
+  }
+  &_more {
+    display: block;
+    margin-left: 20px;
+    padding: 15px;
+    background: rgba(255,255,255,0.04);
+    border-radius: 8px;
+    &:hover {
+      background-image: 
+        repeating-linear-gradient(
+          -45deg, 
+          transparent, 
+          transparent 4px,
+          rgba(255, 255, 255, 0.2) 4px,
+          rgba(255,255,255,0) 8px
+        );
+      background-size: 200% 200%;
+      animation: barberpole 10s linear infinite;
+    }
   }
 }

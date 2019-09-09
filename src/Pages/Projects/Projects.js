@@ -44,7 +44,7 @@ class Projects extends Component {
 
   componentDidMount() {
     const { fetch, projects } = this.props;
-    if(projects.length === 0) {
+    if (projects.length === 0) {
       fetch();
     }
   }
@@ -52,44 +52,51 @@ class Projects extends Component {
   render () {
     const { loading, projects, toggleInfo } = this.props;
     return (
-      <Loading loading={loading}>
-        <>
-          {projects.map(({
-            name,
-            url,
-            id,
-            loading: projectIsLoading = false,
-            open = false,
-            fetched = false,
-            info = {}
-          }) =>(
-            <div key={id} className="Project">
-              {name}
-              {' '}
-              {url && <a target="_blank" href={url}><FiExternalLink /></a>}
-              <div
-                style={{cursor: 'pointer', margin: '7px 0 7px 0'}}
-                onClick={() => toggleInfo({id, fetched})}
-              >
-                more info {open ? <GoChevronDown /> : <GoChevronRight />}
+      <div className="PageProjects">
+        <Loading loading={loading}>
+          <div>
+            {projects.map(({
+              name,
+              url,
+              id,
+              loading: projectIsLoading = false,
+              open = false,
+              fetched = false,
+              info = {}
+            }) =>(
+              <div key={id} className="PageProjects__Item">
+                {name}
+                {' '}
+                {url && <a target="_blank" href={url}><FiExternalLink /></a>}
+                <div
+                  style={{cursor: 'pointer', margin: '7px 0 7px 0'}}
+                  onClick={() => toggleInfo({id, fetched})}
+                >
+                  more info {open ? <GoChevronDown /> : <GoChevronRight />}
+                </div>
+                <Loading loading={projectIsLoading}>
+                  <Collapse open={open}>
+                    <div
+                      className="Project__Info"
+                      dangerouslySetInnerHTML={info.content}
+                    />
+                  </Collapse>
+                </Loading>
               </div>
-              <Loading loading={projectIsLoading}>
-                <Collapse open={open}>
-                  <div
-                    className="Project__Info"
-                    dangerouslySetInnerHTML={info.content}
-                  />
-                </Collapse>
-              </Loading>
+            ))}
             </div>
-          ))}
-          <div className="Project" style={{width: '70px'}}>
-            <a href="https://freelansim.ru/freelancers/yuryshapkarin/projects" target="_blank">
-              More <FiExternalLink />
-            </a>
-          </div>
-        </>
-      </Loading>
+            <div  >
+              <a
+                className="PageProjects__Item_more"
+                style={{width: '70px'}}
+                href="https://freelansim.ru/freelancers/yuryshapkarin/projects"
+                target="_blank"
+              >
+                More <FiExternalLink />
+              </a>
+            </div>
+        </Loading>
+      </div>
     )
   }
 }
