@@ -34,10 +34,6 @@ export const sketches = {
     {
       title: 'Flies Mouse Acceleration',
       href: '/gallery/p5js/flies-m-acc',
-    },
-    {
-      title: 'Bubbles',
-      href: '/gallery/p5js/bubbles',
     }
   ],
 

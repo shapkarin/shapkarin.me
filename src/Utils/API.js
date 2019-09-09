@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 import urls from './urls';
-import initMock from './Mock/init';
+import initMock from '../Mock/init';
 
 const mockedRequest = axios.create();
 initMock(mockedRequest);

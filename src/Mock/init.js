@@ -1,6 +1,6 @@
 import MockAdapter from 'axios-mock-adapter';
 
-import urls from '../urls';
+import urls from 'Utils/urls';
 
 import {
   about,
