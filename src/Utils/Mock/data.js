@@ -66,23 +66,28 @@ export const sketches = {
 export const projects = [
   {
     id: 1,
-    name: 'Redkassa widget',
+    name: 'Redkassa Widget',
     url: 'https://widget.redkassa.ru'
   },
   {
     id: 2,
-    name: 'Books.beeline.ru',
+    name: 'Books.Beeline.ru',
     url: ''
   },
   {
     id: 3,
-    name: 'Saga-Fetch',
+    name: 'Saga Fetch',
     url: 'https://www.npmjs.com/package/saga-fetch'
   },
   {
     id: 4,
-    name: 'Extend-Saga-Routines',
+    name: 'Extend Saga Routines',
     url: 'https://www.npmjs.com/package/extend-saga-routines'
+  },
+  {
+    id: 5,
+    name: 'Redux Scaffolder',
+    url: 'https://www.npmjs.com/package/redux-scaffolder'
   }
 ];
 
@@ -111,7 +116,13 @@ const infos = [
   {
     id: 4,
     content: {
-      __html: 'Extend any routine with custom stages, create routine that has redux-saga-routines default stages and create routine with only yours custom stages. <br/> <img alt="npm" src="https://img.shields.io/npm/v/extend-saga-routines?style=social"> <img alt="npm" src="https://img.shields.io/npm/dt/extend-saga-routines?style=social"> <img alt="NPM" src="https://img.shields.io/npm/l/extend-saga-routines?style=social"> <img alt="Travis (.org)" src="https://img.shields.io/travis/shapkarin/extend-saga-routines?label=Tests&style=social">'
+      __html: 'Extend any routine with custom stages, create routine that has redux-saga-routines default stages and create routine with only yours custom stages. <br/><br/> <img alt="npm" src="https://img.shields.io/npm/v/extend-saga-routines?style=social"> <img alt="npm" src="https://img.shields.io/npm/dt/extend-saga-routines?style=social"> <img alt="NPM" src="https://img.shields.io/npm/l/extend-saga-routines?style=social"> <img alt="Travis (.org)" src="https://img.shields.io/travis/shapkarin/extend-saga-routines?label=Tests&style=social">'
+    }
+  },
+  {
+    id: 5,
+    content: {
+      __html: 'Generate three redux files from CLI: "constants.js, actions.js, reducers.js. <br/><br/> <img alt="npm" src="https://img.shields.io/npm/v/redux-scaffolder?style=social"> <img alt="npm" src="https://img.shields.io/npm/dt/redux-scaffolder?style=social"> <img alt="NPM" src="https://img.shields.io/npm/l/redux-scaffolder?style=social">'
     }
   }
 ];
