@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
+import connect from 'react-redux-connect';
 import PropTypes from 'prop-types';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 
@@ -8,24 +8,22 @@ import Loading from 'Components/Loading';
 
 import './style.less';
 
-const mapStateToProps = (state) => {
-  const { about: { loading, text } } = state;
-  return { loading, text };
-};
-
-const mapDispatchToProps = {
-  fetch: about
-};
-
-@connect(
-  mapStateToProps,
-  mapDispatchToProps
-)
+@connect
 export default class About extends Component {
   static propTypes = {
     loading: PropTypes.bool.isRequired,
     text: PropTypes.string.isRequired,
   }
+
+  static mapStateToProps = ({ about: { loading, text } }) => ({
+    loading,
+    text
+  })
+
+  static mapDispatchToProps = {
+    fetch: about
+  }
+  
   state = {
     copied: false
   }
