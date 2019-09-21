@@ -60,13 +60,8 @@ export const sketches = {
 export const projects = [
   {
     id: 1,
-    name: 'Redkassa Widget',
-    url: 'https://widget.redkassa.ru'
-  },
-  {
-    id: 2,
-    name: 'Books.Beeline.ru',
-    url: ''
+    name: 'Redux Scaffolder',
+    url: 'https://www.npmjs.com/package/redux-scaffolder'
   },
   {
     id: 3,
@@ -80,8 +75,8 @@ export const projects = [
   },
   {
     id: 5,
-    name: 'Redux Scaffolder',
-    url: 'https://www.npmjs.com/package/redux-scaffolder'
+    name: 'Redkassa Widget',
+    url: 'https://widget.redkassa.ru'
   }
 ];
 
@@ -89,16 +84,7 @@ const infos = [
   {
     id: 1,
     content: {
-      __html: 'App to buy tickets for events: shows, theaters, music concerts, etc. \
-<br/> \
-stack: react, redux, redux-saga, normalizr, axios, axios-mock-adapter, \
-webpack, jest, webpack SVG sprites, git hooks and etc',
-    }
-  },
-  {
-    id: 2,
-    content: {
-      __html: 'Internet library for <a href="https://beeline.ru" target="_blank">Beeline</a>'
+      __html: 'Generate three redux files by CLI: "constants.js, actions.js, reducers.js." <br/><br/> <img alt="npm" src="https://img.shields.io/npm/v/redux-scaffolder?style=social"> <img alt="npm" src="https://img.shields.io/npm/dt/redux-scaffolder?style=social"> <img alt="NPM" src="https://img.shields.io/npm/l/redux-scaffolder?style=social">'
     }
   },
   {
@@ -118,9 +104,12 @@ webpack, jest, webpack SVG sprites, git hooks and etc',
   {
     id: 5,
     content: {
-      __html: 'Generate three redux files by CLI: "constants.js, actions.js, reducers.js." <br/><br/> <img alt="npm" src="https://img.shields.io/npm/v/redux-scaffolder?style=social"> <img alt="npm" src="https://img.shields.io/npm/dt/redux-scaffolder?style=social"> <img alt="NPM" src="https://img.shields.io/npm/l/redux-scaffolder?style=social">'
+      __html: 'App to buy tickets for events: shows, theaters, music concerts, etc. \
+<br/> \
+stack: react, redux, redux-saga, normalizr, axios, axios-mock-adapter, \
+webpack, jest, webpack SVG sprites, git hooks and etc',
     }
-  }
+  },
 ];
 
 export const getProjectInfo = (url) => {
