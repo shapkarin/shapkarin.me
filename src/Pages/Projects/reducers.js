@@ -14,7 +14,7 @@ const initialState = {
 
 export default handleActions({
   // projects
-  [projects.REQUEST]: state => ({
+  [projects.TRIGGER]: state => ({
     ...state,
     loading: true
   }),
@@ -29,14 +29,17 @@ export default handleActions({
         ...state.data,
         collection,
         order
-      },
-      loading: false
+      }
     };
   },
 
   [projects.FAILURE]: (state, { payload: error }) => ({
     ...state,
-    error,
+    error
+  }),
+
+  [projects.FULFILL]: state => ({
+    ...state,
     loading: false
   }),
 

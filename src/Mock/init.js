@@ -1,5 +1,6 @@
 import MockAdapter from 'axios-mock-adapter';
 
+import random from 'lodash/random';
 import urls from 'Utils/urls';
 
 import {
@@ -9,9 +10,9 @@ import {
   getProjectInfo,
 } from './data';
 
-export default function (axios) {
+export default function(axios) {
   const mock = new MockAdapter(axios);
-  const delay = 300;
+  const delay = () => random(200, 300);
 
   mock
     .onGet(urls.sketches)
@@ -19,7 +20,7 @@ export default function (axios) {
       new Promise((resolve) => {
         setTimeout(() => {
           resolve([200, sketches]);
-        }, delay);
+        }, delay());
       })
     ))
 
@@ -28,7 +29,7 @@ export default function (axios) {
       new Promise((resolve) => {
         setTimeout(() => {
           resolve([200, projects]);
-        }, delay);
+        }, delay());
       })
     ))
 
@@ -37,7 +38,7 @@ export default function (axios) {
       new Promise((resolve) => {
         setTimeout(() => {
           resolve([200, getProjectInfo(url)]);
-        }, delay);
+        }, delay());
       })
     ))
 
@@ -46,7 +47,7 @@ export default function (axios) {
       new Promise((resolve) => {
         setTimeout(() => {
           resolve([200, about]);
-        }, delay);
+        }, delay());
       })
     ));
 }

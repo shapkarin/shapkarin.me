@@ -16,27 +16,24 @@ function* getProjects(action) {
     method: fetchProjects,
     start: projects.request,
     success: projects.success,
-    error: projects.failure
+    error: projects.failure,
+    fulfill: projects.fulfill
   });
 }
 
 function* getProjectInfoOrToggle(action) {
-  try {
-    const { id, fetched } = action.payload;
-    if (yield !fetched) {
-      yield fork(fetch, {
-        action,
-        method: fetchProjectInfo,
-        start: info.request,
-        success: info.success,
-        error: info.failure,
-        fulfill: info.fulfill
-      });
-    }
-    yield put(info.toggle({ id }));
-  } catch (err) {
-    yield put(info.failure(err));
+  const { id, fetched } = action.payload;
+  if (yield !fetched) {
+    yield fork(fetch, {
+      action,
+      method: fetchProjectInfo,
+      start: info.request,
+      success: info.success,
+      error: info.failure,
+      fulfill: info.fulfill
+    });
   }
+  yield put(info.toggle({ id }));
 }
 
 export default function* () {

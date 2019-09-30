@@ -1,12 +1,16 @@
+// todo: data.yml
+
+export const about = 'I like to code. \
+Stack in production: React, Redux, Redux-Saga, Backbone, \
+ROR, Koa, Webpack, Grunt, Gulp. Also used stylus, \
+less, jade(pug), haml, twig, underscore, ejs \
+and explore much more.';
+
 export const sketches = {
   'Archive ≈2012': [
     {
       title: 'Walkers',
       href: '/gallery/older',
-    },
-    {
-      title: 'Networks',
-      href: '/gallery/older/networks',
     },
     {
       title: 'Painter Walk',
@@ -116,9 +120,3 @@ export const getProjectInfo = (url) => {
   const [id] = url.match(/[^/]+$/);
   return infos.find(el => el.id == id);
 };
-
-export const about = 'I like to code. \
-Stack in production: React, Redux, Redux-Saga, Backbone, \
-ROR, Koa, Webpack, Grunt, Gulp. Also used stylus, \
-less, jade(pug), haml, twig, underscore, ejs \
-and explore much more.';
