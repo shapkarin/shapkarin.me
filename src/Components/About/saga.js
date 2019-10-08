@@ -1,4 +1,4 @@
-import { fork, takeEvery } from 'redux-saga/effects';
+import { fork, take } from 'redux-saga/effects';
 import fetch from 'saga-fetch';
 
 import { fetchAbout } from 'Utils/API';
@@ -16,5 +16,6 @@ function* getAbout(action) {
 }
 
 export default function* () {
-  yield takeEvery(about.TRIGGER, getAbout);
+  const action = yield take(about.TRIGGER);
+  yield getAbout(action);
 }
