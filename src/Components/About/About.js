@@ -39,7 +39,9 @@ export default class About extends Component {
       <>
         <Loading loading={loading}>
           <div className="About">
-            {text}
+            <div 
+              dangerouslySetInnerHTML={{__html: text}}
+            ></div>
             <div style={{marginTop: '10px'}}>
               You can visit <a href="https://github.com/shapkarin" target="_blank">my Github</a>
               {!this.state.copied ? ' ' : '. '}

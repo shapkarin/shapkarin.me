@@ -12,7 +12,7 @@ import {
 
 export default function(axios) {
   const mock = new MockAdapter(axios);
-  const delay = () => random(200, 300);
+  const delay = () => random(200, 420);
 
   mock
     .onGet(urls.sketches)
