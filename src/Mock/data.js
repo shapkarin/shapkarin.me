@@ -6,7 +6,7 @@ init several by myself \
 and create open projects. \
 <br/> \
 Mostly I use JavaScript but \
-also explore some new or just interesting in computer sience.';
+also explore some new or just interesting in computer science.';
 
 export const sketches = {
   'Archive ≈2012': [
