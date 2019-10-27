@@ -5,11 +5,8 @@ I was involved in some great projects, \
 init several by myself \
 and create open projects. \
 <br/> \
-<br/> \
-Stack in production: React, Redux, Redux-Saga, Backbone, \
-ROR, Koa, Webpack, Grunt, Gulp. Also used stylus, \
-less, jade(pug), haml, twig, underscore, ejs \
-and explore much more.';
+Mostly I use JavaScript but \
+also explore some new or just interesting in computer sience.';
 
 export const sketches = {
   'Archive ≈2012': [
