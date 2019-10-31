@@ -10,10 +10,11 @@ const mapDispatchToProps = ({
   randomize: changeBackground
 });
 
+// todo: <button></button>
 const Controls = ({ randomize }) => (
-  <span onClick={randomize} className="Menu__Item--bckg">
+  <div onClick={randomize} className="Menu__Item--bckg">
     <IoIosRefresh/> Random
-  </span>
+  </div>
 )
 
 Controls.propTypes = {
