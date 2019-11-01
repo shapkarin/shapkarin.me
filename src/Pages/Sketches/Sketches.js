@@ -33,7 +33,7 @@ class Sketches extends Component {
     const { loading, catalog } = this.props;
     return (
       <Loading loading={loading}>
-        Nice examples with bad code. It all was builded fast and never was refafctored.
+        Nice examples with not so good code. TODO: refact
         <br/>
         <br/>
         <div style={{display: 'flex'}}>
