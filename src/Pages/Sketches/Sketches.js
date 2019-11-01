@@ -33,6 +33,9 @@ class Sketches extends Component {
     const { loading, catalog } = this.props;
     return (
       <Loading loading={loading}>
+        Nice examples with bad code. It all was builded fast and never was refafctored.
+        <br/>
+        <br/>
         <div style={{display: 'flex'}}>
           {Object.keys(catalog).map(category => (
             <div key={category} style={{display: 'flex', flexDirection: 'column'}}>
