@@ -5,6 +5,7 @@ import { GoRepoForked, GoPulse, GoIssueOpened } from 'react-icons/go';
 import { MdWeb } from 'react-icons/md';
 
 import Loading from 'Components/Loading';
+import Close from 'Components/Close';
 import repositories from './routines';
 
 import './style.less';
@@ -40,7 +41,8 @@ class Github extends Component {
     const status = { loading, error };
     return (
       <Loading {...status}>
-        <div className="Page__Github">
+        <Close />
+        <div className="Page__Github Page__Inner">
           {list.map(({
             id,
             name,

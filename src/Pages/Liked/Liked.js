@@ -6,6 +6,7 @@ import { MdWeb } from 'react-icons/md';
 import { TiStarOutline } from "react-icons/ti";
 
 import Loading from 'Components/Loading';
+import Close from 'Components/Close';
 import liked from './routines';
 
 @connect
@@ -40,7 +41,8 @@ class Github extends Component {
     return (
       <>
         <Loading {...status}>
-          <div className="Page__Github">
+          <Close />
+          <div className="Page__Github Page__Inner">
           {list.map(({
             id,
             full_name,

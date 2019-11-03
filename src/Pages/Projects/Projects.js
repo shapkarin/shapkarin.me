@@ -5,6 +5,7 @@ import { GoChevronRight, GoChevronDown } from "react-icons/go";
 import { FiExternalLink } from "react-icons/fi";
 
 import Loading from 'Components/Loading';
+import Close from 'Components/Close';
 import Collapse from 'Components/Collapse';
 import { projects, info } from './routines';
 
@@ -52,8 +53,9 @@ class Projects extends Component {
   render () {
     const { loading, projects, toggleInfo } = this.props;
     return (
-      <div className="PageProjects">
-        <Loading loading={loading}>
+      <Loading loading={loading}>
+        <Close />
+        <div className="PageProjects Page__Inner">
           <div>
             {projects.map(({
               name,
@@ -95,8 +97,8 @@ class Projects extends Component {
                 More <FiExternalLink />
               </a>
             </div>
-        </Loading>
-      </div>
+          </div>
+      </Loading>
     )
   }
 }
