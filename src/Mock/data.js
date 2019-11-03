@@ -57,6 +57,14 @@ export const sketches = {
       href: 'https://editor.p5js.org/yu.shapkarin/sketches/ogR-xUkcT',
     },
     {
+      title: 'Cubes',
+      href: 'https://codepen.io/shapkarin/full/doRpxy'
+    },
+    {
+      title: 'Wall',
+      href: 'https://codepen.io/shapkarin/full/GqBgkr'
+    },
+    {
       title: 'Some more at codepen.io',
       href: 'https://codepen.io/shapkarin',
     }
