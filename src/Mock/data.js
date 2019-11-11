@@ -86,11 +86,6 @@ export const projects = [
     id: 4,
     name: 'Extend Saga Routines',
     url: 'https://www.npmjs.com/package/extend-saga-routines'
-  },
-  {
-    id: 5,
-    name: 'Redkassa Widget',
-    url: 'https://widget.redkassa.ru'
   }
 ];
 
@@ -114,16 +109,7 @@ const infos = [
       __html: 'Extend any routine with custom stages, create routine with more than defafult stages and create custom routine. \
 <br/><br/> <img alt="npm" src="https://img.shields.io/npm/v/extend-saga-routines?style=social"> <img alt="npm" src="https://img.shields.io/npm/dt/extend-saga-routines?style=social"> <img alt="NPM" src="https://img.shields.io/npm/l/extend-saga-routines?style=social"> <img alt="Travis (.org)" src="https://img.shields.io/travis/shapkarin/extend-saga-routines?label=Tests&style=social">'
     }
-  },
-  {
-    id: 5,
-    content: {
-      __html: 'App to buy tickets for events: shows, theaters, music concerts, etc. \
-<br/> \
-stack: react, redux, redux-saga, normalizr, axios, axios-mock-adapter, \
-webpack, jest, webpack SVG sprites, git hooks and etc',
-    }
-  },
+  }
 ];
 
 export const getProjectInfo = (url) => {
