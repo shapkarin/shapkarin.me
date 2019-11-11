@@ -3,7 +3,7 @@
 export const about = 'I like to code. \
 I was involved in some great projects, \
 init several by myself \
-and create open projects. \
+and create open source projects. \
 <br/> \
 Mostly I use JavaScript but \
 also explore some new or just interesting in computer science.';
