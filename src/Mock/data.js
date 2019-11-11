@@ -61,10 +61,6 @@ export const sketches = {
       href: 'https://codepen.io/shapkarin/full/doRpxy'
     },
     {
-      title: 'Wall',
-      href: 'https://codepen.io/shapkarin/full/GqBgkr'
-    },
-    {
       title: 'Some more at codepen.io',
       href: 'https://codepen.io/shapkarin',
     }
