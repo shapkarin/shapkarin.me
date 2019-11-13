@@ -2,7 +2,7 @@
 
 export const about = 'I like to code. \
 I was involved in some great projects, \
-init several by myself \
+create some from scratch \
 and create open source projects. \
 <br/> \
 Mostly I use JavaScript but \
