@@ -1,5 +1,6 @@
 {
   "name": "shapkarin.me",
+  "homepage": "https://shapkarin.me",
   "version": "0.0.42",
   "private": true,
   "dependencies": {
