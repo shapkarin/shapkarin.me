@@ -89,21 +89,21 @@ const infos = [
   {
     id: 1,
     content: {
-      __html: 'Generate three redux files by CLI: "constants.js, actions.js, reducers.js." <br/><br/> <img alt="npm" src="https://img.shields.io/npm/v/redux-scaffolder?style=social"> <img alt="npm" src="https://img.shields.io/npm/dt/redux-scaffolder?style=social"> <img alt="NPM" src="https://img.shields.io/npm/l/redux-scaffolder?style=social">'
+      __html: 'Generate three redux files by CLI: "constants.js, actions.js, reducers.js." <br/><br/> <img alt="npm" src="https://img.shields.io/npm/v/redux-scaffolder?style=social"> <img alt="npm" src="https://img.shields.io/npm/dm/redux-scaffolder?style=social"> <img alt="NPM" src="https://img.shields.io/npm/l/redux-scaffolder?style=social">'
     }
   },
   {
     id: 3,
     content: {
       __html: 'Redux-Saga fetch common worker. \
-<br/><br/> <img alt="npm" src="https://img.shields.io/npm/v/saga-fetch?style=social"> <img alt="npm" src="https://img.shields.io/npm/dt/saga-fetch?style=social"> <img alt="NPM" src="https://img.shields.io/npm/l/saga-fetch?style=social">'
+<br/><br/> <img alt="npm" src="https://img.shields.io/npm/v/saga-fetch?style=social"> <img alt="npm" src="https://img.shields.io/npm/dm/saga-fetch?style=social"> <img alt="NPM" src="https://img.shields.io/npm/l/saga-fetch?style=social">'
     }
   },
   {
     id: 4,
     content: {
       __html: 'Extend any routine with custom stages, create routine with more than defafult stages and create custom routine. \
-<br/><br/> <img alt="npm" src="https://img.shields.io/npm/v/extend-saga-routines?style=social"> <img alt="npm" src="https://img.shields.io/npm/dt/extend-saga-routines?style=social"> <img alt="NPM" src="https://img.shields.io/npm/l/extend-saga-routines?style=social"> <img alt="Travis (.org)" src="https://img.shields.io/travis/shapkarin/extend-saga-routines?label=Tests&style=social">'
+<br/><br/> <img alt="npm" src="https://img.shields.io/npm/v/extend-saga-routines?style=social"> <img alt="npm" src="https://img.shields.io/npm/dm/extend-saga-routines?style=social"> <img alt="NPM" src="https://img.shields.io/npm/l/extend-saga-routines?style=social"> <img alt="Travis (.org)" src="https://img.shields.io/travis/shapkarin/extend-saga-routines?label=Tests&style=social">'
     }
   }
 ];
