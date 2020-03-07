@@ -3,6 +3,7 @@ import connect from 'react-redux-connect';
 import PropTypes from 'prop-types';
 import { GoChevronRight, GoChevronDown } from "react-icons/go";
 import { FiExternalLink } from "react-icons/fi";
+import ReactTooltip from 'react-tooltip';
 
 import Loading from 'Components/Loading';
 import Close from 'Components/Close';
@@ -55,6 +56,9 @@ class Projects extends Component {
     return (
       <Loading loading={loading}>
         <Close />
+        <ReactTooltip
+          place="right"
+        />
         <div className="PageProjects Page__Inner">
           <div>
             {projects.map(({
@@ -69,7 +73,7 @@ class Projects extends Component {
               <div key={id} className="PageProjects__Item">
                 {name}
                 {' '}
-                {url && <a target="_blank" href={url}><FiExternalLink /></a>}
+                {url && <a target="_blank" href={url}><FiExternalLink data-tip="open in a new tab" /></a>}
                 <div
                   style={{cursor: 'pointer', margin: '7px 0 7px 0'}}
                   onClick={() => toggleInfo({id, fetched})}
@@ -94,7 +98,7 @@ class Projects extends Component {
                 href="https://freelansim.ru/freelancers/yuryshapkarin/projects"
                 target="_blank"
               >
-                More <FiExternalLink />
+                More <FiExternalLink data-tip="open in a new tab" />
               </a>
             </div>
           </div>
