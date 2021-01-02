@@ -92,7 +92,7 @@ class Projects extends Component {
             <div  >
               <a
                 className="PageProjects__Item_more"
-                style={{width: '70px'}}
+                style={{width: '80px'}}
                 href="https://freelansim.ru/freelancers/yuryshapkarin/projects"
                 target="_blank"
               >
@@ -100,7 +100,7 @@ class Projects extends Component {
               </a>
               <a
                 className="PageProjects__Item_more"
-                style={{width: '190px'}}
+                style={{width: '200px'}}
                 href="https://www.npmjs.com/~shapkarin"
                 target="_blank"
               >
