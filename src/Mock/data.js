@@ -70,6 +70,11 @@ export const sketches = {
 export const projects = [
   {
     id: 1,
+    name: 'Extend Saga Routines',
+    url: 'https://www.npmjs.com/package/extend-saga-routines'
+  },
+  {
+    id: 2,
     name: 'Redux Scaffolder',
     url: 'https://www.npmjs.com/package/redux-scaffolder'
   },
@@ -80,31 +85,29 @@ export const projects = [
   },
   {
     id: 4,
-    name: 'Extend Saga Routines',
-    url: 'https://www.npmjs.com/package/extend-saga-routines'
+    name: 'Global diff',
+    url: 'https://www.npmjs.com/package/global-diff'
   }
 ];
 
 const infos = [
   {
-    id: 1,
-    content: {
-      __html: 'Generate three redux files by CLI: "constants.js, actions.js, reducers.js." <br/><br/> <img alt="npm" src="https://img.shields.io/npm/v/redux-scaffolder?style=social"> <img alt="npm" src="https://img.shields.io/npm/dm/redux-scaffolder?style=social"> <img alt="NPM" src="https://img.shields.io/npm/l/redux-scaffolder?style=social">'
-    }
+    id: 2,
+    content: 'Generate three redux files by CLI: "constants.js, actions.js, reducers.js." <br/><br/> <img alt="npm" src="https://img.shields.io/npm/v/redux-scaffolder?style=social"> <img alt="npm" src="https://img.shields.io/npm/dm/redux-scaffolder?style=social"> <img alt="NPM" src="https://img.shields.io/npm/l/redux-scaffolder?style=social">'
   },
   {
     id: 3,
-    content: {
-      __html: 'Redux-Saga fetch common worker. \
+    content: 'Redux-Saga fetch common worker. \
 <br/><br/> <img alt="npm" src="https://img.shields.io/npm/v/saga-fetch?style=social"> <img alt="npm" src="https://img.shields.io/npm/dm/saga-fetch?style=social"> <img alt="NPM" src="https://img.shields.io/npm/l/saga-fetch?style=social">'
-    }
+  },
+  {
+    id: 1,
+    content: 'Extend any routine with custom stages, create routine with more than defafult stages and create custom routine. \
+<br/><br/> <img alt="npm" src="https://img.shields.io/npm/v/extend-saga-routines?style=social"> <img alt="npm" src="https://img.shields.io/npm/dm/extend-saga-routines?style=social"> <img alt="NPM" src="https://img.shields.io/npm/l/extend-saga-routines?style=social"> <img alt="Travis (.org)" src="https://img.shields.io/travis/shapkarin/extend-saga-routines?label=Tests&style=social">'
   },
   {
     id: 4,
-    content: {
-      __html: 'Extend any routine with custom stages, create routine with more than defafult stages and create custom routine. \
-<br/><br/> <img alt="npm" src="https://img.shields.io/npm/v/extend-saga-routines?style=social"> <img alt="npm" src="https://img.shields.io/npm/dm/extend-saga-routines?style=social"> <img alt="NPM" src="https://img.shields.io/npm/l/extend-saga-routines?style=social"> <img alt="Travis (.org)" src="https://img.shields.io/travis/shapkarin/extend-saga-routines?label=Tests&style=social">'
-    }
+    content: 'Compare yours window with the list of default scope. Project has big plans with auto grab global defaults scopes from other repos and also integration as part of browsers extensions.' 
   }
 ];
 

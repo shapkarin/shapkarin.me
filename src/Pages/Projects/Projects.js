@@ -35,9 +35,7 @@ class Projects extends Component {
       fetched: PropTypes.bool,
       info: PropTypes.shape({
         id: PropTypes.number.isRequired,
-        content: PropTypes.shape({
-          __html: PropTypes.string.isRequired
-        }).isRequired,
+        content: PropTypes.string.isRequired
       })
     })).isRequired,
     fetch: PropTypes.func.isRequired,
@@ -84,7 +82,7 @@ class Projects extends Component {
                   <Collapse open={open}>
                     <div
                       className="Project__Info"
-                      dangerouslySetInnerHTML={info.content}
+                      dangerouslySetInnerHTML={{ __html: info.content }}
                     />
                   </Collapse>
                 </Loading>
@@ -98,7 +96,15 @@ class Projects extends Component {
                 href="https://freelansim.ru/freelancers/yuryshapkarin/projects"
                 target="_blank"
               >
-                More <FiExternalLink data-tip="open in a new tab" />
+                Portfolio <FiExternalLink data-tip="open in a new tab" />
+              </a>
+              <a
+                className="PageProjects__Item_more"
+                style={{width: '190px'}}
+                href="https://www.npmjs.com/~shapkarin"
+                target="_blank"
+              >
+                Other published packages <FiExternalLink data-tip="open in a new tab" />
               </a>
             </div>
           </div>
