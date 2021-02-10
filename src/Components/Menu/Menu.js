@@ -1,30 +1,51 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
+import PropTypes from 'prop-types';
+import connect from 'react-redux-connect';
 
 import RandomButton from 'Components/RandomButton';
-import pages from './pages';
+import menu from './routines';
 
 import './Menu.less';
 
-const Menu = () => (
-  <nav className="Menu">
-    {pages.map((link) => {
-      const { title, url, icon } = link;
-      return (
-        <NavLink
-          key={title}
-          to={url}
-          className="Menu__Item"
-          activeClassName="Menu__Item--active"
-        >
-          {icon()}
-          {' '}
-          { title }
-        </NavLink>
-      );
-    })}
-    <RandomButton />
-  </nav>
-);
+@connect
+export default class Menu extends Component {
 
-export default Menu;
+  static propTypes = {
+    menu: PropTypes.array.isRequired,
+  }
+
+  static mapStateToProps = ({ menu }) => menu
+  
+  static mapDispatchToProps = {
+    fetch: menu
+  }
+    
+  componentDidMount(){
+    this.props.fetch();
+  }
+  
+  render () {
+    const { menu } = this.props;
+    console.log({ menu });
+    return (
+      <nav className="Menu">
+        {menu.map(({ title, url, icon }) => {
+          return (
+            <NavLink
+              key={title}
+              to={url}
+              className="Menu__Item"
+              activeClassName="Menu__Item--active"
+            >
+              {icon()}
+              {' '}
+              { title }
+            </NavLink>
+          )
+        })}
+        <RandomButton />
+      </nav>
+    )
+  }
+}

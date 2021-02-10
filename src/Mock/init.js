@@ -5,6 +5,7 @@ import urls from 'Utils/urls';
 
 import {
   about,
+  menu,
   sketches,
   projects,
   getProjectInfo,
@@ -15,6 +16,15 @@ export default function(axios) {
   const delay = () => random(200, 420);
 
   mock
+    .onGet(urls.menu)
+    .reply(() => (
+      new Promise((resolve) => {
+        setTimeout(() => {
+          resolve([200, menu]);
+        }, delay());
+      })
+    ))
+
     .onGet(urls.sketches)
     .reply(() => (
       new Promise((resolve) => {

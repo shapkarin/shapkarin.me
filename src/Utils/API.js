@@ -7,13 +7,9 @@ const mockedRequest = axios.create();
 initMock(mockedRequest);
 
 export const fetchSketches = () => mockedRequest.get(urls.sketches);
-
 export const fetchAbout = () => mockedRequest.get(urls.about);
-
 export const fetchProjects = () => mockedRequest.get(urls.projects);
-
 export const fetchProjectInfo = ({ payload: { id } }) => mockedRequest.get(`/projects/${id}`);
-
 export const fetchLikes = () => axios.get(urls.likes);
-
 export const fetchGithub = (n = 1) => axios.get(urls.github(n));
+export const fetchMenu = () => axios.get(urls.menu);

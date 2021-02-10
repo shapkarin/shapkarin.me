@@ -1,4 +1,6 @@
-// todo: data.yml or data.md
+import React from 'react';
+import { GoRepo, GoStar, GoProject } from 'react-icons/go';
+import { FaPlayCircle } from 'react-icons/fa';
 
 export const about = 'I like to code. \
 I was involved in some great projects, \
@@ -7,6 +9,29 @@ and create open source projects. \
 <br/> \
 Mostly I use JavaScript but \
 also explore some new or just interesting in computer science.';
+
+export const menu = [
+  {
+    title: 'Sketches',
+    url: '/sketches',
+    icon: () => <FaPlayCircle />
+  },
+  {
+    title: 'Projects',
+    url: '/projects',
+    icon: () => <GoProject />
+  },
+  {
+    title: 'Github',
+    url: '/repositories',
+    icon: () => <GoRepo />
+  },
+  {
+    title: 'Liked',
+    url: '/liked',
+    icon: () => <GoStar />
+  },
+];
 
 export const sketches = {
   'Archive ≈2012': [
