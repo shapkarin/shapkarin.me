@@ -70,7 +70,7 @@ export const sketches = {
 export const projects = [
   {
     id: 1,
-    name: 'Extend Saga Routines',
+    name: 'Extend Saga Routines (Extend Routines)',
     url: 'https://www.npmjs.com/package/extend-saga-routines'
   },
   {
@@ -107,7 +107,7 @@ const infos = [
   },
   {
     id: 4,
-    content: 'Compare yours window with the list of default scope. Project has big plans with auto grab global defaults scopes from other repos and also integration as part of browsers extensions.' 
+    content: 'Compare yours window with the list of default scope. Project has big plans with auto grab global defaults scopes from other repos and also integration as part of browsers extensions.'
   }
 ];
 

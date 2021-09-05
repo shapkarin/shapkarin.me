@@ -4,14 +4,14 @@ import { FaPlayCircle } from 'react-icons/fa';
 
 export default [
   {
-    title: 'Sketches',
-    url: '/sketches',
-    icon: () => <FaPlayCircle />
-  },
-  {
     title: 'Projects',
     url: '/projects',
     icon: () => <GoProject />
+  },
+  {
+    title: 'Sketches',
+    url: '/sketches',
+    icon: () => <FaPlayCircle />
   },
   {
     title: 'Github',
@@ -22,5 +22,5 @@ export default [
     title: 'Liked',
     url: '/liked',
     icon: () => <GoStar />
-  },
+  }
 ];
