@@ -19,18 +19,19 @@ class Github extends Component {
   })
 
   static mapDispatchToProps = {
-    fetch: repositories
+    fetch: repositories,
   }
 
   static propTypes = {
     loading: PropTypes.bool.isRequired,
     // todo: arrayOf
     list: PropTypes.array.isRequired,
+    // eslint-disable-next-line react/require-default-props
     error: PropTypes.shape({
       code: PropTypes.number,
       message: PropTypes.string
     }),
-    fetch: PropTypes.func.isRequired
+    fetch: PropTypes.func.isRequired,
   }
 
   componentDidMount() {
@@ -55,26 +56,58 @@ class Github extends Component {
             open_issues_count,
             homepage,
             fork,
-            updated_at
-          }) =>(
+            updated_at,
+            language,
+            languages_url
+          }) => (
             <div key={id} className="Page__GithubItem">
               <div className="Page__GithubItemInner" style={{ maxWidth: '250px' }}>
-                <a className="GithubItem__Link centered-label" href={html_url} target="_blank">{name}{fork && <GoRepoForked data-tip="fork" />}</a>
-                <div className="centered-label" style={{lineHeight: "20px"}}>{description}</div>
-                <div className="centered-label"><GoPulse data-tip="last update"/> {(new Date(updated_at)).toLocaleDateString('ru-RU')}</div>
-                { open_issues_count > 0 && <div className="centered-label"><GoIssueOpened data-tip="issues" /> open issues: <a className="IssuesCount" href={`${html_url}/issues`} target="_blank">{open_issues_count}</a></div> }
-                { homepage && <div className="centered-label" ><MdWeb data-tip="homepage" /> <a href={homepage} target="_blank">homepage</a></div> }
+                <a className="GithubItem__Link centered-label" href={html_url} target="_blank">
+                  {name}
+                  {fork && <GoRepoForked data-tip="fork" />}
+                </a>
+                <div className="centered-label" style={{ lineHeight: '20px' }}>{description}</div>
+                <div className="centered-label">
+                  <GoPulse data-tip="last update" />
+                  {' '}
+                  {(new Date(updated_at)).toLocaleDateString('ru-RU')}
+                </div>
+                { open_issues_count > 0 && (
+                <div className="centered-label">
+                  <GoIssueOpened data-tip="issues" />
+                  {' '}
+                  Open issues:
+                  {' '}
+                  <a className="IssuesCount" href={`${html_url}/issues`} target="_blank">{open_issues_count}</a>
+                </div>
+                ) }
+                { homepage && (
+                <div className="centered-label">
+                  <MdWeb data-tip="homepage" />
+                  {' '}
+                  <a href={homepage} target="_blank">Homepage</a>
+                </div>
+                ) }
+                {(false === 'not ready') && language && (
+                  <>
+                  languages
+                    {' '}
+                    <a href={languages_url}>
+                      { language }
+                    </a>
+                  </>
+                )}
               </div>
             </div>
           ))}
-          <div className="Page__GithubItem" style={{flexBasis: '100%'}}>
+          <div className="Page__GithubItem" style={{ flexBasis: '100%' }}>
             <div className="Page__GithubItemInner">
               <a href="https://github.com/shapkarin?tab=repositories" target="_blank" className="GithubItem__Link">More at Github...</a>
             </div>
           </div>
         </div>
       </Loading>
-    )
+    );
   }
 }
 

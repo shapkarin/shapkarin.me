@@ -11,7 +11,7 @@ import { createBrowserHistory } from 'history';
 import About from 'Components/About';
 import Menu from 'Components/Menu';
 import Github from 'Pages/Github';
-import Projects from 'Pages/Projects';
+import Packages from 'Pages/Packages';
 import Liked from 'Pages/Liked';
 // TODO: rename
 import Sketches from 'Pages/Sketches';
@@ -39,9 +39,10 @@ export default function () {
                 to="/repositories"
               />
               <Route
-                path="/projects"
-                component={Projects}
+                path="/packages"
+                component={Packages}
               />
+              <Redirect from="/projects" to="packages" />
               <Route
                 path="/liked"
                 component={Liked}

@@ -1,7 +1,7 @@
 import { handleActions } from 'redux-actions';
 import { normalize, schema } from 'normalizr';
 
-import { projects, info } from './routines';
+import { packages, info } from './routines';
 
 const initialState = {
   loading: false,
@@ -13,13 +13,13 @@ const initialState = {
 };
 
 export default handleActions({
-  // projects
-  [projects.TRIGGER]: state => ({
+  // packages
+  [packages.TRIGGER]: state => ({
     ...state,
     loading: true
   }),
 
-  [projects.SUCCESS]: (state, { payload }) => {
+  [packages.SUCCESS]: (state, { payload }) => {
     const schem = new schema.Entity('collection');
     const { entities: { collection }, result: order } = normalize(payload, [schem]);
 
@@ -33,12 +33,12 @@ export default handleActions({
     };
   },
 
-  [projects.FAILURE]: (state, { payload: error }) => ({
+  [packages.FAILURE]: (state, { payload: error }) => ({
     ...state,
     error
   }),
 
-  [projects.FULFILL]: state => ({
+  [packages.FULFILL]: state => ({
     ...state,
     loading: false
   }),

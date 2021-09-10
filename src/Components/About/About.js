@@ -36,36 +36,34 @@ export default class About extends Component {
     const { loading, text } = this.props;
     const email = 'yury@shapkarin.me';
     return (
-      <>
-        <Loading loading={loading}>
-          <div className="About">
-            <div 
-              dangerouslySetInnerHTML={{__html: text}}
-            ></div>
-            <div style={{marginTop: '10px'}}>
-              You can visit <a href="https://github.com/shapkarin" target="_blank">my Github</a>
-              {!this.state.copied ? ' ' : '. '}
-              {
-                !this.state.copied ?
-                <>
-                  and maybe you need
-                  {' '}
-                  <CopyToClipboard 
-                    text={email}
-                    onCopy={() => this.setState({copied: true})}
-                  >
-                    <span style={{cursor: 'pointer', textDecoration: 'underline'}}>
-                      to copy my email.
-                    </span>
-                  </CopyToClipboard>
-                </>
-              :
-              <span>You copied my email: <a href={`mailto:${email}`}>{email}</a></span>
-              }
-            </div>
+      <Loading loading={loading}>
+        <div className="About">
+          <div 
+            dangerouslySetInnerHTML={{__html: text}}
+          ></div>
+          <div style={{marginTop: '10px'}}>
+            You can visit <a href="https://github.com/shapkarin" target="_blank">my Github</a>
+            {!this.state.copied ? ' ' : '. '}
+            {
+              !this.state.copied ?
+              <>
+                and maybe you need
+                {' '}
+                <CopyToClipboard 
+                  text={email}
+                  onCopy={() => this.setState({copied: true})}
+                >
+                  <span style={{cursor: 'pointer', textDecoration: 'underline'}}>
+                    to copy my email.
+                  </span>
+                </CopyToClipboard>
+              </>
+            :
+            <span>You copied my email: <a href={`mailto:${email}`}>{email}</a></span>
+            }
           </div>
-        </Loading>  
-      </>
+        </div>
+      </Loading>
     )
   }
 }

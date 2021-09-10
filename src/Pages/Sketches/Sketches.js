@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import connect from 'react-redux-connect';
 import PropTypes from 'prop-types';
 
-import './Sketches.less';
+import './style.less';
 
 import Loading from 'Components/Loading';
 import Close from 'Components/Close';
@@ -35,15 +35,23 @@ class Sketches extends Component {
     return (
       <Loading loading={loading}>
         <Close />
-        <div className="Page__Inner">
-          Nice examples with not so good code. TODO: refact
-          <br/>
-          <br/>
-          <div style={{display: 'flex'}} >
+        <div className="Page__Inner Page__Inner_dark">
+          <h1 style={{ fontSize: '22px', marginBottom: '12px' }}>Drawing sketches by code</h1>
+          <p>
+            Generative art, animation and music visualization experiments
+            <br />
+            to lear, research and practice. Usually was build fast,
+            <br />
+            like a sketch drawing but with code.
+            <br />
+            <br />
+            Some are implemented with pure JS, other with libraries.
+          </p>
+          <div style={{ display: 'flex', marginTop: '24px' }}>
             {Object.keys(catalog).map(category => (
-              <div key={category} style={{display: 'flex', flexDirection: 'column'}}>
+              <div key={category} className="Gal__Column">
                 <h3>{`${category}:`}</h3>
-                <br/> {/* :-) */}
+                {/* :-) */}
                 {catalog[category].map((link, i) => (
                   <a
                     {...link}
@@ -52,14 +60,14 @@ class Sketches extends Component {
                     target="_blank"
                   >
                     {link.title}
-                  </a>      
+                  </a>
                 ))}
               </div>
             ))}
           </div>
         </div>
       </Loading>
-    )
+    );
   }
 }
 

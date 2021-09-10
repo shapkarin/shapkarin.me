@@ -1,12 +1,12 @@
 import MockAdapter from 'axios-mock-adapter';
 
 import random from 'lodash/random';
-import urls from 'Utils/urls';
+import urls from 'Common/urls';
 
 import {
   about,
   sketches,
-  projects,
+  packages,
   getProjectInfo,
 } from './data';
 
@@ -24,16 +24,16 @@ export default function(axios) {
       })
     ))
 
-    .onGet(urls.projects)
+    .onGet(urls.packages)
     .reply(() => (
       new Promise((resolve) => {
         setTimeout(() => {
-          resolve([200, projects]);
+          resolve([200, packages]);
         }, delay());
       })
     ))
 
-    .onGet(urls.projectInfo)
+    .onGet(urls.packageInfo)
     .reply(({ url }) => (
       new Promise((resolve) => {
         setTimeout(() => {

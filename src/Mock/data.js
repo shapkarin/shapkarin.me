@@ -1,12 +1,13 @@
 // todo: data.yml or data.md
 
-export const about = 'I like to code. \
+// eslint-disable-next-line no-multi-str, quotes
+export const about = `Hello. My name is Yury Shapkarin. \
+I like to code. \
 I was involved in some great projects, \
 create some from scratch \
 and create open source projects. \
-<br/> \
-Mostly I use JavaScript but \
-also explore some new or just interesting in computer science.';
+I use JavaScript a lot but \
+also explore some new or just interesting in computer science.`;
 
 export const sketches = {
   'Archive ≈2012': [
@@ -67,7 +68,7 @@ export const sketches = {
   ]
 };
 
-export const projects = [
+export const packages = [
   {
     id: 1,
     name: 'Extend Saga Routines (Extend Routines)',
@@ -93,17 +94,17 @@ export const projects = [
 const infos = [
   {
     id: 2,
-    content: 'Generate three redux files by CLI: "constants.js, actions.js, reducers.js." <br/><br/> <img alt="npm" src="https://img.shields.io/npm/v/redux-scaffolder?style=social"> <img alt="npm" src="https://img.shields.io/npm/dm/redux-scaffolder?style=social"> <img alt="NPM" src="https://img.shields.io/npm/l/redux-scaffolder?style=social">'
+    content: 'Generate three redux files by CLI: "constants.js, actions.js, reducers.js." <br/><br/> <div><img alt="npm" src="https://img.shields.io/npm/v/redux-scaffolder?style=social"> <img alt="npm" src="https://img.shields.io/npm/dm/redux-scaffolder?style=social"> <img alt="NPM" src="https://img.shields.io/npm/l/redux-scaffolder?style=social"></div>'
   },
   {
     id: 3,
     content: 'Redux-Saga fetch common worker. \
-<br/><br/> <img alt="npm" src="https://img.shields.io/npm/v/saga-fetch?style=social"> <img alt="npm" src="https://img.shields.io/npm/dm/saga-fetch?style=social"> <img alt="NPM" src="https://img.shields.io/npm/l/saga-fetch?style=social">'
+<br/><br/> <div><img alt="npm" src="https://img.shields.io/npm/v/saga-fetch?style=social"> <img alt="npm" src="https://img.shields.io/npm/dm/saga-fetch?style=social"> <img alt="NPM" src="https://img.shields.io/npm/l/saga-fetch?style=social"></div>'
   },
   {
     id: 1,
     content: 'Extend any routine with custom stages, create routine with more than defafult stages and create custom routine. \
-<br/><br/> <img alt="npm" src="https://img.shields.io/npm/v/extend-saga-routines?style=social"> <img alt="npm" src="https://img.shields.io/npm/dm/extend-saga-routines?style=social"> <img alt="NPM" src="https://img.shields.io/npm/l/extend-saga-routines?style=social"> <img alt="Travis (.org)" src="https://img.shields.io/travis/shapkarin/extend-saga-routines?label=Tests&style=social">'
+<br/><br/> <div><img alt="npm" src="https://img.shields.io/npm/v/extend-saga-routines?style=social"> <img alt="npm" src="https://img.shields.io/npm/dm/extend-saga-routines?style=social"> <img alt="NPM" src="https://img.shields.io/npm/l/extend-saga-routines?style=social"> <img alt="Travis (.org)" src="https://img.shields.io/travis/shapkarin/extend-saga-routines?label=Tests&style=social"></div>'
   },
   {
     id: 4,

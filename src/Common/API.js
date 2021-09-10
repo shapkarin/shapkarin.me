@@ -10,10 +10,12 @@ export const fetchSketches = () => mockedRequest.get(urls.sketches);
 
 export const fetchAbout = () => mockedRequest.get(urls.about);
 
-export const fetchProjects = () => mockedRequest.get(urls.projects);
+export const fetchPackages = () => mockedRequest.get(urls.packages);
 
-export const fetchProjectInfo = ({ payload: { id } }) => mockedRequest.get(`/projects/${id}`);
+export const fetchPackageInfo = ({ payload: { id } }) => mockedRequest.get(`/packages/${id}`);
 
 export const fetchLikes = () => axios.get(urls.likes);
 
-export const fetchGithub = (n = 1) => axios.get(urls.github(n));
+export const fetchGithub = (n = 1) => axios.get(urls.repositories(n));
+
+// export const fetchRepoLangs = url => axios.get(url);
