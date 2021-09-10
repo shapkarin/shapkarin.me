@@ -6,9 +6,9 @@ const github = {
 };
 
 export default {
-  github: n => `${github.user}/repos?sort=updated&per_page=30&page=${n}`,
-  projects: '/projects',
-  projectInfo: pathToRegexp('/projects/:id'),
+  repositories: n => `${github.user}/repos?sort=updated&per_page=30&page=${n}`,
+  packages: '/packages',
+  packageInfo: pathToRegexp('/packages/:id'),
   about: '/about',
   likes: `${github.user}/starred`,
   sketches: '/sketches'

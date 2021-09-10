@@ -1,7 +1,7 @@
 import { fork, take } from 'redux-saga/effects';
 import fetch from 'saga-fetch';
 
-import { fetchLikes } from 'Utils/API';
+import { fetchLikes } from 'Common/API';
 import liked from './routines';
 
 function* getLiked(action) {
