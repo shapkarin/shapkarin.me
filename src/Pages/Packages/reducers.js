@@ -12,9 +12,10 @@ const initialState = {
   data: {},
 };
 
+// todo decompose
 export default handleActions({
   // packages
-  [packages.TRIGGER]: state => ({
+  [packages.REQUEST]: state => ({
     ...state,
     loading: true
   }),

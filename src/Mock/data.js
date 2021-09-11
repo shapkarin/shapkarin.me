@@ -3,7 +3,7 @@
 export const about = `<h1>Hello. My name is Yury Shapkarin and I like to code 👨‍💻</h1>\
 I was involved in some great projects, \
 create some from scratch \
-and create open source projects.<br /> \
+and create open source projects. \
 I use JavaScript a lot but explore some new or just interesting as well.`;
 
 export const sketches = {
@@ -91,7 +91,7 @@ export const packages = [
 const infos = [
   {
     id: 2,
-    content: 'Generate three redux files by CLI: "constants.js, actions.js, reducers.js." <br/><br/> <div><img alt="npm" src="https://img.shields.io/npm/v/redux-scaffolder?style=social"> <img alt="npm" src="https://img.shields.io/npm/dm/redux-scaffolder?style=social"> <img alt="NPM" src="https://img.shields.io/npm/l/redux-scaffolder?style=social"></div>'
+    content: 'CLI app to generate redux files: "constants.js, actions.js, reducers.js." <br/><br/> <div><img alt="npm" src="https://img.shields.io/npm/v/redux-scaffolder?style=social"> <img alt="npm" src="https://img.shields.io/npm/dm/redux-scaffolder?style=social"> <img alt="NPM" src="https://img.shields.io/npm/l/redux-scaffolder?style=social"></div>'
   },
   {
     id: 3,
@@ -100,7 +100,7 @@ const infos = [
   },
   {
     id: 1,
-    content: `More info about <a href="https://www.npmjs.com/package/redux-saga-routines" target="_blanc">routines</a>. \
+    content: `More info about <a href="https://www.npmjs.com/package/redux-saga-routines" target="_blank">routines</a>. <br />\
     From v3.3.0 redux-saga is optional. <br /> \
     Extend any routine with custom stages, create routine with more than defafult stages and create custom routine. \
 <br/><br/> <div><img alt="npm" src="https://img.shields.io/npm/v/extend-saga-routines?style=social"> <img alt="npm" src="https://img.shields.io/npm/dm/extend-saga-routines?style=social"> <img alt="NPM" src="https://img.shields.io/npm/l/extend-saga-routines?style=social"> <img alt="Travis (.org)" src="https://img.shields.io/travis/shapkarin/extend-saga-routines?label=Tests&style=social"></div>`

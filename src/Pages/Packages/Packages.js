@@ -20,7 +20,7 @@ class Packages extends Component {
 
   static mapDispatchToProps = {
     fetch: packagesTrigger,
-    toggleInfo: info
+    fetchInfoOrToggle: info
   }
 
   static propTypes = {
@@ -38,17 +38,16 @@ class Packages extends Component {
       })
     })).isRequired,
     fetch: PropTypes.func.isRequired,
-    toggleInfo: PropTypes.func.isRequired,
+    fetchInfoOrToggle: PropTypes.func.isRequired,
   }
 
   componentDidMount() {
     // todo: use memo or loading status
-    const { fetch } = this.props;
-    fetch();
+    this.props.fetch();
   }
 
   render () {
-    const { loading, packages, toggleInfo } = this.props;
+    const { loading, packages, fetchInfoOrToggle } = this.props;
     return (
       <Loading loading={loading}>
         <Close />
@@ -70,7 +69,7 @@ class Packages extends Component {
                   <FiExternalLink />
                 </a>
                 <div
-                  onClick={() => toggleInfo({ id, fetched })}
+                  onClick={() => fetchInfoOrToggle({ id, fetched })}
                   className="toggle_info"
                 >
                   more info
@@ -91,21 +90,31 @@ class Packages extends Component {
           <div>
             <a
               className="PageProjects__Item_more"
-              style={{ width: '80px' }}
-              href="https://freelansim.ru/freelancers/yuryshapkarin/projects"
+              style={{ width: '170px' }}
+              href="https://www.npmjs.com/~shapkarin"
               target="_blank"
             >
-                Portfolio
+              All published packages
               {' '}
               <FiExternalLink />
             </a>
             <a
               className="PageProjects__Item_more"
-              style={{ width: '200px' }}
-              href="https://www.npmjs.com/~shapkarin"
+              style={{ width: '170px' }}
+              href="https://github.com/shapkarin?tab=repositories"
               target="_blank"
             >
-              Other published packages
+              My GitHub repositories
+              {' '}
+              <FiExternalLink />
+            </a>
+            <a
+              className="PageProjects__Item_more"
+              style={{ width: '80px' }}
+              href="https://freelansim.ru/freelancers/yuryshapkarin/projects"
+              target="_blank"
+            >
+              Portfolio
               {' '}
               <FiExternalLink />
             </a>

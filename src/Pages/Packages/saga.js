@@ -2,6 +2,8 @@ import {
   fork,
   all,
   put,
+  take,
+  call,
   takeEvery,
   takeLatest
 } from 'redux-saga/effects';
@@ -23,6 +25,7 @@ function* getPackages(action) {
 
 function* getInfoOrToggle(action) {
   const { id, fetched } = action.payload;
+  // todo: work around
   if (yield !fetched) {
     yield fork(fetch, {
       action,
@@ -37,8 +40,10 @@ function* getInfoOrToggle(action) {
 }
 
 export default function* () {
+  const action = yield take(packages.TRIGGER);
+
   yield all([
-    takeEvery(packages.TRIGGER, getPackages),
+    call(getPackages, action),
     takeLatest(info.TRIGGER, getInfoOrToggle)
   ]);
 }
