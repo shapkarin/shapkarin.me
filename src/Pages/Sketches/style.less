@@ -1,3 +1,5 @@
+@import "../../Variables.less";
+
 .Gal--Item {
   padding: 12px;
   margin-right: 20px;
@@ -27,4 +29,16 @@
   display: flex;
   flex-direction: column;
   margin-right: 20px;
+}
+
+.Gal__Wrapper {
+  display: flex;
+  margin-top: 24px;
+  @media (max-width: @mobileWidth) {
+    flex-direction: column;
+
+    .Gal__Column {
+      margin-bottom: 20px;
+    }
+  }
 }

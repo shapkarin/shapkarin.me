@@ -1,5 +1,8 @@
 // todo: some common classes like: .PageFlex .PageFlex_Item .PageFlex__Item_rounded
 // todo: refact styles
+
+@import "../../Variables.less";
+
 .PageProjects {
   display: flex;
   flex-flow: row wrap;
@@ -42,4 +45,10 @@
 
 .PageProjects__Item_more {
   margin-bottom: 12px;
+}
+
+@media (max-width: @mobileWidth) {
+  .PageProjects__Item_more {
+    margin-left: 0;
+  }
 }

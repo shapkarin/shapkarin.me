@@ -5,6 +5,7 @@ import ReactTooltip from 'react-tooltip';
 import { GoRepoForked, GoPulse, GoIssueOpened } from 'react-icons/go';
 import { MdWeb } from 'react-icons/md';
 import { TiStarOutline } from 'react-icons/ti';
+import { FiExternalLink } from 'react-icons/fi';
 
 import Loading from 'Components/Loading';
 import Close from 'Components/Close';
@@ -111,7 +112,7 @@ class Github extends Component {
             ))}
             <div className="Page__GithubItem" style={{ flexBasis: '100%' }}>
               <div className="Page__GithubItemInner">
-                <a href="https://github.com/shapkarin?tab=stars" target="_blank" className="GithubItem__Link">More at Github...</a>
+                <a href="https://github.com/shapkarin?tab=stars" target="_blank" className="GithubItem__Link">More <FiExternalLink /></a>
               </div>
             </div>
           </div>

@@ -14,7 +14,7 @@ export default [
     icon: () => <GoRepo />
   },
   {
-    title: 'Liked repos',
+    title: 'Starred',
     url: '/liked',
     icon: () => <GoStar />
   },

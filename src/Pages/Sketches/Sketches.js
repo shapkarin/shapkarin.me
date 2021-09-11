@@ -15,10 +15,6 @@ class Sketches extends Component {
     catalog
   })
 
-  static mapDispatchToProps = {
-    fetch: sketches
-  }
-
   static propTypes = {
     loading: PropTypes.bool.isRequired,
     // todo: arrayOf with shape, look at src/Pages/Projects/Projects.js
@@ -28,6 +24,10 @@ class Sketches extends Component {
 
   componentDidMount() {
     this.props.fetch();
+  }
+
+  static mapDispatchToProps = {
+    fetch: sketches
   }
 
   render() {
@@ -40,14 +40,13 @@ class Sketches extends Component {
           <p>
             Generative art, animation and music visualization experiments
             <br />
-            to lear, research and practice. Usually was build fast,
+            to lear, research and practice. Usually was build fast.
+            It's like a sketch drawing but with code.
             <br />
-            like a sketch drawing but with code.
             <br />
-            <br />
-            Some are implemented with pure JS, other with libraries.
+            Some are implemented with pure JS, other with libraries:
           </p>
-          <div style={{ display: 'flex', marginTop: '24px' }}>
+          <div className="Gal__Wrapper">
             {Object.keys(catalog).map(category => (
               <div key={category} className="Gal__Column">
                 <h3>{`${category}:`}</h3>

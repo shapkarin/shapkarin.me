@@ -10,15 +10,16 @@ const mapDispatchToProps = ({
   randomize: changeBackground
 });
 
-// todo: <button></button>
-const Controls = ({ randomize }) => (
-  <div onClick={randomize} className="Menu__Item--bckg">
-    <IoIosRefresh/> Random
+const defaultInner = () => <><IoIosRefresh/> Random</>;
+
+const Controls = ({ randomize, children = defaultInner(), ...rest }) => (
+  <div onClick={randomize} className="Menu__Item--bckg" {...rest}>
+    {children}
   </div>
-)
+);
 
 Controls.propTypes = {
   randomize: PropTypes.func.isRequired
-}
+};
 
 export default connect(() => ({}), mapDispatchToProps)(Controls);
