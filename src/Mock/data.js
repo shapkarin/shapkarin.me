@@ -1,13 +1,10 @@
 // todo: data.yml or data.md
 
-// eslint-disable-next-line no-multi-str, quotes
-export const about = `Hello. My name is Yury Shapkarin. \
-I like to code. \
+export const about = `<h1>Hello. My name is Yury Shapkarin and I like to code 👨‍💻</h1>\
 I was involved in some great projects, \
 create some from scratch \
-and create open source projects. \
-I use JavaScript a lot but \
-also explore some new or just interesting in computer science.`;
+and create open source projects.<br /> \
+I use JavaScript a lot but explore some new or just interesting as well.`;
 
 export const sketches = {
   'Archive ≈2012': [
@@ -103,8 +100,10 @@ const infos = [
   },
   {
     id: 1,
-    content: 'Extend any routine with custom stages, create routine with more than defafult stages and create custom routine. \
-<br/><br/> <div><img alt="npm" src="https://img.shields.io/npm/v/extend-saga-routines?style=social"> <img alt="npm" src="https://img.shields.io/npm/dm/extend-saga-routines?style=social"> <img alt="NPM" src="https://img.shields.io/npm/l/extend-saga-routines?style=social"> <img alt="Travis (.org)" src="https://img.shields.io/travis/shapkarin/extend-saga-routines?label=Tests&style=social"></div>'
+    content: `More info about <a href="https://www.npmjs.com/package/redux-saga-routines" target="_blanc">routines</a>. \
+    From v3.3.0 redux-saga is optional. <br /> \
+    Extend any routine with custom stages, create routine with more than defafult stages and create custom routine. \
+<br/><br/> <div><img alt="npm" src="https://img.shields.io/npm/v/extend-saga-routines?style=social"> <img alt="npm" src="https://img.shields.io/npm/dm/extend-saga-routines?style=social"> <img alt="NPM" src="https://img.shields.io/npm/l/extend-saga-routines?style=social"> <img alt="Travis (.org)" src="https://img.shields.io/travis/shapkarin/extend-saga-routines?label=Tests&style=social"></div>`
   },
   {
     id: 4,

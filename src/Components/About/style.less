@@ -1,12 +1,27 @@
+@import "../../Variables.less";
+
 .About {
   padding: 20px;
   width: auto;
   font-size: 17px;
   line-height: 19px;
-}
-@media (min-width: 700px) {
-  .About {
-    width: 770px;
-    line-height: 1.3em;
+
+  &_dark {
+    background-color: rgba(0, 0, 0, 0.28)
+  }
+
+  h1 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  @media (min-width: @mobileWidth) {
+    width: 715px;
+  }
+
+  svg {
+    height: 12px;
   }
 }
+

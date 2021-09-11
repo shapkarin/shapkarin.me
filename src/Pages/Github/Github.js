@@ -3,6 +3,7 @@ import connect from 'react-redux-connect';
 import PropTypes from 'prop-types';
 import ReactTooltip from 'react-tooltip';
 import { GoRepoForked, GoPulse, GoIssueOpened } from 'react-icons/go';
+import { FiExternalLink } from 'react-icons/fi';
 import { MdWeb } from 'react-icons/md';
 
 import Loading from 'Components/Loading';
@@ -102,7 +103,7 @@ class Github extends Component {
           ))}
           <div className="Page__GithubItem" style={{ flexBasis: '100%' }}>
             <div className="Page__GithubItemInner">
-              <a href="https://github.com/shapkarin?tab=repositories" target="_blank" className="GithubItem__Link">More at Github...</a>
+              <a href="https://github.com/shapkarin?tab=repositories" target="_blank" className="GithubItem__Link">More <FiExternalLink /></a>
             </div>
           </div>
         </div>

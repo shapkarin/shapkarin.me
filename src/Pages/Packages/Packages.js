@@ -3,7 +3,6 @@ import connect from 'react-redux-connect';
 import PropTypes from 'prop-types';
 import { GoChevronRight, GoChevronDown } from 'react-icons/go';
 import { FiExternalLink } from 'react-icons/fi';
-import ReactTooltip from 'react-tooltip';
 
 import Loading from 'Components/Loading';
 import Close from 'Components/Close';
@@ -53,10 +52,6 @@ class Packages extends Component {
     return (
       <Loading loading={loading}>
         <Close />
-        <ReactTooltip
-          style={{}}
-          place="right"
-        />
         <div className="PageProjects Page__Inner">
           <div>
             {packages.map(({
@@ -72,7 +67,7 @@ class Packages extends Component {
                 <a target="_blank" href={url}>
                   {name}
                   {' '}
-                  <FiExternalLink data-tip="open in a new tab" />
+                  <FiExternalLink />
                 </a>
                 <div
                   onClick={() => toggleInfo({ id, fetched })}
@@ -102,7 +97,7 @@ class Packages extends Component {
             >
                 Portfolio
               {' '}
-              <FiExternalLink data-tip="open in a new tab" />
+              <FiExternalLink />
             </a>
             <a
               className="PageProjects__Item_more"
@@ -110,9 +105,9 @@ class Packages extends Component {
               href="https://www.npmjs.com/~shapkarin"
               target="_blank"
             >
-                Other published packages
+              Other published packages
               {' '}
-              <FiExternalLink data-tip="open in a new tab" />
+              <FiExternalLink />
             </a>
           </div>
         </div>

@@ -13,19 +13,19 @@ import Menu from 'Components/Menu';
 import Github from 'Pages/Github';
 import Packages from 'Pages/Packages';
 import Liked from 'Pages/Liked';
-// TODO: rename
 import Sketches from 'Pages/Sketches';
 import store from './Store';
 
 import 'Components/Background';
+
 import './App.less';
 
-// TODO: use names
+
 export default function () {
   return (
     <Provider store={store}>
-      <About />
       <Router history={createBrowserHistory()}>
+        <About />
         <div className="Wrap">
           <Menu />
           <div className="Page">
