@@ -9,7 +9,7 @@ export default [
     icon: () => <GoProject />
   },
   {
-    title: 'Github',
+    title: 'Repositories',
     url: '/repositories',
     icon: () => <GoRepo />
   },

@@ -47,7 +47,7 @@ export default class About extends Component {
     return (
       <>
         <Loading loading={loading}>
-          <div className={`About ${this.props.history.location.pathname === '/' ? 'About_dark' : ''}`}>
+          <div className={`About ${pathname === '/' ? 'About_dark' : ''}`}>
             <div 
               dangerouslySetInnerHTML={{__html: text}}
             ></div>
@@ -58,12 +58,13 @@ export default class About extends Component {
               <ReactTooltip
                 place="right"
               />
-              Current website use React, Redux, axios-mock-adapter to mock some requests and Github API. <br />
+              Current website use React, Redux, Github API and axios-mock-adapter to mock some requests.<br />
               The backgound is <RandomButton className="Link" data-tip="click to generate">generated</RandomButton> by pure JS with Canvas API.
-              You can have a look at <a href='https://github.com/shapkarin/shapkarin.me' target='_blank'>the source code <FiExternalLink /></a>.<br />
+              <br />
+              You can have a look at <a href='https://github.com/shapkarin/shapkarin.me' target='_blank'>the source code <FiExternalLink /></a>.
               It's a bit <a href='https://github.com/shapkarin/shapkarin.me/issues' target='_blank' data-tip="known issues">legacy <FiExternalLink /></a>.
               <br />
-              I don't think that redux-saga is necessary here
+              At least I don't think that redux-saga is necessary
               and it don't has any CSS methodology.{' '}
               <div className="Link" onClick={() => this.setState({ moreInfo: false })} data-tip="collapse">[Hide]</div>
             </div>}

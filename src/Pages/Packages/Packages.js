@@ -43,8 +43,7 @@ class Packages extends Component {
 
   componentDidMount() {
     // todo: use memo or loading status
-    const { fetch } = this.props;
-    fetch();
+    this.props.fetch();
   }
 
   render () {
@@ -91,21 +90,31 @@ class Packages extends Component {
           <div>
             <a
               className="PageProjects__Item_more"
-              style={{ width: '80px' }}
-              href="https://freelansim.ru/freelancers/yuryshapkarin/projects"
+              style={{ width: '170px' }}
+              href="https://www.npmjs.com/~shapkarin"
               target="_blank"
             >
-                Portfolio
+              All published packages
               {' '}
               <FiExternalLink />
             </a>
             <a
               className="PageProjects__Item_more"
-              style={{ width: '200px' }}
-              href="https://www.npmjs.com/~shapkarin"
+              style={{ width: '170px' }}
+              href="https://github.com/shapkarin?tab=repositories"
               target="_blank"
             >
-              Other published packages
+              My GitHub repositories
+              {' '}
+              <FiExternalLink />
+            </a>
+            <a
+              className="PageProjects__Item_more"
+              style={{ width: '80px' }}
+              href="https://freelansim.ru/freelancers/yuryshapkarin/projects"
+              target="_blank"
+            >
+              Portfolio
               {' '}
               <FiExternalLink />
             </a>
