@@ -20,7 +20,7 @@ class Packages extends Component {
 
   static mapDispatchToProps = {
     fetch: packagesTrigger,
-    toggleInfo: info
+    fetchInfoOrToggle: info
   }
 
   static propTypes = {
@@ -38,7 +38,7 @@ class Packages extends Component {
       })
     })).isRequired,
     fetch: PropTypes.func.isRequired,
-    toggleInfo: PropTypes.func.isRequired,
+    fetchInfoOrToggle: PropTypes.func.isRequired,
   }
 
   componentDidMount() {
@@ -47,7 +47,7 @@ class Packages extends Component {
   }
 
   render () {
-    const { loading, packages, toggleInfo } = this.props;
+    const { loading, packages, fetchInfoOrToggle } = this.props;
     return (
       <Loading loading={loading}>
         <Close />
@@ -69,7 +69,7 @@ class Packages extends Component {
                   <FiExternalLink />
                 </a>
                 <div
-                  onClick={() => toggleInfo({ id, fetched })}
+                  onClick={() => fetchInfoOrToggle({ id, fetched })}
                   className="toggle_info"
                 >
                   more info

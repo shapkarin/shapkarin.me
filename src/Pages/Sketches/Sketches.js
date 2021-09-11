@@ -35,7 +35,7 @@ class Sketches extends Component {
     return (
       <Loading loading={loading}>
         <Close />
-        <div className="Page__Inner Page__Inner_dark">
+        <div className="Page__Sketches Page__Inner Page__Inner_dark">
           <h1 style={{ fontSize: '22px', marginBottom: '12px' }}>Drawing sketches by code</h1>
           <p>
             Generative art, animation and music visualization experiments
