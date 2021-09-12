@@ -1,16 +1,16 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { IoMdClose } from 'react-icons/io';
 
 import './style.less';
 
 const Close = () => (
-  <NavLink
+  <Link
     to="/"
     className="CloseButton"
   >
     <IoMdClose />
-  </NavLink>
+  </Link>
 );
 
 export default Close;

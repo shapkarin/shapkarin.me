@@ -10,7 +10,7 @@ const mapDispatchToProps = ({
   randomize: changeBackground
 });
 
-const defaultInner = () => <><IoIosRefresh/> Random</>;
+const defaultInner = () => <><IoIosRefresh/> Background</>;
 
 const Controls = ({ randomize, children = defaultInner(), ...rest }) => (
   <div onClick={randomize} className="Menu__Item--bckg" {...rest}>

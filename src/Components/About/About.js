@@ -5,7 +5,6 @@ import PropTypes from 'prop-types';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import ReactTooltip from 'react-tooltip';
 import { FiExternalLink } from 'react-icons/fi';
-import { withRouter } from "react-router";
 
 import about from './routines';
 import Loading from 'Components/Loading';
@@ -13,7 +12,6 @@ import RandomButton from 'Components/RandomButton';
 
 import './style.less';
 
-@withRouter
 @connect
 export default class About extends Component {
   static mapStateToProps = ({ about: { loading, text } }) => ({
@@ -40,14 +38,14 @@ export default class About extends Component {
   }
 
   render () {
-    const { loading, text, history: { location: { pathname } } } = this.props;
+    const { loading, text } = this.props;
     const { moreInfo, copied } = this.state;
     const email = 'yury@shapkarin.me';
 
     return (
       <>
         <Loading loading={loading}>
-          <div className={`About ${pathname === '/' ? 'About_dark' : ''}`}>
+          <div className={'About About_dark'}>
             <div 
               dangerouslySetInnerHTML={{__html: text}}
             ></div>
