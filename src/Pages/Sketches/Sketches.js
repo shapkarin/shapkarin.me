@@ -36,7 +36,7 @@ class Sketches extends Component {
       <Loading loading={loading}>
         <Close />
         <div className="Page__Sketches Page__Inner Page__Inner_dark">
-          <h1 style={{ fontSize: '22px', marginBottom: '12px' }}>Drawing sketches by code</h1>
+          <h1>Drawing with code</h1>
           <p>
             Generative art, animation and music visualization experiments
             <br />
@@ -44,7 +44,7 @@ class Sketches extends Component {
             It's like a sketch drawing but with code.
             <br />
             <br />
-            Some are implemented with pure JS, other with libraries:
+            <h2>Some are implemented with pure JS, other with libraries</h2>
           </p>
           <div className="Gal__Wrapper">
             {Object.keys(catalog).map(category => (
