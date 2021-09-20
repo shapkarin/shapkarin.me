@@ -25,7 +25,7 @@ export default function Contributions() {
             } = {}
           }
         }) => {
-          if(type !== 'DeleteEvent') {
+          if(type !== 'DeleteEvent' && repo !== 'shapkarin/shapkarin.me' && repo !== 'shapkarin/shapkarin') {
             return (
               <div key={id} className="Page__GithubItem">
                 <div className="Page__GithubItemInner">
@@ -33,8 +33,6 @@ export default function Contributions() {
                     { action } { type && type.replace('Event', '') } { ref_type } { ref } { !!html_url && <a href={html_url}>#{number}</a> }
                   </div>
                   <div>
-                    Repo:
-                    {' '}
                     <a
                       href={`https://github.com/${repo}`}
                       target="_blank"

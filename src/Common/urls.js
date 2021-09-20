@@ -6,7 +6,7 @@ const github = {
     return `${this.githubAPI}/users/shapkarin`;
   },
   activity() {
-    return `${this.user()}/events/public`;
+    return `${this.user()}/events/public?per_page=100`;
   },
   repositories(n = 1) {
     return `${this.user()}/repos?sort=updated&per_page=30&page=${n}`;
