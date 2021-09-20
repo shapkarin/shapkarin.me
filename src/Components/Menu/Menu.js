@@ -1,29 +1,31 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import { IoIosRefresh } from 'react-icons/io';
 
 import RandomButton from 'Components/RandomButton';
-import pages from './pages';
+import { PAGES } from 'Components/Structure';
 
 import './Menu.less';
 
 const Menu = () => (
   <nav className="Menu">
-    {pages.map((link) => {
-      const { title, url, icon } = link;
+    {PAGES.map(({ name, path, icon }) => {
       return (
         <NavLink
-          key={title}
-          to={url}
+          key={`Menu_${name}`}
+          to={path}
           className="Menu__Item"
           activeClassName="Menu__Item--active"
         >
           {icon()}
           {' '}
-          { title }
+          { name }
         </NavLink>
       );
     })}
-    <RandomButton />
+    <RandomButton className="Menu__Item--bckg">
+      <IoIosRefresh/> Background
+    </RandomButton>
   </nav>
 );
 

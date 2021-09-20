@@ -1,60 +1,36 @@
 import React from 'react';
-import {
-  Switch,
-  Router,
-  Route,
-  Redirect
-} from 'react-router-dom';
-import { Provider } from 'react-redux';
+import { Router } from 'react-router-dom';
 import { createBrowserHistory } from 'history';
-
-import About from 'Components/About';
-import Menu from 'Components/Menu';
-import Github from 'Pages/Github';
-import Packages from 'Pages/Packages';
-import Liked from 'Pages/Liked';
-import Sketches from 'Pages/Sketches';
-import store from './Store';
+import { QueryClient, QueryClientProvider } from 'react-query';
 
 import 'Components/Background';
 
+import About from 'Components/About';
+import Menu from 'Components/Menu';
+import Structure from 'Components/Structure';
+
 import './App.less';
 
+const history = createBrowserHistory();
+const queryClient = new QueryClient({
+  defaultOptions: {
+     queries: {
+       suspense: true,
+       staleTime: 60 * 1000 * 15, // 15 minutes chached data lifetime
+     },
+   },
+});
 
-export default function () {
+export default function App () {
   return (
-    <Provider store={store}>
-      <Router history={createBrowserHistory()}>
+    <QueryClientProvider client={queryClient}>
+      <Router history={history}>
         <About />
         <div className="Wrap">
           <Menu />
-          <div className="Page">
-            <Switch>
-              <Route
-                path="/repositories"
-                component={Github}
-              />
-              <Redirect
-                from="/github"
-                to="/repositories"
-              />
-              <Route
-                path="/packages"
-                component={Packages}
-              />
-              <Redirect from="/projects" to="packages" />
-              <Route
-                path="/liked"
-                component={Liked}
-              />
-              <Route
-                path="/sketches"
-                component={Sketches}
-              />
-            </Switch>
-          </div>
+          <Structure />
         </div>
       </Router>
-    </Provider>
+    </QueryClientProvider>
   );
 }
