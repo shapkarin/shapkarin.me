@@ -1,25 +1,20 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
-import { IoIosRefresh } from 'react-icons/io';
 
-import { changeBackground } from './actions';
+import scene from '../Background';
+
 import './style.less';
 
-const mapDispatchToProps = ({
-  randomize: changeBackground
-});
+const RandomButton = ({ children, ...rest }) => {
+  const randomize = function(){
+    scene.randomizeAll();
+    scene.draw();
+  };
 
-const defaultInner = () => <><IoIosRefresh/> Background</>;
-
-const Controls = ({ randomize, children = defaultInner(), ...rest }) => (
-  <div onClick={randomize} className="Menu__Item--bckg" {...rest}>
-    {children}
-  </div>
-);
-
-Controls.propTypes = {
-  randomize: PropTypes.func.isRequired
+  return (
+    <div onClick={randomize} {...rest}>
+      {children}
+    </div>
+  )
 };
 
-export default connect(() => ({}), mapDispatchToProps)(Controls);
+export default RandomButton;
