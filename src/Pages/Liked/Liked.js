@@ -62,7 +62,7 @@ class Github extends Component {
               languages_url
             }) => (
               <div key={id} className="Page__GithubItem">
-                <div className="Page__GithubItemInner" style={{ maxWidth: '250px' }}>
+                <div className="Page__GithubItemInner">
                   <a className="GithubItem__Link centered-label" href={html_url} target="_blank">
                     {full_name}
                     {fork && <GoRepoForked data-tip="fork" />}

@@ -1,10 +1,9 @@
 // todo: data.yml or data.md
 
 export const about = `<h1>Hello. My name is Yury Shapkarin and I like to code 👨‍💻</h1>\
-I was involved in some great projects, \
-create some from scratch \
-and create open source projects. \
-I use JavaScript a lot but explore some new or just interesting as well.`;
+I helped to develop and create a lot of great projects. <br /> \
+Some of them was commertial, some are not, some was a mix of both. <br /> \
+I write JavaScript each day and I like to spend my spare time to <br />explore other languages and technologies.`;
 
 export const sketches = {
   'Archive ≈2012': [

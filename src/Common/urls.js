@@ -1,15 +1,25 @@
-// TODO: move out of Mock folder
 import pathToRegexp from 'path-to-regexp';
 
 const github = {
-  user: 'https://api.github.com/users/shapkarin'
+  githubAPI: 'https://api.github.com',
+  user() {
+    return `${this.githubAPI}/users/shapkarin`;
+  },
+  activity() {
+    return `${this.user()}/events/public`;
+  },
+  repositories(n = 1) {
+    return `${this.user()}/repos?sort=updated&per_page=30&page=${n}`;
+  },
+  likes() {
+    return `${this.user()}/starred`;
+  },
 };
 
 export default {
-  repositories: n => `${github.user}/repos?sort=updated&per_page=30&page=${n}`,
   packages: '/packages',
   packageInfo: pathToRegexp('/packages/:id'),
   about: '/about',
-  likes: `${github.user}/starred`,
-  sketches: '/sketches'
+  sketches: '/sketches',
+  ...github
 };

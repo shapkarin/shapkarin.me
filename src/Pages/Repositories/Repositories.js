@@ -1,5 +1,4 @@
-import React, { Component } from 'react';
-import connect from 'react-redux-connect';
+import React from 'react';
 import PropTypes from 'prop-types';
 import ReactTooltip from 'react-tooltip';
 import { GoRepoForked, GoPulse, GoIssueOpened } from 'react-icons/go';
@@ -8,40 +7,12 @@ import { MdWeb } from 'react-icons/md';
 
 import Loading from 'Components/Loading';
 import Close from 'Components/Close';
-import repositories from './routines';
 
 import './style.less';
 
-@connect
-class Github extends Component {
-  static mapStateToProps = ({ github: { loading, repositories: list } }) => ({
-    loading,
-    list
-  })
+function Repositories({ isLoading, error, data: { data: list } = { data: [] } }) {
+  const status = { isLoading, error };
 
-  static mapDispatchToProps = {
-    fetch: repositories,
-  }
-
-  static propTypes = {
-    loading: PropTypes.bool.isRequired,
-    // todo: arrayOf
-    list: PropTypes.array.isRequired,
-    // eslint-disable-next-line react/require-default-props
-    error: PropTypes.shape({
-      code: PropTypes.number,
-      message: PropTypes.string
-    }),
-    fetch: PropTypes.func.isRequired,
-  }
-
-  componentDidMount() {
-    this.props.fetch();
-  }
-
-  render () {
-    const { loading, error, list } = this.props;
-    const status = { loading, error };
     return (
       <Loading {...status}>
         <Close />
@@ -62,7 +33,7 @@ class Github extends Component {
             languages_url
           }) => (
             <div key={id} className="Page__GithubItem">
-              <div className="Page__GithubItemInner" style={{ maxWidth: '250px' }}>
+              <div className="Page__GithubItemInner">
                 <a className="GithubItem__Link centered-label" href={html_url} target="_blank">
                   {name}
                   {fork && <GoRepoForked data-tip="fork" />}
@@ -110,6 +81,14 @@ class Github extends Component {
       </Loading>
     );
   }
+
+Repositories.propTypes = {
+  isLoading: PropTypes.bool.isRequired,
+  list: PropTypes.array.isRequired,
+  error: PropTypes.shape({
+    code: PropTypes.number,
+    message: PropTypes.string
+  }),
 }
 
-export default Github;
+export default Repositories;

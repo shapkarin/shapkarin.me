@@ -6,15 +6,19 @@ import Preloader from './Preloader';
 export default class Loading extends PureComponent {
   static propTypes = {
     children: PropTypes.node.isRequired,
-    error: PropTypes.shape({
-      code: PropTypes.number,
-      message: PropTypes.string
-    }),
+    error: PropTypes.oneOfType([
+      PropTypes.bool,
+      PropTypes.string,
+      PropTypes.shape({
+        code: PropTypes.number,
+        message: PropTypes.string
+      }),
+    ]),
     size: PropTypes.shape({
       preloader: PropTypes.number,
       text: PropTypes.number
     }),
-    loading: PropTypes.bool.isRequired
+    isLoading: PropTypes.bool.isRequired
   };
 
   static defaultProps = {
@@ -25,7 +29,8 @@ export default class Loading extends PureComponent {
     size: {
       preloader: 150,
       text: 15
-    }
+    },
+    isLoading: true
   };
 
   render() {
@@ -33,15 +38,15 @@ export default class Loading extends PureComponent {
       children,
       error,
       size,
-      loading,
+      isLoading,
       small
     } = this.props;
 
-    if (loading) {
+    if (isLoading) {
       return <Preloader size={ size.text } />;
     }
 
-    if (error.code) {
+    if (error && error.code) {
       return error.message;
     }
 
