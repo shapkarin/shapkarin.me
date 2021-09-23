@@ -25,7 +25,7 @@ const githubRequest = axios.create({
 const urls = { ...github, ...backend };
 // Mock
 export const fetchSketches = () => mockedRequest.get(urls.sketches);
-export const fetchAbout = () => mockedRequest.get(urls.about);
+export const fetchAbout = () => axios.get(urls.about);
 export const fetchPackages = () => mockedRequest.get(urls.packages._root);
 export const fetchPackageInfo = (id) => mockedRequest.get(`/packages/${id}`);
 

@@ -2151,7 +2151,7 @@ aws4@^1.8.0:
 
 axios-mock-adapter@1.16.0:
   version "1.16.0"
-  resolved "https://registry.yarnpkg.com/axios-mock-adapter/-/axios-mock-adapter-1.16.0.tgz#cdd55bb60d8cb3fcd77fdb9cbb269e47b8b95180"
+  resolved "https://registry.npmjs.org/axios-mock-adapter/-/axios-mock-adapter-1.16.0.tgz"
   integrity sha512-m2D8ngMTQ5p4zZNBsPKoENgwz5rDfd0pZmXI/spdE2eeeKIcR3jquk+NRiBVFtb9UJlciBYplNzSUmgQ6X385Q==
   dependencies:
     deep-equal "^1.0.1"
@@ -7428,7 +7428,7 @@ path-to-regexp@^1.7.0:
 
 path-to-regexp@^6.2.0:
   version "6.2.0"
-  resolved "https://registry.yarnpkg.com/path-to-regexp/-/path-to-regexp-6.2.0.tgz#f7b3803336104c346889adece614669230645f38"
+  resolved "https://registry.npmjs.org/path-to-regexp/-/path-to-regexp-6.2.0.tgz"
   integrity sha512-f66KywYG6+43afgE/8j/GoiNyygk/bnoCbps++3ErRKsIYkGGupyv07R2Ok5m9i67Iqc+T2g1eAUGUPzWhYTyg==
 
 path-type@^3.0.0:

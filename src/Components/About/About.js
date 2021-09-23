@@ -11,7 +11,7 @@ import Collapse from 'Components/Collapse';
 import './style.less';
 
 function About() {
-  const { data: { data: text } } = useQuery('About', () => fetchAbout());
+  const { data: { data: { about: text } } } = useQuery('About', () => fetchAbout());
 
   const [isCopied, setIsCopied] = useState(false);
   const [isMoreInfo, setIsMoreInfo] = useState(false);
