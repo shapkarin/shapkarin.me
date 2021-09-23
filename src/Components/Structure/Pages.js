@@ -37,7 +37,6 @@ export default [
   {
     name: 'Stars',
     path: '/github/stars',
-    // TODO
     redirects: [
       { from: '/liked', to: '/github/stars'},
       { from: '/stars', to: '/github/stars'},

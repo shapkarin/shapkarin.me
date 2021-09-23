@@ -10,7 +10,7 @@ const Structure = () => (
   <div className="Page">
     <Switch>
       {PAGES.reduce(
-        (acc, { name, path, Page, redirect }) => [
+        (acc, { name, path, Page, redirect, redirects }) => [
           ...acc,
           <Route exact path={path} key={`Route_${name}`}>
             <Preloader>
@@ -19,6 +19,7 @@ const Structure = () => (
             </Preloader>
           </Route>,
           redirect && <Redirect {...redirect} key={`Redirect_${name}`} />,
+          redirects && redirects.map((fromTo, i) => <Redirect {...fromTo} key={`Redirect_${name}_${i}`} />)
         ],
         []
       )}
