@@ -23,8 +23,9 @@
   },
   "scripts": {
     "start": "node scripts/start.js",
-    "build": "node scripts/build.js",
-    "test": "node scripts/test.js"
+    "build": "npm run build:api && node scripts/build.js",
+    "test": "node scripts/test.js",
+    "build:api": "node src/Common/Mock/generate-json.js"
   },
   "eslintConfig": {
     "extends": "react-app"
