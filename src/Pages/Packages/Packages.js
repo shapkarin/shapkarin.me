@@ -58,7 +58,7 @@ function PackageInfo({ id }) {
 
 function PackageInfoContent({ isOpen = false, id }) {
 
-  const { data: { data: { content } = {} } = {}, refetch } = useQuery(['PackageInfo', id], () => fetchPackageInfo(id), {
+  const { data: { data: { intro } = {} } = {}, refetch } = useQuery(['PackageInfo', id], () => fetchPackageInfo(id), {
     enabled: false,
     refetchOnWindowFocus:false
   });
@@ -69,7 +69,7 @@ function PackageInfoContent({ isOpen = false, id }) {
     <Collapse open={isOpen}>
       <div
         className="Project__Info"
-        dangerouslySetInnerHTML={{ __html: content }}
+        dangerouslySetInnerHTML={{ __html: intro }}
       />
     </Collapse>
   )
