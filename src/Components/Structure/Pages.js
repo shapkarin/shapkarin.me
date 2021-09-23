@@ -3,7 +3,7 @@ import React from 'react';
 
 import Packages from 'Pages/Packages';
 import Repositories from 'Pages/Repositories';
-import Liked from 'Pages/Liked';
+import Stars from 'Pages/Stars';
 import Sketches from 'Pages/Sketches';
 import Contributions from 'Pages/Contributions';
 
@@ -35,11 +35,15 @@ export default [
     Page: () => <Contributions />
   },
   {
-    name: 'Starred',
-    path: '/github/liked',
-    redirect: { from: '/liked', to: '/github/liked'},
+    name: 'Stars',
+    path: '/github/stars',
+    // TODO
+    redirects: [
+      { from: '/liked', to: '/github/stars'},
+      { from: '/stars', to: '/github/stars'},
+    ],
     icon: () => <GoStar size="1.2em" />,
-    Page: () => <Liked />
+    Page: () => <Stars />
   },
   {
     name: 'Sketches',
