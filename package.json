@@ -23,11 +23,11 @@
   },
   "scripts": {
     "start": "craco start",
-    "build:client": "craco build",
+    "build": "craco build",
     "build:api": "node src/Common/Mock/database-to-json.js",
-    "build": "npm run build:api && npm run build:client",
     "test": "craco test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "prepush": "npm run build:api"
   },
   "eslintConfig": {
     "extends": [
@@ -48,6 +48,7 @@
     ]
   },
   "devDependencies": {
-    "esm": "^3.2.25"
+    "esm": "^3.2.25",
+    "husky": "^7.0.2"
   }
 }
