@@ -1,15 +1,12 @@
 import axios from 'axios';
 
-import github from './urls';
-import backend from 'Common/GH-Pages-Backend/urls';
+import URLS from './urls';
 
 const githubRequest = axios.create({
   headers: {
     'Accept': 'application/vnd.github.v3+json'
   }
 })
-
-const URLS = { ...github, ...backend };
 
 // From generated JSON files
 export const fetchSketches = () => axios.get(URLS.sketches);

@@ -23,7 +23,7 @@
   },
   "scripts": {
     "start": "craco start",
-    "build:api": "node src/Common/GH-Pages-Backend/database-to-json.js",
+    "build:api": "node src/Generate-Backend/database-to-json.js",
     "build:spa": "craco build",
     "build": "npm run build:api && npm run build:spa",
     "test": "craco test",
@@ -48,6 +48,7 @@
     ]
   },
   "devDependencies": {
-    "esm": "^3.2.25"
+    "esm": "^3.2.25",
+    "uuid": "^8.3.2"
   }
 }
