@@ -11,7 +11,7 @@ import Collapse from 'Components/Collapse';
 import './style.less';
 
 function About() {
-  const { data: { data: { about: text } } } = useQuery('About', () => fetchAbout());
+  const { data: { data: { text } } } = useQuery('About', () => fetchAbout());
 
   const [isCopied, setIsCopied] = useState(false);
   const [isMoreInfo, setIsMoreInfo] = useState(false);
@@ -27,8 +27,9 @@ function About() {
           <div style={{ marginTop: 10 }}>
             <hr />
             <div className="p">
-              Current website uses React, React Hooks, React Query, Github API and Axios Mock Adapter.<br />
+              Current website uses React, React Hooks, React Query, Github API.<br />
               The backgound is <RandomButton className="Link">generated</RandomButton> by pure JS with Canvas API.<br />
+              JSON API was generated from JS structures and serve as a static JSON files.
               Pages, menu, routing and redirects are combined with array to keep that all consistent.
             </div>
             <div className="p">

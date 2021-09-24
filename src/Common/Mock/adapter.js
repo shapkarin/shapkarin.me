@@ -1,6 +1,6 @@
 import MockAdapter from 'axios-mock-adapter';
 
-import random from 'lodash/random';
+import random from 'lodash.random';
 import urls from './urls';
 
 import {

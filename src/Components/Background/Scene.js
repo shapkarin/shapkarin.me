@@ -1,5 +1,5 @@
 // TODO: refact
-import random from 'lodash/random';
+import random from 'lodash.random';
 
 import Shape from './Shape';
 
