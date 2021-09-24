@@ -126,18 +126,6 @@ export const packages = {
 
     return TODO__USE_JSON;
   },
-  get _root(){
-    return this.order.map((packageName, id) => {
-      const { name, url, description } = this.database[packageName];
-      return {
-        id,
-        packageName,
-        name,
-        url,
-        description
-      }
-    })
-  },
   get list(){
     return this.order.map((packageName, id) => {
       const { name, url } = this.database[packageName];
@@ -154,8 +142,3 @@ export const packages = {
     return description;
   },
 }
-
-export const getProjectInfoByUrl = (url) => {
-  const [id] = url.match(/[^/]+$/);
-  return packages.info({ id });
-};
