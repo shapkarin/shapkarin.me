@@ -10,7 +10,7 @@ import {
   getProjectInfoByUrl,
 } from './database';
 
-export default function(axios) {
+export default function Mock(axios) {
   const mock = new MockAdapter(axios);
   const delay = () => random(142, 420);
 

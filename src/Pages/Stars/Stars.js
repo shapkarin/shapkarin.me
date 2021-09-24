@@ -1,4 +1,3 @@
-import React, { Component } from 'react';
 import { useQuery } from 'react-query';
 import ReactTooltip from 'react-tooltip';
 import { GoRepoForked, GoPulse, GoIssueOpened } from 'react-icons/go';
@@ -32,7 +31,7 @@ export default function Liked() {
         }) => (
           <div key={id} className="Page__GithubItem">
             <div className="Page__GithubItemInner">
-              <a className="GithubItem__Link centered-label" href={html_url} target="_blank">
+              <a className="GithubItem__Link centered-label" href={html_url} target="_blank" rel="noreferrer">
                 {full_name}
                 {fork && <GoRepoForked data-tip="fork" />}
               </a>
@@ -48,14 +47,14 @@ export default function Liked() {
                 {' '}
                 open issues:
                 {' '}
-                <a className="IssuesCount" href={`${html_url}/issues`} target="_blank">{open_issues_count}</a>
+                <a className="IssuesCount" href={`${html_url}/issues`} target="_blank" rel="noreferrer">{open_issues_count}</a>
               </div>
               ) }
               { !!homepage && (
               <div className="centered-label">
                 <MdWeb data-tip="homepage" />
                 {' '}
-                <a href={homepage} target="_blank">Homepage</a>
+                <a href={homepage} target="_blank" rel="noreferrer">Homepage</a>
               </div>
               ) }
               { stargazers_count > 0 && (
@@ -81,7 +80,7 @@ export default function Liked() {
         ))}
         <div className="Page__GithubItem" style={{ flexBasis: '100%' }}>
           <div className="Page__GithubItemInner">
-            <a href="https://github.com/shapkarin?tab=stars" target="_blank" className="GithubItem__Link">More <FiExternalLink /></a>
+            <a href="https://github.com/shapkarin?tab=stars" target="_blank" rel="noreferrer" className="GithubItem__Link">More <FiExternalLink /></a>
           </div>
         </div>
       </div>

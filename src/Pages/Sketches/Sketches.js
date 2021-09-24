@@ -1,4 +1,3 @@
-import React, { Component } from 'react';
 import { useQuery } from 'react-query';
 
 import { fetchSketches } from 'Common/API';

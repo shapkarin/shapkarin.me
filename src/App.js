@@ -1,5 +1,4 @@
-import React from 'react';
-import { Router } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
 import { createBrowserHistory } from 'history';
 import { QueryClient, QueryClientProvider } from 'react-query';
 
@@ -24,13 +23,13 @@ const queryClient = new QueryClient({
 export default function App () {
   return (
     <QueryClientProvider client={queryClient}>
-      <Router history={history}>
-        <About />
-        <div className="Wrap">
+      <About />
+      <div className="Wrap">
+        <BrowserRouter history={history}>
           <Menu />
           <Structure />
-        </div>
-      </Router>
+        </BrowserRouter>
+      </div>
     </QueryClientProvider>
   );
 }

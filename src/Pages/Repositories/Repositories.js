@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import ReactTooltip from 'react-tooltip';
 import { GoRepoForked, GoPulse, GoIssueOpened } from 'react-icons/go';
 import { FiExternalLink } from 'react-icons/fi';
@@ -10,8 +9,8 @@ import { useQuery } from "react-query";
 import './style.less';
 
 export default function Repositories() {
-  const [page, setPage] = useState(1)
-  const { data: { data: list } } = useQuery(['Repositories', page], () => fetchRepositories(page), 
+  // const [page, setPage] = useState(1)
+  const { data: { data: list } } = useQuery(['Repositories', 1], () => fetchRepositories(1), 
     // { keepPreviousData : true }
   );
 
@@ -38,7 +37,7 @@ export default function Repositories() {
         }) => (
           <div key={id} className="Page__GithubItem">
             <div className="Page__GithubItemInner">
-              <a className="GithubItem__Link centered-label" href={html_url} target="_blank">
+              <a className="GithubItem__Link centered-label" href={html_url} target="_blank" rel="noreferrer">
                 {name}
                 {fork && <GoRepoForked data-tip="fork" />}
               </a>
@@ -54,14 +53,14 @@ export default function Repositories() {
                 {' '}
                 Open issues:
                 {' '}
-                <a className="IssuesCount" href={`${html_url}/issues`} target="_blank">{open_issues_count}</a>
+                <a className="IssuesCount" href={`${html_url}/issues`} target="_blank" rel="noreferrer">{open_issues_count}</a>
               </div>
               ) }
               { homepage && (
               <div className="centered-label">
                 <MdWeb data-tip="homepage" />
                 {' '}
-                <a href={homepage} target="_blank">Homepage</a>
+                <a href={homepage} target="_blank" rel="noreferrer">Homepage</a>
               </div>
               ) }
               {(false === 'not ready') && language && (
@@ -78,7 +77,7 @@ export default function Repositories() {
         ))}
         <div className="Page__GithubItem" style={{ flexBasis: '100%' }}>
           <div className="Page__GithubItemInner">
-            <a href="https://github.com/shapkarin?tab=repositories" target="_blank" className="GithubItem__Link">More <FiExternalLink /></a>
+            <a href="https://github.com/shapkarin?tab=repositories" target="_blank" rel="noreferrer" className="GithubItem__Link">More <FiExternalLink /></a>
           </div>
         </div>
       </div>

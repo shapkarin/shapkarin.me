@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useQuery } from 'react-query';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import { FiExternalLink } from 'react-icons/fi';
@@ -35,14 +35,14 @@ function About() {
             <div className="p">
               From the previous version <b>it's refactored a lot</b>: redux and redux-saga was replaced with Hooks and Functional components, that was allow to remove a lot of boilerplate code!<br />
               Today's problem: it's still doesn't has any CSS methodology and markup is not so clear.<br />
-              You can have a look at <a href='https://github.com/shapkarin/shapkarin.me' target='_blank'>the source code <FiExternalLink /></a>.
+              You can have a look at <a href='https://github.com/shapkarin/shapkarin.me' target='_blank' rel='noreferrer'>the source code <FiExternalLink /></a>.
             </div>
             <div className="Link" onClick={() => setIsMoreInfo(false)}>[Hide website info]</div>
             <hr />
           </div>
         </Collapse>
         <div style={{marginTop: '10px'}}>
-          You can visit <a href="https://github.com/shapkarin" target="_blank">my Github <FiExternalLink /></a>
+          You can visit <a href="https://github.com/shapkarin" target="_blank" rel="noreferrer">my Github <FiExternalLink /></a>
           {!isCopied ? ' ' : '. '}
           {
             !isCopied ?

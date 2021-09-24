@@ -9,10 +9,7 @@ applyAdapter(mockedRequest);
 
 const githubRequest = axios.create({
   headers: {
-    // lock to API v3
-    'Accept': 'application/vnd.github.v3+json' // application/vnd.github.VERSION.html+json
-    // 'Accept': 'application/vnd.github.beta+json'
-    // try application/vnd.github.VERSION.html+json (to get compiled repo markdown README.md)
+    'Accept': 'application/vnd.github.v3+json'
   }
 })
 /*

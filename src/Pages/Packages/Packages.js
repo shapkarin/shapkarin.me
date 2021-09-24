@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useQuery } from 'react-query';
 import { GoChevronRight, GoChevronDown } from 'react-icons/go';
 import { FiExternalLink } from 'react-icons/fi';
@@ -21,7 +21,7 @@ export default function Packages() {
           id,
         }) => (
           <div key={id} className="PageProjects__Item">
-            <a target="_blank" href={url}>
+            <a target="_blank" rel="noreferrer" href={url}>
               {name}
               {' '}
               <FiExternalLink />
@@ -82,7 +82,7 @@ function Additional() {
       className="PageProjects__Item_more"
       style={{ width: '175px' }}
       href="https://www.npmjs.com/~shapkarin"
-      target="_blank"
+      target="_blank" rel="noreferrer"
     >
       All published packages
       {' '}
@@ -92,7 +92,7 @@ function Additional() {
       className="PageProjects__Item_more"
       style={{ width: '185px' }}
       href="https://github.com/shapkarin?tab=repositories"
-      target="_blank"
+      target="_blank" rel="noreferrer"
     >
       My GitHub repositories
       {' '}
@@ -102,7 +102,7 @@ function Additional() {
       className="PageProjects__Item_more"
       style={{ width: '82px' }}
       href="https://freelansim.ru/freelancers/yuryshapkarin/projects"
-      target="_blank"
+      target="_blank" rel="noreferrer"
     >
       Portfolio
       {' '}

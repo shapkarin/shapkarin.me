@@ -1,3 +1,4 @@
+/* eslint-disable no-multi-str */
 export const about = `<h1>Hello. My name is Yury Shapkarin and I like to code 👨‍💻</h1>\
 I help to develop and create a lot of great projects. <br /> \
 Some of them was commertial, some are not, some was a mix of both. <br /> \
