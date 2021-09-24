@@ -9,15 +9,6 @@ const API_FOLDER = path.join(__dirname, '../../../public/api/');
 const API_FOLDER_PACKAGES = path.resolve(API_FOLDER, 'packages');
 const API_FOLDER_PACKAGE_INFO = path.resolve(API_FOLDER_PACKAGES, 'info');
 
-// TODO: refact
-// if(fs.existsSync(API_FOLDER)){
-//   fs.rmSync(API_FOLDER, { recursive: true });
-// } else {
-//   fs.mkdirSync(API_FOLDER_PACKAGE_INFO, { recursive: true });
-// }
-
-
-
 const about = JSON.stringify({ text: database.about.trim() });
 const sketches = JSON.stringify(database.sketches);
 const packages = JSON.stringify({ packages: database.packages.list });
@@ -27,7 +18,6 @@ const infos = database.packages.order.map((pkg, id) => ({
   packageName: pkg,
   description: database.packages.info(pkg).trim(),
 }));
-
 
 fsPromises.mkdir(API_FOLDER_PACKAGE_INFO, { recursive: true }).then(function(){
   fsPromises.writeFile(path.resolve(API_FOLDER, 'about.json'), about);
