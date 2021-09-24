@@ -1,5 +1,5 @@
 //TODO: refact
-import random from 'lodash/random';
+import random from 'lodash.random';
 
 export default class Shape {
   constructor({x, y, row, col, ctx}) {

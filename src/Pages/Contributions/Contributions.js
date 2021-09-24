@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { fetchContributions } from 'Common/API';
 import { useQuery } from 'react-query';
 
@@ -44,6 +42,8 @@ export default function Contributions() {
                 </div>
               </div>
             )
+          } else {
+            return null
           }
         })}
       </div>

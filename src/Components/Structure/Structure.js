@@ -1,6 +1,4 @@
-import React, { Suspense } from "react";
 import { Switch, Route, Redirect } from "react-router-dom";
-import { useQuery } from "react-query";
 
 import Close from "Components/Close";
 import { PAGES } from "Components/Structure";

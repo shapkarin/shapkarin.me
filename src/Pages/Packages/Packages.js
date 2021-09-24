@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useQuery } from 'react-query';
 import { GoChevronRight, GoChevronDown } from 'react-icons/go';
 import { FiExternalLink } from 'react-icons/fi';
@@ -10,18 +10,18 @@ import Preloader from 'Components/Preloader';
 import './style.less';
 
 export default function Packages() {
-  const { data: { data: list } } = useQuery('Packages', fetchPackages); 
+  const { data: { data: { packages } } } = useQuery('Packages', fetchPackages); 
 
   return (
     <div className="PageProjects Page__Inner">
       <div>
-        {list.map(({
+        {packages.map(({
           name,
           url,
           id,
         }) => (
           <div key={id} className="PageProjects__Item">
-            <a target="_blank" href={url}>
+            <a target="_blank" rel="noreferrer" href={url}>
               {name}
               {' '}
               <FiExternalLink />
@@ -50,28 +50,22 @@ function PackageInfo({ id }) {
         {isOpen ? <GoChevronDown /> : <GoChevronRight />}
       </div>
       <Preloader>
-        <PackageInfoContent isOpen={isOpen} id={id} />
+        <Collapse open={isOpen}>
+          <PackageInfoContent id={id} />
+        </Collapse>
       </Preloader>
     </>
   )
 }
 
 function PackageInfoContent({ isOpen = false, id }) {
-
-  const { data: { data: { intro } = {} } = {}, refetch } = useQuery(['PackageInfo', id], () => fetchPackageInfo(id), {
-    enabled: false,
-    refetchOnWindowFocus:false
-  });
-
-  if(isOpen) refetch()
+  const { data: { data: { description } = {} } = {} } = useQuery(['PackageIntro', id], () => fetchPackageInfo(id));
 
   return (
-    <Collapse open={isOpen}>
-      <div
-        className="Project__Info"
-        dangerouslySetInnerHTML={{ __html: intro }}
-      />
-    </Collapse>
+    <div
+      className="Project__Info"
+      dangerouslySetInnerHTML={{ __html: description }}
+    />
   )
 }
 
@@ -82,7 +76,7 @@ function Additional() {
       className="PageProjects__Item_more"
       style={{ width: '175px' }}
       href="https://www.npmjs.com/~shapkarin"
-      target="_blank"
+      target="_blank" rel="noreferrer"
     >
       All published packages
       {' '}
@@ -92,7 +86,7 @@ function Additional() {
       className="PageProjects__Item_more"
       style={{ width: '185px' }}
       href="https://github.com/shapkarin?tab=repositories"
-      target="_blank"
+      target="_blank" rel="noreferrer"
     >
       My GitHub repositories
       {' '}
@@ -102,7 +96,7 @@ function Additional() {
       className="PageProjects__Item_more"
       style={{ width: '82px' }}
       href="https://freelansim.ru/freelancers/yuryshapkarin/projects"
-      target="_blank"
+      target="_blank" rel="noreferrer"
     >
       Portfolio
       {' '}

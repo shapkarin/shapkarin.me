@@ -1,5 +1,5 @@
 // TODO: refact
-import random from 'lodash/random';
+import random from 'lodash.random';
 
 import Shape from './Shape';
 
@@ -29,8 +29,8 @@ export default class Scene {
 
   //  TODO..
   createArray = () => {
-    const countY = 40;
-    const itemW = Math.floor(this.width / countY);
+    // const countY = 40;
+    // const itemW = Math.floor(this.width / countY);
     //const countX = Math.floor(this.height / itemW);
     // this.countX = countX;
     this.countX = 50;

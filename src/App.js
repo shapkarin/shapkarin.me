@@ -1,6 +1,4 @@
-import React from 'react';
-import { Router } from 'react-router-dom';
-import { createBrowserHistory } from 'history';
+import { BrowserRouter } from 'react-router-dom';
 import { QueryClient, QueryClientProvider } from 'react-query';
 
 import 'Components/Background';
@@ -11,12 +9,11 @@ import Structure from 'Components/Structure';
 
 import './App.less';
 
-const history = createBrowserHistory();
 const queryClient = new QueryClient({
   defaultOptions: {
      queries: {
        suspense: true,
-       staleTime: 60 * 1000 * 15, // 15 minutes chached data lifetime
+       staleTime: 60 * 1000 * 17, // 15 minutes chached data lifetime
      },
    },
 });
@@ -24,13 +21,13 @@ const queryClient = new QueryClient({
 export default function App () {
   return (
     <QueryClientProvider client={queryClient}>
-      <Router history={history}>
-        <About />
-        <div className="Wrap">
+      <About />
+      <div className="Wrap">
+        <BrowserRouter>
           <Menu />
           <Structure />
-        </div>
-      </Router>
+        </BrowserRouter>
+      </div>
     </QueryClientProvider>
   );
 }

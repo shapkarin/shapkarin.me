@@ -1,5 +1,3 @@
-import React from 'react';
-
 import scene from '../Background';
 
 import './style.less';

@@ -1,18 +1,15 @@
 
-import React from 'react';
-
 import Packages from 'Pages/Packages';
 import Repositories from 'Pages/Repositories';
 import Stars from 'Pages/Stars';
 import Sketches from 'Pages/Sketches';
 import Contributions from 'Pages/Contributions';
 
-import { GoRepo, GoStar, GoProject } from 'react-icons/go';
+import { GoRepo, GoStar } from 'react-icons/go';
 import { RiNpmjsLine, RiPaintBrushFill } from 'react-icons/ri';
-import { BiDonateHeart, BiPaintRoll } from 'react-icons/bi';
-import { GiPencilBrush } from 'react-icons/gi';
+import { BiDonateHeart } from 'react-icons/bi';
 
-export default [
+const PAGES = [
   {
     name: 'Packages',
     path: '/packages',
@@ -23,14 +20,14 @@ export default [
   {
     name: 'Repositories',
     path: '/github/repositories',
-    redirect: { from: '/repositories', to: '/github/repositories'},
+    redirect: { from: '/repositories', to: '/github/repositories' },
     icon: () => <GoRepo />,
     Page: () => <Repositories />
   },
   {
     name: 'Contributions',
     path: '/github/contributions',
-    redirect: { from: '/contributions', to: '/github/contributions'},
+    redirect: { from: '/contributions', to: '/github/contributions' },
     icon: () => <BiDonateHeart size="1.12em" />,
     Page: () => <Contributions />
   },
@@ -38,8 +35,9 @@ export default [
     name: 'Stars',
     path: '/github/stars',
     redirects: [
-      { from: '/liked', to: '/github/stars'},
-      { from: '/stars', to: '/github/stars'},
+      { from: '/likes', to: '/github/stars' },
+      { from: '/liked', to: '/github/stars' },
+      { from: '/stars', to: '/github/stars' },
     ],
     icon: () => <GoStar size="1.2em" />,
     Page: () => <Stars />
@@ -47,7 +45,10 @@ export default [
   {
     name: 'Sketches',
     path: '/sketches',
+    redirect: { from: '/generative', to: '/sketches' },
     icon: () => <RiPaintBrushFill />,
     Page: () => <Sketches />
   },
 ];
+
+export default PAGES;
