@@ -23,7 +23,7 @@
   },
   "scripts": {
     "start": "craco start",
-    "build:api": "node src/Common/Mock/database-to-json.js",
+    "build:api": "node src/Common/GH-Pages-Backend/database-to-json.js",
     "build:spa": "craco build",
     "build": "npm run build:api && npm run build:spa",
     "test": "craco test",

@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 import github from './urls';
-import backend from 'Common/Mock/urls';
+import backend from 'Common/GH-Pages-Backend/urls';
 
 const githubRequest = axios.create({
   headers: {
@@ -11,7 +11,7 @@ const githubRequest = axios.create({
 
 const URLS = { ...github, ...backend };
 
-// Mock
+// From generated JSON files
 export const fetchSketches = () => axios.get(URLS.sketches);
 export const fetchAbout = () => axios.get(URLS.about);
 export const fetchPackages = () => axios.get(URLS.packages._root);
