@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useState } from 'react';
 import { useQuery } from 'react-query';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import { FiExternalLink } from 'react-icons/fi';
