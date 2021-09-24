@@ -6,7 +6,7 @@ module.exports = {
     alias: {
       Pages: path.resolve(__dirname, 'src/Pages'),
       Components: path.resolve(__dirname, 'src/Components'),
-      Common: path.resolve(__dirname, 'src/Common'),
+      'Common/API': path.resolve(__dirname, 'src/API'),
     },
   },
   plugins: [{ plugin: CracoLessPlugin }]
