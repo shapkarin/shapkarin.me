@@ -7,7 +7,7 @@ module.exports = {
       Pages: path.resolve(__dirname, 'src/Pages'),
       Components: path.resolve(__dirname, 'src/Components'),
       Common: path.resolve(__dirname, 'src/Common'),
-    }
+    },
   },
   plugins: [{ plugin: CracoLessPlugin }]
 }

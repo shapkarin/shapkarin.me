@@ -3,20 +3,21 @@ import { useQuery } from 'react-query';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import { FiExternalLink } from 'react-icons/fi';
 
-import Preloader from 'Components/Preloader';
 import { fetchAbout } from 'Common/API';
+import Preloader from 'Components/Preloader';
 import RandomButton from 'Components/RandomButton';
 import Collapse from 'Components/Collapse';
+import Version from 'Components/Version';
 
 import './style.less';
+
+const EMAIL = 'yury@shapkarin.me';
 
 function About() {
   const { data: { data: { text } } } = useQuery('About', () => fetchAbout());
 
   const [isCopied, setIsCopied] = useState(false);
   const [isMoreInfo, setIsMoreInfo] = useState(false);
-
-  const EMAIL = 'yury@shapkarin.me';
 
   return (
     <>
@@ -27,14 +28,12 @@ function About() {
           <div style={{ marginTop: 10 }}>
             <hr />
             <div className="p">
-              Current website uses React, React Hooks, React Query, Github API.<br />
-              The backgound is <RandomButton className="Link">generated</RandomButton> by pure JS with Canvas API.<br />
-              JSON API was generated from JS structures and serve as a static JSON files.
-              Pages, menu, routing and redirects are combined with array to keep that all consistent.
+              Website <Version /> uses React, React Hooks, React Query, Github API.<br />
+              Persional JSON API was generated from JS structures and serve as a static JSON files.<br />
+              The backgound is <RandomButton className="Link">generated</RandomButton> with pure JS and Canvas API.<br />
             </div>
             <div className="p">
-              From the previous version <b>it's refactored a lot</b>: redux and redux-saga was replaced with Hooks and Functional components, that was allow to remove a lot of boilerplate code!<br />
-              Today's problem: it's still doesn't has any CSS methodology and markup is not so clear.<br />
+              it's still doesn't has any CSS methodology and markup is not so clear.<br />
               You can have a look at <a href='https://github.com/shapkarin/shapkarin.me' target='_blank' rel='noreferrer'>the source code <FiExternalLink /></a>.
             </div>
             <div className="Link" onClick={() => setIsMoreInfo(false)}>[Hide website info]</div>

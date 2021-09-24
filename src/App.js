@@ -1,5 +1,4 @@
 import { BrowserRouter } from 'react-router-dom';
-import { createBrowserHistory } from 'history';
 import { QueryClient, QueryClientProvider } from 'react-query';
 
 import 'Components/Background';
@@ -10,12 +9,11 @@ import Structure from 'Components/Structure';
 
 import './App.less';
 
-const history = createBrowserHistory();
 const queryClient = new QueryClient({
   defaultOptions: {
      queries: {
        suspense: true,
-       staleTime: 60 * 1000 * 15, // 15 minutes chached data lifetime
+       staleTime: 60 * 1000 * 17, // 15 minutes chached data lifetime
      },
    },
 });
@@ -25,7 +23,7 @@ export default function App () {
     <QueryClientProvider client={queryClient}>
       <About />
       <div className="Wrap">
-        <BrowserRouter history={history}>
+        <BrowserRouter>
           <Menu />
           <Structure />
         </BrowserRouter>

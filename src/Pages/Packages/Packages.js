@@ -10,12 +10,12 @@ import Preloader from 'Components/Preloader';
 import './style.less';
 
 export default function Packages() {
-  const { data: { data: list } } = useQuery('Packages', fetchPackages); 
+  const { data: { data: { packages } } } = useQuery('Packages', fetchPackages); 
 
   return (
     <div className="PageProjects Page__Inner">
       <div>
-        {list.map(({
+        {packages.map(({
           name,
           url,
           id,
@@ -50,28 +50,22 @@ function PackageInfo({ id }) {
         {isOpen ? <GoChevronDown /> : <GoChevronRight />}
       </div>
       <Preloader>
-        <PackageInfoContent isOpen={isOpen} id={id} />
+        <Collapse open={isOpen}>
+          <PackageInfoContent id={id} />
+        </Collapse>
       </Preloader>
     </>
   )
 }
 
 function PackageInfoContent({ isOpen = false, id }) {
-
-  const { data: { data: { intro } = {} } = {}, refetch } = useQuery(['PackageInfo', id], () => fetchPackageInfo(id), {
-    enabled: false,
-    refetchOnWindowFocus:false
-  });
-
-  if(isOpen) refetch()
+  const { data: { data: { description } = {} } = {} } = useQuery(['PackageIntro', id], () => fetchPackageInfo(id));
 
   return (
-    <Collapse open={isOpen}>
-      <div
-        className="Project__Info"
-        dangerouslySetInnerHTML={{ __html: intro }}
-      />
-    </Collapse>
+    <div
+      className="Project__Info"
+      dangerouslySetInnerHTML={{ __html: description }}
+    />
   )
 }
 

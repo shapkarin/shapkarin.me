@@ -2,34 +2,25 @@ import axios from 'axios';
 
 import github from './urls';
 import backend from 'Common/Mock/urls';
-import applyAdapter from 'Common/Mock/adapter';
-
-const mockedRequest = axios.create();
-applyAdapter(mockedRequest);
 
 const githubRequest = axios.create({
   headers: {
     'Accept': 'application/vnd.github.v3+json'
   }
 })
-/*
-    try to use axios.interceptors.request.use and use axios default instance
-    to check if url includes https://api.github.com and set the header dinamically
-*/
 
-// axios.interceptors.request.use()
+const URLS = { ...github, ...backend };
 
-const urls = { ...github, ...backend };
 // Mock
-export const fetchSketches = () => mockedRequest.get(urls.sketches);
-export const fetchAbout = () => axios.get(urls.about);
-export const fetchPackages = () => mockedRequest.get(urls.packages._root);
-export const fetchPackageInfo = (id) => mockedRequest.get(`/packages/${id}`);
+export const fetchSketches = () => axios.get(URLS.sketches);
+export const fetchAbout = () => axios.get(URLS.about);
+export const fetchPackages = () => axios.get(URLS.packages._root);
+export const fetchPackageInfo = (id) => axios.get(URLS.packages.info(id));
 
 // GitHub API
-export const fetchLikes = () => githubRequest.get(urls.likes());
-export const fetchRepositories = (n = 1) => githubRequest.get(urls.repositories(n));
-export const fetchContributions = () => githubRequest.get(urls.activity());
+export const fetchLikes = () => githubRequest.get(URLS.likes());
+export const fetchRepositories = (n = 1) => githubRequest.get(URLS.repositories(n));
+export const fetchContributions = () => githubRequest.get(URLS.activity());
 
 // maybe add it later, get repo languages statistic
 // export const fetchRepoLangs = url => axios.get(url);

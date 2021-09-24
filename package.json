@@ -9,11 +9,8 @@
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
     "axios": "^0.21.4",
-    "axios-mock-adapter": "^1.20.0",
     "craco-less": "^1.20.0",
-    "history": "^5.0.1",
     "lodash.random": "^3.2.0",
-    "path-to-regexp": "^6.2.0",
     "react": "^17.0.2",
     "react-copy-to-clipboard": "^5.0.4",
     "react-dom": "^17.0.2",
@@ -27,7 +24,7 @@
   "scripts": {
     "start": "craco start",
     "build:client": "craco build",
-    "build:api": "node src/Common/Mock/generate-json.js",
+    "build:api": "node src/Common/Mock/database-to-json.js",
     "build": "npm run build:api && npm run build:client",
     "test": "craco test",
     "eject": "react-scripts eject"
@@ -49,5 +46,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "esm": "^3.2.25"
   }
 }

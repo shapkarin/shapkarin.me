@@ -20,14 +20,14 @@ const PAGES = [
   {
     name: 'Repositories',
     path: '/github/repositories',
-    redirect: { from: '/repositories', to: '/github/repositories'},
+    redirect: { from: '/repositories', to: '/github/repositories' },
     icon: () => <GoRepo />,
     Page: () => <Repositories />
   },
   {
     name: 'Contributions',
     path: '/github/contributions',
-    redirect: { from: '/contributions', to: '/github/contributions'},
+    redirect: { from: '/contributions', to: '/github/contributions' },
     icon: () => <BiDonateHeart size="1.12em" />,
     Page: () => <Contributions />
   },
@@ -35,9 +35,9 @@ const PAGES = [
     name: 'Stars',
     path: '/github/stars',
     redirects: [
-      { from: '/likes', to: '/github/stars'},
-      { from: '/liked', to: '/github/stars'},
-      { from: '/stars', to: '/github/stars'},
+      { from: '/likes', to: '/github/stars' },
+      { from: '/liked', to: '/github/stars' },
+      { from: '/stars', to: '/github/stars' },
     ],
     icon: () => <GoStar size="1.2em" />,
     Page: () => <Stars />
@@ -45,6 +45,7 @@ const PAGES = [
   {
     name: 'Sketches',
     path: '/sketches',
+    redirect: { from: '/generative', to: '/sketches' },
     icon: () => <RiPaintBrushFill />,
     Page: () => <Sketches />
   },
