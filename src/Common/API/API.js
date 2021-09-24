@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 import github from './urls';
-import backend from 'Common/Mock/urls';
+import backend from 'Common/GH-Pages-Backend/urls';
 
 const githubRequest = axios.create({
   headers: {
