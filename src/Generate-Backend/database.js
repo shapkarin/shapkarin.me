@@ -1,10 +1,13 @@
 /* eslint-disable no-multi-str */
 import { v4 as uuidv4 } from 'uuid';
 
-export const about = `<h1>Hello. My name is Yury Shapkarin and I like to code 👨‍💻</h1>\
-I help to develop and create a lot of great projects. <br /> \
-Some of them was commertial, some are not, some was a mix of both. <br /> \
-I write JavaScript each day and I like to spend my spare time to <br />explore other languages and technologies.`;
+export const about = {
+  title: `Hello. My name is Yury Shapkarin and I like to code 👨‍💻`,
+  intro: `I help to develop and create a lot of great projects.
+          Some of them was commertial, some are not, some was a mix of both.
+          I write JavaScript each day and I like to spend my spare time to
+          explore other languages and technologies.`.replace(/ +/g, ' ')
+}
 
 export const packages = {
   get order(){
@@ -20,8 +23,8 @@ export const packages = {
       name: 'Extend Saga Routines (Extend Routines)',
       url: 'https://www.npmjs.com/package/extend-saga-routines',
       description: `
-        More info about <a href="https://www.npmjs.com/package/redux-saga-routines" target="_blank">routines</a>. <br />\
-        From v3.3.0 redux-saga is optional. <br /> \
+        More info about <a href="https://www.npmjs.com/package/redux-saga-routines" target="_blank">routines</a>. \
+        From v3.3.0 redux-saga is optional. \
         Extend any routine with custom stages, create routine with more than defafult stages and create custom routine. \
         <br/><br/> \
         <div>
@@ -83,7 +86,7 @@ export const packages = {
     const { description, id } = this.database[packageName];
     return {
       id,
-      description: description.replace(/\\n/g, '').replace(/\s+/g,' '),
+      description: description.replace(/\s+/g,' '),
     };
   },
 }

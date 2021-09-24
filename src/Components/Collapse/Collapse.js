@@ -1,3 +1,4 @@
+// TODO: keep "open" props inside with hook, add stylable switcher directly to the component
 import { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 
