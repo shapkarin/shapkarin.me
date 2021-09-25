@@ -1,5 +1,6 @@
 /* eslint-disable no-multi-str */
-import { v4 as uuidv4 } from 'uuid';
+import { createHash } from 'crypto';
+
 
 export const about = {
   title: `Hello. My name is Yury Shapkarin and I like to code 👨‍💻`,
@@ -33,7 +34,6 @@ export const packages = {
           <img alt="NPM" src="https://img.shields.io/npm/l/extend-saga-routines?style=social">
           <img alt="Travis (.org)" src="https://img.shields.io/travis/shapkarin/extend-saga-routines?label=Tests&style=social">
         </div>`,
-      id: uuidv4(),
       },
     'redux-scaffolder': {
       name: 'Redux Scaffolder',
@@ -46,7 +46,6 @@ export const packages = {
           <img alt="npm" src="https://img.shields.io/npm/dm/redux-scaffolder?style=social">
           <img alt="NPM" src="https://img.shields.io/npm/l/redux-scaffolder?style=social">
         </div>`,
-      id: uuidv4(),
     },
     'saga-fetch': {
       name: 'Saga Fetch',
@@ -59,7 +58,6 @@ export const packages = {
           <img alt="npm" src="https://img.shields.io/npm/dm/saga-fetch?style=social">
           <img alt="NPM" src="https://img.shields.io/npm/l/saga-fetch?style=social">
         </div>`,
-      id: uuidv4(),
     },
     'global-diff': {
       name: 'Global diff',
@@ -68,27 +66,20 @@ export const packages = {
         Compare yours window with the list of default scope.
         Project has big plans with auto grab global defaults scopes from other repos
         and also integration as part of browsers extensions.`,
-      id: uuidv4(),
     },
   },
   get list(){
     return this.order.map((packageName) => {
-      const { name, url, id } = this.database[packageName];
+      const { name, url, description } = this.database[packageName];
       return {
-        id,
+        id: generateChecksum(description),
         url,
         name,
         packageName,
+        description
       }
     })
-  },
-  info(packageName) {
-    const { description, id } = this.database[packageName];
-    return {
-      id,
-      description: description.replace(/\s+/g,' '),
-    };
-  },
+  }
 }
 
 
@@ -150,3 +141,9 @@ export const sketches = {
     }
   ]
 };
+
+function generateChecksum(str, algorithm, encoding){
+    return createHash(algorithm || 'md5')
+        .update(str, 'utf8')
+        .digest(encoding || 'hex');
+}
