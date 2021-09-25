@@ -71,12 +71,13 @@ export const packages = {
   get list(){
     return this.order.map((packageName) => {
       const { name, url, description } = this.database[packageName];
+      const descriptionCleared = description.replace(/\s+/g,' ')
       return {
-        id: generateChecksum(description),
+        id: generateChecksum(descriptionCleared),
         url,
         name,
         packageName,
-        description
+        description: descriptionCleared
       }
     })
   }
