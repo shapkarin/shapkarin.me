@@ -6,11 +6,13 @@ import { FiExternalLink } from 'react-icons/fi';
 import { fetchAbout } from 'Common/API';
 import Preloader from 'Components/Preloader';
 import Version from 'Components/Version';
+import Formatted from 'Components/Formatted';
+
 import AboutWebsite from './Website';
 
 import './style.less';
 
-const EMAIL = 'yury@shapkarin.me';
+const EMAIL = process.env.REACT_APP_EMAIL;
 
 function About() {
   const { data: { data } } = useQuery('About', () => fetchAbout());
@@ -20,7 +22,9 @@ function About() {
     <Fragment>
       <div className={'About About_dark'}>
         <h1>{data.title}</h1>
-        {data.intro.split('\n').map(line => <>{ line }<br /></>)}
+          <Formatted>
+            {data.intro}
+          </Formatted>
         <AboutWebsite />
         <div style={{marginTop: '10px'}}>
           You can visit <a href="https://github.com/shapkarin" target="_blank" rel="noreferrer">my Github <FiExternalLink /></a>
