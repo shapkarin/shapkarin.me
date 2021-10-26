@@ -22,8 +22,16 @@ Today's problem: it's still doesn't has any CSS methodology and markup is not so
 ```
 npm i
 ```
+### Or with yarn
+```
+yarn
+```
 
 ## Run:
 ```
 npm start
+```
+### In case of yarn
+```
+yarn 
 ```

@@ -15,7 +15,6 @@ class ErrorBoundary extends Component {
         { this.state.error?.message && <div>Error message: { this.state.error.message }</div>}
         Please, let me know <a href="mailto:yury@shapkarin.me?subject=Home Page Error">yury@shapkarin.me</a>
         <br />
-        
       </div>;
     }
     return this.props.children;
