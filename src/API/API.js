@@ -9,7 +9,8 @@ const githubRequest = axios.create({
 })
 
 // From generated JSON files
-export const fetchSketches = () => axios.get(URLS.sketches);
+export const fetchSketchesIntro = () => axios.get(URLS.sketches.intro);
+export const fetchSketches = () => axios.get(URLS.sketches.collection);
 export const fetchAbout = () => axios.get(URLS.about);
 export const fetchPackages = () => axios.get(URLS.packages._root);
 export const fetchPackageInfo = (id) => axios.get(URLS.packages.info(id));

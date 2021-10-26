@@ -10,7 +10,7 @@ I write JavaScript each day and I like to spend my spare time to explore other l
 
 ---
 
-Website v5.4.2 uses React, React Hooks, React Query, Github API.
+Website uses React, React Hooks, React Query, Github API and [other](https://github.com/shapkarin/shapkarin.me/blob/master/package.json)
 Persional JSON API [is generating](https://github.com/shapkarin/shapkarin.me/tree/master/src/Generate-Backend) from JS structures and serve as a static JSON files.
 The backgound is generated with pure JS and Canvas API.
 it's still doesn't has any CSS methodology and markup is not so clear.
@@ -22,8 +22,16 @@ Today's problem: it's still doesn't has any CSS methodology and markup is not so
 ```
 npm i
 ```
+### Or with yarn
+```
+yarn
+```
 
 ## Run:
 ```
 npm start
+```
+### In case of yarn
+```
+yarn 
 ```

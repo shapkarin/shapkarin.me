@@ -1,7 +1,7 @@
 {
   "name": "shapkarin.me",
   "homepage": "https://shapkarin.me",
-  "version": "5.4.4",
+  "version": "5.5.0",
   "private": true,
   "dependencies": {
     "@craco/craco": "^6.3.0",
@@ -26,8 +26,7 @@
     "build:api": "node src/Generate-Backend/database-to-json.js",
     "build:spa": "craco build",
     "build": "npm run build:api && npm run build:spa",
-    "test": "craco test",
-    "eject": "react-scripts eject"
+    "test": "craco test"
   },
   "eslintConfig": {
     "extends": [

@@ -23,7 +23,10 @@ const backend = {
     _root: '/api/packages/packages.json',
     info: (id) => `/api/packages/info/${id}.json`,
   },
-  sketches: '/api/sketches.json',
+  sketches: {
+    intro:  '/api/sketches/intro.json',
+    collection: '/api/sketches/collection.json',
+  }
 }
 
 const URLS = {

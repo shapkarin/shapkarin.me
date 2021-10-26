@@ -4,13 +4,17 @@ import { createHash } from 'crypto';
 
 export const about = {
   title: `Hello. My name is Yury Shapkarin and I like to code 👨‍💻`,
-  intro: `I help to develop and create a lot of great projects.
-          Some of them was commertial, some are not, some was a mix of both.
-          I write JavaScript each day and I like to spend my spare time to
-          explore other languages and technologies.`.replace(/ +/g, ' ')
+  intro: clean(
+    `I help to develop and create a lot of great projects.
+    Some of them was commertial, some are not, some was a mix of both.
+    I write JavaScript each day and I like to spend my spare time to
+    explore other languages and technologies.`)
 }
 
 export const packages = {
+
+  author: 'shapkarin',
+  badgeStyle: 'social',
   get order(){
     return [
       'extend-saga-routines',
@@ -19,132 +23,161 @@ export const packages = {
       'global-diff'
     ];
   },
-  database: {
-    'extend-saga-routines': {
-      name: 'Extend Saga Routines (Extend Routines)',
-      url: 'https://www.npmjs.com/package/extend-saga-routines',
-      description: `
-        More info about <a href="https://www.npmjs.com/package/redux-saga-routines" target="_blank">routines</a>. \
-        From v3.3.0 redux-saga is optional. \
-        Extend any routine with custom stages, create routine with more than defafult stages and create custom routine. \
-        <br/><br/> \
-        <div>
-          <img alt="npm" src="https://img.shields.io/npm/v/extend-saga-routines?style=social">
-          <img alt="npm" src="https://img.shields.io/npm/dm/extend-saga-routines?style=social">
-          <img alt="NPM" src="https://img.shields.io/npm/l/extend-saga-routines?style=social">
-          <img alt="Travis (.org)" src="https://img.shields.io/travis/shapkarin/extend-saga-routines?label=Tests&style=social">
-        </div>`,
+
+  get database() {
+    return {
+
+      'extend-saga-routines': {
+        title: 'Extend Saga Routines (Extend Routines)',
+        url: 'https://www.npmjs.com/package/extend-saga-routines',
+        description: `
+          From v3.3.0 redux-saga is optional.
+          Extend any routine with custom stages, create routine with more than defafult stages and create custom routine.`,
+        badges: [ 'npm/v', 'npm/dm', 'npm/l', `travis/${this.author}` ]
       },
-    'redux-scaffolder': {
-      name: 'Redux Scaffolder',
-      url: 'https://www.npmjs.com/package/redux-scaffolder',
-      description: `
-        CLI app to generate redux files: "constants.js, actions.js, reducers.js."
-        <br/><br/>
-        <div>
-          <img alt="npm" src="https://img.shields.io/npm/v/redux-scaffolder?style=social">
-          <img alt="npm" src="https://img.shields.io/npm/dm/redux-scaffolder?style=social">
-          <img alt="NPM" src="https://img.shields.io/npm/l/redux-scaffolder?style=social">
-        </div>`,
-    },
-    'saga-fetch': {
-      name: 'Saga Fetch',
-      url: 'https://www.npmjs.com/package/saga-fetch',
-      description: `
-        Redux-Saga fetch common worker.
-        <br/><br/>
-        <div>
-          <img alt="npm" src="https://img.shields.io/npm/v/saga-fetch?style=social">
-          <img alt="npm" src="https://img.shields.io/npm/dm/saga-fetch?style=social">
-          <img alt="NPM" src="https://img.shields.io/npm/l/saga-fetch?style=social">
-        </div>`,
-    },
-    'global-diff': {
-      name: 'Global diff',
-      url: 'https://www.npmjs.com/package/global-diff',
-      description: `
-        Compare yours window with the list of default scope.
-        Project has big plans with auto grab global defaults scopes from other repos
-        and also integration as part of browsers extensions.`,
-    },
+
+      'redux-scaffolder': {
+        title: 'Redux Scaffolder',
+        url: 'https://www.npmjs.com/package/redux-scaffolder',
+        description: `
+          CLI app to generate redux files: "constants.js, actions.js, reducers.js."`,
+        badges: [ 'npm/v', 'npm/dm', 'npm/l' ]
+      },
+
+      'saga-fetch': {
+        title: 'Saga Fetch',
+        url: 'https://www.npmjs.com/package/saga-fetch',
+        description: `
+          Redux-Saga fetch common worker.`,
+        badges: [ 'npm/v', 'npm/dm', 'npm/l' ]
+      },
+
+      'global-diff': {
+        title: 'Global diff',
+        url: 'https://www.npmjs.com/package/global-diff',
+        description: `
+          Compare yours window with the list of default scope.
+          Project has plans with auto grab default globals
+          from more and integration as part of browsers extensions.`,
+        badges: [ 'npm/v', 'npm/dm', 'npm/l' ]
+      },
+
+    };
   },
+
+  toShieldsLink(type, name, options){
+    return `https://img.shields.io/${type}/${name}?style=${this.badgeStyle}${options ? `&${options}` : ''}`;
+  },
+
+  toBadges(list, name, options){
+    const titles = (title) => {
+      const DEFAULT = 'Badge';
+      const vocab = {
+        'npm/v': 'NPM version',
+        'npm/dm': 'Downloads per month',
+        'npm/l': 'License',
+        [`travis/${this.author}`]: DEFAULT,
+      };
+      return vocab[title] || ''
+    };
+
+    return list.map(type => ({
+            title: titles(type),
+            link: this.toShieldsLink(type, name),
+          }))
+  },
+
   get list(){
-    return this.order.map((packageName) => {
-      const { name, url, description } = this.database[packageName];
-      const descriptionCleared = description.replace(/\s+/g,' ')
+    return this.order.map((name) => {
+      const { title, url, description, badges = [] } = this.database[name];
+      const descriptionCleared = clean(description);
+      
       return {
         id: generateChecksum(descriptionCleared),
         url,
+        title,
         name,
-        packageName,
-        description: descriptionCleared
+        description: descriptionCleared,
+        badges: this.toBadges(badges, name)
       }
     })
-  }
+  },
 }
 
 
 export const sketches = {
-  'Archive ≈2012': [
-    {
-      title: 'Walkers',
-      href: '/gallery/older',
-    },
-    {
-      title: 'Painter Walk',
-      href: '/gallery/older/random_walker',
-    },
-    {
-      title: 'Dots',
-      href: '/gallery/older/dots',
-    }
-  ],
+  title: 'Drawing with code',
+  description: clean(`
+    Generative art, animation and music visualization experiments
+    to lear, research and practice. Usually was build fast.
+    It's like a sketch drawing but with code.
+    Some are made with pure JS, other with libraries`),
+  collection: {
+    'Archive ≈2012': [
+      {
+        title: 'Walkers',
+        href: '/gallery/older',
+      },
+      {
+        title: 'Painter Walk',
+        href: '/gallery/older/random_walker',
+      },
+      {
+        title: 'Dots',
+        href: '/gallery/older/dots',
+      }
+    ],
 
-  'Archive ≈2016': [
-    {
-      title: 'Draw Walk',
-      href: '/gallery/p5js/draw_walk',
-    },
-    {
-      title: 'Cursor magic',
-      href: '/gallery/p5js/magic',
-    },
-    {
-      title: 'Flies',
-      href: '/gallery/p5js/flies',
-    },
-    {
-      title: 'Flies Mouse Acceleration',
-      href: '/gallery/p5js/flies-m-acc',
-    }
-  ],
+    'Archive ≈2016': [
+      {
+        title: 'Draw Walk',
+        href: '/gallery/p5js/draw_walk',
+      },
+      {
+        title: 'Cursor magic',
+        href: '/gallery/p5js/magic',
+      },
+      {
+        title: 'Flies',
+        href: '/gallery/p5js/flies',
+      },
+      {
+        title: 'Flies Mouse Acceleration',
+        href: '/gallery/p5js/flies-m-acc',
+      }
+    ],
 
-  After: [
-    {
-      title: 'Sound Terrain',
-      href: 'http://joy.shapkarin.me',
-    },
-    {
-      title: 'Will upload to Github soon',
-      href: 'https://shapkarin.github.io/3d-first-person/index.html',
-    },
-    {
-      title: 'p5.js pattern experiment',
-      href: 'https://editor.p5js.org/yu.shapkarin/sketches/ogR-xUkcT',
-    },
-    {
-      title: 'Cubes',
-      href: 'https://codepen.io/shapkarin/full/doRpxy'
-    },
-    {
-      title: 'Some more at codepen.io',
-      href: 'https://codepen.io/shapkarin',
-    }
-  ]
+    After: [
+      {
+        title: 'Sound Terrain',
+        href: 'http://joy.shapkarin.me',
+      },
+      {
+        title: 'Will upload to Github soon',
+        href: 'https://shapkarin.github.io/3d-first-person/index.html',
+      },
+      {
+        title: 'p5.js pattern experiment',
+        href: 'https://editor.p5js.org/yu.shapkarin/sketches/ogR-xUkcT',
+      },
+      {
+        title: 'Cubes',
+        href: 'https://codepen.io/shapkarin/full/doRpxy'
+      },
+      {
+        title: 'Some more at codepen.io',
+        href: 'https://codepen.io/shapkarin',
+      }
+    ]
+  }
 };
 
 function generateChecksum(str, algorithm, encoding){
     return createHash(algorithm || 'md5')
         .update(str, 'utf8')
         .digest(encoding || 'hex');
+}
+
+function clean(string){
+  return string.replace(/^\n/, '').replace(/ +/g, ' ')
 }

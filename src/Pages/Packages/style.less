@@ -3,13 +3,13 @@
 
 @import "../../Variables.less";
 
-.PageProjects {
+.PagePackages {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
 }
 
-.PageProjects__Item {
+.PagePackages__Item {
   border-radius: 8px;
   background-color: rgba(255,255,255,0.05);
   transition: background-color .3s linear;
@@ -41,12 +41,15 @@
     align-items: center;
     justify-content: flex-start;
   }
-  .Project__Info > div {
-    margin-bottom: 7px;
+  .Package__Badges {
+    margin: 7px 0;
+    &__Item {
+      margin-right: 4px;
+    }
   }
 }
 
-.PageProjects__Item_more {
+.PagePackages__Item_more {
   margin-bottom: 12px;
   display: flex;
 
@@ -56,7 +59,7 @@
 }
 
 @media (max-width: @mobileWidth) {
-  .PageProjects__Item_more {
+  .PagePackages__Item_more {
     margin-left: 0;
   }
 }
