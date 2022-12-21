@@ -12,6 +12,7 @@ export default function Packages() {
 
   return (
     <div className="PagePackages Page__Inner">
+      These are old packages. Now I don't like Redux and prefer React Context and Hooks.
       <div>
         {packages.map(({
           title,

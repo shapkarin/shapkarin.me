@@ -12,13 +12,6 @@ import { BiDonateHeart } from 'react-icons/bi';
 
 const PAGES = [
   {
-    name: 'Packages',
-    path: '/packages',
-    redirect: { from: '/projects', to: '/packages' },
-    icon: () => <RiNpmjsLine size="1.24em" />,
-    Page: (props) => <Packages { ...props } />
-  },
-  {
     name: 'Repositories',
     path: '/github/repositories',
     redirect: { from: '/repositories', to: '/github/repositories' },
@@ -42,6 +35,13 @@ const PAGES = [
     ],
     icon: () => <GoStar size="1.2em" />,
     Page: () => <Stars />
+  },
+  {
+    name: 'Packages',
+    path: '/packages',
+    redirect: { from: '/projects', to: '/packages' },
+    icon: () => <RiNpmjsLine size="1.24em" />,
+    Page: (props) => <Packages { ...props } />
   },
   {
     name: 'Sketches',
