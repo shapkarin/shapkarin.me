@@ -3,12 +3,12 @@ import { createHash } from 'crypto';
 
 
 export const about = {
-  title: `Hello. My name is Yury Shapkarin and I like to code 👨‍💻`,
+  title: `Hello. My name is Yury Shapkarin`,
   intro: clean(
-    `I help to develop and create a lot of great projects.
-    Some of them was commertial, some are not, some was a mix of both.
-    I write JavaScript each day and I like to spend my spare time to
-    explore other languages and technologies.`)
+    `I helped to develop a lot of great projects.
+    Some were commercial, some were not, some were a mixture of both.
+    I write in JavaScript every day, and I like to spend my free time
+    learning other languages and technologies.`)
 }
 
 export const packages = {
