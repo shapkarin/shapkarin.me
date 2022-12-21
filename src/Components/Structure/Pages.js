@@ -25,13 +25,13 @@ const PAGES = [
     icon: () => <GoRepo />,
     Page: () => <Repositories />
   },
-  {
-    name: 'Contributions',
-    path: '/github/contributions',
-    redirect: { from: '/contributions', to: '/github/contributions' },
-    icon: () => <BiDonateHeart size="1.12em" />,
-    Page: () => <Contributions />
-  },
+  // {
+  //   name: 'Contributions',
+  //   path: '/github/contributions',
+  //   redirect: { from: '/contributions', to: '/github/contributions' },
+  //   icon: () => <BiDonateHeart size="1.12em" />,
+  //   Page: () => <Contributions />
+  // },
   {
     name: 'Stars',
     path: '/github/stars',
