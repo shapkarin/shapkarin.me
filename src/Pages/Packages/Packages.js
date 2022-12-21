@@ -11,8 +11,9 @@ export default function Packages() {
   const { data: { data: { packages } } } = useQuery('Packages', fetchPackages); 
 
   return (
+    <>
+    These are old packages. Now I don't like Redux and prefer React Context and Hooks.<br/><br/>
     <div className="PagePackages Page__Inner">
-      These are old packages. Now I don't like Redux and prefer React Context and Hooks.
       <div>
         {packages.map(({
           title,
@@ -31,5 +32,6 @@ export default function Packages() {
       </div>
       <Additional />
     </div>
+    </>
   );
 };
