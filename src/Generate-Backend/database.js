@@ -115,6 +115,10 @@ export const sketches = {
   collection: {
     'Archive ≈2012': [
       {
+        title: 'Dots',
+        href: '/gallery/older/dots',
+      },
+      {
         title: 'Walkers',
         href: '/gallery/older',
       },
@@ -122,10 +126,6 @@ export const sketches = {
         title: 'Painter Walk',
         href: '/gallery/older/random_walker',
       },
-      {
-        title: 'Dots',
-        href: '/gallery/older/dots',
-      }
     ],
 
     'Archive ≈2016': [
@@ -144,7 +144,7 @@ export const sketches = {
       {
         title: 'Flies Mouse Acceleration',
         href: '/gallery/p5js/flies-m-acc',
-      }
+      },
     ],
 
     After: [
@@ -167,8 +167,8 @@ export const sketches = {
       {
         title: 'Some more at codepen.io',
         href: 'https://codepen.io/shapkarin',
-      }
-    ]
+      },
+    ],
   }
 };
 
