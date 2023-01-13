@@ -8,7 +8,7 @@ import Preloader from 'Components/Preloader';
 import Version from 'Components/Version';
 import Formatted from 'Components/Formatted';
 
-import AboutWebsite from './Website';
+// import AboutWebsite from './Website';
 
 import './style.less';
 
@@ -25,7 +25,7 @@ function About() {
           <Formatted>
             {data.intro}
           </Formatted>
-        <AboutWebsite />
+        {/* <AboutWebsite /> */}
         <div style={{marginTop: '10px'}}>
           You can visit <a href="https://github.com/shapkarin" target="_blank" rel="noreferrer">my Github <FiExternalLink /></a>
           {!isCopied ? ' ' : '. '}
