@@ -44,7 +44,7 @@ const PAGES = [
     Page: (props) => <Packages { ...props } />
   },
   {
-    name: 'Sketches',
+    name: 'Creative',
     path: '/sketches',
     redirect: { from: '/generative', to: '/sketches' },
     icon: () => <RiPaintBrushFill />,

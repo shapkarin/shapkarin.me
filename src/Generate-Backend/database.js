@@ -5,14 +5,15 @@ import { createHash } from 'crypto';
 export const about = {
   title: `Hello. My name is Yury Shapkarin`,
   intro: clean(
-    `I helped to develop a lot of great projects.
-    Some were commercial, some were not, some were a mixture of both.
-    I write in JavaScript every day, and I like to spend my free time
-    learning other languages and technologies.`)
+    `Feel free to contact me if you need reference and feedback from previous jobs.
+    I have the assertiveness quality. I really love coding, knowledge sharing, people, open source and modern technology.\n
+    I contributed to Mozilla MDN Web core engine and website content (ru and eng), Google web.dev, Tendermint and other not so famous projects.
+    Also I was work at medicine and bioinformatics projects.\n
+    Email me to get "Developer Story.pdf" with a lot of GitHub PRs and links.
+  `)
 }
 
 export const packages = {
-
   author: 'shapkarin',
   badgeStyle: 'social',
   get order(){
@@ -26,7 +27,6 @@ export const packages = {
 
   get database() {
     return {
-
       'extend-saga-routines': {
         title: 'Extend Saga Routines (Extend Routines)',
         url: 'https://www.npmjs.com/package/extend-saga-routines',
@@ -106,8 +106,9 @@ export const packages = {
 
 
 export const sketches = {
-  title: 'Drawing with code',
+  title: 'A part of my creative coding artworks',
   description: clean(`
+    The rest of the artwork can be shown on personal request. \n
     Generative art, animation and music visualization experiments
     to lear, research and practice. Usually was build fast.
     It's like a sketch drawing but with code.

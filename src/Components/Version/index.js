@@ -1,4 +1,15 @@
+import { FiExternalLink } from 'react-icons/fi';
+
 export default function Version({ prefix = 'v', number = null }) {
   const version = process.env.REACT_APP_VERSION || null;
-  return version && <span>{!number && prefix}{ process.env.REACT_APP_VERSION }</span>
+  return version 
+  && <>
+    <a
+      href="https://github.com/shapkarin/shapkarin.me/blob/master/.env.production#L1"
+      target="_blank"
+    >
+      {!number && prefix}{ process.env.REACT_APP_VERSION }
+    </a>
+    <FiExternalLink />
+    </>
 }
