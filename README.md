@@ -2,7 +2,7 @@
 
 [visit online](https://shapkarin.me) :eyes:
 
-## Hello. My name is Yury Shapkarin and I like to code 👨‍💻
+## Hey! My name is Yury Shapkarin and I like to code 👨‍💻
 
 I help to develop and create a lot of great projects.
 Some of them was commertial, some are not, some was a mix of both.
