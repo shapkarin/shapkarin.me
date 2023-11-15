@@ -30,7 +30,7 @@ function About() {
         <div style={{lineHeight: 1.4}}>
           <a href="https://github.com/shapkarin" target="_blank" rel="noreferrer">My Github <FiExternalLink /></a>
           <br/>
-          <a href="https://drive.google.com/file/d/155imY9utcyQEj68yxZL3V0ygnyjlwpMw/view">My CV in PDF at Google Drive <FiExternalLink /></a>
+          <a href="https://drive.google.com/file/d/155imY9utcyQEj68yxZL3V0ygnyjlwpMw/view" target="_blank">My CV in PDF at Google Drive <FiExternalLink /></a>
           {!isCopied ? ' ' : '. '}
           {
             !isCopied ?
