@@ -1,16 +1,14 @@
 /* eslint-disable no-multi-str */
 import { createHash } from 'crypto';
 
-
 export const about = {
   title: `Hey! My name is Yury Shapkarin`,
   intro: clean(
     `Feel free to contact me if you need reference and feedback from previous jobs.
-    I have the assertiveness quality. I really love coding, knowledge sharing, people, open source and modern technology.\n
-    I contributed to Mozilla MDN Web core engine and website content (ru and eng), Google web.dev, Tendermint and other not so famous projects.
-    Also I was work at medicine and bioinformatics projects.\n
-    Email me to get "Developer Story.pdf" with a lot of GitHub PRs and links.
-  `)
+     I really love coding, knowledge sharing, people, open source and modern technology.
+
+    I contributed to Mozilla MDN Web core engine and website content (ru and eng), Google web.dev, Tendermint and other not so famous projects and I've worked on medical and bioinformatics projects.
+    `)
 }
 
 export const packages = {
@@ -104,11 +102,11 @@ export const packages = {
   },
 }
 
-
 export const sketches = {
   title: 'A part of my creative coding artworks',
   description: clean(`
-    The rest of the artwork can be shown on personal request. \n
+    The rest of the artwork can be shown on personal request.
+
     Generative art, animation and music visualization experiments
     to lear, research and practice. Usually was build fast.
     It's like a sketch drawing but with code.
@@ -117,7 +115,7 @@ export const sketches = {
     'Archive ≈2012': [
       {
         title: 'Dots',
-        href: '/gallery/older/dots',
+        href: '/gallery/older/dots.html',
       },
       {
         title: 'Walkers',
@@ -125,7 +123,7 @@ export const sketches = {
       },
       {
         title: 'Painter Walk',
-        href: '/gallery/older/random_walker',
+        href: '/gallery/older/random_walker.html',
       },
     ],
 

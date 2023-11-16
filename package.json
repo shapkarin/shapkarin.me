@@ -1,7 +1,7 @@
 {
   "name": "shapkarin.me",
   "homepage": "https://shapkarin.me",
-  "version": "5.5.3",
+  "version": "5.6.0",
   "private": true,
   "dependencies": {
     "@craco/craco": "^6.3.0",
@@ -22,7 +22,7 @@
     "web-vitals": "^1.0.1"
   },
   "scripts": {
-    "start": "craco start",
+    "start": "npm run build:api && craco start",
     "build:api": "node src/Generate-Backend/database-to-json.js",
     "build:spa": "craco build",
     "build": "npm run build:api && npm run build:spa",

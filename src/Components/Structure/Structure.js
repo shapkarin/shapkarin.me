@@ -22,7 +22,7 @@ const Structure = () => (
         []
       )}
 
-      {/* Send to my GitHub profile :-)  */}
+      {/* Redirect to my GitHub profile :-)  */}
       <Route
         exact
         path="/github"
