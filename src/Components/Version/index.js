@@ -7,6 +7,7 @@ export default function Version({ prefix = 'v', number = null }) {
     <a
       href="https://github.com/shapkarin/shapkarin.me/blob/master/.env.production#L1"
       target="_blank"
+      rel="noreferrer"
     >
       {!number && prefix}{ process.env.REACT_APP_VERSION }
     </a>

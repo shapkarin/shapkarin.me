@@ -3,12 +3,9 @@ import Packages from 'Pages/Packages';
 import Repositories from 'Pages/Repositories';
 import Stars from 'Pages/Stars';
 import Sketches from 'Pages/Sketches';
-import Contributions from 'Pages/Contributions';
 
 import { GoRepo, GoStar } from 'react-icons/go';
 import { RiNpmjsLine, RiPaintBrushFill } from 'react-icons/ri';
-import { BiDonateHeart } from 'react-icons/bi';
-
 
 const PAGES = [
   {
@@ -18,13 +15,6 @@ const PAGES = [
     icon: () => <GoRepo />,
     Page: () => <Repositories />
   },
-  // {
-  //   name: 'Contributions',
-  //   path: '/github/contributions',
-  //   redirect: { from: '/contributions', to: '/github/contributions' },
-  //   icon: () => <BiDonateHeart size="1.12em" />,
-  //   Page: () => <Contributions />
-  // },
   {
     name: 'Stars',
     path: '/github/stars',
