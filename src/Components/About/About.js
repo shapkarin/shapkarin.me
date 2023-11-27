@@ -27,7 +27,7 @@ function About() {
         </Formatted>
         <ul>
           <li>
-            CV upon request
+            ≈12 years of expirience
           </li>
           <li>
             <a href="https://drive.google.com/file/d/1by9rcRYvHE_gmLLM5BH71XhC8L_W4KLd/view" target="_blank" rel="noreferrer">Developer Story <FiExternalLink /></a>
