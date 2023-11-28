@@ -2,12 +2,9 @@
 import { createHash } from 'crypto';
 
 export const about = {
-  title: `Hey! My name is Yury Shapkarin`,
+  title: `Hello everyone. My name is Yury Shapkarin`,
   intro: clean(
-    `Feel free to contact me if you need reference and feedback from previous jobs.
-     I really love coding, knowledge sharing, people, open source and modern technology.
-
-    I contributed to Mozilla MDN Web core engine and website content (ru and eng), Google web.dev, Tendermint and other not so famous projects and I've worked on medical and bioinformatics projects.
+    `I contributed to Mozilla MDN Web core engine and website content (ru and eng), Google web.dev, Tendermint and other not so famous projects and I've worked on medical and bioinformatics projects.
     `)
 }
 
