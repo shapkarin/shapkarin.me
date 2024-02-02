@@ -2,7 +2,7 @@ import { Component } from 'react';
 
 class ErrorBoundary extends Component {
   state = { hasError: false, error: null };
-  static getDerivedStateFromError(error) {
+  static componentDidCatch(error) {
     return {
       hasError: true,
       error
