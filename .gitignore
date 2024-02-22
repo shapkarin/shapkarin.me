@@ -23,3 +23,5 @@ yarn-error.log*
 public/api/packages
 public/api/sketches
 public/api/about.json
+
+package-lock.json
