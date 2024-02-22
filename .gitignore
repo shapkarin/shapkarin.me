@@ -24,4 +24,6 @@ public/api/packages
 public/api/sketches
 public/api/about.json
 
+# For hompage, I don't care about match dependencies
 package-lock.json
+yarn.lock
