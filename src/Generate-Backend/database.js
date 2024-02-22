@@ -4,8 +4,8 @@ import { createHash } from 'crypto';
 export const about = {
   title: `Hello everyone.`,
   intro: clean(
-    `I contributed to Mozilla MDN Web core engine and website content (ru and eng), Google web.dev, Tendermint and other not so famous projects.
-    `)
+    'With over 13 years of experience in software development and a strong foundation in Computer Science, I have experience in crypto, decentralized applications, bioinformatics, and EdTech. I have led global projects, mentored teams, and developed solutions that bridge technology with real-world applications. My work underlines my dedication to innovation, problem-solving, and creating impactful user experiences'
+  )
 }
 
 export const packages = {
