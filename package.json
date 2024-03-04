@@ -1,7 +1,7 @@
 {
   "name": "shapkarin.me",
   "homepage": "https://shapkarin.me",
-  "version": "5.6.0",
+  "version": "5.6.1",
   "private": true,
   "dependencies": {
     "@craco/craco": "^6.3.0",

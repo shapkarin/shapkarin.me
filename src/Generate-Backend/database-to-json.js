@@ -1,4 +1,3 @@
-// TODO: do not remove public/api/.gitkeep
 const path = require('path');
 const fsPromises = require('fs/promises');
 
