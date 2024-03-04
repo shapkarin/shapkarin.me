@@ -1,3 +1,4 @@
+// TODO: do not remove public/api/.gitkeep
 const path = require('path');
 const fsPromises = require('fs/promises');
 
@@ -13,10 +14,10 @@ const about = JSON.stringify(database.about);
 
 const packages = {
   packages: database.packages.list.map(({ id, url, title }) =>({
-      id,
-      url,
-      title,
-    }))
+    id,
+    url,
+    title,
+  }))
 };
 const infos = database.packages.list.map(({ id, name, description, badges }) => ({
   id,
@@ -45,6 +46,7 @@ const recursive = true;
 
 const generate = async function(){
   try {
+    // TODO: do not remove public/api/.gitkeep
     await fsPromises.rm(API_FOLDER, { recursive });
     await fsPromises.mkdir(API_FOLDER_PACKAGE_INFO, { recursive });
     await fsPromises.mkdir(API_FOLDER_SKETCHES );

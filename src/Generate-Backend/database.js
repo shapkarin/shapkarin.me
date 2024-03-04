@@ -3,9 +3,7 @@ import { createHash } from 'crypto';
 
 export const about = {
   title: `Hello everyone.`,
-  intro: clean(
-    `I contributed to Mozilla MDN Web core engine and website content (ru and eng), Google web.dev, Tendermint and other not so famous projects.
-    `)
+  intro: 'With over 13 years of experience in software development and a strong foundation in Computer Science. My work underlines my dedication to innovation, problem-solving, and creating impactful user experiences.'
 }
 
 export const packages = {
@@ -24,9 +22,9 @@ export const packages = {
     return {
       'extend-saga-routines': {
         title: 'Extend Saga Routines (Extend Routines)',
-        url: 'https://www.npmjs.com/package/extend-saga-routines',
+        url: 'https://github.com/shapkarin/extend-saga-routines',
         description: `
-          From v3.3.0 redux-saga is optional.
+          From v3.3.0 redux-saga is optional. Action creator lib.
           Extend any routine with custom stages, create routine with more than defafult stages and create custom routine.`,
         badges: [ 'npm/v', 'npm/dm', 'npm/l', `travis/${this.author}` ]
       },
