@@ -24,5 +24,6 @@ public/api/packages
 public/api/sketches
 public/api/about.json
 
-# until .github/workflows/deploy.yml do not uses yarn --lock
+# For hompage, I don't care about match dependencies
+package-lock.json
 yarn.lock
