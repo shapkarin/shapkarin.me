@@ -5,7 +5,6 @@ import { FiExternalLink } from 'react-icons/fi';
 import { fetchAbout } from 'Common/API';
 import Preloader from 'Components/Preloader';
 import Formatted from 'Components/Formatted';
-// import AboutWebsite from './Website';
 
 import './style.less';
 
