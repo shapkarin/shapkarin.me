@@ -1,74 +1,68 @@
-const fs = require('fs');
-const path = require('path');
 const fsPromises = require('fs/promises');
+const path = require('path');
 
+// Assuming 'esm' and 'database' modules are necessary and correctly imported.
 const require_esm = require('esm')(module);
 const database = require_esm('./database');
 
 const API_FOLDER = path.join(__dirname, '../../public/api/');
-const API_FOLDER_PACKAGES = path.resolve(API_FOLDER, 'packages');
-const API_FOLDER_PACKAGE_INFO = path.resolve(API_FOLDER_PACKAGES, 'info');
-const API_FOLDER_SKETCHES = path.resolve(API_FOLDER, 'sketches');
+const ABOUT_FILE = path.join(API_FOLDER, 'about.json');
+const SKETCHES_FOLDER = path.join(API_FOLDER, 'sketches');
+const PACKAGES_FOLDER = path.join(API_FOLDER, 'packages');
+const PACKAGE_INFO_FOLDER = path.join(PACKAGES_FOLDER, 'info');
 
-const about = JSON.stringify(database.about);
-const recursive = true
-
-const packages = {
-  packages: database.packages.list.map(({ id, url, title }) =>({
-    id,
-    url,
-    title,
-  }))
-};
-const infos = database.packages.list.map(({ id, name, description, badges }) => ({
-  id,
-  name,
-  description,
-  badges
-}));
-
-const write = async function() {
-  await fsPromises.writeFile(path.resolve(API_FOLDER, 'about.json'), about);
-  await fsPromises.writeFile(path.resolve(API_FOLDER_SKETCHES, 'intro.json'), JSON.stringify({
-    title: database.sketches.title,
-    description: database.sketches.description
-  }));
-  await fsPromises.writeFile(path.resolve(API_FOLDER_SKETCHES, 'collection.json'), JSON.stringify(database.sketches.collection));
-  await fsPromises.writeFile(path.resolve(API_FOLDER_PACKAGES, 'packages.json'), JSON.stringify(packages));
-  for (const pkg of infos) {
-    await fsPromises.writeFile(
-      path.resolve(API_FOLDER_PACKAGE_INFO, `${pkg.id}.json`),
-      JSON.stringify(pkg)
-    );
-  }
+async function writeJSONFile(filePath, data) {
+  const jsonData = JSON.stringify(data);
+  await fsPromises.writeFile(filePath, jsonData);
 }
 
-const clearDirectory = async (directory) => {
-  const files = await fsPromises.readdir(directory);
-  for (const file of files) {
-    const fullPath = path.join(directory, file);
-    if (file !== '.gitkeep') { // Skip the .gitkeep file
-      const stat = await fsPromises.stat(fullPath);
-      if (stat.isDirectory()) {
-        await fsPromises.rm(fullPath, { recursive });
-      } else {
-        await fsPromises.unlink(fullPath);
-      }
+async function clearDirectory(directoryPath) {
+  const entries = await fsPromises.readdir(directoryPath, { withFileTypes: true });
+  for (const entry of entries) {
+    const fullPath = path.join(directoryPath, entry.name);
+    if (entry.isDirectory()) {
+      await clearDirectory(fullPath);
+      await fsPromises.rmdir(fullPath);
+    } else if (entry.name !== '.gitkeep') {
+      await fsPromises.unlink(fullPath);
     }
   }
 }
 
-const generate = async function(){
-  try {
-    await clearDirectory(API_FOLDER); // Clear the directory but keep .gitkeep
-    await fsPromises.mkdir(API_FOLDER_PACKAGE_INFO, { recursive });
-    await fsPromises.mkdir(API_FOLDER_SKETCHES, { recursive });
-  } catch (error) {
-    console.error('An error occurred:', error);
-  } finally {
-    await write();
-    return 'Generation completed';
+async function createDirectories() {
+  await fsPromises.mkdir(PACKAGE_INFO_FOLDER, { recursive: true });
+  await fsPromises.mkdir(SKETCHES_FOLDER, { recursive: true });
+}
+
+async function writeData() {
+  await writeJSONFile(ABOUT_FILE, database.about);
+  await writeJSONFile(path.join(SKETCHES_FOLDER, 'intro.json'), {
+    title: database.sketches.title,
+    description: database.sketches.description,
+  });
+  await writeJSONFile(path.join(SKETCHES_FOLDER, 'collection.json'), database.sketches.collection);
+  await writeJSONFile(path.join(PACKAGES_FOLDER, 'packages.json'), {
+    packages: database.packages.list.map(({ id, url, title }) => ({ id, url, title })),
+  });
+
+  for (const pkg of database.packages.list) {
+    await writeJSONFile(
+      path.join(PACKAGE_INFO_FOLDER, `${pkg.id}.json`),
+      { id: pkg.id, name: pkg.name, description: pkg.description, badges: pkg.badges }
+    );
   }
 }
 
-generate().then(msg => console.log(msg));
+async function generateAPI() {
+  try {
+    await clearDirectory(API_FOLDER);
+    await createDirectories();
+  } catch (error) {
+    console.error('An error occurred:', error);
+  } finally {
+    await writeData();
+    console.log('API generated, server starting');
+  }
+}
+
+generateAPI();
