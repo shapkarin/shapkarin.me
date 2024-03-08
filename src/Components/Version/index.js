@@ -5,7 +5,7 @@ export default function Version({ prefix = 'v', number = null }) {
   return version 
   && <>
     <a
-      href="https://github.com/shapkarin/shapkarin.me/blob/master/.env.production#L1"
+      href="https://github.com/shapkarin/shapkarin.me/blob/main/.env.production#L1"
       target="_blank"
       rel="noreferrer"
     >
