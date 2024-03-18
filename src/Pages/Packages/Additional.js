@@ -22,15 +22,5 @@ export default function Additional() {
       {' '}
       <FiExternalLink />
     </a>
-    <a
-      className="PagePackages__Item_more"
-      style={{ width: '82px' }}
-      href="https://freelansim.ru/freelancers/yuryshapkarin/projects"
-      target="_blank" rel="noreferrer"
-    >
-      Portfolio
-      {' '}
-      <FiExternalLink />
-    </a>
   </div>
 }
