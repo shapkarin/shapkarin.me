@@ -41,15 +41,6 @@ export default function Liked() {
                 {' '}
                 {(new Date(updated_at)).toLocaleDateString('ru-RU')}
               </div>
-              { open_issues_count > 0 && (
-              <div className="centered-label">
-                <GoIssueOpened data-tip="issues" />
-                {' '}
-                open issues:
-                {' '}
-                <a className="IssuesCount" href={`${html_url}/issues`} target="_blank" rel="noreferrer">{open_issues_count}</a>
-              </div>
-              ) }
               { !!homepage && (
               <div className="centered-label">
                 <MdWeb data-tip="homepage" />
@@ -66,7 +57,7 @@ export default function Liked() {
                 {stargazers_count}
               </div>
               )}
-              {(false === 'not ready') && language && (
+              {language && (
               <>
               Language
                 {' '}
@@ -75,6 +66,15 @@ export default function Liked() {
                 </a>
               </>
               )}
+              { open_issues_count > 0 && (
+              <div className="centered-label">
+                <GoIssueOpened data-tip="issues" />
+                {' '}
+                open issues:
+                {' '}
+                <a className="IssuesCount" href={`${html_url}/issues`} target="_blank" rel="noreferrer">{open_issues_count}</a>
+              </div>
+              ) }
             </div>
           </div>
         ))}
