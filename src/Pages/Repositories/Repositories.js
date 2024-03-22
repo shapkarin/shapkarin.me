@@ -60,7 +60,7 @@ export default function Repositories() {
               <div className="centered-label">
                 <MdWeb data-tip="homepage" />
                 {' '}
-                <a href={homepage} target="_blank" rel="noreferrer">Homepage</a>
+                <a href={homepage} target="_blank" rel="noreferrer">Deploy</a>
               </div>
               ) }
               {(false === 'not ready') && language && (
