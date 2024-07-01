@@ -1,0 +1,43 @@
+.Menu {
+  position: -webkit-sticky;
+  position: sticky;
+  
+  @media (min-width: 700px) {
+    display: flex;
+    flex-direction: column;
+    margin-right: 10px;
+    min-width: 158px;
+  }
+  &__Item {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    text-decoration: none;
+    line-height: 1.5em;
+    color: white;
+    margin-right: 10px;
+    white-space: nowrap;
+
+    > svg {
+      margin-right: 5px;
+    }
+
+    @media (min-width: 700px) {
+      margin-bottom: 10px;
+    }
+
+    &--active {
+      text-decoration: none;
+      &::after {
+        content: " ✓";
+        margin-left: 5px;
+      }
+      @media (min-width: 700px) {
+        &::after {
+          content: " →";
+        }
+      }
+    }
+  }
+
+}

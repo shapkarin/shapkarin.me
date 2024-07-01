@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es6",
+    "paths": {
+      "Pages/*": ["./src/Pages/*"],
+      "Components/*": ["./src/Components/*"],
+      "Common/*": ["./src/Common/*"]
+    }
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "build"]
+}

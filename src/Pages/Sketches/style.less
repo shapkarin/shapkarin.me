@@ -1,0 +1,44 @@
+@import "../../Variables.less";
+
+.Gal--Item {
+  padding: 12px;
+  margin-right: 20px;
+  
+  &:hover {
+    background-image:
+      repeating-linear-gradient(
+        -45deg, 
+        transparent, 
+        transparent 4px,
+        rgba(255, 255, 255, 0.2) 4px,
+        rgba(255,255,255,0) 8px
+      );
+    background-size: 200% 200%;
+    animation: barberpole 10s linear infinite;
+  }
+}
+
+@keyframes barberpole {
+  0% {
+    background-position: 100% 100%;
+  }
+}
+
+.Gal__Column {
+  margin-bottom: 5px;
+  display: flex;
+  flex-direction: column;
+  margin-right: 20px;
+}
+
+.Gal__Wrapper {
+  display: flex;
+  margin-top: 24px;
+  @media (max-width: @mobileWidth) {
+    flex-direction: column;
+
+    .Gal__Column {
+      margin-bottom: 20px;
+    }
+  }
+}

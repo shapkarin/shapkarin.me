@@ -1,0 +1,111 @@
+// TODO: refact styles
+
+@import 'reset.less';
+
+body {
+  background-color: #17293a;
+  font-family: 'Lato', sans-serif;
+  &, a {
+    color: white;
+  }
+}
+
+.Link {
+  display: inline;
+  text-decoration: underline;
+  cursor: pointer;
+  color: white;
+}
+
+// rename later
+.Wrap {
+  padding: 20px;
+  @media (min-width: 700px) {
+    display: flex;
+  }
+}
+
+.Page {
+  position: relative;
+  padding-top: 15px;
+
+  @media (min-width: 700px) {
+    padding-top: 0;
+  }
+}
+
+//todo: fix
+#background {
+  position: fixed;
+  z-index: -1;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.Page__Inner_dark,
+.PagePackages__Item,
+.Page__GithubItem,
+.Page__GithubItem,
+.PagePackages__Item_more {
+  border-radius: 7px;
+  background-color: rgba(0, 0, 0, 0.28);
+}
+
+.PagePackages__Item,
+.Page__Sketches {
+  padding: 15px 15px 8px 15px;
+}
+
+.Page__Github {
+  padding: 0;
+}
+
+.PagePackages__Item,
+.Page__GithubItem,
+.Page__Sketches {
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.6) !important;
+  }
+}
+
+.Page__GithubItem {
+  padding: 0px 7px;
+}
+
+.GithubItem__Link {
+  display: block;
+  font-size: 17px;
+  margin-bottom: 15px;
+}
+
+.Page {
+  h1 {
+    margin-bottom: 12px;
+  }
+  p {
+    line-height: 16px;
+  }
+}
+
+.About h1 {
+  margin-bottom: 10px;
+}
+
+h1, h2, h3 {
+  font-weight: bold;
+}
+
+h1 {
+  font-size: 20px;
+}
+
+h2 {
+  font-size: 18px;
+}
+
+ol, ul {
+	margin-left: 20px;
+  line-height: 1.5;
+}

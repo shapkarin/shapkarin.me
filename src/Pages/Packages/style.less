@@ -1,0 +1,65 @@
+// todo: some common classes like: .PageFlex .PageFlex_Item .PageFlex__Item_rounded
+// todo: refact styles
+
+@import "../../Variables.less";
+
+.PagePackages {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+
+.PagePackages__Item {
+  border-radius: 8px;
+  background-color: rgba(255,255,255,0.05);
+  transition: background-color .3s linear;
+  margin-bottom: 20px;
+  &:hover {
+    background-color: rgba(255,255,255,0.09);
+  }
+  @media (min-width: 700px) {
+    width: 355px;
+  }
+  &_more {
+    display: block;
+    margin-left: 20px;
+    padding: 15px;
+    background: rgba(255,255,255,0.04);
+    border-radius: 8px;
+    white-space: nowrap;
+    &:hover {
+      background-image: 
+      repeating-linear-gradient(-45deg, transparent, transparent 4px, rgba(0, 0, 0, 0.42) 4px, rgba(0, 0, 0, 1) 8px);
+      background-size: 200% 200%;
+      animation: barberpole 10s linear infinite;
+    }
+  }
+  > .toggle_info {
+    cursor: pointer;
+    margin: 12px 0 8px 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  .Package__Badges {
+    margin: 7px 0;
+    &__Item {
+      margin-right: 4px;
+    }
+  }
+}
+
+.PagePackages__Item_more {
+  margin-bottom: 12px;
+  display: flex;
+
+  > svg {
+    margin-left: 5px;
+  }
+}
+
+@media (max-width: @mobileWidth) {
+  .PagePackages__Item_more {
+    margin-left: 0;
+  }
+}
