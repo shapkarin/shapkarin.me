@@ -1,7 +1,7 @@
 name: Build and publish
 on:
   schedule:
-    - cron: '0 0 * * *'
+    - cron: '0 0 */5 * *'
   workflow_dispatch:
 
 jobs:
@@ -28,7 +28,7 @@ jobs:
       - name: Server-side render
         uses: brycedorn/react-snap-action@v1.0.2
         with:
-          build-directory: 'build'
+          folder: 'build'
       
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@4.0.0
