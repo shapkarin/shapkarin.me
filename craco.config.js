@@ -9,5 +9,8 @@ module.exports = {
       'Common/API': path.resolve(__dirname, 'src/API'),
     },
   },
-  plugins: [{ plugin: CracoLessPlugin }]
+  plugins: [{ plugin: CracoLessPlugin }],
+  options: {
+    buildPath: 'dist'
+  }
 }
