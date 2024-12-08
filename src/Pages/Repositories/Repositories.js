@@ -2,6 +2,7 @@ import ReactTooltip from 'react-tooltip';
 import { GoRepoForked, GoPulse, GoIssueOpened } from 'react-icons/go';
 import { FiExternalLink } from 'react-icons/fi';
 import { MdWeb } from 'react-icons/md';
+import SEO from 'Components/SEO';
 
 import { fetchRepositories } from "Common/API";
 import { useQuery } from "react-query";
@@ -16,6 +17,12 @@ export default function Repositories() {
 
   return (
     <>
+      <SEO 
+        title="GitHub Repositories | Yury Shapkarin"
+        description="Browse my open-source projects and contributions on GitHub. Collection of web development repositories focusing on JavaScript, React, Redux, and modern web technologies."
+        type="website"
+        name="Yury Shapkarin"
+      />
       <ReactTooltip
         place="left"
       />
