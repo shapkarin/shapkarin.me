@@ -27,13 +27,11 @@ jobs:
       
       - name: Server-side render
         uses: brycedorn/react-snap-action@v1.0.2
-        with:
-          folder: 'build'
       
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@4.0.0
         with:
           branch: gh-pages
-          folder: build
+          folder: dist
       
       - run: printf Deployed!
