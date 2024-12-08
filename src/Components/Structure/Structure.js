@@ -3,6 +3,7 @@ import { Switch, Route, Redirect } from "react-router-dom";
 import Close from "Components/Close";
 import { PAGES } from "Components/Structure";
 import Preloader from "Components/Preloader";
+import Article from "Pages/Articles/Article";
 
 const Structure = () => (
   <div className="Page">
@@ -30,6 +31,11 @@ const Structure = () => (
           window.location = "https://github.com/shapkarin";
           return "Congrats! Redirecting to my GitHub profile...";
         }}
+      />
+      <Route
+        exact
+        path="/articles/:slug"
+        component={Article}
       />
     </Switch>
   </div>

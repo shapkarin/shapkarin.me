@@ -22,11 +22,13 @@ jobs:
         env:
           CI: false
         run: |
-          npm i
+          npm install --legacy-peer-deps
           npm run build
       
       - name: Server-side render
         uses: brycedorn/react-snap-action@v1.0.2
+        output:
+          default: build
       
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@4.0.0
