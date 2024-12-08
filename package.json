@@ -25,8 +25,8 @@
     "start": "npm run build:api && craco start",
     "build:api": "node src/Generate-Backend/database-to-json.js",
     "build:spa": "craco build",
-    "build": "npm run build:api && npm run build:spa",
-    "build:local": "npm run build:api && npm run build:spa && react-snap",
+    "build": "npm run build:api && BUILD_PATH='./dist' npm run build:spa",
+    "build:local": "npm run build:api && BUILD_PATH='./dist' npm run build:spa && react-snap",
     "test": "craco test"
   },
   "eslintConfig": {

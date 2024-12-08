@@ -10,7 +10,4 @@ module.exports = {
     },
   },
   plugins: [{ plugin: CracoLessPlugin }],
-  options: {
-    buildPath: 'dist'
-  }
 }
