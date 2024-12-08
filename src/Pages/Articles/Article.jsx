@@ -4,7 +4,7 @@ import matter from 'gray-matter';
 import Markdown from 'react-markdown';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism';
-
+import SEO from 'Components/SEO';
 
 function Articles() {
   const { slug: articleName } = useParams();
@@ -51,10 +51,16 @@ function Articles() {
   if (error) return <div>Error: {error}</div>;
   if (!content) return <div>Loading...</div>;
 
-  const { content: markdownContent } = matter(content);
+  const { data: frontMatter, content: markdownContent } = matter(content);
   
   return (
     <div className="Article">
+        <SEO 
+          title={`${frontMatter.title || articleName} | Yury Shapkarin`}
+          description={frontMatter.description || `Article about ${articleName}`}
+          type="article"
+          name="Yury Shapkarin"
+        />
         <Markdown
           components={{
           code(props) {

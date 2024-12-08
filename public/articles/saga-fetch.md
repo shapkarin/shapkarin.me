@@ -1,3 +1,8 @@
+---
+title: "saga-fetch: Streamline API Calls in Redux Saga Applications"
+description: "Learn how to simplify AJAX requests in Redux Saga with saga-fetch. Handle loading states, success/error responses, and request cancellation with minimal boilerplate code."
+---
+
 If you’ve used Redux Saga before, you know how convenient it can be for handling complex async workflows in a Redux application. Instead of juggling `fetch` calls or `axios` requests directly in your React components, you write sagas that can watch for certain actions, start asynchronous tasks, handle cancellations, and dispatch results when they’re done. It keeps your code cleaner, more predictable, and easier to test.
 
 However, even with Redux Saga, you often end up writing a fair amount of boilerplate whenever you need to handle AJAX requests. You’ll dispatch a start action, then when the request resolves you’ll dispatch a success action, or if it fails you’ll dispatch an error action. Afterward, you might need a “fulfill” action to clean up. This pattern shows up in almost every async scenario: loading indicators, data fetching, error states, and so on.

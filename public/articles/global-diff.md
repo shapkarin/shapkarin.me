@@ -1,3 +1,7 @@
+---
+title: "diff-browser-globals: Track Global Window Object Changes in Web Apps"
+description: "Discover what's being added to your browser's global scope with diff-browser-globals. A lightweight tool to identify and debug unexpected global variables in your web applications."
+---
 
 If you’ve ever caught yourself wondering, “What exactly is getting added to the global `window` object in my web app?” you’re not alone. Modern codebases use so many libraries and frameworks that sometimes it’s hard to keep track of what’s sneaking into your global scope. Variables added at runtime—whether from your own code or third-party scripts—can lead to subtle bugs or naming conflicts down the road.
 
