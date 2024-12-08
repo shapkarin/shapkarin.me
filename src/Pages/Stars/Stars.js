@@ -4,6 +4,7 @@ import { GoRepoForked, GoPulse, GoIssueOpened } from 'react-icons/go';
 import { MdWeb } from 'react-icons/md';
 import { TiStarOutline } from 'react-icons/ti';
 import { FiExternalLink } from 'react-icons/fi';
+import SEO from 'Components/SEO';
 
 import { fetchLikes } from 'Common/API';
 
@@ -12,6 +13,12 @@ export default function Liked() {
 
   return (
     <>
+      <SEO 
+        title="Starred GitHub Projects | Yury Shapkarin"
+        description="Discover my curated collection of starred GitHub repositories. A handpicked selection of innovative open-source projects, development tools, and libraries that I find valuable."
+        type="website"
+        name="Yury Shapkarin"
+      />
       <ReactTooltip
         place="left"
       />

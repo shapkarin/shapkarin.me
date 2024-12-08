@@ -1,6 +1,6 @@
 import { Helmet } from 'react-helmet';
 
-const SEO = ({ title, description, name, type }) => {
+const SEO = ({ title, description, name = 'Yury Shapkarin', type = 'website' }) => {
   return (
     <Helmet>
       {/* Standard metadata tags */}

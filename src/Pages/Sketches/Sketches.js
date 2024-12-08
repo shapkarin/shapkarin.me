@@ -1,4 +1,5 @@
 import { useQuery } from 'react-query';
+import SEO from 'Components/SEO';
 
 import Preloader from 'Components/Preloader';
 import Formatted from 'Components/Formatted';
@@ -9,6 +10,12 @@ import './style.less';
 export default function Sketches() {
   return (
     <>
+      <SEO 
+        title="Creative Coding & Generative Art | Yury Shapkarin"
+        description="Explore my collection of creative coding experiments, generative art, and interactive animations. Algorithmic drawings and visual experiments created with JavaScript and creative coding libraries."
+        type="website"
+        name="Yury Shapkarin"
+      />
       <div className="Page__Sketches Page__Inner Page__Inner_dark">
         <Preloader>
           <Intro />
