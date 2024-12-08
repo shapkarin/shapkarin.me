@@ -47,6 +47,7 @@
     ]
   },
   "devDependencies": {
-    "esm": "^3.2.25"
+    "esm": "^3.2.25",
+    "react-snap": "^1.23.0"
   }
 }
