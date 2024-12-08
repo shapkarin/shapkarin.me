@@ -1,3 +1,8 @@
+---
+title: "Extend Redux Saga Routines: Simplify Async Actions in Redux Applications"
+description: "Learn how to streamline Redux async actions with extend-routines. Add custom stages to redux-saga-routines, create socket-based routines, and reduce boilerplate code in your Redux applications—no redux-saga required."
+---
+
 # extend-saga-routines (aka extend-routines)
 
 If you’ve been working with Redux and handling asynchronous actions—like fetching data from an API—you’ve probably noticed a recurring pattern in your code. Every async operation typically involves the same sequence of action types:
