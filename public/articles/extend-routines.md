@@ -1,3 +1,8 @@
+---
+title: "extend-routines: Enhanced Redux Action Management for Async Operations"
+description: "Learn how to streamline Redux async workflows with extend-routines. Create custom action routines, handle complex async states, and reduce boilerplate in Redux applications."
+---
+
 Below is a comprehensive and detailed article about the **extend-routines** package. This article synthesizes all of the core information from the provided README while adding additional context, clarifications, and guidance for a broad range of Redux workflows.
 
 ---
