@@ -14,7 +14,12 @@ function Articles() {
   const fetchArticle = async (name) => {
     try {
       console.log('Fetching article:', name);
-      const response = await fetch(`/articles/${name}.md`);
+      const response = await fetch(`/articles/${name}.md`, {
+        headers: {
+          'Accept': 'text/markdown, text/plain, */*',
+          'Content-Type': 'text/plain; charset=UTF-8'
+        }
+      });
       console.log('Response status:', response.status);
       
       if (!response.ok) {
