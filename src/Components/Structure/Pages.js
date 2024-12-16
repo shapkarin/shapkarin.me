@@ -3,10 +3,9 @@ import Packages from 'Pages/Packages';
 import Repositories from 'Pages/Repositories';
 import Stars from 'Pages/Stars';
 import Sketches from 'Pages/Sketches';
-import Articles from 'Pages/Articles/Articles';
 
 import { GoRepo, GoStar } from 'react-icons/go';
-import { RiNpmjsLine, RiPaintBrushFill, RiArticleLine } from 'react-icons/ri';
+import { RiNpmjsLine, RiPaintBrushFill } from 'react-icons/ri';
 
 const PAGES = [
   {
@@ -41,12 +40,12 @@ const PAGES = [
     icon: () => <RiPaintBrushFill />,
     Page: () => <Sketches />
   },
-  {
-    name: 'Articles',
-    path: '/articles',
-    icon: () => <RiArticleLine />,
-    Page: () => <Articles />
-  }
+  // {
+  //   name: 'Articles',
+  //   path: '/articles',
+  //   icon: () => <RiArticleLine />,
+  //   Page: () => <Articles />
+  // }
 ];
 
 export default PAGES;
