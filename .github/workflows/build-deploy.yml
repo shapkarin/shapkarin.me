@@ -21,11 +21,9 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
       
       - name: Install and Build
-        env:
-          CI: false
         run: |
-          npm install --legacy-peer-deps
-          npm run build
+          npm install --legacy-peer-deps --verbose
+          npm run build --verbose
       
       - name: Server-side render
         uses: brycedorn/react-snap-action@v1.0.2
