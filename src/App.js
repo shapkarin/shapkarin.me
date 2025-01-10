@@ -5,7 +5,7 @@ import 'Components/Background';
 
 import About from 'Components/About';
 import Menu from 'Components/Menu';
-import Structure from 'Components/Structure';
+import Structure from './Structure';
 
 import './App.less';
 

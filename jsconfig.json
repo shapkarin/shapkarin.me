@@ -5,7 +5,7 @@
     "paths": {
       "Pages/*": ["./src/Pages/*"],
       "Components/*": ["./src/Components/*"],
-      "Common/*": ["./src/Common/*"]
+      "Common/API": ["./src/API"]
     }
   },
   "include": ["src/**/*"],

@@ -2,7 +2,7 @@ import { NavLink } from 'react-router-dom';
 import { IoIosRefresh } from 'react-icons/io';
 
 import RandomButton from 'Components/RandomButton';
-import { PAGES } from 'Components/Structure';
+import { PAGES } from '../../Structure';
 
 import './Menu.less';
 
