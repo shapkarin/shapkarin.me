@@ -17,6 +17,8 @@ const github = {
   },
 }
 
+const rawPrefix = process.env.NODE_ENV === 'production' ? 'https://raw.githubusercontent.com/shapkarin/shapkarin.me/refs/heads/gh-pages' : '';
+
 const backend = {
   about: '/api/about.json',
   packages: {
@@ -28,7 +30,7 @@ const backend = {
     collection: '/api/sketches/collection.json',
   },
   articles: '/api/articles/list.json',
-  article: (name) => `/api/articles/${name}.md`,
+  article: (name) => `${rawPrefix}/api/articles/${name}.md`,
 }
 
 const URLS = {
