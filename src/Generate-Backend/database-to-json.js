@@ -20,6 +20,10 @@ async function clearDirectory(directoryPath) {
   for (const entry of entries) {
     const fullPath = path.join(directoryPath, entry.name);
     if (entry.isDirectory()) {
+      // Skip any folder named "articles"
+      if (entry.name === 'articles') {
+        continue;
+      }
       await clearDirectory(fullPath);
       await fsPromises.rmdir(fullPath);
     } else if (entry.name !== '.gitkeep') {

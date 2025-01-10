@@ -9,7 +9,7 @@ export default function Version({ prefix = 'v', number = null }) {
       target="_blank"
       rel="noreferrer"
     >
-      {!number && prefix}{ process.env.REACT_APP_VERSION }
+      {!number && prefix}{ version }
     </a>
     <FiExternalLink />
     </>

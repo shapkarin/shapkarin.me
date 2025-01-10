@@ -2,18 +2,21 @@ const fs = require('fs');
 const path = require('path');
 
 // Path to articles directory
-const articlesDir = path.join(__dirname, '../../public/articles');
+const ARTICLES_PATH = path.join(__dirname, '../../public/api/articles');
 
 // Function to generate articles list
 function generateArticlesList() {
   try {
     // Read directory and filter for .md files
-    const files = fs.readdirSync(articlesDir)
+    const files = fs.readdirSync(ARTICLES_PATH)
       .filter(file => file.endsWith('.md'))
       .map(file => ({
         slug: file.replace('.md', ''),
-        title: file.replace('.md', '').replace(/-/g, ' '), // Convert filename to readable title
-        path: path.join(__dirname, '../../public/articles', file)
+        // Convert filename to readable title
+        title: file.replace('.md', '')
+                   .replace(/-/g, ' ')
+                   .replace(/\b\w/g, match => match.toUpperCase()),
+        path: path.join(__dirname, '../../public/api/articles', file)
       }));
 
     // Convert to JSON string with pretty formatting
@@ -21,7 +24,7 @@ function generateArticlesList() {
 
     // Write to articles.json in the public folder
     fs.writeFileSync(
-      path.join(__dirname, '../../public/articles/list.json'), 
+      path.join(ARTICLES_PATH, 'list.json'), 
       jsonContent
     );
 

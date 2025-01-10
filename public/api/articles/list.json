@@ -1,0 +1,37 @@
+[
+  {
+    "slug": "design",
+    "title": "Design",
+    "path": "/Users/yury/code/shapkarin.me/public/api/articles/design.md"
+  },
+  {
+    "slug": "extend-routines",
+    "title": "Extend Routines",
+    "path": "/Users/yury/code/shapkarin.me/public/api/articles/extend-routines.md"
+  },
+  {
+    "slug": "global-diff",
+    "title": "Global Diff",
+    "path": "/Users/yury/code/shapkarin.me/public/api/articles/global-diff.md"
+  },
+  {
+    "slug": "looking-for-a-job",
+    "title": "Looking For A Job",
+    "path": "/Users/yury/code/shapkarin.me/public/api/articles/looking-for-a-job.md"
+  },
+  {
+    "slug": "saga-fetch",
+    "title": "Saga Fetch",
+    "path": "/Users/yury/code/shapkarin.me/public/api/articles/saga-fetch.md"
+  },
+  {
+    "slug": "wagmi-ethers",
+    "title": "Wagmi Ethers",
+    "path": "/Users/yury/code/shapkarin.me/public/api/articles/wagmi-ethers.md"
+  },
+  {
+    "slug": "web3-intro",
+    "title": "Web3 Intro",
+    "path": "/Users/yury/code/shapkarin.me/public/api/articles/web3-intro.md"
+  }
+]

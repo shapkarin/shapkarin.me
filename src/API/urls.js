@@ -14,7 +14,7 @@ const github = {
   },
   likes() {
     return `${this.user()}/starred`;
-  }
+  },
 }
 
 const backend = {
@@ -26,7 +26,9 @@ const backend = {
   sketches: {
     intro:  '/api/sketches/intro.json',
     collection: '/api/sketches/collection.json',
-  }
+  },
+  articles: '/api/articles/list.json',
+  article: (name) => `/api/articles/${name}.md`,
 }
 
 const URLS = {
