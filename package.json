@@ -19,6 +19,9 @@
     "react-tooltip": "^4.2.21",
     "web-vitals": "^1.0.1"
   },
+  "overrides": {
+    "@babel/core": "^7.16.0"
+  },
   "engines": {
     "node": ">=14.0.0 <=16.20.2"
   },

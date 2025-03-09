@@ -19,6 +19,11 @@ jobs:
         with:
           node-version: '16.20.2'
           registry-url: 'https://registry.npmjs.org'
+
+      - name: Enforce npm version 8.3.0
+        run: |
+          npm install -g npm@8.3.0
+          echo "Updated npm version: $(npm --version)"
       
       - name: Install and Build
         run: |
