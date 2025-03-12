@@ -1,5 +1,10 @@
 [
   {
+    "slug": "ai-history",
+    "title": "Ai History",
+    "path": "/home/runner/work/shapkarin.me/shapkarin.me/public/api/articles/ai-history.md"
+  },
+  {
     "slug": "curiosity-js",
     "title": "Curiosity Js",
     "path": "/home/runner/work/shapkarin.me/shapkarin.me/public/api/articles/curiosity-js.md"
