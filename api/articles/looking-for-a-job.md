@@ -38,29 +38,41 @@ I’ve been honing my craft across a broad range of projects and industries. My 
 ## **Professional Highlights**
 
 ### **SideQuest Meta LTD, UK (Aug 2024 – Present)**
-- **Lead Front-End Developer** for a **dApp** combining **DEX** and **SocialFi** features.  
-- Overseeing a **Web2** application enriched with **Web3** functionalities under the hood.  
+## Lead Front-End Developer
+- Lead development of a decentralized application (dApp) combining DEX and SocialFi features using React, TypeScript, ethers.js, and Wagmi. Design and implement a web3 non-custodial front-end solution for smart contract interaction using Metamask (and other) plus various of Solana wallets (Phantom, Solflare, etc). The app is for game streamer tokens issuance (fan tokens), and trading on EVM-compatible blockchains, BNB Layer2 (opBNB), and Solana.
+- Develop a Web2 app with Web3 features, offering a custodial solution for secure, transparent payments for game streamers’ time.
+- Establish a full CI/CD pipeline with GitHub Actions and AWS (EC2), automating build, test, lint, containerization and deployment to boost efficiency and reduce time-to-market.
+- Conduct code reviews to ensure high-quality code and best practices, promoting team excellence.
+- Mentor developers on front-end techniques, blockchain integration, and problem-solving, enhancing team growth and performance.
+- Collaborate with designers, back-end developers, and product managers to deliver user-focused features seamlessly.
 
 ### **Project-Based Roles (Mar 2023 – Jul 2024)**
-- Developed a **non-custodial cryptography-based wallet** app (Bitsong).  
-- Led front-end and contributed to back-end for **Swaptok’s SocialFi copy-trading** web app.  
-- Engaged in **several other Web3 projects**, showcasing flexibility and adaptability.  
+## Senior Front-End Developer
+- Developed the front-end for Swaptok’s SocialFi and copy-trading web application using React.js, Redux Toolkit, TypeScript, MUI, and Webpack.
+- Designed and implemented Bitsong’s non-custodial wallet as a browser extension and web version, utilizing Vue.js, TypeScript, Quasar Framework, @cosmjs/*, Webpack, JSON-RPC, and Web3.
+- Integrated advanced cryptography techniques to enhance security and user control in the Bitsong wallet.
+- Conducted code reviews to ensure high-quality code and adherence to best practices across both projects.
+- Collaborated with diverse teams to deliver responsive, high-quality user interfaces.
+- Optimized application performance and scalability for Swaptok and Bitsong projects.
 
 ### **EVMOS, Germany (Jan 2022 – Dec 2022)**
-- **Senior Front-End Engineer** on decentralized applications, spanning **testnet** to **mainnet**.  
-- Thrived in a **fast-paced crypto startup** environment and introduced **Conventional Commits** for better version control.  
+## Senior Front-End Engineer (relocation)
+- Engineered front-end code for decentralized applications at both testnet and mainnet phases
+- Adapted to the rapidly changing environment of early-stage crypto-startup
 
 ### **æternity Blockchain, Liechtenstein (Dec 2019 – Jan 2022)**
+## Senior Front-End Engineer
 - Implemented **videoconferencing with wallet authentication** for the **Superhero dApp** and independent video calls.  
 - Improved **SocialFi** features on Superhero and built **superhero-utils** for easy donation integration.  
 
 ### **Avallain, Switzerland (Apr 2019 – Nov 2019)**
+## Senior Front-End Engineer
 - Migrated **legacy systems** to modern web tech, ensuring **cross-platform compatibility**.  
 - Focused on advanced **mobile web** features to optimize user experiences.  
 
 ### **Zed, Brazil (Dec 2016 – Mar 2019)**
-- **Senior Full-Stack Engineer** delivering a **faster, more secure** platform by **architecting** new web versions of client products.  
-- Innovated around **content protection** and integrated **partner APIs** via custom-built servers.  
+## Senior Full-Stack Engineer
+There were four innovative projects. I helped build a useful and fast new web version of the company's client products from scratch and migrated the old version to a more popular and convenient stack. Protecting the content from theft was an interesting task. There was also the integration of a partner API through our own server. I built the app from scratch, following a sequence of ordered steps.
 
 ### **Future Technologies Media Group, Kazakhstan (Jun 2016 – Dec 2016)**
 - **Lead Front-End Developer** specialized in **bioinformatics** and **financial sector** applications.  
