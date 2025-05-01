@@ -1,5 +1,15 @@
 [
   {
+    "slug": "ai-history",
+    "title": "Ai History",
+    "path": "/Users/yury/code/shapkarin.me/public/api/articles/ai-history.md"
+  },
+  {
+    "slug": "curiosity-js",
+    "title": "Curiosity Js",
+    "path": "/Users/yury/code/shapkarin.me/public/api/articles/curiosity-js.md"
+  },
+  {
     "slug": "design",
     "title": "Design",
     "path": "/Users/yury/code/shapkarin.me/public/api/articles/design.md"
