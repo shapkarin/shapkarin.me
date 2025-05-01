@@ -29,7 +29,8 @@
     "start": "npm run build:api && npm run generate-articles && craco start",
     "build:api": "node src/Generate-Backend/database-to-json.js",
     "build:spa": "craco build",
-    "build": "npm run build:api && npm run generate-articles && NODE_ENV=production BUILD_PATH='./dist' npm run build:spa",
+    "build:html-gallery": "node src/Generate-Backend/deploy-html-gallery.js",
+    "build": "npm run build:api && npm run generate-articles && NODE_ENV=production BUILD_PATH='./dist' npm run build:spa && npm run build:html-gallery",
     "build:local": "npm run build:api && npm run generate-articles && BUILD_PATH='./dist' npm run build:spa && react-snap",
     "test": "craco test",
     "generate-articles": "node src/Generate-Backend/generate-articles-list.js"
@@ -74,6 +75,7 @@
     "vfile": "^4.2.1"
   },
   "reactSnap": {
-    "source": "dist"
+    "source": "dist",
+    "navigationTimeout": 90000
   }
 }
