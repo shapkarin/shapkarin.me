@@ -28,3 +28,6 @@ public/api/about.json
 # For the hompage, I don't use `npm ci`
 package-lock.json
 yarn.lock
+
+# Do not commit the deployed HTML gallery
+public/gallery
