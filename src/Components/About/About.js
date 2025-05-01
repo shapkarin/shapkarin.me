@@ -18,7 +18,8 @@ function About() {
         <a href='https://github.com/shapkarin/shapkarin.me' target='_blank' rel='noreferrer'>Website source code<FiExternalLink /></a>
         {/* yup `<br/><br/> is not good markup` https://github.com/shapkarin/shapkarin.me/tree/main?tab=readme-ov-file#NOTE-2 */}
         <br/><br/>
-        The API for this site is generated <a href="https://github.com/shapkarin/shapkarin.me/tree/master/src/Generate-Backend" target="_blank" rel="noreferrer">by this code</a><FiExternalLink /> and stored as <a href="https://github.com/shapkarin/shapkarin.me/tree/gh-pages/api" target="_blank" rel="noreferrer">JSON files</a><FiExternalLink /> on <a href="https://github.com/shapkarin/shapkarin.me/tree/main/.github/workflows/deploy.yml">GitHub Pages</a><br/>
+        The API for this site is generated <a href="https://github.com/shapkarin/shapkarin.me/tree/master/src/Generate-Backend" target="_blank" rel="noreferrer">by this code</a><FiExternalLink />, and stored as <a href="https://github.com/shapkarin/shapkarin.me/tree/gh-pages/api" target="_blank" rel="noreferrer">JSON and Markdown files</a><FiExternalLink /> on <a href="https://github.com/shapkarin/shapkarin.me/tree/main/.github/workflows/deploy.yml">GitHub Pages</a><br/>
+        It also uses Github Actions to help with CI, and generates a static version for SEO<br/>
         semver: <a href="https://github.com/shapkarin/shapkarin.me/tree/main/.env#L1">{process.env.REACT_APP_VERSION}</a>
       </div>
     </>
