@@ -4,8 +4,23 @@ import { createHash } from 'crypto';
 export const about = {
   title: `Hello everyone`,
   intro: `
+    My name is Iurii Shapkarin. 
     With over 10 years of experience in software development and a strong foundation in Computer Science. My work underlines my dedication to innovation, problem-solving, and creating impactful user experiences.
-  `
+  `,
+  links: {
+    linkedin: {
+      link: 'https://www.linkedin.com/in/shapkarin',
+      text: 'LinkedIn',
+    },
+    github: {
+      link: 'https://github.com/shapkarin',
+      text: 'GitHub',
+    },
+    website: {
+      link: 'https://github.com/shapkarin/shapkarin.me',
+      text: 'website code',
+    },
+  },
 }
 
 export const packages = {
