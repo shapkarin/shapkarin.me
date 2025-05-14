@@ -22,7 +22,7 @@ export default class Shape {
 
   getRandomShape = () => this.drawMethods[random(this.drawMethods.length - 1)]
 
-  getRandomOpacity = () => Math.random() < 0.8 ? random(0.04, 0.1) : random(0.2, 0.4)
+  getRandomOpacity = () => Math.random() < 0.8 ? random(0.04, 0.08) : random(0.15, 0.23)
 
   getColor = () => `rgba(255, 255, 255, ${this.opacity})`
 

@@ -1,7 +1,8 @@
 // TODO: refact
 import random from 'lodash.random';
-
 import Shape from './Shape';
+
+const STROKE_COLOR = `rgba(255, 255, 255, ${random(0.05, 0.142)})`;
 
 export default class Scene {
   constructor() {
@@ -61,7 +62,7 @@ export default class Scene {
   // TODO..
   draw = () => {
     this.ctx.beginPath();
-    this.ctx.fillStyle = '#17293a';
+    this.ctx.fillStyle = '#0a141f';
     this.ctx.fillRect(0, 0, this.width, this.height);
     for (let rowI = 0; rowI < this.array2D.length; rowI++) {
       for (let colI = 0; colI < this.array2D[rowI].length; colI++) {
@@ -82,7 +83,7 @@ export default class Scene {
   drawCross = () => {
     const randomItem = this.getRandomItem();
     // const randomItem = this.array2D[4][4];
-    this.ctx.strokeStyle = `rgba(255, 255, 255, ${random(0.07, 0.2)})`;
+    this.ctx.strokeStyle = STROKE_COLOR;
     this.ctx.beginPath();
     this.ctx.moveTo(randomItem.x, randomItem.y);
     const nextCol = randomItem.col + random(this.countX - randomItem.col - 1);
