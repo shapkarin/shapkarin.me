@@ -19,7 +19,7 @@ function ArticlesList() {
         type="blog"
         name="Yury Shapkarin"
       />
-      <h1>Articles</h1>
+      <h1>Articles [ It's WIP bcs most of the text is AI generated for SEO ]</h1>
       <ul>
         {articles.map((article) => (
           <li key={article.slug}>

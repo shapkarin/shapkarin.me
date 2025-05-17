@@ -10,6 +10,20 @@ import { RiNpmjsLine, RiPaintBrushFill, RiArticleLine } from 'react-icons/ri';
 
 const PAGES = [
   {
+    name: 'Packages',
+    path: '/packages',
+    redirect: { from: '/projects', to: '/packages' },
+    icon: () => <RiNpmjsLine size="1.24em" />,
+    Page: (props) => <Packages { ...props } />
+  },
+  {
+    name: 'Creative',
+    path: '/sketches',
+    redirect: { from: '/generative', to: '/sketches' },
+    icon: () => <RiPaintBrushFill />,
+    Page: () => <Sketches />
+  },
+  {
     name: 'Repositories',
     path: '/github/repositories',
     redirect: { from: '/repositories', to: '/github/repositories' },
@@ -28,24 +42,11 @@ const PAGES = [
     Page: () => <Stars />
   },
   {
-    name: 'Packages',
-    path: '/packages',
-    redirect: { from: '/projects', to: '/packages' },
-    icon: () => <RiNpmjsLine size="1.24em" />,
-    Page: (props) => <Packages { ...props } />
-  },
-  {
-    name: 'Creative',
-    path: '/sketches',
-    redirect: { from: '/generative', to: '/sketches' },
-    icon: () => <RiPaintBrushFill />,
-    Page: () => <Sketches />
-  },
-  {
     name: 'Articles',
     path: '/articles',
     icon: () => <RiArticleLine />,
-    Page: () => <Articles />
+    Page: () => <Articles />,
+    hidden: true,
   }
 ];
 
