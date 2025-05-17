@@ -6,6 +6,7 @@
   "dependencies": {
     "@craco/craco": "^6.3.0",
     "axios": "^0.21.4",
+    "clsx": "^2.1.1",
     "craco-less": "^1.20.0",
     "lodash.random": "^3.2.0",
     "react": "^17.0.2",
@@ -30,7 +31,7 @@
     "build:api": "node src/Generate-Backend/database-to-json.js",
     "build:spa": "craco build",
     "build:html-gallery": "node src/Generate-Backend/deploy-html-gallery.js",
-    "build": "npm run build:api && npm run generate-articles && NODE_ENV=production BUILD_PATH='./dist' npm run build:spa && npm run build:html-gallery",
+    "build": "npm run build:api && npm run generate-articles && NODE_ENV=production BUILD_PATH='./dist' npm run build:spa && npm run build:html-gallery && react-snap",
     "build:local": "npm run build:api && npm run generate-articles && BUILD_PATH='./dist' npm run build:spa && react-snap",
     "test": "craco test",
     "generate-articles": "node src/Generate-Backend/generate-articles-list.js"

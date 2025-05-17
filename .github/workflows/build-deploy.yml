@@ -26,12 +26,13 @@ jobs:
           echo "Updated npm version: $(npm --version)"
       
       - name: Install and Build
+        # npm run build is already with react-snap
         run: |
           npm install --legacy-peer-deps --verbose
           npm run build --verbose
       
-      - name: Server-side render
-        uses: brycedorn/react-snap-action@v1.0.2
+      # - name: Server-side render
+      #   uses: brycedorn/react-snap-action@v1.0.2
       
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@4.0.0
