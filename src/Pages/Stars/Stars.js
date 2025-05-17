@@ -14,10 +14,10 @@ export default function Liked() {
   return (
     <>
       <SEO 
-        title="Starred GitHub Projects | Yury Shapkarin"
+        title="Starred GitHub Projects | Iurii Shapkarin"
         description="Discover my curated collection of starred GitHub repositories. A handpicked selection of innovative open-source projects, development tools, and libraries that I find valuable."
         type="website"
-        name="Yury Shapkarin"
+        name="Iurii Shapkarin"
       />
       <ReactTooltip
         place="left"

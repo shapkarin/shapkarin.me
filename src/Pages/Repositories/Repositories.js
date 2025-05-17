@@ -18,10 +18,10 @@ export default function Repositories() {
   return (
     <>
       <SEO 
-        title="GitHub Repositories | Yury Shapkarin"
+        title="GitHub Repositories | Iurii Shapkarin"
         description="Browse my open-source projects and contributions on GitHub. Collection of web development repositories focusing on JavaScript, React, Redux, and modern web technologies."
         type="website"
-        name="Yury Shapkarin"
+        name="Iurii Shapkarin"
       />
       <ReactTooltip
         place="left"

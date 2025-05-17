@@ -14,10 +14,10 @@ function ArticlesList() {
   return (
     <>
       <SEO 
-        title="Software Development Articles & Tutorials | Yury Shapkarin"
+        title="Software Development Articles & Tutorials | Iurii Shapkarin"
         description="Read technical articles about JavaScript development, React ecosystem, Redux patterns, and software engineering. In-depth tutorials and guides about my open-source packages."
         type="blog"
-        name="Yury Shapkarin"
+        name="Iurii Shapkarin"
       />
       <h1>Articles [ It's WIP bcs most of the text is AI generated for SEO ]</h1>
       <ul>
