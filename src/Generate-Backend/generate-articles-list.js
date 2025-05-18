@@ -79,10 +79,10 @@ function sortArticles(articles) {
   return [...articles].sort((a, b) => {
     // First sort by sortOrder
     if (a.sortOrder !== b.sortOrder) {
-      return a.sortOrder - b.sortOrder;
+      return b.sortOrder - a.sortOrder;
     }
     // Then sort alphabetically by slug
-    return a.slug.localeCompare(b.slug);
+    return b.slug.localeCompare(a.slug);
   });
 }
 
