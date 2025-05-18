@@ -1,7 +1,6 @@
 ---
 title: "Weird JavaScript Quirks Explained: Type Coercion, Equality & More"
 description: "Discover the most surprising JavaScript quirks and learn how type coercion, loose equality, and parsing rules lead to unexpected behaviors in your code."
-order: 3
 ---
 
 More on my gist collection => [https://gist.github.com/shapkarin/b3fbeaca95ef69df177b](https://gist.github.com/shapkarin/b3fbeaca95ef69df177b)
