@@ -7,6 +7,7 @@ import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import { fetchArticle } from "Common/API";
 import { useQuery } from "react-query";
 import SEO from 'Components/SEO';
+import HeadingRenderer from './Anchor';
 
 function Article() {
   const { slug: articleName } = useParams();
@@ -31,6 +32,7 @@ function Article() {
         />
         <Markdown
           components={{
+            h2: HeadingRenderer,
             code(props) {
               const {children, className, node, ...rest} = props;
               const match = /language-(js|javascript|jsx|ts|typescript|bash|sh)/.exec(className || '');
