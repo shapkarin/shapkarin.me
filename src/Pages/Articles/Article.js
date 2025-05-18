@@ -33,6 +33,7 @@ function Article() {
         <Markdown
           components={{
             h2: HeadingRenderer,
+            h3: HeadingRenderer,
             code(props) {
               const {children, className, node, ...rest} = props;
               const match = /language-(js|javascript|jsx|ts|typescript|bash|sh)/.exec(className || '');

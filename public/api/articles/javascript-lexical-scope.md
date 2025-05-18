@@ -6,6 +6,34 @@ order: 3
 
 # Understanding JavaScript Lexical Scope
 
+## Table of Contents
+
+- [What is Lexical Scope?](#what-is-lexical-scope)
+- [Scope Chain](#scope-chain)
+- [Block Scope vs. Function Scope](#block-scope-vs-function-scope)
+  - [Understanding `let`, `const`, and `var`](#understanding-let-const-and-var)
+- [Closures: The Power of Lexical Scope](#closures-the-power-of-lexical-scope)
+  - [Closure Practical Examples](#closure-practical-examples)
+  - [Closure Memory Considerations](#closure-memory-considerations)
+- [The Temporal Dead Zone](#the-temporal-dead-zone)
+- [Hoisting and Lexical Scope](#hoisting-and-lexical-scope)
+  - [How Hoisting Works](#how-hoisting-works)
+  - [Class Hoisting](#class-hoisting)
+  - [Hoisting with Arrow Functions](#hoisting-with-arrow-functions)
+  - [Practical Implications of Hoisting](#practical-implications-of-hoisting)
+- [The `bind` Method and Lexical Scope](#the-bind-method-and-lexical-scope)
+  - [`bind` vs. Arrow Functions](#bind-vs-arrow-functions)
+  - [When to Use `bind`](#when-to-use-bind)
+- [Practical Applications](#practical-applications)
+  - [Module Pattern](#module-pattern)
+  - [Data Encapsulation](#data-encapsulation)
+- [Common Pitfalls and Solutions](#common-pitfalls-and-solutions)
+  - [Loop Variables in Closures](#loop-variables-in-closures)
+  - [`this` Context vs. Lexical Scope](#this-context-vs-lexical-scope)
+  - [Tricky Examples and Common Mistakes](#tricky-examples-and-common-mistakes)
+- [Best Practices](#best-practices)
+- [Conclusion](#conclusion)
+
 Lexical scope is one of the most fundamental concepts in JavaScript that every developer should master. It determines how variable names are resolved in nested functions and is the foundation for powerful JavaScript features like closures.
 
 ## What is Lexical Scope?

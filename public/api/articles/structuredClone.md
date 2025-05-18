@@ -4,6 +4,18 @@ description: "Learn how to properly create deep copies of complex objects in Jav
 order: 5
 ---
 
+## Table of Contents
+
+*   [Shallow vs. Deep Cloning: The Core Difference](#shallow-vs-deep-cloning-the-core-difference)
+*   [Traditional Deep Cloning Methods (and Their Issues)](#traditional-deep-cloning-methods-and-their-issues)
+    *   [`JSON.parse(JSON.stringify(object))`](#1-jsonparsejsonstringifyobject)
+    *   [Recursive Manual Cloning / Third-Party Libraries](#2-recursive-manual-cloning--third-party-libraries)
+*   [Introducing `structuredClone()`: The Modern Solution](#introducing-structuredclone-the-modern-solution)
+    *   [Key Benefits of `structuredClone()`](#key-benefits-of-structuredclone)
+*   [Limitations of `structuredClone()`](#limitations-of-structuredclone)
+*   [When to Use `structuredClone()`](#when-to-use-structuredclone)
+*   [Conclusion](#conclusion)
+
 # Deep Cloning in JavaScript: Mastering `structuredClone()`
 
 In JavaScript, copying objects is a common task, but it's not always straightforward. Understanding the difference between shallow and deep cloning is crucial to avoid unintended side effects and bugs in your applications. This article dives into deep cloning, explores traditional methods, and highlights the modern, built-in `structuredClone()` method.
