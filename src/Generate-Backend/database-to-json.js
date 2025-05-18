@@ -1,9 +1,10 @@
-const fsPromises = require('fs/promises');
-const path = require('path');
+import fsPromises from 'fs/promises';
+import path, { dirname } from 'path';
+import { fileURLToPath } from 'url';
+import * as database from './database.js';
 
-// Assuming 'esm' and 'database' modules are necessary and correctly imported.
-const require_esm = require('esm')(module);
-const database = require_esm('./database');
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 const API_FOLDER = path.join(__dirname, '../../public/api/');
 const ABOUT_FILE = path.join(API_FOLDER, 'about.json');

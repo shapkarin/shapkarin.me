@@ -167,9 +167,9 @@ export const sketches = {
 }
 
 function generateChecksum(str, algorithm, encoding){
-    return createHash(algorithm || 'md5')
-        .update(str, 'utf8')
-        .digest(encoding || 'hex');
+  return createHash(algorithm || 'sha256')
+      .update(str)
+      .digest(encoding || 'hex');
 }
 
 function clean(string){

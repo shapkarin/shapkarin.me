@@ -1,30 +1,26 @@
 {
   "name": "shapkarin.me",
   "homepage": "https://shapkarin.me",
-  "version": "6.1.0",
+  "version": "6.2.0",
   "private": true,
   "dependencies": {
-    "@craco/craco": "^6.3.0",
+    "@craco/craco": "^7.1.0",
     "axios": "^0.21.4",
     "clsx": "^2.1.1",
-    "craco-less": "^1.20.0",
+    "craco-less": "^3.0.1",
     "lodash.random": "^3.2.0",
     "react": "^17.0.2",
-    "react-copy-to-clipboard": "^5.0.4",
     "react-dom": "^17.0.2",
     "react-helmet": "^6.1.0",
     "react-icons": "^4.2.0",
     "react-query": "^3.24.4",
     "react-router-dom": "^5.3.0",
-    "react-scripts": "4.0.3",
+    "react-scripts": "^5.0.1",
     "react-tooltip": "^4.2.21",
     "web-vitals": "^1.0.1"
   },
-  "overrides": {
-    "@babel/core": "^7.16.0"
-  },
   "engines": {
-    "node": ">=14.0.0 <=16.20.2"
+    "node": ">=24.0.2"
   },
   "scripts": {
     "start": "npm run build:api && npm run generate-articles && craco start",
@@ -67,9 +63,11 @@
     ]
   },
   "devDependencies": {
-    "esm": "^3.2.25",
+    "@babel/core": "^7.27.1",
+    "@babel/node": "^7.27.1",
+    "@babel/preset-env": "^7.27.2",
+    "buffer": "^6.0.3",
     "gray-matter": "^4.0.3",
-    "prismjs": "^1.29.0",
     "react-markdown": "^8.0.7",
     "react-snap": "^1.23.0",
     "react-syntax-highlighter": "^15.6.1",
@@ -78,5 +76,11 @@
   "reactSnap": {
     "source": "dist",
     "navigationTimeout": 90000
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-env",
+      "@babel/preset-react"
+    ]
   }
 }
