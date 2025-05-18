@@ -1,5 +1,6 @@
-const fs = require('fs');
+const fs = require('fs').promises;
 const path = require('path');
+const fsSync = require('fs');
 
 // Configuration constants
 const CONFIG = {
@@ -28,25 +29,27 @@ function extractFrontmatter(content) {
 }
 
 // Reads all markdown files from the articles directory
-function getArticleFiles() {
+async function getArticleFiles() {
   try {
-    return fs.readdirSync(CONFIG.ARTICLES_PATH)
-      .filter(file => file.endsWith(CONFIG.FILE_EXTENSION));
+    const files = await fs.readdir(CONFIG.ARTICLES_PATH);
+    return files.filter(file => file.endsWith(CONFIG.FILE_EXTENSION));
   } catch (error) {
     throw new Error(`Failed to read articles directory: ${error.message}`);
   }
 }
 
 // Extracts article data from a markdown file
-function processArticleFile(filename) {
+async function processArticleFile(filename) {
   try {
     const filePath = path.join(CONFIG.ARTICLES_PATH, filename);
-    const content = fs.readFileSync(filePath, 'utf8');
+    const content = await fs.readFile(filePath, 'utf8');
     const frontmatter = extractFrontmatter(content);
     
     // Extract number from the beginning of the filename
-    const filenameNumber = parseInt(filename.match(/^(\d+)/)?.[1], 10) || 0;
-    const slug = filename.replace(CONFIG.FILE_EXTENSION, '');
+    const filenameNumber = parseInt(filename.match(/^(\d+)/)?.[1]) || 0;
+    
+    // Remove NUMBER- prefix from slug if it exists and file extension
+    const slug = filename.replace(new RegExp(`^\\d+-|${CONFIG.FILE_EXTENSION}$`, 'g'), '');
     
     return {
       slug,
@@ -89,11 +92,11 @@ function prepareForOutput(articles) {
 }
 
 // Writes the articles list to a JSON file
-function writeArticlesJson(articles) {
+async function writeArticlesJson(articles) {
   try {
     const outputPath = path.join(CONFIG.ARTICLES_PATH, CONFIG.OUTPUT_FILENAME);
     const jsonContent = JSON.stringify(articles, null, 2);
-    fs.writeFileSync(outputPath, jsonContent);
+    await fs.writeFile(outputPath, jsonContent);
     console.log(`Generated articles list with ${articles.length} articles at ${outputPath}`);
   } catch (error) {
     throw new Error(`Failed to write articles JSON: ${error.message}`);
@@ -101,13 +104,17 @@ function writeArticlesJson(articles) {
 }
 
 // Main function to generate the articles list
-function generateArticlesList() {
+async function generateArticlesList() {
   try {
-    const files = getArticleFiles();
-    const articles = files.map(processArticleFile);
+    const files = await getArticleFiles();
+    
+    // Process all files concurrently
+    const articlesPromises = files.map(processArticleFile);
+    const articles = await Promise.all(articlesPromises);
+    
     const sortedArticles = sortArticles(articles);
     const cleanedArticles = prepareForOutput(sortedArticles);
-    writeArticlesJson(cleanedArticles);
+    await writeArticlesJson(cleanedArticles);
   } catch (error) {
     console.error('Error generating articles list:', error);
     process.exit(1);
@@ -115,4 +122,6 @@ function generateArticlesList() {
 }
 
 // Run the generator
-generateArticlesList(); 
+(async () => {
+  await generateArticlesList();
+})(); 
