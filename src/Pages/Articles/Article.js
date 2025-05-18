@@ -30,6 +30,7 @@ function Article() {
           type="article"
           name="Iurii Shapkarin"
         />
+        {/* TODO: fix re-renders on link click inside serrilised markdown content */}
         <Markdown
           components={{
             h2: HeadingRenderer,

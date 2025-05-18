@@ -12,7 +12,7 @@ function ArticlesList() {
   );
 
   return (
-    <>
+    <div className="Page_Articles">
       <SEO 
         title="Software Development Articles & Tutorials | Iurii Shapkarin"
         description="Read technical articles about JavaScript development, React ecosystem, Redux patterns, and software engineering. In-depth tutorials and guides about my open-source packages."
@@ -20,10 +20,10 @@ function ArticlesList() {
         name="Iurii Shapkarin"
       />
       <div className="Page__Inner">
-        <h1>Articles [ It's WIP, going to rewrite ]</h1>
-        <ul>
+        <h1>Articles [ WIP ]</h1>
+        <ul className="Article__List">
           {articles.map(({ slug, title }) => (
-            <li key={slug}>
+            <li key={slug} className="Article__Item">
               <Link to={`/articles/${slug}`}>
                 {title}
               </Link>
@@ -31,7 +31,7 @@ function ArticlesList() {
           ))}
         </ul>
       </div>
-    </>
+    </div>
   );
 }
 
