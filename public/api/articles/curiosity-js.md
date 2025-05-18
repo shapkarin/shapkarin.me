@@ -4,7 +4,7 @@ description: "Discover the most surprising JavaScript quirks and learn how type 
 order: 3
 ---
 
-My collection => [https://gist.github.com/shapkarin/b3fbeaca95ef69df177b](https://gist.github.com/shapkarin/b3fbeaca95ef69df177b)
+More on my gist collection => [https://gist.github.com/shapkarin/b3fbeaca95ef69df177b](https://gist.github.com/shapkarin/b3fbeaca95ef69df177b)
 
 
 Below is a (quite long!) tour of curious or surprising expressions in JavaScript, along with explanations of why they behave as they do. JavaScript’s dynamic typing, type coercion, loose equality, parsing rules, and handling of edge cases all contribute to these quirks. Many of these examples come directly from how the [ECMAScript specification](https://tc39.es/ecma262/) dictates type conversions should happen. While they might appear “weird,” each snippet has a logical (if not always intuitive) explanation once you look under the hood.

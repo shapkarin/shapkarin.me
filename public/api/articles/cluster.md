@@ -12,6 +12,19 @@ It's a common sight in the Node.js world: powerful servers with multiple CPU cor
 
 This article dives into how you can leverage the `cluster` module to effortlessly scale your Node.js applications across all available CPU cores, often in under 20 lines of code, with no external dependencies.
 
+## Table of Contents
+- [The Single-Core Bottleneck](#the-single-core-bottleneck)
+- [Enter the `cluster` Module](#enter-the-cluster-module)
+  - [A Simple Clustering Example](#a-simple-clustering-example)
+- [`cluster` vs. `worker_threads`: Understanding the Difference](#cluster-vs-worker_threads-understanding-the-difference)
+- [Why Not Just Use PM2, Docker, or Kubernetes?](#why-not-just-use-pm2-docker-or-kubernetes)
+- [Benefits of Using `cluster`](#benefits-of-using-cluster)
+- [Graceful Shutdown and Inter-Process Communication (IPC)](#graceful-shutdown-and-inter-process-communication-ipc)
+  - [Example: Graceful Shutdown](#example-graceful-shutdown)
+- [When is `cluster` the Right Choice?](#when-is-cluster-the-right-choice)
+- [When to Look Beyond `cluster` (or use it in conjunction)](#when-to-look-beyond-cluster-or-use-it-in-conjunction)
+- [Conclusion: Don't Leave Performance on the Table](#conclusion-dont-leave-performance-on-the-table)
+
 ## The Single-Core Bottleneck
 
 Node.js is renowned for its non-blocking, event-driven architecture, making it highly efficient for I/O-bound operations. However, by default, a single Node.js process runs on a single CPU core. If you have a multi-core server, the other cores remain idle, and your application's performance is capped by the capacity of that one core. This is like having a multi-lane highway but forcing all traffic into a single lane.
