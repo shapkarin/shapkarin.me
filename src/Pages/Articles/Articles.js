@@ -19,16 +19,18 @@ function ArticlesList() {
         type="blog"
         name="Iurii Shapkarin"
       />
-      <h1>Articles [ It's WIP bcs most of the text is AI generated for SEO ]</h1>
-      <ul>
-        {articles.map((article) => (
-          <li key={article.slug}>
-            <Link to={`/articles/${article.slug}`}>
-              {article.title}
-            </Link>
-          </li>
-        ))}
-      </ul>
+      <div className="Page__Inner">
+        <h1>Articles [ It's WIP, going to rewrite ]</h1>
+        <ul>
+          {articles.map((article) => (
+            <li key={article.slug}>
+              <Link to={`/articles/${article.slug}`}>
+                {article.title}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </div>
     </>
   );
 }

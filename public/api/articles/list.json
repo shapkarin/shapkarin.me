@@ -1,47 +1,50 @@
 [
   {
-    "slug": "ai-history",
-    "title": "Ai History",
-    "path": "/Users/yury/code/shapkarin.me/public/api/articles/ai-history.md"
+    "slug": "javascript-lexical-scope",
+    "title": "Javascript Lexical Scope"
+  },
+  {
+    "slug": "structuredClone",
+    "title": "StructuredClone"
+  },
+  {
+    "slug": "cluster",
+    "title": "Cluster"
   },
   {
     "slug": "curiosity-js",
-    "title": "Curiosity Js",
-    "path": "/Users/yury/code/shapkarin.me/public/api/articles/curiosity-js.md"
+    "title": "Curiosity Js"
+  },
+  {
+    "slug": "ai-history",
+    "title": "Ai History"
   },
   {
     "slug": "design",
-    "title": "Design",
-    "path": "/Users/yury/code/shapkarin.me/public/api/articles/design.md"
+    "title": "Design"
   },
   {
     "slug": "extend-routines",
-    "title": "Extend Routines",
-    "path": "/Users/yury/code/shapkarin.me/public/api/articles/extend-routines.md"
+    "title": "Extend Routines"
   },
   {
     "slug": "global-diff",
-    "title": "Global Diff",
-    "path": "/Users/yury/code/shapkarin.me/public/api/articles/global-diff.md"
+    "title": "Global Diff"
   },
   {
     "slug": "looking-for-a-job",
-    "title": "Looking For A Job",
-    "path": "/Users/yury/code/shapkarin.me/public/api/articles/looking-for-a-job.md"
+    "title": "Looking For A Job"
   },
   {
     "slug": "saga-fetch",
-    "title": "Saga Fetch",
-    "path": "/Users/yury/code/shapkarin.me/public/api/articles/saga-fetch.md"
+    "title": "Saga Fetch"
   },
   {
     "slug": "wagmi-ethers",
-    "title": "Wagmi Ethers",
-    "path": "/Users/yury/code/shapkarin.me/public/api/articles/wagmi-ethers.md"
+    "title": "Wagmi Ethers"
   },
   {
     "slug": "web3-intro",
-    "title": "Web3 Intro",
-    "path": "/Users/yury/code/shapkarin.me/public/api/articles/web3-intro.md"
+    "title": "Web3 Intro"
   }
 ]
