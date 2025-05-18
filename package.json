@@ -70,9 +70,7 @@
     "prismjs": "^1.29.0",
     "react-markdown": "^8.0.7",
     "react-snap": "^1.23.0",
-    "react-syntax-highlighter": "^15.6.1",
-    "remark-toc": "^9.0.0",
-    "vfile": "^4.2.1"
+    "react-syntax-highlighter": "^15.6.1"
   },
   "reactSnap": {
     "source": "dist",
