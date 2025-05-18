@@ -2,7 +2,7 @@
 import Packages from 'Pages/Packages';
 import Repositories from 'Pages/Repositories';
 import Stars from 'Pages/Stars';
-import Sketches from 'Pages/Sketches';
+import Creative from 'Pages/Creative';
 import Articles from 'Pages/Articles/Articles';
 
 import { GoRepo, GoStar } from 'react-icons/go';
@@ -21,7 +21,7 @@ const PAGES = [
     path: '/sketches',
     redirect: { from: '/generative', to: '/sketches' },
     icon: () => <RiPaintBrushFill />,
-    Page: () => <Sketches />
+    Page: () => <Creative />
   },
   {
     name: 'Repositories',
