@@ -1,6 +1,7 @@
 ---
 title: "WAGMI vs Ethers.js: Choosing the Right Ethereum Development Library"
 description: "Compare WAGMI and Ethers.js for Ethereum development. Learn the pros and cons of each library, recent changes in WAGMI v2, and how to choose the best tool for your web3 project."
+order: 12
 ---
 
 When choosing how to integrate Ethereum and other EVM-compatible chains into your web application, two libraries frequently stand out: **WAGMI** and **Ethers.js**. Both have earned strong reputations in the web3 ecosystem, but they fill different niches and suit different developer needs. Understanding their strengths, weaknesses, and how recent changes affect your workflow can help you pick the right library—or combination of libraries—for your project.

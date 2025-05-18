@@ -1,6 +1,5 @@
-const fs = require('fs').promises;
+const fs = require('fs');
 const path = require('path');
-const fsSync = require('fs');
 
 // Configuration constants
 const CONFIG = {
@@ -21,32 +20,44 @@ function extractFrontmatter(content) {
       const parts = line.split(':');
       if (parts.length >= 2) {
         const key = parts[0].trim();
-        const value = parts.slice(1).join(':').trim().replace(/^"(.*)"$/, '$1');
-        frontmatter[key] = value;
+        let value = parts.slice(1).join(':').trim().replace(/^"(.*)"$/, '$1');
+        
+        if (key === 'order') {
+          const numValue = parseInt(value);
+          frontmatter[key] = isNaN(numValue) ? 0 : numValue; 
+        } else {
+          frontmatter[key] = value;
+        }
       }
       return frontmatter;
     }, {});
 }
 
 // Reads all markdown files from the articles directory
-async function getArticleFiles() {
+function getArticleFiles() {
   try {
-    const files = await fs.readdir(CONFIG.ARTICLES_PATH);
-    return files.filter(file => file.endsWith(CONFIG.FILE_EXTENSION));
+    return fs.readdirSync(CONFIG.ARTICLES_PATH)
+      .filter(file => file.endsWith(CONFIG.FILE_EXTENSION));
   } catch (error) {
     throw new Error(`Failed to read articles directory: ${error.message}`);
   }
 }
 
 // Extracts article data from a markdown file
-async function processArticleFile(filename) {
+function processArticleFile(filename) {
   try {
     const filePath = path.join(CONFIG.ARTICLES_PATH, filename);
-    const content = await fs.readFile(filePath, 'utf8');
+    const content = fs.readFileSync(filePath, 'utf8');
     const frontmatter = extractFrontmatter(content);
     
-    // Extract number from the beginning of the filename
-    const filenameNumber = parseInt(filename.match(/^(\d+)/)?.[1]) || 0;
+    let articleSortOrder;
+    if (typeof frontmatter.order === 'number' && !isNaN(frontmatter.order)) {
+      articleSortOrder = frontmatter.order;
+    } else {
+      // Articles without a valid 'order' in frontmatter will be sorted last,
+      // and then alphabetically by slug.
+      articleSortOrder = Number.MAX_SAFE_INTEGER;
+    }
     
     // Remove NUMBER- prefix from slug if it exists and file extension
     const slug = filename.replace(new RegExp(`^\\d+-|${CONFIG.FILE_EXTENSION}$`, 'g'), '');
@@ -54,7 +65,8 @@ async function processArticleFile(filename) {
     return {
       slug,
       title: formatTitle(slug),
-      sortOrder: filenameNumber
+      sortOrder: articleSortOrder,
+      filename,
     };
   } catch (error) {
     console.error(`Error processing file ${filename}: ${error.message}`);
@@ -62,7 +74,8 @@ async function processArticleFile(filename) {
     return {
       slug: filename.replace(CONFIG.FILE_EXTENSION, ''),
       title: filename.replace(CONFIG.FILE_EXTENSION, ''),
-      sortOrder: 0
+      sortOrder: Number.MAX_SAFE_INTEGER, // Fallback sortOrder
+      filename,
     };
   }
 }
@@ -77,12 +90,12 @@ function formatTitle(slug) {
 // Sorts articles by sortOrder and then alphabetically
 function sortArticles(articles) {
   return [...articles].sort((a, b) => {
-    // First sort by sortOrder
+    // First sort by sortOrder (from frontmatter or MAX_SAFE_INTEGER)
     if (a.sortOrder !== b.sortOrder) {
-      return b.sortOrder - a.sortOrder;
+      return a.sortOrder - b.sortOrder;
     }
     // Then sort alphabetically by slug
-    return b.slug.localeCompare(a.slug);
+    return a.slug.localeCompare(b.slug);
   });
 }
 
@@ -92,11 +105,11 @@ function prepareForOutput(articles) {
 }
 
 // Writes the articles list to a JSON file
-async function writeArticlesJson(articles) {
+function writeArticlesJson(articles) {
   try {
     const outputPath = path.join(CONFIG.ARTICLES_PATH, CONFIG.OUTPUT_FILENAME);
     const jsonContent = JSON.stringify(articles, null, 2);
-    await fs.writeFile(outputPath, jsonContent);
+    fs.writeFileSync(outputPath, jsonContent);
     console.log(`Generated articles list with ${articles.length} articles at ${outputPath}`);
   } catch (error) {
     throw new Error(`Failed to write articles JSON: ${error.message}`);
@@ -104,17 +117,13 @@ async function writeArticlesJson(articles) {
 }
 
 // Main function to generate the articles list
-async function generateArticlesList() {
+function generateArticlesList() {
   try {
-    const files = await getArticleFiles();
-    
-    // Process all files concurrently
-    const articlesPromises = files.map(processArticleFile);
-    const articles = await Promise.all(articlesPromises);
-    
+    const files = getArticleFiles();
+    const articles = files.map(processArticleFile);
     const sortedArticles = sortArticles(articles);
     const cleanedArticles = prepareForOutput(sortedArticles);
-    await writeArticlesJson(cleanedArticles);
+    writeArticlesJson(cleanedArticles);
   } catch (error) {
     console.error('Error generating articles list:', error);
     process.exit(1);
@@ -122,6 +131,4 @@ async function generateArticlesList() {
 }
 
 // Run the generator
-(async () => {
-  await generateArticlesList();
-})(); 
+generateArticlesList(); 

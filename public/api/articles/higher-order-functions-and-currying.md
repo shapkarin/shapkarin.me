@@ -1,6 +1,7 @@
 ---
 title: "JavaScript Higher-Order Functions, Currying & Arrow Functions"
 description: "Master JavaScript's powerful functional programming features with this comprehensive guide to higher-order functions, currying techniques, and arrow functions. Learn with practical examples and best practices."
+order: 1
 ---
 
 # JavaScript Power-Ups: Mastering Higher-Order Functions, Currying, and Arrow Functions

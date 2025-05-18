@@ -22,10 +22,10 @@ function ArticlesList() {
       <div className="Page__Inner">
         <h1>Articles [ It's WIP, going to rewrite ]</h1>
         <ul>
-          {articles.map((article) => (
-            <li key={article.slug}>
-              <Link to={`/articles/${article.slug}`}>
-                {article.title}
+          {articles.map(({ slug, title }) => (
+            <li key={slug}>
+              <Link to={`/articles/${slug}`}>
+                {title}
               </Link>
             </li>
           ))}

@@ -1,6 +1,7 @@
 ---
 title: "Software Design Principles: A Practical Guide to Better Code"
 description: "Learn essential software design principles for building maintainable code. Discover practical approaches to software architecture, from small projects to enterprise systems, based on real-world experience."
+order: 8
 ---
 
 ## Table of Contents
