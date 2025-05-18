@@ -9,7 +9,9 @@ const flatten = (text, child) => {
 const HeadingRenderer = props => {
   const children = React.Children.toArray(props.children);
   const text = children.reduce(flatten, '');
-  const slug = text.toLowerCase().replace(/\W/g, '-');
+  const slug = text.toLowerCase().replace(/\W+/g, (match, index, str) => 
+    index + match.length === str.length ? '' : '-'
+  );
   return React.createElement('h' + props.level, { id: slug }, props.children);
 };
 
