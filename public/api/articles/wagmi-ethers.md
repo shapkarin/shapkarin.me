@@ -4,6 +4,13 @@ description: "Compare WAGMI and Ethers.js for Ethereum development. Learn the pr
 order: 12
 ---
 
+## Table of Contents
+- [Ethers.js: A Dependable Workhorse](#ethersjs-a-dependable-workhorse)
+- [WAGMI: Rapid dApp Integration with a Modern Stack](#wagmi-rapid-dapp-integration-with-a-modern-stack)
+- [Insights on WAGMI v2 Breaking Changes](#insights-on-wagmi-v2-breaking-changes)
+- [Choosing Between WAGMI and Ethers.js](#choosing-between-wagmi-and-ethersjs)
+- [Conclusion](#conclusion)
+
 When choosing how to integrate Ethereum and other EVM-compatible chains into your web application, two libraries frequently stand out: **WAGMI** and **Ethers.js**. Both have earned strong reputations in the web3 ecosystem, but they fill different niches and suit different developer needs. Understanding their strengths, weaknesses, and how recent changes affect your workflow can help you pick the right library—or combination of libraries—for your project.
 
 ### Ethers.js: A Dependable Workhorse

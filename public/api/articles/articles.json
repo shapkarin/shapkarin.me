@@ -60,11 +60,6 @@
     "filename": "wagmi-ethers.md"
   },
   {
-    "slug": "web3-intro",
-    "title": "Web3 Intro",
-    "filename": "web3-intro.md"
-  },
-  {
     "slug": "async-event-loop-web-workers",
     "title": "Async Event Loop Web Workers",
     "filename": "async-event-loop-web-workers.md"
