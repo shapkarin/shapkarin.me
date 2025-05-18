@@ -26,7 +26,6 @@ function draw() {
     fly.display();
     if(fly.away()){
       flies.splice(i, 1);
-      //file:///Users/yury/Documents/draw_walk/index.html
     }
   }
   if(flies.length === 0){
