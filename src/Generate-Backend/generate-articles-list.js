@@ -1,81 +1,118 @@
 const fs = require('fs');
 const path = require('path');
 
-// Path to articles directory
-const ARTICLES_PATH = path.join(__dirname, '../../public/api/articles');
+// Configuration constants
+const CONFIG = {
+  ARTICLES_PATH: path.join(__dirname, '../../public/api/articles'),
+  OUTPUT_FILENAME: 'articles.json',
+  FILE_EXTENSION: '.md'
+};
 
-// Function to extract frontmatter from markdown content
+// Extracts frontmatter from markdown content
 function extractFrontmatter(content) {
   const frontmatterRegex = /^---\n([\s\S]*?)\n---/;
   const match = content.match(frontmatterRegex);
   
   if (!match) return {};
   
-  const frontmatter = {};
-  const lines = match[1].split('\n');
-  
-  lines.forEach(line => {
-    const parts = line.split(':');
-    if (parts.length >= 2) {
-      const key = parts[0].trim();
-      const value = parts.slice(1).join(':').trim().replace(/^"(.*)"$/, '$1');
-      frontmatter[key] = value;
-    }
-  });
-  
-  return frontmatter;
+  return match[1].split('\n')
+    .reduce((frontmatter, line) => {
+      const parts = line.split(':');
+      if (parts.length >= 2) {
+        const key = parts[0].trim();
+        const value = parts.slice(1).join(':').trim().replace(/^"(.*)"$/, '$1');
+        frontmatter[key] = value;
+      }
+      return frontmatter;
+    }, {});
 }
 
-// Function to generate articles list
+// Reads all markdown files from the articles directory
+function getArticleFiles() {
+  try {
+    return fs.readdirSync(CONFIG.ARTICLES_PATH)
+      .filter(file => file.endsWith(CONFIG.FILE_EXTENSION));
+  } catch (error) {
+    throw new Error(`Failed to read articles directory: ${error.message}`);
+  }
+}
+
+// Extracts article data from a markdown file
+function processArticleFile(filename) {
+  try {
+    const filePath = path.join(CONFIG.ARTICLES_PATH, filename);
+    const content = fs.readFileSync(filePath, 'utf8');
+    const frontmatter = extractFrontmatter(content);
+    
+    // Extract number from the beginning of the filename
+    const filenameNumber = parseInt(filename.match(/^(\d+)/)?.[1], 10) || 0;
+    const slug = filename.replace(CONFIG.FILE_EXTENSION, '');
+    
+    return {
+      slug,
+      title: formatTitle(slug),
+      sortOrder: filenameNumber
+    };
+  } catch (error) {
+    console.error(`Error processing file ${filename}: ${error.message}`);
+    // Return a valid object with default values to prevent breaking the process
+    return {
+      slug: filename.replace(CONFIG.FILE_EXTENSION, ''),
+      title: filename.replace(CONFIG.FILE_EXTENSION, ''),
+      sortOrder: 0
+    };
+  }
+}
+
+// Formats a slug into a title
+function formatTitle(slug) {
+  return slug
+    .replace(/-/g, ' ')
+    .replace(/\b\w/g, match => match.toUpperCase());
+}
+
+// Sorts articles by sortOrder and then alphabetically
+function sortArticles(articles) {
+  return [...articles].sort((a, b) => {
+    // First sort by sortOrder
+    if (a.sortOrder !== b.sortOrder) {
+      return a.sortOrder - b.sortOrder;
+    }
+    // Then sort alphabetically by slug
+    return a.slug.localeCompare(b.slug);
+  });
+}
+
+// Removes internal properties from articles before output
+function prepareForOutput(articles) {
+  return articles.map(({ sortOrder, ...rest }) => rest);
+}
+
+// Writes the articles list to a JSON file
+function writeArticlesJson(articles) {
+  try {
+    const outputPath = path.join(CONFIG.ARTICLES_PATH, CONFIG.OUTPUT_FILENAME);
+    const jsonContent = JSON.stringify(articles, null, 2);
+    fs.writeFileSync(outputPath, jsonContent);
+    console.log(`Generated articles list with ${articles.length} articles at ${outputPath}`);
+  } catch (error) {
+    throw new Error(`Failed to write articles JSON: ${error.message}`);
+  }
+}
+
+// Main function to generate the articles list
 function generateArticlesList() {
   try {
-    // Read directory and filter for .md files
-    const files = fs.readdirSync(ARTICLES_PATH)
-      .filter(file => file.endsWith('.md'))
-      .map(file => {
-        const filePath = path.join(ARTICLES_PATH, file);
-        const content = fs.readFileSync(filePath, 'utf8');
-        const frontmatter = extractFrontmatter(content);
-        
-        return {
-          slug: file.replace('.md', ''),
-          title: file.replace('.md', '')
-                    .replace(/-/g, ' ')
-                    .replace(/\b\w/g, match => match.toUpperCase()),
-          order: frontmatter.order ? parseInt(frontmatter.order, 10) : Number.MAX_SAFE_INTEGER,
-        };
-      });
-
-    // Sort files based on order (or alphabetically if no order)
-    files.sort((a, b) => {
-      if (a.order !== Number.MAX_SAFE_INTEGER && b.order !== Number.MAX_SAFE_INTEGER) {
-        return a.order - b.order;
-      } else if (a.order !== Number.MAX_SAFE_INTEGER) {
-        return -1;
-      } else if (b.order !== Number.MAX_SAFE_INTEGER) {
-        return 1;
-      } else {
-        return a.slug.localeCompare(b.slug);
-      }
-    });
-
-    // Remove the order property before saving to JSON
-    const cleanedFiles = files.map(({ order, ...rest }) => rest);
-
-    // Convert to JSON string with pretty formatting
-    const jsonContent = JSON.stringify(cleanedFiles, null, 2);
-
-    // Write to articles.json in the public folder
-    fs.writeFileSync(
-      path.join(ARTICLES_PATH, 'list.json'), 
-      jsonContent
-    );
-
-    console.log(`Generated articles list with ${files.length} articles`);
+    const files = getArticleFiles();
+    const articles = files.map(processArticleFile);
+    const sortedArticles = sortArticles(articles);
+    const cleanedArticles = prepareForOutput(sortedArticles);
+    writeArticlesJson(cleanedArticles);
   } catch (error) {
     console.error('Error generating articles list:', error);
     process.exit(1);
   }
 }
 
+// Run the generator
 generateArticlesList(); 

@@ -1,7 +1,6 @@
 ---
 title: "Understanding JavaScript Lexical Scope: The Foundation of Modern JavaScript"
 description: "A comprehensive guide to JavaScript lexical scope, including closures, hoisting, and best practices for writing maintainable code."
-order: 1
 ---
 
 # Understanding JavaScript Lexical Scope

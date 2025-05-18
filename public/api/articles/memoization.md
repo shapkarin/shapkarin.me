@@ -1,7 +1,6 @@
 ---
 title: "Mastering React Performance: memo, useMemo, and useCallback Deep Dive"
 description: "Unlock peak performance in your React applications. Learn how to effectively use React.memo, useMemo, and useCallback for optimal rendering and maintainable code."
-order: 5
 ---
 
 ## Table of Contents

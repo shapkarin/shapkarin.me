@@ -29,7 +29,7 @@ const backend = {
     intro:  '/api/sketches/intro.json',
     collection: '/api/sketches/collection.json',
   },
-  articles: '/api/articles/list.json',
+  articles: '/api/articles/articles.json',
   article: (name) => `${rawPrefix}/api/articles/${name}.md`,
 }
 

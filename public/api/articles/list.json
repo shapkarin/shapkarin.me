@@ -16,8 +16,12 @@
     "title": "Curiosity Js"
   },
   {
-    "slug": "ai-history",
-    "title": "Ai History"
+    "slug": "function-declaration-vs-expression",
+    "title": "Function Declaration Vs Expression"
+  },
+  {
+    "slug": "memoization",
+    "title": "Memoization"
   },
   {
     "slug": "design",
@@ -30,6 +34,10 @@
   {
     "slug": "global-diff",
     "title": "Global Diff"
+  },
+  {
+    "slug": "higher-order-functions-currying-arrow-functions",
+    "title": "Higher Order Functions Currying Arrow Functions"
   },
   {
     "slug": "looking-for-a-job",
