@@ -17,7 +17,7 @@ order: 4
 ## Introduction: Performance Optimization with memo, useMemo, and useCallback
 React's performance optimization features align perfectly with the principle of "Make It Easy to Change, Not Just Fast." These tools—`React.memo`, `useMemo`, and `useCallback`—help you optimize rendering performance strategically, without sacrificing code clarity and maintainability. Understanding when and how to use them is key to building high-performing and scalable React applications.
 
-##### React.memo for Component Memoization
+#### React.memo for Component Memoization
 
 React.memo prevents unnecessary re-renders by memoizing components, similar to how Pure Components work in class-based React:
 
@@ -68,7 +68,7 @@ const CustomComparedProductItem = React.memo(
 );
 ```
 
-##### useMemo for Expensive Calculations
+#### useMemo for Expensive Calculations
 
 Use `useMemo` to cache the result of expensive calculations between renders:
 
@@ -129,7 +129,7 @@ function ProductFilters({ products, onFilterChange }) {
 }
 ```
 
-##### useCallback for Stable Function References
+#### useCallback for Stable Function References
 
 `useCallback` creates stable function references, preventing downstream components from re-rendering unnecessarily:
 
@@ -179,7 +179,7 @@ function ProductList({ products }) {
 }
 ```
 
-##### Using These Hooks Judiciously
+#### Using These Hooks Judiciously
 
 While these hooks are powerful, they should be used strategically:
 

@@ -6,6 +6,23 @@ order: 9
 
 Below is a comprehensive and detailed article about the **extend-routines** package. This article synthesizes all of the core information from the provided README while adding additional context, clarifications, and guidance for a broad range of Redux workflows.
 
+## Table of Contents
+- [Introducing `extend-routines`: Taking Redux Action Routines to the Next Level](#introducing-extend-routines-taking-redux-action-routines-to-the-next-level)
+- [What Are Routines?](#what-are-routines)
+- [Why `extend-routines`?](#why-extend-routines)
+- [Installation](#installation)
+- [Core APIs and Their Usage](#core-apis-and-their-usage)
+  - [Extending an Existing Routine](#extending-an-existing-routine)
+  - [Custom Payload and Meta Creators](#custom-payload-and-meta-creators)
+  - [Creating Extended Routines from Scratch](#creating-extended-routines-from-scratch)
+  - [Fully Custom Routines Without Default Stages](#fully-custom-routines-without-default-stages)
+  - [Socket Routines](#socket-routines)
+  - [Creating Multiple Routines at Once](#creating-multiple-routines-at-once)
+- [Detailed Examples](#detailed-examples)
+- [Advanced Techniques and Patterns](#advanced-techniques-and-patterns)
+- [When to Use `extend-routines`](#when-to-use-extend-routines)
+- [Conclusion](#conclusion)
+
 ---
 
 # Introducing `extend-routines`: Taking Redux Action Routines to the Next Level

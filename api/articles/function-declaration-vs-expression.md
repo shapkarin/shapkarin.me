@@ -4,6 +4,24 @@ description: "Learn the critical differences between JavaScript function declara
 order: 2
 ---
 
+## Table of Contents
+- [JavaScript Function Declarations vs Expressions: Key Differences Explained](#javascript-function-declarations-vs-expressions-key-differences-explained)
+  - [Key Differences: Why They Matter](#key-differences-why-they-matter)
+    - [1. Hoisting Behavior](#1-hoisting-behavior)
+    - [2. Use in Conditional Blocks](#2-use-in-conditional-blocks)
+    - [3. Immediately Invoked Function Expressions (IIFE)](#3-immediately-invoked-function-expressions-iife)
+    - [4. Function as Callback Arguments](#4-function-as-callback-arguments)
+  - [Function Declaration: The Classic Approach](#function-declaration-the-classic-approach)
+  - [Function Expression: The Flexible Alternative](#function-expression-the-flexible-alternative)
+    - [Named Function Expression](#named-function-expression)
+    - [Anonymous Function Expression](#anonymous-function-expression)
+    - [Arrow Function Expression (ES6+)](#arrow-function-expression-es6)
+  - [When to Use Each Approach](#when-to-use-each-approach)
+    - [Use Function Declarations When:](#use-function-declarations-when)
+    - [Use Function Expressions When:](#use-function-expressions-when)
+  - [Best Practices](#best-practices)
+  - [Conclusion](#conclusion)
+
 # JavaScript Function Declarations vs Expressions: Key Differences Explained
 
 When working with JavaScript, you'll frequently create functions using one of two primary approaches: **function declarations** or **function expressions**. While they might seem similar at first glance, understanding their differences is crucial for writing predictable, maintainable code.
