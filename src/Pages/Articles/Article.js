@@ -24,10 +24,10 @@ function Article() {
   return (
     <div className="Article">
         <SEO 
-          title={`${frontMatter.title || articleName} | Iurii Shapkarin`}
+          title={`${frontMatter.title || articleName} | Yury Shapkarin`}
           description={frontMatter.description || `Article about ${articleName}`}
           type="article"
-          name="Iurii Shapkarin"
+          name="Yury Shapkarin"
         />
         <Markdown
           components={{
