@@ -1,5 +1,5 @@
 ---
-title: "Unlocking Node.js Performance: Harnessing Multi-Core Power with the `cluster` Module"
+title: "Unlocking Node.js Performance: Harnessing Multi-Core Power with the cluster Module"
 description: "Learn how to effectively utilize all CPU cores in your Node.js applications using the built-in cluster module, improve performance and resilience, and understand when this approach is preferable to other scaling solutions."
 order: 2
 ---
