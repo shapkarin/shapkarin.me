@@ -1,6 +1,7 @@
 ---
 title: "Hire a Senior Front-End Engineer: Iurii Shapkarin"
 description: "Discover Iurii Shapkarin, a Senior Front-End Engineer with 10+ years of experience in software development, specializing in crypto, Web3, and decentralized applications."
+order: 15
 ---
 
 # **Hire a Senior Front-End Engineer: Introducing Iurii Shapkarin**

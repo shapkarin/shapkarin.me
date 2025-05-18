@@ -1,6 +1,7 @@
 ---
 title: "Web3 Authentication: Building with Wallet-Based User Identity"
 description: "Learn how to implement web3 authentication using wallet connections and cryptographic signatures. Discover modern approaches to user identity with Ethers.js and wagmi in blockchain applications."
+order: 13
 ---
 
 When you step into the world of web3 development, it’s not just about ditching passwords and username fields—it’s about embracing an entirely different model of user identity and interaction. Here, your users connect directly to the blockchain through their wallets, proving ownership of their accounts with cryptographic signatures rather than typed credentials. This shift changes how you think about everything from login flows to access control, and it can feel both liberating and challenging.
