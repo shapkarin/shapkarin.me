@@ -1,11 +1,11 @@
 ---
-title: "Hire a Senior Front-End Engineer: Yury Shapkarin"
-description: "Discover Yury Shapkarin, a Senior Front-End Engineer with 10+ years of experience in software development, specializing in crypto, Web3, and decentralized applications."
+title: "Hire a Senior Front-End Engineer: Iurii Shapkarin"
+description: "Discover Iurii Shapkarin, a Senior Front-End Engineer with 10+ years of experience in software development, specializing in crypto, Web3, and decentralized applications."
 ---
 
-# **Hire a Senior Front-End Engineer: Introducing Yury Shapkarin**
+# **Hire a Senior Front-End Engineer: Introducing Iurii Shapkarin**
 
-Welcome to my personal homepage! My name is **Yury Shapkarin**, and I’m a **Senior Front-End Engineer** with over **10 years of experience** in software development. My passion lies in bringing **user-centric** solutions to life—whether it’s creating **smooth and intuitive UIs**, integrating the latest **Web3 technologies**, or ensuring seamless **crypto and blockchain** integrations. 
+Welcome to my personal homepage! My name is **Iurii Shapkarin**, and I’m a **Senior Front-End Engineer** with over **10 years of experience** in software development. My passion lies in bringing **user-centric** solutions to life—whether it’s creating **smooth and intuitive UIs**, integrating the latest **Web3 technologies**, or ensuring seamless **crypto and blockchain** integrations. 
 
 ## **A Decade of Front-End Excellence**
 
