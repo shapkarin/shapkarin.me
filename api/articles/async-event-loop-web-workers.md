@@ -353,6 +353,35 @@ You'll observe that "Main: Script end" logs before the worker finishes its calcu
 
 ## Additional Examples of Event Loop Behavior {#additional-examples-of-event-loop-behavior}
 
+Here's a simple example that demonstrates the order of execution between synchronous code, microtasks (Promises), and macrotasks (setTimeout):
+
+```javascript
+console.log('first');
+
+setTimeout(() => {
+  console.log('second');
+}, 0);
+
+Promise.resolve().then(() => {
+  console.log('third');
+});
+
+console.log('four');
+
+// Output:
+// first
+// four
+// third
+// second
+```
+
+This example clearly shows the execution order:
+1. First, all synchronous code runs ('first' and 'four')
+2. Then, microtasks (Promise) are processed ('third')
+3. Finally, macrotasks (setTimeout) are executed ('second')
+
+Here's a more complex example:
+
 console.log('Start');
 
 setTimeout(() => {
