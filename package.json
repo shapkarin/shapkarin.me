@@ -25,14 +25,15 @@
     "node": ">=14.0.0 <=16.20.2"
   },
   "scripts": {
-    "start": "npm run build:api && npm run generate-articles && craco start",
+    "start": "npm run build:api && npm run generate:articles && craco start",
     "build:api": "node src/Generate-Backend/database-to-json.js",
     "build:spa": "craco build",
     "build:html-gallery": "node src/Generate-Backend/deploy-html-gallery.js",
-    "build": "npm run build:api && npm run generate-articles && NODE_ENV=production BUILD_PATH='./dist' npm run build:spa && npm run build:html-gallery",
-    "build:local": "npm run build:api && npm run generate-articles && BUILD_PATH='./dist' npm run build:spa && react-snap",
+    "build": "npm run build:api && npm run generate:articles && NODE_ENV=production BUILD_PATH='./dist' npm run build:spa && npm run build:html-gallery && npm run generate:sitemap",
+    "build:local": "npm run build:api && npm run generate:articles && BUILD_PATH='./dist' npm run build:spa && react-snap",
     "test": "craco test",
-    "generate-articles": "node src/Generate-Backend/generate-articles-list.js"
+    "generate:articles": "node src/Generate-Backend/generate-articles-list.js",
+    "generate:sitemap": "sitemap-generator https://shapkarin.me -f public/sitemap.xml"
   },
   "eslintConfig": {
     "extends": [
@@ -70,7 +71,8 @@
     "prismjs": "^1.29.0",
     "react-markdown": "^8.0.7",
     "react-snap": "^1.23.0",
-    "react-syntax-highlighter": "^15.6.1"
+    "react-syntax-highlighter": "^15.6.1",
+    "sitemap-generator-cli": "^7.5.0"
   },
   "reactSnap": {
     "source": "dist",
