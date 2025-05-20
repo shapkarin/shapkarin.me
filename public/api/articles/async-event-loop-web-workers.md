@@ -1,5 +1,5 @@
 ---
-title: "Asynchronous JavaScript. Event Loop, Threads, and Web Workers"
+title: "Event Loop, Threads, and Web Workers. Asynchronous JavaScript."
 description: "Dive deep into asynchronous JavaScript, understand the event loop, how JavaScript handles concurrency, and leverage Web Workers for true parallelism in your web applications."
 order: 14
 ---
