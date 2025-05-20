@@ -18,7 +18,7 @@ order: 14
   - [How It Works](#how-it-works)
   - [Event Loop Analogy: The Restaurant](#event-loop-analogy-the-restaurant)
   - [Event Loop Analogy: Baking Cookies](#event-loop-analogy-baking-cookies)
-- [Order of Execution](#order-of-execution)
+- [Classic Example of Execution Order](#classic-example-of-execution-order)
 - [So, No Real Threads in Main JavaScript?](#so-no-real-threads-in-main-javascript)
 - [Web Workers: True Parallelism in the Browser](#web-workers-true-parallelism-in-the-browser)
   - [Key Characteristics of Web Workers](#key-characteristics-of-web-workers)
@@ -177,28 +177,7 @@ Here's a simplified view of the process:
 
 This mechanism ensures that the main thread is not blocked by long-running asynchronous operations, allowing the UI to remain responsive.
 
-## Event Loop Analogy: The Restaurant
-
-Imagine you're at a restaurant:
-
-1. **The Chef (Call Stack):** Prepares one order at a time. If a dish takes long to cook, the chef moves it to a separate station (like an oven with a timer - a Web API) and starts on the next order.
-2. **The Waiter (Putting tasks in Queues):** The waiter keeps an eye on all pending tasks. When a dish in the oven is ready (Web API finishes), the waiter doesn't interrupt the chef. Instead, they place a note for the chef (the callback function) in an "orders ready" tray (Task Queue or Microtask Queue).
-3. **The Manager (Event Loop):** The manager ensures the chef only works on one task from the Call Stack at a time. When the chef is free (Call Stack is empty), the manager first checks for any urgent notes (Microtask Queue). If there are any, the chef handles all of them. Then, the manager gives the chef the next "order ready" note from the regular tray (Task Queue). This keeps the workflow smooth and ensures urgent tasks are prioritized.
-
-## Event Loop Analogy: Baking Cookies
-
-Another way to visualize this is by imagining you're baking cookies, and you can only do one thing at a time:
-
-1.  **Your To-Do List (Call Stack):** You follow your recipe step-by-step (e.g., mix dough, pour milk). Each step is a task on your to-do list.
-2.  **Simple, Quick Tasks (Synchronous Code):** Mixing dough or pouring milk are quick and done immediately.
-3.  **Waiting Tasks (Asynchronous Code & Web APIs):** When you put cookies in the oven, you set a timer (like `setTimeout`). You don't just stand there. The oven (a Web API) handles the baking in the background.
-4.  **The "Timer Dings!" (Callback in Queue):** When the timer dings, it's like the Web API has finished. The task "take cookies out" (the callback function) is now ready. It gets added to a list of "things to do when I'm free" (Task Queue).
-5.  **Your Kitchen Helper (Event Loop):** This helper constantly checks if you're done with your current immediate task (Call Stack empty).
-    *   First, they check for any "super urgent small notes" you left yourself, like "quickly wipe counter" (Microtask Queue). You do all of these first.
-    *   Then, if you're free, the helper hands you the next "thing to do when I'm free" from your list, like "take cookies out" (Task Queue).
-This way, you're always busy doing something productive and not just waiting for the cookies to bake.
-
-## Order of Execution
+## Classic Example of Execution Order
 
 The event loop follows a strict order:
 1. Execute all synchronous tasks on the call stack.
@@ -229,6 +208,28 @@ console.log('2. Script end');
 // 5. setTimeout callback (Task Queue)
 ```
 This example clearly demonstrates the order of execution: synchronous code first, then all microtasks, then tasks from the callback queue.
+
+
+## Event Loop Analogy: The Restaurant
+
+Imagine you're at a restaurant:
+
+1. **The Chef (Call Stack):** Prepares one order at a time. If a dish takes long to cook, the chef moves it to a separate station (like an oven with a timer - a Web API) and starts on the next order.
+2. **The Waiter (Putting tasks in Queues):** The waiter keeps an eye on all pending tasks. When a dish in the oven is ready (Web API finishes), the waiter doesn't interrupt the chef. Instead, they place a note for the chef (the callback function) in an "orders ready" tray (Task Queue or Microtask Queue).
+3. **The Manager (Event Loop):** The manager ensures the chef only works on one task from the Call Stack at a time. When the chef is free (Call Stack is empty), the manager first checks for any urgent notes (Microtask Queue). If there are any, the chef handles all of them. Then, the manager gives the chef the next "order ready" note from the regular tray (Task Queue). This keeps the workflow smooth and ensures urgent tasks are prioritized.
+
+## Event Loop Analogy: Baking Cookies
+
+Another way to visualize this is by imagining you're baking cookies, and you can only do one thing at a time:
+
+1.  **Your To-Do List (Call Stack):** You follow your recipe step-by-step (e.g., mix dough, pour milk). Each step is a task on your to-do list.
+2.  **Simple, Quick Tasks (Synchronous Code):** Mixing dough or pouring milk are quick and done immediately.
+3.  **Waiting Tasks (Asynchronous Code & Web APIs):** When you put cookies in the oven, you set a timer (like `setTimeout`). You don't just stand there. The oven (a Web API) handles the baking in the background.
+4.  **The "Timer Dings!" (Callback in Queue):** When the timer dings, it's like the Web API has finished. The task "take cookies out" (the callback function) is now ready. It gets added to a list of "things to do when I'm free" (Task Queue).
+5.  **Your Kitchen Helper (Event Loop):** This helper constantly checks if you're done with your current immediate task (Call Stack empty).
+    *   First, they check for any "super urgent small notes" you left yourself, like "quickly wipe counter" (Microtask Queue). You do all of these first.
+    *   Then, if you're free, the helper hands you the next "thing to do when I'm free" from your list, like "take cookies out" (Task Queue).
+This way, you're always busy doing something productive and not just waiting for the cookies to bake.
 
 ## So, No Real Threads in Main JavaScript?
 
