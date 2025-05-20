@@ -51,100 +51,100 @@ Once these background tasks are complete, they queue a callback function to be e
 #### Callbacks
 The traditional way to handle asynchronous operations. A function (the callback) is passed as an argument to another function and is executed once the asynchronous operation completes.
 
-    ```javascript
-    console.log("Start");
+```js
+console.log("Start");
 
-    function fetchData(callback) {
-      setTimeout(() => {
-        console.log("Data fetched!");
-        callback("Some data");
-      }, 2000); // Simulates a 2-second network request
-    }
+function fetchData(callback) {
+  setTimeout(() => {
+    console.log("Data fetched!");
+    callback("Some data");
+  }, 2000); // Simulates a 2-second network request
+}
 
-    fetchData((data) => {
-      console.log("Callback executed with:", data);
-    });
+fetchData((data) => {
+  console.log("Callback executed with:", data);
+});
 
-    console.log("End");
-    // Output:
-    // Start
-    // End
-    // Data fetched!
-    // Callback executed with: Some data
-    ```
-    While functional, deeply nested callbacks ("callback hell") can make code hard to read and maintain.
+console.log("End");
+// Output:
+// Start
+// End
+// Data fetched!
+// Callback executed with: Some data
+```
+While functional, deeply nested callbacks ("callback hell") can make code hard to read and maintain.
 
 #### Promises
 Introduced in ES6, Promises provide a cleaner way to manage asynchronous operations. A Promise is an object representing the eventual completion (or failure) of an asynchronous operation and its resulting value.
 
-    ```javascript
-    console.log("Start");
+```js
+console.log("Start");
 
-    function fetchDataPromise() {
-      return new Promise((resolve, reject) => {
-        setTimeout(() => {
-          const success = true; // Simulate success/failure
-          if (success) {
-            console.log("Data fetched (Promise)!");
-            resolve("Some data from Promise");
-          } else {
-            reject("Failed to fetch data");
-          }
-        }, 2000);
-      });
-    }
+function fetchDataPromise() {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      const success = true; // Simulate success/failure
+      if (success) {
+        console.log("Data fetched (Promise)!");
+        resolve("Some data from Promise");
+      } else {
+        reject("Failed to fetch data");
+      }
+    }, 2000);
+  });
+}
 
-    fetchDataPromise()
-      .then((data) => {
-        console.log("Promise resolved with:", data);
-      })
-      .catch((error) => {
-        console.error("Promise rejected with:", error);
-      });
+fetchDataPromise()
+  .then((data) => {
+    console.log("Promise resolved with:", data);
+  })
+  .catch((error) => {
+    console.error("Promise rejected with:", error);
+  });
 
-    console.log("End");
-    // Output (if success):
-    // Start
-    // End
-    // Data fetched (Promise)!
-    // Promise resolved with: Some data from Promise
-    ```
+console.log("End");
+// Output (if success):
+// Start
+// End
+// Data fetched (Promise)!
+// Promise resolved with: Some data from Promise
+```
 
 #### Async/Await
 Built on top of Promises, `async/await` (introduced in ES2017) offers an even more synchronous-looking syntax for writing asynchronous code, making it more readable.
 
-    ```javascript
-    console.log("Start");
+```js
+console.log("Start");
 
-    function fetchDataAsync() {
-      return new Promise((resolve) => {
-        setTimeout(() => {
-          console.log("Data fetched (Async/Await)!");
-          resolve("Some data from Async/Await");
-        }, 2000);
-      });
-    }
+function fetchDataAsync() {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      console.log("Data fetched (Async/Await)!");
+      resolve("Some data from Async/Await");
+    }, 2000);
+  });
+}
 
-    async function processData() {
-      try {
-        console.log("Calling fetchDataAsync...");
-        const data = await fetchDataAsync(); // Pauses execution here until promise resolves
-        console.log("Async/Await received:", data);
-      } catch (error) {
-        console.error("Async/Await error:", error);
-      }
-    }
+async function processData() {
+  try {
+    console.log("Calling fetchDataAsync...");
+    const data = await fetchDataAsync(); // Pauses execution here until promise resolves
+    console.log("Async/Await received:", data);
+  } catch (error) {
+    console.error("Async/Await error:", error);
+  }
+}
 
-    processData();
-    console.log("End");
-    // Output:
-    // Start
-    // Calling fetchDataAsync...
-    // End
-    // Data fetched (Async/Await)!
-    // Async/Await received: Some data from Async/Await
-    ```
-    Notice how "End" is logged before "Data fetched..." because `processData` is asynchronous. `await` only pauses execution *within* the `async` function, not the entire JavaScript engine.
+processData();
+console.log("End");
+// Output:
+// Start
+// Calling fetchDataAsync...
+// End
+// Data fetched (Async/Await)!
+// Async/Await received: Some data from Async/Await
+```
+Notice how "End" is logged before "Data fetched..." because `processData` is asynchronous. `await` only pauses execution *within* the `async` function, not the entire JavaScript engine.
 
 ## The Event Loop: Orchestrating Asynchronous Operations
 
@@ -185,7 +185,7 @@ The event loop follows a strict order:
 3. Process the first task in the macrotask queue.
 4. Repeat.
 
-```javascript
+```js
 console.log('1. Script start');
 
 setTimeout(function() {
@@ -253,7 +253,7 @@ Web Workers provide a way to run JavaScript in background threads, separate from
 
 **1. `main.js` (Main Thread Script):**
 
-```javascript
+```js
 // main.js
 if (window.Worker) {
   console.log("Main: Creating worker...");
@@ -288,7 +288,7 @@ console.log("Main: Script end");
 
 **2. `worker.js` (Worker Script):**
 
-```javascript
+```js
 // worker.js
 console.log("Worker: Script started");
 
@@ -354,6 +354,7 @@ You'll observe that "Main: Script end" logs before the worker finishes its calcu
 
 ## Additional Examples of Event Loop Behavior
 
+```js
 console.log('Start');
 
 setTimeout(() => {
@@ -386,6 +387,7 @@ console.log('End');
 // Promise 1
 // Promise 2
 // Timeout 2
+```
 
 ## Agent Clusters and Memory Sharing
 
@@ -420,6 +422,7 @@ Imagine you're at a restaurant:
 
 ## Additional Examples
 
+```js
 console.log('Start');
 
 setTimeout(() => {
@@ -452,6 +455,7 @@ console.log('End');
 // Promise 1
 // Promise 2
 // Timeout 2
+```
 
 ## Agent Clusters and Memory Sharing
 
