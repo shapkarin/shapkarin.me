@@ -16,6 +16,7 @@ order: 14
 - [The Event Loop: Orchestrating Asynchronous Operations](#the-event-loop-orchestrating-asynchronous-operations)
   - [Components of the Event Loop](#components-of-the-event-loop)
   - [How It Works](#how-it-works)
+  - [Common Example of Event Loop Behavior](#common-example-of-event-loop-behavior)
   - [Event Loop Analogy: The Restaurant](#event-loop-analogy-the-restaurant)
   - [Event Loop Analogy: Baking Cookies](#event-loop-analogy-baking-cookies)
 - [Order of Execution](#order-of-execution)
@@ -25,7 +26,6 @@ order: 14
   - [Creating and Using a Web Worker](#creating-and-using-a-web-worker)
   - [When to Use Web Workers](#when-to-use-web-workers)
   - [Limitations and Considerations](#limitations-and-considerations)
-- [Additional Examples of Event Loop Behavior](#additional-examples-of-event-loop-behavior)
 - [Agent Clusters and Memory Sharing](#agent-clusters-and-memory-sharing)
 - [Job Queues in Detail](#job-queues-in-detail)
 - [Conclusion](#conclusion)
@@ -150,7 +150,7 @@ Built on top of Promises, `async/await` (introduced in ES2017) offers an even mo
 
 The Event Loop is the heart of JavaScript's concurrency model. It's a mechanism that allows JavaScript to perform non-blocking operations, despite being single-threaded, by offloading operations to the browser's APIs and processing results in a specific order.
 
-### Components of the Event Loop {#components-of-the-event-loop}
+### Components of the Event Loop
 
 Understanding the event loop requires knowing its key components:
 
@@ -164,7 +164,7 @@ Understanding the event loop requires knowing its key components:
     *   After the Microtask Queue is empty, the Event Loop checks the **Task Queue**. If there's a task, the oldest one is moved to the Call Stack and executed.
     *   Repeat this cycle.
 
-### How It Works {#how-it-works}
+### How It Works
 
 Here's a simplified view of the process:
 
@@ -177,7 +177,72 @@ Here's a simplified view of the process:
 
 This mechanism ensures that the main thread is not blocked by long-running asynchronous operations, allowing the UI to remain responsive.
 
-## Event Loop Analogy: The Restaurant {#event-loop-analogy-the-restaurant}
+## Event Loop Behavior
+
+Here's a simple example that demonstrates the order of execution between synchronous code, microtasks (Promises), and macrotasks (setTimeout):
+
+```javascript
+console.log('first');
+
+setTimeout(() => {
+  console.log('second');
+}, 0);
+
+Promise.resolve().then(() => {
+  console.log('third');
+});
+
+console.log('four');
+
+// Output:
+// first
+// four
+// third
+// second
+```
+
+This example clearly shows the execution order:
+1. First, all synchronous code runs ('first' and 'four')
+2. Then, microtasks (Promise) are processed ('third')
+3. Finally, macrotasks (setTimeout) are executed ('second')
+
+Here's a more complex example:
+
+console.log('Start');
+
+setTimeout(() => {
+  console.log('Timeout 1');
+  Promise.resolve().then(() => {
+    console.log('Promise 1');
+  }).then(() => {
+    console.log('Promise 2');
+  });
+}, 0);
+
+Promise.resolve().then(() => {
+  console.log('Promise 3');
+  setTimeout(() => {
+    console.log('Timeout 2');
+  }, 0);
+  return Promise.resolve();
+}).then(() => {
+  console.log('Promise 4');
+});
+
+console.log('End');
+
+// Output:
+// Start
+// End
+// Promise 3
+// Promise 4
+// Timeout 1
+// Promise 1
+// Promise 2
+// Timeout 2
+
+
+## Event Loop Analogy: The Restaurant
 
 Imagine you're at a restaurant:
 
@@ -185,7 +250,7 @@ Imagine you're at a restaurant:
 2. **The Waiter (Putting tasks in Queues):** The waiter keeps an eye on all pending tasks. When a dish in the oven is ready (Web API finishes), the waiter doesn't interrupt the chef. Instead, they place a note for the chef (the callback function) in an "orders ready" tray (Task Queue or Microtask Queue).
 3. **The Manager (Event Loop):** The manager ensures the chef only works on one task from the Call Stack at a time. When the chef is free (Call Stack is empty), the manager first checks for any urgent notes (Microtask Queue). If there are any, the chef handles all of them. Then, the manager gives the chef the next "order ready" note from the regular tray (Task Queue). This keeps the workflow smooth and ensures urgent tasks are prioritized.
 
-## Event Loop Analogy: Baking Cookies {#event-loop-analogy-baking-cookies}
+## Event Loop Analogy: Baking Cookies
 
 Another way to visualize this is by imagining you're baking cookies, and you can only do one thing at a time:
 
@@ -198,7 +263,7 @@ Another way to visualize this is by imagining you're baking cookies, and you can
     *   Then, if you're free, the helper hands you the next "thing to do when I'm free" from your list, like "take cookies out" (Task Queue).
 This way, you're always busy doing something productive and not just waiting for the cookies to bake.
 
-## Order of Execution {#order-of-execution}
+## Order of Execution
 
 The event loop follows a strict order:
 1. Execute all synchronous tasks on the call stack.
@@ -230,17 +295,17 @@ console.log('2. Script end');
 ```
 This example clearly demonstrates the order of execution: synchronous code first, then all microtasks, then tasks from the callback queue.
 
-## So, No Real Threads in Main JavaScript? {#so-no-real-threads-in-main-javascript}
+## So, No Real Threads in Main JavaScript?
 
 For the main script and UI interactions, JavaScript operates on a single thread. The "concurrency" achieved through `async/await`, Promises, and callbacks is cooperative multitasking managed by the Event Loop, not true parallelism. Operations handled by Web APIs might run on separate threads provided by the browser, but your JavaScript code interacting with their results still runs on the main thread via the event loop.
 
 This is where **Web Workers** come in.
 
-## Web Workers: True Parallelism in the Browser {#web-workers-true-parallelism-in-the-browser}
+## Web Workers: True Parallelism in the Browser
 
 Web Workers provide a way to run JavaScript in background threads, separate from the main execution thread that handles the UI. This allows you to perform computationally intensive tasks without freezing the user interface.
 
-### Key Characteristics of Web Workers {#key-characteristics-of-web-workers}
+### Key Characteristics of Web Workers
 
 *   **Separate Threads:** Workers run in their own global context, distinct from the `window` object of the main page.
 *   **No DOM Access:** Workers cannot directly manipulate the DOM. This is a crucial safety measure to prevent race conditions and complex UI state management issues.
@@ -248,7 +313,7 @@ Web Workers provide a way to run JavaScript in background threads, separate from
 *   **Independent Execution:** A worker can perform tasks like complex calculations, data processing, or I/O operations without affecting the responsiveness of the main page.
 *   **Limitations:** Workers have access to a subset of JavaScript features. For example, they can use `XMLHttpRequest` for network requests, `setTimeout`/`setInterval`, and other non-UI related APIs. They don't have access to `alert`, `confirm`, or direct DOM manipulation.
 
-### Creating and Using a Web Worker {#creating-and-using-a-web-worker}
+### Creating and Using a Web Worker
 
 **1. `main.js` (Main Thread Script):**
 
@@ -337,91 +402,28 @@ console.log("Worker: Event listener set up");
 
 You'll observe that "Main: Script end" logs before the worker finishes its calculation and sends back the result, demonstrating non-blocking behavior. The UI (if there were more interactive elements) would remain responsive during the worker's heavy computation.
 
-### When to Use Web Workers {#when-to-use-web-workers}
+### When to Use Web Workers
 
 *   **CPU-Intensive Tasks:** Image processing, video/audio manipulation, complex mathematical calculations, data encryption/decryption.
 *   **Large Data Processing:** Sorting, filtering, or analyzing large datasets without freezing the UI.
 *   **Background Syncing:** Keeping local data synchronized with a server.
 *   **Prefetching Data:** Loading data in the background that the user might need soon.
 
-### Limitations and Considerations {#limitations-and-considerations}
+### Limitations and Considerations
 
 *   **Overhead:** Creating workers has some overhead. They are not ideal for very small, quick tasks.
 *   **Data Transfer:** Data passed between the main thread and workers via `postMessage()` is copied, which can be slow for very large data structures. `Transferable Objects` (like `ArrayBuffer`) can mitigate this by transferring ownership, but require careful handling.
 *   **Complexity:** Managing communication and state between multiple threads can add complexity to your application.
 *   **Debugging:** Debugging workers can sometimes be trickier than debugging single-threaded code, though browser developer tools have improved significantly in this area.
 
-## Additional Examples of Event Loop Behavior {#additional-examples-of-event-loop-behavior}
 
-Here's a simple example that demonstrates the order of execution between synchronous code, microtasks (Promises), and macrotasks (setTimeout):
-
-```javascript
-console.log('first');
-
-setTimeout(() => {
-  console.log('second');
-}, 0);
-
-Promise.resolve().then(() => {
-  console.log('third');
-});
-
-console.log('four');
-
-// Output:
-// first
-// four
-// third
-// second
-```
-
-This example clearly shows the execution order:
-1. First, all synchronous code runs ('first' and 'four')
-2. Then, microtasks (Promise) are processed ('third')
-3. Finally, macrotasks (setTimeout) are executed ('second')
-
-Here's a more complex example:
-
-console.log('Start');
-
-setTimeout(() => {
-  console.log('Timeout 1');
-  Promise.resolve().then(() => {
-    console.log('Promise 1');
-  }).then(() => {
-    console.log('Promise 2');
-  });
-}, 0);
-
-Promise.resolve().then(() => {
-  console.log('Promise 3');
-  setTimeout(() => {
-    console.log('Timeout 2');
-  }, 0);
-  return Promise.resolve();
-}).then(() => {
-  console.log('Promise 4');
-});
-
-console.log('End');
-
-// Output:
-// Start
-// End
-// Promise 3
-// Promise 4
-// Timeout 1
-// Promise 1
-// Promise 2
-// Timeout 2
-
-## Agent Clusters and Memory Sharing {#agent-clusters-and-memory-sharing}
+## Agent Clusters and Memory Sharing
 
 JavaScript's execution model includes the concept of "agent clusters" - groups of agents (like main thread, workers, etc.) that can share memory with each other. This is particularly relevant when working with SharedArrayBuffer and Atomics API for concurrent memory access.
 
 The browser ensures that agent clusters maintain consistency and prevent issues like deadlocks by enforcing rules about agent activation and termination.
 
-## Job Queues in Detail {#job-queues-in-detail}
+## Job Queues in Detail
 
 While we've discussed the Task (Macrotask) and Microtask queues, it's worth noting that the JavaScript execution model, as defined by specifications like ECMAScript and HTML, describes "Job Queues" more broadly.
 - **Script Jobs:** These are for the initial execution of a script.
@@ -430,7 +432,7 @@ While we've discussed the Task (Macrotask) and Microtask queues, it's worth noti
 
 The crucial distinction remains the priority: Microtasks (Promise Reaction Jobs) are always processed to completion after the current synchronous script block finishes and before the next Macrotask is picked from any of the other task queues.
 
-## Conclusion {#conclusion}
+## Conclusion
 
 Understanding asynchronous JavaScript, the Event Loop, and Web Workers is crucial for building high-performance, responsive web applications.
 *   **Asynchronous patterns** (Callbacks, Promises, Async/Await) with the **Event Loop** allow JavaScript to handle multiple operations without blocking the main thread, creating an illusion of concurrency.
