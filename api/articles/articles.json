@@ -1,5 +1,10 @@
 [
   {
+    "slug": "floating-point-precision",
+    "title": "Floating Point Precision",
+    "filename": "floating-point-precision.md"
+  },
+  {
     "slug": "higher-order-functions-and-currying",
     "title": "Higher Order Functions And Currying",
     "filename": "higher-order-functions-and-currying.md"
