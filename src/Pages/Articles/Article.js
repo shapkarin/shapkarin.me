@@ -37,7 +37,7 @@ function Article() {
             h3: HeadingRenderer,
             code(props) {
               const {children, className, node, ...rest} = props;
-              const match = /language-(js|javascript|jsx|ts|typescript|bash|sh)/.exec(className || '');
+              const match = /language-(js|javascript|jsx|ts|typescript|bash|sh|python|py|cpp|rust)/.exec(className || '');
               return match ? (
                 <SyntaxHighlighter
                   {...rest}
