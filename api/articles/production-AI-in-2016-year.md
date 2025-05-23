@@ -1,10 +1,12 @@
 ---
-title: "AI in 2016: From Niche Applications to Mass Adoption"
+title: "AI in 2016: The First Time I Worked on a Project That Using Machine Learning"
 description: "A personal reflection on working with AI in 2016, before the LLM revolution. Exploring how AI has evolved from specialized applications to becoming accessible to everyone through user-friendly interfaces."
 order: 3
 ---
 
-The first time I worked on a project using machine learning (AI) was in 2016. Back then, the technology hadn't seen the mass adoption it has now, thanks to LLMs. It was Bioinformatics project, and a one FinTech.
+The first time I worked on a project that using machine learning (AI) was in 2016. Back then, the technology hadn't seen the mass adoption it has now, thanks to LLMs. It was Bioinformatics project, and a one FinTech.
+
+That time it was on-site and I saw how colleagues discussed perceptron and even how simulated annealing can be applied to the traning. We got together and talked to current bioinformaticians to figure out how to make our apps better, the apps were exclusively for domain experts.
 
 The training data had to be extremely clean. In some implementations, this is still true for most of the model training process (work of data engineers and etc)
 
