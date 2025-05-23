@@ -31,3 +31,6 @@ yarn.lock
 
 # Do not commit the deployed HTML gallery
 public/gallery
+
+# This file is node generated
+public/api/articles/articles.json
