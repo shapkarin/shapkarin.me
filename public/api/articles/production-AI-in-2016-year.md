@@ -4,7 +4,7 @@ description: "A personal reflection on working with AI in 2016, before the LLM r
 order: 2
 ---
 
-The first time I worked on a project that using machine learning (AI) was in 2016. Back then, the technology hadn't seen the mass adoption it has now, thanks to LLMs. It was Bioinformatics project, and a one FinTech.
+The first time I worked on a projects that using machine learning (AI) was in 2016. Back then, the technology hadn't seen the mass adoption it has now, thanks to LLMs. It was Bioinformatics project, and a one FinTech.
 
 That time it was on-site and I saw how colleagues discussed perceptron and even how simulated annealing can be applied to the traning. We got together and talked to current bioinformaticians to figure out how to make our apps better, the apps were exclusively for domain experts.
 
