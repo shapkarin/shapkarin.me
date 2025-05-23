@@ -20,14 +20,14 @@
     "filename": "function-declaration-vs-expression.md"
   },
   {
-    "slug": "javascript-lexical-scope",
-    "title": "Javascript Lexical Scope",
-    "filename": "javascript-lexical-scope.md"
-  },
-  {
     "slug": "production-AI-in-2016-year",
     "title": "Production AI In 2016 Year",
     "filename": "production-AI-in-2016-year.md"
+  },
+  {
+    "slug": "javascript-lexical-scope",
+    "title": "Javascript Lexical Scope",
+    "filename": "javascript-lexical-scope.md"
   },
   {
     "slug": "memoization",
@@ -78,10 +78,5 @@
     "slug": "async-event-loop-web-workers",
     "title": "Async Event Loop Web Workers",
     "filename": "async-event-loop-web-workers.md"
-  },
-  {
-    "slug": "looking-for-a-job",
-    "title": "Looking For A Job",
-    "filename": "looking-for-a-job.md"
   }
 ]

@@ -1,7 +1,7 @@
 ---
 title: "AI in 2016: The First Time I Worked on a Project That Using Machine Learning"
 description: "A personal reflection on working with AI in 2016, before the LLM revolution. Exploring how AI has evolved from specialized applications to becoming accessible to everyone through user-friendly interfaces."
-order: 3
+order: 2
 ---
 
 The first time I worked on a project that using machine learning (AI) was in 2016. Back then, the technology hadn't seen the mass adoption it has now, thanks to LLMs. It was Bioinformatics project, and a one FinTech.
