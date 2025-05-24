@@ -4,7 +4,7 @@ description: "Explore the surprising result of 0.1 + 0.2 in programming and unde
 order: 0
 ---
 
-Computer Floating-Point Precision
+# Computer Floating-Point Precision
 
 ## Table of Contents
 - [Why 0.1 + 0.2 Isn't Exactly 0.3 in Most Programming Languages](#why-01--02-isnt-exactly-03-in-most-programming-languages)
