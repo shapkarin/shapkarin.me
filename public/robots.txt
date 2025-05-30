@@ -1,3 +1,4 @@
 User-agent: *
 Disallow: /api/
-Disallow: /api/articles/
+Disallow: /*index.html
+Sitemap: https://shapkarin.me/sitemap.xml
