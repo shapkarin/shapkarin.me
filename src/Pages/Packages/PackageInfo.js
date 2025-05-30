@@ -38,7 +38,7 @@ export default function PackageInfo({ id }) {
 
   return (
     <>
-      <div className="toggle_info" onClick={() => setIsOpen(!isOpen)}>
+      <div className="toggle_info" onClick={() => setIsOpen((prev) => !prev)}>
         package info {isOpen ? <GoChevronDown /> : <GoChevronRight />}
       </div>
       <Preloader>
