@@ -62,7 +62,7 @@ export default class Scene {
   // TODO..
   draw = () => {
     this.ctx.beginPath();
-    this.ctx.fillStyle = '#0a141f';
+    this.ctx.fillStyle = '#0d1a28';
     this.ctx.fillRect(0, 0, this.width, this.height);
     for (let rowI = 0; rowI < this.array2D.length; rowI++) {
       for (let colI = 0; colI < this.array2D[rowI].length; colI++) {
