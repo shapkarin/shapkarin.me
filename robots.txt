@@ -1,3 +1,15 @@
 User-agent: *
+Allow: /packages/
+Disallow: /packages/*.html
+Allow: /sketches/
+Disallow: /sketches/*.html
+Allow: /gallery/
+Allow: /github/repositories/
+Disallow: /github/repositories/*.html
+Allow: /github/likes/
+Disallow: /github/likes/*.html
 Disallow: /api/
 Disallow: /api/articles/
+Allow: /articles/
+Disallow: /articles/*.html
+Sitemap: https://shapkarin.me/sitemap.xml
