@@ -26,20 +26,20 @@ jobs:
           echo "Updated npm version: $(npm --version)"
       
       # Not needed, because of react-snap-action
-      # - name: Install and Build
-      #   run: |
-      #     npm install --legacy-peer-deps --verbose
-      #     npm run build --verbose
+      - name: Install and Build
+        run: |
+          npm install --legacy-peer-deps --verbose
+          npm run build --verbose
       
-      - name: Server-side render
-        uses: brycedorn/react-snap-action@v1.0.2
-        with:
-          navigationTimeout: 900000
-          waitFor: 1000
+      # - name: Server-side render with github action
+      #   uses: brycedorn/react-snap-action@v1.0.2
+      #   with:
+      #     navigationTimeout: 900000
+      #     waitFor: 1000
 
-      # - name: Copy HTML gallery
-      #   run: |
-      #     npm run build:html-gallery
+      - name: Copy HTML gallery
+        run: |
+          npm run build:html-gallery
         
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@4.0.0
