@@ -13,9 +13,19 @@ function copyDirectory(src, dest) {
     } else {
         // Clear the destination directory if it exists to ensure a clean copy
         console.log(`Clearing existing directory: ${dest}`);
-        fs.rmSync(dest, { recursive: true, force: true });
-        fs.mkdirSync(dest, { recursive: true });
-        console.log(`Recreated directory: ${dest}`);
+        // Remove all files except .gitkeep
+        const files = fs.readdirSync(dest);
+        for (const file of files) {
+          const fullPath = path.join(dest, file);
+          if (file !== '.gitkeep') {
+            if (fs.statSync(fullPath).isDirectory()) {
+              fs.rmSync(fullPath, { recursive: true, force: true });
+            } else {
+              fs.unlinkSync(fullPath);
+            }
+          }
+        }
+        console.log(`Cleared directory while preserving .gitkeep: ${dest}`);
     }
 
     // Copy the source directory to the destination directory
