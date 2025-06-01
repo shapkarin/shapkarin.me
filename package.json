@@ -29,7 +29,7 @@
     "build:api": "node src/Generate-Backend/database-to-json.js",
     "build:spa": "craco build",
     "build:html-gallery": "node src/Generate-Backend/deploy-html-gallery.js",
-    "build": "npm run build:api && npm run generate:articles && npm run build:html-gallery && npm run generate:sitemap && NODE_ENV=production BUILD_PATH='./dist' npm run build:spa",
+    "build": "npm run build:api && npm run generate:articles && npm run build:html-gallery && npm run generate:sitemap && NODE_ENV=production BUILD_PATH='./dist' npm run build:spa && react-snap",
     "build:local": "npm run build:api && npm run generate:articles && BUILD_PATH='./dist' npm run build:spa && react-snap",
     "test": "craco test",
     "generate:articles": "node src/Generate-Backend/generate-articles-list.js",
