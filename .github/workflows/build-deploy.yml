@@ -31,11 +31,11 @@ jobs:
           npm install --legacy-peer-deps --verbose
           npm run build --verbose
       
-      # - name: Server-side render with github action
-      #   uses: brycedorn/react-snap-action@v1.0.2
-      #   with:
-      #     navigationTimeout: 900000
-      #     waitFor: 1000
+      - name: Server-side render with github action
+        uses: brycedorn/react-snap-action@v1.0.2
+        with:
+          navigationTimeout: 900000
+          waitFor: 1000
 
       - name: Copy HTML gallery
         run: |
