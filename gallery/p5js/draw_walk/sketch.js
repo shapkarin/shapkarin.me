@@ -149,3 +149,9 @@ Fly.prototype.away = function(){
   }
 };
 
+// TODO: fix crawler instead
+document.addEventListener('DOMContentLoaded', function() {
+  if(document.getElementById('defaultCanvas0')){
+    document.getElementById('defaultCanvas0').remove()
+  }
+});
