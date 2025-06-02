@@ -28,8 +28,8 @@ export default function Sketches() {
   );
 }
 
-const SketchesProofLink = () => (<a href="https://github.com/shapkarin/sketches">=> Proof from 9 y.o. repository</a>)
-
+const SketchesProofLink = () =>
+  <a target="_blank" href="https://github.com/shapkarin/sketches">=> Proof from 9 y.o. repository</a>;
 
 function Intro() {
   const { data: { data: { title, description } } } = useQuery('SketchesIntro', fetchSketchesIntro);
