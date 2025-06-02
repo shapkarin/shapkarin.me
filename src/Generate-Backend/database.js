@@ -2,7 +2,7 @@
 import { createHash } from 'crypto';
 
 export const about = {
-  title: `Hello everyone`,
+  title: 'Hello everyone!',
   intro: `
     My name is Iurii Shapkarin. 
     With over 10 years of experience in software development and a strong foundation in Computer Science. My work underlines my dedication to innovation, problem-solving, and creating impactful user experiences.
