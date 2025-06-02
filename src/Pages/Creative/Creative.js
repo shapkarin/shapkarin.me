@@ -28,18 +28,23 @@ export default function Sketches() {
   );
 }
 
+const SketchesProofLink = () => (<a href="https://github.com/shapkarin/sketches">=> Proof from 9 y.o. repository</a>)
+
+
 function Intro() {
   const { data: { data: { title, description } } } = useQuery('SketchesIntro', fetchSketchesIntro);
 
   return <>
     <h1>{ title }</h1>
-    <p style={{ lineHeight: '24px' }}>
+    <SketchesProofLink />
+    <p style={{ lineHeight: '24px', marginTop: '20px' }}>
       <Formatted>
         { description }
       </Formatted>
     </p>
   </>
 }
+
 
 function Collection(){
   const { data: { data: collection } } = useQuery('Sketches', fetchSketches);
