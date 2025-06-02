@@ -124,7 +124,7 @@ export const sketches = {
 
     'Archive ≈2016': [
       {
-        title: 'Draw Walk',
+        title: '☆ Draw Walk ☆',
         href: '/gallery/p5js/draw_walk',
       },
       {
