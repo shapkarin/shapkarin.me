@@ -11,7 +11,7 @@ function About() {
   return (
     <>
       <div className={'About About_dark'}>
-        <h1>{title}</h1>
+        <a href="/" className='About_greeting'><h1 className='About_greeting_inner'>{title}</h1></a>
         {intro}
         <ul className='About__links'>
           <li><a href={linkedin.link} target="_blank" rel="noreferrer">{linkedin.text}<FiExternalLink /></a></li>
