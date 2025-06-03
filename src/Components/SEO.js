@@ -2,17 +2,11 @@ import { Helmet } from 'react-helmet';
 import { useLocation } from 'react-router-dom';
 
 const SEO = ({ title, description, name = 'Iurii Shapkarin', type = 'website' }) => {
-  // TODO: fix canonical url redirect
-  // const isRedirect = window.location.pathname.endsWith('.html') || 
-  //                   !window.location.pathname.includes('/gallery/');
-  
-  // // Check if the request is from react-snap (Puppeteer)
-  // const isPuppeteer = navigator.userAgent.includes('HeadlessChrome') || 
-  //                     navigator.userAgent.includes('Puppeteer');
+  // const isRedirect = window.location.pathname.endsWith('index.html');
 
   const location = useLocation();
-  const articleName = location.pathname;
-  const canonicalUrl = `https://shapkarin.me${articleName}`;
+  const path = location.pathname;
+  const canonicalUrl = `https://shapkarin.me${path}`;
 
   return (
     <Helmet>
@@ -21,8 +15,8 @@ const SEO = ({ title, description, name = 'Iurii Shapkarin', type = 'website' })
       <meta name='description' content={description} />
       {canonicalUrl && <link rel="canonical" href={canonicalUrl} />}
       
-      {/* Redirect if we're on .html version and NOT from Puppeteer */}
-      {/* {isRedirect && !isPuppeteer && (
+      {/* Redirect if we're on .html version */}
+      {/* {isRedirect && (
         <meta httpEquiv="refresh" content={`0;url=${canonicalUrl}`} />
       )} */}
 
