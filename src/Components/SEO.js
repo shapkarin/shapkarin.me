@@ -2,29 +2,26 @@ import { Helmet } from 'react-helmet';
 import { useLocation } from 'react-router-dom';
 
 const SEO = ({ title, description, name = 'Iurii Shapkarin', type = 'website' }) => {
-  // const isRedirect = window.location.pathname.endsWith('index.html');
 
   const location = useLocation();
-  const path = location.pathname;
-  const canonicalUrl = `https://shapkarin.me${path}`;
+  const { pathname } = location;
+  const canonicalUrl = `https://shapkarin.me${pathname}`;
 
   return (
     <Helmet>
       {/* Standard metadata tags */}
       <title>{title}</title>
       <meta name='description' content={description} />
-      {canonicalUrl && <link rel="canonical" href={canonicalUrl} />}
+      <link rel="canonical" href={canonicalUrl} />
       
-      {/* Redirect if we're on .html version */}
-      {/* {isRedirect && (
-        <meta httpEquiv="refresh" content={`0;url=${canonicalUrl}`} />
-      )} */}
+      {/* Redirect if we're on .html version, TODO: suync with crawler */}
+      {/* <meta httpEquiv="refresh" content={`0;url=${canonicalUrl}`} /> */}
 
       {/* OpenGraph/Facebook tags */}
       <meta property="og:type" content={type} />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
-      {canonicalUrl && <meta property="og:url" content={canonicalUrl} />}
+      <meta property="og:url" content={canonicalUrl} />
 
       {/* Twitter tags */}
       <meta name="twitter:creator" content={name} />
