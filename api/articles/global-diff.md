@@ -16,13 +16,7 @@ Imagine you’re tracking down a naming collision or just want to ensure your co
 
 The concept is simple: it takes a known list of default globals and compares that to what’s currently on `window`. Anything not on the default list shows up in the diff. You get a quick, no-nonsense snapshot of what’s new.
 
-### Getting Started
-
-Install the package as a dev dependency:
-
-```bash
-npm i --save-dev diff-browser-globals
-```
+Project link => [https://github.com/shapkarin/diff-browser-globals](https://github.com/shapkarin/diff-browser-globals)
 
 Once installed, you can run it to see what’s been added to the global scope. The output makes it clear which variables are introduced by your code or included libraries, helping you keep your environment tidy and predictable.
 
