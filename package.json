@@ -25,7 +25,7 @@
     "node": ">=14.0.0 <=16.20.2"
   },
   "scripts": {
-    "start": "build:local && craco start",
+    "start": "craco start",
     "build:api": "node src/Generate-Backend/database-to-json.js",
     "build:spa": "craco build",
     "build:html-gallery": "node src/Generate-Backend/deploy-html-gallery.js",
