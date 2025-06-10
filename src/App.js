@@ -21,13 +21,13 @@ const queryClient = new QueryClient({
 export default function App () {
   return (
     <QueryClientProvider client={queryClient}>
+      <BrowserRouter>
       <About />
       <div className="Wrap">
-        <BrowserRouter>
-          <Menu />
-          <Structure />
-        </BrowserRouter>
+        <Menu />
+        <Structure />
       </div>
+      </BrowserRouter>
     </QueryClientProvider>
   );
 }
