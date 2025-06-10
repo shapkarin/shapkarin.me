@@ -22,6 +22,7 @@ function About() {
         The API for this site <a href="https://github.com/shapkarin/shapkarin.me/tree/master/src/Generate-Backend" target="_blank" rel="noreferrer">is generated</a><FiExternalLink /> and stored as <a href="https://github.com/shapkarin/shapkarin.me/tree/gh-pages/api" target="_blank" rel="noreferrer">JSON and Markdown</a><FiExternalLink /> on <a href="https://github.com/shapkarin/shapkarin.me/blob/main/.github/workflows/build-deploy.yml">GitHub Pages</a><br/>
         It also uses Github Actions to help with CI, and generates a static version,
         {' '}<a href={website.link} target='_blank' rel='noreferrer'>{website.text}<FiExternalLink /></a><br/>
+        Disclaimer: This project is only a homepage, not an example of application architecture.<br/>
         Website since 2013 {'=> '}<a href="https://web.archive.org/web/20250000000000*/shapkarin.me" target="_blank" rel="noreferrer">Proof<FiExternalLink /></a><br/>
         semver: <a href="https://github.com/shapkarin/shapkarin.me/tree/main/.env#L1" target="_blank" rel="noreferrer">{process.env.REACT_APP_VERSION}</a>
 
