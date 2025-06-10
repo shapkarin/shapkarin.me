@@ -1,4 +1,4 @@
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import matter from 'gray-matter';
 import Markdown from 'react-markdown';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
@@ -30,6 +30,7 @@ function Article() {
           type="article"
           name="Iurii Shapkarin"
         />
+        <Link relative="path" to="." className="Article__GoBack">{'<- Go back'}</Link>
         {/* TODO: fix re-renders on link click inside serrilised markdown content */}
         <Markdown
           components={{
