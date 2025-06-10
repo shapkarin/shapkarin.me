@@ -23,7 +23,7 @@ function About() {
         It also uses Github Actions to help with CI, and generates a static version,
         {' '}<a href={website.link} target='_blank' rel='noreferrer'>{website.text}<FiExternalLink /></a><br/>
         Website since 2013 {'=> '}<a href="https://web.archive.org/web/20250000000000*/shapkarin.me" target="_blank" rel="noreferrer">Proof<FiExternalLink /></a><br/>
-        semver: <a href="https://github.com/shapkarin/shapkarin.me/tree/main/.env#L1">{process.env.REACT_APP_VERSION}</a>
+        semver: <a href="https://github.com/shapkarin/shapkarin.me/tree/main/.env#L1" target="_blank" rel="noreferrer">{process.env.REACT_APP_VERSION}</a>
 
       </div>
     </>
