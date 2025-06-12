@@ -1,8 +1,8 @@
 [
   {
-    "slug": "floating-point-precision",
-    "title": "Floating Point Precision",
-    "filename": "floating-point-precision.md"
+    "slug": "contributions-to-major-web-dev-repos",
+    "title": "Contributions To Major Web Dev Repos",
+    "filename": "contributions-to-major-web-dev-repos.md"
   },
   {
     "slug": "higher-order-functions-and-currying",
@@ -10,9 +10,9 @@
     "filename": "higher-order-functions-and-currying.md"
   },
   {
-    "slug": "back-health-and-therapeutic-exercises",
-    "title": "Back Health And Therapeutic Exercises",
-    "filename": "back-health-and-therapeutic-exercises.md"
+    "slug": "floating-point-precision",
+    "title": "Floating Point Precision",
+    "filename": "floating-point-precision.md"
   },
   {
     "slug": "function-declaration-vs-expression",
@@ -25,14 +25,14 @@
     "filename": "production-AI-in-2016-year.md"
   },
   {
+    "slug": "back-health-and-therapeutic-exercises",
+    "title": "Back Health And Therapeutic Exercises",
+    "filename": "back-health-and-therapeutic-exercises.md"
+  },
+  {
     "slug": "javascript-lexical-scope",
     "title": "Javascript Lexical Scope",
     "filename": "javascript-lexical-scope.md"
-  },
-  {
-    "slug": "contributions-to-major-web-dev-repos",
-    "title": "Contributions To Major Web Dev Repos",
-    "filename": "contributions-to-major-web-dev-repos.md"
   },
   {
     "slug": "memoization",

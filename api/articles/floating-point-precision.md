@@ -1,7 +1,7 @@
 ---
 title: "A Deep Dive into computer Floating-Point Precision: Why 0.1 + 0.2 Isn't 0.3"
 description: "Explore the surprising result of 0.1 + 0.2 in programming and understand why it happens due to floating-point representation and the IEEE 754 standard."
-order: 0
+order: 2
 ---
 
 # Computer Floating-Point Precision
