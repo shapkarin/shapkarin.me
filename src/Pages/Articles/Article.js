@@ -7,7 +7,8 @@ import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import { fetchArticle } from "Common/API";
 import { useQuery } from "react-query";
 import SEO from 'Components/SEO';
-import HeadingRenderer from './Anchor';
+import HeadingRenderer from './Macro/Anchor';
+import LinkNewTab from './Macro/LinkNewTab';
 
 function Article() {
   const { slug: articleName } = useParams();
@@ -36,6 +37,7 @@ function Article() {
           components={{
             h2: HeadingRenderer,
             h3: HeadingRenderer,
+            a: LinkNewTab,
             code(props) {
               const {children, className, node, ...rest} = props;
               const match = /language-(js|javascript|jsx|ts|typescript|bash|sh|python|py|cpp|rust)/.exec(className || '');
