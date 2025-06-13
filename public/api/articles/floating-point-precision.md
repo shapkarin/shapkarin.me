@@ -13,7 +13,6 @@ order: 2
 - [The Role of IEEE 754](#the-role-of-ieee-754)
 - [Demonstrations in Code](#demonstrations-in-code)
 - [Why it Matters and How to Handle It](#why-it-matters-and-how-to-handle-it)
-- [References](#references)
 
 # Why 0.1 + 0.2 Isn't Exactly 0.3 in Most Programming Languages
 
