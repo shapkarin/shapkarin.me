@@ -30,7 +30,7 @@ function Article() {
           type="article"
           name="Iurii Shapkarin"
         />
-        <Link relative="path" to="." className="Article__GoBack">{'<- Go back'}</Link>
+        <Link relative="path" to="/articles" className="Article__GoBack">{'<- Go back'}</Link>
         {/* TODO: fix re-renders on link click inside serrilised markdown content */}
         <Markdown
           components={{
