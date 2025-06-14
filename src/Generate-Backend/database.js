@@ -148,12 +148,12 @@ export const sketches = {
         href: 'http://joy.shapkarin.me',
       },
       {
-        title: 'Going to upload to the Github',
-        href: 'https://shapkarin.github.io/3d-first-person/index.html',
+        title: '3D first person demo',
+        href: 'https://web.archive.org/web/20170325053311/http://new.shapkarin.me/',
       },
       {
-        title: 'The p5.js pattern experiment',
-        href: 'https://editor.p5js.org/yu.shapkarin/sketches/ogR-xUkcT',
+        title: 'Pattern experiment',
+        href: 'https://editor.p5js.org/yu.shapkarin/sketches/CBHJckI9b',
       },
       {
         title: 'Cubes',
