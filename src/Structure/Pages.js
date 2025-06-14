@@ -36,8 +36,11 @@ const PAGES = [
   },
   {
     name: 'Creative',
-    path: '/sketches',
-    redirect: { from: '/generative', to: '/sketches' },
+    path: '/creative',
+    redirects: [
+      { from: '/generative', to: '/sketches' },
+      { from: '/sketches', to: '/creative' }
+    ],
     icon: () => <RiPaintBrushFill />,
     Page: () => <Creative />
   },
