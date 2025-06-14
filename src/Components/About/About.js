@@ -14,16 +14,16 @@ function About() {
       <div className={'About About_dark'}>
         <Link to="/" className='About_greeting'>{title}</Link>
         {intro}
-        <ul className='About__links'>
-          <li><a href={linkedin.link} target="_blank" rel="noreferrer">{linkedin.text}<FiExternalLink /></a></li>
-          <li><a  href={github.link} target="_blank" rel="noreferrer">{github.text}<FiExternalLink /></a></li>
-        </ul>
+        <div className='Socials'>
+          <a href={linkedin.link} className="Social" target="_blank" rel="noreferrer">{linkedin.text}<FiExternalLink /></a>
+          <a href={github.link} className="Social" target="_blank" rel="noreferrer">{github.text}<FiExternalLink /></a>
+        </div>
         {/* yup `<br/><br/> is not good markup` https://github.com/shapkarin/shapkarin.me/tree/main?tab=readme-ov-file#NOTE-2 */}
-        The API for this site <a href="https://github.com/shapkarin/shapkarin.me/tree/master/src/Generate-Backend" target="_blank" rel="noreferrer">is generated</a><FiExternalLink /> and stored as <a href="https://github.com/shapkarin/shapkarin.me/tree/gh-pages/api" target="_blank" rel="noreferrer">JSON and Markdown</a><FiExternalLink /> on <a href="https://github.com/shapkarin/shapkarin.me/blob/main/.github/workflows/build-deploy.yml">GitHub Pages</a><br/>
-        It also uses Github Actions to help with CI, and generates a static version,
+        The API for this site <a href="https://github.com/shapkarin/shapkarin.me/tree/master/src/Generate-Backend" target="_blank" rel="noreferrer">is generated</a><FiExternalLink /> and stored as <a href="https://github.com/shapkarin/shapkarin.me/tree/gh-pages/api" target="_blank" rel="noreferrer">JSON and Markdown</a><FiExternalLink /> on <a href="https://github.com/shapkarin/shapkarin.me/blob/main/.github/workflows/build-deploy.yml" target="_blank" rel="noreferrer">GitHub Pages<FiExternalLink /></a><br />
+        + It uses Github Actions to help with CI, and generates a static version,
         {' '}<a href={website.link} target='_blank' rel='noreferrer'>{website.text}<FiExternalLink /></a><br/>
         Disclaimer: This project is only a homepage, not an example of application architecture.<br/>
-        Website since 2013 {'=> '}<a href="https://web.archive.org/web/20250000000000*/shapkarin.me" target="_blank" rel="noreferrer">Proof<FiExternalLink /></a><br/>
+        Website since 2013 {'=> '}<a href="https://web.archive.org/web/20250000000000*/shapkarin.me" target="_blank" rel="noreferrer">Proof<FiExternalLink /></a>{' | '}
         semver: <a href="https://github.com/shapkarin/shapkarin.me/tree/main/.env#L1" target="_blank" rel="noreferrer">{process.env.REACT_APP_VERSION}</a>
 
       </div>
