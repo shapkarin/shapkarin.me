@@ -4,16 +4,16 @@
     <loc>https://shapkarin.me/</loc>
   </url>
   <url>
-    <loc>https://shapkarin.me/packages/</loc>
-  </url>
-  <url>
-    <loc>https://shapkarin.me/sketches/</loc>
-  </url>
-  <url>
     <loc>https://shapkarin.me/github/repositories/</loc>
   </url>
   <url>
     <loc>https://shapkarin.me/github/likes/</loc>
+  </url>
+  <url>
+    <loc>https://shapkarin.me/packages/</loc>
+  </url>
+  <url>
+    <loc>https://shapkarin.me/creative/</loc>
   </url>
   <url>
     <loc>https://shapkarin.me/articles/</loc>
@@ -37,28 +37,28 @@
     <loc>https://shapkarin.me/gallery/p5js/flies/</loc>
   </url>
   <url>
-    <loc>https://shapkarin.me/articles/floating-point-precision/</loc>
+    <loc>https://shapkarin.me/gallery/p5js/flies-m-acc/</loc>
+  </url>
+  <url>
+    <loc>https://shapkarin.me/articles/contributions-to-major-web-dev-repos/</loc>
   </url>
   <url>
     <loc>https://shapkarin.me/articles/higher-order-functions-and-currying/</loc>
   </url>
   <url>
-    <loc>https://shapkarin.me/articles/back-health-and-therapeutic-exercises/</loc>
+    <loc>https://shapkarin.me/articles/floating-point-precision/</loc>
   </url>
   <url>
     <loc>https://shapkarin.me/articles/function-declaration-vs-expression/</loc>
   </url>
   <url>
-    <loc>https://shapkarin.me/gallery/p5js/flies-m-acc/</loc>
-  </url>
-  <url>
     <loc>https://shapkarin.me/articles/production-AI-in-2016-year/</loc>
   </url>
   <url>
-    <loc>https://shapkarin.me/articles/javascript-lexical-scope/</loc>
+    <loc>https://shapkarin.me/articles/back-health-and-therapeutic-exercises/</loc>
   </url>
   <url>
-    <loc>https://shapkarin.me/articles/contributions-to-major-web-dev-repos/</loc>
+    <loc>https://shapkarin.me/articles/javascript-lexical-scope/</loc>
   </url>
   <url>
     <loc>https://shapkarin.me/articles/memoization/</loc>
