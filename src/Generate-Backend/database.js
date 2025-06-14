@@ -129,7 +129,7 @@ export const creative = {
         href: '/gallery/p5js/draw_walk',
       },
       {
-        title: 'Cursor magic',
+        title: '☆ Cursor magic ☆',
         href: '/gallery/p5js/magic',
       },
       {
