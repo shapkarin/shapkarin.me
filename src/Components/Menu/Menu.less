@@ -1,13 +1,19 @@
+@import "../../Variables.less";
+
 .Menu {
-  position: -webkit-sticky;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
   position: sticky;
-  
-  @media (min-width: 700px) {
-    display: flex;
-    flex-direction: column;
-    margin-right: 10px;
-    min-width: 158px;
-  }
+  top: 0;
+  z-index: 20;
+  background-color: #000;
+  padding: 10px 20px;
+  margin-bottom: 15px;
+  min-width: 158px;
+  border-radius: @cardBorderRadius;
+  max-width: @maxWCard;
+
   &__Item {
     display: flex;
     align-items: center;
@@ -28,19 +34,13 @@
 
     &--active {
       text-decoration: none;
-      &::after {
-        content: " ✓";
-        margin-left: 5px;
-      }
       @media (min-width: 700px) {
         &::after {
-          content: " →";
+          margin-left: 5px;
+          content: "✓";
+          border-radius: 50%;
         }
       }
     }
-    // &--hidden {
-    //   visibility: hidden;
-    // }
   }
-
 }
