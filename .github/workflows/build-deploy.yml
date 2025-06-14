@@ -25,17 +25,17 @@ jobs:
           npm install -g npm@8.3.0
           echo "Updated npm version: $(npm --version)"
     
-      # Has build-in "npm i" and "npm run build"
+      # react-snap has build-in "npm i" and "npm run build"
       - name: Server-side render with github action
         uses: brycedorn/react-snap-action@v1.0.2
         with:
           navigationTimeout: 900000
           waitFor: 1000
 
-      # TODO: cp after crawler (react-snap)
       - name: Copy HTML gallery
         run: |
           npm run build:html-gallery 
+          npm run fix-react-snap
         
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@4.0.0
