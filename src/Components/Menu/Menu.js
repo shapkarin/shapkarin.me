@@ -25,7 +25,7 @@ const Menu = () => (
         </NavLink>
       );
     })}
-    <RandomButton className="Menu__Item">
+    <RandomButton className="Menu__Item Menu__Item--unselect">
       <IoIosRefresh/> Background
     </RandomButton>
   </nav>
