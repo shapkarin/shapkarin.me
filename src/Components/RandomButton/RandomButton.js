@@ -1,7 +1,5 @@
 import scene from '../Background';
 
-import './style.less';
-
 const RandomButton = ({ children, ...rest }) => {
   const randomize = function(){
     scene.randomizeAll();
