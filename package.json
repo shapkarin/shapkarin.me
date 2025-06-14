@@ -35,7 +35,7 @@
     "test": "craco test",
     "generate:articles": "node src/Generate-Backend/generate-articles-list.js",
     "generate:sitemap-manually": "sitemap-generator https://shapkarin.me -f public/sitemap.xml",
-    "fix-react-snap": "node src/Generate-Backend/fix-react-snap-canvas.js",
+    "fix-react-snap": "node src/Generate-Backend/fix-react-snap-canvas.js"
   },
   "eslintConfig": {
     "extends": [
