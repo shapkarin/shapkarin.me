@@ -99,7 +99,7 @@ export const packages = {
   },
 }
 
-export const sketches = {
+export const creative = {
   title: 'A part of my creative coding artworks',
   description: clean(`
     The rest can be shown upon personal request.
