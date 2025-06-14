@@ -7,7 +7,7 @@ const database = require_esm('./database');
 
 const API_FOLDER = path.join(__dirname, '../../public/api/');
 const ABOUT_FILE = path.join(API_FOLDER, 'about.json');
-const SKETCHES_FOLDER = path.join(API_FOLDER, 'sketches');
+const CREATIVE_FOLDER = path.join(API_FOLDER, 'creative');
 const PACKAGES_FOLDER = path.join(API_FOLDER, 'packages');
 
 async function writeJSONFile(filePath, data) {
@@ -34,16 +34,16 @@ async function clearDirectory(directoryPath) {
 
 async function createDirectories() {
   await fsPromises.mkdir(PACKAGES_FOLDER, { recursive: true });
-  await fsPromises.mkdir(SKETCHES_FOLDER, { recursive: true });
+  await fsPromises.mkdir(CREATIVE_FOLDER, { recursive: true });
 }
 
 async function writeData() {
   await writeJSONFile(ABOUT_FILE, database.about);
-  await writeJSONFile(path.join(SKETCHES_FOLDER, 'intro.json'), {
-    title: database.sketches.title,
-    description: database.sketches.description,
+  await writeJSONFile(path.join(CREATIVE_FOLDER, 'intro.json'), {
+    title: database.creative.title,
+    description: database.creative.description,
   });
-  await writeJSONFile(path.join(SKETCHES_FOLDER, 'collection.json'), database.sketches.collection);
+  await writeJSONFile(path.join(CREATIVE_FOLDER, 'collection.json'), database.creative.collection);
   await writeJSONFile(path.join(PACKAGES_FOLDER, 'packages.json'), {
     packages: database.packages.list.map(({ id, url, title }) => ({ id, url, title })),
   });

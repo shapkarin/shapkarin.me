@@ -25,9 +25,9 @@ const backend = {
     _root: '/api/packages/packages.json',
     info: (id) => `/api/packages/${id}.json`,
   },
-  sketches: {
-    intro:  '/api/sketches/intro.json',
-    collection: '/api/sketches/collection.json',
+  creative: {
+    intro:  '/api/creative/intro.json',
+    collection: '/api/creative/collection.json',
   },
   articles: '/api/articles/articles.json',
   article: (name) => `${rawPrefix}/api/articles/${name}.md`,

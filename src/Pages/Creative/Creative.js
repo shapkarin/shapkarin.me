@@ -3,11 +3,11 @@ import SEO from 'Components/SEO';
 
 import Preloader from 'Components/Preloader';
 import Formatted from 'Components/Formatted';
-import { fetchSketchesIntro, fetchSketches } from 'Common/API';
+import { fetchCreativeIntro, fetchCreative } from 'Common/API';
 
 import './style.less';
 
-export default function Sketches() {
+export default function Creative() {
   return (
     <>
       <SEO 
@@ -16,7 +16,7 @@ export default function Sketches() {
         type="website"
         name="Iurii Shapkarin"
       />
-      <div className="Page__Sketches Page__Inner Page__Inner_dark">
+      <div className="Page__Creative Page__Inner Page__Inner_dark">
         <Preloader>
           <Intro />
         </Preloader>
@@ -28,15 +28,15 @@ export default function Sketches() {
   );
 }
 
-const SketchesProofLink = () =>
+const CreativeProofLink = () =>
   <a target="_blank" rel="noreferrer" href="https://github.com/shapkarin/sketches">=> Proof from 9 y.o. repository</a>;
 
 function Intro() {
-  const { data: { data: { title, description } } } = useQuery('SketchesIntro', fetchSketchesIntro);
+  const { data: { data: { title, description } } } = useQuery('CreativeIntro', fetchCreativeIntro);
 
   return <>
     <h1>{ title }</h1>
-    <SketchesProofLink />
+    <CreativeProofLink />
     <p style={{ lineHeight: '24px', marginTop: '20px' }}>
       <Formatted>
         { description }
@@ -47,7 +47,7 @@ function Intro() {
 
 
 function Collection(){
-  const { data: { data: collection } } = useQuery('Sketches', fetchSketches);
+  const { data: { data: collection } } = useQuery('Creative', fetchCreative);
 
   return <div className="Gal__Wrapper">
     {Object.keys(collection).map(category => (
