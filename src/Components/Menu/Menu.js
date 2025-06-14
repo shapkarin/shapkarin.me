@@ -15,7 +15,7 @@ const Menu = () => (
           key={`Menu_${name}`}
           to={path}
           className={clsx('Menu__Item', {
-            'Menu__Item--hidden': hidden,
+            'Menu__Item--hidden': false && hidden,
           })}
           activeClassName="Menu__Item--active"
         >
@@ -25,7 +25,7 @@ const Menu = () => (
         </NavLink>
       );
     })}
-    <RandomButton className="Menu__Item--bckg">
+    <RandomButton className="Menu__Item">
       <IoIosRefresh/> Background
     </RandomButton>
   </nav>
