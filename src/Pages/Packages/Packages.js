@@ -35,8 +35,8 @@ export default function Packages() {
               <PackageInfo id={id} />
             </div>
           ))}
-        </div>
         <Additional />
+        </div>
       </div>
     </>
   );
