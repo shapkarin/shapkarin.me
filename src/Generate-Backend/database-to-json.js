@@ -5,7 +5,7 @@ const path = require('path');
 const require_esm = require('esm')(module);
 const database = require_esm('./database');
 
-const API_FOLDER = path.join(__dirname, '../../public/api/');
+const API_FOLDER = path.join(__dirname, '../..', 'public', 'api');
 const ABOUT_FILE = path.join(API_FOLDER, 'about.json');
 const CREATIVE_FOLDER = path.join(API_FOLDER, 'creative');
 const PACKAGES_FOLDER = path.join(API_FOLDER, 'packages');
