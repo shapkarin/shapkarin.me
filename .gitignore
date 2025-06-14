@@ -33,5 +33,5 @@ yarn.lock
 public/gallery/p5js
 public/gallery/older
 
-# This file is node generated
+# This file is generated
 public/api/articles/articles.json
