@@ -12,3 +12,4 @@ Proof => https://web.archive.org/web/20130801000000*/shapkarin.me
 The API for this site is [generated](https://github.com/shapkarin/shapkarin.me/tree/main/src/Generate-Backend) and stored as [JSON and Markdown](https://github.com/shapkarin/shapkarin.me/tree/gh-pages/api) on [GitHub Pages](https://github.com/shapkarin/shapkarin.me/blob/main/.github/workflows/build-deploy.yml)
 It uses Github Actions to help with CI, and generates a static version.
 
+Generative art is from from 9 y.o. repository => [https://github.com/shapkarin/sketches](https://github.com/shapkarin/sketches)
