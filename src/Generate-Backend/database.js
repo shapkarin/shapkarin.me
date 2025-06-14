@@ -19,7 +19,7 @@ export const about = {
     },
     website: {
       link: 'https://github.com/shapkarin/shapkarin.me',
-      text: 'website code',
+      text: 'website source code',
     },
   },
 }
