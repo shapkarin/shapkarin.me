@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { FiExternalLink } from 'react-icons/fi';
 import { fetchAbout } from 'Common/API';
 import Preloader from 'Components/Preloader';
+import clsx from 'clsx';
 
 import './style.less';
 
@@ -11,7 +12,9 @@ function About() {
   
   return (
     <>
-      <div className={'About About_dark'}>
+      <div className={clsx('About', {
+          'About_dark': false
+        })}>
         <Link to="/" className='About_greeting'>{title}</Link>
         {intro}
         <div className='Socials'>
