@@ -1,12 +1,13 @@
 // TODO: refact styles
 
-@import 'reset.less';
+@import 'Assets/reset.less';
+@import "Assets/Variables.less";
 
 body {
-  background-color: #17293a;
+  background-color: @color-white;
   font-family: "Lato", Helvetica, Arial, sans-serif;
   &, a {
-    color: white;
+    color: @color-dark-blue;
   }
 }
 
@@ -14,7 +15,7 @@ body {
   display: inline;
   text-decoration: underline;
   cursor: pointer;
-  color: white;
+  color: @color-white;
 }
 
 // rename later
@@ -51,7 +52,8 @@ body {
 .Page__GithubItem,
 .PagePackages__Item_more {
   border-radius: 7px;
-  background-color: rgba(0, 0, 0, 0.28);
+  background-color: @color-white; //rgba(0, 0, 0, 0.28);
+  border: 1px solid @color-dark-blue;
 }
 
 .PagePackages__Item,
@@ -61,14 +63,6 @@ body {
 
 .Page__Github {
   padding: 0;
-}
-
-.PagePackages__Item,
-.Page__GithubItem,
-.Page__Creative {
-  &:hover {
-    background-color: rgba(0, 0, 0, 0.6) !important;
-  }
 }
 
 .Page__GithubItem {
