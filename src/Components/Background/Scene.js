@@ -2,7 +2,7 @@
 import random from 'lodash.random';
 import Shape from './Shape';
 
-const STROKE_COLOR = `rgba(255, 255, 255, ${random(0.05, 0.142)})`;
+const STROKE_COLOR = `rgba(0, 0, 0, ${random(0.07, 0.2)})`;
 
 export default class Scene {
   constructor() {
@@ -25,8 +25,7 @@ export default class Scene {
     this.ctx.lineWidth = 1;
     // this.ctx.fillStyle = "";
     this.array2D = this.createArray();
-    // this.draw();
-    this.turnOff();
+    this.draw();
   }
 
   //  TODO..
@@ -63,7 +62,7 @@ export default class Scene {
   // TODO..
   draw = () => {
     this.ctx.beginPath();
-    this.ctx.fillStyle = '#0b1723';
+    this.ctx.fillStyle = '#ffffff';
     this.ctx.fillRect(0, 0, this.width, this.height);
     for (let rowI = 0; rowI < this.array2D.length; rowI++) {
       for (let colI = 0; colI < this.array2D[rowI].length; colI++) {
@@ -126,11 +125,5 @@ export default class Scene {
       this.draw();
       this.animation();
     }, delay);
-  }
-
-  // create placeholder backround
-  turnOff = () => {
-    this.ctx.fillStyle = '#ffffff';
-    this.ctx.fillRect(0, 0, this.width, this.height);
   }
 }
