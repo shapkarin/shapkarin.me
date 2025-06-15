@@ -12,7 +12,8 @@ function ArticlesList() {
   );
 
   return (
-    <div className="Page_Articles">
+    <div className="Page Page__Creative Page_Articles">
+    {/*'Page_Articles">'*/}
       <SEO 
         title="Software Development Articles & Tutorials | Iurii Shapkarin"
         description="Read technical articles about JavaScript development, React ecosystem, Redux patterns, and software engineering. In-depth tutorials and guides about my open-source packages."

@@ -25,7 +25,8 @@ export default class Scene {
     this.ctx.lineWidth = 1;
     // this.ctx.fillStyle = "";
     this.array2D = this.createArray();
-    this.draw();
+    // this.draw();
+    this.turnOff();
   }
 
   //  TODO..
@@ -125,5 +126,11 @@ export default class Scene {
       this.draw();
       this.animation();
     }, delay);
+  }
+
+  // create placeholder backround
+  turnOff = () => {
+    this.ctx.fillStyle = '#ffffff';
+    this.ctx.fillRect(0, 0, this.width, this.height);
   }
 }
