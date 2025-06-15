@@ -1,12 +1,12 @@
-@import "../../Variables.less";
+@import "../../Assets/Variables.less";
 
 .Article, .Page_Articles {
     padding: 20px;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: @color-white; //rgba(0, 0, 0, 0.5);
     border-radius: 10px;
-    &:hover {
-        background-color: rgba(0, 0, 0, 0.6) !important;
-    }
+    // &:hover {
+    //     background-color: rgba(0, 0, 0, 0.6) !important;
+    // }
 }
 
 .Article__List {
@@ -52,8 +52,8 @@
         -45deg, 
         transparent, 
         transparent 4px,
-        rgba(255, 255, 255, 0.2) 4px,
-        rgba(255,255,255,0) 8px
+       rgba(0,0,0, 0.2) 4px,
+       rgba(0,0,0,0) 8px
       );
     background-size: 200% 200%;
     animation: barberpole 10s linear infinite;
