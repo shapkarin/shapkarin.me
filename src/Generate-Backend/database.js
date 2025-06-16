@@ -17,10 +17,6 @@ export const about = {
       link: 'https://github.com/shapkarin',
       text: 'GitHub',
     },
-    website: {
-      link: 'https://github.com/shapkarin/shapkarin.me',
-      text: 'website source code',
-    },
   },
 }
 
