@@ -15,7 +15,7 @@
   transition: background-color .3s linear;
   margin-bottom: 20px;
   &:hover {
-    background-color: rgba(255,255,255,0.09);
+    background-color: @color-dark-hover;
   }
   @media (min-width: 700px) {
     width: 355px;
@@ -58,7 +58,7 @@
   }
 }
 
-@media (max-width: @mobileWidth) {
+@media (max-width: @mobile-width) {
   .PagePackages__Item_more {
     margin-left: 0;
   }

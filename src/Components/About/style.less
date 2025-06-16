@@ -7,7 +7,8 @@
   font-size: 17px;
   line-height: 27px;
   border-radius: 40px;
-  transition: background-color .3s linear;
+  background-color: @color-white;
+  // transition: background-color .3s linear;
 
   &_dark {
     background-color: rgba(0, 0, 0, 0.45);
@@ -23,8 +24,8 @@
     margin-bottom: 10px;
   }
 
-  @media (min-width: @mobileWidth) {
-    max-width: @maxWCard;
+  @media (min-width: @mobile-width) {
+    max-width: @card-max-width;
   }
 
   svg {
@@ -59,12 +60,15 @@
   height: 80px;
 }
 
-.Social {
+.Social_Linkl {
   padding: 10px;
   border-radius: 10px;
+  outline: 1px solid @color-black;
+  background-color: @color-gray;
+  margin-right: 20px;
 }
 
-.Social:hover {
+.Social_Linkl:hover {
   background-image:
       repeating-linear-gradient(
         -45deg, 
@@ -75,4 +79,6 @@
       );
     background-size: 200% 200%;
     animation: barberpole 10s linear infinite;
+    background-color: @color-white;
+    text-decoration: none;
 }
