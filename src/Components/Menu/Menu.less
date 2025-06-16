@@ -1,9 +1,8 @@
 @import "../../Assets/Variables.less";
 
+@nav-border-val: 1px solid @color-black;
+
 .Menu {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
   position: sticky;
   top: 0;
   z-index: 20;
@@ -11,8 +10,12 @@
   padding: 10px 20px;
   margin-bottom: 15px;
   min-width: 158px;
-  border-radius: @cardBorderRadius;
-  max-width: @maxWCard;
+  // border-radius: @card-border-radius;
+  border-top: @nav-border-val;
+  // border-bottom: @nav-border-val;
+  // border-right: @nav-border-val;
+  max-width: @card-max-width;
+
 
   &__Item {
     display: flex;
@@ -44,4 +47,20 @@
       user-select: none;
     }
   }
+
+  &_List {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  
+  &_List_Item {
+    margin: 0;
+    padding: 0;
+  }
+  
 }
+
