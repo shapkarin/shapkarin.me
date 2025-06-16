@@ -13,7 +13,7 @@ const PAGES = [
     name: 'Repositories',
     path: '/github/repositories',
     redirect: { from: '/repositories', to: '/github/repositories' },
-    icon: () => <GoRepo />,
+    Icon: () => <GoRepo />,
     Page: () => <Repositories />
   },
   {
@@ -24,14 +24,14 @@ const PAGES = [
       { from: '/liked', to: '/github/stars' },
       { from: '/stars', to: '/github/stars' },
     ],
-    icon: () => <GoStar size="1.2em" />,
+    Icon: () => <GoStar size="1.2em" />,
     Page: () => <Stars />
   },
   {
     name: 'Packages',
     path: '/packages',
     redirect: { from: '/projects', to: '/packages' },
-    icon: () => <RiNpmjsLine size="1.24em" />,
+    Icon: () => <RiNpmjsLine size="1.24em" />,
     Page: (props) => <Packages { ...props } />
   },
   {
@@ -41,20 +41,20 @@ const PAGES = [
       { from: '/generative', to: '/sketches' },
       { from: '/sketches', to: '/creative' }
     ],
-    icon: () => <RiPaintBrushFill />,
+    Icon: () => <RiPaintBrushFill />,
     Page: () => <Creative />
   },
   {
     name: 'Articles',
     path: '/articles',
-    icon: () => <RiArticleLine />,
+    Icon: () => <RiArticleLine />,
     Page: () => <Articles />,
     hidden: true,
   },
   {
     name: 'Contacts',
     path: 'contacts',
-    icon: () => <></>,
+    Icon: () => <></>,
     Page: () => <></>,
   }
 ];
