@@ -1,7 +1,7 @@
 // todo: some common classes like: .PageFlex .PageFlex_Item .PageFlex__Item_rounded
 // todo: refact styles
-
 @import "../../Assets/Variables.less";
+@import "../../Assets/Mixins.less";
 
 .PagePackages {
   display: flex;
@@ -17,7 +17,7 @@
   &:hover {
     background-color: @color-dark-hover;
   }
-  @media (min-width: 700px) {
+  @media (min-width: @mobile-width-upd) {
     width: 355px;
   }
   &_more {
@@ -27,11 +27,9 @@
     border-radius: 8px;
     white-space: nowrap;
 
+    // TODO: class or mixin
     &:hover {
-      background-image: 
-      repeating-linear-gradient(-45deg, transparent, transparent 4px, rgba(0, 0, 0, 0.42) 4px, rgba(0, 0, 0, 1) 8px);
-      background-size: 200% 200%;
-      animation: barberpole 10s linear infinite;
+     .barberpole-animation();
     }
   }
   > .toggle_info {
@@ -52,6 +50,7 @@
 .PagePackages__Item_more {
   margin-bottom: 12px;
   display: flex;
+  align-items: center;
 
   > svg {
     margin-left: 5px;

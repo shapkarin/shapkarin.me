@@ -24,7 +24,7 @@ function Article() {
   const { data: frontMatter, content: markdownContent } = matter(content);
 
   return (
-    <div className="Article Page_Article">
+    <div className="Article Page__Article Page__Inner">
         <SEO 
           title={`${frontMatter.title || articleName} | Iurii Shapkarin`}
           description={frontMatter.description || `Article about ${articleName}`}
