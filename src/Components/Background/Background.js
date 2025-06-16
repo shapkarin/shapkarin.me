@@ -1,6 +1,7 @@
 // TODO: refact
 import random from 'lodash.random';
 import Shape from './Shape';
+import isMobile from 'is-mobile';
 
 const STROKE_COLOR = `rgba(0, 0, 0, ${random(0.07, 0.2)})`;
 
@@ -24,8 +25,10 @@ export default class Scene {
     this.ctx = this.canvas.getContext('2d');
     this.ctx.lineWidth = 1;
     // this.ctx.fillStyle = "";
-    this.array2D = this.createArray();
-    this.draw();
+    if(!isMobile()){
+      this.array2D = this.createArray();
+      this.draw();
+    }
   }
 
   //  TODO..
