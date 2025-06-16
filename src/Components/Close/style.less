@@ -1,16 +1,25 @@
+@import "../../Assets/Variables.less";
+
 .CloseButton {
   position: absolute;
   right: 0px;
   top: -20px;
 
+  // todoL
+  @media (max-width: 700px) {
+    top: -10px !important;
+  }
+
   &:hover ~ .Page__Inner {
-    background-color: rgba(42,42,42,0.5);
+    background-color: rgba(42,42,42,0.1);
     border-radius: 8px;
     transition: background-color .3s linear;
+    
     // TODO: refactor
     & .Page__GithubItem,
     & .PagePackages__Item,
-    & ~ .Page_Article {
+    // & ~ .Page__Article,
+    & .PagePackages__Item_more {
       background-color: transparent !important;
     }
   }
