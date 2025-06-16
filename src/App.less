@@ -1,6 +1,6 @@
 // TODO: refact styles
 
-@import 'Assets/reset.less';
+@import 'Assets/Reset.less';
 @import "Assets/Variables.less";
 
 body {
@@ -17,7 +17,7 @@ body {
 .Wrap {
   padding: 0 30px;
   flex-direction: column;
-  @media (min-width: 700px) {
+  @media (min-width: @mobile-width-upd) {
     display: flex;
   }
 }
@@ -41,12 +41,12 @@ body {
   left: 0;
 }
 
-.Page__Inner_dark,
 .PagePackages__Item,
 .Page__GithubItem,
 .Page__GithubItem,
 .PagePackages__Item_more,
-.Page_Article
+.Page__Article,
+.Page__Creative
  {
   border-radius: 7px;
   background-color: @color-gray; //rgba(0, 0, 0, 0.28);
@@ -55,7 +55,7 @@ body {
 
 .PagePackages__Item,
 .Page__Creative {
-  padding: 15px 15px 8px 15px;
+  padding: 15px;
 }
 
 .Page__Github {
@@ -69,7 +69,7 @@ body {
 .GithubItem__Link {
   display: block;
   font-size: 17px;
-  margin-bottom: 15px;
+  margin-bottom: 8px;
 }
 
 .Page {

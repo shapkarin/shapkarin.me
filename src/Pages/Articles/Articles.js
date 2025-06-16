@@ -12,7 +12,7 @@ function ArticlesList() {
   );
 
   return (
-    <div className="Page Page_Article">
+    <div className="Page Page__Article Page__Inner">
     {/*'Page_Articles">'*/}
       <SEO 
         title="Software Development Articles & Tutorials | Iurii Shapkarin"

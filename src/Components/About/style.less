@@ -1,7 +1,8 @@
 @import "../../Assets/Variables.less";
+@import "../../Assets/Mixins.less";
 
 .About {
-  margin: 10px 10px 0 10px;
+  margin: 0 10px 0 10px;
   padding: 20px 20px 5px 20px;
   width: auto;
   font-size: 17px;
@@ -25,7 +26,7 @@
   }
 
   @media (min-width: @mobile-width) {
-    max-width: @card-max-width;
+    max-width: @mobile-breakpoint;
   }
 
   svg {
@@ -69,16 +70,14 @@
 }
 
 .Social_Link:hover {
-  background-image:
-      repeating-linear-gradient(
-        -45deg, 
-        transparent, 
-        transparent 4px,
-       rgba(0,0,0, 0.2) 4px,
-       rgba(0,0,0,0) 8px
-      );
-    background-size: 200% 200%;
-    animation: barberpole 10s linear infinite;
+    .barberpole-animation();
     background-color: @color-white;
     text-decoration: none;
+}
+
+.Disclaimer {
+  display: block;
+  margin-top: 2px;
+  font-size: 16px;
+  line-height: 20px;
 }

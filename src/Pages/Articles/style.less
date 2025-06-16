@@ -1,4 +1,5 @@
 @import "../../Assets/Variables.less";
+@import "../../Assets/Mixins.less";
 
 .Article, .Page_Articles {
     padding: 20px;
@@ -9,7 +10,7 @@
     // }
 }
 
-.Page_Article {
+.Page__Article {
   & .Article__List {
     margin-left: -12px;
   }
@@ -42,6 +43,7 @@
   margin-right: 20px;
   list-style-type: none;
   position: relative;
+  animation-duration: 30s !important; // TODO
 
   > a {
     @media (min-width: @mobile-width) {
@@ -56,22 +58,7 @@
   }
   
   &:hover {
-    background-image:
-      repeating-linear-gradient(
-        -45deg, 
-        transparent, 
-        transparent 4px,
-       rgba(0,0,0, 0.2) 4px,
-       rgba(0,0,0,0) 8px
-      );
-    background-size: 200% 200%;
-    animation: barberpole 10s linear infinite;
-  }
-}
-
-@keyframes barberpole {
-  0% {
-    background-position: 100% 100%;
+    .barberpole-animation();
   }
 }
 
@@ -87,5 +74,10 @@
   &__GoBack {
     margin-bottom: 15px;
     display: inline-block;
+  }
+  @media (max-width: @mobile-width) {
+    &__List {
+      display: block;
+    }
   }
 }
