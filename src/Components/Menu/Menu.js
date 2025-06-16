@@ -10,7 +10,7 @@ import './Menu.less';
 const Menu = () => (
   <nav className="Menu">
     <ul className="Menu_List">
-    {PAGES.map(({ name, path, icon, hidden }, id) => {
+    {PAGES.map(({ name, path, Icon, hidden }, id) => {
       return (
         <li
           className="Menu_List_Item"
@@ -24,7 +24,7 @@ const Menu = () => (
             })}
             activeClassName="Menu__Item--active"
           >
-            {icon()}
+            <Icon />
             {' '}
             { name }
           </NavLink>
