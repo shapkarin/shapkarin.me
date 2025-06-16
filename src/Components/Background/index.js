@@ -1,5 +1,5 @@
-import Scene from './Scene';
+import Background from './Background';
 
-const scene = new Scene();
+const scene = new Background();
 
 export default scene;
