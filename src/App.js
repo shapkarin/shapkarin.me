@@ -4,7 +4,6 @@ import { QueryClient, QueryClientProvider } from 'react-query';
 import 'Components/Background';
 
 import About from 'Components/About';
-import Menu from 'Components/Menu';
 import Structure from './Structure';
 
 import './App.less';
@@ -24,7 +23,6 @@ export default function App () {
       <BrowserRouter>
       <About />
       <div className="Wrap">
-        <Menu />
         <Structure />
       </div>
       </BrowserRouter>
