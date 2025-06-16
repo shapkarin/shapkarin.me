@@ -30,7 +30,6 @@ function About() {
 }
 
 
-
 export default function SuspensedAbout() {
   return <Preloader><About /></Preloader>
 }
