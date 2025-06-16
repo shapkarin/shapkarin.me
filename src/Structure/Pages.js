@@ -11,6 +11,13 @@ import { RiNpmjsLine, RiPaintBrushFill, RiArticleLine } from 'react-icons/ri';
 
 const PAGES = [
   {
+    name: 'Articles',
+    path: '/articles',
+    Icon: () => <RiArticleLine />,
+    Page: () => <Articles />,
+    hidden: true,
+  },
+  {
     name: 'Repositories',
     path: '/github/repositories',
     redirect: { from: '/repositories', to: '/github/repositories' },
@@ -44,13 +51,6 @@ const PAGES = [
     ],
     Icon: () => <RiPaintBrushFill />,
     Page: () => <Creative />,
-  },
-  {
-    name: 'Articles',
-    path: '/articles',
-    Icon: () => <RiArticleLine />,
-    Page: () => <Articles />,
-    hidden: true,
   },
   // {
   //   name: 'Contacts',
