@@ -10,9 +10,12 @@ import './Menu.less';
 const Menu = () => (
   <nav className="Menu">
     <ul className="Menu_List">
-    {PAGES.map(({ name, path, icon, hidden }) => {
+    {PAGES.map(({ name, path, icon, hidden }, id) => {
       return (
-        <li className="Menu_List_Item">
+        <li
+          className="Menu_List_Item"
+          key={id}
+        >
           <NavLink
             key={`Menu_${name}`}
             to={path}
@@ -28,8 +31,8 @@ const Menu = () => (
         </li>
       );
     })}
-    <RandomButton className="Menu__Item Menu__Item--unselect">
-      <IoIosRefresh/> Background
+    <RandomButton className="Menu__Item Menu__Item--unselect Menu__Item--bg">
+      <IoIosRefresh/> bg upd
     </RandomButton>
     </ul>
   </nav>
