@@ -7,6 +7,7 @@ import Articles from 'Pages/Articles/Articles';
 
 import { GoRepo, GoStar } from 'react-icons/go';
 import { RiNpmjsLine, RiPaintBrushFill, RiArticleLine } from 'react-icons/ri';
+// import { IoIosContact } from 'react-icons/io';
 
 const PAGES = [
   {
@@ -14,7 +15,7 @@ const PAGES = [
     path: '/github/repositories',
     redirect: { from: '/repositories', to: '/github/repositories' },
     Icon: () => <GoRepo />,
-    Page: () => <Repositories />
+    Page: () => <Repositories />,
   },
   {
     name: 'Likes',
@@ -25,14 +26,14 @@ const PAGES = [
       { from: '/stars', to: '/github/stars' },
     ],
     Icon: () => <GoStar size="1.2em" />,
-    Page: () => <Stars />
+    Page: () => <Stars />,
   },
   {
     name: 'Packages',
     path: '/packages',
     redirect: { from: '/projects', to: '/packages' },
     Icon: () => <RiNpmjsLine size="1.24em" />,
-    Page: (props) => <Packages { ...props } />
+    Page: (props) => <Packages { ...props } />,
   },
   {
     name: 'Creative',
@@ -42,7 +43,7 @@ const PAGES = [
       { from: '/sketches', to: '/creative' }
     ],
     Icon: () => <RiPaintBrushFill />,
-    Page: () => <Creative />
+    Page: () => <Creative />,
   },
   {
     name: 'Articles',
@@ -51,12 +52,12 @@ const PAGES = [
     Page: () => <Articles />,
     hidden: true,
   },
-  {
-    name: 'Contacts',
-    path: 'contacts',
-    Icon: () => <></>,
-    Page: () => <></>,
-  }
+  // {
+  //   name: 'Contacts',
+  //   path: 'contacts',
+  //   Icon: () => <IoIosContact style={{ height: '14px' }}/>,
+  //   Page: () => <></>,
+  // }
 ];
 
 export default PAGES;
