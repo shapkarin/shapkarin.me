@@ -25,8 +25,8 @@ export default function App () {
       <About />
       <div className="Wrap">
         <Structure />
-        <Footer />
       </div>
+      <Footer />
       </BrowserRouter>
     </QueryClientProvider>
   );
