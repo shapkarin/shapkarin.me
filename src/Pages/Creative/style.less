@@ -1,4 +1,5 @@
 @import "../../Assets/Variables.less";
+@import "../../Assets/Mixins.less";
 
 .Gal--Item {
   padding: 12px;
@@ -9,22 +10,7 @@
   }
   
   &:hover {
-    background-image:
-      repeating-linear-gradient(
-        -45deg, 
-        transparent, 
-        transparent 4px,
-       rgba(0,0,0, 0.2) 4px,
-       rgba(0,0,0,0) 8px
-      );
-    background-size: 200% 200%;
-    animation: barberpole 10s linear infinite;
-  }
-}
-
-@keyframes barberpole {
-  0% {
-    background-position: 100% 100%;
+    .barberpole-animation();
   }
 }
 
@@ -37,7 +23,6 @@
 
 .Gal__Wrapper {
   display: flex;
-  margin-top: 24px;
   @media (max-width: @mobile-width) {
     flex-direction: column;
 

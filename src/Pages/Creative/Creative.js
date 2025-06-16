@@ -16,7 +16,7 @@ export default function Creative() {
         type="website"
         name="Iurii Shapkarin"
       />
-      <div className="Page__Creative Page__Inner Page__Inner_dark">
+      <div className="Page__Creative Page__Inner">
         <Preloader>
           <Intro />
         </Preloader>
@@ -28,16 +28,16 @@ export default function Creative() {
   );
 }
 
+
 const CreativeProofLink = () =>
-  <a target="_blank" rel="noreferrer" href="https://github.com/shapkarin/sketches">=> Proof from 9 y.o. repository</a>;
+  <a target="_blank" rel="noreferrer" href="https://github.com/shapkarin/sketches" style={{ marginBottom: '10px' }}>=> from 9 y.o. repository</a>;
 
 function Intro() {
   const { data: { data: { title, description } } } = useQuery('CreativeIntro', fetchCreativeIntro);
 
   return <>
-    <h1>{ title }</h1>
-    <CreativeProofLink />
-    <p style={{ lineHeight: '24px', marginTop: '20px' }}>
+    <h1>{ title }{' '}<CreativeProofLink /></h1>
+    <p>
       <Formatted>
         { description }
       </Formatted>
