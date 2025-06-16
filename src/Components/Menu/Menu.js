@@ -9,25 +9,29 @@ import './Menu.less';
 
 const Menu = () => (
   <nav className="Menu">
+    <ul className="Menu_List">
     {PAGES.map(({ name, path, icon, hidden }) => {
       return (
-        <NavLink
-          key={`Menu_${name}`}
-          to={path}
-          className={clsx('Menu__Item', {
-            'Menu__Item--hidden': false && hidden,
-          })}
-          activeClassName="Menu__Item--active"
-        >
-          {icon()}
-          {' '}
-          { name }
-        </NavLink>
+        <li className="Menu_List_Item">
+          <NavLink
+            key={`Menu_${name}`}
+            to={path}
+            className={clsx('Menu__Item', {
+              'Menu__Item--hidden': false && hidden,
+            })}
+            activeClassName="Menu__Item--active"
+          >
+            {icon()}
+            {' '}
+            { name }
+          </NavLink>
+        </li>
       );
     })}
     <RandomButton className="Menu__Item Menu__Item--unselect">
       <IoIosRefresh/> Background
     </RandomButton>
+    </ul>
   </nav>
 );
 
