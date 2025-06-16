@@ -7,8 +7,8 @@ import { PAGES } from '../../Structure';
 
 import './Menu.less';
 
-const Menu = () => (
-  <nav className="Menu">
+const Menu = ({ ...rest }) => (
+  <nav className="Menu" role="navigation" aria-label="Main Menu" {...rest}>
     <ul className="Menu_List">
     {PAGES.map(({ name, path, Icon, hidden }, id) => {
       return (
