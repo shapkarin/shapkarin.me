@@ -4,10 +4,10 @@ import { QueryClient, QueryClientProvider } from 'react-query';
 import 'Components/Background';
 
 import About from 'Components/About';
-import Menu from 'Components/Menu';
 import Structure from './Structure';
 
 import './App.less';
+import Footer from 'Components/Footer';
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -24,8 +24,8 @@ export default function App () {
       <BrowserRouter>
       <About />
       <div className="Wrap">
-        <Menu />
         <Structure />
+        <Footer />
       </div>
       </BrowserRouter>
     </QueryClientProvider>

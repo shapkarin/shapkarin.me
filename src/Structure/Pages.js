@@ -50,6 +50,12 @@ const PAGES = [
     icon: () => <RiArticleLine />,
     Page: () => <Articles />,
     hidden: true,
+  },
+  {
+    name: 'Contacts',
+    path: 'contacts',
+    icon: () => <></>,
+    Page: () => <></>,
   }
 ];
 
