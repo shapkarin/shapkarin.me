@@ -4,6 +4,7 @@ import { QueryClient, QueryClientProvider } from 'react-query';
 import 'Components/Background';
 
 import About from 'Components/About';
+import Menu from 'Components/Menu';
 import Structure from './Structure';
 
 import './App.less';
@@ -23,6 +24,7 @@ export default function App () {
     <QueryClientProvider client={queryClient}>
       <BrowserRouter>
       <About />
+      <Menu />
       <div className="Wrap">
         <Structure />
       </div>
