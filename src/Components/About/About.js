@@ -15,7 +15,7 @@ function About() {
     <header className={clsx('About', {
         'About_dark': false
       })}>
-      <Link to="/" className='About_greeting'>{title}</Link>
+      <Link to="/" className='About_greeting' aria-label="Go to homepage">{title}</Link>
       {intro}
       <a href={linkedin.link} className="Social_Link" target="_blank" rel="noreferrer">{linkedin.text}<FiExternalLink /></a>
       <a href={github.link} className="Social_Link" target="_blank" rel="noreferrer">{github.text}<FiExternalLink /></a>
