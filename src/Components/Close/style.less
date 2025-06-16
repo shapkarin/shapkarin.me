@@ -1,10 +1,17 @@
 .CloseButton {
   position: absolute;
   right: 0px;
-  top: -15px;
+  top: -20px;
 
   &:hover ~ .Page__Inner {
-    background-color: rgba(255,255,255,0.1);
+    background-color: rgba(42,42,42,0.5);
     border-radius: 8px;
+    transition: background-color .3s linear;
+    // TODO: refactor
+    & .Page__GithubItem,
+    & .PagePackages__Item,
+    & ~ .Page_Article {
+      background-color: transparent !important;
+    }
   }
 };

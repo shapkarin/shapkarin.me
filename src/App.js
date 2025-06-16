@@ -7,6 +7,7 @@ import About from 'Components/About';
 import Structure from './Structure';
 
 import './App.less';
+import Footer from 'Components/Footer';
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -24,6 +25,7 @@ export default function App () {
       <About />
       <div className="Wrap">
         <Structure />
+        <Footer />
       </div>
       </BrowserRouter>
     </QueryClientProvider>
