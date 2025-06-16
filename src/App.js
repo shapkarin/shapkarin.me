@@ -22,9 +22,10 @@ const queryClient = new QueryClient({
 export default function App () {
   return (
     <QueryClientProvider client={queryClient}>
+      <a href="#menu" class="a11y" className="hidden">Go to Menu</a>
       <BrowserRouter>
       <About />
-      <Menu />
+      <Menu id="menu"/>
       <div className="Wrap">
         <Structure />
       </div>
