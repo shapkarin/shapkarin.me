@@ -7,6 +7,7 @@ const Close = () => (
   <Link
     to="/"
     className="CloseButton"
+    aria-label="Close this page (back to the main page)"
   >
     <IoMdClose />
   </Link>
