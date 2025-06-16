@@ -31,8 +31,8 @@ const Menu = () => (
         </li>
       );
     })}
-    <RandomButton className="Menu__Item Menu__Item--unselect">
-      <IoIosRefresh/> Background
+    <RandomButton className="Menu__Item Menu__Item--unselect Menu__Item--bg">
+      <IoIosRefresh/> bg upd
     </RandomButton>
     </ul>
   </nav>

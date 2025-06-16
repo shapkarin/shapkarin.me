@@ -46,6 +46,14 @@
     &--unselect {
       user-select: none;
     }
+    &--bg {
+      margin-left: auto;
+      margin-right: 0;
+      // TODO: add breakpoint value, and recheck @mobile-width
+      @media (max-width: @mobile-width-upd) {
+        display: none;
+      }
+    }
   }
 
   &_List {
