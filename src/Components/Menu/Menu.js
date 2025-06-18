@@ -1,5 +1,6 @@
 import { NavLink } from 'react-router-dom';
 import { IoIosRefresh } from 'react-icons/io';
+import isMobile from 'is-mobile';
 import clsx from 'clsx';
 
 import RandomButton from 'Components/RandomButton';
@@ -32,9 +33,9 @@ const Menu = ({ ...rest }) => (
       );
     })}
     </ul>
-    <RandomButton className="Menu__Item Menu__Item--unselect Menu__Item--bg">
+    {isMobile && <RandomButton className="Menu__Item Menu__Item--unselect Menu__Item--bg">
       <IoIosRefresh/> bg upd
-    </RandomButton>
+    </RandomButton>}
   </nav>
 );
 
