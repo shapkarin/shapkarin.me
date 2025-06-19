@@ -48,7 +48,7 @@ body {
 .Page__Article,
 .Page__Creative
  {
-  border-radius: 7px;
+  border-radius: @card-border-radius;
   background-color: @color-gray; //rgba(0, 0, 0, 0.28);
   border: 1px solid @color-black;
 }
@@ -115,4 +115,9 @@ em, i {
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
   border: 0;
+}
+
+#root {
+  margin: 0 auto;
+  max-width: 880px;
 }
