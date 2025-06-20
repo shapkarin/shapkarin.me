@@ -26,7 +26,7 @@ function About() {
         })} target="_blank" rel="noreferrer">{linkedin.text}<FiExternalLink /></a>
         <a href={github.link} className="Social_Link" target="_blank" rel="noreferrer">{github.text}<FiExternalLink /></a>
         <em className="Disclaimer">
-          Disclaimer: gradually developed <a href="https://web.archive.org/web/20130801000000*/shapkarin.me" target="_blank" rel="noreferrer">since 2013<FiExternalLink /></a> with limited time, is not an example of application architecture {' | '} <a href="https://github.com/shapkarin/shapkarin.me" target="_blank" rel="noreferrer">cource code<FiExternalLink /></a>
+          Disclaimer: homepage has been gradually developed <a href="https://web.archive.org/web/20130801000000*/shapkarin.me" target="_blank" rel="noreferrer">since 2013<FiExternalLink /></a> with limited time, is not an example of application architecture {' | '} <a href="https://github.com/shapkarin/shapkarin.me" target="_blank" rel="noreferrer">cource code<FiExternalLink /></a>
         </em>
       </div>
     </>
