@@ -2,15 +2,13 @@
 @import "../../Assets/Mixins.less";
 
 .Article, .Page_Articles {
-    padding: 20px;
-    // background-color: @color-white; //rgba(0, 0, 0, 0.5);
-    border-radius: 10px;
-    // &:hover {
-    //     background-color: rgba(0, 0, 0, 0.6) !important;
-    // }
+  padding: 20px;
+  border-radius: 10px;
 }
 
+// TODO: adopt a more generic style for all pages
 .Page__Article {
+  padding-bottom: @padding-default;
   & .Article__List {
     margin-left: -12px;
   }
