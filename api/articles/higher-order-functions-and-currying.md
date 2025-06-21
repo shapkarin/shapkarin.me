@@ -60,12 +60,7 @@ console.log(doubledNumbers); // Output: [2, 4, 6, 8]
 
 // This is what happens under the hood in a simplified version of map:
 function myMap(array, callback) {
-  const result = [];
-  for (let i = 0; i < array.length; i++) {
-    // The callback function is invoked for each element
-    result.push(callback(array[i], i, array));
-  }
-  return result;
+  return array.map(callback);
 }
 
 const customDoubled = myMap(numbers, double);

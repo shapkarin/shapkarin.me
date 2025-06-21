@@ -7,7 +7,7 @@ order: 7
 More on my gist collection => [https://gist.github.com/shapkarin/b3fbeaca95ef69df177b](https://gist.github.com/shapkarin/b3fbeaca95ef69df177b)
 
 
-Below is a (quite long!) tour of curious or surprising expressions in JavaScript, along with explanations of why they behave as they do. JavaScript’s dynamic typing, type coercion, loose equality, parsing rules, and handling of edge cases all contribute to these quirks. Many of these examples come directly from how the [ECMAScript specification](https://tc39.es/ecma262/) dictates type conversions should happen. While they might appear “weird,” each snippet has a logical (if not always intuitive) explanation once you look under the hood.
+Below is a (quite long!) tour of curious or surprising expressions in JavaScript, along with explanations of why they behave as they do. JavaScript's dynamic typing, type coercion, loose equality, parsing rules, and handling of edge cases all contribute to these quirks. Many of these examples come directly from how the [ECMAScript specification](https://tc39.es/ecma262/) dictates type conversions should happen. While they might appear "weird," each snippet has a logical (if not always intuitive) explanation once you look under the hood.
 
 ---
 
@@ -22,14 +22,14 @@ Below is a (quite long!) tour of curious or surprising expressions in JavaScript
 ```js
 {} + [] // 0
 ```
-- **What happens**: The curly braces `{}` at the beginning of a line can be interpreted as a standalone “block” rather than an object literal if there’s no preceding context. Once that’s parsed as a block, we then have `+ []`. 
+- **What happens**: The curly braces `{}` at the beginning of a line can be interpreted as a standalone "block" rather than an object literal if there's no preceding context. Once that's parsed as a block, we then have `+ []`. 
 - In many JS engines, if you force the expression to be read strictly as an expression (e.g., wrap it in parentheses or place it on one line with parentheses), you get different outcomes. But in this snippet, the parser interprets `{}` as an empty block and then sees `+ []` → `+ ""` → `0`.
-- **Why**: JavaScript’s grammar can parse leading `{}` as an empty statement block. Then `+[]` becomes `+""`, which is `0`.
+- **Why**: JavaScript's grammar can parse leading `{}` as an empty statement block. Then `+[]` becomes `+""`, which is `0`.
 
 ```js
 [] - {} // NaN
 ```
-- **What happens**: Arrays and objects both try to convert to “numeric” values in a subtraction context. `[]` becomes `""` when forced into a string, which in numeric conversion is `0`. But `{}` as a number is `NaN`. Then `0 - NaN = NaN`.
+- **What happens**: Arrays and objects both try to convert to "numeric" values in a subtraction context. `[]` becomes `""` when forced into a string, which in numeric conversion is `0`. But `{}` as a number is `NaN`. Then `0 - NaN = NaN`.
 - **Why**: The `-` operator always attempts numeric coercion. An empty object coerces to `NaN`, so the result is `NaN`.
 
 ```js
@@ -37,7 +37,7 @@ Below is a (quite long!) tour of curious or surprising expressions in JavaScript
 ```
 - **What happens**: Again the `{}` is likely interpreted as an empty block, then we see `- []`. That becomes `- ""`, which becomes `-0` (negative zero is a valid number in JavaScript).
 - If you do `( {} - [] )` on one line, it might give you `NaN` because then it is truly an object minus array. But in many JS interpreters, the snippet alone is a block followed by `-[]`.
-- **Why**: “Empty block” plus `-[]` is effectively `-(0)`, which yields `-0`.
+- **Why**: "Empty block" plus `-[]` is effectively `-(0)`, which yields `-0`.
 
 ---
 
@@ -97,7 +97,7 @@ true + '' // "true"
 ```js
 [] == '0' // false
 ```
-- **What happens**: `[]` → `""`, and `""` is `0` as a number. `'0'` is also `0`. So numerically it might seem `0 == 0`. Actually in older specs, `[] == '0'` is `false`—but it’s a tricky one:
+- **What happens**: `[]` → `""`, and `""` is `0` as a number. `'0'` is also `0`. So numerically it might seem `0 == 0`. Actually in older specs, `[] == '0'` is `false`—but it's a tricky one:
   - `[]` → `""` (string), comparing string to string `'0'` → false
   - The actual steps: `[]` is object → to primitive → `""`; `'0'` is a string. `"" == '0'` is false. JavaScript does not do `""` → `0` for *string-to-string* comparison; it is done for number-to-string comparisons. In the official spec, `'0'` remains `'0'`, `''` remains `''`, they differ as strings. 
 - **Why**: The short answer: `[]` becomes `""`, which is not equal to `'0'` as a string.
@@ -111,7 +111,7 @@ true + '' // "true"
 [...Array(2)] == ',' // true
 ```
 - **What happens**: `Array(2)` is `[empty, empty]`. Spread into `[...]` yields `[undefined, undefined]` – or basically two empty slots. When stringified, `[undefined, undefined]` → `","` (because each empty or undefined slot is turned into an empty string, and joined with commas). So the array becomes the string `","`. This is loosely equal to the string `","`.
-- **Why**: Array elements that are `undefined` or “empty” become empty strings during `.toString()` or `.join(',')`, leading to one comma between them → `","`.
+- **Why**: Array elements that are `undefined` or "empty" become empty strings during `.toString()` or `.join(',')`, leading to one comma between them → `","`.
 
 ```js
 new Array([], null, undefined) == ',,' // true
@@ -159,7 +159,7 @@ new Array([], null, undefined) == ',,' // true
 ```js
 1 === 1.00000000000000009 // true
 ```
-- **What happens**: Double precision floating-point can’t represent `1.00000000000000009` any more precisely than `1.0`, so they become the same value in memory.
+- **What happens**: Double precision floating-point can't represent `1.00000000000000009` any more precisely than `1.0`, so they become the same value in memory.
 
 ```js
 'a' === 'a' // true
@@ -232,7 +232,7 @@ Math.max() > Math.min() // false
 ```js
 Number.MIN_VALUE < 0 // false
 ```
-- **What happens**: `Number.MIN_VALUE` is the smallest positive value (~5e-324), but it is still positive, so it’s not less than 0.
+- **What happens**: `Number.MIN_VALUE` is the smallest positive value (~5e-324), but it is still positive, so it's not less than 0.
 
 ---
 
@@ -307,7 +307,7 @@ JSON.stringify([1,2,3]) === JSON.stringify([1,2,3]) // true
 0..toString() // "0"
 0 .toString() // "0"
 ```
-- **What happens**: `0..toString()` is a hack to let the parser know you mean `Number(0)` with a decimal, rather than something else. It’s a trick to allow method calls on a number literal. The result is `"0"`.
+- **What happens**: `0..toString()` is a hack to let the parser know you mean `Number(0)` with a decimal, rather than something else. It's a trick to allow method calls on a number literal. The result is `"0"`.
 
 ```js
 [].toString() // ""
@@ -321,7 +321,7 @@ JSON.stringify([1,2,3]) === JSON.stringify([1,2,3]) // true
 ```js
 +new Date() // 167...some large timestamp...
 ```
-- **What happens**: The unary `+` operator forces a numeric conversion. `new Date()` → numeric value is the milliseconds since the epoch. That’s the same as `.getTime()`.
+- **What happens**: The unary `+` operator forces a numeric conversion. `new Date()` → numeric value is the milliseconds since the epoch. That's the same as `.getTime()`.
 
 ```js
 +new Date() === Number(new Date) // true
@@ -360,7 +360,7 @@ typeof (0 + new Date()) // "string"
 ```js
 parseInt("1.let's see") // NaN
 ```
-- **What happens**: `parseInt("1.let's see")` reads `"1."` as an integer but sees `.` not followed by a digit. It stops parsing right after `"1"`. Actually, the presence of `'l'` after the decimal confuses it, so it can’t parse beyond `1` as an integer. The partial parse gives `1`, but then sees an invalid character sequence. Historically, many engines end up with `1` or `NaN`. Modern specs: if `parseInt` finds a valid integer portion, it returns that integer. But with `".let's"` it’s ambiguous. Some engines might interpret it differently. Often you’ll get `1`. Some older or strict interpretations might yield `NaN`. (Exact result can vary, but typically parseInt stops as soon as it can’t parse a valid integer, so the result is `1`. If your environment yields `NaN`, it’s possibly a nuance of that engine. Check your browser or Node version.)
+- **What happens**: `parseInt("1.let's see")` reads `"1."` as an integer but sees `.` not followed by a digit. It stops parsing right after `"1"`. Actually, the presence of `'l'` after the decimal confuses it, so it can't parse beyond `1` as an integer. The partial parse gives `1`, but then sees an invalid character sequence. Historically, many engines end up with `1` or `NaN`. Modern specs: if `parseInt` finds a valid integer portion, it returns that integer. But with `".let's"` it's ambiguous. Some engines might interpret it differently. Often you'll get `1`. Some older or strict interpretations might yield `NaN`. (Exact result can vary, but typically parseInt stops as soon as it can't parse a valid integer, so the result is `1`. If your environment yields `NaN`, it's possibly a nuance of that engine. Check your browser or Node version.)
 - This snippet highlights that `parseInt` will stop at the first non-valid integer character, but a `'l'` or `'`' might break it differently across engines.
 
 ```js
@@ -422,7 +422,7 @@ Math.PI >> [] // 3
 ```js
 ~Math.PI // -4
 ```
-- **What happens**: `~x` is the bitwise NOT. `Math.PI` truncates to `3`. `~3` = `-4` (in two’s complement).
+- **What happens**: `~x` is the bitwise NOT. `Math.PI` truncates to `3`. `~3` = `-4` (in two's complement).
 
 ```js
 ~~Math.PI // 3
@@ -476,7 +476,7 @@ Array(16).join('wat' - 1) + ' Batman!'
   - `false + []` → `"false"`.
   - `[+[]]` → `[0]`, then `+[]` is `0` inside the bracket. So `'false'[0]` is `'f'`.
   - And so on, indexing letters out of `'false'` or `'true'`. 
-- It’s a puzzle of nested coercions, array indexes, booleans, and string indexing.
+- It's a puzzle of nested coercions, array indexes, booleans, and string indexing.
 
 ---
 
@@ -497,7 +497,7 @@ Array(16).join('wat' - 1) + ' Batman!'
 ```js
 $=_=>`$=${$};$()`;$()
 ```
-- **What happens**: This is a self-referential arrow function that prints its own definition. `$()` calls itself, returning the string with interpolation of `$=${$}`. It’s basically quine-like code in JavaScript.
+- **What happens**: This is a self-referential arrow function that prints its own definition. `$()` calls itself, returning the string with interpolation of `$=${$}`. It's basically quine-like code in JavaScript.
 
 ---
 
@@ -524,9 +524,74 @@ console.log((undefined + "O").toUpperCase()); // UNDEFINEDO
 
 ---
 
+## 23. Implementing Your Own `myMap` Function
+
+Given the quirks we've seen with `['1', '7', '11'].map(parseInt)`, let's implement our own `myMap` function that avoids these pitfalls:
+
+```js
+function myMap(array, callback, thisArg) {
+  // Handle edge cases
+  if (this == null) {
+    throw new TypeError('Array.prototype.myMap called on null or undefined');
+  }
+  
+  if (typeof callback !== 'function') {
+    throw new TypeError(callback + ' is not a function');
+  }
+  
+  // Convert to object (handles primitives)
+  const O = Object(array);
+  
+  // Get length property and convert to integer
+  const len = parseInt(O.length) || 0;
+  
+  // Create new array for results
+  const result = new Array(len);
+  
+  // Iterate through array
+  for (let i = 0; i < len; i++) {
+    // Check if property exists (handles sparse arrays)
+    if (i in O) {
+      // Call callback with proper arguments: (element, index, array)
+      result[i] = callback.call(thisArg, O[i], i, O);
+    }
+  }
+  
+  return result;
+}
+
+// Usage examples:
+['1', '7', '11'].myMap(x => parseInt(x, 10)); // [1, 7, 11] - Fixed!
+[1, 2, 3].myMap(x => x * 2); // [2, 4, 6]
+
+// This avoids the parseInt quirk because we explicitly pass only one argument
+// Instead of: ['1', '7', '11'].map(parseInt) // [1, NaN, 3]
+// We get:    ['1', '7', '11'].myMap(x => parseInt(x, 10)) // [1, 7, 11]
+```
+
+**Key differences from the problematic `map(parseInt)` example**:
+- Our callback wrapper `x => parseInt(x, 10)` only passes the element to `parseInt`, not the index
+- We explicitly specify base 10 to avoid parsing issues
+- The implementation handles sparse arrays correctly
+- It includes proper error checking for edge cases
+
+**How the native `map(parseInt)` problem occurs**:
+```js
+// What actually happens:
+['1', '7', '11'].map(parseInt)
+// Becomes:
+['1', '7', '11'].map((element, index) => parseInt(element, index))
+// Which calls:
+parseInt('1', 0)  // 1 (base 0 defaults to 10)
+parseInt('7', 1)  // NaN (base 1 is invalid)  
+parseInt('11', 2) // 3 (binary: 11₂ = 3₁₀)
+```
+
+---
+
 # Conclusion
 
-JavaScript’s type system, especially its loose equality rules, automatic type coercion, and corner cases in parsing or arithmetic can produce results that seem bizarre at first glance. However, these quirks usually follow the language specification consistently:
+JavaScript's type system, especially its loose equality rules, automatic type coercion, and corner cases in parsing or arithmetic can produce results that seem bizarre at first glance. However, these quirks usually follow the language specification consistently:
 
 1. **Type Coercion**: The `+` operator can trigger numeric or string operations depending on the operand types.
 2. **Loose Equality**: `==` tries to align types by a maze of conversions (`objects → strings`, `strings → numbers`, booleans → `0`/`1`, etc.).
@@ -535,4 +600,4 @@ JavaScript’s type system, especially its loose equality rules, automatic type 
 5. **Date and Object to Primitives**: `Date` objects default to strings, while ordinary objects default to `[object Object]`, or `NaN` if forced numerically.
 6. **NaN**: This special numeric value is never equal to anything, including itself.
 
-Knowing these details helps you understand the surprising results—and avoid bugs in day-to-day coding. When you need reliable results, prefer **strict equality** over `==`, use explicit type conversions, and treat floating-point with caution. Although these examples can look “weird,” they underscore the importance of reading the specification’s rules for type conversion and how operators behave with various operand types.
+Knowing these details helps you understand the surprising results—and avoid bugs in day-to-day coding. When you need reliable results, prefer **strict equality** over `==`, use explicit type conversions, and treat floating-point with caution. Although these examples can look "weird," they underscore the importance of reading the specification's rules for type conversion and how operators behave with various operand types.
