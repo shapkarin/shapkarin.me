@@ -135,8 +135,7 @@ var a = 0.1,
     c = a + b
 c === 0.3 // false
 ```
-- **What happens**: Floating-point arithmetic can’t exactly represent 0.1 + 0.2 = 0.30000000000000004. So `c === 0.3` is `false`.
-- **Why**: This is one of JavaScript’s classic floating-point precision pitfalls.
+- **Why**: check this article [Computer Floating-Point Precision](/articles/floating-point-precision)
 
 ---
 
