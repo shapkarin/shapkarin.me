@@ -2,15 +2,13 @@
 @import "../../Assets/Mixins.less";
 
 .Article, .Page_Articles {
-    padding: 20px;
-    // background-color: @color-white; //rgba(0, 0, 0, 0.5);
-    border-radius: 10px;
-    // &:hover {
-    //     background-color: rgba(0, 0, 0, 0.6) !important;
-    // }
+  padding: 20px;
+  border-radius: 10px;
 }
 
+// TODO: adopt a more generic style for all pages
 .Page__Article {
+  padding-bottom: @padding-default;
   & .Article__List {
     margin-left: -12px;
   }
@@ -22,9 +20,8 @@
 .Article__List {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
   > .Article__Item {
-      flex: 0 0 calc(33.333% - 7px);
+      flex: 0 0 45%; // magic number :-)
   }
   @media (max-width: 768px) {
       > .Article__Item {
@@ -39,8 +36,6 @@
 }
 
 .Article__Item {
-  padding: 12px;
-  margin-right: 20px;
   list-style-type: none;
   position: relative;
   animation-duration: 30s !important; // TODO
@@ -55,6 +50,7 @@
     display: block;
     height: 100%;
     width: 100%;
+    padding: 12px;
   }
   
   &:hover {
