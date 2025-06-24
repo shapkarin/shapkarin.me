@@ -30,9 +30,6 @@ jobs:
       # react-snap has build-in "npm i" and "npm run build"
       - name: Server-side render with github action
         uses: brycedorn/react-snap-action@v1.0.2
-        with:
-          navigationTimeout: 900000
-          waitFor: 1000
 
       - name: Copy HTML gallery
         run: |
