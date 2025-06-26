@@ -30,6 +30,11 @@
     "filename": "back-health-and-therapeutic-exercises.md"
   },
   {
+    "slug": "drop-react-manual-memoization",
+    "title": "Drop React Manual Memoization",
+    "filename": "drop-react-manual-memoization.md"
+  },
+  {
     "slug": "javascript-lexical-scope",
     "title": "Javascript Lexical Scope",
     "filename": "javascript-lexical-scope.md"
