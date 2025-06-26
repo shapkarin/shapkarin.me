@@ -9,7 +9,7 @@ order: 3
 - [Introduction](#introduction)
 - [Quick Summary](#quick-summary)
 - [Why does React need a mutation model?](#why-does-react-need-a-mutation-model)
-- [Building Blocks: Places, Effects & Ranges](#building-blocks-places-effects--ranges)
+- [Building Blocks: Places, Effects & Ranges](#building-blocks-places-effects-ranges)
 - [Effects Reference](#effects-reference)
 - [Key Inference Rules (Mental Model)](#key-inference-rules-mental-model)
 - [Writing Compiler-Friendly Code](#writing-compiler-friendly-code)
