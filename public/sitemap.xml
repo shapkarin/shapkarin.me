@@ -4,6 +4,9 @@
     <loc>https://shapkarin.me/</loc>
   </url>
   <url>
+    <loc>https://shapkarin.me/articles/</loc>
+  </url>
+  <url>
     <loc>https://shapkarin.me/github/repositories/</loc>
   </url>
   <url>
@@ -16,28 +19,13 @@
     <loc>https://shapkarin.me/creative/</loc>
   </url>
   <url>
-    <loc>https://shapkarin.me/articles/</loc>
+    <loc>http://shapkarin.me/</loc>
   </url>
   <url>
     <loc>https://shapkarin.me/gallery/older/dots.html</loc>
   </url>
   <url>
     <loc>https://shapkarin.me/gallery/older/random_walker.html</loc>
-  </url>
-  <url>
-    <loc>https://shapkarin.me/gallery/older/</loc>
-  </url>
-  <url>
-    <loc>https://shapkarin.me/gallery/p5js/draw_walk/</loc>
-  </url>
-  <url>
-    <loc>https://shapkarin.me/gallery/p5js/magic/</loc>
-  </url>
-  <url>
-    <loc>https://shapkarin.me/gallery/p5js/flies/</loc>
-  </url>
-  <url>
-    <loc>https://shapkarin.me/gallery/p5js/flies-m-acc/</loc>
   </url>
   <url>
     <loc>https://shapkarin.me/articles/contributions-to-major-web-dev-repos/</loc>
@@ -56,6 +44,9 @@
   </url>
   <url>
     <loc>https://shapkarin.me/articles/back-health-and-therapeutic-exercises/</loc>
+  </url>
+  <url>
+    <loc>https://shapkarin.me/articles/drop-react-manual-memoization/</loc>
   </url>
   <url>
     <loc>https://shapkarin.me/articles/javascript-lexical-scope/</loc>
@@ -89,5 +80,116 @@
   </url>
   <url>
     <loc>https://shapkarin.me/articles/async-event-loop-web-workers/</loc>
+  </url>
+  <url>
+    <loc>https://shapkarin.me/gallery/older/</loc>
+  </url>
+  <url>
+    <loc>https://shapkarin.me/gallery/p5js/draw_walk/</loc>
+  </url>
+  <url>
+    <loc>https://shapkarin.me/gallery/p5js/magic/</loc>
+  </url>
+  <url>
+    <loc>https://shapkarin.me/gallery/p5js/flies/</loc>
+  </url>
+  <url>
+    <loc>https://shapkarin.me/gallery/p5js/flies-m-acc/</loc>
+  </url>
+  <url>
+    <loc>http://shapkarin.me/articles/</loc>
+  </url>
+  <url>
+    <loc>http://shapkarin.me/github/repositories/</loc>
+  </url>
+  <url>
+    <loc>http://shapkarin.me/github/likes/</loc>
+  </url>
+  <url>
+    <loc>http://shapkarin.me/packages/</loc>
+  </url>
+  <url>
+    <loc>http://shapkarin.me/creative/</loc>
+  </url>
+  <url>
+    <loc>https://shapkarin.me/articles/react-mutability-aliasing-model/</loc>
+  </url>
+  <url>
+    <loc>http://shapkarin.me/gallery/older/dots.html</loc>
+  </url>
+  <url>
+    <loc>http://shapkarin.me/gallery/older/random_walker.html</loc>
+  </url>
+  <url>
+    <loc>http://shapkarin.me/articles/contributions-to-major-web-dev-repos/</loc>
+  </url>
+  <url>
+    <loc>http://shapkarin.me/articles/higher-order-functions-and-currying/</loc>
+  </url>
+  <url>
+    <loc>http://shapkarin.me/articles/floating-point-precision/</loc>
+  </url>
+  <url>
+    <loc>http://shapkarin.me/articles/function-declaration-vs-expression/</loc>
+  </url>
+  <url>
+    <loc>http://shapkarin.me/articles/production-AI-in-2016-year/</loc>
+  </url>
+  <url>
+    <loc>http://shapkarin.me/articles/back-health-and-therapeutic-exercises/</loc>
+  </url>
+  <url>
+    <loc>http://shapkarin.me/articles/drop-react-manual-memoization/</loc>
+  </url>
+  <url>
+    <loc>http://shapkarin.me/articles/javascript-lexical-scope/</loc>
+  </url>
+  <url>
+    <loc>http://shapkarin.me/articles/memoization/</loc>
+  </url>
+  <url>
+    <loc>http://shapkarin.me/articles/structuredClone/</loc>
+  </url>
+  <url>
+    <loc>http://shapkarin.me/articles/cluster/</loc>
+  </url>
+  <url>
+    <loc>http://shapkarin.me/articles/curiosity-js/</loc>
+  </url>
+  <url>
+    <loc>http://shapkarin.me/articles/design/</loc>
+  </url>
+  <url>
+    <loc>http://shapkarin.me/articles/extend-routines/</loc>
+  </url>
+  <url>
+    <loc>http://shapkarin.me/articles/global-diff/</loc>
+  </url>
+  <url>
+    <loc>http://shapkarin.me/articles/saga-fetch/</loc>
+  </url>
+  <url>
+    <loc>http://shapkarin.me/articles/wagmi-ethers/</loc>
+  </url>
+  <url>
+    <loc>http://shapkarin.me/articles/async-event-loop-web-workers/</loc>
+  </url>
+  <url>
+    <loc>http://shapkarin.me/gallery/older/</loc>
+  </url>
+  <url>
+    <loc>http://shapkarin.me/gallery/p5js/draw_walk/</loc>
+  </url>
+  <url>
+    <loc>http://shapkarin.me/gallery/p5js/magic/</loc>
+  </url>
+  <url>
+    <loc>http://shapkarin.me/gallery/p5js/flies/</loc>
+  </url>
+  <url>
+    <loc>http://shapkarin.me/gallery/p5js/flies-m-acc/</loc>
+  </url>
+  <url>
+    <loc>http://shapkarin.me/articles/react-mutability-aliasing-model/</loc>
   </url>
 </urlset>
