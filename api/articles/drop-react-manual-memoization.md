@@ -4,7 +4,7 @@ description: "Deep dive into the new mutability & aliasing model powering React 
 order: 3
 ---
 
-# Drop React Manual Memoization | The Mutability & Aliasing Model in React
+# Drop React Manual Memoization
 
 - [Introduction](#introduction)
 - [Quick Summary](#quick-summary)
@@ -17,7 +17,8 @@ order: 3
 - [Conclusion](#conclusion)
 
 ## Note
-Also check [memoization article](/articles/memoization)
+- Also heck [memoization article](/articles/memoization).
+- And [React document](https://github.com/facebook/react/blob/156b7a96f5669470182ad226306184576d6f150f/compiler/packages/babel-plugin-react-compiler/src/Inference/MUTABILITY_ALIASING_MODEL.md).
 
 ## Introduction
 
