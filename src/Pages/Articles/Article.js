@@ -40,7 +40,7 @@ function Article() {
             a: LinkNewTab,
             code(props) {
               const {children, className, node, ...rest} = props;
-              const match = /language-(js|javascript|jsx|ts|typescript|bash|sh|python|py|cpp|rust)/.exec(className || '');
+              const match = /language-(js|javascript|jsx|ts|typescript|bash|sh|python|py|cpp|rust|mermaid|text)/.exec(className || '');
               return match ? (
                 <SyntaxHighlighter
                   {...rest}
