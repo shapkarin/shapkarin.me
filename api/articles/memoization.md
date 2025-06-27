@@ -16,7 +16,7 @@ order: 4
 
 ## Notes: 
 - It can use a lot of resources. It's not needed if input values change often.
-- Check article about [new babel-plugin-react-compiler improvements](/articles/react-mutability-aliasing-model).
+- Check article about [new babel-plugin-react-compiler improvements](/articles/drop-react-manual-memoization).
 
 ## Introduction: Performance Optimization with memo, useMemo, and useCallback
 React's performance optimization features align perfectly with the principle of "Make It Easy to Change, Not Just Fast." These tools—`React.memo`, `useMemo`, and `useCallback`—help you optimize rendering performance strategically, without sacrificing code clarity and maintainability. Understanding when and how to use them is key to building high-performing and scalable React applications.
