@@ -42,18 +42,22 @@ function Article() {
               const {children, className, node, ...rest} = props;
               const match = /language-(js|javascript|jsx|ts|typescript|bash|sh|python|py|cpp|rust|mermaid|text)/.exec(className || '');
               return match ? (
-                <SyntaxHighlighter
-                  {...rest}
-                  PreTag="div"
-                  language={match[1] === 'js' ? 'javascript' : match[1]}
-                  style={vscDarkPlus}
-                >
-                  {String(children).replace(/\n$/, '')}
-                </SyntaxHighlighter>
+                <>
+                  <h3 className="Article__CondingLang">{match[1]}:</h3>
+                  <SyntaxHighlighter
+                    {...rest}
+                    PreTag="div"
+                    language={match[1] === 'js' ? 'javascript' : match[1]}
+                    style={vscDarkPlus}
+                  >
+                    {String(children).replace(/\n$/, '')}
+                  </SyntaxHighlighter>
+                </>
               ) : (
                 <code {...rest} className={className}>
                   {children}
                 </code>
+                
                 );
               }
             }}
