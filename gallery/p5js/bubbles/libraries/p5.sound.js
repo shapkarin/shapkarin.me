@@ -7295,7 +7295,7 @@ reverb = function () {
   };
   /**
    *  Inspired by Simple Reverb by Jordan Santell
-   *  https://github.com/web-audio-components/simple-reverb/blob/master/index.js
+   *  https://github.com/web-audio-@/Components/simple-reverb/blob/master/index.js
    * 
    *  Utility function for building an impulse response
    *  based on the module parameters.
