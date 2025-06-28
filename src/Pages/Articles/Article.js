@@ -8,6 +8,7 @@ import { fetchArticle } from "Common/API";
 import { useQuery } from "react-query";
 import SEO from 'Components/SEO';
 import ScrollToTop from 'Components/ScrollToTop';
+// Markdown macros
 import HeadingRenderer from './Macro/Anchor';
 import LinkNewTab from './Macro/LinkNewTab';
 
