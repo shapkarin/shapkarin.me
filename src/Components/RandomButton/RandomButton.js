@@ -7,9 +7,9 @@ const RandomButton = ({ children, ...rest }) => {
   };
 
   return (
-    <div onClick={randomize} {...rest}>
+    <button onClick={randomize} {...rest}>
       {children}
-    </div>
+    </button>
   )
 };
 
