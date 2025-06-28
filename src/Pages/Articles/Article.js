@@ -1,5 +1,5 @@
 import { useParams, Link } from 'react-router-dom';
-import { useEffect, useCallback } from 'react';
+import { useCallback } from 'react';
 import matter from 'gray-matter';
 import Markdown from 'react-markdown';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
@@ -25,7 +25,7 @@ function Article() {
 
   const { data: frontMatter, content: markdownContent } = matter(content);
 
-  const handleAnchorScrollSPA = useCallback(({ children }) => {
+  const handleAnchorScrollSPA = useCallback(({ children } = { children: null }) => {
     if (children && window.location.hash) {
       const hash = window.location.hash.substring(1);
       const element = document.getElementById(hash);
