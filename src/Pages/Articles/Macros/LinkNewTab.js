@@ -1,7 +1,7 @@
 import { createElement } from 'react';
 import { Link } from 'react-router-dom';
 
-const LinkNewTab = ({ href, children }) => {
+const LinkMacro = ({ href, children }) => {
   const isAnchorLink = href.startsWith('#');
   const isExternalLink = href.startsWith('http://') || href.startsWith('https://');
   const isInternalLink = !isAnchorLink && !isExternalLink;
@@ -43,4 +43,4 @@ const LinkNewTab = ({ href, children }) => {
   }, children);
 };
 
-export default LinkNewTab;
+export default LinkMacro;

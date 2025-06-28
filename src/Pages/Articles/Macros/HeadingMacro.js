@@ -6,7 +6,7 @@ const flatten = (text, child) => {
     : Children.toArray(child.props.children).reduce(flatten, text);
 };
 
-const HeadingRenderer = props => {
+const HeadingMacro = props => {
   const children = Children.toArray(props.children);
   const text = children.reduce(flatten, '');
   const slug = text.toLowerCase().replace(/\W+/g, (match, index, str) => 
@@ -15,4 +15,4 @@ const HeadingRenderer = props => {
   return createElement('h' + props.level, { id: slug }, props.children);
 };
 
-export default HeadingRenderer;
+export default HeadingMacro;
