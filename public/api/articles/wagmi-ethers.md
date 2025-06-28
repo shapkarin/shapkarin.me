@@ -9,12 +9,12 @@ order: 12
 ## Table of Contents
 - [Intro](#intro)
 - [ABI (Application Binary Interface)](#abi-application-binary-interface)
-- [Ethers.js: A Dependable Workhorse](#ethersjs-a-dependable-workhorse)
+- [Ethers.js: A Dependable Workhorse](#ethers-js-a-dependable-workhorse)
 - [WAGMI: Rapid dApp Integration with a Modern Stack](#wagmi-rapid-dapp-integration-with-a-modern-stack)
 - [VIEM: The Foundation Layer](#viem-the-foundation-layer)
 - [Simulate Write Pattern (WAGMI v2)](#simulate-write-pattern-wagmi-v2)
 - [Insights on WAGMI v2 Breaking Changes](#insights-on-wagmi-v2-breaking-changes)
-- [Choosing Between WAGMI and Ethers.js](#choosing-between-wagmi-and-ethersjs)
+- [Choosing Between WAGMI and Ethers.js](#choosing-between-wagmi-and-ethers-js)
 - [Conclusion](#conclusion)
 
 ### Intro
@@ -43,7 +43,7 @@ Because the ABI is deterministic and language-agnostic, any dApp, backend, or sc
 
 Here's how you'd use Ethers.js within a React component for a typical NFT marketplace scenario:
 
-### nftAbi.json
+#### nftAbi.json
 
 ```json
 [
