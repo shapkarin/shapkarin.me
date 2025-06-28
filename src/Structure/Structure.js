@@ -3,7 +3,6 @@ import { Switch, Route, Redirect } from "react-router-dom";
 import Close from "Components/Close";
 import { PAGES } from ".";
 import Preloader from "Components/Preloader";
-import Article from "Pages/Articles/Article";
 
 // TODO: refact
 const PageInnerLayout = ({ children }) => (
@@ -29,17 +28,6 @@ const Structure = () => (
         ],
         []
       )}
-
-      <Route
-        exact
-        path="/articles/:slug"
-        key="article"
-      >
-        <PageInnerLayout>
-          <Article />
-        </PageInnerLayout>
-      </Route>
-
       {/* Redirect to my GitHub profile :-)  */}
       <Route
         exact
@@ -48,7 +36,7 @@ const Structure = () => (
           window.location = "https://github.com/shapkarin";
           return "Congrats! Redirecting to my GitHub profile...";
         }}
-        key="github"
+        key="Route_github"
       />
       
     </Switch>
