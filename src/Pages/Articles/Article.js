@@ -1,4 +1,5 @@
 import { useParams, Link } from 'react-router-dom';
+import { useEffect, useCallback } from 'react';
 import matter from 'gray-matter';
 import Markdown from 'react-markdown';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
@@ -17,13 +18,22 @@ function Article() {
 
   const { data: { data: content } } = useQuery(['Articles', articleName], () => fetchArticle(articleName), 
     { 
-      // enable the query only if articleName is truthy
       enabled: Boolean(articleName),
       keepPreviousData : true,
     },
   );
 
   const { data: frontMatter, content: markdownContent } = matter(content);
+
+  const handleAnchorScrollSPA = useCallback(({ children }) => {
+    if (children && window.location.hash) {
+      const hash = window.location.hash.substring(1);
+      const element = document.getElementById(hash);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+  }, []);
 
   return (
     <div className="Article Page__Article Page__Inner">
@@ -34,38 +44,38 @@ function Article() {
           name="Iurii Shapkarin"
         />
         <Link relative="path" to="/articles" className="Article__GoBack">{'← All articles'}</Link>
-        {/* TODO: fix re-renders on link click inside serrilised markdown content */}
-        <Markdown
-          components={{
-            h2: HeadingMacro,
-            h3: HeadingMacro,
-            a: LinkMacro,
-            code(props) {
-              const {children, className, node, ...rest} = props;
-              const match = /language-(json|js|javascript|jsx|ts|typescript|bash|sh|python|py|cpp|rust|mermaid|text)/.exec(className || '');
-              return match ? (
-                <>
-                  <h3 className="Article__CondingLang">{match[1]}:</h3>
-                  <SyntaxHighlighter
-                    {...rest}
-                    PreTag="div"
-                    language={match[1] === 'js' ? 'javascript' : match[1]}
-                    style={vscDarkPlus}
-                  >
-                    {String(children).replace(/\n$/, '')}
-                  </SyntaxHighlighter>
-                </>
-              ) : (
-                <code {...rest} className={className}>
-                  {children}
-                </code>
-                
-                );
-              }
-            }}
-        >
-        {markdownContent}
-      </Markdown>
+        <div ref={handleAnchorScrollSPA}>
+          <Markdown
+            components={{
+              h2: HeadingMacro,
+              h3: HeadingMacro,
+              a: LinkMacro,
+              code(props) {
+                const {children, className, node, ...rest} = props;
+                const match = /language-(json|js|javascript|jsx|ts|typescript|bash|sh|python|py|cpp|rust|mermaid|text)/.exec(className || '');
+                return match ? (
+                  <>
+                    <h3 className="Article__CondingLang">{match[1]}:</h3>
+                    <SyntaxHighlighter
+                      {...rest}
+                      PreTag="div"
+                      language={match[1] === 'js' ? 'javascript' : match[1]}
+                      style={vscDarkPlus}
+                    >
+                      {String(children).replace(/\n$/, '')}
+                    </SyntaxHighlighter>
+                  </>
+                  ) : (
+                    <code {...rest} className={className}>
+                      {children}
+                    </code>
+                  );
+                }
+              }}
+          >
+          {markdownContent}
+        </Markdown>
+        </div>
       <ScrollToTop />
     </div>
   );
