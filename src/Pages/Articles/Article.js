@@ -9,8 +9,8 @@ import { useQuery } from "react-query";
 import SEO from 'Components/SEO';
 import ScrollToTop from 'Components/ScrollToTop';
 // Markdown macros
-import HeadingRenderer from './Macro/Anchor';
-import LinkNewTab from './Macro/LinkNewTab';
+import HeadingMacro from './Macros/HeadingMacro';
+import LinkMacro from './Macros/LinkNewTab';
 
 function Article() {
   const { slug: articleName } = useParams();
@@ -37,9 +37,9 @@ function Article() {
         {/* TODO: fix re-renders on link click inside serrilised markdown content */}
         <Markdown
           components={{
-            h2: HeadingRenderer,
-            h3: HeadingRenderer,
-            a: LinkNewTab,
+            h2: HeadingMacro,
+            h3: HeadingMacro,
+            a: LinkMacro,
             code(props) {
               const {children, className, node, ...rest} = props;
               const match = /language-(json|js|javascript|jsx|ts|typescript|bash|sh|python|py|cpp|rust|mermaid|text)/.exec(className || '');
