@@ -1,5 +1,6 @@
 import { createElement } from 'react';
 import { Link } from 'react-router-dom';
+import { SCROLL_OFFSET } from '@/Constants';
 
 const LinkMacro = ({ href, children }) => {
   const isAnchorLink = href.startsWith('#');
@@ -25,7 +26,7 @@ const LinkMacro = ({ href, children }) => {
     const targetElement = document.getElementById(targetId);
     
     if (targetElement) {
-      const offset = 70;
+      const offset = SCROLL_OFFSET;
       const elementPosition = targetElement.getBoundingClientRect().top;
       const offsetPosition = elementPosition + window.pageYOffset - offset;
       
