@@ -2,9 +2,9 @@ import ReactTooltip from 'react-tooltip';
 import { GoRepoForked, GoPulse, GoIssueOpened } from 'react-icons/go';
 import { FiExternalLink } from 'react-icons/fi';
 import { MdWeb } from 'react-icons/md';
-import SEO from 'Components/SEO';
+import SEO from '@/Components/SEO';
 
-import { fetchRepositories } from "Common/API";
+import { fetchRepositories } from "@/Common/API";
 import { useQuery } from "react-query";
 
 import './style.less';

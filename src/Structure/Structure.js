@@ -1,8 +1,8 @@
 import { Switch, Route, Redirect } from "react-router-dom";
 
-import Close from "Components/Close";
+import Close from "@/Components/Close";
 import { PAGES } from ".";
-import Preloader from "Components/Preloader";
+import Preloader from "@/Components/Preloader";
 
 // TODO: refact
 const PageInnerLayout = ({ children }) => (

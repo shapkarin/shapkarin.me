@@ -2,7 +2,7 @@ import { NavLink } from 'react-router-dom';
 import { IoIosRefresh } from 'react-icons/io';
 import isMobile from 'is-mobile';
 
-import RandomButton from 'Components/RandomButton';
+import RandomButton from '@/Components/RandomButton';
 import { PAGES } from '../../Structure';
 
 import './Menu.less';
