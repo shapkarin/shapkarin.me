@@ -39,7 +39,13 @@ body {
   right: 0;
   bottom: 0;
   left: 0;
+
+  // hide background on mobile
+  @media (max-width: @mobile-width) {
+      display: none;
+  }
 }
+
 
 .PagePackages__Item,
 .Page__GithubItem,
