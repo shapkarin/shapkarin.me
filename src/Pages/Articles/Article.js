@@ -1,5 +1,5 @@
 import { useParams, Link } from 'react-router-dom';
-import { useCallback } from 'react';
+import { useRef, useEffect } from 'react';
 import matter from 'gray-matter';
 import Markdown from 'react-markdown';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
@@ -12,6 +12,7 @@ import ScrollToTop from 'Components/ScrollToTop';
 // Markdown macros
 import HeadingMacro from './Macros/HeadingMacro';
 import LinkMacro from './Macros/LinkMacro';
+import { SCROLL_OFFSET } from '@/Constants';
 
 function Article() {
   const { slug: articleName } = useParams();
@@ -25,15 +26,30 @@ function Article() {
 
   const { data: frontMatter, content: markdownContent } = matter(content);
 
-  const handleAnchorScrollSPA = useCallback(({ children } = { children: null }) => {
-    if (children && window.location.hash) {
+  const articleRef = useRef(null);
+
+  useEffect(() => {
+    if (articleRef.current.children.length > 0 && window.location.hash) {
       const hash = window.location.hash.substring(1);
       const element = document.getElementById(hash);
       if (element) {
-        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        const elementTop = element.getBoundingClientRect().top + window.pageYOffset;
+        const offsetPosition = elementTop - SCROLL_OFFSET;
+        
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        });
       }
     }
-  }, []);
+
+    // Cleanup function to remove ref on unmount
+    return () => {
+      if (articleRef.current) {
+        articleRef.current = null;
+      }
+    };
+  }, [markdownContent])
 
   return (
     <div className="Article Page__Article Page__Inner">
@@ -44,7 +60,7 @@ function Article() {
           name="Iurii Shapkarin"
         />
         <Link relative="path" to="/articles" className="Article__GoBack">{'← All articles'}</Link>
-        <div ref={handleAnchorScrollSPA}>
+        <div ref={articleRef}>
           <Markdown
             components={{
               h2: HeadingMacro,
