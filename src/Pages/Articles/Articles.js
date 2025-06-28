@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom';
 
-import { fetchArticles } from "Common/API";
+import { fetchArticles } from "@/Common/API";
 import { useQuery } from "react-query";
-import SEO from 'Components/SEO';
+import SEO from '@/Components/SEO';
 
 import './style.less';
 

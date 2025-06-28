@@ -1,10 +1,10 @@
 
-import Packages from 'Pages/Packages';
-import Repositories from 'Pages/Repositories';
-import Stars from 'Pages/Stars';
-import Creative from 'Pages/Creative';
-import Articles from 'Pages/Articles/Articles';
-import Article from 'Pages/Articles/Article';
+import Packages from '@/Pages/Packages';
+import Repositories from '@/Pages/Repositories';
+import Stars from '@/Pages/Stars';
+import Creative from '@/Pages/Creative';
+import Articles from '@/Pages/Articles/Articles';
+import Article from '@/Pages/Articles/Article';
 
 import { GoRepo, GoStar } from 'react-icons/go';
 import { RiNpmjsLine, RiPaintBrushFill, RiArticleLine } from 'react-icons/ri';
