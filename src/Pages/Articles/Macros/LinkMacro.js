@@ -25,7 +25,7 @@ const LinkMacro = ({ href, children }) => {
     const targetElement = document.getElementById(targetId);
     
     if (targetElement) {
-      const offset = 60;
+      const offset = 70;
       const elementPosition = targetElement.getBoundingClientRect().top;
       const offsetPosition = elementPosition + window.pageYOffset - offset;
       

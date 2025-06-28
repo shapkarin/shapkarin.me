@@ -11,7 +11,7 @@ import SEO from 'Components/SEO';
 import ScrollToTop from 'Components/ScrollToTop';
 // Markdown macros
 import HeadingMacro from './Macros/HeadingMacro';
-import LinkMacro from './Macros/LinkNewTab';
+import LinkMacro from './Macros/LinkMacro';
 
 function Article() {
   const { slug: articleName } = useParams();
