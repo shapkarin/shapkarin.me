@@ -1,14 +1,14 @@
 import { BrowserRouter } from 'react-router-dom';
 import { QueryClient, QueryClientProvider } from 'react-query';
 
-import 'Components/Background';
+import '@/Components/Background';
 
-import About from 'Components/About';
-import Menu from 'Components/Menu';
+import About from '@/Components/About';
+import Menu from '@/Components/Menu';
 import Structure from './Structure';
 
 import './App.less';
-import Footer from 'Components/Footer';
+import Footer from '@/Components/Footer';
 
 const queryClient = new QueryClient({
   defaultOptions: {

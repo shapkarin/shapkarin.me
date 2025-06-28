@@ -1,8 +1,8 @@
 import { useQuery } from 'react-query';
 import { FiExternalLink } from 'react-icons/fi';
-import SEO from 'Components/SEO';
+import SEO from '@/Components/SEO';
 
-import { fetchPackages } from 'Common/API';
+import { fetchPackages } from '@/Common/API';
 import PackageInfo from './PackageInfo';
 import Additional from './Additional';
 

@@ -4,9 +4,9 @@ import { GoRepoForked, GoPulse, GoIssueOpened } from 'react-icons/go';
 import { MdWeb } from 'react-icons/md';
 import { TiStarOutline } from 'react-icons/ti';
 import { FiExternalLink } from 'react-icons/fi';
-import SEO from 'Components/SEO';
+import SEO from '@/Components/SEO';
 
-import { fetchLikes } from 'Common/API';
+import { fetchLikes } from '@/Common/API';
 
 export default function Liked() {
   const { data: { data: list } } = useQuery('Liked', fetchLikes);

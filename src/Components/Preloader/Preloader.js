@@ -1,6 +1,6 @@
 import { Suspense } from 'react';
 
-import ErrorBoundary from 'Components/ErrorBoundary';
+import ErrorBoundary from '@/Components/ErrorBoundary';
 
 const Preloader = function({ children }) {
   return (
