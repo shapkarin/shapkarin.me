@@ -21,7 +21,7 @@ function ArticlesList() {
         name="Iurii Shapkarin"
       />
       <div className="Page__Inner">
-        <h1>Articles</h1>
+        <h1 className="Page__ArticlesTitle">Articles</h1>
         <ul className="Article__List">
           {articles.map(({ slug, title }) => (
             <li key={slug} className="Article__Item">
