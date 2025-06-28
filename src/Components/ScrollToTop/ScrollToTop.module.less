@@ -1,0 +1,31 @@
+@import "../../Assets/Variables.less";
+
+.ScrollToTop {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    z-index: 1000;
+    background-color: @color-dark-transparent-45;
+    color: @color-white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: @border-radius-base;
+    cursor: pointer;
+    transition: background-color .3s linear;
+
+    &:hover {
+        background-color: @color-black;
+    }
+
+    @media (max-width: @mobile-width) {
+        bottom: 0;
+        left: 0;
+        width: 30px;
+        height: 30px;
+        padding: 0;
+        background-color: @color-dark-transparent-50;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+}
