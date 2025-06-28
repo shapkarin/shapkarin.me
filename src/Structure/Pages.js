@@ -4,10 +4,10 @@ import Repositories from 'Pages/Repositories';
 import Stars from 'Pages/Stars';
 import Creative from 'Pages/Creative';
 import Articles from 'Pages/Articles/Articles';
+import Article from 'Pages/Articles/Article';
 
 import { GoRepo, GoStar } from 'react-icons/go';
 import { RiNpmjsLine, RiPaintBrushFill, RiArticleLine } from 'react-icons/ri';
-// import { IoIosContact } from 'react-icons/io';
 
 const PAGES = [
   {
@@ -15,7 +15,13 @@ const PAGES = [
     path: '/articles',
     Icon: () => <RiArticleLine />,
     Page: () => <Articles />,
-    hidden: true,
+  },
+  {
+    name: 'Articles',
+    path: '/articles/:slug',
+    Icon: () => <RiArticleLine />,
+    Page: () => <Article />,
+    noInMenu: true,
   },
   {
     name: 'Repositories',
