@@ -1,7 +1,6 @@
 import { NavLink } from 'react-router-dom';
 import { IoIosRefresh } from 'react-icons/io';
 import isMobile from 'is-mobile';
-import clsx from 'clsx';
 
 import RandomButton from 'Components/RandomButton';
 import { PAGES } from '../../Structure';
@@ -11,7 +10,11 @@ import './Menu.less';
 const Menu = ({ ...rest }) => (
   <nav className="Menu" role="navigation" aria-label="Main Menu" {...rest}>
     <ul className="Menu_List">
-    {PAGES.map(({ name, path, Icon, hidden }, id) => {
+    {PAGES.map(({ name, path, Icon, noInMenu }, id) => {
+      if (noInMenu) {
+        return null;
+      }
+
       return (
         <li
           className="Menu_List_Item"
@@ -20,9 +23,7 @@ const Menu = ({ ...rest }) => (
           <NavLink
             key={`Menu_${name}`}
             to={path}
-            className={clsx('Menu__Item', {
-              'Menu__Item--hidden': false && hidden,
-            })}
+            className="Menu__Item"
             activeClassName="Menu__Item--active"
           >
             <Icon />
