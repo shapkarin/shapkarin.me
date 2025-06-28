@@ -4,6 +4,8 @@ description: "Unlock peak performance in your React applications. Learn how to e
 order: 4
 ---
 
+# React Memoization: memo, useMemo, and useCallback
+
 ## Table of Contents
 - [Introduction: Performance Optimization with memo, useMemo, and useCallback](#introduction-performance-optimization-with-memo-usememo-and-usecallback)
 - [React.memo for Component Memoization](#reactmemo-for-component-memoization)
@@ -21,7 +23,7 @@ order: 4
 ## Introduction: Performance Optimization with memo, useMemo, and useCallback
 React's performance optimization features align perfectly with the principle of "Make It Easy to Change, Not Just Fast." These tools—`React.memo`, `useMemo`, and `useCallback`—help you optimize rendering performance strategically, without sacrificing code clarity and maintainability. Understanding when and how to use them is key to building high-performing and scalable React applications.
 
-#### React.memo for Component Memoization
+### React.memo for Component Memoization
 
 React.memo prevents unnecessary re-renders by memoizing components, similar to how Pure Components work in class-based React:
 
@@ -72,7 +74,7 @@ const CustomComparedProductItem = React.memo(
 );
 ```
 
-#### useMemo for Expensive Calculations
+### useMemo for Expensive Calculations
 
 Use `useMemo` to cache the result of expensive calculations between renders:
 
@@ -133,7 +135,7 @@ function ProductFilters({ products, onFilterChange }) {
 }
 ```
 
-#### useCallback for Stable Function References
+### useCallback for Stable Function References
 
 `useCallback` creates stable function references, preventing downstream components from re-rendering unnecessarily:
 
@@ -236,7 +238,7 @@ These optimization hooks represent a perfect example of balancing performance an
 
 These real-world examples from successful React applications demonstrate that good design is not about blindly following rules, but about applying principles pragmatically to solve specific problems. The key is finding the right balance between simplicity and abstraction, always prioritizing code that is easy to understand, test, and maintain.
 
-## Best Practices and Common Pitfalls
+### Best Practices and Common Pitfalls
 
 Effectively using React's memoization hooks requires understanding some best practices and common pitfalls:
 
@@ -263,7 +265,7 @@ Effectively using React's memoization hooks requires understanding some best pra
     ```
 6.  **`React.memo` with Custom Comparison**: If shallow comparison isn't sufficient for `React.memo` (e.g., props are complex objects and you need a deep comparison), you can provide a custom comparison function as the second argument. Use this cautiously as deep comparisons can be expensive.
 
-## Advanced Scenarios
+### Advanced Scenarios
 
 Beyond basic usage, these hooks can be applied in more complex situations:
 
@@ -319,7 +321,7 @@ Beyond basic usage, these hooks can be applied in more complex situations:
     }
     ```
 
-## Conclusion
+### Conclusion
 
 `React.memo`, `useMemo`, and `useCallback` are powerful tools in a React developer's arsenal for fine-tuning application performance. They allow for surgical optimizations by preventing unnecessary re-renders and re-computations, directly impacting the user experience, especially in complex applications.
 
