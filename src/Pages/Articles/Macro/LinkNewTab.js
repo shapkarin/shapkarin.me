@@ -1,7 +1,16 @@
 import { createElement } from 'react';
+import { Link } from 'react-router-dom';
 
 const LinkNewTab = ({ href, children }) => {
   const isAnchorLink = href.startsWith('#');
+  const isExternalLink = href.startsWith('http://') || href.startsWith('https://');
+  const isInternalLink = !isAnchorLink && !isExternalLink;
+  
+  // For internal links, use react-router-dom Link
+  if (isInternalLink) {
+    return createElement(Link, { to: href }, children);
+  }
+  
   const target = isAnchorLink ? '_self' : '_blank';
   
   // Check if browser supports CSS scroll-behavior
