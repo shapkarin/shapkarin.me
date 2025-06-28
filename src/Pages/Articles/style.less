@@ -14,17 +14,27 @@ html {
 // TODO: adopt a more generic style for all pages
 .Page__Article {
   padding-bottom: @padding-default;
+  // TODO: adopt a more generic style for all pages
+  & .Page__ArticlesTitle {
+    margin-top: 15px;
+  }
   & .Article__List {
     margin-left: -12px;
+
   }
   & > .Page__Inner {
-    margin: 20px 20px 0 40px;
+    padding: 10px 30px;
+
+    @media (max-width: 480px) {
+      padding: 10px 20px;
+    }
   }
 }
 
 .Article__List {
   display: flex;
   flex-wrap: wrap;
+
   > .Article__Item {
       flex: 0 0 45%; // magic number :-)
   }
@@ -36,6 +46,7 @@ html {
   @media (max-width: 480px) {
       > .Article__Item {
           flex: 0 0 100%;
+          font-size: 16px;
       }
   }
 }
