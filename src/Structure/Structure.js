@@ -36,7 +36,7 @@ const Structure = () => (
           window.location = "https://github.com/shapkarin";
           return "Congrats! Redirecting to my GitHub profile...";
         }}
-        key="Route_github"
+        key="Route_GitHub"
       />
       
     </Switch>
