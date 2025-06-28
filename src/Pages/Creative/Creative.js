@@ -1,9 +1,9 @@
 import { useQuery } from 'react-query';
-import SEO from 'Components/SEO';
+import SEO from '@/Components/SEO';
 
-import Preloader from 'Components/Preloader';
-import Formatted from 'Components/Formatted';
-import { fetchCreativeIntro, fetchCreative } from 'Common/API';
+import Preloader from '@/Components/Preloader';
+import Formatted from '@/Components/Formatted';
+import { fetchCreativeIntro, fetchCreative } from '@/Common/API';
 
 import './style.less';
 
