@@ -1,4 +1,8 @@
 // ===============================================
+// OPTIMIZED URL BUILDER - ELIMINATED FUNCTIONAL UTILITIES
+// ===============================================
+
+// ===============================================
 // CENTRALIZED CONSTANTS & CONFIGURATION
 // ===============================================
 const API_CONSTANTS = {
@@ -11,142 +15,161 @@ const API_CONSTANTS = {
   ACTIVITY_PER_PAGE: 100,
 };
 
+// Pre-computed common paths
+const GITHUB_USER_BASE = `${API_CONSTANTS.GITHUB_API_URL}/users/${API_CONSTANTS.USER_NAME}`;
+const API_BASE = '/api';
+
 // ===============================================
-// UNIFIED URL BUILDER ABSTRACTION
+// OPTIMIZED PARAMETER PROCESSING
 // ===============================================
 /**
- * Universal curried URL builder that handles all URL creation scenarios
- * @param {string} baseUrl - Base URL (can be empty string)
- * @returns {function} - Curried function expecting endpoint
+ * Optimized query string builder with minimal overhead
+ * @param {object} params - Parameters object
+ * @returns {string} - Query string
  */
-const createUrlBuilder = (baseUrl = '') => (endpoint = '') => (params = null) => {
-  const fullUrl = `${baseUrl}${endpoint}`;
+const buildQueryString = (params) => {
+  if (!params) return '';
   
-  if (!params || Object.keys(params).length === 0) {
-    return fullUrl;
+  let query = '';
+  let hasParams = false;
+  
+  // Direct iteration - no intermediate arrays
+  for (const key in params) {
+    const value = params[key];
+    if (value !== null && value !== undefined) {
+      if (hasParams) query += '&';
+      query += `${key}=${encodeURIComponent(value)}`;
+      hasParams = true;
+    }
   }
   
-  const url = new URL(fullUrl);
-  Object.entries(params).forEach(([key, value]) => {
-    if (value !== null && value !== undefined) {
-      url.searchParams.append(key, value);
-    }
-  });
-  
-  return url;
+  return hasParams ? `?${query}` : '';
 };
 
 // ===============================================
-// SPECIALIZED URL BUILDERS
-// ===============================================
-const buildGithubUrl = createUrlBuilder(API_CONSTANTS.GITHUB_API_URL);
-const buildBackendUrl = createUrlBuilder('');
-const buildRawUrl = createUrlBuilder(API_CONSTANTS.RAW_PREFIX);
-
-// ===============================================
-// PATH PATTERN HELPERS
+// DIRECT URL BUILDERS
 // ===============================================
 /**
- * Creates GitHub user endpoint path
- * @param {string} path - Additional path after username
- * @returns {string} - Complete user endpoint path
+ * Fast GitHub user URL builder
+ * @param {string} path - User path
+ * @param {object} params - URL parameters
+ * @returns {string} - Complete URL
  */
-const createUserEndpoint = (path = '') => `/users/${API_CONSTANTS.USER_NAME}${path}`;
+const createGithubUserUrl = (path = '', params = null) => 
+  `${GITHUB_USER_BASE}${path}${buildQueryString(params)}`;
 
 /**
- * Creates API endpoint path
+ * Fast backend API URL builder
  * @param {string} path - API path
- * @returns {string} - Complete API endpoint path
+ * @returns {string} - Complete URL
  */
-const createApiEndpoint = (path = '') => `/api${path}`;
-
-// ===============================================
-// HIGHER-ORDER URL GENERATORS
-// ===============================================
-/**
- * Creates GitHub user URL with optional parameters
- * @param {string} endpoint - User endpoint path
- * @returns {function} - Function that accepts parameters and returns URL
- */
-const createGithubUserUrl = (endpoint = '') => (params = null) => 
-  buildGithubUrl(createUserEndpoint(endpoint))(params);
+const createBackendApiUrl = (path) => `${API_BASE}${path}`;
 
 /**
- * Creates backend API URL
- * @param {string} endpoint - API endpoint path
- * @returns {string} - Complete backend API URL
+ * Fast raw content URL builder
+ * @param {string} path - Content path
+ * @returns {string} - Complete URL
  */
-const createBackendApiUrl = (endpoint = '') => buildBackendUrl(createApiEndpoint(endpoint))();
-
-/**
- * Creates raw content URL
- * @param {string} endpoint - Raw content endpoint path
- * @returns {string} - Complete raw content URL
- */
-const createRawApiUrl = (endpoint = '') => buildRawUrl(createApiEndpoint(endpoint))();
+const createRawApiUrl = (path) => `${API_CONSTANTS.RAW_PREFIX}${API_BASE}${path}`;
 
 // ===============================================
-// PARAMETERIZED URL GENERATORS
+// PRE-COMPUTED PARAMETER OBJECTS
 // ===============================================
+const ACTIVITY_PARAMS = { per_page: API_CONSTANTS.ACTIVITY_PER_PAGE };
+
 /**
- * Repository URL generator with pagination support
- * @param {number} page - Page number (default: 1)
- * @returns {string} - Repository URL with parameters
+ * Optimized repository parameters with minimal object creation
+ * @param {number} page - Page number
+ * @returns {object} - Repository parameters
  */
-const createRepositoryUrl = (page = 1) => createGithubUserUrl('/repos')({
+const getRepositoryParams = (page = 1) => ({
   sort: 'updated',
   per_page: API_CONSTANTS.DEFAULT_PER_PAGE,
   page
 });
 
+// ===============================================
+// OPTIMIZED URL GENERATORS - DIRECT CALLS
+// ===============================================
+/**
+ * Repository URL generator
+ * @param {number} page - Page number
+ * @returns {string} - Repository URL
+ */
+const createRepositoryUrl = (page = 1) => 
+  createGithubUserUrl('/repos', getRepositoryParams(page));
+
 /**
  * Activity URL generator
- * @returns {string} - Activity URL with parameters
+ * @returns {string} - Activity URL
  */
-const createActivityUrl = () => createGithubUserUrl('/events/public')({
-  per_page: API_CONSTANTS.ACTIVITY_PER_PAGE
-});
+const createActivityUrl = () => 
+  createGithubUserUrl('/events/public', ACTIVITY_PARAMS);
+
+/**
+ * User URL generator
+ * @returns {string} - User URL
+ */
+const createUserUrl = () => createGithubUserUrl('');
+
+/**
+ * Likes URL generator
+ * @returns {string} - Likes URL
+ */
+const createLikesUrl = () => createGithubUserUrl('/starred');
 
 // ===============================================
-// PACKAGE URL FACTORY
+// PRE-COMPUTED URLS
 // ===============================================
+const STATIC_URLS = {
+  about: createBackendApiUrl('/about.json'),
+  articles: createBackendApiUrl('/articles/articles.json'),
+  packagesBase: createBackendApiUrl('/packages/packages.json'),
+  creativeIntro: createBackendApiUrl('/creative/intro.json'),
+  creativeCollection: createBackendApiUrl('/creative/collection.json'),
+};
+
+// ===============================================
+// OPTIMIZED PACKAGE URLS WITH CACHING
+// ===============================================
+const packageInfoCache = new Map();
+
 /**
- * Creates package URL structure with nested info method
- * @returns {function & object} - Function with info method attached
+ * Optimized package URLs with caching
+ * @returns {Function & object} - Package URLs with cached info method
  */
 const createPackageUrls = () => {
-  const packagesUrl = () => createBackendApiUrl('/packages/packages.json');
-  packagesUrl.info = (id) => createBackendApiUrl(`/packages/${id}.json`);
+  const packagesUrl = () => STATIC_URLS.packagesBase;
+  
+  // Cached info method for repeated access
+  packagesUrl.info = (id) => {
+    if (!packageInfoCache.has(id)) {
+      packageInfoCache.set(id, createBackendApiUrl(`/packages/${id}.json`));
+    }
+    return packageInfoCache.get(id);
+  };
+  
   return packagesUrl;
 };
 
 // ===============================================
-// CREATIVE URLS FACTORY
-// ===============================================
-/**
- * Creates creative URLs object
- * @returns {object} - Object with intro and collection URLs
- */
-const createCreativeUrls = () => ({
-  intro: createBackendApiUrl('/creative/intro.json'),
-  collection: createBackendApiUrl('/creative/collection.json'),
-});
-
-// ===============================================
-// MAIN URL CONFIGURATION
+// MAIN URL CONFIGURATION - PRE-COMPUTED
 // ===============================================
 const URLS = {
   // GitHub API endpoints
-  user: () => createGithubUserUrl()(),
+  user: createUserUrl,
   activity: createActivityUrl,
   repositories: createRepositoryUrl,
-  likes: () => createGithubUserUrl('/starred')(),
+  likes: createLikesUrl,
   
   // Backend API endpoints
-  about: createBackendApiUrl('/about.json'),
+  about: STATIC_URLS.about,
   packages: createPackageUrls(),
-  creative: createCreativeUrls(),
-  articles: createBackendApiUrl('/articles/articles.json'),
+  creative: {
+    intro: STATIC_URLS.creativeIntro,
+    collection: STATIC_URLS.creativeCollection,
+  },
+  articles: STATIC_URLS.articles,
   article: (name) => createRawApiUrl(`/articles/${name}.md`),
 };
 

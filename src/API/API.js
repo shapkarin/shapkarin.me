@@ -1,153 +1,143 @@
+// ===============================================
+// OPTIMIZED API LAYER
+// ===============================================
 import axios from 'axios';
 import URLS from './urls.js';
 
-const GITHUB = 'github';
-const MARKDOWN = 'markdown';
+// ===============================================
+// PRE-COMPUTED REQUEST CONFIGURATIONS
+// ===============================================
+const GITHUB_CONFIG = {
+  headers: {
+    'Accept': 'application/vnd.github.v3+json'
+  }
+};
 
-// ===============================================
-// CENTRALIZED REQUEST CONFIGURATION
-// ===============================================
-const REQUEST_CONFIGS = {
-  [GITHUB]: {
-    headers: {
-      'Accept': 'application/vnd.github.v3+json'
-    }
-  },
-  [MARKDOWN]: {
-    headers: {
-      'Accept': 'text/markdown, text/plain, */*',
-      'Content-Type': 'text/plain; charset=UTF-8',
-    }
+const MARKDOWN_CONFIG = {
+  headers: {
+    'Accept': 'text/markdown, text/plain, */*',
+    'Content-Type': 'text/plain; charset=UTF-8',
   }
 };
 
 // ===============================================
-// UNIFIED REQUEST ABSTRACTION
+// OPTIMIZED REQUEST FUNCTIONS - DIRECT CALLS
 // ===============================================
 /**
- * Universal request creator with configuration selection
- * @param {string} configType - Type of configuration to use
- * @returns {function} - Function that accepts URL and makes request
+ * Standard request
+ * @param {string} url - URL to request
+ * @returns {Promise} - Axios promise
  */
-const createRequest = (configType = null) => (url) => {
-  const config = configType && REQUEST_CONFIGS[configType] 
-    ? REQUEST_CONFIGS[configType] 
-    : {};
-  
-  return axios.get(url, config);
-};
+const makeStandardRequest = (url) => axios.get(url);
 
-// ===============================================
-// SPECIALIZED REQUEST CREATORS
-// ===============================================
-const createStandardRequest = createRequest();
-const createGithubRequest = createRequest(GITHUB);
-const createMarkdownRequest = createRequest(MARKDOWN);
-
-// ===============================================
-// HIGHER-ORDER API METHOD FACTORY
-// ===============================================
 /**
- * Universal API method creator
- * @param {function} requestCreator - Request creator function
- * @returns {function} - Function that creates API methods from URL functions
+ * GitHub API request
+ * @param {string} url - URL to request
+ * @returns {Promise} - Axios promise
  */
-const createApiMethodFactory = (requestCreator) => (urlFunction) => (...args) => {
-  const url = typeof urlFunction === 'function' 
-    ? urlFunction(...args) 
-    : urlFunction;
-  
-  return requestCreator(url);
-};
+const makeGithubRequest = (url) => axios.get(url, GITHUB_CONFIG);
 
-// ===============================================
-// SPECIALIZED API METHOD CREATORS
-// ===============================================
-const createStandardApiMethod = createApiMethodFactory(createStandardRequest);
-const createGithubApiMethod = createApiMethodFactory(createGithubRequest);
-const createMarkdownApiMethod = createApiMethodFactory(createMarkdownRequest);
-
-// ===============================================
-// API METHOD DEFINITIONS
-// ===============================================
 /**
- * Centralized API methods configuration
- * Organized by data source and functionality
+ * Markdown content request
+ * @param {string} url - URL to request
+ * @returns {Promise} - Axios promise
  */
-const API_METHODS = {
-  // Backend API methods (JSON files from /src/Generate-Backend/*)
+const makeMarkdownRequest = (url) => axios.get(url, MARKDOWN_CONFIG);
+
+// ===============================================
+// DIRECT API METHODS - NO FUNCTION WRAPPERS
+// ===============================================
+
+// Backend API methods (JSON files)
+export const fetchCreativeIntro = () => makeStandardRequest(URLS.creative.intro);
+export const fetchCreative = () => makeStandardRequest(URLS.creative.collection);
+export const fetchAbout = () => makeStandardRequest(URLS.about);
+export const fetchPackages = () => makeStandardRequest(URLS.packages());
+export const fetchPackageInfo = (id) => makeStandardRequest(URLS.packages.info(id));
+export const fetchArticles = () => makeStandardRequest(URLS.articles);
+
+// GitHub API methods
+export const fetchLikes = () => makeGithubRequest(URLS.likes());
+export const fetchRepositories = (page = 1) => makeGithubRequest(URLS.repositories(page));
+export const fetchContributions = () => makeGithubRequest(URLS.activity());
+
+// Content API methods (Markdown files)
+export const fetchArticle = (name) => makeMarkdownRequest(URLS.article(name));
+
+// ===============================================
+// PRE-COMPUTED API GROUPS
+// ===============================================
+export const API = {
+  // Backend API methods
   backend: {
-    fetchCreativeIntro: createStandardApiMethod(URLS.creative.intro),
-    fetchCreative: createStandardApiMethod(URLS.creative.collection),
-    fetchAbout: createStandardApiMethod(URLS.about),
-    fetchPackages: createStandardApiMethod(URLS.packages),
-    fetchPackageInfo: createStandardApiMethod(URLS.packages.info),
-    fetchArticles: createStandardApiMethod(URLS.articles),
+    fetchCreativeIntro,
+    fetchCreative,
+    fetchAbout,
+    fetchPackages,
+    fetchPackageInfo,
+    fetchArticles,
   },
 
-  // GitHub API methods (external API calls)
+  // GitHub API methods
   github: {
-    fetchLikes: createGithubApiMethod(URLS.likes),
-    fetchRepositories: createGithubApiMethod(URLS.repositories),
-    fetchContributions: createGithubApiMethod(URLS.activity),
+    fetchLikes,
+    fetchRepositories,
+    fetchContributions,
   },
 
-  // Content API methods (markdown files)
+  // Content API methods
   content: {
-    fetchArticle: createMarkdownApiMethod(URLS.article),
+    fetchArticle,
   },
 };
 
 // ===============================================
-// FLATTENED API METHODS FOR EXPORT
+// DIRECT REQUEST CREATORS - FOR ADVANCED USAGE
+// ===============================================
+export const requestCreators = {
+  standard: makeStandardRequest,
+  github: makeGithubRequest,
+  markdown: makeMarkdownRequest,
+};
+
+// ===============================================
+// OPTIMIZED METHOD FACTORIES - MINIMAL OVERHEAD
 // ===============================================
 /**
- * Flattens nested API methods into a single object
- * @param {object} methods - Nested API methods object
- * @returns {object} - Flattened methods object
+ * Fast standard API method creator
+ * @param {function|string} urlFunction - URL function or string
+ * @returns {function} - API method
  */
-const flattenApiMethods = (methods) => {
-  return Object.values(methods).reduce((acc, methodGroup) => {
-    return { ...acc, ...methodGroup };
-  }, {});
+export const createStandardMethod = (urlFunction) => (...args) => {
+  const url = typeof urlFunction === 'function' ? urlFunction(...args) : urlFunction;
+  return makeStandardRequest(url);
 };
 
-// Create flattened methods for export
-const apiMethods = flattenApiMethods(API_METHODS);
-
-// ===============================================
-// EXPORTS
-// ===============================================
-// Export individual methods for backward compatibility
-export const {
-  fetchCreativeIntro,
-  fetchCreative,
-  fetchAbout,
-  fetchPackages,
-  fetchPackageInfo,
-  fetchLikes,
-  fetchRepositories,
-  fetchContributions,
-  fetchArticles,
-  fetchArticle,
-} = apiMethods;
-
-// Export grouped methods for organized access
-export const API = API_METHODS;
-
-// Export individual request creators for advanced usage
-export const requestCreators = {
-  standard: createStandardRequest,
-  github: createGithubRequest,
-  markdown: createMarkdownRequest,
+/**
+ * Fast GitHub API method creator
+ * @param {function|string} urlFunction - URL function or string
+ * @returns {function} - API method
+ */
+export const createGithubMethod = (urlFunction) => (...args) => {
+  const url = typeof urlFunction === 'function' ? urlFunction(...args) : urlFunction;
+  return makeGithubRequest(url);
 };
 
-// Export method factories for extensibility
+/**
+ * Fast markdown API method creator
+ * @param {function|string} urlFunction - URL function or string
+ * @returns {function} - API method
+ */
+export const createMarkdownMethod = (urlFunction) => (...args) => {
+  const url = typeof urlFunction === 'function' ? urlFunction(...args) : urlFunction;
+  return makeMarkdownRequest(url);
+};
+
 export const methodFactories = {
-  standard: createStandardApiMethod,
-  github: createGithubApiMethod,
-  markdown: createMarkdownApiMethod,
+  standard: createStandardMethod,
+  github: createGithubMethod,
+  markdown: createMarkdownMethod,
 };
 
 // TODO: Add repository languages statistics endpoint
-// export const fetchRepoLangs = createGithubApiMethod(URLS.repoLanguages);
+// export const fetchRepoLangs = (repo) => makeGithubRequest(URLS.repoLanguages(repo));
