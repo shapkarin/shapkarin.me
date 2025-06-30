@@ -1,33 +1,65 @@
+// ===============================================
+// OPTIMIZED API LAYER
+// ===============================================
 import axios from 'axios';
+import URLS from './urls.js';
 
-import URLS from './urls';
-
-const githubRequest = axios.create({
+// ===============================================
+// PRE-COMPUTED REQUEST CONFIGURATIONS
+// ===============================================
+const GITHUB_CONFIG = {
   headers: {
     'Accept': 'application/vnd.github.v3+json'
   }
-})
+};
 
-// From generated JSON files
-export const fetchCreativeIntro = () => axios.get(URLS.creative.intro);
-export const fetchCreative = () => axios.get(URLS.creative.collection);
-export const fetchAbout = () => axios.get(URLS.about);
-export const fetchPackages = () => axios.get(URLS.packages._root);
-export const fetchPackageInfo = (id) => axios.get(URLS.packages.info(id));
-
-// GitHub API
-export const fetchLikes = () => githubRequest.get(URLS.likes());
-export const fetchRepositories = (n = 1) => githubRequest.get(URLS.repositories(n));
-export const fetchContributions = () => githubRequest.get(URLS.activity());
-
-// Articles (MD files)
-export const fetchArticles = () => axios.get(URLS.articles);
-export const fetchArticle = (name) => axios.get(URLS.article(name), {
+const MARKDOWN_CONFIG = {
   headers: {
     'Accept': 'text/markdown, text/plain, */*',
     'Content-Type': 'text/plain; charset=UTF-8',
-  },
-});
+  }
+};
 
-// maybe add it later, get repo languages statistic
-// export const fetchRepoLangs = url => axios.get(url);
+// ===============================================
+// OPTIMIZED REQUEST FUNCTIONS - DIRECT CALLS
+// ===============================================
+/**
+ * Standard request
+ * @param {string} url - URL to request
+ * @returns {Promise} - Axios promise
+ */
+const makeStandardRequest = (url) => axios.get(url);
+
+/**
+ * GitHub API request
+ * @param {string} url - URL to request
+ * @returns {Promise} - Axios promise
+ */
+const makeGithubRequest = (url) => axios.get(url, GITHUB_CONFIG);
+
+/**
+ * Markdown content request
+ * @param {string} url - URL to request
+ * @returns {Promise} - Axios promise
+ */
+const makeMarkdownRequest = (url) => axios.get(url, MARKDOWN_CONFIG);
+
+// ===============================================
+// DIRECT API METHODS - NO FUNCTION WRAPPERS
+// ===============================================
+
+// Backend API methods (JSON files)
+export const fetchCreativeIntro = () => makeStandardRequest(URLS.creative.intro);
+export const fetchCreative = () => makeStandardRequest(URLS.creative.collection);
+export const fetchAbout = () => makeStandardRequest(URLS.about);
+export const fetchPackages = () => makeStandardRequest(URLS.packages());
+export const fetchPackageInfo = (id) => makeStandardRequest(URLS.packages.info(id));
+export const fetchArticles = () => makeStandardRequest(URLS.articles);
+
+// GitHub API methods
+export const fetchLikes = () => makeGithubRequest(URLS.likes());
+export const fetchRepositories = (page = 1) => makeGithubRequest(URLS.repositories(page));
+export const fetchContributions = () => makeGithubRequest(URLS.activity());
+
+// Content API methods (Markdown files)
+export const fetchArticle = (name) => makeMarkdownRequest(URLS.article(name));
