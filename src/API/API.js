@@ -2,32 +2,47 @@ import axios from 'axios';
 
 import URLS from './urls';
 
-const githubRequest = axios.create({
+// Curried function to create request with specific configuration
+const createRequest = config => url => axios.get(url, config === undefined ? {} : config);
+
+// Specialized request creators
+const createStandardRequest = createRequest();
+const createGithubRequest = createRequest({
   headers: {
     'Accept': 'application/vnd.github.v3+json'
   }
-})
-
-// From generated JSON files
-export const fetchCreativeIntro = () => axios.get(URLS.creative.intro);
-export const fetchCreative = () => axios.get(URLS.creative.collection);
-export const fetchAbout = () => axios.get(URLS.about);
-export const fetchPackages = () => axios.get(URLS.packages._root);
-export const fetchPackageInfo = (id) => axios.get(URLS.packages.info(id));
-
-// GitHub API
-export const fetchLikes = () => githubRequest.get(URLS.likes());
-export const fetchRepositories = (n = 1) => githubRequest.get(URLS.repositories(n));
-export const fetchContributions = () => githubRequest.get(URLS.activity());
-
-// Articles (MD files)
-export const fetchArticles = () => axios.get(URLS.articles);
-export const fetchArticle = (name) => axios.get(URLS.article(name), {
+});
+const createMarkdownRequest = createRequest({
   headers: {
     'Accept': 'text/markdown, text/plain, */*',
     'Content-Type': 'text/plain; charset=UTF-8',
-  },
+  }
 });
+
+// Higher-order function to create API methods
+const createApiMethod = requestFn => urlFn => (...args) => 
+  requestFn(typeof urlFn === 'function' ? urlFn(...args) : urlFn);
+
+// Create specialized API method creators
+const createStandardApi = createApiMethod(createStandardRequest);
+const createGithubApi = createApiMethod(createGithubRequest);
+const createMarkdownApi = createApiMethod(createMarkdownRequest);
+
+// Backend API methods (from generated JSON files) [/src/Generate-Backend/*
+export const fetchCreativeIntro = createStandardApi(URLS.creative.intro);
+export const fetchCreative = createStandardApi(URLS.creative.collection);
+export const fetchAbout = createStandardApi(URLS.about);
+export const fetchPackages = createStandardApi(URLS.packages);
+export const fetchPackageInfo = createStandardApi(URLS.packages.info);
+
+// GitHub API methods
+export const fetchLikes = createGithubApi(URLS.likes);
+export const fetchRepositories = createGithubApi(URLS.repositories);
+export const fetchContributions = createGithubApi(URLS.activity);
+
+// Articles API methods (Markdown files)
+export const fetchArticles = createStandardApi(URLS.articles);
+export const fetchArticle = createMarkdownApi(URLS.article);
 
 // maybe add it later, get repo languages statistic
 // export const fetchRepoLangs = url => axios.get(url);
