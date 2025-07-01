@@ -8,11 +8,11 @@ import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import { fetchArticle } from "@/Common/API";
 import { useQuery } from "react-query";
 import SEO from '@/Components/SEO';
-import ScrollToTop from '@/Components/ScrollToTop';
+import { SCROLL_OFFSET } from '@/Constants';
 // Markdown macros
 import HeadingMacro from './Macros/HeadingMacro';
 import LinkMacro from './Macros/LinkMacro';
-import { SCROLL_OFFSET } from '@/Constants';
+
 
 function Article() {
   const { slug: articleName } = useParams();
@@ -92,7 +92,6 @@ function Article() {
           {markdownContent}
         </Markdown>
         </div>
-      <ScrollToTop />
     </div>
   );
 }
