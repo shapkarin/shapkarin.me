@@ -1,16 +1,7 @@
 import { Switch, Route, Redirect } from "react-router-dom";
+import PageLayout from "@/Layouts/Page";
 
-import Close from "@/Components/Close";
 import { PAGES } from ".";
-import Preloader from "@/Components/Preloader";
-
-// TODO: refact
-const PageInnerLayout = ({ children }) => (
-  <Preloader>
-    <Close />
-    {children}
-  </Preloader>
-)
 
 const Structure = () => (
   <div className="Page">
@@ -19,9 +10,9 @@ const Structure = () => (
         (acc, { name, path, Page, redirect, redirects }) => [
           ...acc,
           <Route exact path={path} key={`Route_${name}`}>
-            <PageInnerLayout>
+            <PageLayout>
               <Page />
-            </PageInnerLayout>
+            </PageLayout>
           </Route>,
           redirect && <Redirect {...redirect} key={`Redirect_${name}`} />,
           redirects && redirects.map((fromTo, i) => <Redirect {...fromTo} key={`Redirect_${name}_${i}`} />)

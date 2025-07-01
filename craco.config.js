@@ -8,6 +8,7 @@ module.exports = {
       '@/Components': path.resolve(__dirname, 'src/Components'),
       '@/Common/API': path.resolve(__dirname, 'src/API'),
       '@/Constants': path.resolve(__dirname, 'src/constants.js'),
+      '@/Layouts': path.resolve(__dirname, 'src/Layouts'),
     },
   },
   plugins: [{ plugin: CracoLessPlugin }],
