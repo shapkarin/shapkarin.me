@@ -12,7 +12,7 @@ const githubRequest = axios.create({
 export const fetchCreativeIntro = () => axios.get(URLS.creative.intro);
 export const fetchCreative = () => axios.get(URLS.creative.collection);
 export const fetchAbout = () => axios.get(URLS.about);
-export const fetchPackages = () => axios.get(URLS.packages._root);
+export const fetchPackages = () => axios.get(URLS.packages);
 export const fetchPackageInfo = (id) => axios.get(URLS.packages.info(id));
 
 // GitHub API
