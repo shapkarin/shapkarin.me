@@ -3,8 +3,7 @@ import { useLocation } from 'react-router-dom';
 
 const SEO = ({ title, description, name = 'Iurii Shapkarin', type = 'website' }) => {
 
-  const location = useLocation();
-  const { pathname } = location;
+  const { pathname } = useLocation();
   const canonicalUrl = `https://shapkarin.me${pathname}`;
 
   return (
