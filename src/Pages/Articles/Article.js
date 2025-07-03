@@ -29,7 +29,7 @@ function Article() {
   const articleRef = useRef(null);
 
   useEffect(() => {
-    if (articleRef.current.children.length > 0 && window.location.hash) {
+    if (articleRef?.current?.children?.length > 0 && window.location.hash) {
       const hash = window.location.hash.substring(1);
       const element = document.getElementById(hash);
       if (element) {
