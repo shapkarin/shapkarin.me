@@ -1,6 +1,6 @@
 import { createElement } from 'react';
 import { Link } from 'react-router-dom';
-import { SCROLL_OFFSET } from '@/Constants';
+import { SCROLL_OFFSET } from '@/constants';
 
 const LinkMacro = ({ href, children }) => {
   const isAnchorLink = href.startsWith('#');
