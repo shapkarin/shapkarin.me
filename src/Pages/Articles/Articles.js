@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 
-import { fetchArticles } from "@/Common/API";
+import { fetchArticles } from "@/API";
 import { useQuery } from "react-query";
 import SEO from '@/Components/SEO';
 

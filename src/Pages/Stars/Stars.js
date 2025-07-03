@@ -6,7 +6,7 @@ import { TiStarOutline } from 'react-icons/ti';
 import { FiExternalLink } from 'react-icons/fi';
 import SEO from '@/Components/SEO';
 
-import { fetchLikes } from '@/Common/API';
+import { fetchLikes } from '@/API';
 
 export default function Liked() {
   const { data: { data: list } } = useQuery('Liked', fetchLikes);

@@ -5,10 +5,10 @@ import Markdown from 'react-markdown';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
-import { fetchArticle } from "@/Common/API";
+import { fetchArticle } from "@/API";
 import { useQuery } from "react-query";
 import SEO from '@/Components/SEO';
-import { SCROLL_OFFSET } from '@/Constants';
+import { SCROLL_OFFSET } from '@/constants';
 // Markdown macros
 import HeadingMacro from './Macros/HeadingMacro';
 import LinkMacro from './Macros/LinkMacro';

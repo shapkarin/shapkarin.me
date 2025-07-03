@@ -4,7 +4,7 @@ import { FiExternalLink } from 'react-icons/fi';
 import { MdWeb } from 'react-icons/md';
 import SEO from '@/Components/SEO';
 
-import { fetchRepositories } from "@/Common/API";
+import { fetchRepositories } from "@/API";
 import { useQuery } from "react-query";
 
 import './style.less';
