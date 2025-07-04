@@ -8,26 +8,28 @@ const githubRequest = axios.create({
   }
 })
 
-// From generated JSON files
-export const fetchCreativeIntro = () => axios.get(URLS.creative.intro);
-export const fetchCreative = () => axios.get(URLS.creative.collection);
-export const fetchAbout = () => axios.get(URLS.about);
-export const fetchPackages = () => axios.get(URLS.packages._root);
-export const fetchPackageInfo = (id) => axios.get(URLS.packages.info(id));
-
-// GitHub API
-export const fetchLikes = () => githubRequest.get(URLS.likes());
-export const fetchRepositories = (n = 1) => githubRequest.get(URLS.repositories(n));
-export const fetchContributions = () => githubRequest.get(URLS.activity());
-
-// Articles (MD files)
-export const fetchArticles = () => axios.get(URLS.articles);
-export const fetchArticle = (name) => axios.get(URLS.article(name), {
+const markdownRequest = axios.create({
   headers: {
     'Accept': 'text/markdown, text/plain, */*',
     'Content-Type': 'text/plain; charset=UTF-8',
   },
 });
+
+// From generated JSON files
+export const fetchCreativeIntro = () => axios.get(URLS.creative.intro);
+export const fetchCreative = () => axios.get(URLS.creative.collection);
+export const fetchAbout = () => axios.get(URLS.about);
+export const fetchPackages = () => axios.get(URLS.packages);
+export const fetchPackageInfo = (id) => axios.get(URLS.packages.info(id));
+export const fetchArticles = () => axios.get(URLS.articles);
+
+// GitHub API
+export const fetchLikes = () => githubRequest.get(URLS.likes);
+export const fetchRepositories = () => githubRequest.get(URLS.repositories);
+export const fetchContributions = () => githubRequest.get(URLS.activity);
+
+// Articles (MD files)
+export const fetchArticle = (name) => markdownRequest.get(URLS.article(name));
 
 // maybe add it later, get repo languages statistic
 // export const fetchRepoLangs = url => axios.get(url);
