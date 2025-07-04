@@ -4,7 +4,7 @@ import { FiExternalLink } from 'react-icons/fi';
 
 import { MdWeb } from 'react-icons/md';
 import SEO from 'Components/SEO';
-import MoreOnGitHubLink from './MoreLink';
+import Button from 'Components/Button';
 import { fetchRepositories } from "Common/API";
 import { useQuery } from "react-query";
 
@@ -83,7 +83,7 @@ export default function Repositories() {
             </div>
           </div>
         ))}
-        <MoreOnGitHubLink />
+        <Button url="https://github.com/shapkarin?tab=repositories" />
       </div>
     </>
   );
