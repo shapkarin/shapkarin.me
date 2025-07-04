@@ -1,6 +1,5 @@
 import ReactTooltip from 'react-tooltip';
 import { GoRepoForked, GoPulse, GoIssueOpened } from 'react-icons/go';
-import { FiExternalLink } from 'react-icons/fi';
 
 import { MdWeb } from 'react-icons/md';
 import SEO from '@/Components/SEO';
