@@ -1,9 +1,10 @@
 import ReactTooltip from 'react-tooltip';
 import { GoRepoForked, GoPulse, GoIssueOpened } from 'react-icons/go';
 import { FiExternalLink } from 'react-icons/fi';
+
 import { MdWeb } from 'react-icons/md';
 import SEO from '@/Components/SEO';
-
+import Button from '@/Components/Button';
 import { fetchRepositories } from "@/API";
 import { useQuery } from "react-query";
 
@@ -82,11 +83,7 @@ export default function Repositories() {
             </div>
           </div>
         ))}
-        <div className="Page__GithubItem" style={{ flexBasis: '100%' }}>
-          <div className="Page__GithubItemInner">
-            <a href="https://github.com/shapkarin?tab=repositories" target="_blank" rel="noreferrer" className="GithubItem__Link">More <FiExternalLink /></a>
-          </div>
-        </div>
+        <Button url="https://github.com/shapkarin?tab=repositories" />
       </div>
     </>
   );

@@ -1,0 +1,34 @@
+@import "../../Assets/Variables.less";
+
+.button {
+  flex: 1 0 250px;
+  border-radius: @card-border-radius;
+  background-color: @color-gray;
+  border: 1px solid @color-black;
+  transition: background-color .3s linear;
+  word-break: break-word;
+  hyphens: none;
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  color: inherit;
+  font-size: 17px;
+  line-height: 23px;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  
+  &:hover {
+    background-color: @color-dark-hover;
+  }
+}
+
+.buttonContent {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.externalIcon {
+  flex-shrink: 0;
+} 

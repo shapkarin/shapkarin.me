@@ -3,8 +3,8 @@ import ReactTooltip from 'react-tooltip';
 import { GoRepoForked, GoPulse, GoIssueOpened } from 'react-icons/go';
 import { MdWeb } from 'react-icons/md';
 import { TiStarOutline } from 'react-icons/ti';
-import { FiExternalLink } from 'react-icons/fi';
 import SEO from '@/Components/SEO';
+import Button from '@/Components/Button';
 
 import { fetchLikes } from '@/API';
 
@@ -85,11 +85,7 @@ export default function Liked() {
             </div>
           </div>
         ))}
-        <div className="Page__GithubItem" style={{ flexBasis: '100%' }}>
-          <div className="Page__GithubItemInner">
-            <a href="https://github.com/shapkarin?tab=stars" target="_blank" rel="noreferrer" className="GithubItem__Link">More <FiExternalLink /></a>
-          </div>
-        </div>
+        <Button url="https://github.com/shapkarin?tab=stars" />
       </div>
     </>
   );
