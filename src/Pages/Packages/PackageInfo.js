@@ -2,10 +2,10 @@ import { useState, useMemo } from "react";
 import { useQuery } from "react-query";
 import { GoChevronRight, GoChevronDown } from "react-icons/go";
 
-import { fetchPackageInfo } from "Common/API";
-import Collapse from "Components/Collapse";
-import Preloader from "Components/Preloader";
-import Formatted from "Components/Formatted";
+import { fetchPackageInfo } from "@/API";
+import Collapse from "@/Components/Collapse";
+import Preloader from "@/Components/Preloader";
+import Formatted from "@/Components/Formatted";
 
 function PackageInfoContent({ id }) {
   const { data: { data: { description, badges } = {} } = {} } = useQuery(

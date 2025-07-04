@@ -35,8 +35,10 @@
     "test": "craco test",
     "generate:articles": "node src/Generate-Backend/generate-articles-list.js",
     "generate:sitemap-manually": "sitemap-generator https://shapkarin.me -f public/sitemap.xml",
-    "fix-react-snap": "node src/Generate-Backend/fix-react-snap-canvas.js"
+    "fix-react-snap": "node src/Generate-Backend/fix-react-snap-canvas.js",
+    "lint": "eslint src/**/*.js"
   },
+  "pre-commit": "lint",
   "eslintConfig": {
     "extends": [
       "react-app",
@@ -70,6 +72,7 @@
   "devDependencies": {
     "esm": "^3.2.25",
     "gray-matter": "^4.0.3",
+    "pre-commit": "^1.2.2",
     "prismjs": "^1.29.0",
     "react-markdown": "^8.0.7",
     "react-snap": "^1.23.0",

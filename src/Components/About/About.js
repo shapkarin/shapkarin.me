@@ -4,8 +4,8 @@ import clsx from 'clsx';
 import isMobile from 'is-mobile';
 
 import { FiExternalLink } from 'react-icons/fi';
-import { fetchAbout } from 'Common/API';
-import Preloader from 'Components/Preloader';
+import { fetchAbout } from '@/API';
+import Preloader from '@/Components/Preloader';
 
 import './style.less';
 

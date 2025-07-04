@@ -3,9 +3,9 @@ import { GoRepoForked, GoPulse, GoIssueOpened } from 'react-icons/go';
 import { FiExternalLink } from 'react-icons/fi';
 
 import { MdWeb } from 'react-icons/md';
-import SEO from 'Components/SEO';
-import Button from 'Components/Button';
-import { fetchRepositories } from "Common/API";
+import SEO from '@/Components/SEO';
+import Button from '@/Components/Button';
+import { fetchRepositories } from "@/API";
 import { useQuery } from "react-query";
 
 import './style.less';
