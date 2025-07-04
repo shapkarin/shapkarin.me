@@ -14,7 +14,7 @@ import HeadingMacro from './Macros/HeadingMacro';
 import LinkMacro from './Macros/LinkMacro';
 
 
-function Article() {
+const Article = () => {
   const { slug: articleName } = useParams();
 
   const { data: { data: content } } = useQuery(['Articles', articleName], () => fetchArticle(articleName), 
