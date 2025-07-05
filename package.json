@@ -3,20 +3,23 @@
   "homepage": "https://shapkarin.me",
   "private": true,
   "dependencies": {
-    "@craco/craco": "^6.3.0",
     "axios": "^0.21.4",
+    "buffer": "^6.0.3",
     "clsx": "^2.1.1",
-    "craco-less": "^1.20.0",
+    "gray-matter": "^4.0.3",
     "is-mobile": "^5.0.0",
     "lodash.random": "^3.2.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-helmet": "^6.1.0",
     "react-icons": "^4.2.0",
+    "react-markdown": "^8.0.7",
     "react-query": "^3.24.4",
     "react-router-dom": "^5.3.0",
-    "react-scripts": "4.0.3",
-    "react-tooltip": "^4.2.21"
+    "react-scripts": "5.0.1",
+    "react-syntax-highlighter": "^15.6.1",
+    "react-tooltip": "^4.2.21",
+    "remark-gfm": "^3.0.0"
   },
   "overrides": {
     "@babel/core": "^7.16.0"
@@ -70,13 +73,10 @@
     ]
   },
   "devDependencies": {
+    "@craco/craco": "^7.1.0",
+    "craco-less": "^3.0.1",
     "esm": "^3.2.25",
-    "gray-matter": "^4.0.3",
-    "pre-commit": "^1.2.2",
-    "prismjs": "^1.29.0",
-    "react-markdown": "^8.0.7",
     "react-snap": "^1.23.0",
-    "react-syntax-highlighter": "^15.6.1",
     "sitemap-generator-cli": "^7.5.0"
   },
   "reactSnap": {

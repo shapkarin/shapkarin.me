@@ -99,4 +99,93 @@ html {
     font-size: 14px;
     color: #929292;
   }
+
+  // Professional table styles
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 16px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #fff;
+
+    @media (max-width: @mobile-width) {
+      font-size: 14px;
+      margin: 15px 0;
+    }
+  }
+
+  th {
+    background-color: #f8f9fa;
+    color: #333;
+    font-weight: 600;
+    text-align: left;
+    padding: 15px 20px;
+    border-bottom: 2px solid #e9ecef;
+    
+    @media (max-width: @mobile-width) {
+      padding: 12px 15px;
+      font-size: 14px;
+    }
+  }
+
+  td {
+    padding: 15px 20px;
+    border-bottom: 1px solid #e9ecef;
+    vertical-align: top;
+    
+    @media (max-width: @mobile-width) {
+      padding: 12px 15px;
+    }
+  }
+
+  tr {
+    transition: background-color 0.2s ease;
+    
+    &:hover {
+      background-color: #f8f9fa;
+    }
+    
+    &:nth-child(even) {
+      background-color: #fafbfc;
+    }
+    
+    &:last-child td {
+      border-bottom: none;
+    }
+  }
+
+  // Responsive table for mobile
+  @media (max-width: 480px) {
+    table {
+      display: block;
+      overflow-x: auto;
+      white-space: nowrap;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+    }
+    
+    th, td {
+      min-width: 120px;
+      padding: 10px 12px;
+    }
+  }
+
+  // Table with minimal styling variant
+  table.minimal {
+    box-shadow: none;
+    border: 1px solid #e9ecef;
+    
+    th {
+      background-color: #ffffff;
+      border-bottom: 1px solid #e9ecef;
+      font-weight: 500;
+    }
+    
+    tr:hover {
+      background-color: #f1f3f4;
+    }
+  }
 }
+
