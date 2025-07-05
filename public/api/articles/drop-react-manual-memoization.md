@@ -17,7 +17,7 @@ order: 3
 - [Conclusion](#conclusion)
 
 ## Note
-- Also heck [memoization article](/articles/memoization/).
+- Check [memoization article](/articles/memoization/).
 - And [React document](https://github.com/facebook/react/blob/156b7a96f5669470182ad226306184576d6f150f/compiler/packages/babel-plugin-react-compiler/src/Inference/MUTABILITY_ALIASING_MODEL.md).
 
 ## Introduction
