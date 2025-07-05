@@ -8,25 +8,39 @@ order: 12
 
 ## Table of Contents
 - [Intro](#intro)
-- [ABI (Application Binary Interface)](#abi-application-binary-interface)
 - [Ethers.js: A Dependable Workhorse](#ethers-js-a-dependable-workhorse)
 - [WAGMI: Rapid dApp Integration with a Modern Stack](#wagmi-rapid-dapp-integration-with-a-modern-stack)
 - [VIEM: The Foundation Layer](#viem-the-foundation-layer)
 - [Simulate Write Pattern (WAGMI v2)](#simulate-write-pattern-wagmi-v2)
 - [Insights on WAGMI v2 Breaking Changes](#insights-on-wagmi-v2-breaking-changes)
 - [Choosing Between WAGMI and Ethers.js](#choosing-between-wagmi-and-ethers-js)
+- [ABI (Application Binary Interface)](#abi-application-binary-interface)
 - [Conclusion](#conclusion)
 
 ### Intro
 
-When choosing how to integrate Ethereum and other EVM-compatible chains into your web application, two libraries frequently stand out: **WAGMI** and **Ethers.js**. Both have earned strong reputations in the web3 ecosystem, but they fill different niches and suit different developer needs. Understanding their strengths, weaknesses, and how recent changes affect your workflow can help you pick the right library—or combination of libraries—for your project.
+When choosing how to integrate Ethereum and other EVM-compatible chains into your web application, two libraries frequently stand out: **WAGMI** and **Ethers.js**. Both have earned strong reputations in the web3 ecosystem, but they represent fundamentally different approaches to blockchain development.
 
-### ABI (Application Binary Interface)
+**Ethers.js**, launched in July 2016, is the veteran of the two—a mature, battle-tested library that has powered countless production applications. It provides a comprehensive, low-level interface for interacting with Ethereum, offering developers complete control over providers, signers, contracts, and utilities. Its framework-agnostic design means you can use it anywhere: React, Vue, Node.js backends, or even vanilla JavaScript applications.
 
-The Ethereum Virtual Machine Application Binary Interface (ABI) is a JSON specification that lists every public function, constructor, and event a compiled smart contract exposes.  
-It serves as a translation layer between human-readable code and the 256-bit calldata the EVM understands, defining exactly how to encode function calls and decode returned data or event logs.  
-Libraries such as **Ethers.js**, **Viem**, and **WAGMI** load an ABI so you can invoke `contract.transfer(recipient, amount)` instead of manually crafting hex strings.  
-Because the ABI is deterministic and language-agnostic, any dApp, backend, or script can interact with the same on-chain contract as long as they share this interface description.
+**WAGMI**, first released in September 2021 with a major v2 overhaul in September 2023, takes a radically different approach. Built specifically for React applications, it provides a high-level, hook-based abstraction that eliminates much of the boilerplate associated with blockchain development. Under the hood, WAGMI v2 leverages **Viem** (a modern, TypeScript-first alternative to Ethers.js) and **TanStack Query** for powerful caching and state management capabilities.
+
+The choice between them isn't just about features—it's about development philosophy. Do you want the flexibility and control of a low-level library, or the productivity and convenience of a high-level abstraction? Do you need framework agnostic code, or are you building a React-specific application where specialized hooks can accelerate development?
+
+## Quick Comparison
+
+| Feature | Ethers.js | WAGMI | VIEM |
+|---------|-----------|-------|------|
+| **First Released** | July 2016 | September 2021 | Early 2023 |
+| **Bundle Size** | ~120kB | ~70kB (with peers) | ~35kB |
+| **Abstraction Level** | Low-level | High-level hooks | Low-level |
+| **Multichain Support** | Manual setup | Built-in | Manual setup |
+| **State Management** | Manual | Automatic (TanStack Query) | Manual |
+| **Learning Curve** | Moderate | Gentle | Moderate |
+| **Tree Shaking** | Limited | Excellent | Excellent |
+
+Understanding their strengths, weaknesses, and how recent changes like WAGMI's v2 breaking changes affect your workflow can help you pick the right library—or combination of libraries—for your project. Many teams actually use both: WAGMI for rapid React development and Ethers.js or Viem for backend services or complex contract interactions.
+
 
 ### Ethers.js: A Dependable Workhorse
 
@@ -580,6 +594,13 @@ function DeFiDashboard() {
 ```
 
 This example showcases WAGMI's multichain capabilities, automatic caching, and how easily you can build complex DeFi interfaces.
+
+### ABI (Application Binary Interface)
+
+The Ethereum Virtual Machine Application Binary Interface (ABI) is a JSON specification that lists every public function, constructor, and event a compiled smart contract exposes.  
+It serves as a translation layer between human-readable code and the 256-bit calldata the EVM understands, defining exactly how to encode function calls and decode returned data or event logs.  
+Libraries such as **Ethers.js**, **Viem**, and **WAGMI** load an ABI so you can invoke `contract.transfer(recipient, amount)` instead of manually crafting hex strings.  
+Because the ABI is deterministic and language-agnostic, any dApp, backend, or script can interact with the same on-chain contract as long as they share this interface description.
 
 ### Conclusion
 
