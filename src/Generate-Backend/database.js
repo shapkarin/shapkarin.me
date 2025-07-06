@@ -3,11 +3,11 @@ import { createHash } from 'crypto';
 
 export const about = {
   title: `Hello everyone!`,
-  intro: `
+  intro: clean(`
     My name is Iurii Shapkarin. 
     I am a software engineer with over a decade of experience and a solid foundation in Computer Science.
     My work reflects a firm commitment to innovation, problem-solving, and delivering exceptional user experiences.
-  `,
+  `),
   links: {
     linkedin: {
       link: 'https://www.linkedin.com/in/shapkarin',
@@ -38,21 +38,21 @@ export const packages = {
         title: 'Extend Routines',
         url: 'https://www.npmjs.com/package/extend-saga-routines',
         description: `
-          Customizable action creator lib for any kind of actions.`,
+          Customizable action creator lib for any kind of actions.`.trim(),
         badges: [ 'npm/v', 'npm/dm', 'npm/l' ]
       },
       'saga-fetch': {
         title: 'Saga Fetch',
         url: 'https://www.npmjs.com/package/saga-fetch',
         description: `
-          Redux-Saga worker, created to simplify a fetch worker implementation.`,
+          Redux-Saga worker, created to simplify a fetch worker implementation.`.trim(),
         badges: [ 'npm/v', 'npm/dm', 'npm/l' ]
       },
       'diff-browser-globals': {
         title: 'Global diff (suspended)',
         url: 'https://github.com/shapkarin/diff-browser-globals',
         description: `
-          Compare your window and browser default scopes.`,
+          Compare your window and browser default scopes.`.trim(),
         badges: []
       },
     }
@@ -170,5 +170,5 @@ function generateChecksum(str, algorithm, encoding){
 }
 
 function clean(string){
-  return string.replace(/^\n/, '').replace(/ +/g, ' ')
+  return string.replace(/^\n/, '').replace(/ +/g, ' ').trim()
 }

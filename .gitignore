@@ -21,10 +21,6 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-public/api/packages
-public/api/sketches
-public/api/about.json
-
 # For the hompage, I don't use `npm ci`
 package-lock.json
 yarn.lock
@@ -33,5 +29,8 @@ yarn.lock
 public/gallery/p5js
 public/gallery/older
 
-# This file is generated
+# Do not commit the generated files
 public/api/articles/articles.json
+public/api/about.json
+/public/api/packages
+/public/api/creative
