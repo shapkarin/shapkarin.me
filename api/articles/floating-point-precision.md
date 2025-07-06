@@ -1,5 +1,5 @@
 ---
-title: "A Deep Dive into computer Floating-Point Precision: Why 0.1 + 0.2 Isn't 0.3"
+title: "Floating-Point Precision: Why 0.1 + 0.2 Isn't 0.3"
 description: "Explore the surprising result of 0.1 + 0.2 in programming and understand why it happens due to floating-point representation and the IEEE 754 standard."
 order: 2
 ---
@@ -97,6 +97,20 @@ Understanding this behavior is crucial, especially when dealing with financial c
 
 For scenarios requiring exact decimal arithmetic, consider using dedicated decimal data types or libraries if your language provides them (e.g., Python's `decimal` module, Java's `BigDecimal`). Alternatively, work with integers by scaling your numbers (e.g., deal with cents instead of dollars).
 
-While this floating-point imprecision might seem inconvenient, it's a trade-off made for performance and the ability to represent a wide range of numbers efficiently within a fixed amount of memory.
+### JavaScript/TypeScript: Using `BigInt` for Integer Arithmetic
 
-Knowing that `0.1 + 0.2` isn't exactly `0.3` is a rite of passage for many developers and highlights the importance of understanding the underlying representation of data types in computing. 
+In JavaScript and TypeScript, when working with scaled integers to avoid floating-point inaccuracies, `BigInt` is an invaluable tool, especially for numbers outside the safe integer range of the standard `Number` type. `BigInt` provides a way to represent whole numbers with arbitrary precision.
+
+Here's how you can use `BigInt` to perform calculations that might otherwise be unsafe with standard numbers:
+
+```javascript
+// A safe integer limit
+console.log(Number.MAX_SAFE_INTEGER); // 9007199254740991
+
+// BigInt math (Correct)
+const safe = maxSafeInteger + BigInt(2); // or 2n
+console.log(safe.toString()); // "9007199254740993" (Correct)
+
+// Out of max safe integer without BigInt usage (Incorrect)
+console.log(Number.MAX_SAFE_INTEGER + 2); // 9007199254740992 (Incorrect)
+```
