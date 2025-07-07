@@ -21,9 +21,9 @@ order: 12
 
 When choosing how to integrate Ethereum and other EVM-compatible chains into your web application, two libraries frequently stand out: **WAGMI** and **Ethers.js**. Both have earned strong reputations in the web3 ecosystem, but they represent fundamentally different approaches to blockchain development.
 
-**Ethers.js**, launched in July 2016, is the veteran of the two—a mature, battle-tested library that has powered countless production applications. It provides a comprehensive, low-level interface for interacting with Ethereum, offering developers complete control over providers, signers, contracts, and utilities. Its framework-agnostic design means you can use it anywhere: React, Vue, Node.js backends, or even vanilla JavaScript applications.
-
 **WAGMI**, first released in September 2021 with a major v2 overhaul in September 2023, takes a radically different approach. Built specifically for React applications, it provides a high-level, hook-based abstraction that eliminates much of the boilerplate associated with blockchain development. Under the hood, WAGMI v2 leverages **Viem** (a modern, TypeScript-first alternative to Ethers.js) and **TanStack Query** for powerful caching and state management capabilities.
+
+**Ethers.js**, launched in July 2016, is the veteran of the two—a mature, battle-tested library that has powered countless production applications. It provides a comprehensive, low-level interface for interacting with Ethereum, offering developers complete control over providers, signers, contracts, and utilities. Its framework-agnostic design means you can use it anywhere: React, Vue, Node.js backends, or even vanilla JavaScript applications.
 
 The choice between them isn't just about features—it's about development philosophy. Do you want the flexibility and control of a low-level library, or the productivity and convenience of a high-level abstraction? Do you need framework agnostic code, or are you building a React-specific application where specialized hooks can accelerate development?
 
