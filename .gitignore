@@ -34,3 +34,7 @@ public/api/articles/articles.json
 public/api/about.json
 /public/api/packages
 /public/api/creative
+
+
+# TODO: rewrite this article 
+public/api/articles/wagmi-ethers_NEW.md
