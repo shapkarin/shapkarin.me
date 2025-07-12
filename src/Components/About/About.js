@@ -19,7 +19,7 @@ function About() {
           'About_dark': false
         })}>
         <Link to="/" className='About_greeting'>{title}</Link>
-        {intro}
+        {' '}{intro}
         {isMobile() && <br />}
         <a href={linkedin.link} className={clsx('Social_Link', {
           'Social_Link__mobile': isMobile()
