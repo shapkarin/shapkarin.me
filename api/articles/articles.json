@@ -60,6 +60,11 @@
     "filename": "curiosity-js.md"
   },
   {
+    "slug": "jquery-vs-react",
+    "title": "Jquery Vs React",
+    "filename": "jquery-vs-react.md"
+  },
+  {
     "slug": "design",
     "title": "Design",
     "filename": "design.md"
@@ -88,5 +93,10 @@
     "slug": "async-event-loop-web-workers",
     "title": "Async Event Loop Web Workers",
     "filename": "async-event-loop-web-workers.md"
+  },
+  {
+    "slug": "react-vs-jquery",
+    "title": "React Vs Jquery",
+    "filename": "react-vs-jquery.md"
   }
 ]
