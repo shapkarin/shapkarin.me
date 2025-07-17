@@ -22,12 +22,8 @@ function extractFrontmatter(content) {
         const key = parts[0].trim();
         let value = parts.slice(1).join(':').trim().replace(/^"(.*)"$/, '$1');
         
-        if (key === 'order') {
-          const numValue = parseInt(value);
-          frontmatter[key] = isNaN(numValue) ? 0 : numValue; 
-        } else {
-          frontmatter[key] = value;
-        }
+        // We no longer need to process the 'order' field since we're using file dates
+        frontmatter[key] = value;
       }
       return frontmatter;
     }, {});
@@ -50,14 +46,9 @@ function processArticleFile(filename) {
     const content = fs.readFileSync(filePath, 'utf8');
     const frontmatter = extractFrontmatter(content);
     
-    let articleSortOrder;
-    if (typeof frontmatter.order === 'number' && !isNaN(frontmatter.order)) {
-      articleSortOrder = frontmatter.order;
-    } else {
-      // Articles without a valid 'order' in frontmatter will be sorted last,
-      // and then alphabetically by slug.
-      articleSortOrder = Number.MAX_SAFE_INTEGER;
-    }
+    // Get file creation date (birthtime) - newer files will have later dates
+    const stats = fs.statSync(filePath);
+    const creationDate = stats.birthtime;
     
     // Remove NUMBER- prefix from slug if it exists and file extension
     const slug = filename.replace(new RegExp(`^\\d+-|${CONFIG.FILE_EXTENSION}$`, 'g'), '');
@@ -65,7 +56,7 @@ function processArticleFile(filename) {
     return {
       slug,
       title: formatTitle(slug),
-      sortOrder: articleSortOrder,
+      creationDate: creationDate,
       filename,
     };
   } catch (error) {
@@ -74,7 +65,7 @@ function processArticleFile(filename) {
     return {
       slug: filename.replace(CONFIG.FILE_EXTENSION, ''),
       title: filename.replace(CONFIG.FILE_EXTENSION, ''),
-      sortOrder: Number.MAX_SAFE_INTEGER, // Fallback sortOrder
+      creationDate: new Date(0), // Fallback to epoch date
       filename,
     };
   }
@@ -87,21 +78,22 @@ function formatTitle(slug) {
     .replace(/\b\w/g, match => match.toUpperCase());
 }
 
-// Sorts articles by sortOrder and then alphabetically
+// Sorts articles by creation date (newer first) and then alphabetically
 function sortArticles(articles) {
   return [...articles].sort((a, b) => {
-    // First sort by sortOrder (from frontmatter or MAX_SAFE_INTEGER)
-    if (a.sortOrder !== b.sortOrder) {
-      return a.sortOrder - b.sortOrder;
+    // First sort by creation date (newer files first)
+    const dateComparison = b.creationDate.getTime() - a.creationDate.getTime();
+    if (dateComparison !== 0) {
+      return dateComparison;
     }
-    // Then sort alphabetically by slug
+    // Then sort alphabetically by slug if dates are the same
     return a.slug.localeCompare(b.slug);
   });
 }
 
 // Removes internal properties from articles before output
 function prepareForOutput(articles) {
-  return articles.map(({ sortOrder, ...rest }) => rest);
+  return articles.map(({ creationDate, ...rest }) => rest);
 }
 
 // Writes the articles list to a JSON file
@@ -111,6 +103,7 @@ function writeArticlesJson(articles) {
     const jsonContent = JSON.stringify(articles, null, 2);
     fs.writeFileSync(outputPath, jsonContent);
     console.log(`Generated articles list with ${articles.length} articles at ${outputPath}`);
+    console.log('Articles sorted by file creation date (newest first)');
   } catch (error) {
     throw new Error(`Failed to write articles JSON: ${error.message}`);
   }
@@ -131,4 +124,3 @@ function generateArticlesList() {
 }
 
 // Run the generator
-generateArticlesList(); 
