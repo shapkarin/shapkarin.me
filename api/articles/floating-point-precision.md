@@ -7,7 +7,7 @@ order: 2
 # Computer Floating-Point Precision
 
 ## Table of Contents
-- [Why 0.1 + 0.2 Isn't Exactly 0.3 in Most Programming Languages](#why-01--02-isnt-exactly-03-in-most-programming-languages)
+- [Why 0.1 + 0.2 Isn't Exactly 0.3 in Most Programming Languages](#why-0-1-0-2-isn-t-exactly-0-3-in-most-programming-languages)
 - [The Root Cause: Binary Representation](#the-root-cause-binary-representation)
 - [Adding the Inexact Values](#adding-the-inexact-values)
 - [The Role of IEEE 754](#the-role-of-ieee-754)
