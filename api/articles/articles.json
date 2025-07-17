@@ -93,10 +93,5 @@
     "slug": "async-event-loop-web-workers",
     "title": "Async Event Loop Web Workers",
     "filename": "async-event-loop-web-workers.md"
-  },
-  {
-    "slug": "react-vs-jquery",
-    "title": "React Vs Jquery",
-    "filename": "react-vs-jquery.md"
   }
 ]
