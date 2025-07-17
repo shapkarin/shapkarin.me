@@ -1,7 +1,11 @@
 ---
+
+
 title: "Drop React Manual Memoization | The Mutability & Aliasing Model in React"
 description: "Deep dive into the new mutability & aliasing model powering React Compiler (June 2025) and how it eliminates most manual memoization."
-order: 3
+
+date: "17 July 2025"
+
 ---
 
 # Drop React Manual Memoization

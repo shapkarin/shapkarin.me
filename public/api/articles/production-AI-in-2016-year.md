@@ -1,7 +1,11 @@
 ---
+
+
 title: "AI in 2016: The First Time I Worked on a Project That Using Machine Learning"
 description: "A personal reflection on working with AI in 2016, before the LLM revolution. Exploring how AI has evolved from specialized applications to becoming accessible to everyone through user-friendly interfaces."
-order: 2
+
+date: "17 July 2025"
+
 ---
 
 # Production AI In 2016 Year

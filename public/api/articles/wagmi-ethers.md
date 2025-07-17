@@ -1,7 +1,11 @@
 ---
+
+
 title: "WAGMI vs Ethers.js: Choosing the Right Ethereum Development Library"
 description: "Compare WAGMI and Ethers.js for Ethereum development. Learn the pros and cons of each library, recent changes in WAGMI v2, and how to choose the best tool for your web3 project."
-order: 12
+
+date: "17 July 2025"
+
 ---
 
 ## Table of Contents

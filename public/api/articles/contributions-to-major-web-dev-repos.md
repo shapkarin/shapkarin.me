@@ -1,7 +1,11 @@
 ---
+
+
 title: "Contributing to Web Development Documentation and core engine: My Journey with MDN and web.dev"
 description: "Iurii Shapkarin contributions to major web development documentation platforms, including Mozilla's MDN (+it's engine) and Google's web.dev, highlighting the impact of small contributions in the open-source community."
-order: 0
+
+date: "17 July 2025"
+
 ---
 
 # My contributions to the Google (web.dev) and Mozilla (MDN engine) repositories. 

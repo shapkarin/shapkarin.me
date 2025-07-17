@@ -65,6 +65,7 @@ const Article = () => {
           <Markdown
             remarkPlugins={[remarkGfm]}
             components={{
+              h1: HeadingMacro,
               h2: HeadingMacro,
               h3: HeadingMacro,
               a: LinkMacro,
