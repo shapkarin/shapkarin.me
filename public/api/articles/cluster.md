@@ -3,9 +3,14 @@
 
 title: "Unlocking Node.js Performance: Harnessing Multi-Core Power with the cluster Module"
 description: "Learn how to effectively utilize all CPU cores in your Node.js applications using the built-in cluster module, improve performance and resilience, and understand when this approach is preferable to other scaling solutions."
+<<<<<<< Updated upstream
 
 date: "17 July 2025"
 
+=======
+order: 6
+date: "17 July 2025"
+>>>>>>> Stashed changes
 ---
 
 # Unlocking Node.js Performance: Harnessing Multi-Core Power with the `cluster` Module

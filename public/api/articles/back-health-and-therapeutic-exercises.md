@@ -3,9 +3,14 @@
 
 title: "Back Health for Software Developers: Therapeutic Exercises for Core Strength"
 description: "Learn essential therapeutic exercises and principles to maintain back health as a software developer, including bodyweight exercises, resistance band workouts, and office-specific movements to counteract the effects of prolonged sitting."
+<<<<<<< Updated upstream
 
 date: "17 July 2025"
 
+=======
+order: 3
+date: "17 July 2025"
+>>>>>>> Stashed changes
 ---
 
 # Back Health for Software Developers: Therapeutic Exercises for Core Strength

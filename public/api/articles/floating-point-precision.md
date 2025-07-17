@@ -3,9 +3,14 @@
 
 title: "Floating-Point Precision: Why 0.1 + 0.2 Isn't 0.3"
 description: "Explore the surprising result of 0.1 + 0.2 in programming and understand why it happens due to floating-point representation and the IEEE 754 standard."
+<<<<<<< Updated upstream
 
 date: "17 July 2025"
 
+=======
+order: 2
+date: "17 July 2025"
+>>>>>>> Stashed changes
 ---
 
 # Computer Floating-Point Precision

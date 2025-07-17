@@ -3,9 +3,14 @@
 
 title: "JavaScript Higher-Order Functions, Currying & Arrow Functions"
 description: "Master JavaScript's powerful functional programming features with this comprehensive guide to higher-order functions, currying techniques, and arrow functions. Learn with practical examples and best practices."
+<<<<<<< Updated upstream
 
 date: "17 July 2025"
 
+=======
+order: 1
+date: "17 July 2025"
+>>>>>>> Stashed changes
 ---
 
 # JavaScript Power-Ups: Mastering Higher-Order Functions, Currying, and Arrow Functions

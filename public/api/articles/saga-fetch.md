@@ -3,9 +3,14 @@
 
 title: "saga-fetch: Streamline API Calls in Redux Saga Applications"
 description: "Learn how to simplify AJAX requests in Redux Saga with saga-fetch. Handle loading states, success/error responses, and request cancellation with minimal boilerplate code."
+<<<<<<< Updated upstream
 
 date: "17 July 2025"
 
+=======
+order: 11
+date: "17 July 2025"
+>>>>>>> Stashed changes
 ---
 
 If you’ve used Redux Saga before, you know how convenient it can be for handling complex async workflows in a Redux application. Instead of juggling `fetch` calls or `axios` requests directly in your React components, you write sagas that can watch for certain actions, start asynchronous tasks, handle cancellations, and dispatch results when they’re done. It keeps your code cleaner, more predictable, and easier to test.

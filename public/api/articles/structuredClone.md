@@ -3,9 +3,14 @@
 
 title: "Deep Cloning in JavaScript: Mastering `structuredClone()`"
 description: "Learn how to properly create deep copies of complex objects in JavaScript using the modern structuredClone() method, understand its advantages over traditional techniques, and discover when and how to use it effectively."
+<<<<<<< Updated upstream
 
 date: "17 July 2025"
 
+=======
+order: 5
+date: "17 July 2025"
+>>>>>>> Stashed changes
 ---
 
 ## Table of Contents

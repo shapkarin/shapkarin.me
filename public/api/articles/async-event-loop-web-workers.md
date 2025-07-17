@@ -3,9 +3,14 @@
 
 title: "Event Loop, Threads, and Web Workers. Asynchronous JavaScript."
 description: "Dive deep into asynchronous JavaScript, understand the event loop, how JavaScript handles concurrency, and leverage Web Workers for true parallelism in your web applications."
+<<<<<<< Updated upstream
 
 date: "17 July 2025"
 
+=======
+order: 14
+date: "17 July 2025"
+>>>>>>> Stashed changes
 ---
 
 # Asynchronous, Event Loop, "Threads", and Web Workers
