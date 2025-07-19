@@ -28,13 +28,13 @@
     <loc>https://shapkarin.me/articles/contributions-to-major-web-dev-repos/</loc>
   </url>
   <url>
-    <loc>https://shapkarin.me/articles/function-declaration-vs-expression/</loc>
-  </url>
-  <url>
     <loc>https://shapkarin.me/articles/higher-order-functions-and-currying/</loc>
   </url>
   <url>
     <loc>https://shapkarin.me/articles/floating-point-precision/</loc>
+  </url>
+  <url>
+    <loc>https://shapkarin.me/articles/function-declaration-vs-expression/</loc>
   </url>
   <url>
     <loc>https://shapkarin.me/articles/production-AI-in-2016-year/</loc>
@@ -82,13 +82,10 @@
     <loc>https://shapkarin.me/articles/async-event-loop-web-workers/</loc>
   </url>
   <url>
-    <loc>https://shapkarin.me/articles/react-vs-jquery/</loc>
+    <loc>https://shapkarin.me/gallery/older/</loc>
   </url>
   <url>
     <loc>https://shapkarin.me/gallery/p5js/draw_walk/</loc>
-  </url>
-  <url>
-    <loc>https://shapkarin.me/gallery/older/</loc>
   </url>
   <url>
     <loc>https://shapkarin.me/gallery/p5js/magic/</loc>
