@@ -28,9 +28,9 @@ const SEO = ({ title, description, name = 'Iurii Shapkarin', type = 'website', a
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
 
-      {aeoScript !== null || aeoScript !== '' && (
+      {aeoScript !== null && (
         <script type="application/ld+json">
-          {aeoScript}
+          {JSON.stringify(aeoScript)}
         </script>
       )}
     </Helmet>
