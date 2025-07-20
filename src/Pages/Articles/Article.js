@@ -5,8 +5,9 @@ import Markdown from 'react-markdown';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import remarkGfm from 'remark-gfm'
+import jsonld from 'jsonld';
 
-import { fetchArticle } from "@/API";
+import { fetchArticle, fetchAeoScript } from "@/API";
 import { useQuery } from "react-query";
 import SEO from '@/Components/SEO';
 import { SCROLL_OFFSET } from '@/constants';
@@ -15,8 +16,12 @@ import HeadingMacro from './Macros/HeadingMacro';
 import LinkMacro from './Macros/LinkMacro';
 
 
+// Maybe make auto aeo schema with Macro or node.js
+
 const Article = () => {
   const { slug: articleName } = useParams();
+
+  console.log({ articleName });
 
   const { data: { data: content } } = useQuery(['Articles', articleName], () => fetchArticle(articleName), 
     { 
@@ -26,6 +31,27 @@ const Article = () => {
   );
 
   const { data: frontMatter, content: markdownContent } = matter(content);
+
+  // Dynamically load AEO script based on article name
+  const { data: aeoScriptData, isLoading: aeoLoading, error: aeoError } = useQuery(
+    ['AeoScript', articleName], 
+    () => fetchAeoScript(articleName),
+    {
+      enabled: Boolean(articleName),
+      keepPreviousData: true,
+      // Don't retry if AEO file doesn't exist (404)
+      retry: false,
+      // Fail silently if AEO file doesn't exist
+      onError: (error) => {
+        if (error.response?.status !== 404) {
+          console.error('Error loading AEO script:', error);
+        }
+      }
+    }
+  );
+
+  // Extract AEO script from response or fallback to frontMatter
+  const aeoScript = aeoScriptData?.data ? JSON.stringify(aeoScriptData.data) : frontMatter.aeoScript;
 
   const articleRef = useRef(null);
 
@@ -52,6 +78,8 @@ const Article = () => {
     };
   }, [markdownContent])
 
+  console.log('AEO script loaded:', { aeoLoading, aeoError: aeoError?.response?.status, hasAeoScript: !!aeoScript });
+
   return (
     <div className="Article Page__Article Page__Inner">
         <SEO 
@@ -59,6 +87,7 @@ const Article = () => {
           description={frontMatter.description || `Article about ${articleName}`}
           type="article"
           name="Iurii Shapkarin"
+          aeoScript={aeoScript}
         />
         <Link relative="path" to="/articles" className="Article__GoBack">{'← All articles'}</Link>
         <div ref={articleRef}>
