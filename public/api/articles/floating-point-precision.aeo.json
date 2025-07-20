@@ -9,10 +9,10 @@
     "headline": "Floating-Point Precision: Why 0.1 + 0.2 Isn't 0.3 - Complete Developer Guide",
     "description": "Discover why 0.1 + 0.2 equals 0.30000000000000004 in programming. Learn IEEE 754 standard, binary representation issues, and practical solutions for JavaScript, Python, C++, and Rust with expert examples.",
     "image": {
-        "@type": "ImageObject",
-        "url": "https://shapkarin.me/logo.jpg",
-        "width": 512,
-        "height": 512
+      "@type": "ImageObject",
+      "url": "https://shapkarin.me/logo.jpg",
+      "width": 512,
+      "height": 512
     },
     "author": {
       "@type": "Organization",
@@ -61,40 +61,55 @@
       }
     ],
     "audience": [
-        {
-            "@type": "Audience",
-            "audienceType": "Developers",
-            "name": "Software Engineers"
-        },
-        {
-            "@type": "Audience",
-            "audienceType": "Students",
-            "name": "Computer Science Students"
-        },
-        {
-            "@type": "Audience",
-            "audienceType": "Developers",
-            "name": "Frontend Developers"
-        },
-        {
-            "@type": "Audience",
-            "audienceType": "Developers",
-            "name": "Backend Developers"
-        }
+      {
+        "@type": "Audience",
+        "audienceType": "Students",
+        "name": "Computer Science Students"
+      },
+      {
+        "@type": "Audience",
+        "audienceType": "Developers",
+        "name": "Full-Stack Developers"
+      },
+      {
+        "@type": "Audience",
+        "audienceType": "Developers",
+        "name": "React Developers"
+      },
+      {
+        "@type": "Audience",
+        "audienceType": "Technical Leaders",
+        "name": "Software Architects"
+      },
+      {
+        "@type": "Audience",
+        "audienceType": "Technical Leaders",
+        "name": "Engineering Managers"
+      },
+      {
+        "@type": "Audience",
+        "audienceType": "Business Professionals",
+        "name": "Chief Technology Officers (CTOs)"
+      },
+      {
+        "@type": "Audience",
+        "audienceType": "Developers",
+        "name": "Software Engineers"
+      }
     ],
     "review": {
-        "@type": "Review",
-        "reviewRating": {
-          "@type": "Rating",
-          "ratingValue": "5",
-          "bestRating": "5"
-        },
-        "author": {
-          "@type": "Organization",
-          "name": "Iurii Shapkarin"
-        },
-        "name": "Expert Technical Analysis",
-        "reviewBody": "This comprehensive guide demystifies floating-point precision issues with clear explanations, practical code examples across multiple programming languages, and actionable solutions for real-world development scenarios."
+      "@type": "Review",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5"
+      },
+      "author": {
+        "@type": "Organization",
+        "name": "Iurii Shapkarin"
+      },
+      "name": "Expert Technical Analysis",
+      "reviewBody": "This comprehensive guide demystifies floating-point precision issues with clear explanations, practical code examples across multiple programming languages, and actionable solutions for real-world development scenarios."
     },
     "citation": [
       {
@@ -166,7 +181,7 @@
     ],
     "programmingLanguage": ["JavaScript", "Python", "C++", "Rust"],
     "operatingSystem": "Cross-platform",
-    "applicationCategory": "DeveloperApplication"
+    "applicationCategory": "Educational"
   },
   {
     "@context": "https://schema.org",
@@ -309,4 +324,4 @@
     "applicationCategory": "Educational",
     "operatingSystem": "Cross-platform"
   }
-] 
+]

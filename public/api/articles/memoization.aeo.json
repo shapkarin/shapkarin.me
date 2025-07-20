@@ -57,21 +57,41 @@
       }
     ],
     "audience": [
-        {
-            "@type": "Audience",
-            "audienceType": "Developers",
-            "name": "React Developers"
-        },
-        {
-            "@type": "Audience",
-            "audienceType": "Developers", 
-            "name": "Frontend Engineers"
-        },
-        {
-            "@type": "Audience",
-            "audienceType": "Developers",
-            "name": "Senior JavaScript Developers"
-        }
+      {
+        "@type": "Audience",
+        "audienceType": "Developers",
+        "name": "Frontend Developers"
+      },
+      {
+        "@type": "Audience",
+        "audienceType": "Developers",
+        "name": "Full-Stack Developers"
+      },
+      {
+        "@type": "Audience",
+        "audienceType": "Developers",
+        "name": "React Developers"
+      },
+      {
+        "@type": "Audience",
+        "audienceType": "Technical Leaders",
+        "name": "Software Architects"
+      },
+      {
+        "@type": "Audience",
+        "audienceType": "Technical Leaders",
+        "name": "Engineering Managers"
+      },
+      {
+        "@type": "Audience",
+        "audienceType": "Business Professionals",
+        "name": "Chief Technology Officers (CTOs)"
+      },
+      {
+        "@type": "Audience",
+        "audienceType": "Developers",
+        "name": "Software Engineers"
+      }
     ],
     "review": {
         "@type": "Review",
@@ -166,7 +186,21 @@
     ],
     "programmingLanguage": "JavaScript",
     "operatingSystem": "Cross-platform",
-    "applicationCategory": "DeveloperApplication"
+    "applicationCategory": "Educational",
+    "relatedLink": [
+      {
+        "@type": "WebPage",
+        "name": "State Optimization Guide Article",
+        "url": "https://shapkarin.me/articles/state-optimization-guide",
+        "description": "Related article about state optimization in React applications"
+      },
+      {
+        "@type": "WebPage", 
+        "name": "New Babel Plugin React Compiler Improvements",
+        "url": "https://shapkarin.me/articles/drop-react-manual-memoization",
+        "description": "Article about new babel-plugin-react-compiler improvements that can replace manual memoization"
+      }
+    ]
   },
   {
     "@context": "https://schema.org",
