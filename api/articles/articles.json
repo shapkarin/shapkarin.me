@@ -45,6 +45,11 @@
     "filename": "memoization.md"
   },
   {
+    "slug": "state-optimization-guide",
+    "title": "State Optimization Guide",
+    "filename": "state-optimization-guide.md"
+  },
+  {
     "slug": "structuredClone",
     "title": "StructuredClone",
     "filename": "structuredClone.md"

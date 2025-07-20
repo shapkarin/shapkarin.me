@@ -46,16 +46,36 @@
       }
     ],
     "audience": [
-        {
-            "@type": "Audience",
-            "audienceType": "Developers",
-            "name": "Web Developers"
-        },
-        {
-            "@type": "Audience",
-            "audienceType": "Business Professionals",
-            "name": "Chief Technology Officers (CTOs)"
-        }
+      {
+        "@type": "Audience",
+        "audienceType": "Developers",
+        "name": "Frontend Developers"
+      },
+      {
+          "@type": "Audience",
+          "audienceType": "Developers",
+          "name": "Full-Stack Developers"
+      },
+      {
+          "@type": "Audience",
+          "audienceType": "Developers",
+          "name": "React Developers"
+      },
+      {
+          "@type": "Audience",
+          "audienceType": "Technical Leaders",
+          "name": "Software Architects"
+      },
+      {
+          "@type": "Audience",
+          "audienceType": "Technical Leaders",
+          "name": "Engineering Managers"
+      },
+      {
+        "@type": "Audience",
+        "audienceType": "Business Professionals",
+        "name": "Chief Technology Officers (CTOs)"
+      }
     ],
     "review": {
         "@type": "Review",
