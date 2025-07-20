@@ -14,14 +14,13 @@ import { SCROLL_OFFSET } from '@/constants';
 // Markdown macros
 import HeadingMacro from './Macros/HeadingMacro';
 import LinkMacro from './Macros/LinkMacro';
+import URLS from '@/API/urls';
 
 
 // Maybe make auto aeo schema with Macro or node.js
 
 const Article = () => {
   const { slug: articleName } = useParams();
-
-  console.log({ articleName });
 
   const { data: { data: content } } = useQuery(['Articles', articleName], () => fetchArticle(articleName), 
     { 
@@ -34,7 +33,7 @@ const Article = () => {
 
   // Dynamically load AEO script based on article name
   const { data: aeoScriptData, isLoading: aeoLoading, error: aeoError } = useQuery(
-    ['AeoScript', articleName], 
+    ['AeoScript', URLS.aeoScript(articleName)], 
     () => fetchAeoScript(articleName),
     {
       enabled: Boolean(articleName),
