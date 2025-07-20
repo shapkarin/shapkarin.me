@@ -28,9 +28,11 @@ const SEO = ({ title, description, name = 'Iurii Shapkarin', type = 'website', a
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
 
-      <script type="application/ld+json">
-        {aeoScript}
-      </script>
+      {aeoScript !== null || aeoScript !== '' && (
+        <script type="application/ld+json">
+          {aeoScript}
+        </script>
+      )}
     </Helmet>
   );
 };
