@@ -144,3 +144,16 @@ blockquote{
 em {
   font-style: italic;
 }
+
+.Article {
+  overflow-x: hidden;
+
+  & table {
+    display: block;
+    overflow-x: scroll;
+    white-space: nowrap;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+  }
+}
