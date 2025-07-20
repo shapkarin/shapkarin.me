@@ -1,5 +1,7 @@
 import { Helmet } from 'react-helmet';
 import { useLocation } from 'react-router-dom';
+import PAGES from '@/Structure/Pages';
+import { RiCreativeCommonsZeroFill } from 'react-icons/ri';
 
 
 /* Guard against duplicate inserts across multiple pages */
@@ -7,7 +9,7 @@ const CDN_URL =
   "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js";
 const SCRIPT_ID = "mermaid-cdn";
 
-const MermaidScript = (
+const MermaidScript = () => (
   <script
     id={SCRIPT_ID}
     src={CDN_URL}
@@ -16,10 +18,12 @@ const MermaidScript = (
   />
 );
 
-const SEO = ({ title, description, name = 'Iurii Shapkarin', type = 'website', aeoScript, MermaidScript }) => {
+const SEO = ({ title, description, name = 'Iurii Shapkarin', type = 'website', aeoScript }) => {
 
   const { pathname } = useLocation();
   const canonicalUrl = `https://shapkarin.me${pathname}`;
+  
+  const useMermaidOnPages = ['/articles/drop-react-manual-memoization', '/articles/react-vs-jquery'].includes(pathname);
 
   return (
     <Helmet>
@@ -49,7 +53,12 @@ const SEO = ({ title, description, name = 'Iurii Shapkarin', type = 'website', a
         </script>
       )}
 
-      {MermaidScript && <MermaidScript />}
+      {useMermaidOnPages && <script
+        id={SCRIPT_ID}
+        src={CDN_URL}
+        async
+        crossOrigin="anonymous"
+      />}
     </Helmet>
   );
 };

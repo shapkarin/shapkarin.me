@@ -84,7 +84,6 @@ const Article = () => {
           type="article"
           name="Iurii Shapkarin"
           aeoScript={aeoScript}
-          // MermaidScript={<MermaidScript />}
         />
         <Link relative="path" to="/articles" className="Article__GoBack">{'← All articles'}</Link>
         <div ref={articleRef}>
