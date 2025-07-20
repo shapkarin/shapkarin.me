@@ -13,8 +13,10 @@ import { SCROLL_OFFSET } from '@/constants';
 // Markdown macros
 import HeadingMacro from './Macros/HeadingMacro';
 import LinkMacro from './Macros/LinkMacro';
+import MermaidRender from '@/Components/Mermaid/RenderMermaid';
 
 // Maybe make auto aeo schema with Macro or node.js
+
 
 const Article = () => {
   const { slug: articleName } = useParams();
@@ -94,7 +96,12 @@ const Article = () => {
               a: LinkMacro,
               code(props) {
                 const {children, className, node, ...rest} = props;
-                const match = /language-(json|js|javascript|jsx|ts|typescript|bash|sh|python|py|cpp|rust|mermaid|text)/.exec(className || '');
+                const match = /language-(json|js|javascript|jsx|ts|typescript|bash|sh|python|py|cpp|rust|text)/.exec(className || '');
+                const isMermaid = /language-mermaid/.exec(className || '');
+                if (isMermaid && children.length > 0) {
+                  return <MermaidRender chart={children[0]} />;
+                }
+
                 return match ? (
                   <>
                     <h3 className="Article__CondingLang">{match[1]}:</h3>
