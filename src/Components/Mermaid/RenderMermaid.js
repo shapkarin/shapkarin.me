@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
 import useMermaid from "./MermaidHook";
+import { nanoid } from 'nanoid';
 
 export default function MermaidCDN({ chart, className = "" }) {
   const [svgContent, setSvgContent] = useState("");
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
-  const [id] = useState(() => `m-${crypto.randomUUID()}`);
+  const [id] = useState(() => `m-${nanoid()}`);
   const mermaidReady = useMermaid();
 
   /* Render once Mermaid is ready */
