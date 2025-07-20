@@ -1,6 +1,21 @@
 import { Helmet } from 'react-helmet';
 import { useLocation } from 'react-router-dom';
 
+
+/* Guard against duplicate inserts across multiple pages */
+const CDN_URL =
+  "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js";
+const SCRIPT_ID = "mermaid-cdn";
+
+const MermaidScript = (
+  <script
+    id={SCRIPT_ID}
+    src={CDN_URL}
+    async
+    crossOrigin="anonymous"
+  />
+);
+
 const SEO = ({ title, description, name = 'Iurii Shapkarin', type = 'website', aeoScript, MermaidScript }) => {
 
   const { pathname } = useLocation();
@@ -34,7 +49,7 @@ const SEO = ({ title, description, name = 'Iurii Shapkarin', type = 'website', a
         </script>
       )}
 
-      {MermaidScript && MermaidScript()}
+      {MermaidScript && <MermaidScript />}
     </Helmet>
   );
 };

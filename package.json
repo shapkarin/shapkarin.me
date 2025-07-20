@@ -79,6 +79,7 @@
     "@craco/craco": "^7.1.0",
     "craco-less": "^3.0.1",
     "esm": "^3.2.25",
+    "react-helmet-async": "^2.0.5",
     "react-snap": "^1.23.0",
     "sitemap-generator-cli": "^7.5.0"
   },

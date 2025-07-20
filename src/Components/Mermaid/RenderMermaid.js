@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import useMermaid from "../hooks/useMermaid";
+import useMermaid from "./MermaidHook";
 
 export default function MermaidCDN({ chart, className = "" }) {
   const box = useRef(null);
