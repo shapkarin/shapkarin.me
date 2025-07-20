@@ -21,6 +21,7 @@ const PAGES = [
     Icon: () => <RiArticleLine />,
     Page: () => <Article />,
     noInMenu: true,
+    useMermaid: true,
   },
   {
     name: 'Repositories',
