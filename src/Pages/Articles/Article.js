@@ -13,8 +13,6 @@ import { SCROLL_OFFSET } from '@/constants';
 // Markdown macros
 import HeadingMacro from './Macros/HeadingMacro';
 import LinkMacro from './Macros/LinkMacro';
-import URLS from '@/API/urls';
-
 
 // Maybe make auto aeo schema with Macro or node.js
 
