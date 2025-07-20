@@ -1,7 +1,7 @@
 import { Helmet } from 'react-helmet';
 import { useLocation } from 'react-router-dom';
 
-const SEO = ({ title, description, name = 'Iurii Shapkarin', type = 'website', aeoScript }) => {
+const SEO = ({ title, description, name = 'Iurii Shapkarin', type = 'website', aeoScript, MermaidScript }) => {
 
   const { pathname } = useLocation();
   const canonicalUrl = `https://shapkarin.me${pathname}`;
@@ -33,6 +33,8 @@ const SEO = ({ title, description, name = 'Iurii Shapkarin', type = 'website', a
           {JSON.stringify(aeoScript)}
         </script>
       )}
+
+      {MermaidScript && MermaidScript()}
     </Helmet>
   );
 };
