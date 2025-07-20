@@ -31,5 +31,8 @@ export const fetchContributions = () => githubRequest.get(URLS.activity);
 // Articles (MD files)
 export const fetchArticle = (name) => markdownRequest.get(URLS.article(name));
 
+// Fetch AeoScript for related articles
+export const fetchAeoScript = (name) => axios.get(URLS.aeoScript(name));
+
 // maybe add it later, get repo languages statistic
 // export const fetchRepoLangs = url => axios.get(url);
