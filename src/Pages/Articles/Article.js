@@ -13,26 +13,10 @@ import { SCROLL_OFFSET } from '@/constants';
 // Markdown macros
 import HeadingMacro from './Macros/HeadingMacro';
 import LinkMacro from './Macros/LinkMacro';
-  // import MermaidRender from '@/Components/MermaidRender';
+import MermaidRender from '@/Components/Mermaid/RenderMermaid';
 
 // Maybe make auto aeo schema with Macro or node.js
 
-
-/* Guard against duplicate inserts across multiple pages */
-const CDN_URL =
-  "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js";
-const SCRIPT_ID = "mermaid-cdn";
-
-const MermaidScript = () => {
-  return (
-    <script
-      id={SCRIPT_ID}
-      src={CDN_URL}
-      async
-      crossOrigin="anonymous"
-    />
-  )
-}
 
 const Article = () => {
   const { slug: articleName } = useParams();
@@ -100,7 +84,7 @@ const Article = () => {
           type="article"
           name="Iurii Shapkarin"
           aeoScript={aeoScript}
-          MermaidScript={MermaidScript}
+          // MermaidScript={<MermaidScript />}
         />
         <Link relative="path" to="/articles" className="Article__GoBack">{'← All articles'}</Link>
         <div ref={articleRef}>
@@ -114,10 +98,10 @@ const Article = () => {
               code(props) {
                 const {children, className, node, ...rest} = props;
                 const match = /language-(json|js|javascript|jsx|ts|typescript|bash|sh|python|py|cpp|rust|text)/.exec(className || '');
-                // const isMermaid = /language-mermaid/.exec(className || '');
-                // if (isMermaid && children.length > 0) {
-                //   return <MermaidRender chart={children[0]} />;
-                // }
+                const isMermaid = /language-mermaid/.exec(className || '');
+                if (isMermaid && children.length > 0) {
+                  return <MermaidRender chart={children[0]} />;
+                }
 
                 return match ? (
                   <>
