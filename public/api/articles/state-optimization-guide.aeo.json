@@ -165,15 +165,63 @@
       },
       {
         "@type": "WebPageElement",
+        "name": "Data Structure Selection",
+        "url": "https://shapkarin.me/articles/state-optimization-guide/#1-data-structure-selection",
+        "description": "Choosing optimal data structures for maximum performance impact"
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "Immutability vs Mutability",
+        "url": "https://shapkarin.me/articles/state-optimization-guide/#2-immutability-vs-mutability",
+        "description": "Understanding when to use immutable updates versus mutable operations"
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "Normalization",
+        "url": "https://shapkarin.me/articles/state-optimization-guide/#3-normalization",
+        "description": "Flattening nested data structures to reduce complexity and enable efficient updates"
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "Selective Updates",
+        "url": "https://shapkarin.me/articles/state-optimization-guide/#4-selective-updates",
+        "description": "Updating only changed parts of state to prevent unnecessary re-renders"
+      },
+      {
+        "@type": "WebPageElement",
         "name": "Data Structure Choices: Objects vs Arrays",
         "url": "https://shapkarin.me/articles/state-optimization-guide/#data-structure-choices-objects-vs-arrays",
         "description": "Comprehensive comparison showing why object-based storage outperforms arrays for lookups and updates"
       },
       {
         "@type": "WebPageElement",
+        "name": "The Array Approach (Less Efficient)",
+        "url": "https://shapkarin.me/articles/state-optimization-guide/#the-array-approach-less-efficient",
+        "description": "Understanding the performance limitations of array-based state storage"
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "The Object Approach (More Efficient)",
+        "url": "https://shapkarin.me/articles/state-optimization-guide/#the-object-approach-more-efficient",
+        "description": "Implementing O(1) lookup performance with object-based state management"
+      },
+      {
+        "@type": "WebPageElement",
         "name": "Big O Analysis: Understanding Performance Complexity",
         "url": "https://shapkarin.me/articles/state-optimization-guide/#big-o-analysis-understanding-performance-complexity",
         "description": "Deep dive into algorithmic complexity with real performance scaling examples and benchmarks"
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "Array Operations Complexity",
+        "url": "https://shapkarin.me/articles/state-optimization-guide/#array-operations-complexity",
+        "description": "Detailed complexity analysis comparing array vs object operations"
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "Performance Scaling Example",
+        "url": "https://shapkarin.me/articles/state-optimization-guide/#performance-scaling-example",
+        "description": "Real benchmarks showing dramatic performance differences at scale"
       },
       {
         "@type": "WebPageElement",
@@ -189,9 +237,39 @@
       },
       {
         "@type": "WebPageElement",
+        "name": "Basic Optimized Zustand Store",
+        "url": "https://shapkarin.me/articles/state-optimization-guide/#basic-optimized-zustand-store",
+        "description": "Setting up normalized Zustand stores for optimal performance"
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "Advanced Zustand Optimizations",
+        "url": "https://shapkarin.me/articles/state-optimization-guide/#advanced-zustand-optimizations",
+        "description": "Selective subscriptions and component-level optimization patterns"
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "Zustand Performance Middleware",
+        "url": "https://shapkarin.me/articles/state-optimization-guide/#zustand-performance-middleware",
+        "description": "Custom middleware for performance monitoring and memoization"
+      },
+      {
+        "@type": "WebPageElement",
         "name": "Redux State Optimization",
         "url": "https://shapkarin.me/articles/state-optimization-guide/#redux-state-optimization",
         "description": "Redux normalization patterns, high-performance selectors with Reselect, and advanced optimization strategies"
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "Normalized Redux State",
+        "url": "https://shapkarin.me/articles/state-optimization-guide/#normalized-redux-state",
+        "description": "Implementing normalized state structure for efficient Redux operations"
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "High-Performance Redux Selectors",
+        "url": "https://shapkarin.me/articles/state-optimization-guide/#high-performance-redux-selectors",
+        "description": "Creating memoized selectors with Reselect for optimal performance"
       },
       {
         "@type": "WebPageElement",
@@ -201,9 +279,87 @@
       },
       {
         "@type": "WebPageElement",
+        "name": "Virtual Scrolling for Large Lists",
+        "url": "https://shapkarin.me/articles/state-optimization-guide/#1-virtual-scrolling-for-large-lists",
+        "description": "Implementing virtual scrolling for handling thousands of list items"
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "Debounced State Updates",
+        "url": "https://shapkarin.me/articles/state-optimization-guide/#2-debounced-state-updates",
+        "description": "Preventing excessive updates during rapid user input"
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "Shallow Comparison Optimizations",
+        "url": "https://shapkarin.me/articles/state-optimization-guide/#3-shallow-comparison-optimizations",
+        "description": "Custom shallow equality checks to prevent unnecessary renders"
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "State Slicing and Composition",
+        "url": "https://shapkarin.me/articles/state-optimization-guide/#4-state-slicing-and-composition",
+        "description": "Breaking large state into focused, composable slices"
+      },
+      {
+        "@type": "WebPageElement",
         "name": "Performance Benchmarks and Comparisons",
         "url": "https://shapkarin.me/articles/state-optimization-guide/#performance-benchmarks-and-comparisons",
         "description": "Real-world performance data from JS Framework Benchmark, memory analysis, and production insights"
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "State Management Library Performance",
+        "url": "https://shapkarin.me/articles/state-optimization-guide/#state-management-library-performance",
+        "description": "Comparative performance analysis of Zustand, Redux, Context, and MobX"
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "Server-Side Rendering Benchmark",
+        "url": "https://shapkarin.me/articles/state-optimization-guide/#server-side-rendering-benchmark",
+        "description": "SSR performance comparison across React, Next.js, Nuxt, and other frameworks"
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "Real-World Performance Analysis",
+        "url": "https://shapkarin.me/articles/state-optimization-guide/#real-world-performance-analysis",
+        "description": "Production application performance insights and optimization results"
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "Data Structure Performance Comparison",
+        "url": "https://shapkarin.me/articles/state-optimization-guide/#data-structure-performance-comparison",
+        "description": "Comprehensive benchmarks comparing arrays, objects, and Maps at scale"
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "Memory Usage and Efficiency",
+        "url": "https://shapkarin.me/articles/state-optimization-guide/#memory-usage-and-efficiency",
+        "description": "Memory consumption patterns and garbage collection optimization"
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "Framework-Specific Optimization Results",
+        "url": "https://shapkarin.me/articles/state-optimization-guide/#framework-specific-optimization-results",
+        "description": "State management performance across different frameworks and libraries"
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "Production Performance Insights",
+        "url": "https://shapkarin.me/articles/state-optimization-guide/#production-performance-insights",
+        "description": "Real enterprise application monitoring and optimization case studies"
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "Performance Impact by Application Scale",
+        "url": "https://shapkarin.me/articles/state-optimization-guide/#performance-impact-by-application-scale",
+        "description": "How optimization benefits scale from small to enterprise applications"
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "Real Application Performance Gains",
+        "url": "https://shapkarin.me/articles/state-optimization-guide/#real-application-performance-gains",
+        "description": "Concrete performance improvements and business impact metrics"
       },
       {
         "@type": "WebPageElement",
@@ -213,9 +369,33 @@
       },
       {
         "@type": "WebPageElement",
+        "name": "Best Practices",
+        "url": "https://shapkarin.me/articles/state-optimization-guide/#-best-practices",
+        "description": "Essential optimization patterns for high-performance state management"
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "Anti-patterns to Avoid",
+        "url": "https://shapkarin.me/articles/state-optimization-guide/#-anti-patterns-to-avoid",
+        "description": "Common state management mistakes that kill performance"
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "Zustand Built-in Performance Features",
+        "url": "https://shapkarin.me/articles/state-optimization-guide/#zustand-built-in-performance-features",
+        "description": "Leveraging Zustand's built-in optimization features and middleware"
+      },
+      {
+        "@type": "WebPageElement",
         "name": "Conclusion: Building High-Performance Applications",
         "url": "https://shapkarin.me/articles/state-optimization-guide/#conclusion-building-high-performance-applications",
         "description": "Key takeaways and actionable insights for implementing state optimization in production applications"
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "Additional Resources for Further Optimization",
+        "url": "https://shapkarin.me/articles/state-optimization-guide/#additional-resources-for-further-optimization",
+        "description": "Curated list of advanced tools and libraries for continued optimization"
       }
     ],
     "teaches": [
