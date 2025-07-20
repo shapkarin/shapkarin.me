@@ -33,16 +33,6 @@ order: 5
   - [3. Shallow Comparison Optimizations](#3-shallow-comparison-optimizations)
   - [4. State Slicing and Composition](#4-state-slicing-and-composition)
 - [Performance Benchmarks and Comparisons](#performance-benchmarks-and-comparisons)
-  - [JS Framework Benchmark Results (Stefan Krause)](#js-framework-benchmark-results-stefan-krause)
-  - [State Management Library Performance](#state-management-library-performance)
-  - [Server-Side Rendering Benchmark](#server-side-rendering-benchmark)
-  - [Real-World Performance Analysis](#real-world-performance-analysis)
-  - [Data Structure Performance Comparison](#data-structure-performance-comparison)
-  - [Memory Usage and Efficiency](#memory-usage-and-efficiency)
-  - [Framework-Specific Optimization Results](#framework-specific-optimization-results)
-  - [Production Performance Insights](#production-performance-insights)
-  - [Performance Impact by Application Scale](#performance-impact-by-application-scale)
-  - [Real Application Performance Gains](#real-application-performance-gains)
 - [Best Practices and Anti-patterns](#best-practices-and-anti-patterns)
   - [✅ Best Practices](#-best-practices)
   - [❌ Anti-patterns to Avoid](#-anti-patterns-to-avoid)
@@ -536,42 +526,7 @@ const useAppData = () => {
 
 ## Performance Benchmarks and Comparisons
 
-### JS Framework Benchmark Results (Stefan Krause)
-
-The most authoritative benchmark for JavaScript framework performance comes from Stefan Krause's comprehensive benchmark suite. These results provide real-world insights into how different frameworks and state management patterns perform at scale.
-
-**Source for all benchmark data: [JS Framework Benchmark by Stefan Krause](https://github.com/krausest/js-framework-benchmark)**
-
-#### State Management Library Performance
-
-Comparing state management solutions within React ecosystem:
-
-| State Solution | Memory Usage (MB) | Update Performance (ops/sec) | Bundle Impact (KB) | Re-render Optimization |
-|---------------|-------------------|-----------------------------|--------------------|----------------------|
-| **Zustand** | 2.1 | 45,000 | +8.3 | Excellent (selective) |
-| **Redux Toolkit** | 3.4 | 38,000 | +18.7 | Good (selectors) |
-| **React Context** | 4.2 | 28,000 | +0.0 | Poor (full tree) |
-| **MobX** | 2.8 | 41,000 | +15.2 | Excellent (reactive) |
-
-#### Server-Side Rendering Benchmark
-
-Based on comprehensive SSR benchmarks testing 1000-row table rendering:
-
-| Framework | Operations/sec | Average Time (ms) | Relative Performance | Bundle Size (KB) |
-|-----------|---------------|-------------------|---------------------|------------------|
-| **React (baseline)** | 766 | 1.31 | 1.0x | 97.3 |
-| **SvelteKit** | 589 | 1.70 | 1.3x slower | 184.5 |
-| **Remix** | 449 | 2.22 | 1.7x slower | 189.1 |
-| **Nuxt** | 381 | 2.62 | 2.0x slower | 201.1 |
-| **Qwik City** | 278 | 3.58 | 2.8x slower | 139.2 |
-| **Next.js (App Router)** | 53 | 18.67 | 14.5x slower | 284.6 |
-| **Next.js (Pages)** | 104 | 9.59 | 7.4x slower | 187.7 |
-
-*Source: [SSR Framework Benchmark](https://github.com/eknkc/ssr-benchmark)*
-
-### Real-World Performance Analysis
-
-#### Data Structure Performance Comparison
+### Real-World Performance Test
 
 ```javascript
 // Comprehensive benchmark comparing approaches
