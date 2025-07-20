@@ -32,25 +32,25 @@ const Article = () => {
   const { data: frontMatter, content: markdownContent } = matter(content);
 
   // Dynamically load AEO script based on article name
-  const { data: aeoScriptData, isLoading: aeoLoading, error: aeoError } = useQuery(
+  const { data: aeoScript = null } = useQuery(
     ['AeoScript', articleName], 
-    () => fetchAeoScript(articleName),
+    async () => {
+      try {
+        const response = await fetchAeoScript(articleName);
+        return response.data;
+      } catch (error) {
+        // If endpoint doesn't exist (404) or any other error, return null
+        console.log(`No AEO script found for ${articleName}, continuing without it`);
+        return null;
+      }
+    },
     {
       enabled: Boolean(articleName),
-      keepPreviousData: true,
-      // Don't retry if AEO file doesn't exist (404)
+      keepPreviousData: false,//true,
+      // Always "succeed" so query doesn't go into error state
       retry: false,
-      // Fail silently if AEO file doesn't exist
-      onError: (error) => {
-        if (error.response?.status !== 404) {
-          console.error('Error loading AEO script:', error);
-        }
-      }
     }
   );
-
-  // Extract AEO script from response or fallback to frontMatter
-  const aeoScript = aeoScriptData?.data ? JSON.stringify(aeoScriptData.data) : frontMatter.aeoScript;
 
   const articleRef = useRef(null);
 
@@ -76,8 +76,6 @@ const Article = () => {
       }
     };
   }, [markdownContent])
-
-  console.log('AEO script loaded:', { aeoLoading, aeoError: aeoError?.response?.status, hasAeoScript: !!aeoScript });
 
   return (
     <div className="Article Page__Article Page__Inner">
