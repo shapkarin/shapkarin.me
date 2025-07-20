@@ -17,6 +17,7 @@ order: 4
 - [Conclusion](#conclusion)
 
 ## Notes: 
+- Check [state Optimization Guide Article](/articles/state-optimization-guide)
 - It can use a lot of resources. It's not needed if input values change often.
 - Check article about [new babel-plugin-react-compiler improvements](/articles/drop-react-manual-memoization).
 
