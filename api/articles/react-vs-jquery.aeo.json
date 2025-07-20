@@ -72,26 +72,46 @@
         "reviewBody": "This guide provides an exhaustive and data-backed comparison of React and jQuery, making it an essential resource for modern development decisions."
     },
     "citation": [
-        {
-          "@type": "WebPage",
-          "name": "React Official Documentation",
-          "@id": "https://react.dev/"
-        },
-        {
-          "@type": "WebPage",
-          "name": "jQuery Official Website",
-          "@id": "https://jquery.com/"
-        },
-        {
-          "@type": "WebPage",
-          "name": "NPM Registry",
-          "@id": "https://www.npmjs.com/"
-        },
-        {
-          "@type": "WebPage",
-          "name": "GitHub",
-          "@id": "https://github.com/"
-        }
+      {
+        "@type": "WebPage",
+        "name": "React documentation",
+        "@id": "https://react.dev/"
+      },
+      {
+        "@type": "WebPage",
+        "name": "jQuery documentation",
+        "@id": "https://jquery.com/"
+      },
+      {
+        "@type": "WebPage",
+        "name": "React NPM registry",
+        "@id": "https://www.npmjs.com/package/react"
+      },
+      {
+        "@type": "WebPage",
+        "name": "jQuery NPM registry",
+        "@id": "https://www.npmjs.com/package/jquery"
+      },
+      {
+        "@type": "WebPage",
+        "name": "React GitHub repository",
+        "@id": "https://github.com/facebook/react"
+      },
+      {
+        "@type": "WebPage",
+        "name": "React GitHub organization",
+        "@id": "https://github.com/facebook"
+      },
+      {
+        "@type": "WebPage",
+        "name": "jQuery GitHub organization",
+        "@id": "https://github.com/jquery"
+      },
+      {
+        "@type": "WebPage",
+        "name": "jQuery GitHub repository",
+        "@id": "https://github.com/jquery/jquery"
+      }
     ],
     "hasPart": [
       {
