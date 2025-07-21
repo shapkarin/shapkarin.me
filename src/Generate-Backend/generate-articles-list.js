@@ -37,7 +37,8 @@ function extractFrontmatter(content) {
 function getArticleFiles() {
   try {
     return fs.readdirSync(CONFIG.ARTICLES_PATH)
-      .filter(file => file.endsWith(CONFIG.FILE_EXTENSION));
+      .filter(file => file.endsWith(CONFIG.FILE_EXTENSION))
+      .filter(file => !file.includes('_NEW')); // Exclude files with "_NEW" in the name
   } catch (error) {
     throw new Error(`Failed to read articles directory: ${error.message}`);
   }
