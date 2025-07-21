@@ -52,6 +52,9 @@
     <loc>https://shapkarin.me/articles/memoization/</loc>
   </url>
   <url>
+    <loc>https://shapkarin.me/articles/state-optimization-guide/</loc>
+  </url>
+  <url>
     <loc>https://shapkarin.me/articles/structuredClone/</loc>
   </url>
   <url>
@@ -61,7 +64,7 @@
     <loc>https://shapkarin.me/articles/curiosity-js/</loc>
   </url>
   <url>
-    <loc>https://shapkarin.me/articles/jquery-vs-react/</loc>
+    <loc>https://shapkarin.me/articles/react-vs-jquery/</loc>
   </url>
   <url>
     <loc>https://shapkarin.me/articles/design/</loc>
