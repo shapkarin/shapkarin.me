@@ -12,8 +12,6 @@ const SEO = ({ title, description, name = 'Iurii Shapkarin', type = 'website', a
   const { pathname } = useLocation();
   const canonicalUrl = `https://shapkarin.me${pathname}`;
   
-  const useMermaidOnPages = ['/articles/drop-react-manual-memoization', '/articles/react-vs-jquery'].includes(pathname);
-
   return (
     <Helmet>
       {/* Standard metadata tags */}
@@ -41,13 +39,6 @@ const SEO = ({ title, description, name = 'Iurii Shapkarin', type = 'website', a
           {JSON.stringify(aeoScript)}
         </script>
       )}
-
-      {useMermaidOnPages && <script
-        id={SCRIPT_ID}
-        src={CDN_URL}
-        async
-        crossOrigin="anonymous"
-      />}
     </Helmet>
   );
 };
