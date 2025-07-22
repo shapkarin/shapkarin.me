@@ -93,20 +93,6 @@
         "name": "Software Engineers"
       }
     ],
-    "review": {
-        "@type": "Review",
-        "reviewRating": {
-          "@type": "Rating",
-          "ratingValue": "5",
-          "bestRating": "5"
-        },
-        "author": {
-          "@type": "Organization",
-          "name": "Iurii Shapkarin"
-        },
-        "name": "Expert Technical Analysis",
-        "reviewBody": "This comprehensive guide provides in-depth coverage of React memoization techniques with practical examples, performance insights, and expert-level best practices for optimizing React applications."
-    },
     "citation": [
       {
         "@type": "WebPage",

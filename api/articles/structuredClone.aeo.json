@@ -1,0 +1,685 @@
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://shapkarin.me/articles/structuredClone"
+    },
+    "headline": "Deep Cloning in JavaScript: Mastering `structuredClone()`",
+    "description": "Learn how to properly create deep copies of complex objects in JavaScript using the modern structuredClone() method, understand its advantages over traditional techniques, and discover when and how to use it effectively.",
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://shapkarin.me/logo.jpg",
+      "width": 512,
+      "height": 512
+    },
+    "author": {
+      "@type": "Organization",
+      "name": "Iurii Shapkarin"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Iurii Shapkarin",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://shapkarin.me/logo.jpg",
+        "width": 512,
+        "height": 512
+      }
+    },
+    "datePublished": "2025-01-28",
+    "dateModified": "2025-01-28",
+    "wordCount": "4100",
+    "inLanguage": "en-US",
+    "learningResourceType": "Comprehensive technical guide",
+    "proficiencyLevel": ["Beginner", "Intermediate", "Advanced"],
+    "keywords": "structuredClone JavaScript, deep cloning JavaScript, shallow clone deep clone, JavaScript object cloning, copy JavaScript objects, JSON parse stringify alternative, structured clone algorithm, JavaScript deep copy, object copying methods, clone complex objects JavaScript, JavaScript cloning performance, circular references cloning, transferable objects JavaScript, ArrayBuffer cloning, Map Set cloning JavaScript, Date RegExp cloning, JavaScript memory management, object serialization JavaScript, deep clone vs shallow clone, JavaScript data structures cloning, browser API cloning, Web Workers data transfer, JavaScript copying best practices, clone JavaScript arrays, nested object cloning, JavaScript object manipulation, modern JavaScript features, ES2022 JavaScript features, JavaScript performance optimization, clone TypedArray JavaScript, JavaScript memory efficiency, object reference copying, JavaScript immutable data, state management cloning, React state cloning, Redux state cloning, JavaScript functional programming, clone JavaScript primitives, JavaScript object methods, browser compatibility cloning, Node.js cloning, JavaScript data persistence",
+    "about": [
+      {
+        "@type": "Thing",
+        "name": "Deep Cloning",
+        "description": "Creating independent copies of objects where nested objects are recursively copied, preventing shared references between original and copy"
+      },
+      {
+        "@type": "Thing",
+        "name": "structuredClone API",
+        "description": "Modern JavaScript built-in method for high-fidelity deep cloning using the structured clone algorithm"
+      },
+      {
+        "@type": "Thing",
+        "name": "Shallow Cloning",
+        "description": "Copying only the top-level properties of an object while nested objects maintain shared references"
+      },
+      {
+        "@type": "Thing",
+        "name": "Structured Clone Algorithm",
+        "description": "Browser algorithm for copying JavaScript values between contexts, originally developed for Web Workers"
+      },
+      {
+        "@type": "Thing",
+        "name": "JavaScript Object Copying",
+        "description": "Various techniques and methods for duplicating JavaScript objects and data structures"
+      },
+      {
+        "@type": "Thing",
+        "name": "Circular References",
+        "description": "Object structures where properties reference back to the parent object, creating circular dependency chains"
+      },
+      {
+        "@type": "Thing",
+        "name": "Transferable Objects",
+        "description": "JavaScript objects that can transfer ownership of underlying data for efficient memory management"
+      },
+      {
+        "@type": "Thing",
+        "name": "JavaScript Performance",
+        "description": "Optimization techniques and considerations for efficient JavaScript object manipulation and memory usage"
+      }
+    ],
+    "audience": [
+      {
+        "@type": "Audience",
+        "audienceType": "Developers",
+        "name": "JavaScript Developers"
+      },
+      {
+        "@type": "Audience",
+        "audienceType": "Developers",
+        "name": "Frontend Developers"
+      },
+      {
+        "@type": "Audience",
+        "audienceType": "Developers",
+        "name": "Backend Developers"
+      },
+      {
+        "@type": "Audience",
+        "audienceType": "Developers",
+        "name": "Full-Stack Developers"
+      },
+      {
+        "@type": "Audience",
+        "audienceType": "Developers",
+        "name": "React Developers"
+      },
+      {
+        "@type": "Audience",
+        "audienceType": "Developers",
+        "name": "Node.js Developers"
+      },
+      {
+        "@type": "Audience",
+        "audienceType": "Students",
+        "name": "Computer Science Students"
+      },
+      {
+        "@type": "Audience",
+        "audienceType": "Technical Leaders",
+        "name": "Software Architects"
+      },
+      {
+        "@type": "Audience",
+        "audienceType": "Technical Leaders",
+        "name": "Engineering Managers"
+      },
+      {
+        "@type": "Audience",
+        "audienceType": "Developers",
+        "name": "Web Developers"
+      },
+      {
+        "@type": "Audience",
+        "audienceType": "Developers",
+        "name": "Software Engineers"
+      },
+      {
+        "@type": "Audience",
+        "audienceType": "Students",
+        "name": "Programming Students"
+      }
+    ],
+    "citation": [
+      {
+        "@type": "WebPage",
+        "name": "MDN structuredClone() Documentation",
+        "@id": "https://developer.mozilla.org/en-US/docs/Web/API/structuredClone",
+        "description": "Official documentation for the structuredClone() method with examples and browser compatibility information",
+        "relatedLink": [
+          "https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Structured_clone_algorithm",
+          "https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Transferable_objects",
+          "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse",
+          "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify"
+        ]
+      },
+      {
+        "@type": "WebPage",
+        "name": "MDN Structured Clone Algorithm",
+        "@id": "https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Structured_clone_algorithm",
+        "description": "Comprehensive documentation of the structured clone algorithm and its capabilities and limitations",
+        "relatedLink": [
+          "https://developer.mozilla.org/en-US/docs/Web/API/Worker/postMessage",
+          "https://developer.mozilla.org/en-US/docs/Web/API/MessageChannel",
+          "https://developer.mozilla.org/en-US/docs/Web/API/BroadcastChannel",
+          "https://developer.mozilla.org/en-US/docs/Web/API/History/pushState"
+        ]
+      },
+      {
+        "@type": "WebPage",
+        "name": "MDN Transferable Objects",
+        "@id": "https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Transferable_objects",
+        "description": "Documentation on transferable objects and efficient data transfer techniques in JavaScript",
+        "relatedLink": [
+          "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer",
+          "https://developer.mozilla.org/en-US/docs/Web/API/MessagePort",
+          "https://developer.mozilla.org/en-US/docs/Web/API/ImageBitmap",
+          "https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvas"
+        ]
+      },
+      {
+        "@type": "WebPage",
+        "name": "MDN JSON.parse() Documentation",
+        "@id": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse",
+        "description": "Complete reference for JSON.parse() method and its limitations for object cloning",
+        "relatedLink": [
+          "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify",
+          "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON",
+          "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Errors/Cyclic_object_value"
+        ]
+      },
+      {
+        "@type": "WebPage",
+        "name": "MDN Object.assign() Documentation",
+        "@id": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign",
+        "description": "Documentation for Object.assign() method and shallow cloning techniques",
+        "relatedLink": [
+          "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax",
+          "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/create",
+          "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/keys"
+        ]
+      },
+      {
+        "@type": "WebPage",
+        "name": "WHATWG HTML Living Standard - Structured Clone",
+        "@id": "https://html.spec.whatwg.org/multipage/structured-data.html#structured-cloning",
+        "description": "Official specification for the structured cloning algorithm used by structuredClone()",
+        "relatedLink": [
+          "https://html.spec.whatwg.org/multipage/workers.html#dom-worker-postmessage",
+          "https://html.spec.whatwg.org/multipage/web-messaging.html#dom-messageport-postmessage",
+          "https://html.spec.whatwg.org/multipage/history.html#dom-history-pushstate"
+        ]
+      },
+      {
+        "@type": "WebPage",
+        "name": "Can I Use structuredClone",
+        "@id": "https://caniuse.com/mdn-api_structuredclone",
+        "description": "Browser compatibility information for the structuredClone() method across different platforms and versions",
+        "relatedLink": [
+          "https://caniuse.com/webworkers",
+          "https://caniuse.com/messageport",
+          "https://caniuse.com/broadcastchannel"
+        ]
+      },
+      {
+        "@type": "WebPage",
+        "name": "MDN Map Object Documentation",
+        "@id": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map",
+        "description": "Complete reference for JavaScript Map objects and their cloning behavior with structuredClone",
+        "relatedLink": [
+          "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set",
+          "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakMap",
+          "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakSet"
+        ]
+      },
+      {
+        "@type": "WebPage",
+        "name": "MDN TypedArray Documentation",
+        "@id": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray",
+        "description": "Documentation for TypedArray objects and their cloning capabilities with structuredClone",
+        "relatedLink": [
+          "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array",
+          "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float32Array",
+          "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/BigInt64Array"
+        ]
+      },
+      {
+        "@type": "WebPage",
+        "name": "MDN Date Object Documentation",
+        "@id": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date",
+        "description": "Complete reference for JavaScript Date objects and proper cloning techniques",
+        "relatedLink": [
+          "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/Date",
+          "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/getTime",
+          "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString"
+        ]
+      },
+      {
+        "@type": "WebPage",
+        "name": "MDN RegExp Object Documentation",
+        "@id": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp",
+        "description": "Documentation for JavaScript RegExp objects and their cloning behavior",
+        "relatedLink": [
+          "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions",
+          "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/flags",
+          "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/source"
+        ]
+      },
+      {
+        "@type": "WebPage",
+        "name": "Lodash cloneDeep Documentation",
+        "@id": "https://lodash.com/docs/4.17.15#cloneDeep",
+        "description": "Documentation for Lodash's cloneDeep method as an alternative to structuredClone",
+        "relatedLink": [
+          "https://lodash.com/docs/4.17.15#clone",
+          "https://lodash.com/docs/4.17.15#cloneWith",
+          "https://lodash.com/docs/4.17.15#cloneDeepWith"
+        ]
+      }
+    ],
+    "hasPart": [
+      {
+        "@type": "WebPageElement",
+        "name": "Shallow vs. Deep Cloning: The Core Difference",
+        "url": "https://shapkarin.me/articles/structuredClone#shallow-vs-deep-cloning-the-core-difference",
+        "description": "Fundamental explanation of the differences between shallow and deep cloning with practical examples"
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "Traditional Deep Cloning Methods and Their Issues",
+        "url": "https://shapkarin.me/articles/structuredClone#traditional-deep-cloning-methods-and-their-issues",
+        "description": "Analysis of JSON.parse(JSON.stringify()) and recursive cloning approaches with their limitations"
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "JSON.parse(JSON.stringify(object)) Method",
+        "url": "https://shapkarin.me/articles/structuredClone#1-jsonparsejsonstringifyobject",
+        "description": "Detailed examination of the most common traditional cloning method and its data type limitations"
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "Recursive Manual Cloning and Third-Party Libraries",
+        "url": "https://shapkarin.me/articles/structuredClone#2-recursive-manual-cloning--third-party-libraries",
+        "description": "Overview of custom recursive cloning functions and library solutions like Lodash"
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "Introducing structuredClone(): The Modern Solution",
+        "url": "https://shapkarin.me/articles/structuredClone#introducing-structuredclone-the-modern-solution",
+        "description": "Comprehensive introduction to structuredClone() with advanced examples and supported data types"
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "Key Benefits of structuredClone()",
+        "url": "https://shapkarin.me/articles/structuredClone#key-benefits-of-structuredclone",
+        "description": "Detailed analysis of structuredClone advantages including complex type handling and performance"
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "Limitations of structuredClone()",
+        "url": "https://shapkarin.me/articles/structuredClone#limitations-of-structuredclone",
+        "description": "Comprehensive coverage of structuredClone limitations including functions, DOM nodes, and prototypes"
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "When to Use structuredClone()",
+        "url": "https://shapkarin.me/articles/structuredClone#when-to-use-structuredclone",
+        "description": "Best practices and use cases for structuredClone in state management, caching, and Web Workers"
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "Conclusion",
+        "url": "https://shapkarin.me/articles/structuredClone#conclusion",
+        "description": "Summary of structuredClone capabilities and guidance for effective usage in JavaScript projects"
+      }
+    ],
+    "teaches": [
+      "Understanding the fundamental difference between shallow and deep cloning",
+      "Mastering the structuredClone() method for modern JavaScript deep cloning",
+      "Recognizing limitations of traditional JSON.parse(JSON.stringify()) approach",
+      "Handling complex JavaScript data types like Map, Set, Date, and TypedArrays",
+      "Working with circular references in object structures",
+      "Optimizing object cloning performance in JavaScript applications",
+      "Implementing proper data transfer techniques with Transferable Objects",
+      "Choosing appropriate cloning methods based on data type requirements",
+      "Understanding structured clone algorithm capabilities and limitations",
+      "Best practices for state management and object manipulation",
+      "Browser compatibility considerations for modern cloning methods",
+      "Memory efficient object copying techniques in JavaScript"
+    ],
+    "programmingLanguage": "JavaScript",
+    "operatingSystem": "Cross-platform",
+    "applicationCategory": "Educational"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is the difference between structuredClone() and JSON.parse(JSON.stringify())?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "structuredClone() is far more capable than JSON.parse(JSON.stringify()). While JSON methods can only handle JSON-safe data (losing functions, undefined, Date objects become strings), structuredClone() preserves complex types like Date, RegExp, Map, Set, ArrayBuffer, TypedArrays, and handles circular references. structuredClone() uses the structured clone algorithm for high-fidelity copying, making it the superior choice for deep cloning in modern JavaScript."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can structuredClone() clone functions and DOM elements?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No, structuredClone() cannot clone functions or DOM elements - attempting to do so throws a DataCloneError. Functions are not serializable by the structured clone algorithm, and DOM nodes have special cloning methods like node.cloneNode(). For objects containing functions, you'll need custom cloning solutions or libraries like Lodash's cloneDeep()."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does structuredClone() work with circular references?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, structuredClone() handles circular references perfectly, unlike JSON.parse(JSON.stringify()) which throws an error. When cloning an object with circular references, structuredClone() preserves the circular structure in the new copy, so if original.self === original, then cloned.self === cloned (but cloned.self !== original)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What data types can structuredClone() handle?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "structuredClone() supports a wide range of data types: Date, RegExp, Map, Set, ArrayBuffer, all TypedArrays (Uint8Array, Float32Array, etc.), Boolean, Number, String, BigInt, Error objects, ImageData, Blob, File, and more. It handles nested objects and arrays with these types, plus circular references. However, it cannot clone functions, DOM nodes, property descriptors, getters/setters, or prototype chains."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is structuredClone() faster than other cloning methods?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "structuredClone() is generally more performant and reliable than JSON.parse(JSON.stringify()) for supported data types, and competitive with library solutions for common use cases. It's implemented natively in browsers, avoiding the serialization overhead of JSON methods. For large objects with complex types, it's typically faster and more memory efficient than manual recursive cloning."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I use structuredClone() to clone custom class instances?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "structuredClone() will clone the data properties of custom class instances, but the result will be a plain object, not an instance of the original class. The prototype chain, methods, and instanceof relationship are lost. If you need to preserve class methods and prototype, you'll need custom cloning logic or libraries that can reconstruct the proper prototype chain."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are Transferable Objects with structuredClone()?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Transferable Objects like ArrayBuffer, MessagePort, or ImageBitmap can transfer ownership of their underlying data instead of copying it, using structuredClone(value, { transfer: [arrayBuffer] }). This is very efficient for large data as it avoids copying - the original object becomes unusable after transfer. This feature is especially useful for Web Worker communication and memory optimization."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is structuredClone() supported in all browsers?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "structuredClone() is supported in modern browsers: Chrome 98+, Firefox 94+, Safari 15.4+, and Node.js 17+. For older browser support, you can use polyfills or fallback to library solutions like Lodash's cloneDeep(). Always check browser compatibility requirements for your target audience before using structuredClone()."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "When should I use structuredClone() vs other cloning methods?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Use structuredClone() for state management, caching, history/undo systems, and Web Worker data transfer when you need high-fidelity cloning of complex data types. Use JSON methods only for simple objects with JSON-safe data. Use libraries like Lodash when you need to clone functions, preserve prototypes, or support older browsers. Choose based on your data types and browser support requirements."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can structuredClone() preserve object property descriptors and getters/setters?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No, structuredClone() only clones property values, not property descriptors, getters, or setters. The cloned object will have plain data properties with values obtained from the original's getters. Property attributes like writable, configurable, and enumerable are not preserved. If you need to preserve property descriptors, you'll need custom cloning logic using Object.getOwnPropertyDescriptor()."
+        }
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "How to Use structuredClone() for Deep Cloning in JavaScript",
+    "description": "Complete guide to implementing structuredClone() for creating deep copies of complex JavaScript objects and data structures",
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://shapkarin.me/logo.jpg",
+      "width": 512,
+      "height": 512
+    },
+    "totalTime": "PT15M",
+    "estimatedCost": {
+      "@type": "MonetaryAmount",
+      "currency": "USD",
+      "value": "0"
+    },
+    "supply": [
+      {
+        "@type": "HowToSupply",
+        "name": "Modern browser with structuredClone() support"
+      },
+      {
+        "@type": "HowToSupply",
+        "name": "JavaScript runtime environment"
+      },
+      {
+        "@type": "HowToSupply",
+        "name": "Basic understanding of JavaScript objects"
+      }
+    ],
+    "tool": [
+      {
+        "@type": "HowToTool",
+        "name": "Code editor"
+      },
+      {
+        "@type": "HowToTool",
+        "name": "Browser developer console"
+      }
+    ],
+    "step": [
+      {
+        "@type": "HowToStep",
+        "name": "Check browser compatibility",
+        "text": "Verify that your target browsers support structuredClone() (Chrome 98+, Firefox 94+, Safari 15.4+, Node.js 17+). Consider polyfills or fallback methods for older browsers."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Identify objects suitable for structuredClone()",
+        "text": "Ensure your object contains supported data types like Date, RegExp, Map, Set, TypedArrays, and basic objects. Avoid objects with functions, DOM elements, or custom class methods that need preservation."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Implement basic structuredClone() usage",
+        "text": "Use const cloned = structuredClone(original) to create a deep copy. This handles nested objects, arrays, and complex data types while preserving circular references automatically."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Handle transferable objects for performance",
+        "text": "For large ArrayBuffers or ImageBitmaps, use structuredClone(value, { transfer: [arrayBuffer] }) to transfer ownership instead of copying, improving performance for large data sets."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Implement error handling",
+        "text": "Wrap structuredClone() in try-catch blocks to handle DataCloneError when attempting to clone unsupported types like functions or DOM elements."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Test with complex data structures",
+        "text": "Verify that your cloned objects are independent from originals by modifying nested properties and confirming the original remains unchanged. Test with Maps, Sets, Dates, and circular references."
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "How to Handle structuredClone() Limitations and Alternatives",
+    "description": "Guide to working around structuredClone() limitations and choosing appropriate cloning strategies for different scenarios",
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://shapkarin.me/logo.jpg",
+      "width": 512,
+      "height": 512
+    },
+    "totalTime": "PT20M",
+    "estimatedCost": {
+      "@type": "MonetaryAmount",
+      "currency": "USD",
+      "value": "0"
+    },
+    "supply": [
+      {
+        "@type": "HowToSupply",
+        "name": "Understanding of JavaScript object types"
+      },
+      {
+        "@type": "HowToSupply",
+        "name": "Knowledge of alternative cloning libraries"
+      }
+    ],
+    "tool": [
+      {
+        "@type": "HowToTool",
+        "name": "Lodash library (for alternatives)"
+      },
+      {
+        "@type": "HowToTool",
+        "name": "JavaScript development environment"
+      }
+    ],
+    "step": [
+      {
+        "@type": "HowToStep",
+        "name": "Identify unsupported data types",
+        "text": "Check your objects for functions, DOM elements, class methods, getters/setters, or property descriptors that structuredClone() cannot handle. These require alternative approaches."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Implement function-aware cloning",
+        "text": "For objects with functions, use Lodash's cloneDeep() or write custom recursive cloning that preserves functions: function cloneWithFunctions(obj) { /* custom logic */ }."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Handle DOM element cloning",
+        "text": "Use node.cloneNode(true) for DOM elements instead of structuredClone(). For mixed objects, separate DOM elements and handle them with appropriate methods."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Preserve class instances and prototypes",
+        "text": "For custom classes, combine structuredClone() with prototype restoration: const cloned = Object.setPrototypeOf(structuredClone(instance), Object.getPrototypeOf(instance))."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Create hybrid cloning strategy",
+        "text": "Develop a cloning function that uses structuredClone() as the primary method but falls back to alternatives for unsupported types, providing comprehensive object cloning."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Test compatibility and performance",
+        "text": "Compare your cloning solution with pure structuredClone(), JSON methods, and library solutions. Measure performance and verify correctness with your specific data structures."
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "How to Migrate from JSON.parse(JSON.stringify()) to structuredClone()",
+    "description": "Step-by-step guide to upgrading your deep cloning code from JSON methods to the modern structuredClone() API",
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://shapkarin.me/logo.jpg",
+      "width": 512,
+      "height": 512
+    },
+    "totalTime": "PT25M",
+    "estimatedCost": {
+      "@type": "MonetaryAmount",
+      "currency": "USD",
+      "value": "0"
+    },
+    "supply": [
+      {
+        "@type": "HowToSupply",
+        "name": "Existing codebase using JSON cloning"
+      },
+      {
+        "@type": "HowToSupply",
+        "name": "Modern browser support or polyfill"
+      }
+    ],
+    "tool": [
+      {
+        "@type": "HowToTool",
+        "name": "Code search and replace tools"
+      },
+      {
+        "@type": "HowToTool",
+        "name": "Unit testing framework"
+      },
+      {
+        "@type": "HowToTool",
+        "name": "Browser compatibility checker"
+      }
+    ],
+    "step": [
+      {
+        "@type": "HowToStep",
+        "name": "Audit existing JSON cloning usage",
+        "text": "Search your codebase for JSON.parse(JSON.stringify()) patterns and identify all locations where deep cloning is performed. Document the data types being cloned at each location."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Analyze data type compatibility",
+        "text": "For each cloning location, verify that the data types are compatible with structuredClone(). Check for Date objects that were being incorrectly converted to strings by JSON methods."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Create a migration wrapper function",
+        "text": "Write a utility function: function deepClone(obj) { return structuredClone(obj); } with error handling and fallback logic for unsupported browsers or data types."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Replace JSON cloning incrementally",
+        "text": "Replace JSON.parse(JSON.stringify(obj)) with your deepClone(obj) function one module at a time. Test each replacement thoroughly to ensure behavior is preserved or improved."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Update tests and fix data type issues",
+        "text": "Update unit tests to account for proper type preservation (Date objects remain Dates, not strings). Fix any code that was compensating for JSON method limitations."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Add browser compatibility polyfill",
+        "text": "For older browser support, add a structuredClone polyfill or conditional fallback: const deepClone = (obj) => window.structuredClone ? structuredClone(obj) : JSON.parse(JSON.stringify(obj))."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Performance test and optimize",
+        "text": "Benchmark the performance improvement from using structuredClone() versus JSON methods. Monitor for any performance regressions and optimize hot paths as needed."
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareSourceCode",
+    "name": "JavaScript structuredClone() Examples and Implementation",
+    "description": "Comprehensive code examples demonstrating structuredClone() usage, limitations, and comparison with traditional cloning methods",
+    "programmingLanguage": "JavaScript",
+    "codeRepository": "https://shapkarin.me/articles/structuredClone",
+    "author": {
+      "@type": "Organization",
+      "name": "Iurii Shapkarin"
+    },
+    "applicationCategory": "Educational",
+    "operatingSystem": "Cross-platform",
+    "teaches": [
+      "structuredClone() basic and advanced usage patterns",
+      "Handling complex data types with structured cloning",
+      "Working with circular references in object structures",
+      "Transferable objects and memory optimization techniques",
+      "Error handling for unsupported cloning scenarios",
+      "Performance comparisons between different cloning methods",
+      "Migration strategies from legacy cloning approaches"
+    ]
+  }
+] 
