@@ -1,0 +1,530 @@
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://shapkarin.me/articles/wagmi-ethers"
+    },
+    "headline": "WAGMI vs Ethers.js: Choosing the Right Ethereum Development Library",
+    "description": "Compare WAGMI and Ethers.js for Ethereum development. Learn the pros and cons of each library, recent changes in WAGMI v2, and how to choose the best tool for your web3 project.",
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://shapkarin.me/logo.jpg",
+      "width": 512,
+      "height": 512
+    },
+    "author": {
+      "@type": "Organization",
+      "name": "Iurii Shapkarin"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Iurii Shapkarin",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://shapkarin.me/logo.jpg",
+        "width": 512,
+        "height": 512
+      }
+    },
+    "datePublished": "2024-12-31",
+    "dateModified": "2024-12-31",
+    "wordCount": "2450",
+    "inLanguage": "en-US",
+    "learningResourceType": "Comprehensive comparison guide",
+    "proficiencyLevel": ["Beginner", "Intermediate", "Advanced"],
+    "keywords": "WAGMI vs Ethers.js, WAGMI Ethers.js comparison, Ethereum development libraries, web3 React hooks, WAGMI v2 breaking changes, blockchain JavaScript libraries, Ethereum web development, dApp development libraries, Viem WAGMI, TanStack Query WAGMI, React web3 development, multichain support, wallet integration, smart contract interaction, Ethereum provider management, web3 performance optimization, decentralized application development, blockchain frontend development, EVM compatible chains, cryptocurrency development tools, DeFi development libraries, NFT development tools, Web3 stack comparison, React blockchain hooks, Ethereum JavaScript SDK, crypto wallet connection, smart contract deployment, blockchain data fetching, web3 state management, Ethereum network switching, gas estimation libraries, transaction signing libraries, ENS integration, MetaMask integration, WalletConnect support, decentralized finance development, blockchain application architecture",
+    "about": [
+      {
+        "@type": "Thing",
+        "name": "WAGMI",
+        "description": "React hooks library for Ethereum development built on Viem and TanStack Query, providing seamless multichain support and wallet management"
+      },
+      {
+        "@type": "Thing",
+        "name": "Ethers.js",
+        "description": "Mature and stable JavaScript library for interacting with Ethereum blockchain, providing low-level control and framework-agnostic approach"
+      },
+      {
+        "@type": "Thing",
+        "name": "Ethereum Development",
+        "description": "Building decentralized applications (dApps) and smart contracts on the Ethereum blockchain and EVM-compatible networks"
+      },
+      {
+        "@type": "Thing",
+        "name": "Web3 Libraries",
+        "description": "JavaScript libraries and frameworks designed for blockchain and decentralized web development"
+      },
+      {
+        "@type": "Thing",
+        "name": "React Web3 Hooks",
+        "description": "Custom React hooks for managing blockchain state, wallet connections, and smart contract interactions"
+      },
+      {
+        "@type": "Thing",
+        "name": "Viem",
+        "description": "TypeScript interface for Ethereum that provides low-level stateless primitives for interacting with Ethereum"
+      },
+      {
+        "@type": "Thing",
+        "name": "TanStack Query",
+        "description": "Powerful data synchronization library for React applications, used by WAGMI for caching and state management"
+      },
+      {
+        "@type": "Thing",
+        "name": "Multichain Support",
+        "description": "Ability to interact with multiple blockchain networks and switch between different EVM-compatible chains"
+      },
+      {
+        "@type": "Thing",
+        "name": "Smart Contract Interaction",
+        "description": "Reading from and writing to smart contracts deployed on blockchain networks"
+      },
+      {
+        "@type": "Thing",
+        "name": "Wallet Integration",
+        "description": "Connecting and managing cryptocurrency wallets like MetaMask, WalletConnect, and others in web applications"
+      }
+    ],
+    "audience": [
+      {
+        "@type": "Audience",
+        "audienceType": "Developers",
+        "name": "Web3 Developers"
+      },
+      {
+        "@type": "Audience",
+        "audienceType": "Developers",
+        "name": "React Developers"
+      },
+      {
+        "@type": "Audience",
+        "audienceType": "Developers",
+        "name": "Frontend Developers"
+      },
+      {
+        "@type": "Audience",
+        "audienceType": "Developers",
+        "name": "Full-Stack Developers"
+      },
+      {
+        "@type": "Audience",
+        "audienceType": "Developers",
+        "name": "Blockchain Developers"
+      },
+      {
+        "@type": "Audience",
+        "audienceType": "Developers",
+        "name": "DeFi Developers"
+      },
+      {
+        "@type": "Audience",
+        "audienceType": "Developers",
+        "name": "dApp Developers"
+      },
+      {
+        "@type": "Audience",
+        "audienceType": "Students",
+        "name": "Computer Science Students"
+      },
+      {
+        "@type": "Audience",
+        "audienceType": "Technical Leaders",
+        "name": "Software Architects"
+      },
+      {
+        "@type": "Audience",
+        "audienceType": "Technical Leaders",
+        "name": "Engineering Managers"
+      },
+      {
+        "@type": "Audience",
+        "audienceType": "Business Professionals",
+        "name": "Chief Technology Officers (CTOs)"
+      },
+      {
+        "@type": "Audience",
+        "audienceType": "Developers",
+        "name": "JavaScript Developers"
+      },
+      {
+        "@type": "Audience",
+        "audienceType": "Developers",
+        "name": "TypeScript Developers"
+      }
+    ],
+    "citation": [
+      {
+        "@type": "WebPage",
+        "name": "WAGMI Official Documentation",
+        "@id": "https://wagmi.sh/",
+        "description": "Official documentation for WAGMI React hooks for Ethereum development",
+        "relatedLink": [
+          "https://wagmi.sh/react/getting-started",
+          "https://wagmi.sh/react/guides/migrate-from-v1-to-v2",
+          "https://wagmi.sh/react/hooks/useAccount",
+          "https://wagmi.sh/react/hooks/useConnect",
+          "https://wagmi.sh/react/hooks/useBalance",
+          "https://wagmi.sh/react/hooks/useWriteContract"
+        ]
+      },
+      {
+        "@type": "WebPage",
+        "name": "Ethers.js Documentation",
+        "@id": "https://docs.ethers.org/",
+        "description": "Complete documentation for Ethers.js Ethereum library",
+        "relatedLink": [
+          "https://docs.ethers.org/v6/getting-started/",
+          "https://docs.ethers.org/v6/api/providers/",
+          "https://docs.ethers.org/v6/api/contract/",
+          "https://docs.ethers.org/v6/api/wallet/",
+          "https://docs.ethers.org/v6/migrating/"
+        ]
+      },
+      {
+        "@type": "WebPage",
+        "name": "Viem Documentation",
+        "@id": "https://viem.sh/",
+        "description": "TypeScript interface for Ethereum providing low-level primitives",
+        "relatedLink": [
+          "https://viem.sh/docs/getting-started",
+          "https://viem.sh/docs/clients/public",
+          "https://viem.sh/docs/clients/wallet",
+          "https://viem.sh/docs/contract/getContract",
+          "https://viem.sh/docs/actions/public/readContract"
+        ]
+      },
+      {
+        "@type": "WebPage",
+        "name": "WAGMI GitHub Repository",
+        "@id": "https://github.com/wevm/wagmi",
+        "description": "Official WAGMI GitHub repository with source code and issues",
+        "relatedLink": [
+          "https://github.com/wevm/wagmi/releases",
+          "https://github.com/wevm/wagmi/blob/main/CHANGELOG.md",
+          "https://github.com/wevm/wagmi/discussions",
+          "https://github.com/wevm/wagmi/tree/main/examples"
+        ]
+      },
+      {
+        "@type": "WebPage",
+        "name": "Ethers.js GitHub Repository",
+        "@id": "https://github.com/ethers-io/ethers.js",
+        "description": "Official Ethers.js GitHub repository with complete source code",
+        "relatedLink": [
+          "https://github.com/ethers-io/ethers.js/releases",
+          "https://github.com/ethers-io/ethers.js/blob/master/CHANGELOG.md",
+          "https://github.com/ethers-io/ethers.js/tree/master/docs",
+          "https://github.com/ethers-io/ethers.js/tree/master/packages"
+        ]
+      }
+    ],
+    "hasPart": [
+      {
+        "@type": "WebPageElement",
+        "name": "Introduction",
+        "url": "https://shapkarin.me/articles/wagmi-ethers#introduction",
+        "description": "Overview of WAGMI and Ethers.js libraries for Ethereum development and their ecosystem roles"
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "Ethers.js: A Dependable Workhorse",
+        "url": "https://shapkarin.me/articles/wagmi-ethers#ethersjs-a-dependable-workhorse",
+        "description": "Comprehensive analysis of Ethers.js strengths including maturity, stability, and framework-agnostic approach"
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "WAGMI: Rapid dApp Integration with a Modern Stack",
+        "url": "https://shapkarin.me/articles/wagmi-ethers#wagmi-rapid-dapp-integration-with-a-modern-stack",
+        "description": "Detailed examination of WAGMI's ecosystem integrations, multichain support, and React-focused approach"
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "Insights on WAGMI v2 Breaking Changes",
+        "url": "https://shapkarin.me/articles/wagmi-ethers#insights-on-wagmi-v2-breaking-changes",
+        "description": "In-depth analysis of WAGMI v2 changes including peer dependencies, connector updates, and migration strategies"
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "Choosing Between WAGMI and Ethers.js",
+        "url": "https://shapkarin.me/articles/wagmi-ethers#choosing-between-wagmi-and-ethersjs",
+        "description": "Decision framework for selecting the right library based on project requirements and team preferences"
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "Conclusion",
+        "url": "https://shapkarin.me/articles/wagmi-ethers#conclusion",
+        "description": "Summary recommendations and future outlook for Ethereum development libraries"
+      }
+    ],
+    "teaches": [
+      "Understanding the fundamental differences between WAGMI and Ethers.js approaches",
+      "Analyzing pros and cons of framework-specific vs framework-agnostic libraries",
+      "Navigating WAGMI v2 breaking changes and migration strategies",
+      "Making informed decisions about web3 library selection for projects",
+      "Understanding the modern web3 development stack with Viem and TanStack Query",
+      "Implementing multichain support and account management in React applications",
+      "Optimizing performance in web3 applications with proper library selection",
+      "Managing wallet connections and smart contract interactions effectively"
+    ],
+    "programmingLanguage": ["JavaScript", "TypeScript"],
+    "operatingSystem": "Cross-platform",
+    "applicationCategory": "Educational"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is the main difference between WAGMI and Ethers.js?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "WAGMI is a React-specific hooks library built on top of Viem and TanStack Query that provides high-level abstractions for web3 development, while Ethers.js is a framework-agnostic, low-level library that gives developers direct control over Ethereum interactions. WAGMI focuses on rapid development with built-in state management, while Ethers.js offers more flexibility and transparency."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Should I choose WAGMI or Ethers.js for my new web3 project?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Choose WAGMI if you're building a React-based dApp and want rapid development with built-in multichain support, caching, and state management. Choose Ethers.js if you need framework flexibility, prefer low-level control, are building outside React, or want to understand blockchain interactions in detail. Many teams use both - WAGMI for UI components and Ethers.js for complex backend operations."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are the major breaking changes in WAGMI v2?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "WAGMI v2 introduced several breaking changes: TanStack Query became a peer dependency requiring explicit setup, 'watch' properties and built-in suspense features were removed, connectors changed from classes to functions, MetaMaskConnector was replaced with generic injected connector, 'prepare' hooks like usePrepareContractWrite were replaced with useSimulateContract, and ENS normalization was removed requiring external handling."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I use WAGMI with other frameworks besides React?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No, WAGMI is specifically designed for React and relies heavily on React hooks and patterns. If you're using Vue, Angular, Svelte, or vanilla JavaScript, you should use Ethers.js directly or look for framework-specific alternatives. WAGMI's tight React integration is both its strength for React developers and its limitation for other frameworks."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is Viem and how does it relate to WAGMI?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Viem is a TypeScript interface for Ethereum that provides low-level, stateless primitives for blockchain interactions. WAGMI v2 is built on top of Viem instead of Ethers.js, leveraging Viem's performance optimizations and TypeScript-first approach. This change makes WAGMI more lightweight and gives developers access to Viem's advanced features while maintaining the convenience of React hooks."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is WAGMI suitable for complex DeFi applications?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, WAGMI is excellent for complex DeFi applications, especially those built with React. Its multichain support, built-in caching with TanStack Query, and hooks for contract interactions make it ideal for DeFi protocols. However, for very advanced scenarios requiring low-level control, you might need to drop down to Viem or combine WAGMI with direct Viem usage for specific operations."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does WAGMI handle wallet connections compared to Ethers.js?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "WAGMI provides built-in wallet connection management with hooks like useConnect and useAccount that handle multiple wallet types automatically. It supports connector-based architecture for different wallets (MetaMask, WalletConnect, etc.) with automatic switching and account management. Ethers.js requires manual implementation of wallet connections, giving more control but requiring more setup code."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are the performance implications of using WAGMI vs Ethers.js?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "WAGMI can offer better performance for React applications due to its integration with TanStack Query for intelligent caching and request deduplication. It reduces unnecessary blockchain calls through automatic caching. However, WAGMI has more overhead due to its abstractions. Ethers.js gives you direct control over caching and optimization but requires manual implementation. For simple applications, the performance difference is minimal."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I migrate from WAGMI v1 to v2 easily?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Migration from WAGMI v1 to v2 requires significant code changes due to breaking changes. You'll need to install TanStack Query as a peer dependency, update connector configurations, replace 'prepare' hooks with new simulation patterns, handle ENS normalization manually, and update chain configurations. WAGMI provides migration guides, but plan for substantial refactoring time."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is Ethers.js still actively maintained and relevant in 2025?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, Ethers.js remains actively maintained and highly relevant. It's a mature, battle-tested library used by countless production applications. While newer libraries like Viem offer modern alternatives, Ethers.js continues to be updated and is still the go-to choice for many developers who need framework-agnostic blockchain interactions or prefer its stable, well-documented API."
+        }
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "How to Choose Between WAGMI and Ethers.js for Ethereum Development",
+    "description": "Step-by-step guide to selecting the right Ethereum development library for your web3 project",
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://shapkarin.me/logo.jpg",
+      "width": 512,
+      "height": 512
+    },
+    "totalTime": "PT20M",
+    "estimatedCost": {
+      "@type": "MonetaryAmount",
+      "currency": "USD",
+      "value": "0"
+    },
+    "supply": [
+      {
+        "@type": "HowToSupply",
+        "name": "Web3 project requirements"
+      },
+      {
+        "@type": "HowToSupply",
+        "name": "Team skill assessment"
+      },
+      {
+        "@type": "HowToSupply",
+        "name": "Framework preferences"
+      }
+    ],
+    "tool": [
+      {
+        "@type": "HowToTool",
+        "name": "Project planning documentation"
+      },
+      {
+        "@type": "HowToTool",
+        "name": "Technical requirements analysis"
+      }
+    ],
+    "step": [
+      {
+        "@type": "HowToStep",
+        "name": "Evaluate your frontend framework",
+        "text": "If you're using React, WAGMI is a strong candidate. For Vue, Angular, Svelte, or vanilla JavaScript, choose Ethers.js or framework-specific alternatives."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Assess project complexity",
+        "text": "For rapid prototyping and standard dApp features, WAGMI offers faster development. For complex, custom blockchain interactions or advanced scenarios, Ethers.js provides more control."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Consider multichain requirements",
+        "text": "If you need built-in multichain support with easy network switching, WAGMI excels. For single-chain applications or custom chain handling, Ethers.js is sufficient."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Evaluate team preferences",
+        "text": "Consider your team's preference for abstractions vs control, their React expertise, and willingness to adapt to library updates and breaking changes."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Review long-term maintenance",
+        "text": "WAGMI v2 promises fewer breaking changes going forward, but Ethers.js offers more stability and predictable evolution. Consider your maintenance capacity."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Test with a small implementation",
+        "text": "Create a small proof of concept with your chosen library to validate the decision before committing to a full implementation."
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "How to Migrate from WAGMI v1 to v2",
+    "description": "Comprehensive guide to upgrading WAGMI from version 1 to version 2 with breaking changes",
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://shapkarin.me/logo.jpg",
+      "width": 512,
+      "height": 512
+    },
+    "totalTime": "PT2H",
+    "estimatedCost": {
+      "@type": "MonetaryAmount",
+      "currency": "USD",
+      "value": "0"
+    },
+    "supply": [
+      {
+        "@type": "HowToSupply",
+        "name": "WAGMI v1 project"
+      },
+      {
+        "@type": "HowToSupply",
+        "name": "Migration documentation"
+      },
+      {
+        "@type": "HowToSupply",
+        "name": "Testing environment"
+      }
+    ],
+    "tool": [
+      {
+        "@type": "HowToTool",
+        "name": "Package manager (npm/yarn/pnpm)"
+      },
+      {
+        "@type": "HowToTool",
+        "name": "Code editor with TypeScript support"
+      }
+    ],
+    "step": [
+      {
+        "@type": "HowToStep",
+        "name": "Install peer dependencies",
+        "text": "Install @tanstack/react-query as a peer dependency and set up QueryClient in your app root, as TanStack Query is now required for WAGMI v2."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Update connector configuration",
+        "text": "Replace class-based connectors with function-based connectors from 'wagmi/connectors', update MetaMaskConnector to injected({ target: 'metaMask' }), and reorganize connector imports."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Replace prepare hooks",
+        "text": "Replace usePrepareContractWrite with useSimulateContract, usePrepareContractRead with direct useReadContract, and update the pattern from prepare-then-execute to simulate-then-write."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Handle ENS and formatting",
+        "text": "Implement manual ENS normalization using libraries like '@adraffy/ens-normalize', add custom number formatting for token amounts, and handle address formatting explicitly."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Update chain configurations",
+        "text": "Import chains from 'viem/chains' instead of WAGMI's built-in chains, update chain definitions to use Viem's format, and verify custom chain configurations."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Test thoroughly",
+        "text": "Test all wallet connections, contract interactions, multichain functionality, and edge cases to ensure the migration was successful and no functionality was broken."
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareSourceCode",
+    "name": "WAGMI and Ethers.js Code Examples",
+    "description": "Practical code examples comparing WAGMI and Ethers.js implementations for common web3 development tasks",
+    "programmingLanguage": ["JavaScript", "TypeScript"],
+    "codeRepository": "https://shapkarin.me/articles/wagmi-ethers",
+    "author": {
+      "@type": "Organization",
+      "name": "Iurii Shapkarin"
+    },
+    "applicationCategory": "Educational",
+    "operatingSystem": "Cross-platform",
+    "teaches": [
+      "Wallet connection implementation in both WAGMI and Ethers.js",
+      "Smart contract interaction patterns comparison",
+      "Multichain support implementation differences",
+      "State management approaches in web3 applications",
+      "Migration strategies between libraries"
+    ]
+  }
+] 
