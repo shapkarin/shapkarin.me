@@ -97,20 +97,6 @@
         "name": "Software Engineers"
       }
     ],
-    "review": {
-      "@type": "Review",
-      "reviewRating": {
-        "@type": "Rating",
-        "ratingValue": "5",
-        "bestRating": "5"
-      },
-      "author": {
-        "@type": "Organization",
-        "name": "Iurii Shapkarin"
-      },
-      "name": "Expert Technical Analysis",
-      "reviewBody": "This comprehensive guide demystifies floating-point precision issues with clear explanations, practical code examples across multiple programming languages, and actionable solutions for real-world development scenarios."
-    },
     "citation": [
       {
         "@type": "WebPage",
