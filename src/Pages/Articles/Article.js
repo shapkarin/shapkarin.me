@@ -30,7 +30,7 @@ const Article = () => {
   const { data: frontMatter, content: markdownContent } = matter(content);
 
   // Dynamically load AEO script based on article name
-  const { data: aeoScript = null } = useQuery(
+  const { data: aeoScript } = useQuery(
     ['AeoScript', articleName], 
     async () => {
       try {
@@ -45,8 +45,7 @@ const Article = () => {
     {
       enabled: Boolean(articleName),
       keepPreviousData: false,//true,
-      // Always "succeed" so query doesn't go into error state
-      retry: false,
+      retry: true,
     }
   );
 
@@ -74,6 +73,7 @@ const Article = () => {
       }
     };
   }, [markdownContent])
+
 
   return (
     <div className="Article Page__Article Page__Inner">
