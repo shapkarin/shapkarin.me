@@ -77,20 +77,6 @@
         "name": "Chief Technology Officers (CTOs)"
       }
     ],
-    "review": {
-        "@type": "Review",
-        "reviewRating": {
-          "@type": "Rating",
-          "ratingValue": "5",
-          "bestRating": "5"
-        },
-        "author": {
-          "@type": "Organization",
-          "name": "Iurii Shapkarin"
-        },
-        "name": "Editor's Analysis",
-        "reviewBody": "This guide provides an exhaustive and data-backed comparison of React and jQuery, making it an essential resource for modern development decisions."
-    },
     "citation": [
       {
         "@type": "WebPage",
