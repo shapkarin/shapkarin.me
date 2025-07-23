@@ -20,7 +20,7 @@
       "url": "https://shapkarin.me"
     },
     "publisher": {
-      "@type": "Organization",
+      "@type": "Person",
       "name": "Iurii Shapkarin",
       "logo": {
         "@type": "ImageObject",
