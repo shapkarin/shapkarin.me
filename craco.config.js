@@ -16,6 +16,10 @@ module.exports = {
       new webpack.ProvidePlugin({
         Buffer: ['buffer', 'Buffer'],
       }),
+      // Exclude Generate-Backend directory from build
+      new webpack.IgnorePlugin({
+        resourceRegExp: /src\/Generate-Backend/,
+      }),
     ],
   },
   plugins: [{ plugin: CracoLessPlugin }],
