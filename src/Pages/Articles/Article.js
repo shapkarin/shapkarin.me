@@ -80,6 +80,7 @@ const Article = () => {
         <SEO 
           title={`${frontMatter.title || articleName} | Iurii Shapkarin`}
           description={frontMatter.description || `Article about ${articleName}`}
+          keywords={frontMatter.keywords || ''}
           type="article"
           name="Iurii Shapkarin"
           aeoScript={aeoScript}
