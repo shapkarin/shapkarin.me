@@ -98,5 +98,10 @@
     "slug": "async-event-loop-web-workers",
     "title": "Async Event Loop Web Workers",
     "filename": "async-event-loop-web-workers.md"
+  },
+  {
+    "slug": "WAGMI-basics",
+    "title": "WAGMI Basics",
+    "filename": "WAGMI-basics.md"
   }
 ]
