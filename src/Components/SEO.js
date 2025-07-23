@@ -1,16 +1,18 @@
 import { Helmet } from 'react-helmet';
 import { useLocation } from 'react-router-dom';
 
-const SEO = ({ title, description, name = 'Iurii Shapkarin', type = 'website', aeoScript }) => {
+const SEO = ({ title, description, name = 'Iurii Shapkarin', type = 'website', aeoScript, keywords = '' }) => {
 
   const { pathname } = useLocation();
   const canonicalUrl = `https://shapkarin.me${pathname}`;
+  console.log(pathname, 'pathname');
   
   return (
     <Helmet>
       {/* Standard metadata tags */}
       <title>{title}</title>
       <meta name='description' content={description} />
+      <meta name="keywords" content={keywords} />
       <link rel="canonical" href={canonicalUrl} />
       
       {/* Redirect if we're on .html version, TODO: suync with crawler */}
@@ -27,7 +29,7 @@ const SEO = ({ title, description, name = 'Iurii Shapkarin', type = 'website', a
       <meta name="twitter:card" content={type} />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
-
+      
       {(aeoScript !== null || aeoScript !== '') && (
         <script type="application/ld+json">
           {JSON.stringify(aeoScript)}
