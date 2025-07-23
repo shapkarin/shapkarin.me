@@ -15,11 +15,11 @@
       "height": 512
     },
     "author": {
-      "@type": "Organization",
+      "@type": "Person",
       "name": "Iurii Shapkarin"
     },
     "publisher": {
-      "@type": "Organization",
+      "@type": "Person",
       "name": "Iurii Shapkarin",
       "logo": {
         "@type": "ImageObject",
@@ -514,7 +514,7 @@
     "programmingLanguage": ["JavaScript", "TypeScript"],
     "codeRepository": "https://shapkarin.me/articles/wagmi-ethers",
     "author": {
-      "@type": "Organization",
+      "@type": "Person",
       "name": "Iurii Shapkarin"
     },
     "applicationCategory": "Educational",
