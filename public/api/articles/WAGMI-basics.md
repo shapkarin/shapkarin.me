@@ -2,7 +2,6 @@
 title: "WAGMI Library Tutorial: Complete Guide to Building dApps with WAGMI and VIEM in 2025"
 description: "Master WAGMI library for React dApp development. Learn WAGMI hooks, VIEM integration, multichain support, and best practices with practical examples. Complete WAGMI tutorial for beginners to advanced developers."
 keywords: "WAGMI, WAGMI library, WAGMI dApp, WAGMI VIEM, React Web3, Ethereum development, dApp tutorial, blockchain hooks, multichain dApp"
-date: 2025-01-15
 ---
 
 # WAGMI Library: Complete Guide to Building React dApps in 2025
