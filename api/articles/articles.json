@@ -100,6 +100,11 @@
     "filename": "async-event-loop-web-workers.md"
   },
   {
+    "slug": "ethereum-whitepaper-explanation",
+    "title": "Ethereum Whitepaper Explanation",
+    "filename": "ethereum-whitepaper-explanation.md"
+  },
+  {
     "slug": "WAGMI-basics",
     "title": "WAGMI Basics",
     "filename": "WAGMI-basics.md"

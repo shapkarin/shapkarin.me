@@ -15,8 +15,9 @@
       "height": 512
     },
     "author": {
-      "@type": "Organization",
-      "name": "Iurii Shapkarin"
+      "@type": "Person",
+      "name": "Iurii Shapkarin",
+      "url": "https://shapkarin.me"
     },
     "publisher": {
       "@type": "Organization",
