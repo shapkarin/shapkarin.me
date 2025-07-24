@@ -2,7 +2,7 @@
   {
     "@context": "https://schema.org",
     "@type": "ImageObject",
-    "name": "Byzantine Fault Tolerance Network Structure Diagram",
+    "name": "BFT network with 7 nodes showing security threshold",
     "description": "Comprehensive diagram showing BFT network with 7 nodes including honest and Byzantine nodes, demonstrating the n > 3f threshold requirement and consensus message flow",
     "contentUrl": "https://shapkarin.me/api/articles/byzantine-fault-tolerance-0.svg",
     "encodingFormat": "image/svg+xml",
@@ -16,7 +16,7 @@
   {
     "@context": "https://schema.org",
     "@type": "ImageObject",
-    "name": "Byzantine Generals Problem Communication Sequence",
+    "name": "Byzantine Generals Problem communication sequence",
     "description": "Sequence diagram illustrating the classic Byzantine Generals Problem showing how honest nodes detect and isolate traitor nodes through message verification",
     "contentUrl": "https://shapkarin.me/api/articles/byzantine-fault-tolerance-1.svg",
     "encodingFormat": "image/svg+xml",
@@ -30,7 +30,7 @@
   {
     "@context": "https://schema.org",
     "@type": "ImageObject",
-    "name": "Bitcoin Proof-of-Work Byzantine Fault Tolerance Innovation",
+    "name": "Traditional BFT vs Bitcoin's PoW solution comparison",
     "description": "Flowchart comparing traditional BFT communication-based approach with Bitcoin's revolutionary computational proof-based consensus mechanism",
     "contentUrl": "https://shapkarin.me/api/articles/byzantine-fault-tolerance-2.svg",
     "encodingFormat": "image/svg+xml",
@@ -44,7 +44,175 @@
   {
     "@context": "https://schema.org",
     "@type": "ImageObject",
-    "name": "Ethereum Casper FFG Byzantine Fault Tolerance Mechanism",
+    "name": "Bitcoin mining process and consensus rules",
+    "description": "Detailed flowchart showing Bitcoin's mining workflow including transaction processing, proof-of-work computation, and network verification",
+    "contentUrl": "https://shapkarin.me/api/articles/byzantine-fault-tolerance-3.svg",
+    "encodingFormat": "image/svg+xml",
+    "learningResourceType": "diagram",
+    "educationalUse": ["learning", "presentation", "research"],
+    "about": {
+      "@type": "Thing",
+      "name": "Bitcoin Mining Process"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "ImageObject",
+    "name": "Honest mining vs attack economics comparison",
+    "description": "Economic analysis comparing profitable honest mining with costly attack scenarios, showing financial incentives and deterrents",
+    "contentUrl": "https://shapkarin.me/api/articles/byzantine-fault-tolerance-4.svg",
+    "encodingFormat": "image/svg+xml",
+    "learningResourceType": "diagram",
+    "educationalUse": ["learning", "presentation", "research"],
+    "about": {
+      "@type": "Thing",
+      "name": "Bitcoin Economic Security Model"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "ImageObject",
+    "name": "Blockchain fork scenario and longest chain selection",
+    "description": "Diagram illustrating how Bitcoin resolves competing chains through the longest chain rule and accumulated proof-of-work",
+    "contentUrl": "https://shapkarin.me/api/articles/byzantine-fault-tolerance-5.svg",
+    "encodingFormat": "image/svg+xml",
+    "learningResourceType": "diagram",
+    "educationalUse": ["learning", "presentation", "research"],
+    "about": {
+      "@type": "Thing",
+      "name": "Bitcoin Fork Resolution"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "ImageObject",
+    "name": "Double spending prevention sequence diagram",
+    "description": "Sequence diagram showing how Bitcoin's consensus mechanism prevents double spending attacks through blockchain immutability",
+    "contentUrl": "https://shapkarin.me/api/articles/byzantine-fault-tolerance-6.svg",
+    "encodingFormat": "image/svg+xml",
+    "learningResourceType": "diagram",
+    "educationalUse": ["learning", "presentation", "research"],
+    "about": {
+      "@type": "Thing",
+      "name": "Double Spending Prevention"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "ImageObject",
+    "name": "Minority attack resistance with hash distribution",
+    "description": "Analysis of how Bitcoin resists minority attacks when attackers control less than 50% of network hashrate",
+    "contentUrl": "https://shapkarin.me/api/articles/byzantine-fault-tolerance-7.svg",
+    "encodingFormat": "image/svg+xml",
+    "learningResourceType": "diagram",
+    "educationalUse": ["learning", "presentation", "research"],
+    "about": {
+      "@type": "Thing",
+      "name": "Bitcoin Attack Resistance"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "ImageObject",
+    "name": "Network partition handling and automatic recovery",
+    "description": "Flowchart showing how Bitcoin automatically handles network partitions and chain reorganization upon reconnection",
+    "contentUrl": "https://shapkarin.me/api/articles/byzantine-fault-tolerance-8.svg",
+    "encodingFormat": "image/svg+xml",
+    "learningResourceType": "diagram",
+    "educationalUse": ["learning", "presentation", "research"],
+    "about": {
+      "@type": "Thing",
+      "name": "Network Partition Recovery"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "ImageObject",
+    "name": "51% attack scenario with capabilities and limitations",
+    "description": "Comprehensive analysis of 51% attack scenarios showing both attack capabilities and inherent limitations",
+    "contentUrl": "https://shapkarin.me/api/articles/byzantine-fault-tolerance-9.svg",
+    "encodingFormat": "image/svg+xml",
+    "learningResourceType": "diagram",
+    "educationalUse": ["learning", "presentation", "research"],
+    "about": {
+      "@type": "Thing",
+      "name": "51% Attack Analysis"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "ImageObject",
+    "name": "Attack economics analysis with required resources",
+    "description": "Detailed economic breakdown of resources required for successful attacks and resulting financial consequences",
+    "contentUrl": "https://shapkarin.me/api/articles/byzantine-fault-tolerance-10.svg",
+    "encodingFormat": "image/svg+xml",
+    "learningResourceType": "diagram",
+    "educationalUse": ["learning", "presentation", "research"],
+    "about": {
+      "@type": "Thing",
+      "name": "Attack Cost Economics"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "ImageObject",
+    "name": "Bitcoin probabilistic finality confirmation levels",
+    "description": "Chart showing how Bitcoin's security increases exponentially with confirmation depth and corresponding use cases",
+    "contentUrl": "https://shapkarin.me/api/articles/byzantine-fault-tolerance-11.svg",
+    "encodingFormat": "image/svg+xml",
+    "learningResourceType": "diagram",
+    "educationalUse": ["learning", "presentation", "research"],
+    "about": {
+      "@type": "Thing",
+      "name": "Bitcoin Probabilistic Finality"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "ImageObject",
+    "name": "Bitcoin complete BFT architecture layers",
+    "description": "Architectural overview showing how Bitcoin's innovations create a complete Byzantine Fault Tolerance solution",
+    "contentUrl": "https://shapkarin.me/api/articles/byzantine-fault-tolerance-12.svg",
+    "encodingFormat": "image/svg+xml",
+    "learningResourceType": "diagram",
+    "educationalUse": ["learning", "presentation", "research"],
+    "about": {
+      "@type": "Thing",
+      "name": "Bitcoin BFT Architecture"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "ImageObject",
+    "name": "BFT multi-phase consensus process flowchart",
+    "description": "Flowchart illustrating the multi-phase consensus process used in Byzantine Fault Tolerant blockchain networks",
+    "contentUrl": "https://shapkarin.me/api/articles/byzantine-fault-tolerance-13.svg",
+    "encodingFormat": "image/svg+xml",
+    "learningResourceType": "diagram",
+    "educationalUse": ["learning", "presentation", "research"],
+    "about": {
+      "@type": "Thing",
+      "name": "BFT Consensus Process"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "ImageObject",
+    "name": "pBFT algorithm phases sequence diagram",
+    "description": "Sequence diagram showing the three phases of Practical Byzantine Fault Tolerance: pre-prepare, prepare, and commit",
+    "contentUrl": "https://shapkarin.me/api/articles/byzantine-fault-tolerance-14.svg",
+    "encodingFormat": "image/svg+xml",
+    "learningResourceType": "diagram",
+    "educationalUse": ["learning", "presentation", "research"],
+    "about": {
+      "@type": "Thing",
+      "name": "Practical Byzantine Fault Tolerance Protocol"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "ImageObject",
+    "name": "Ethereum Beacon Chain and Casper FFG process",
     "description": "Detailed diagram of Ethereum's Casper FFG finality gadget showing epoch-based consensus, validator attestations, and economic security model",
     "contentUrl": "https://shapkarin.me/api/articles/byzantine-fault-tolerance-15.svg",
     "encodingFormat": "image/svg+xml",
@@ -58,15 +226,113 @@
   {
     "@context": "https://schema.org",
     "@type": "ImageObject",
-    "name": "Practical Byzantine Fault Tolerance Algorithm Flow",
-    "description": "Comprehensive flowchart showing pBFT three-phase consensus protocol with pre-prepare, prepare, and commit phases used in modern blockchain networks",
-    "contentUrl": "https://shapkarin.me/api/articles/byzantine-fault-tolerance-13.svg",
+    "name": "Gasper LMD-GHOST fork choice mechanism",
+    "description": "Diagram illustrating Ethereum's Gasper consensus combining LMD-GHOST fork choice with attestation weighting",
+    "contentUrl": "https://shapkarin.me/api/articles/byzantine-fault-tolerance-16.svg",
     "encodingFormat": "image/svg+xml",
     "learningResourceType": "diagram",
     "educationalUse": ["learning", "presentation", "research"],
     "about": {
       "@type": "Thing",
-      "name": "Practical Byzantine Fault Tolerance Protocol"
+      "name": "Ethereum Fork Choice Rule"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "ImageObject",
+    "name": "Avalanche Snowman consensus sampling process",
+    "description": "Flowchart showing Avalanche's unique Snowman consensus protocol with node sampling and confidence building",
+    "contentUrl": "https://shapkarin.me/api/articles/byzantine-fault-tolerance-17.svg",
+    "encodingFormat": "image/svg+xml",
+    "learningResourceType": "diagram",
+    "educationalUse": ["learning", "presentation", "research"],
+    "about": {
+      "@type": "Thing",
+      "name": "Avalanche Consensus Protocol"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "ImageObject",
+    "name": "Nothing-at-stake attack prevention with slashing",
+    "description": "Sequence diagram showing how slashing conditions prevent nothing-at-stake attacks in proof-of-stake systems",
+    "contentUrl": "https://shapkarin.me/api/articles/byzantine-fault-tolerance-18.svg",
+    "encodingFormat": "image/svg+xml",
+    "learningResourceType": "diagram",
+    "educationalUse": ["learning", "presentation", "research"],
+    "about": {
+      "@type": "Thing",
+      "name": "Nothing-at-Stake Attack Prevention"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "ImageObject",
+    "name": "BFT performance factors and scalability solutions",
+    "description": "Diagram analyzing performance factors affecting BFT systems and various scalability optimization approaches",
+    "contentUrl": "https://shapkarin.me/api/articles/byzantine-fault-tolerance-19.svg",
+    "encodingFormat": "image/svg+xml",
+    "learningResourceType": "diagram",
+    "educationalUse": ["learning", "presentation", "research"],
+    "about": {
+      "@type": "Thing",
+      "name": "BFT Performance Optimization"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "ImageObject",
+    "name": "Attack cost distribution pie chart",
+    "description": "Pie chart showing the distribution of attack costs and security thresholds in BFT systems",
+    "contentUrl": "https://shapkarin.me/api/articles/byzantine-fault-tolerance-20.svg",
+    "encodingFormat": "image/svg+xml",
+    "learningResourceType": "diagram",
+    "educationalUse": ["learning", "presentation", "research"],
+    "about": {
+      "@type": "Thing",
+      "name": "BFT Attack Cost Analysis"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "ImageObject",
+    "name": "Coordinated attack with multiple vectors",
+    "description": "Flowchart illustrating complex attack scenarios using multiple coordinated attack vectors against BFT systems",
+    "contentUrl": "https://shapkarin.me/api/articles/byzantine-fault-tolerance-21.svg",
+    "encodingFormat": "image/svg+xml",
+    "learningResourceType": "diagram",
+    "educationalUse": ["learning", "presentation", "research"],
+    "about": {
+      "@type": "Thing",
+      "name": "Advanced BFT Attack Scenarios"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "ImageObject",
+    "name": "BFT research directions mindmap",
+    "description": "Mindmap showing current research directions in Byzantine Fault Tolerance including scalability, security, and interoperability",
+    "contentUrl": "https://shapkarin.me/api/articles/byzantine-fault-tolerance-22.svg",
+    "encodingFormat": "image/svg+xml",
+    "learningResourceType": "diagram",
+    "educationalUse": ["learning", "presentation", "research"],
+    "about": {
+      "@type": "Thing",
+      "name": "BFT Research Directions"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "ImageObject",
+    "name": "Security best practices implementation phases",
+    "description": "Flowchart showing the phases of implementing security best practices for BFT systems from development to deployment",
+    "contentUrl": "https://shapkarin.me/api/articles/byzantine-fault-tolerance-23.svg",
+    "encodingFormat": "image/svg+xml",
+    "learningResourceType": "diagram",
+    "educationalUse": ["learning", "presentation", "research"],
+    "about": {
+      "@type": "Thing",
+      "name": "BFT Security Implementation"
     }
   },
   {
@@ -970,10 +1236,20 @@
     },
     {
       "@type": "WebPageElement",
+      "name": "Key Properties of BFT Systems",
+      "url": "https://shapkarin.me/articles/byzantine-fault-tolerance#key-properties-of-bft-systems",
+      "description": "Essential characteristics including safety, liveness, fault tolerance, and finality",
+      "order": 2,
+      "relatedLinks": [
+        "https://lamport.azurewebsites.net/pubs/byz.pdf"
+      ]
+    },
+    {
+      "@type": "WebPageElement",
       "name": "The Byzantine Generals Problem Explained",
       "url": "https://shapkarin.me/articles/byzantine-fault-tolerance#the-byzantine-generals-problem-explained",
       "description": "Detailed explanation of the theoretical foundation with military analogy and mathematical requirements",
-      "order": 2,
+      "order": 3,
       "relatedLinks": [
         "https://lamport.azurewebsites.net/pubs/byz.pdf",
         "https://en.wikipedia.org/wiki/Byzantine_fault"
@@ -981,10 +1257,30 @@
     },
     {
       "@type": "WebPageElement",
+      "name": "The Scenario",
+      "url": "https://shapkarin.me/articles/byzantine-fault-tolerance#the-scenario",
+      "description": "Military analogy explaining coordination challenges with potentially traitorous generals",
+      "order": 4,
+      "relatedLinks": [
+        "https://lamport.azurewebsites.net/pubs/byz.pdf"
+      ]
+    },
+    {
+      "@type": "WebPageElement",
+      "name": "Mathematical Foundation",
+      "url": "https://shapkarin.me/articles/byzantine-fault-tolerance#mathematical-foundation",
+      "description": "Mathematical requirements for BFT systems: n ≥ 3f + 1 formula and its implications",
+      "order": 5,
+      "relatedLinks": [
+        "https://lamport.azurewebsites.net/pubs/byz.pdf"
+      ]
+    },
+    {
+      "@type": "WebPageElement",
       "name": "BFT vs Traditional Fault Tolerance",
       "url": "https://shapkarin.me/articles/byzantine-fault-tolerance#bft-vs-traditional-fault-tolerance",
       "description": "Comparison between Byzantine and crash fault tolerance, explaining why blockchain needs BFT",
-      "order": 3,
+      "order": 6,
       "relatedLinks": [
         "https://raft.github.io/",
         "https://pmg.csail.mit.edu/papers/osdi99.pdf"
@@ -992,13 +1288,114 @@
     },
     {
       "@type": "WebPageElement",
+      "name": "Why Blockchain Needs BFT",
+      "url": "https://shapkarin.me/articles/byzantine-fault-tolerance#why-blockchain-needs-bft",
+      "description": "Specific requirements for Byzantine fault tolerance in open, decentralized blockchain networks",
+      "order": 7,
+      "relatedLinks": [
+        "https://ethereum.org/en/developers/docs/consensus-mechanisms/"
+      ]
+    },
+    {
+      "@type": "WebPageElement",
       "name": "Bitcoin's Revolutionary Approach to Byzantine Fault Tolerance",
       "url": "https://shapkarin.me/articles/byzantine-fault-tolerance#bitcoins-revolutionary-approach-to-byzantine-fault-tolerance",
       "description": "Comprehensive analysis of how Bitcoin's Proof-of-Work solves the Byzantine Generals Problem",
-      "order": 4,
+      "order": 8,
       "relatedLinks": [
         "https://bitcoin.org/bitcoin.pdf",
         "https://bitcoin.org/en/developer-guide#proof-of-work"
+      ]
+    },
+    {
+      "@type": "WebPageElement",
+      "name": "The Bitcoin PoW Solution",
+      "url": "https://shapkarin.me/articles/byzantine-fault-tolerance#the-bitcoin-pow-solution",
+      "description": "How Bitcoin transforms communication problems into computational challenges",
+      "order": 9,
+      "relatedLinks": [
+        "https://bitcoin.org/bitcoin.pdf"
+      ]
+    },
+    {
+      "@type": "WebPageElement",
+      "name": "Bitcoin vs Traditional BFT Comparison",
+      "url": "https://shapkarin.me/articles/byzantine-fault-tolerance#bitcoin-vs-traditional-bft-comparison",
+      "description": "Detailed comparison of Bitcoin's approach with classical Byzantine fault tolerance methods",
+      "order": 10,
+      "relatedLinks": [
+        "https://bitcoin.org/bitcoin.pdf",
+        "https://pmg.csail.mit.edu/papers/osdi99.pdf"
+      ]
+    },
+    {
+      "@type": "WebPageElement",
+      "name": "How Bitcoin Handles Byzantine Scenarios",
+      "url": "https://shapkarin.me/articles/byzantine-fault-tolerance#how-bitcoin-handles-byzantine-scenarios",
+      "description": "Specific mechanisms for handling double spending, minority attacks, and network partitions",
+      "order": 11,
+      "relatedLinks": [
+        "https://bitcoin.org/en/developer-guide"
+      ]
+    },
+    {
+      "@type": "WebPageElement",
+      "name": "The 51% Attack Threshold",
+      "url": "https://shapkarin.me/articles/byzantine-fault-tolerance#the-51-attack-threshold",
+      "description": "Analysis of Bitcoin's security threshold and economic deterrents to majority attacks",
+      "order": 12,
+      "relatedLinks": [
+        "https://www.coindesk.com/learn/what-is-a-51-attack/"
+      ]
+    },
+    {
+      "@type": "WebPageElement",
+      "name": "Bitcoin's Probabilistic Finality",
+      "url": "https://shapkarin.me/articles/byzantine-fault-tolerance#bitcoins-probabilistic-finality",
+      "description": "How Bitcoin achieves security through exponentially increasing confirmation depth",
+      "order": 13,
+      "relatedLinks": [
+        "https://bitcoin.org/en/developer-guide"
+      ]
+    },
+    {
+      "@type": "WebPageElement",
+      "name": "Bitcoin's Complete BFT Architecture",
+      "url": "https://shapkarin.me/articles/byzantine-fault-tolerance#bitcoins-complete-bft-architecture",
+      "description": "Comprehensive overview of Bitcoin's complete Byzantine fault tolerance solution",
+      "order": 14,
+      "relatedLinks": [
+        "https://bitcoin.org/bitcoin.pdf"
+      ]
+    },
+    {
+      "@type": "WebPageElement",
+      "name": "Revolutionary Innovations",
+      "url": "https://shapkarin.me/articles/byzantine-fault-tolerance#revolutionary-innovations",
+      "description": "Key innovations including permissionless consensus, economic security, and objective consensus",
+      "order": 15,
+      "relatedLinks": [
+        "https://bitcoin.org/bitcoin.pdf"
+      ]
+    },
+    {
+      "@type": "WebPageElement",
+      "name": "Acknowledged Limitations and Trade-offs",
+      "url": "https://shapkarin.me/articles/byzantine-fault-tolerance#acknowledged-limitations-and-trade-offs",
+      "description": "Energy consumption, throughput limitations, and confirmation time trade-offs",
+      "order": 16,
+      "relatedLinks": [
+        "https://bitcoin.org/en/developer-guide"
+      ]
+    },
+    {
+      "@type": "WebPageElement",
+      "name": "Impact on Blockchain Industry",
+      "url": "https://shapkarin.me/articles/byzantine-fault-tolerance#impact-on-blockchain-industry",
+      "description": "Bitcoin's influence on the broader blockchain and cryptocurrency ecosystem",
+      "order": 17,
+      "relatedLinks": [
+        "https://ethereum.org/en/whitepaper/"
       ]
     },
     {
@@ -1006,7 +1403,7 @@
       "name": "How BFT Works in Blockchain Networks",
       "url": "https://shapkarin.me/articles/byzantine-fault-tolerance#how-bft-works-in-blockchain-networks",
       "description": "Multi-phase consensus process and core components of BFT algorithms in blockchain context",
-      "order": 5,
+      "order": 18,
       "relatedLinks": [
         "https://ethereum.org/en/developers/docs/consensus-mechanisms/",
         "https://tendermint.com/core/"
@@ -1017,7 +1414,7 @@
       "name": "Practical Byzantine Fault Tolerance (pBFT)",
       "url": "https://shapkarin.me/articles/byzantine-fault-tolerance#practical-byzantine-fault-tolerance-pbft",
       "description": "Detailed explanation of the pBFT algorithm phases, properties, and real-world applications",
-      "order": 6,
+      "order": 19,
       "relatedLinks": [
         "https://pmg.csail.mit.edu/papers/osdi99.pdf",
         "https://tendermint.com/core/"
@@ -1025,10 +1422,30 @@
     },
     {
       "@type": "WebPageElement",
+      "name": "pBFT Algorithm Phases",
+      "url": "https://shapkarin.me/articles/byzantine-fault-tolerance#pbft-algorithm-phases",
+      "description": "Three-phase protocol: pre-prepare, prepare, and commit phases in detail",
+      "order": 20,
+      "relatedLinks": [
+        "https://pmg.csail.mit.edu/papers/osdi99.pdf"
+      ]
+    },
+    {
+      "@type": "WebPageElement",
+      "name": "pBFT Properties",
+      "url": "https://shapkarin.me/articles/byzantine-fault-tolerance#pbft-properties",
+      "description": "Communication complexity, latency, throughput, and scalability characteristics",
+      "order": 21,
+      "relatedLinks": [
+        "https://pmg.csail.mit.edu/papers/osdi99.pdf"
+      ]
+    },
+    {
+      "@type": "WebPageElement",
       "name": "BFT in Ethereum: Casper FFG and Gasper",
       "url": "https://shapkarin.me/articles/byzantine-fault-tolerance#bft-in-ethereum-casper-ffg-and-gasper",
       "description": "Ethereum's sophisticated BFT implementation combining finality gadget with fork choice rule",
-      "order": 7,
+      "order": 22,
       "relatedLinks": [
         "https://ethereum.org/en/developers/docs/consensus-mechanisms/pos/",
         "https://github.com/ethereum/consensus-specs",
@@ -1037,10 +1454,30 @@
     },
     {
       "@type": "WebPageElement",
+      "name": "Casper FFG (Friendly Finality Gadget)",
+      "url": "https://shapkarin.me/articles/byzantine-fault-tolerance#casper-ffg-friendly-finality-gadget",
+      "description": "Ethereum's economic finality mechanism through validator attestations and epoch boundaries",
+      "order": 23,
+      "relatedLinks": [
+        "https://arxiv.org/abs/1710.09437"
+      ]
+    },
+    {
+      "@type": "WebPageElement",
+      "name": "Gasper: LMD-GHOST + Casper FFG",
+      "url": "https://shapkarin.me/articles/byzantine-fault-tolerance#gasper-lmd-ghost--casper-ffg",
+      "description": "Combined protocol using Latest Message Driven Greedy Heaviest Observed SubTree fork choice",
+      "order": 24,
+      "relatedLinks": [
+        "https://arxiv.org/abs/2003.03052"
+      ]
+    },
+    {
+      "@type": "WebPageElement",
       "name": "BFT Implementations in EVM-Compatible Chains",
       "url": "https://shapkarin.me/articles/byzantine-fault-tolerance#bft-implementations-in-evm-compatible-chains",
       "description": "Comparison of BFT approaches in Polygon, BSC, Avalanche, and other EVM-compatible networks",
-      "order": 8,
+      "order": 25,
       "relatedLinks": [
         "https://polygon.technology/",
         "https://www.bnbchain.org/",
@@ -1049,10 +1486,40 @@
     },
     {
       "@type": "WebPageElement",
+      "name": "Polygon (MATIC) - Heimdall and Bor",
+      "url": "https://shapkarin.me/articles/byzantine-fault-tolerance#polygon-matic---heimdall-and-bor",
+      "description": "Dual-chain architecture with Tendermint-based BFT consensus for checkpointing",
+      "order": 26,
+      "relatedLinks": [
+        "https://polygon.technology/"
+      ]
+    },
+    {
+      "@type": "WebPageElement",
+      "name": "Binance Smart Chain (BSC) - Parlia",
+      "url": "https://shapkarin.me/articles/byzantine-fault-tolerance#binance-smart-chain-bsc---parlia",
+      "description": "Proof of Staked Authority consensus with 21 validators and immediate finality",
+      "order": 27,
+      "relatedLinks": [
+        "https://www.bnbchain.org/"
+      ]
+    },
+    {
+      "@type": "WebPageElement",
+      "name": "Avalanche - Snowman Consensus",
+      "url": "https://shapkarin.me/articles/byzantine-fault-tolerance#avalanche---snowman-consensus",
+      "description": "Unique sampling-based consensus protocol with sub-second finality",
+      "order": 28,
+      "relatedLinks": [
+        "https://www.avax.network/"
+      ]
+    },
+    {
+      "@type": "WebPageElement",
       "name": "Types of Byzantine Faults and Attacks",
       "url": "https://shapkarin.me/articles/byzantine-fault-tolerance#types-of-byzantine-faults-and-attacks",
       "description": "Analysis of various attack vectors including double spending, 51% attacks, and their BFT defenses",
-      "order": 9,
+      "order": 29,
       "relatedLinks": [
         "https://www.coindesk.com/learn/what-is-a-51-attack/",
         "https://ethereum.org/en/staking/"
@@ -1060,10 +1527,60 @@
     },
     {
       "@type": "WebPageElement",
+      "name": "Double Spending Attack",
+      "url": "https://shapkarin.me/articles/byzantine-fault-tolerance#1-double-spending-attack",
+      "description": "How BFT systems prevent spending the same funds twice through consensus mechanisms",
+      "order": 30,
+      "relatedLinks": [
+        "https://bitcoin.org/en/developer-guide"
+      ]
+    },
+    {
+      "@type": "WebPageElement",
+      "name": "51% Attack (Adapted for BFT)",
+      "url": "https://shapkarin.me/articles/byzantine-fault-tolerance#2-51-attack-adapted-for-bft",
+      "description": "How majority attacks work in BFT systems and their higher security thresholds",
+      "order": 31,
+      "relatedLinks": [
+        "https://www.coindesk.com/learn/what-is-a-51-attack/"
+      ]
+    },
+    {
+      "@type": "WebPageElement",
+      "name": "Nothing-at-Stake Attack",
+      "url": "https://shapkarin.me/articles/byzantine-fault-tolerance#3-nothing-at-stake-attack",
+      "description": "Proof-of-stake specific attack and how slashing conditions provide defense",
+      "order": 32,
+      "relatedLinks": [
+        "https://ethereum.org/en/staking/"
+      ]
+    },
+    {
+      "@type": "WebPageElement",
+      "name": "Long Range Attack",
+      "url": "https://shapkarin.me/articles/byzantine-fault-tolerance#4-long-range-attack",
+      "description": "Historical blockchain rewriting attacks and checkpointing defenses",
+      "order": 33,
+      "relatedLinks": [
+        "https://ethereum.org/en/developers/docs/consensus-mechanisms/pos/"
+      ]
+    },
+    {
+      "@type": "WebPageElement",
+      "name": "Grinding Attack",
+      "url": "https://shapkarin.me/articles/byzantine-fault-tolerance#5-grinding-attack",
+      "description": "Randomness manipulation attacks and verifiable random function defenses",
+      "order": 34,
+      "relatedLinks": [
+        "https://ethereum.org/en/developers/docs/consensus-mechanisms/pos/"
+      ]
+    },
+    {
+      "@type": "WebPageElement",
       "name": "BFT Consensus Algorithms Comparison",
       "url": "https://shapkarin.me/articles/byzantine-fault-tolerance#bft-consensus-algorithms-comparison",
       "description": "Detailed comparison of different BFT algorithms with performance characteristics and use cases",
-      "order": 10,
+      "order": 35,
       "relatedLinks": [
         "https://pmg.csail.mit.edu/papers/osdi99.pdf",
         "https://tendermint.com/core/",
@@ -1072,12 +1589,53 @@
     },
     {
       "@type": "WebPageElement",
+      "name": "Algorithm Selection Criteria",
+      "url": "https://shapkarin.me/articles/byzantine-fault-tolerance#algorithm-selection-criteria",
+      "description": "Factors to consider when choosing BFT algorithms for specific applications",
+      "order": 36,
+      "relatedLinks": [
+        "https://pmg.csail.mit.edu/papers/osdi99.pdf"
+      ]
+    },
+    {
+      "@type": "WebPageElement",
       "name": "Performance and Scalability Considerations",
       "url": "https://shapkarin.me/articles/byzantine-fault-tolerance#performance-and-scalability-considerations",
       "description": "Analysis of BFT performance limitations, optimization strategies, and real-world throughput",
-      "order": 11,
+      "order": 37,
       "relatedLinks": [
         "https://ethereum.org/en/layer-2/",
+        "https://l2beat.com/"
+      ]
+    },
+    {
+      "@type": "WebPageElement",
+      "name": "Throughput Limitations",
+      "url": "https://shapkarin.me/articles/byzantine-fault-tolerance#throughput-limitations",
+      "description": "Inherent performance limitations in BFT systems due to security requirements",
+      "order": 38,
+      "relatedLinks": [
+        "https://ethereum.org/en/layer-2/"
+      ]
+    },
+    {
+      "@type": "WebPageElement",
+      "name": "Optimization Strategies",
+      "url": "https://shapkarin.me/articles/byzantine-fault-tolerance#optimization-strategies",
+      "description": "Methods to improve BFT performance including aggregation, pipelining, and parallelization",
+      "order": 39,
+      "relatedLinks": [
+        "https://ethereum.org/en/layer-2/"
+      ]
+    },
+    {
+      "@type": "WebPageElement",
+      "name": "Real-World Performance",
+      "url": "https://shapkarin.me/articles/byzantine-fault-tolerance#real-world-performance",
+      "description": "Actual performance metrics from major blockchain networks using BFT consensus",
+      "order": 40,
+      "relatedLinks": [
+        "https://ethereum.org/en/developers/docs/consensus-mechanisms/pos/",
         "https://l2beat.com/"
       ]
     },
@@ -1086,7 +1644,7 @@
       "name": "Security Analysis and Attack Vectors",
       "url": "https://shapkarin.me/articles/byzantine-fault-tolerance#security-analysis-and-attack-vectors",
       "description": "Comprehensive security analysis including attack costs, assumptions, and advanced scenarios",
-      "order": 12,
+      "order": 41,
       "relatedLinks": [
         "https://ethereum.org/en/staking/",
         "https://blog.ethereum.org/2014/07/05/stake/"
@@ -1094,12 +1652,62 @@
     },
     {
       "@type": "WebPageElement",
+      "name": "Attack Cost Analysis",
+      "url": "https://shapkarin.me/articles/byzantine-fault-tolerance#attack-cost-analysis",
+      "description": "Economic analysis of the costs required to successfully attack BFT systems",
+      "order": 42,
+      "relatedLinks": [
+        "https://ethereum.org/en/staking/"
+      ]
+    },
+    {
+      "@type": "WebPageElement",
+      "name": "Security Assumptions",
+      "url": "https://shapkarin.me/articles/byzantine-fault-tolerance#security-assumptions",
+      "description": "Fundamental assumptions underlying BFT security including synchrony and cryptography",
+      "order": 43,
+      "relatedLinks": [
+        "https://pmg.csail.mit.edu/papers/osdi99.pdf"
+      ]
+    },
+    {
+      "@type": "WebPageElement",
+      "name": "Advanced Attack Scenarios",
+      "url": "https://shapkarin.me/articles/byzantine-fault-tolerance#advanced-attack-scenarios",
+      "description": "Complex multi-vector attacks combining various attack methods",
+      "order": 44,
+      "relatedLinks": [
+        "https://ethereum.org/en/staking/"
+      ]
+    },
+    {
+      "@type": "WebPageElement",
       "name": "Real-World BFT Implementations",
       "url": "https://shapkarin.me/articles/byzantine-fault-tolerance#real-world-bft-implementations",
       "description": "Case studies of successful BFT deployments in Ethereum 2.0 and Cosmos Hub",
-      "order": 13,
+      "order": 45,
       "relatedLinks": [
         "https://ethereum.org/en/eth2/",
+        "https://cosmos.network/"
+      ]
+    },
+    {
+      "@type": "WebPageElement",
+      "name": "Ethereum 2.0 Case Study",
+      "url": "https://shapkarin.me/articles/byzantine-fault-tolerance#ethereum-20-case-study",
+      "description": "Detailed analysis of Ethereum's successful transition to proof-of-stake BFT",
+      "order": 46,
+      "relatedLinks": [
+        "https://ethereum.org/en/eth2/"
+      ]
+    },
+    {
+      "@type": "WebPageElement",
+      "name": "Cosmos Hub Implementation",
+      "url": "https://shapkarin.me/articles/byzantine-fault-tolerance#cosmos-hub-implementation",
+      "description": "Tendermint BFT implementation enabling blockchain interoperability",
+      "order": 47,
+      "relatedLinks": [
         "https://cosmos.network/"
       ]
     },
@@ -1108,7 +1716,7 @@
       "name": "Future of BFT in Blockchain",
       "url": "https://shapkarin.me/articles/byzantine-fault-tolerance#future-of-bft-in-blockchain",
       "description": "Emerging trends, research directions, and next-generation BFT algorithms",
-      "order": 14,
+      "order": 48,
       "relatedLinks": [
         "https://arxiv.org/abs/1803.05069",
         "https://research.vmware.com/projects/hotstuff"
@@ -1116,10 +1724,40 @@
     },
     {
       "@type": "WebPageElement",
+      "name": "Emerging Trends",
+      "url": "https://shapkarin.me/articles/byzantine-fault-tolerance#emerging-trends",
+      "description": "Current trends in BFT research including post-quantum and sharded approaches",
+      "order": 49,
+      "relatedLinks": [
+        "https://arxiv.org/abs/1803.05069"
+      ]
+    },
+    {
+      "@type": "WebPageElement",
+      "name": "Research Directions",
+      "url": "https://shapkarin.me/articles/byzantine-fault-tolerance#research-directions",
+      "description": "Active research areas in scalability, security, usability, and interoperability",
+      "order": 50,
+      "relatedLinks": [
+        "https://research.vmware.com/projects/hotstuff"
+      ]
+    },
+    {
+      "@type": "WebPageElement",
+      "name": "Next-Generation Algorithms",
+      "url": "https://shapkarin.me/articles/byzantine-fault-tolerance#next-generation-algorithms",
+      "description": "Upcoming BFT algorithms including HotStuff variants and DAG-based approaches",
+      "order": 51,
+      "relatedLinks": [
+        "https://arxiv.org/abs/1803.05069"
+      ]
+    },
+    {
+      "@type": "WebPageElement",
       "name": "Best Practices for BFT Implementation",
       "url": "https://shapkarin.me/articles/byzantine-fault-tolerance#best-practices-for-bft-implementation",
       "description": "Practical guidance for implementing robust BFT systems with security and operational considerations",
-      "order": 15,
+      "order": 52,
       "relatedLinks": [
         "https://consensys.github.io/smart-contract-best-practices/",
         "https://ethereum.org/en/developers/docs/smart-contracts/security/"
@@ -1127,10 +1765,50 @@
     },
     {
       "@type": "WebPageElement",
+      "name": "Design Principles",
+      "url": "https://shapkarin.me/articles/byzantine-fault-tolerance#design-principles",
+      "description": "Fundamental principles for designing BFT systems including simplicity and modularity",
+      "order": 53,
+      "relatedLinks": [
+        "https://consensys.github.io/smart-contract-best-practices/"
+      ]
+    },
+    {
+      "@type": "WebPageElement",
+      "name": "Security Best Practices",
+      "url": "https://shapkarin.me/articles/byzantine-fault-tolerance#security-best-practices",
+      "description": "Security-focused practices for development, testing, and deployment phases",
+      "order": 54,
+      "relatedLinks": [
+        "https://ethereum.org/en/developers/docs/smart-contracts/security/"
+      ]
+    },
+    {
+      "@type": "WebPageElement",
+      "name": "Implementation Checklist",
+      "url": "https://shapkarin.me/articles/byzantine-fault-tolerance#implementation-checklist",
+      "description": "Comprehensive checklist for BFT implementation covering threat modeling to monitoring",
+      "order": 55,
+      "relatedLinks": [
+        "https://consensys.github.io/smart-contract-best-practices/"
+      ]
+    },
+    {
+      "@type": "WebPageElement",
+      "name": "Operational Considerations",
+      "url": "https://shapkarin.me/articles/byzantine-fault-tolerance#operational-considerations",
+      "description": "Operational aspects including validator management, monitoring, and governance",
+      "order": 56,
+      "relatedLinks": [
+        "https://ethereum.org/en/staking/"
+      ]
+    },
+    {
+      "@type": "WebPageElement",
       "name": "Frequently Asked Questions",
       "url": "https://shapkarin.me/articles/byzantine-fault-tolerance#frequently-asked-questions",
       "description": "Common questions about BFT thresholds, network partitions, slashing conditions, and cross-chain BFT",
-      "order": 16,
+      "order": 57,
       "relatedLinks": [
         "https://ethereum.org/en/staking/",
         "https://ethereum.org/en/bridges/"
