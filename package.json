@@ -21,6 +21,7 @@
     "react-scripts": "5.0.1",
     "react-syntax-highlighter": "^15.6.1",
     "react-tooltip": "^4.2.21",
+    "rehype-raw": "^7.0.0",
     "remark-gfm": "^3.0.0"
   },
   "overrides": {
