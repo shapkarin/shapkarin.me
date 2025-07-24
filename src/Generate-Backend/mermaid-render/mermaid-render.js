@@ -92,23 +92,32 @@ class MermaidProcessor {
   }
 
   /**
-   * Check if file has already been processed by looking for SVG image references
+   * Check if file has unprocessed mermaid blocks
+   * Returns an object with information about processed/unprocessed blocks
    */
-  isFileAlreadyProcessed(markdownContent, filePath) {
+  analyzeFileProcessingStatus(markdownContent, filePath) {
     const baseFilename = path.basename(filePath, '.md');
     
-    // Look for patterns like ![altText](*/baseFilename-N.svg)
+    // Find all mermaid blocks
+    const mermaidRegex = /```mermaid\n([\s\S]*?)\n```/g;
+    const mermaidMatches = [...markdownContent.matchAll(mermaidRegex)];
+    
+    // Find all SVG image references
     const svgImageRegex = new RegExp(`!\\[[^\\]]*\\]\\([^)]*${baseFilename}-\\d+\\.svg[^)]*\\)`, 'g');
-    const svgMatches = markdownContent.match(svgImageRegex);
+    const svgMatches = [...markdownContent.matchAll(svgImageRegex)];
     
-    if (svgMatches && svgMatches.length > 0) {
-      if (this.config.verbose) {
-        console.log(`⏭️  File already processed: ${path.basename(filePath)} (found ${svgMatches.length} SVG references)`);
-      }
-      return true;
-    }
+    const totalMermaidBlocks = mermaidMatches.length;
+    const totalSvgReferences = svgMatches.length;
+    const hasUnprocessedBlocks = totalMermaidBlocks > 0;
+    const hasProcessedBlocks = totalSvgReferences > 0;
     
-    return false;
+    return {
+      totalMermaidBlocks,
+      totalSvgReferences,
+      hasUnprocessedBlocks,
+      hasProcessedBlocks,
+      needsProcessing: hasUnprocessedBlocks
+    };
   }
 
   /**
@@ -123,29 +132,35 @@ class MermaidProcessor {
       const content = await fs.readFile(filePath, 'utf8');
       const { data: frontMatter, content: markdownContent } = matter(content);
       
-      // Check if file has already been processed
-      if (this.isFileAlreadyProcessed(markdownContent, filePath)) {
-        return 0; // Skip processing
-      }
+      // Analyze processing status
+      const status = this.analyzeFileProcessingStatus(markdownContent, filePath);
       
-      // Find all mermaid blocks
-      const mermaidRegex = /```mermaid\n([\s\S]*?)\n```/g;
-      const matches = [...markdownContent.matchAll(mermaidRegex)];
-      
-      if (matches.length === 0) {
+      if (!status.needsProcessing) {
         if (this.config.verbose) {
           console.log(`⏭️  No mermaid diagrams found in ${path.basename(filePath)}`);
         }
         return 0;
       }
       
+      if (status.hasProcessedBlocks && this.config.verbose) {
+        console.log(`🔄 File partially processed: ${path.basename(filePath)} (${status.totalSvgReferences} SVGs, ${status.totalMermaidBlocks} mermaid blocks remaining)`);
+      }
+      
+      // Find all mermaid blocks
+      const mermaidRegex = /```mermaid\n([\s\S]*?)\n```/g;
+      const matches = [...markdownContent.matchAll(mermaidRegex)];
+      
       let processedContent = markdownContent;
       const baseFilename = path.basename(filePath, '.md');
+      
+      // Determine starting index for new diagrams
+      // Count existing SVG references to avoid filename conflicts
+      const existingSvgCount = status.totalSvgReferences;
       
       // Process each mermaid diagram
       for (let i = 0; i < matches.length; i++) {
         const [fullMatch, mermaidCode] = matches[i];
-        const filename = `${baseFilename}-${i}`;
+        const filename = `${baseFilename}-${existingSvgCount + i}`;
         
         if (this.config.verbose) {
           console.log(`🎯 Processing diagram ${i + 1}/${matches.length}: ${filename}`);
@@ -191,6 +206,8 @@ class MermaidProcessor {
         if (this.config.includeSourceCode && this.config.sourceCodeStyle !== 'none') {
           if (this.config.sourceCodeStyle === 'inline') {
             replacement += `\n\`\`\`mermaid\n${mermaidCode.trim()}\n\`\`\``;
+          } else if (this.config.sourceCodeStyle === 'details') {
+            replacement += `\n\n<details>\n  <summary>Show Mermaid Code</summary>\n  <pre><code class="language-mermaid">${mermaidCode.trim()}</code></pre>\n</details>`;
           }
         }
         
@@ -205,7 +222,7 @@ class MermaidProcessor {
         this.stats.filesProcessed++;
         
         if (this.config.verbose) {
-          console.log(`✅ Updated: ${path.basename(filePath)} (${matches.length} diagrams)`);
+          console.log(`✅ Updated: ${path.basename(filePath)} (processed ${matches.length} new diagrams, ${status.totalSvgReferences} already existed)`);
         }
       }
       
