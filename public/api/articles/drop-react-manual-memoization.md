@@ -62,7 +62,7 @@ React's analysis operates on three core concepts:
 2. **Effect** – a record describing what a single instruction does (create, alias, mutate…).
 3. **Range** – a pair of instruction IDs `[start, end]` over which a value may mutate.
 
-![Flowchart diagram](/api/articles/drop-react-manual-memoization-0.svg)
+![Flowchart diagram](/api/articles/dark/drop-react-manual-memoization-0.svg)
 ```mermaid
 flowchart TD
     A[React<br/>Compiler<br/>Analysis] --> B[Places]
@@ -106,7 +106,7 @@ The passes that produce these artefacts run in the following order:
 2. `InferMutationAliasingRanges` – collapse effects into per-value *mutable ranges*.
 3. `InferReactiveScopeVariables` – group Places that mutate together into *reactive scopes* (future memoization boundaries).
 
-![Flowchart diagram](/api/articles/drop-react-manual-memoization-1.svg)
+![Flowchart diagram](/api/articles/dark/drop-react-manual-memoization-1.svg)
 ```mermaid
 flowchart TD
     subgraph Passes
