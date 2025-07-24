@@ -47,6 +47,31 @@ Only updating the parts of state that actually changed prevents unnecessary re-r
 
 ## Data Structure Choices: Objects vs Arrays
 
+```mermaid
+graph TD
+    A[Data Structure Choice] --> B[Arrays]
+    A --> C[Objects]
+    
+    B --> D[O(n) Search]
+    B --> E[O(n) Update]
+    B --> F[O(n) Delete]
+    
+    C --> G[O(1) Search]
+    C --> H[O(1) Update]
+    C --> I[O(1) Delete]
+    
+    D --> J[Linear Performance]
+    E --> J
+    F --> J
+    
+    G --> K[Constant Performance]
+    H --> K
+    I --> K
+    
+    style J fill:#ffcdd2
+    style K fill:#c8e6c9
+```
+
 ### The Array Approach (Less Efficient)
 
 ```javascript

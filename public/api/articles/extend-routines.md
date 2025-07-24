@@ -53,6 +53,28 @@ A routine is essentially a structured set of related action types generated from
 - `projects/FAILURE`
 - `projects/FULFILL`
 
+```mermaid
+graph LR
+    A[Routine Prefix: 'projects'] --> B[TRIGGER]
+    A --> C[REQUEST]
+    A --> D[SUCCESS]
+    A --> E[FAILURE]
+    A --> F[FULFILL]
+    
+    B --> G[projects/TRIGGER]
+    C --> H[projects/REQUEST]
+    D --> I[projects/SUCCESS]
+    E --> J[projects/FAILURE]
+    F --> K[projects/FULFILL]
+    
+    style A fill:#e1f5fe
+    style G fill:#c8e6c9
+    style H fill:#fff3e0
+    style I fill:#c8e6c9
+    style J fill:#ffcdd2
+    style K fill:#f3e5f5
+```
+
 This grouping lets you write cleaner code. Instead of manually defining and maintaining multiple action types for each async flow, you define them once and access them through a routine object.
 
 ---

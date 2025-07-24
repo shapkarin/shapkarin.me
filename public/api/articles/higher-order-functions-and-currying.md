@@ -36,6 +36,24 @@ A higher-order function is a function that does at least one of the following:
 1.  Takes one or more functions as arguments.
 2.  Returns a function as its result.
 
+```mermaid
+graph TD
+    A[Higher-Order Function] --> B[Takes Functions as Arguments]
+    A --> C[Returns Functions]
+    
+    B --> D[Array.map]
+    B --> E[Array.filter]
+    B --> F[Array.reduce]
+    
+    C --> G[Function Factories]
+    C --> H[Closures]
+    C --> I[Decorators]
+    
+    style A fill:#e1f5fe
+    style B fill:#f3e5f5
+    style C fill:#fff3e0
+```
+
 Many built-in JavaScript array methods are excellent examples of HOFs, such as:
 
 - `Array.prototype.map()`: Takes a callback function and returns a new array with the results of applying that function to each element
@@ -106,6 +124,21 @@ Currying is a functional programming technique that transforms a function with m
 ### What is Currying?
 
 A function like `f(a, b, c)` is transformed into `f(a)(b)(c)`. Each call to a curried function with an argument returns a new function that expects the next argument, until all arguments have been supplied, at which point the original function's logic is executed.
+
+```mermaid
+graph LR
+    A[f(a, b, c)] --> B[Currying Transform]
+    B --> C[f(a)]
+    C --> D[returns function]
+    D --> E[f(a)(b)]
+    E --> F[returns function]
+    F --> G[f(a)(b)(c)]
+    G --> H[executes & returns result]
+    
+    style A fill:#ffcdd2
+    style G fill:#c8e6c9
+    style B fill:#e1f5fe
+```
 
 ### How to Implement Currying
 

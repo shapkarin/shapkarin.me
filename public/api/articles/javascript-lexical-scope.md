@@ -40,6 +40,34 @@ Lexical scope is one of the most fundamental concepts in JavaScript that every d
 
 Lexical scope (also called static scope) refers to how variable access is determined based on the physical location of variables in the source code. In JavaScript, the scope of a variable is defined by its location within the code structure.
 
+```mermaid
+graph TD
+    A[Global Scope] --> B[Function Scope]
+    B --> C[Block Scope]
+    C --> D[Inner Function Scope]
+    
+    A --> E[Global Variables]
+    B --> F[Function Parameters & Variables]
+    C --> G[let/const Variables]
+    D --> H[Closure Variables]
+    
+    I[Variable Lookup] --> J{Found in Current Scope?}
+    J -->|Yes| K[Use Variable]
+    J -->|No| L[Check Parent Scope]
+    L --> M{Found in Parent?}
+    M -->|Yes| K
+    M -->|No| N[Continue Up Scope Chain]
+    N --> O[Global Scope]
+    O --> P{Found in Global?}
+    P -->|Yes| K
+    P -->|No| Q[ReferenceError]
+    
+    style A fill:#e1f5fe
+    style B fill:#f3e5f5
+    style C fill:#e8f5e8
+    style D fill:#fff3e0
+```
+
 The term "lexical" comes from the fact that scope is determined during the lexing phase of compilation, when the code is parsed and analyzed before execution.
 
 ```javascript
@@ -198,6 +226,22 @@ Let's explore each variable declaration type in more detail:
 ## Closures: The Power of Lexical Scope
 
 Closures are a direct result of lexical scoping. A closure is created when a function retains access to its lexical scope even when executed outside that scope.
+
+```mermaid
+sequenceDiagram
+    participant Outer as Outer Function
+    participant Inner as Inner Function
+    participant Execution as Execution Context
+    
+    Outer->>Outer: Create local variable
+    Outer->>Inner: Define inner function
+    Inner->>Inner: Capture outer scope
+    Outer->>Execution: Return inner function
+    Note over Outer: Outer function completes
+    Execution->>Inner: Call returned function
+    Inner->>Inner: Access captured variables
+    Note over Inner: Variables still accessible!
+```
 
 ```javascript
 function createCounter() {

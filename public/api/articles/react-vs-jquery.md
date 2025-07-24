@@ -1,6 +1,11 @@
 ---
-title: "React vs jQuery 2025 React or jQuery? Difference, Performance, Security & Which to Choose"
-description: "React vs jQuery (aka React or jQuery) 2025: A Complete Guide for Developers & CTOs. Compare performance, security, job-market demand and business ROI. Discover why 68 % of Fortune 500 companies pick React."
+title: >-
+  React vs jQuery 2025 React or jQuery? Difference, Performance, Security &
+  Which to Choose
+description: >-
+  React vs jQuery (aka React or jQuery) 2025: A Complete Guide for Developers &
+  CTOs. Compare performance, security, job-market demand and business ROI.
+  Discover why 68 % of Fortune 500 companies pick React.
 order: 7
 ---
 
@@ -68,6 +73,27 @@ React's adoption continues to climb, while jQuery's usage, though still vast on 
 
 The fundamental difference between React and jQuery lies in *how* they update what you see on the screen.
 
+```mermaid
+graph LR
+    subgraph "React Architecture"
+        A[State Change] --> B[Virtual DOM]
+        B --> C[Diff Algorithm]
+        C --> D[Minimal DOM Updates]
+        D --> E[Real DOM]
+    end
+    
+    subgraph "jQuery Architecture"
+        F[Event/Action] --> G[Direct DOM Query]
+        G --> H[Manual DOM Manipulation]
+        H --> I[Real DOM]
+    end
+    
+    style B fill:#61dafb
+    style C fill:#61dafb
+    style G fill:#0769ad
+    style H fill:#0769ad
+```
+
 | Feature | React | jQuery |
 | :--- | :--- | :--- |
 | **Core Idea** | A library for building UIs with components | A utility library for manipulating the DOM |
@@ -116,6 +142,28 @@ function updateUserProfile(user) {
 ## Security Deep-Dive: Why React Is Safer by Default
 
 Security is not optional. React was designed with modern web threats in mind, offering crucial protections that jQuery lacks out of the box. The most common vulnerability is Cross-Site Scripting (XSS).
+
+```mermaid
+flowchart TD
+    A[User Input] --> B{Framework?}
+    B -->|React| C[JSX Automatic Escaping]
+    B -->|jQuery| D[Manual Sanitization Required]
+    
+    C --> E[Safe Text Rendering]
+    D --> F{Developer Remembers?}
+    F -->|Yes| G[Manual .text() Method]
+    F -->|No| H[Vulnerable .html() Method]
+    
+    G --> I[Safe Output]
+    H --> J[XSS Vulnerability]
+    E --> I
+    
+    style C fill:#4caf50
+    style E fill:#4caf50
+    style I fill:#4caf50
+    style H fill:#f44336
+    style J fill:#f44336
+```
 
 ### How React Prevents XSS
 
@@ -328,14 +376,7 @@ Choosing a technology stack is a business decision. The data shows that investin
 
 Still unsure? Use this simple flowchart.
 
-```mermaid
-flowchart TD
-    A[Start Here: What is your project?] --> B{Is it a new, modern application meant to scale?};
-    B -->|Yes| C[✅ Use React];
-    B -->|No| D{Are you adding a small feature to an old, existing website?};
-    D -->|Yes| E[✅ Use jQuery];
-    D -->|No| F[Re-evaluate your project goals, but lean towards React];
-```
+![Flowchart diagram](/api/articles/react-vs-jquery-0.svg)
 
 **The Bottom Line:**
 

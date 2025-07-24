@@ -60,6 +60,30 @@ Before diving into Ethereum, the whitepaper explains Bitcoin as the starting poi
 **Bitcoin**: A simple state machine for transferring value
 **Ethereum**: A complete programming platform that can run any computation
 
+```mermaid
+graph TD
+    A[Blockchain Technology] --> B[Bitcoin]
+    A --> C[Ethereum]
+    
+    B --> D[Digital Currency]
+    B --> E[Simple Transactions]
+    B --> F[Store of Value]
+    
+    C --> G[Smart Contracts]
+    C --> H[Decentralized Apps]
+    C --> I[Programmable Money]
+    C --> J[DeFi Protocols]
+    C --> K[NFTs]
+    C --> L[DAOs]
+    
+    style B fill:#f7931a
+    style C fill:#627eea
+    style D fill:#fff3e0
+    style G fill:#e8f5e8
+    style H fill:#e8f5e8
+    style I fill:#e8f5e8
+```
+
 ### Ethereum's Revolutionary Features:
 
 #### 1. **Smart Contracts**
@@ -91,6 +115,24 @@ Before diving into Ethereum, the whitepaper explains Bitcoin as the starting poi
 2. **Automatic Execution**: No human intervention needed
 3. **Immutable**: Once deployed, contracts can't be changed easily
 4. **Transparent**: Everyone can see the code and verify it works
+
+```mermaid
+sequenceDiagram
+    participant User as User
+    participant Contract as Smart Contract
+    participant Blockchain as Ethereum Network
+    
+    User->>Contract: Trigger condition (e.g., send payment)
+    Contract->>Contract: Check conditions in code
+    alt Conditions Met
+        Contract->>Blockchain: Execute programmed action
+        Blockchain->>User: Confirm transaction
+        Note over User,Blockchain: Automatic execution completed
+    else Conditions Not Met
+        Contract->>User: Reject transaction
+        Note over User,Contract: No action taken
+    end
+```
 
 ### Real-World Example:
 ```

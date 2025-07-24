@@ -32,6 +32,28 @@ When working with JavaScript, you'll frequently create functions using one of tw
 
 The most significant difference between these approaches is how JavaScript's hoisting mechanism treats them:
 
+```mermaid
+graph TD
+    A[JavaScript Code] --> B[Compilation Phase]
+    B --> C[Function Declarations]
+    B --> D[Variable Declarations]
+    
+    C --> E[Fully Hoisted]
+    E --> F[Available Before Definition]
+    
+    D --> G[Variable Name Hoisted]
+    G --> H[Assignment Stays in Place]
+    H --> I[Function Expression Not Available]
+    
+    J[Execution Phase] --> K[Function Declaration: Works]
+    J --> L[Function Expression: Error/Undefined]
+    
+    style E fill:#c8e6c9
+    style F fill:#c8e6c9
+    style I fill:#ffcdd2
+    style L fill:#ffcdd2
+```
+
 ```javascript
 // Example 1: Calling a function declaration before it's defined
 sayHello(); // Output: "Hello from a declared function!"
