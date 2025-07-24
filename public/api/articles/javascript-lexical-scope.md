@@ -42,9 +42,11 @@ Lexical scope is one of the most fundamental concepts in JavaScript that every d
 
 Lexical scope (also called static scope) refers to how variable access is determined based on the physical location of variables in the source code. In JavaScript, the scope of a variable is defined by its location within the code structure.
 
-![Graph diagram](/api/articles/javascript-lexical-scope-0.svg)
-```mermaid
-graph TD
+![Graph diagram](/api/articles/dark/javascript-lexical-scope-0.svg)
+
+<details>
+  <summary>Show Mermaid Code</summary>
+  <pre><code class="language-mermaid">graph TD
     A[Global Scope] --> B[Function Scope]
     B --> C[Block Scope]
     C --> D[Inner Function Scope]
@@ -63,8 +65,8 @@ graph TD
     N --> O[Global Scope]
     O --> P{Found in Global?}
     P -->|Yes| K
-    P -->|No| Q[ReferenceError]
-```
+    P -->|No| Q[ReferenceError]</code></pre>
+</details>
 
 The term "lexical" comes from the fact that scope is determined during the lexing phase of compilation, when the code is parsed and analyzed before execution.
 
@@ -225,9 +227,11 @@ Let's explore each variable declaration type in more detail:
 
 Closures are a direct result of lexical scoping. A closure is created when a function retains access to its lexical scope even when executed outside that scope.
 
-![SequenceDiagram diagram](/api/articles/javascript-lexical-scope-1.svg)
-```mermaid
-sequenceDiagram
+![SequenceDiagram diagram](/api/articles/dark/javascript-lexical-scope-1.svg)
+
+<details>
+  <summary>Show Mermaid Code</summary>
+  <pre><code class="language-mermaid">sequenceDiagram
     participant Outer as Outer Function
     participant Inner as Inner Function
     participant Execution as Execution Context
@@ -239,8 +243,8 @@ sequenceDiagram
     Note over Outer: Outer function completes
     Execution->>Inner: Call returned function
     Inner->>Inner: Access captured variables
-    Note over Inner: Variables still accessible!
-```
+    Note over Inner: Variables still accessible!</code></pre>
+</details>
 
 ```javascript
 function createCounter() {

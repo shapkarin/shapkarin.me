@@ -39,9 +39,11 @@ A higher-order function is a function that does at least one of the following:
 1.  Takes one or more functions as arguments.
 2.  Returns a function as its result.
 
-![Graph diagram](/api/articles/hoc-and-currying-0.svg)
-```mermaid
-graph TD
+![Graph diagram](/api/articles/dark/hoc-and-currying-0.svg)
+
+<details>
+  <summary>Show Mermaid Code</summary>
+  <pre><code class="language-mermaid">graph TD
     A[Higher-Order Function] --> B[Takes Functions as Arguments]
     A --> C[Returns Functions]
     
@@ -51,8 +53,8 @@ graph TD
     
     C --> G[Function Factories]
     C --> H[Closures]
-    C --> I[Decorators]
-```
+    C --> I[Decorators]</code></pre>
+</details>
 
 Many built-in JavaScript array methods are excellent examples of HOFs, such as:
 
@@ -125,17 +127,19 @@ Currying is a functional programming technique that transforms a function with m
 
 A curried function like `f(a, b, c)` is transformed into `f(a)(b)(c)`. Each call to a curried function with an argument returns a new function that expects the next argument, until all arguments have been supplied, at which point the original function's logic is executed.
 
-![Graph diagram](/api/articles/hoc-and-currying-1.svg)
-```mermaid
-graph LR
+![Graph diagram](/api/articles/dark/hoc-and-currying-1.svg)
+
+<details>
+  <summary>Show Mermaid Code</summary>
+  <pre><code class="language-mermaid">graph LR
     A["f(a, b, c)"] --> B["Currying Transform"]
     B --> C["f(a)"]
     C --> D["returns function"]
     D --> E["f(a)(b)"]
     E --> F["returns function"]
     F --> G["f(a)(b)(c)"]
-    G --> H["executes & returns result"]
-```
+    G --> H["executes & returns result"]</code></pre>
+</details>
 
 ### How to Implement Currying
 

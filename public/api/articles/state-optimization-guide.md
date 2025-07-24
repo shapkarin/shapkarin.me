@@ -52,9 +52,11 @@ Only updating the parts of state that actually changed prevents unnecessary re-r
 
 ## Data Structure Choices: Objects vs Arrays
 
-![Graph diagram](/api/articles/state-optimization-guide-0.svg)
-```mermaid
-graph TD
+![Graph diagram](/api/articles/dark/state-optimization-guide-0.svg)
+
+<details>
+  <summary>Show Mermaid Code</summary>
+  <pre><code class="language-mermaid">graph TD
     A["Data Structure Choice"] --> B["Arrays"]
     A --> C["Objects"]
     
@@ -72,8 +74,8 @@ graph TD
     
     G --> K["Constant Performance"]
     H --> K
-    I --> K
-```
+    I --> K</code></pre>
+</details>
 
 ### The Array Approach (Less Efficient)
 
