@@ -74,9 +74,11 @@ React's adoption continues to climb, while jQuery's usage, though still vast on 
 
 The fundamental difference between React and jQuery lies in *how* they update what you see on the screen.
 
-![Flowchart diagram](/api/articles/react-vs-jquery-0.svg)
-```mermaid
-flowchart TD
+![Flowchart diagram](/api/articles/dark/react-vs-jquery-0.svg)
+
+<details>
+  <summary>Show Mermaid Code</summary>
+  <pre><code class="language-mermaid">flowchart TD
     subgraph React["<b>React</b><br/><i>Declarative & Efficient</i>"]
         direction TB
         ReactDesc["<b>Smart Updates:</b><br/>Calculate what changed,<br/>then update efficiently"]
@@ -121,8 +123,8 @@ flowchart TD
     class A1,A2,A3,A7 reactStyle
     class A4,A5 processStyle
     class A6,B5 domStyle
-    class B1,B2,B3,B4,B6 jqueryStyle
-```
+    class B1,B2,B3,B4,B6 jqueryStyle</code></pre>
+</details>
 
 | Feature | React | jQuery |
 | :--- | :--- | :--- |
@@ -173,9 +175,11 @@ function updateUserProfile(user) {
 
 Security is not optional. React was designed with modern web threats in mind, offering crucial protections that jQuery lacks out of the box. The most common vulnerability is Cross-Site Scripting (XSS).
 
-![Flowchart diagram](/api/articles/react-vs-jquery-1.svg)
-```mermaid
-flowchart TD
+![Flowchart diagram](/api/articles/dark/react-vs-jquery-1.svg)
+
+<details>
+  <summary>Show Mermaid Code</summary>
+  <pre><code class="language-mermaid">flowchart TD
     A["User Input"] --> B{"Framework?"}
     B -->|React| C["JSX Automatic Escaping"]
     B -->|jQuery| D["Manual Sanitization Required"]
@@ -187,8 +191,8 @@ flowchart TD
     
     G --> I["Safe Output"]
     H --> J["XSS Vulnerability"]
-    E --> I
-```
+    E --> I</code></pre>
+</details>
 
 ### How React Prevents XSS
 

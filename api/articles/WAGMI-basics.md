@@ -76,9 +76,11 @@ keywords: >-
 
 ## WAGMI vs Traditional Web3 Libraries
 
-![Graph diagram](/api/articles/WAGMI-basics-0.svg)
-```mermaid
-graph TD
+![Graph diagram](/api/articles/dark/WAGMI-basics-0.svg)
+
+<details>
+  <summary>Show Mermaid Code</summary>
+  <pre><code class="language-mermaid">graph TD
     A[Web3 Development] --> B[Traditional Libraries]
     A --> C[WAGMI Library]
     
@@ -100,8 +102,8 @@ graph TD
     H --> P[Declarative API]
     I --> Q[Automatic Updates]
     J --> R[Type Safety]
-    K --> S[Chain Switching]
-```
+    K --> S[Chain Switching]</code></pre>
+</details>
 
 ### Developer Experience: WAGMI v1 vs v2
 

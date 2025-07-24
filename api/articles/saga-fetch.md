@@ -55,9 +55,11 @@ Imagine you have some actions: `searchPagesStart`, `searchPagesSuccess`, `search
 const searchPages = ({ payload: { title } }) => fetch(`/search/pages?title=${title}`);
 ```
 
-![SequenceDiagram diagram](/api/articles/saga-fetch-0.svg)
-```mermaid
-sequenceDiagram
+![SequenceDiagram diagram](/api/articles/dark/saga-fetch-0.svg)
+
+<details>
+  <summary>Show Mermaid Code</summary>
+  <pre><code class="language-mermaid">sequenceDiagram
     participant Component as React Component
     participant Saga as Redux Saga
     participant API as API Server
@@ -81,8 +83,8 @@ sequenceDiagram
     
     Saga->>Store: dispatch(searchPagesFulfill)
     Note over Store: loading: false
-    Store->>Component: State updated
-```
+    Store->>Component: State updated</code></pre>
+</details>
 
 Your saga worker could then be:
 

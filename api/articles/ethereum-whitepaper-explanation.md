@@ -68,9 +68,11 @@ Before diving into Ethereum, the whitepaper explains Bitcoin as the starting poi
 **Bitcoin**: A simple state machine for transferring value
 **Ethereum**: A complete programming platform that can run any computation
 
-![Graph diagram](/api/articles/ethereum-whitepaper-explanation-0.svg)
-```mermaid
-graph TD
+![Graph diagram](/api/articles/dark/ethereum-whitepaper-explanation-0.svg)
+
+<details>
+  <summary>Show Mermaid Code</summary>
+  <pre><code class="language-mermaid">graph TD
     A[Blockchain Technology] --> B[Bitcoin]
     A --> C[Ethereum]
     
@@ -83,8 +85,8 @@ graph TD
     C --> I[Programmable Money]
     C --> J[DeFi Protocols]
     C --> K[NFTs]
-    C --> L[DAOs]
-```
+    C --> L[DAOs]</code></pre>
+</details>
 
 ### Ethereum's Revolutionary Features:
 
@@ -119,9 +121,11 @@ graph TD
 4. **Transparent**: Everyone can see the code and verify it works
 5. **Check about ABI**: [Application Binary Interface](/ethereum-abi) article
 
-![SequenceDiagram diagram](/api/articles/ethereum-whitepaper-explanation-1.svg)
-```mermaid
-sequenceDiagram
+![SequenceDiagram diagram](/api/articles/dark/ethereum-whitepaper-explanation-1.svg)
+
+<details>
+  <summary>Show Mermaid Code</summary>
+  <pre><code class="language-mermaid">sequenceDiagram
     participant User as User
     participant Contract as Smart Contract
     participant Blockchain as Ethereum Network
@@ -135,8 +139,8 @@ sequenceDiagram
     else Conditions Not Met
         Contract->>User: Reject transaction
         Note over User,Contract: No action taken
-    end
-```
+    end</code></pre>
+</details>
 
 ### Real-World Example:
 ```

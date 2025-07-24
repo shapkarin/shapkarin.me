@@ -3,13 +3,13 @@ title: >-
   Ethereum ABI Complete Guide: Application Binary Interface for Smart Contracts 
   and dApp Development in 2025
 description: >-
-  Master Ethereum ABI (Application Binary Interface) for smart contract interaction. 
-  Learn ABI encoding, decoding, function calls, events, and best practices for 
-  EVM-compatible chains. Complete guide with examples.
+  Master Ethereum ABI (Application Binary Interface) for smart contract
+  interaction.  Learn ABI encoding, decoding, function calls, events, and best
+  practices for  EVM-compatible chains. Complete guide with examples.
 keywords: >-
-  Ethereum ABI, Application Binary Interface, Smart Contract ABI, EVM ABI, 
-  ABI encoding, ABI decoding, Contract interaction, Web3 ABI, Solidity ABI, 
-  dApp development, Blockchain development, Smart contract integration
+  Ethereum ABI, Application Binary Interface, Smart Contract ABI, EVM ABI,  ABI
+  encoding, ABI decoding, Contract interaction, Web3 ABI, Solidity ABI,  dApp
+  development, Blockchain development, Smart contract integration
 ---
 
 # Ethereum ABI Complete Guide: Mastering Application Binary Interface for Smart Contract Development
@@ -53,9 +53,11 @@ The **Ethereum ABI (Application Binary Interface)** is a standardized way to int
 3. **Interoperability**: Enables seamless integration between different tools
 4. **Developer Experience**: Provides autocomplete and validation in development
 
-![Graph diagram](/api/articles/ethereum-abi-0.svg)
-```mermaid
-graph TD
+![Graph diagram](/api/articles/dark/ethereum-abi-0.svg)
+
+<details>
+  <summary>Show Mermaid Code</summary>
+  <pre><code class="language-mermaid">graph TD
     A[Smart Contract] --> B[ABI Definition]
     B --> C[Function Signatures]
     B --> D[Event Definitions]
@@ -73,8 +75,8 @@ graph TD
     G --> K[User Interactions]
     H --> L[Automated Systems]
     I --> M[Developer Tools]
-    J --> N[Contract Verification]
-```
+    J --> N[Contract Verification]</code></pre>
+</details>
 
 ---
 
@@ -177,9 +179,11 @@ Every ABI consists of an array of objects, each describing a contract element:
 
 ### The ABI Encoding Process
 
-![SequenceDiagram diagram](/api/articles/ethereum-abi-1.svg)
-```mermaid
-sequenceDiagram
+![SequenceDiagram diagram](/api/articles/dark/ethereum-abi-1.svg)
+
+<details>
+  <summary>Show Mermaid Code</summary>
+  <pre><code class="language-mermaid">sequenceDiagram
     participant App as dApp Frontend
     participant Lib as Web3 Library
     participant EVM as Ethereum Virtual Machine
@@ -193,8 +197,8 @@ sequenceDiagram
     Contract->>EVM: Return encoded result
     EVM->>Lib: Receive encoded response
     Lib->>Lib: Decode response using ABI
-    Lib->>App: Return typed result
-```
+    Lib->>App: Return typed result</code></pre>
+</details>
 
 ### Step-by-Step Interaction Example
 
