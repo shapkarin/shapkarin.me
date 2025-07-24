@@ -49,6 +49,7 @@ For anyone making a technology decision in 2025, the data points to a clear lead
 
 🥇 **Verdict:** React is the decisive winner for any new, long-term, or complex web application. Its dominance in the job market, superior security posture, and scalable architecture provide a significantly higher return on investment.
 
+
 ---
 
 ## Market Position & Popularity: A Tale of Two Trends
@@ -73,25 +74,41 @@ React's adoption continues to climb, while jQuery's usage, though still vast on 
 
 The fundamental difference between React and jQuery lies in *how* they update what you see on the screen.
 
+![Flowchart diagram](/api/articles/react-vs-jquery-0.svg)
 ```mermaid
-graph LR
-    subgraph "React Architecture"
-        A[State Change] --> B[Virtual DOM]
-        B --> C[Diff Algorithm]
-        C --> D[Minimal DOM Updates]
-        D --> E[Real DOM]
+flowchart TD
+    subgraph React["🔄 React Architecture - Declarative & Efficient"]
+        direction TB
+        A1[👤 User Interaction] --> A2[📊 State Change]
+        A2 --> A3[🎭 Virtual DOM Tree]
+        A3 --> A4[🔍 Reconciliation<br/>Diff Algorithm]
+        A4 --> A5[⚡ Batched Updates<br/>Minimal Changes]
+        A5 --> A6[🌐 Real DOM]
+        
+        A3 -.->|"Previous State"| A7[📸 Virtual DOM Snapshot]
+        A7 -.->|"Compare"| A4
     end
     
-    subgraph "jQuery Architecture"
-        F[Event/Action] --> G[Direct DOM Query]
-        G --> H[Manual DOM Manipulation]
-        H --> I[Real DOM]
+    subgraph jQuery["🎯 jQuery Architecture - Imperative & Direct"]
+        direction TB
+        B1[👤 User Interaction] --> B2[🎪 Event Handler]
+        B2 --> B3[🔍 DOM Query<br/>$('#element')]
+        B3 --> B4[✋ Manual DOM<br/>Manipulation]
+        B4 --> B5[🌐 Real DOM]
+        
+        B4 -.->|"Each Change"| B6[🔄 Immediate<br/>Re-render]
+        B6 -.-> B5
     end
     
-    style B fill:#61dafb
-    style C fill:#61dafb
-    style G fill:#0769ad
-    style H fill:#0769ad
+    classDef reactStyle fill:#61dafb,stroke:#21759b,stroke-width:2px,color:#000
+    classDef jqueryStyle fill:#0769ad,stroke:#004d7a,stroke-width:2px,color:#fff
+    classDef domStyle fill:#ff6b6b,stroke:#cc5555,stroke-width:2px,color:#fff
+    classDef processStyle fill:#4ecdc4,stroke:#3ba39c,stroke-width:2px,color:#000
+    
+    class A1,A2,A3,A7 reactStyle
+    class A4,A5 processStyle
+    class A6,B5 domStyle
+    class B1,B2,B3,B4,B6 jqueryStyle
 ```
 
 | Feature | React | jQuery |
@@ -143,26 +160,21 @@ function updateUserProfile(user) {
 
 Security is not optional. React was designed with modern web threats in mind, offering crucial protections that jQuery lacks out of the box. The most common vulnerability is Cross-Site Scripting (XSS).
 
+![Flowchart diagram](/api/articles/react-vs-jquery-1.svg)
 ```mermaid
 flowchart TD
-    A[User Input] --> B{Framework?}
-    B -->|React| C[JSX Automatic Escaping]
-    B -->|jQuery| D[Manual Sanitization Required]
+    A["User Input"] --> B{"Framework?"}
+    B -->|React| C["JSX Automatic Escaping"]
+    B -->|jQuery| D["Manual Sanitization Required"]
     
-    C --> E[Safe Text Rendering]
-    D --> F{Developer Remembers?}
-    F -->|Yes| G[Manual .text() Method]
-    F -->|No| H[Vulnerable .html() Method]
+    C --> E["Safe Text Rendering"]
+    D --> F{"Developer Remembers?"}
+    F -->|Yes| G["Manual .text() Method"]
+    F -->|No| H["Vulnerable .html() Method"]
     
-    G --> I[Safe Output]
-    H --> J[XSS Vulnerability]
+    G --> I["Safe Output"]
+    H --> J["XSS Vulnerability"]
     E --> I
-    
-    style C fill:#4caf50
-    style E fill:#4caf50
-    style I fill:#4caf50
-    style H fill:#f44336
-    style J fill:#f44336
 ```
 
 ### How React Prevents XSS
@@ -373,10 +385,6 @@ Choosing a technology stack is a business decision. The data shows that investin
 ---
 
 ## Conclusion: The 30-Second Decision Tree
-
-Still unsure? Use this simple flowchart.
-
-![Flowchart diagram](/api/articles/react-vs-jquery-0.svg)
 
 **The Bottom Line:**
 

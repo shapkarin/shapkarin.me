@@ -62,28 +62,26 @@ React's analysis operates on three core concepts:
 2. **Effect** – a record describing what a single instruction does (create, alias, mutate…).
 3. **Range** – a pair of instruction IDs `[start, end]` over which a value may mutate.
 
+![Graph diagram](/api/articles/drop-react-manual-memoization-0.svg)
 ```mermaid
 graph TD
-    A[React Compiler Analysis] --> B[Places]
-    A --> C[Effects]
-    A --> D[Ranges]
+    A["React Compiler Analysis"] --> B["Places"]
+    A --> C["Effects"]
+    A --> D["Ranges"]
     
-    B --> E[Variables: a, b, c]
-    B --> F[Properties: obj.x, arr[0]]
+    B --> E["Variables: a, b, c"]
+    B --> F["Properties: obj.x, arr[0]"]
     
-    C --> G[Create: const obj = {}]
-    C --> H[Mutate: obj.x = 1]
-    C --> I[Alias: b = a]
-    C --> J[Freeze: props, hooks]
+    C --> G["Create: const obj = {}"]
+    C --> H["Mutate: obj.x = 1"]
+    C --> I["Alias: b = a"]
+    C --> J["Freeze: props, hooks"]
     
-    D --> K[Instruction IDs: [1, 5]]
-    D --> L[Mutation Scope]
+    D --> K["Instruction IDs: [1, 5]"]
+    D --> L["Mutation Scope"]
     
-    L --> M[Reactive Scopes]
-    M --> N[Memoization Boundaries]
-    
-    style M fill:#c8e6c9
-    style N fill:#c8e6c9
+    L --> M["Reactive Scopes"]
+    M --> N["Memoization Boundaries"]
 ```
 
 The passes that produce these artefacts run in the following order:
@@ -92,7 +90,7 @@ The passes that produce these artefacts run in the following order:
 2. `InferMutationAliasingRanges` – collapse effects into per-value *mutable ranges*.
 3. `InferReactiveScopeVariables` – group Places that mutate together into *reactive scopes* (future memoization boundaries).
 
-![Flowchart diagram](/api/articles/drop-react-manual-memoization-0.svg)
+![Flowchart diagram](/api/articles/drop-react-manual-memoization-1.svg)
 ```mermaid
 flowchart TD
     subgraph Passes

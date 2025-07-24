@@ -2,6 +2,8 @@
   {
     "@context": "https://schema.org",
     "@type": "TechArticle",
+    "learningResourceType": ["tutorial", "reading"],
+    "educationalUse": ["learning", "teaching", "presentation"],
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https://shapkarin.me/articles/WAGMI-basics"
@@ -20,7 +22,7 @@
       "url": "https://shapkarin.me"
     },
     "publisher": {
-      "@type": "Organization",
+      "@type": "Person",
       "name": "Iurii Shapkarin",
       "logo": {
         "@type": "ImageObject",
@@ -33,7 +35,6 @@
     "dateModified": "2025-01-15",
     "wordCount": "12500",
     "inLanguage": "en-US",
-    "learningResourceType": "Comprehensive tutorial",
     "proficiencyLevel": ["Beginner", "Intermediate", "Advanced"],
     "keywords": "WAGMI, WAGMI library, WAGMI dApp, WAGMI VIEM, React Web3, Ethereum development, dApp tutorial, blockchain hooks, multichain dApp, Web3 development, React hooks, TypeScript dApp, DeFi development, NFT development, smart contract interaction, blockchain integration, Ethereum dApp, Web3 React, WAGMI hooks, useAccount, useBalance, useReadContract, useWriteContract, blockchain development, Web3 tutorial, dApp building, Ethereum integration, multichain development, Web3 best practices, WAGMI configuration, VIEM integration, wallet connection, Web3Modal, WalletConnect, MetaMask integration, DeFi protocols, NFT marketplace, governance voting, transaction simulation, Web3 performance, WAGMI optimization, React performance, Web3 security, production dApp, WAGMI troubleshooting, ABI management, TypeScript Web3, WAGMI patterns, blockchain UX, Web3 state management, dApp architecture, smart contract ABI, Web3 error handling, WAGMI testing, blockchain debugging, Web3 monitoring",
     "about": [
@@ -686,7 +687,24 @@
     ],
     "programmingLanguage": ["JavaScript", "TypeScript"],
     "operatingSystem": "Cross-platform",
-    "applicationCategory": "Educational",
+    "applicationCategory": "Educational"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "ImageObject",
+    "name": "WAGMI vs Traditional Web3 Libraries Comparison Diagram",
+    "description": "Comparison diagram showing WAGMI's advantages over traditional Web3 libraries including React hooks integration, TypeScript support, and developer experience improvements",
+    "contentUrl": "https://shapkarin.me/api/articles/WAGMI-basics-0.svg",
+    "encodingFormat": "image/svg+xml",
+    "learningResourceType": "diagram",
+    "educationalUse": ["learning", "presentation"],
+    "about": {
+      "@type": "Thing",
+      "name": "WAGMI Web3 Development"
+    }
+  },
+  {
+    "@context": "https://schema.org",
     "relatedLink": [
       {
         "@type": "WebPage",
@@ -965,7 +983,7 @@
     "programmingLanguage": ["JavaScript", "TypeScript"],
     "codeRepository": "https://shapkarin.me/articles/WAGMI-basics",
     "author": {
-      "@type": "Organization",
+      "@type": "Person",
       "name": "Iurii Shapkarin"
     },
     "applicationCategory": "Educational",

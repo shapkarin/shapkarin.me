@@ -301,6 +301,20 @@
   },
   {
     "@context": "https://schema.org",
+    "@type": "ImageObject",
+    "name": "State Data Structure Performance Comparison Diagram",
+    "description": "Performance comparison diagram showing Big O complexity differences between array-based (O(n)) and object-based (O(1)) state management approaches with scaling implications",
+    "contentUrl": "https://shapkarin.me/api/articles/state-optimization-guide-0.svg",
+    "encodingFormat": "image/svg+xml",
+    "learningResourceType": "diagram",
+    "educationalUse": ["learning", "presentation"],
+    "about": {
+      "@type": "Thing",
+      "name": "State Management Performance Optimization"
+    }
+  },
+  {
+    "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": [
       {

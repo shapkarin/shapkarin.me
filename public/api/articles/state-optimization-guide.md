@@ -1,6 +1,11 @@
 ---
-title: "State Optimization Mastery: From Vanilla JavaScript to Advanced Framework Techniques"
-description: "Master app state optimization with comprehensive analysis of data structures, Big O complexity, and advanced techniques using Zustand, Redux, and performance patterns."
+title: >-
+  State Optimization Mastery: From Vanilla JavaScript to Advanced Framework
+  Techniques
+description: >-
+  Master app state optimization with comprehensive analysis of data structures,
+  Big O complexity, and advanced techniques using Zustand, Redux, and
+  performance patterns.
 order: 5
 ---
 
@@ -47,29 +52,27 @@ Only updating the parts of state that actually changed prevents unnecessary re-r
 
 ## Data Structure Choices: Objects vs Arrays
 
+![Graph diagram](/api/articles/state-optimization-guide-0.svg)
 ```mermaid
 graph TD
-    A[Data Structure Choice] --> B[Arrays]
-    A --> C[Objects]
+    A["Data Structure Choice"] --> B["Arrays"]
+    A --> C["Objects"]
     
-    B --> D[O(n) Search]
-    B --> E[O(n) Update]
-    B --> F[O(n) Delete]
+    B --> D["O(n) Search"]
+    B --> E["O(n) Update"]
+    B --> F["O(n) Delete"]
     
-    C --> G[O(1) Search]
-    C --> H[O(1) Update]
-    C --> I[O(1) Delete]
+    C --> G["O(1) Search"]
+    C --> H["O(1) Update"]
+    C --> I["O(1) Delete"]
     
-    D --> J[Linear Performance]
+    D --> J["Linear Performance"]
     E --> J
     F --> J
     
-    G --> K[Constant Performance]
+    G --> K["Constant Performance"]
     H --> K
     I --> K
-    
-    style J fill:#ffcdd2
-    style K fill:#c8e6c9
 ```
 
 ### The Array Approach (Less Efficient)

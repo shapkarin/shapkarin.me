@@ -1,6 +1,8 @@
 ---
-title: "Floating-Point Precision: Why 0.1 + 0.2 Isn't 0.3"
-description: "Explore the surprising result of 0.1 + 0.2 in programming and understand why it happens due to floating-point representation and the IEEE 754 standard."
+title: 'Floating-Point Precision: Why 0.1 + 0.2 Isn''t 0.3'
+description: >-
+  Explore the surprising result of 0.1 + 0.2 in programming and understand why
+  it happens due to floating-point representation and the IEEE 754 standard.
 order: 2
 ---
 
@@ -22,6 +24,7 @@ As a software engineer with over a decade of experience, one of the fundamental 
 
 Computers store numbers using binary (base 2). Integers are straightforward, but representing fractional numbers in binary can be tricky. While some decimal fractions, like 0.5 (which is `0.1` in binary), can be represented exactly, many others cannot.
 
+![Graph diagram](/api/articles/floating-point-precision-0.svg)
 ```mermaid
 graph TD
     A[Decimal Number 0.1] --> B[Convert to Binary]
@@ -40,10 +43,6 @@ graph TD
     L --> M
     M --> N[0.3000000000000000444...]
     N --> O[Display as 0.30000000000000004]
-    
-    style D fill:#ffcdd2
-    style J fill:#ffcdd2
-    style N fill:#fff3e0
 ```
 
 Decimal fractions like 0.1, 0.2, and 0.3 do not have a finite binary representation, similar to how 1/3 does not have a finite decimal representation (it's 0.333...). When these numbers are stored in a computer's memory using a fixed number of bits (like 64-bit floating-point numbers, the standard), they must be rounded to the nearest representable binary fraction.

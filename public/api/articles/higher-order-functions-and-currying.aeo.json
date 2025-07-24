@@ -371,6 +371,34 @@
   },
   {
     "@context": "https://schema.org",
+    "@type": "ImageObject",
+    "name": "Higher-Order Functions Concept Diagram",
+    "description": "Hierarchical diagram illustrating higher-order functions that take functions as arguments or return functions, showing examples like map, filter, reduce and function factories",
+    "contentUrl": "https://shapkarin.me/api/articles/higher-order-functions-and-currying-0.svg",
+    "encodingFormat": "image/svg+xml",
+    "learningResourceType": "diagram",
+    "educationalUse": ["learning", "presentation"],
+    "about": {
+      "@type": "Thing",
+      "name": "JavaScript Higher-Order Functions"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "ImageObject",
+    "name": "JavaScript Currying Transformation Diagram",
+    "description": "Flow diagram showing how currying transforms multi-argument functions into sequences of single-argument functions, demonstrating the step-by-step transformation process",
+    "contentUrl": "https://shapkarin.me/api/articles/higher-order-functions-and-currying-1.svg",
+    "encodingFormat": "image/svg+xml",
+    "learningResourceType": "diagram",
+    "educationalUse": ["learning", "presentation"],
+    "about": {
+      "@type": "Thing",
+      "name": "JavaScript Function Currying"
+    }
+  },
+  {
+    "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": [
       {

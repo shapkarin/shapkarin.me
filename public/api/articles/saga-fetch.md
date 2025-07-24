@@ -1,6 +1,9 @@
 ---
-title: "saga-fetch: Streamline API Calls in Redux Saga Applications"
-description: "Learn how to simplify AJAX requests in Redux Saga with saga-fetch. Handle loading states, success/error responses, and request cancellation with minimal boilerplate code."
+title: 'saga-fetch: Streamline API Calls in Redux Saga Applications'
+description: >-
+  Learn how to simplify AJAX requests in Redux Saga with saga-fetch. Handle
+  loading states, success/error responses, and request cancellation with minimal
+  boilerplate code.
 order: 11
 ---
 
@@ -52,6 +55,7 @@ Imagine you have some actions: `searchPagesStart`, `searchPagesSuccess`, `search
 const searchPages = ({ payload: { title } }) => fetch(`/search/pages?title=${title}`);
 ```
 
+![SequenceDiagram diagram](/api/articles/saga-fetch-0.svg)
 ```mermaid
 sequenceDiagram
     participant Component as React Component

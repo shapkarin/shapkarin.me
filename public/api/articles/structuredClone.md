@@ -1,6 +1,9 @@
 ---
-title: "Deep Cloning in JavaScript: Mastering `structuredClone()`"
-description: "Learn how to properly create deep copies of complex objects in JavaScript using the modern structuredClone() method, understand its advantages over traditional techniques, and discover when and how to use it effectively."
+title: 'Deep Cloning in JavaScript: Mastering `structuredClone()`'
+description: >-
+  Learn how to properly create deep copies of complex objects in JavaScript
+  using the modern structuredClone() method, understand its advantages over
+  traditional techniques, and discover when and how to use it effectively.
 order: 5
 ---
 
@@ -24,6 +27,7 @@ In JavaScript, copying objects is a common task, but it's not always straightfor
 
 When you copy an object in JavaScript, you might be creating either a shallow copy or a deep copy.
 
+![Graph diagram](/api/articles/structuredClone-0.svg)
 ```mermaid
 graph TD
     A[Original Object] --> B[name: 'Alice']
@@ -45,13 +49,6 @@ graph TD
     O[Modify Deep Copy] --> P[details.age = 31]
     P --> K
     Q[Original Unchanged] --> D
-    
-    style G fill:#ffcdd2
-    style M fill:#ffcdd2
-    style N fill:#ffcdd2
-    style J fill:#c8e6c9
-    style K fill:#c8e6c9
-    style Q fill:#c8e6c9
 ```
 
 *   **Shallow Copy:** Only the top-level properties of an object are copied. If a property holds a reference to another object (like an array or another object), the copy will point to the *same* referenced object. Modifying the nested object in the copy will also affect the original, and vice-versa.
@@ -183,6 +180,7 @@ try {
 
 ### Key Benefits of `structuredClone()`:
 
+![Flowchart diagram](/api/articles/structuredClone-1.svg)
 ```mermaid
 flowchart LR
     A[structuredClone] --> B[Handles Complex Types]
@@ -201,11 +199,6 @@ flowchart LR
     
     D --> M[Optimized Algorithm]
     D --> N[No JSON Conversion]
-    
-    style A fill:#e1f5fe
-    style B fill:#f3e5f5
-    style C fill:#e8f5e8
-    style D fill:#fff3e0
 ```
 
 *   **Handles Complex Types:** It can clone a wide variety of JavaScript types beyond what `JSON.parse(JSON.stringify())` supports, including:
