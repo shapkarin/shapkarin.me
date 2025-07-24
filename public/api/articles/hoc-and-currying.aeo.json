@@ -4,7 +4,7 @@
     "@type": "TechArticle",
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": "https://shapkarin.me/articles/higher-order-functions-and-currying"
+      "@id": "https://shapkarin.me/articles/hoc-and-currying"
     },
     "headline": "JavaScript Higher-Order Functions, Currying & Arrow Functions: Complete Guide",
     "description": "Master JavaScript's powerful functional programming features with this comprehensive guide to higher-order functions, currying techniques, and arrow functions. Learn with practical examples, best practices, and real-world applications for modern web development.",
@@ -253,103 +253,103 @@
       {
         "@type": "WebPageElement",
         "name": "Introduction",
-        "url": "https://shapkarin.me/articles/higher-order-functions-and-currying#introduction",
+        "url": "https://shapkarin.me/articles/hoc-and-currying#introduction",
         "description": "Overview of JavaScript's functional programming capabilities and the importance of higher-order functions, currying, and arrow functions"
       },
       {
         "@type": "WebPageElement",
         "name": "Higher-Order Functions (HOFs)",
-        "url": "https://shapkarin.me/articles/higher-order-functions-and-currying#higher-order-functions-hofs",
+        "url": "https://shapkarin.me/articles/hoc-and-currying#higher-order-functions-hofs",
         "description": "Comprehensive explanation of higher-order functions, their definition, and their role in JavaScript functional programming"
       },
       {
         "@type": "WebPageElement",
         "name": "What are Higher-Order Functions?",
-        "url": "https://shapkarin.me/articles/higher-order-functions-and-currying#what-are-higher-order-functions",
+        "url": "https://shapkarin.me/articles/hoc-and-currying#what-are-higher-order-functions",
         "description": "Detailed definition and characteristics of higher-order functions with built-in JavaScript examples"
       },
       {
         "@type": "WebPageElement",
         "name": "Examples of Higher-Order Functions",
-        "url": "https://shapkarin.me/articles/higher-order-functions-and-currying#examples-of-higher-order-functions",
+        "url": "https://shapkarin.me/articles/hoc-and-currying#examples-of-higher-order-functions",
         "description": "Practical examples demonstrating functions as arguments and functions as return values"
       },
       {
         "@type": "WebPageElement",
         "name": "Benefits of Higher-Order Functions",
-        "url": "https://shapkarin.me/articles/higher-order-functions-and-currying#benefits-of-higher-order-functions",
+        "url": "https://shapkarin.me/articles/hoc-and-currying#benefits-of-higher-order-functions",
         "description": "Key advantages including abstraction, reusability, and function composition capabilities"
       },
       {
         "@type": "WebPageElement",
         "name": "Currying",
-        "url": "https://shapkarin.me/articles/higher-order-functions-and-currying#currying",
+        "url": "https://shapkarin.me/articles/hoc-and-currying#currying",
         "description": "In-depth exploration of currying technique for transforming multi-argument functions into single-argument function sequences"
       },
       {
         "@type": "WebPageElement",
         "name": "What is Currying?",
-        "url": "https://shapkarin.me/articles/higher-order-functions-and-currying#what-is-currying",
+        "url": "https://shapkarin.me/articles/hoc-and-currying#what-is-currying",
         "description": "Definition and conceptual explanation of currying with function transformation examples"
       },
       {
         "@type": "WebPageElement",
         "name": "How to Implement Currying",
-        "url": "https://shapkarin.me/articles/higher-order-functions-and-currying#how-to-implement-currying",
+        "url": "https://shapkarin.me/articles/hoc-and-currying#how-to-implement-currying",
         "description": "Step-by-step implementation of currying using traditional functions and arrow functions"
       },
       {
         "@type": "WebPageElement",
         "name": "Benefits of Currying",
-        "url": "https://shapkarin.me/articles/higher-order-functions-and-currying#benefits-of-currying",
+        "url": "https://shapkarin.me/articles/hoc-and-currying#benefits-of-currying",
         "description": "Advantages of currying including partial application, function composition, and enhanced reusability"
       },
       {
         "@type": "WebPageElement",
         "name": "Practical Example: Building URL Parameters",
-        "url": "https://shapkarin.me/articles/higher-order-functions-and-currying#practical-example-building-url-parameters",
+        "url": "https://shapkarin.me/articles/hoc-and-currying#practical-example-building-url-parameters",
         "description": "Real-world application of currying for creating configurable URL building functions"
       },
       {
         "@type": "WebPageElement",
         "name": "Arrow Functions",
-        "url": "https://shapkarin.me/articles/higher-order-functions-and-currying#arrow-functions",
+        "url": "https://shapkarin.me/articles/hoc-and-currying#arrow-functions",
         "description": "Comprehensive guide to ES6 arrow functions, their syntax, behavior, and practical applications"
       },
       {
         "@type": "WebPageElement",
         "name": "Syntax and Basics",
-        "url": "https://shapkarin.me/articles/higher-order-functions-and-currying#syntax-and-basics",
+        "url": "https://shapkarin.me/articles/hoc-and-currying#syntax-and-basics",
         "description": "Arrow function syntax variations and comparison with traditional function expressions"
       },
       {
         "@type": "WebPageElement",
         "name": "Key Characteristics",
-        "url": "https://shapkarin.me/articles/higher-order-functions-and-currying#key-characteristics",
+        "url": "https://shapkarin.me/articles/hoc-and-currying#key-characteristics",
         "description": "Essential features including lexical this binding, arguments object behavior, and constructor limitations"
       },
       {
         "@type": "WebPageElement",
         "name": "When to Use Arrow Functions",
-        "url": "https://shapkarin.me/articles/higher-order-functions-and-currying#when-to-use-arrow-functions",
+        "url": "https://shapkarin.me/articles/hoc-and-currying#when-to-use-arrow-functions",
         "description": "Best practices and appropriate use cases for arrow functions in modern JavaScript development"
       },
       {
         "@type": "WebPageElement",
         "name": "When NOT to Use Arrow Functions",
-        "url": "https://shapkarin.me/articles/higher-order-functions-and-currying#when-not-to-use-arrow-functions",
+        "url": "https://shapkarin.me/articles/hoc-and-currying#when-not-to-use-arrow-functions",
         "description": "Scenarios where traditional functions are preferred over arrow functions"
       },
       {
         "@type": "WebPageElement",
         "name": "Combining Higher-Order Functions, Currying, and Arrow Functions",
-        "url": "https://shapkarin.me/articles/higher-order-functions-and-currying#combining-higher-order-functions-currying-and-arrow-functions",
+        "url": "https://shapkarin.me/articles/hoc-and-currying#combining-higher-order-functions-currying-and-arrow-functions",
         "description": "Advanced examples demonstrating the synergy between these functional programming concepts"
       },
       {
         "@type": "WebPageElement",
         "name": "Conclusion",
-        "url": "https://shapkarin.me/articles/higher-order-functions-and-currying#conclusion",
+        "url": "https://shapkarin.me/articles/hoc-and-currying#conclusion",
         "description": "Summary of key concepts and their impact on modern JavaScript development practices"
       }
     ],
@@ -376,7 +376,7 @@
     "@type": "ImageObject",
     "name": "Higher-Order Functions Concept Diagram",
     "description": "Hierarchical diagram illustrating higher-order functions that take functions as arguments or return functions, showing examples like map, filter, reduce and function factories",
-    "contentUrl": "https://shapkarin.me/api/articles/higher-order-functions-and-currying-0.svg",
+    "contentUrl": "https://shapkarin.me/api/articles/hoc-and-currying-0.svg",
     "encodingFormat": "image/svg+xml",
     "learningResourceType": "diagram",
     "educationalUse": ["learning", "presentation"],
@@ -390,7 +390,7 @@
     "@type": "ImageObject",
     "name": "JavaScript Currying Transformation Diagram",
     "description": "Flow diagram showing how currying transforms multi-argument functions into sequences of single-argument functions, demonstrating the step-by-step transformation process",
-    "contentUrl": "https://shapkarin.me/api/articles/higher-order-functions-and-currying-1.svg",
+    "contentUrl": "https://shapkarin.me/api/articles/hoc-and-currying-1.svg",
     "encodingFormat": "image/svg+xml",
     "learningResourceType": "diagram",
     "educationalUse": ["learning", "presentation"],

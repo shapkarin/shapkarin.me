@@ -4,6 +4,10 @@ import { useLocation } from 'react-router-dom';
 const SEO = ({ title, description, name = 'Iurii Shapkarin', type = 'website', aeoScript, keywords = '' }) => {
 
   const { pathname } = useLocation();
+  const ArticlesCanonicalUrl = 'https://shapkarin.me';
+  if(pathname === '/articles'){
+    <link rel="canonical" href={ArticlesCanonicalUrl} />
+  }
   const canonicalUrl = `https://shapkarin.me${pathname}`;
   console.log(pathname, 'pathname');
   
