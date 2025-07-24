@@ -8,7 +8,7 @@ keywords: >-
   AI automation, business transformation, artificial intelligence, customer
   service automation, sales automation, process optimization, ROI, business
   efficiency, AI implementation, machine learning, workflow automation
-order: 5
+order: 2
 ---
 
 # AI Automation for Business: The Strategic Advantage Every Leader Needs in 2025

@@ -15,6 +15,11 @@
     "filename": "hoc-and-currying.md"
   },
   {
+    "slug": "ai-automation-for-business",
+    "title": "Ai Automation For Business",
+    "filename": "ai-automation-for-business.md"
+  },
+  {
     "slug": "floating-point-precision",
     "title": "Floating Point Precision",
     "filename": "floating-point-precision.md"
@@ -48,11 +53,6 @@
     "slug": "memoization",
     "title": "Memoization",
     "filename": "memoization.md"
-  },
-  {
-    "slug": "ai-automation-for-business",
-    "title": "Ai Automation For Business",
-    "filename": "ai-automation-for-business.md"
   },
   {
     "slug": "state-optimization-guide",
