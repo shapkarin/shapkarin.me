@@ -96,35 +96,55 @@ In blockchain networks, BFT is crucial because:
 - **Financial Stakes**: Incorrect consensus can lead to significant financial losses
 - **Immutability**: Once recorded, blockchain data cannot be easily changed
 
+
 ![Diagram diagram](/api/articles/byzantine-fault-tolerance-0.svg)
 ```mermaid
-%%{init: {'theme':'base', 'themeVariables': {'primaryColor':'#ffffff', 'fontSize':'18px'}}}%%
-graph TB
+%%{init: {'theme':'base', 'themeVariables': {'primaryColor':'#ffffff', 'fontSize':'16px'}}}%%
+flowchart TD
     subgraph "BFT Network (n=7 nodes)"
-        N1["<br/>Honest Node 1<br/><br/>"]
-        N2["<br/>Honest Node 2<br/><br/>"]
-        N3["<br/>Honest Node 3<br/><br/>"]
-        N4["<br/>Honest Node 4<br/><br/>"]
-        N5["<br/>Honest Node 5<br/><br/>"]
-        B1["<br/>Byzantine Node 1<br/><br/>"]
-        B2["<br/>Byzantine Node 2<br/><br/>"]
+        subgraph "Honest Nodes"
+            N1["<br/>Honest Node 1<br/><br/>"]
+            N2["<br/>Honest Node 2<br/><br/>"]
+            N3["<br/>Honest Node 3<br/><br/>"]
+            N4["<br/>Honest Node 4<br/><br/>"]
+            N5["<br/>Honest Node 5<br/><br/>"]
+        end
+        
+        subgraph "Byzantine Nodes"
+            B1["<br/>Byzantine Node 1<br/><br/>"]
+            B2["<br/>Byzantine Node 2<br/><br/>"]
+        end
     end
     
-    subgraph "BFT Guarantee"
-        TH["<br/>Threshold: n > 3f<br/><br/>"]
-        EX["<br/>f = 2 Byzantine nodes<br/><br/>"]
-        RQ["<br/>Required: n > 6<br/><br/>"]
-        AC["<br/>Actual: n = 7 ✓<br/><br/>"]
+    subgraph "BFT Security Threshold"
+        TH["<br/>Threshold Formula: n > 3f<br/><br/>"]
+        EX["<br/>Byzantine nodes: f = 2<br/><br/>"]
+        RQ["<br/>Minimum required: n > 6<br/><br/>"]
+        AC["<br/>Network size: n = 7 ✓<br/><br/>"]
     end
     
-    N1 -.->|"Consensus Messages"| N2
-    N2 -.->|"Consensus Messages"| N3
-    N3 -.->|"Consensus Messages"| N4
-    N4 -.->|"Consensus Messages"| N5
-    N5 -.->|"Consensus Messages"| N1
+    subgraph "Network Communication"
+        CM["<br/>Consensus Messages<br/>Between Honest Nodes<br/><br/>"]
+        MM["<br/>Malicious Messages<br/>From Byzantine Nodes<br/><br/>"]
+    end
     
-    B1 -->|"Malicious Messages"| N1
-    B2 -->|"Malicious Messages"| N3
+    N1 -.-> N2
+    N2 -.-> N3
+    N3 -.-> N4
+    N4 -.-> N5
+    N5 -.-> N1
+    
+    B1 --> N1
+    B2 --> N3
+    
+    N1 -.-> CM
+    N2 -.-> CM
+    B1 --> MM
+    B2 --> MM
+    
+    TH --> EX
+    EX --> RQ
+    RQ --> AC
     
     style B1 fill:#4285f4,stroke:#1565c0,stroke-width:3px,color:#ffffff
     style B2 fill:#4285f4,stroke:#1565c0,stroke-width:3px,color:#ffffff
@@ -133,6 +153,9 @@ graph TB
     style N3 fill:#4ecdc4,stroke:#26a69a,stroke-width:2px
     style N4 fill:#4ecdc4,stroke:#26a69a,stroke-width:2px
     style N5 fill:#4ecdc4,stroke:#26a69a,stroke-width:2px
+    style AC fill:#c8e6c9,stroke:#388e3c,stroke-width:3px
+    style CM fill:#e3f2fd,stroke:#1976d2,stroke-width:2px
+    style MM fill:#ffcdd2,stroke:#d32f2f,stroke-width:2px
 ```
 
 ### Key Properties of BFT Systems
