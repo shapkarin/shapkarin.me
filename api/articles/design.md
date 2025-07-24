@@ -26,9 +26,7 @@ It's tempting to build a massive, "future-proof" architecture right out of the g
 
 ![Graph diagram](/api/articles/dark/design-0.svg)
 
-<details>
-  <summary>Show Mermaid Code</summary>
-  <pre><code class="language-mermaid">graph TD
+```mermaidgraph TD
     A[New Project] --> B{Approach?}
     B -->|Over-Engineering| C[Complex Architecture]
     B -->|Start Simple| D[Minimal Solution]
@@ -42,7 +40,7 @@ It's tempting to build a massive, "future-proof" architecture right out of the g
     I --> J[Add Complexity When Needed]
     J --> K[Clear Requirements]
     K --> L[Right Abstractions]</code></pre>
-</details>
+```
 
 ### Use SOLID as a Helpful Map, Not a Strict Rulebook
 You might've heard of the SOLID principles. They're common-sense guidelines for writing code that's maintainable and flexible over time:

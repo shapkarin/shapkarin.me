@@ -41,9 +41,7 @@ A higher-order function is a function that does at least one of the following:
 
 ![Graph diagram](/api/articles/dark/hoc-and-currying-0.svg)
 
-<details>
-  <summary>Show Mermaid Code</summary>
-  <pre><code class="language-mermaid">graph TD
+```mermaidgraph TD
     A[Higher-Order Function] --> B[Takes Functions as Arguments]
     A --> C[Returns Functions]
     
@@ -54,7 +52,7 @@ A higher-order function is a function that does at least one of the following:
     C --> G[Function Factories]
     C --> H[Closures]
     C --> I[Decorators]</code></pre>
-</details>
+```
 
 Many built-in JavaScript array methods are excellent examples of HOFs, such as:
 
@@ -129,9 +127,7 @@ A curried function like `f(a, b, c)` is transformed into `f(a)(b)(c)`. Each call
 
 ![Graph diagram](/api/articles/dark/hoc-and-currying-1.svg)
 
-<details>
-  <summary>Show Mermaid Code</summary>
-  <pre><code class="language-mermaid">graph LR
+```mermaidgraph LR
     A["f(a, b, c)"] --> B["Currying Transform"]
     B --> C["f(a)"]
     C --> D["returns function"]
@@ -139,7 +135,7 @@ A curried function like `f(a, b, c)` is transformed into `f(a)(b)(c)`. Each call
     E --> F["returns function"]
     F --> G["f(a)(b)(c)"]
     G --> H["executes & returns result"]</code></pre>
-</details>
+```
 
 ### How to Implement Currying
 

@@ -70,9 +70,7 @@ Before diving into Ethereum, the whitepaper explains Bitcoin as the starting poi
 
 ![Graph diagram](/api/articles/dark/ethereum-whitepaper-explanation-0.svg)
 
-<details>
-  <summary>Show Mermaid Code</summary>
-  <pre><code class="language-mermaid">graph TD
+```mermaidgraph TD
     A[Blockchain Technology] --> B[Bitcoin]
     A --> C[Ethereum]
     
@@ -86,7 +84,7 @@ Before diving into Ethereum, the whitepaper explains Bitcoin as the starting poi
     C --> J[DeFi Protocols]
     C --> K[NFTs]
     C --> L[DAOs]</code></pre>
-</details>
+```
 
 ### Ethereum's Revolutionary Features:
 
@@ -123,9 +121,7 @@ Before diving into Ethereum, the whitepaper explains Bitcoin as the starting poi
 
 ![SequenceDiagram diagram](/api/articles/dark/ethereum-whitepaper-explanation-1.svg)
 
-<details>
-  <summary>Show Mermaid Code</summary>
-  <pre><code class="language-mermaid">sequenceDiagram
+```mermaidsequenceDiagram
     participant User as User
     participant Contract as Smart Contract
     participant Blockchain as Ethereum Network
@@ -140,7 +136,7 @@ Before diving into Ethereum, the whitepaper explains Bitcoin as the starting poi
         Contract->>User: Reject transaction
         Note over User,Contract: No action taken
     end</code></pre>
-</details>
+```
 
 ### Real-World Example:
 ```

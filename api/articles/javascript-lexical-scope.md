@@ -44,9 +44,7 @@ Lexical scope (also called static scope) refers to how variable access is determ
 
 ![Graph diagram](/api/articles/dark/javascript-lexical-scope-0.svg)
 
-<details>
-  <summary>Show Mermaid Code</summary>
-  <pre><code class="language-mermaid">graph TD
+```mermaidgraph TD
     A[Global Scope] --> B[Function Scope]
     B --> C[Block Scope]
     C --> D[Inner Function Scope]
@@ -66,7 +64,7 @@ Lexical scope (also called static scope) refers to how variable access is determ
     O --> P{Found in Global?}
     P -->|Yes| K
     P -->|No| Q[ReferenceError]</code></pre>
-</details>
+```
 
 The term "lexical" comes from the fact that scope is determined during the lexing phase of compilation, when the code is parsed and analyzed before execution.
 
@@ -229,9 +227,7 @@ Closures are a direct result of lexical scoping. A closure is created when a fun
 
 ![SequenceDiagram diagram](/api/articles/dark/javascript-lexical-scope-1.svg)
 
-<details>
-  <summary>Show Mermaid Code</summary>
-  <pre><code class="language-mermaid">sequenceDiagram
+```mermaidsequenceDiagram
     participant Outer as Outer Function
     participant Inner as Inner Function
     participant Execution as Execution Context
@@ -244,7 +240,7 @@ Closures are a direct result of lexical scoping. A closure is created when a fun
     Execution->>Inner: Call returned function
     Inner->>Inner: Access captured variables
     Note over Inner: Variables still accessible!</code></pre>
-</details>
+```
 
 ```javascript
 function createCounter() {
