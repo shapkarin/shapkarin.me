@@ -5,6 +5,11 @@
     "filename": "contributions-to-major-web-dev-repos.md"
   },
   {
+    "slug": "byzantine-fault-tolerance",
+    "title": "Byzantine Fault Tolerance",
+    "filename": "byzantine-fault-tolerance.md"
+  },
+  {
     "slug": "hoc-and-currying",
     "title": "Hoc And Currying",
     "filename": "hoc-and-currying.md"
