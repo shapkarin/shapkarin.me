@@ -18,13 +18,34 @@ html {
 .Article {
   overflow-x: hidden;
 
-  & table {
-    display: block;
-    overflow-x: scroll;
-    white-space: nowrap;
-    scroll-behavior: smooth;
+  // Table wrapper for horizontal scrolling
+  .table-wrapper {
+    overflow-x: auto;
+    margin: 20px 0;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     -webkit-overflow-scrolling: touch;
     -ms-overflow-style: -ms-autohiding-scrollbar;
+    
+    @media (max-width: @mobile-width) {
+      margin: 15px 0;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  & table {
+    min-width: 100%;
+    white-space: nowrap;
+    
+    // Ensure table can scroll horizontally when needed
+    th, td {
+      white-space: nowrap;
+      
+      // Allow wrapping for long content when there's space
+      @media (min-width: 768px) {
+        white-space: normal;
+      }
+    }
   }
 }
 
@@ -121,16 +142,14 @@ html {
   table {
     width: 100%;
     border-collapse: collapse;
-    margin: 20px 0;
+    margin: 0;
     font-size: 16px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     overflow: hidden;
     background-color: #fff;
 
     @media (max-width: @mobile-width) {
       font-size: 14px;
-      margin: 15px 0;
     }
   }
 
@@ -176,24 +195,20 @@ html {
 
   // Responsive table for mobile
   @media (max-width: 480px) {
-    table {
-      display: block;
-      overflow-x: auto;
-      white-space: nowrap;
-      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
-    }
-    
     th, td {
       min-width: 120px;
       padding: 10px 12px;
+      white-space: nowrap;
     }
   }
 
   // Table with minimal styling variant
-  table.minimal {
+  .table-wrapper.minimal {
     box-shadow: none;
     border: 1px solid #e9ecef;
-    
+  }
+  
+  table.minimal {
     th {
       background-color: #ffffff;
       border-bottom: 1px solid #e9ecef;

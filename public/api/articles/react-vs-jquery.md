@@ -77,31 +77,44 @@ The fundamental difference between React and jQuery lies in *how* they update wh
 ![Flowchart diagram](/api/articles/react-vs-jquery-0.svg)
 ```mermaid
 flowchart TD
-    subgraph React["🔄 React Architecture - Declarative & Efficient"]
+    subgraph React["<b>React</b><br/><i>Declarative & Efficient</i>"]
         direction TB
+        ReactDesc["<b>Smart Updates:</b><br/>Calculate what changed,<br/>then update efficiently"]
+        
         A1[👤 User Interaction] --> A2[📊 State Change]
         A2 --> A3[🎭 Virtual DOM Tree]
-        A3 --> A4[🔍 Reconciliation<br/>Diff Algorithm]
-        A4 --> A5[⚡ Batched Updates<br/>Minimal Changes]
+        A3 --> A4[🔍 Reconciliation<br/><small>Diff Algorithm</small>]
+        A4 --> A5[⚡ Batched Updates<br/><small>Minimal Changes</small>]
         A5 --> A6[🌐 Real DOM]
         
         A3 -.->|"Previous State"| A7[📸 Virtual DOM Snapshot]
         A7 -.->|"Compare"| A4
+        
+        ReactDesc -.-> A4
     end
     
-    subgraph jQuery["🎯 jQuery Architecture - Imperative & Direct"]
+    subgraph jQuery["<b>jQuery</b><br/><i>Imperative</i>"]
         direction TB
+        jQueryDesc["<b>Direct Updates:</b><br/>Find elements and<br/>change them immediately"]
+        
         B1[👤 User Interaction] --> B2[🎪 Event Handler]
-        B2 --> B3[🔍 DOM Query<br/>$('#element')]
-        B3 --> B4[✋ Manual DOM<br/>Manipulation]
+        B2 --> B3[🔍 DOM Query<br/><small>$('#element')</small>]
+        B3 --> B4[✋ Manual DOM<br/><small>Manipulation</small>]
         B4 --> B5[🌐 Real DOM]
         
-        B4 -.->|"Each Change"| B6[🔄 Immediate<br/>Re-render]
+        B4 -.->|"<small>Each Change</small>"| B6[🔄 Immediate<br/><small>Re-render</small>]
         B6 -.-> B5
+        
+        jQueryDesc -.-> B3
     end
     
-    classDef reactStyle fill:#61dafb,stroke:#21759b,stroke-width:2px,color:#000
-    classDef jqueryStyle fill:#0769ad,stroke:#004d7a,stroke-width:2px,color:#fff
+    Performance["<b>Performance Impact:</b><br/>React batches updates for efficiency<br/>jQuery updates immediately on each change"]
+    
+    React -.->|"<i>Optimized</i>"| Performance
+    jQuery -.->|"<i>Less Optimized</i>"| Performance
+    
+    classDef reactStyle fill:#0769ad,stroke:#004d7a,stroke-width:2px,color:#fff 
+    classDef jqueryStyle fill:#61dafb,stroke:#21759b,stroke-width:2px,color:#000
     classDef domStyle fill:#ff6b6b,stroke:#cc5555,stroke-width:2px,color:#fff
     classDef processStyle fill:#4ecdc4,stroke:#3ba39c,stroke-width:2px,color:#000
     
