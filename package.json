@@ -78,7 +78,6 @@
   },
   "devDependencies": {
     "@craco/craco": "^7.1.0",
-    "@mermaid-js/mermaid-cli": "^11.6.0",
     "craco-less": "^3.0.1",
     "esm": "^3.2.25",
     "react-helmet-async": "^2.0.5",
