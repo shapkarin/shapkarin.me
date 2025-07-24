@@ -78,9 +78,7 @@ keywords: >-
 
 ![Graph diagram](/api/articles/dark/WAGMI-basics-0.svg)
 
-<details>
-  <summary>Show Mermaid Code</summary>
-  <pre><code class="language-mermaid">graph TD
+```mermaidgraph TD
     A[Web3 Development] --> B[Traditional Libraries]
     A --> C[WAGMI Library]
     
@@ -103,7 +101,7 @@ keywords: >-
     I --> Q[Automatic Updates]
     J --> R[Type Safety]
     K --> S[Chain Switching]</code></pre>
-</details>
+```
 
 ### Developer Experience: WAGMI v1 vs v2
 
@@ -1148,7 +1146,7 @@ function GovernanceVoting({ proposalId, proposalTitle, proposalDescription }) {
                 <details>
                   <summary>Error Details</summary>
                   <pre>{simulateError.message}</pre>
-                </details>
+                ```
               </div>
             ) : simulateData ? (
               <div className="simulation-success">

@@ -37,9 +37,7 @@ The most significant difference between these approaches is how JavaScript's hoi
 
 ![Graph diagram](/api/articles/dark/function-declaration-vs-expression-0.svg)
 
-<details>
-  <summary>Show Mermaid Code</summary>
-  <pre><code class="language-mermaid">graph TD
+```mermaidgraph TD
     A[JavaScript Code] --> B[Compilation Phase]
     B --> C[Function Declarations]
     B --> D[Variable Declarations]
@@ -53,7 +51,7 @@ The most significant difference between these approaches is how JavaScript's hoi
     
     J[Execution Phase] --> K[Function Declaration: Works]
     J --> L[Function Expression: Error/Undefined]</code></pre>
-</details>
+```
 
 ```javascript
 // Example 1: Calling a function declaration before it's defined

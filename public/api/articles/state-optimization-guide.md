@@ -54,9 +54,7 @@ Only updating the parts of state that actually changed prevents unnecessary re-r
 
 ![Graph diagram](/api/articles/dark/state-optimization-guide-0.svg)
 
-<details>
-  <summary>Show Mermaid Code</summary>
-  <pre><code class="language-mermaid">graph TD
+```mermaidgraph TD
     A["Data Structure Choice"] --> B["Arrays"]
     A --> C["Objects"]
     
@@ -75,7 +73,7 @@ Only updating the parts of state that actually changed prevents unnecessary re-r
     G --> K["Constant Performance"]
     H --> K
     I --> K</code></pre>
-</details>
+```
 
 ### The Array Approach (Less Efficient)
 

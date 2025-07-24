@@ -26,9 +26,7 @@ Computers store numbers using binary (base 2). Integers are straightforward, but
 
 ![Graph diagram](/api/articles/dark/floating-point-precision-0.svg)
 
-<details>
-  <summary>Show Mermaid Code</summary>
-  <pre><code class="language-mermaid">graph TD
+```mermaidgraph TD
     A[Decimal Number 0.1] --> B[Convert to Binary]
     B --> C[0.0001100110011...]
     C --> D[Infinite Binary Representation]
@@ -45,7 +43,7 @@ Computers store numbers using binary (base 2). Integers are straightforward, but
     L --> M
     M --> N[0.3000000000000000444...]
     N --> O[Display as 0.30000000000000004]</code></pre>
-</details>
+```
 
 Decimal fractions like 0.1, 0.2, and 0.3 do not have a finite binary representation, similar to how 1/3 does not have a finite decimal representation (it's 0.333...). When these numbers are stored in a computer's memory using a fixed number of bits (like 64-bit floating-point numbers, the standard), they must be rounded to the nearest representable binary fraction.
 
