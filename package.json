@@ -21,7 +21,8 @@
     "react-scripts": "5.0.1",
     "react-syntax-highlighter": "^15.6.1",
     "react-tooltip": "^4.2.21",
-    "remark-gfm": "^3.0.0"
+    "remark-gfm": "^3.0.0",
+    "sqlite3": "^5.1.7"
   },
   "overrides": {
     "@babel/core": "^7.16.0"
@@ -82,8 +83,7 @@
     "esm": "^3.2.25",
     "react-helmet-async": "^2.0.5",
     "react-snap": "^1.23.0",
-    "sitemap-generator-cli": "^7.5.0",
-    "sqlite3": "^5.1.7"
+    "sitemap-generator-cli": "^7.5.0"
   },
   "reactSnap": {
     "source": "dist",

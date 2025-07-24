@@ -55,9 +55,7 @@ The **Ethereum ABI (Application Binary Interface)** is a standardized way to int
 
 ![Graph diagram](/api/articles/dark/ethereum-abi-0.svg)
 
-<details>
-  <summary>Show Mermaid Code</summary>
-  <pre><code class="language-mermaid">graph TD
+```mermaidgraph TD
     A[Smart Contract] --> B[ABI Definition]
     B --> C[Function Signatures]
     B --> D[Event Definitions]
@@ -76,7 +74,7 @@ The **Ethereum ABI (Application Binary Interface)** is a standardized way to int
     H --> L[Automated Systems]
     I --> M[Developer Tools]
     J --> N[Contract Verification]</code></pre>
-</details>
+```
 
 ---
 
@@ -181,9 +179,7 @@ Every ABI consists of an array of objects, each describing a contract element:
 
 ![SequenceDiagram diagram](/api/articles/dark/ethereum-abi-1.svg)
 
-<details>
-  <summary>Show Mermaid Code</summary>
-  <pre><code class="language-mermaid">sequenceDiagram
+```mermaidsequenceDiagram
     participant App as dApp Frontend
     participant Lib as Web3 Library
     participant EVM as Ethereum Virtual Machine
@@ -198,7 +194,7 @@ Every ABI consists of an array of objects, each describing a contract element:
     EVM->>Lib: Receive encoded response
     Lib->>Lib: Decode response using ABI
     Lib->>App: Return typed result</code></pre>
-</details>
+```
 
 ### Step-by-Step Interaction Example
 

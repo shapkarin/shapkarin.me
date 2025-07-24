@@ -36,9 +36,7 @@ Node.js is renowned for its non-blocking, event-driven architecture, making it h
 
 ![Graph diagram](/api/articles/dark/cluster-0.svg)
 
-<details>
-  <summary>Show Mermaid Code</summary>
-  <pre><code class="language-mermaid">graph TD
+```mermaidgraph TD
     A[Multi-Core Server] --> B[CPU Core 1]
     A --> C[CPU Core 2 - Idle]
     A --> D[CPU Core 3 - Idle]
@@ -57,7 +55,7 @@ Node.js is renowned for its non-blocking, event-driven architecture, making it h
     N --> K
     N --> L
     N --> M</code></pre>
-</details>
+```
 
 ## Enter the `cluster` Module
 
