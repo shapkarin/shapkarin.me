@@ -1,0 +1,87 @@
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "CreativeWork",
+    "name": "React Compiler Mutability Analysis and Reactive Scopes Flow",
+    "image": [
+      "https://shapkarin.me/api/articles/drop-react-manual-memoization-0.svg",
+      "https://shapkarin.me/api/articles/drop-react-manual-memoization-1.svg"
+    ],
+    "description": "Technical diagrams showing React Compiler's mutability and aliasing model analysis process, from places and effects to reactive scopes, and the sequential flow of inference passes that enable automatic memoization.",
+    "hasPart": [
+      {
+        "@type": "WebPageElement",
+        "name": "Introduction",
+        "url": "#introduction"
+      },
+      {
+        "@type": "WebPageElement", 
+        "name": "Quick Summary",
+        "url": "#quick-summary"
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "Why does React need a mutation model?",
+        "url": "#why-does-react-need-a-mutation-model"
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "Building Blocks: Places, Effects & Ranges", 
+        "url": "#building-blocks-places-effects-ranges"
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "Effects Reference",
+        "url": "#effects-reference"
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "Key Inference Rules (Mental Model)",
+        "url": "#key-inference-rules-mental-model"
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "Writing Compiler-Friendly Code",
+        "url": "#writing-compiler-friendly-code"
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "Frequently Asked Questions",
+        "url": "#frequently-asked-questions"
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "Conclusion", 
+        "url": "#conclusion"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "ImageObject",
+    "name": "React Compiler Analysis Building Blocks Diagram",
+    "description": "Hierarchical diagram showing React Compiler's core analysis concepts: Places (variables and properties), Effects (create, mutate, alias, freeze), and Ranges (instruction scopes) leading to reactive scopes and memoization boundaries",
+    "contentUrl": "https://shapkarin.me/api/articles/drop-react-manual-memoization-0.svg",
+    "encodingFormat": "image/svg+xml",
+    "learningResourceType": "diagram",
+    "educationalUse": ["learning", "presentation"],
+    "about": {
+      "@type": "Thing",
+      "name": "React Compiler Mutability Analysis"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "ImageObject",
+    "name": "React Compiler Inference Passes Flow Diagram",
+    "description": "Sequential flowchart showing the three-stage process of React Compiler's mutability analysis: InferMutationAliasingEffects, InferMutationAliasingRanges, and InferReactiveScopeVariables leading to memoization blocks",
+    "contentUrl": "https://shapkarin.me/api/articles/drop-react-manual-memoization-1.svg",
+    "encodingFormat": "image/svg+xml",
+    "learningResourceType": "diagram",
+    "educationalUse": ["learning", "presentation"],
+    "about": {
+      "@type": "Thing",
+      "name": "React Compiler Processing Pipeline"
+    }
+  }
+]

@@ -1,0 +1,23 @@
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "CreativeWork",
+    "name": "Redux Saga Routine Stages Flow Diagram",
+    "image": "https://shapkarin.me/api/articles/extend-routines-0.svg",
+    "description": "Visual representation of Redux Saga routine lifecycle showing how a single routine prefix generates multiple action stages (TRIGGER, REQUEST, SUCCESS, FAILURE, FULFILL) for streamlined async operation management."
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "ImageObject",
+    "name": "Redux Routine Action Stages Flow Diagram",
+    "description": "Flowchart showing how a single routine prefix generates multiple Redux action types including TRIGGER, REQUEST, SUCCESS, FAILURE, and FULFILL stages for managing asynchronous operations",
+    "contentUrl": "https://shapkarin.me/api/articles/extend-routines-0.svg",
+    "encodingFormat": "image/svg+xml",
+    "learningResourceType": "diagram",
+    "educationalUse": ["learning", "presentation"],
+    "about": {
+      "@type": "Thing",
+      "name": "Redux Action Routine Lifecycle"
+    }
+  }
+]

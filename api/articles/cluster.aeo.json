@@ -304,6 +304,20 @@
   },
   {
     "@context": "https://schema.org",
+    "@type": "ImageObject",
+    "name": "Node.js Cluster Architecture Diagram",
+    "description": "Visual comparison showing single-core Node.js bottleneck versus multi-core cluster architecture with master process managing multiple worker processes across CPU cores",
+    "contentUrl": "https://shapkarin.me/api/articles/cluster-0.svg",
+    "encodingFormat": "image/svg+xml",
+    "learningResourceType": "diagram",
+    "educationalUse": ["learning", "presentation"],
+    "about": {
+      "@type": "Thing",
+      "name": "Node.js Multi-Core Processing Architecture"
+    }
+  },
+  {
+    "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": [
       {

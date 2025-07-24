@@ -1,7 +1,14 @@
 ---
-title: "WAGMI Library Tutorial: Complete Guide to Building dApps with WAGMI and VIEM in 2025"
-description: "Master WAGMI library for React dApp development. Learn WAGMI hooks, VIEM integration, multichain support, and best practices with practical examples. Complete WAGMI tutorial for beginners to advanced developers."
-keywords: "WAGMI, WAGMI library, WAGMI dApp, WAGMI VIEM, React Web3, Ethereum development, dApp tutorial, blockchain hooks, multichain dApp"
+title: >-
+  WAGMI Library Tutorial: Complete Guide to Building dApps with WAGMI and VIEM
+  in 2025
+description: >-
+  Master WAGMI library for React dApp development. Learn WAGMI hooks, VIEM
+  integration, multichain support, and best practices with practical examples.
+  Complete WAGMI tutorial for beginners to advanced developers.
+keywords: >-
+  WAGMI, WAGMI library, WAGMI dApp, WAGMI VIEM, React Web3, Ethereum
+  development, dApp tutorial, blockchain hooks, multichain dApp
 ---
 
 # WAGMI Library: Complete Guide to Building React dApps in 2025
@@ -68,6 +75,33 @@ keywords: "WAGMI, WAGMI library, WAGMI dApp, WAGMI VIEM, React Web3, Ethereum de
 - [React Hooks Documentation](https://react.dev/reference/react)
 
 ## WAGMI vs Traditional Web3 Libraries
+
+![Graph diagram](/api/articles/WAGMI-basics-0.svg)
+```mermaid
+graph TD
+    A[Web3 Development] --> B[Traditional Libraries]
+    A --> C[WAGMI Library]
+    
+    B --> D[Web3.js]
+    B --> E[Ethers.js]
+    B --> F[Manual State Management]
+    B --> G[Complex Setup]
+    
+    C --> H[React Hooks]
+    C --> I[Built-in Caching]
+    C --> J[TypeScript First]
+    C --> K[Multichain Support]
+    
+    D --> L[Large Bundle Size]
+    E --> M[Callback Hell]
+    F --> N[Boilerplate Code]
+    G --> O[Configuration Complexity]
+    
+    H --> P[Declarative API]
+    I --> Q[Automatic Updates]
+    J --> R[Type Safety]
+    K --> S[Chain Switching]
+```
 
 ### Developer Experience: WAGMI v1 vs v2
 

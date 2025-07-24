@@ -172,6 +172,20 @@
   },
   {
     "@context": "https://schema.org",
+    "@type": "ImageObject",
+    "name": "Floating-Point Binary Conversion and Precision Error Diagram",
+    "description": "Flowchart illustrating how decimal numbers 0.1 and 0.2 are converted to binary representation, rounded to fit 64-bit format, and how their addition results in precision errors leading to 0.30000000000000004",
+    "contentUrl": "https://shapkarin.me/api/articles/floating-point-precision-0.svg",
+    "encodingFormat": "image/svg+xml",
+    "learningResourceType": "diagram",
+    "educationalUse": ["learning", "presentation"],
+    "about": {
+      "@type": "Thing",
+      "name": "IEEE 754 Floating-Point Representation"
+    }
+  },
+  {
+    "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": [
       {
