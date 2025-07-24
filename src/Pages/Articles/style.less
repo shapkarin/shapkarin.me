@@ -11,6 +11,28 @@ html {
   border-radius: 10px;
 }
 
+.Article p:has(img) {
+  text-align: center;
+}
+
+.Article img {
+  max-width: 70%;
+  height: auto;
+}
+
+.Article {
+  overflow-x: hidden;
+
+  & table {
+    display: block;
+    overflow-x: scroll;
+    white-space: nowrap;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+  }
+}
+
 // TODO: adopt a more generic style for all pages
 .Page__Article {
   padding-bottom: @padding-default;
