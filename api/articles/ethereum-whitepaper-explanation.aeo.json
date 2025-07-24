@@ -65,6 +65,7 @@
     "author": {
       "@type": "Person",
       "name": "Iurii Shapkarin",
+      "alternateName": "Yury Shapkarin",
       "url": "https://shapkarin.me"
     },
     "datePublished": "2025-01-27",
@@ -76,6 +77,7 @@
     "publisher": {
       "@type": "Person",
       "name": "Iurii Shapkarin",
+      "alternateName": "Yury Shapkarin",
       "logo": {
         "@type": "ImageObject",
         "url": "https://shapkarin.me/logo.jpg"
