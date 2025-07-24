@@ -1,6 +1,9 @@
 ---
-title: "JavaScript Function Declarations vs Expressions Key Differences Explained"
-description: "Learn the critical differences between JavaScript function declarations and expressions, understand hoisting behavior, and discover when to use each approach for cleaner, more effective code."
+title: JavaScript Function Declarations vs Expressions Key Differences Explained
+description: >-
+  Learn the critical differences between JavaScript function declarations and
+  expressions, understand hoisting behavior, and discover when to use each
+  approach for cleaner, more effective code.
 order: 2
 ---
 
@@ -31,6 +34,24 @@ When working with JavaScript, you'll frequently create functions using one of tw
 ### 1. Hoisting Behavior
 
 The most significant difference between these approaches is how JavaScript's hoisting mechanism treats them:
+
+![Graph diagram](/api/articles/function-declaration-vs-expression-0.svg)
+```mermaid
+graph TD
+    A[JavaScript Code] --> B[Compilation Phase]
+    B --> C[Function Declarations]
+    B --> D[Variable Declarations]
+    
+    C --> E[Fully Hoisted]
+    E --> F[Available Before Definition]
+    
+    D --> G[Variable Name Hoisted]
+    G --> H[Assignment Stays in Place]
+    H --> I[Function Expression Not Available]
+    
+    J[Execution Phase] --> K[Function Declaration: Works]
+    J --> L[Function Expression: Error/Undefined]
+```
 
 ```javascript
 // Example 1: Calling a function declaration before it's defined
@@ -180,7 +201,6 @@ const greet = function(name) {
 
 console.log(greet("Alice")); // "Hello, Alice!"
 ```
-
 ### Arrow Function Expression (ES6+)
 
 ```javascript
@@ -252,3 +272,4 @@ Understanding the subtle differences between function declarations and expressio
 - **Function expressions** provide flexibility, especially for callbacks, closures, and method definitions
 
 By choosing the right approach for each situation, you'll write more maintainable, readable code that avoids common JavaScript pitfalls. 
+

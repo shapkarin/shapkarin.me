@@ -2,6 +2,8 @@
   {
     "@context": "https://schema.org",
     "@type": "TechArticle",
+    "learningResourceType": ["tutorial", "reading", "Comprehensive comparison guide"],
+    "educationalUse": ["learning", "teaching", "presentation"],
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https://shapkarin.me/articles/wagmi-ethers"
@@ -32,7 +34,6 @@
     "dateModified": "2024-12-31",
     "wordCount": "2450",
     "inLanguage": "en-US",
-    "learningResourceType": "Comprehensive comparison guide",
     "proficiencyLevel": ["Beginner", "Intermediate", "Advanced"],
     "keywords": "WAGMI vs Ethers.js, WAGMI Ethers.js comparison, Ethereum development libraries, web3 React hooks, WAGMI v2 breaking changes, blockchain JavaScript libraries, Ethereum web development, dApp development libraries, Viem WAGMI, TanStack Query WAGMI, React web3 development, multichain support, wallet integration, smart contract interaction, Ethereum provider management, web3 performance optimization, decentralized application development, blockchain frontend development, EVM compatible chains, cryptocurrency development tools, DeFi development libraries, NFT development tools, Web3 stack comparison, React blockchain hooks, Ethereum JavaScript SDK, crypto wallet connection, smart contract deployment, blockchain data fetching, web3 state management, Ethereum network switching, gas estimation libraries, transaction signing libraries, ENS integration, MetaMask integration, WalletConnect support, decentralized finance development, blockchain application architecture",
     "about": [

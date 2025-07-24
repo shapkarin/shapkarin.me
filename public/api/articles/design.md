@@ -1,6 +1,9 @@
 ---
-title: "Software Design Principles: A Practical Guide to Better Code"
-description: "Learn essential software design principles for building maintainable code. Discover practical approaches to software architecture, from small projects to enterprise systems, based on real-world experience."
+title: 'Software Design Principles: A Practical Guide to Better Code'
+description: >-
+  Learn essential software design principles for building maintainable code.
+  Discover practical approaches to software architecture, from small projects to
+  enterprise systems, based on real-world experience.
 order: 8
 ---
 
@@ -20,6 +23,24 @@ Software design might sound like a lofty concept, but at its heart, it's about m
 
 ### Start Simple Before Getting Fancy
 It's tempting to build a massive, "future-proof" architecture right out of the gate. Resist the urge. You'll rarely guess your future needs correctly, and over-engineering up front often leads to brittle, complicated code. A better strategy is to start with the simplest solution that works. Let the complexities come to you naturally as the product grows and evolves. When patterns or abstractions are really needed, they'll make themselves clear.
+
+![Graph diagram](/api/articles/design-0.svg)
+```mermaid
+graph TD
+    A[New Project] --> B{Approach?}
+    B -->|Over-Engineering| C[Complex Architecture]
+    B -->|Start Simple| D[Minimal Solution]
+    
+    C --> E[Hard to Change]
+    C --> F[Brittle Code]
+    C --> G[Wrong Assumptions]
+    
+    D --> H[Easy to Understand]
+    D --> I[Natural Evolution]
+    I --> J[Add Complexity When Needed]
+    J --> K[Clear Requirements]
+    K --> L[Right Abstractions]
+```
 
 ### Use SOLID as a Helpful Map, Not a Strict Rulebook
 You might've heard of the SOLID principles. They're common-sense guidelines for writing code that's maintainable and flexible over time:

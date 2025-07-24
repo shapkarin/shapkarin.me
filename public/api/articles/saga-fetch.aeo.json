@@ -1,0 +1,23 @@
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "CreativeWork",
+    "name": "Redux Saga Fetch Lifecycle Sequence Diagram",
+    "image": "https://shapkarin.me/api/articles/saga-fetch-0.svg",
+    "description": "Sequence diagram illustrating the complete Redux Saga fetch workflow from React component dispatch through saga processing, API calls, success/error handling, and state updates, showing the interaction between component, saga, API server, and Redux store."
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "ImageObject",
+    "name": "Redux Saga Fetch Workflow Sequence Diagram",
+    "description": "Detailed sequence diagram showing the complete Redux Saga fetch lifecycle including component dispatch, saga processing, API calls, success/error handling, and Redux store updates",
+    "contentUrl": "https://shapkarin.me/api/articles/saga-fetch-0.svg",
+    "encodingFormat": "image/svg+xml",
+    "learningResourceType": "diagram",
+    "educationalUse": ["learning", "presentation"],
+    "about": {
+      "@type": "Thing",
+      "name": "Redux Saga Asynchronous Flow"
+    }
+  }
+]

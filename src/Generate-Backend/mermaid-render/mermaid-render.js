@@ -3,11 +3,13 @@ const path = require('path');
 const { execSync } = require('child_process');
 const matter = require('gray-matter');
 const crypto = require('crypto');
+const sqlite3 = require('sqlite3').verbose();
 const mermaidConfig = require('./mermaid.config.js');
 
 /**
- * Simple Mermaid SVG Generator
+ * Simple Mermaid SVG Generator with SQLite Hash Cache
  * Processes markdown files and converts mermaid diagrams to SVG images
+ * Uses SQLite to cache diagram hashes and avoid regenerating unchanged content
  */
 class MermaidProcessor {
   constructor(config = {}) {
@@ -18,15 +20,139 @@ class MermaidProcessor {
     this.stats = {
       filesProcessed: 0,
       diagramsGenerated: 0,
+      diagramsSkipped: 0,
       errors: 0
     };
+
+    this.db = null;
+    this.dbPath = path.join(__dirname, 'mermaid-hashes.db');
   }
 
   /**
-   * Generate SVG from Mermaid code using stdin
+   * Initialize SQLite database for hash caching
+   */
+  async initDatabase() {
+    return new Promise((resolve, reject) => {
+      this.db = new sqlite3.Database(this.dbPath, (err) => {
+        if (err) {
+          reject(err);
+          return;
+        }
+        
+        if (this.config.verbose) {
+          console.log(`📊 Connected to SQLite database: ${this.dbPath}`);
+        }
+        
+        // Create table if it doesn't exist
+        this.db.run(`
+          CREATE TABLE IF NOT EXISTS mermaid_hashes (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            content_hash TEXT UNIQUE NOT NULL,
+            svg_path TEXT NOT NULL,
+            created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+            updated_at DATETIME DEFAULT CURRENT_TIMESTAMP
+          )
+        `, (err) => {
+          if (err) {
+            reject(err);
+          } else {
+            resolve();
+          }
+        });
+      });
+    });
+  }
+
+  /**
+   * Close database connection
+   */
+  async closeDatabase() {
+    if (this.db) {
+      return new Promise((resolve) => {
+        this.db.close((err) => {
+          if (err) {
+            console.error('Error closing database:', err);
+          }
+          resolve();
+        });
+      });
+    }
+  }
+
+  /**
+   * Check if SVG exists in cache and file system
+   */
+  async checkCachedSVG(contentHash) {
+    return new Promise((resolve, reject) => {
+      this.db.get(
+        'SELECT svg_path FROM mermaid_hashes WHERE content_hash = ?',
+        [contentHash],
+        async (err, row) => {
+          if (err) {
+            reject(err);
+            return;
+          }
+          
+          if (!row) {
+            resolve(null);
+            return;
+          }
+          
+          // Check if SVG file actually exists
+          try {
+            await fs.access(row.svg_path);
+            resolve(row.svg_path);
+          } catch {
+            // File doesn't exist, remove from cache
+            this.db.run('DELETE FROM mermaid_hashes WHERE content_hash = ?', [contentHash]);
+            resolve(null);
+          }
+        }
+      );
+    });
+  }
+
+  /**
+   * Store SVG path in cache
+   */
+  async storeCachedSVG(contentHash, svgPath) {
+    return new Promise((resolve, reject) => {
+      this.db.run(
+        `INSERT OR REPLACE INTO mermaid_hashes (content_hash, svg_path, updated_at) 
+         VALUES (?, ?, CURRENT_TIMESTAMP)`,
+        [contentHash, svgPath],
+        function(err) {
+          if (err) {
+            reject(err);
+          } else {
+            resolve(this.lastID);
+          }
+        }
+      );
+    });
+  }
+
+  /**
+   * Generate SVG from Mermaid code using stdin with hash-based caching
    */
   async generateSVG(mermaidCode, outputPath, theme = 'dark') {
     try {
+      // Generate content hash for caching (include output path to handle same content in different files)
+      const contentHash = crypto
+        .createHash('md5')
+        .update(mermaidCode.trim() + theme + outputPath)
+        .digest('hex');
+
+      // Check if we already have this SVG cached
+      const cachedPath = await this.checkCachedSVG(contentHash);
+      if (cachedPath && cachedPath === outputPath) {
+        this.stats.diagramsSkipped++;
+        if (this.config.verbose) {
+          console.log(`🔄 Using cached: ${path.basename(outputPath)} (${theme})`);
+        }
+        return outputPath;
+      }
+
       // Ensure output directory exists
       await fs.mkdir(path.dirname(outputPath), { recursive: true });
       
@@ -47,6 +173,9 @@ class MermaidProcessor {
       if (!content.includes('<svg')) {
         throw new Error('Generated SVG is invalid');
       }
+
+      // Store in cache
+      await this.storeCachedSVG(contentHash, outputPath);
       
       this.stats.diagramsGenerated++;
       if (this.config.verbose) {
@@ -92,23 +221,23 @@ class MermaidProcessor {
   }
 
   /**
-   * Check if file has already been processed by looking for SVG image references
+   * Check if file has unprocessed mermaid blocks
+   * Returns an object with information about processed/unprocessed blocks
    */
-  isFileAlreadyProcessed(markdownContent, filePath) {
-    const baseFilename = path.basename(filePath, '.md');
+  analyzeFileProcessingStatus(markdownContent, filePath) {
     
-    // Look for patterns like ![altText](*/baseFilename-N.svg)
-    const svgImageRegex = new RegExp(`!\\[[^\\]]*\\]\\([^)]*${baseFilename}-\\d+\\.svg[^)]*\\)`, 'g');
-    const svgMatches = markdownContent.match(svgImageRegex);
+    // Find all mermaid blocks
+    const mermaidRegex = /```mermaid\n([\s\S]*?)\n```/g;
+    const mermaidMatches = [...markdownContent.matchAll(mermaidRegex)];
     
-    if (svgMatches && svgMatches.length > 0) {
-      if (this.config.verbose) {
-        console.log(`⏭️  File already processed: ${path.basename(filePath)} (found ${svgMatches.length} SVG references)`);
-      }
-      return true;
-    }
+    const totalMermaidBlocks = mermaidMatches.length;
+    const hasUnprocessedBlocks = totalMermaidBlocks > 0;
     
-    return false;
+    return {
+      totalMermaidBlocks,
+      hasUnprocessedBlocks,
+      needsProcessing: hasUnprocessedBlocks // Always process if mermaid blocks exist
+    };
   }
 
   /**
@@ -123,14 +252,40 @@ class MermaidProcessor {
       const content = await fs.readFile(filePath, 'utf8');
       const { data: frontMatter, content: markdownContent } = matter(content);
       
-      // Check if file has already been processed
-      if (this.isFileAlreadyProcessed(markdownContent, filePath)) {
-        return 0; // Skip processing
+      // Analyze processing status
+      const status = this.analyzeFileProcessingStatus(markdownContent, filePath);
+      
+      if (!status.needsProcessing) {
+        if (this.config.verbose) {
+          console.log(`⏭️  No mermaid diagrams found in ${path.basename(filePath)}`);
+        }
+        return 0;
       }
       
-      // Find all mermaid blocks
+      // First, remove any existing SVG references that are followed by mermaid blocks
+      let processedContent = markdownContent;
+      
+      // Clean up any existing SVG + mermaid combinations
+      const cleanupRegex = /!\[[^\]]*\]\([^)]*\.svg[^)]*\)\s*```mermaid\n([\s\S]*?)\n```/g;
+      const cleanupMatches = [...markdownContent.matchAll(cleanupRegex)];
+      
+      if (this.config.verbose && cleanupMatches.length > 0) {
+        console.log(`🧹 Found ${cleanupMatches.length} SVG+mermaid combinations to clean up`);
+      }
+      
+      // Replace SVG + mermaid combinations with just the mermaid block temporarily
+      for (const [fullMatch, mermaidCode] of cleanupMatches) {
+        const mermaidBlock = `\`\`\`mermaid\n${mermaidCode}\n\`\`\``;
+        processedContent = processedContent.replace(fullMatch, mermaidBlock);
+        
+        if (this.config.verbose) {
+          console.log(`🧹 Cleaned up SVG+mermaid combination, restored pure mermaid block`);
+        }
+      }
+      
+      // Now find all remaining mermaid blocks
       const mermaidRegex = /```mermaid\n([\s\S]*?)\n```/g;
-      const matches = [...markdownContent.matchAll(mermaidRegex)];
+      const matches = [...processedContent.matchAll(mermaidRegex)];
       
       if (matches.length === 0) {
         if (this.config.verbose) {
@@ -139,8 +294,11 @@ class MermaidProcessor {
         return 0;
       }
       
-      let processedContent = markdownContent;
       const baseFilename = path.basename(filePath, '.md');
+      
+      if (this.config.verbose) {
+        console.log(`🔄 Processing ${matches.length} mermaid diagrams in ${path.basename(filePath)}`);
+      }
       
       // Process each mermaid diagram
       for (let i = 0; i < matches.length; i++) {
@@ -183,7 +341,7 @@ class MermaidProcessor {
           imageUrl = `${this.config.baseUrl}/${filename}.svg`;
         }
         
-        // Create replacement markdown
+        // Create replacement markdown - just the image, no mermaid block
         const altText = this.generateAltText(mermaidCode);
         let replacement = `![${altText}](${imageUrl})`;
         
@@ -191,11 +349,21 @@ class MermaidProcessor {
         if (this.config.includeSourceCode && this.config.sourceCodeStyle !== 'none') {
           if (this.config.sourceCodeStyle === 'inline') {
             replacement += `\n\`\`\`mermaid\n${mermaidCode.trim()}\n\`\`\``;
+          } else if (this.config.sourceCodeStyle === 'details') {
+            replacement += `\n\n<details>\n  <summary>Show Mermaid Code</summary>\n  <pre><code class="language-mermaid">${mermaidCode.trim()}</code></pre>\n</details>`;
           }
+        }
+        
+        if (this.config.verbose) {
+          console.log(`📝 Replacing mermaid block with: ${replacement}`);
         }
         
         // Replace in content
         processedContent = processedContent.replace(fullMatch, replacement);
+        
+        if (this.config.verbose) {
+          console.log(`🔄 Replacement completed for diagram ${i + 1}`);
+        }
       }
       
       // Write back if changed
@@ -205,7 +373,16 @@ class MermaidProcessor {
         this.stats.filesProcessed++;
         
         if (this.config.verbose) {
-          console.log(`✅ Updated: ${path.basename(filePath)} (${matches.length} diagrams)`);
+          console.log(`✅ Updated: ${path.basename(filePath)} (processed ${matches.length} diagrams)`);
+        }
+      } else {
+        if (this.config.verbose) {
+          console.log(`ℹ️  No changes needed for: ${path.basename(filePath)}`);
+          console.log(`📊 Original length: ${markdownContent.length}, Processed length: ${processedContent.length}`);
+          // Show a small snippet to debug content
+          const snippet = Math.min(50, markdownContent.length);
+          console.log(`📄 Original snippet: "${markdownContent.substring(0, snippet)}..."`);
+          console.log(`📄 Processed snippet: "${processedContent.substring(0, snippet)}..."`);
         }
       }
       
@@ -252,43 +429,55 @@ class MermaidProcessor {
   async processAllMarkdownFiles() {
     const startTime = Date.now();
     
-    console.log(`🚀 Starting Mermaid processor`);
+    console.log(`🚀 Starting Mermaid processor with SQLite caching`);
     console.log(`📂 Input: ${this.config.inputDir}`);
     console.log(`📂 Output: ${this.config.outputDir}`);
     console.log(`🎨 Theme: ${this.config.defaultTheme}${this.config.generateBothThemes ? ' (both themes)' : ''}`);
-    
-    const markdownFiles = await this.findMarkdownFiles();
-    
-    if (markdownFiles.length === 0) {
-      console.log('⚠️  No markdown files found');
-      return;
+    console.log(`📊 Database: ${this.dbPath}`);
+
+    try {
+      // Initialize database
+      await this.initDatabase();
+      
+      const markdownFiles = await this.findMarkdownFiles();
+      
+      if (markdownFiles.length === 0) {
+        console.log('⚠️  No markdown files found');
+        return;
+      }
+      
+      console.log(`📚 Found ${markdownFiles.length} markdown files:`);
+      markdownFiles.forEach(file => {
+        console.log(`  - ${path.relative(process.cwd(), file)}`);
+      });
+      
+      let totalDiagrams = 0;
+      
+      // Process each file
+      for (const file of markdownFiles) {
+        const diagramCount = await this.processMarkdownFile(file);
+        totalDiagrams += diagramCount;
+      }
+      
+      // Print summary
+      const duration = ((Date.now() - startTime) / 1000).toFixed(2);
+      
+      console.log('\n🎉 Processing Complete!');
+      console.log('═'.repeat(50));
+      console.log(`📁 Files processed: ${this.stats.filesProcessed}`);
+      console.log(`🎨 Diagrams generated: ${this.stats.diagramsGenerated}`);
+      console.log(`🔄 Diagrams skipped (cached): ${this.stats.diagramsSkipped}`);
+      console.log(`📊 Total diagrams found: ${totalDiagrams}`);
+      console.log(`❌ Errors: ${this.stats.errors}`);
+      console.log(`⏱️  Duration: ${duration}s`);
+      console.log(`📂 Output directory: ${this.config.outputDir}`);
+      console.log(`📊 Cache database: ${this.dbPath}`);
+      console.log('═'.repeat(50));
+
+    } finally {
+      // Always close database connection
+      await this.closeDatabase();
     }
-    
-    console.log(`📚 Found ${markdownFiles.length} markdown files:`);
-    markdownFiles.forEach(file => {
-      console.log(`  - ${path.relative(process.cwd(), file)}`);
-    });
-    
-    let totalDiagrams = 0;
-    
-    // Process each file
-    for (const file of markdownFiles) {
-      const diagramCount = await this.processMarkdownFile(file);
-      totalDiagrams += diagramCount;
-    }
-    
-    // Print summary
-    const duration = ((Date.now() - startTime) / 1000).toFixed(2);
-    
-    console.log('\n🎉 Processing Complete!');
-    console.log('═'.repeat(50));
-    console.log(`📁 Files processed: ${this.stats.filesProcessed}`);
-    console.log(`🎨 Diagrams generated: ${this.stats.diagramsGenerated}`);
-    console.log(`📊 Total diagrams found: ${totalDiagrams}`);
-    console.log(`❌ Errors: ${this.stats.errors}`);
-    console.log(`⏱️  Duration: ${duration}s`);
-    console.log(`📂 Output directory: ${this.config.outputDir}`);
-    console.log('═'.repeat(50));
   }
 }
 
@@ -306,8 +495,10 @@ async function main() {
     config.verbose = verbose;
   }
   
+  let processor;
+  
   try {
-    const processor = new MermaidProcessor(config);
+    processor = new MermaidProcessor(config);
     await processor.processAllMarkdownFiles();
     process.exit(0);
   } catch (error) {
@@ -315,6 +506,16 @@ async function main() {
     if (config.verbose) {
       console.error(error.stack);
     }
+    
+    // Ensure database is closed even on error
+    if (processor) {
+      try {
+        await processor.closeDatabase();
+      } catch (dbError) {
+        console.error('Error closing database:', dbError.message);
+      }
+    }
+    
     process.exit(1);
   }
 }
