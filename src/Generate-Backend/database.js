@@ -57,7 +57,7 @@ export const packages = {
         badges: []
       },
       'mermaid-render': {
-        title: 'Mermaid Render',
+        title: 'Mermaid Render (in dev)',
         url: 'https://github.com/shapkarin/mermaid-render',
         description: `
           Render mermaid diagrams as images and insert them into the markdown. Used in this website's articles.`.trim(),
