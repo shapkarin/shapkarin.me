@@ -1,7 +1,15 @@
 ---
-title: "Ethereum Whitepaper Explanation. What is Ethereum? Complete Beginner's Guide to Ethereum Explained Simply"
-description: "Learn what Ethereum is and how it works with our simple guide. Understand smart contracts, cryptocurrency, and how Ethereum is different from Bitcoin. Perfect for beginners."
-keywords: "Ethereum Whitepaper, Ethereum explained, Smart contracts guide, Vitalik Buterin, Ethereum vs Bitcoin, DeFi explained, Web3 blockchain, Ethereum Virtual Machine, dApps tutorial, cryptocurrency guide"
+title: >-
+  Ethereum Whitepaper Explanation. What is Ethereum? Complete Beginner's Guide
+  to Ethereum Explained Simply
+description: >-
+  Learn what Ethereum is and how it works with our simple guide. Understand
+  smart contracts, cryptocurrency, and how Ethereum is different from Bitcoin.
+  Perfect for beginners.
+keywords: >-
+  Ethereum Whitepaper, Ethereum explained, Smart contracts guide, Vitalik
+  Buterin, Ethereum vs Bitcoin, DeFi explained, Web3 blockchain, Ethereum
+  Virtual Machine, dApps tutorial, cryptocurrency guide
 ---
 
 # Ethereum Whitepaper Explanation: A Simple Guide to Understanding Ethereum's Revolutionary Vision
@@ -60,6 +68,7 @@ Before diving into Ethereum, the whitepaper explains Bitcoin as the starting poi
 **Bitcoin**: A simple state machine for transferring value
 **Ethereum**: A complete programming platform that can run any computation
 
+![Graph diagram](/api/articles/ethereum-whitepaper-explanation-0.svg)
 ```mermaid
 graph TD
     A[Blockchain Technology] --> B[Bitcoin]
@@ -75,13 +84,6 @@ graph TD
     C --> J[DeFi Protocols]
     C --> K[NFTs]
     C --> L[DAOs]
-    
-    style B fill:#f7931a
-    style C fill:#627eea
-    style D fill:#fff3e0
-    style G fill:#e8f5e8
-    style H fill:#e8f5e8
-    style I fill:#e8f5e8
 ```
 
 ### Ethereum's Revolutionary Features:
@@ -116,6 +118,7 @@ graph TD
 3. **Immutable**: Once deployed, contracts can't be changed easily
 4. **Transparent**: Everyone can see the code and verify it works
 
+![SequenceDiagram diagram](/api/articles/ethereum-whitepaper-explanation-1.svg)
 ```mermaid
 sequenceDiagram
     participant User as User

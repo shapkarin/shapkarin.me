@@ -1,0 +1,34 @@
+
+    .flowchart-link {
+      stroke-width: 3px !important;
+    }
+    .edge {
+      stroke-width: 3px !important;
+    }
+    .section {
+      stroke-width: 2px !important;
+    }
+    .node rect,
+    .node circle,
+    .node ellipse,
+    .node polygon {
+      stroke-width: 2px !important;
+    }
+    /* Sequence diagram arrows */
+    .messageLine0,
+    .messageLine1 {
+      stroke-width: 2.5px !important;
+    }
+    /* State diagram transitions */
+    .transition {
+      stroke-width: 2.5px !important;
+    }
+    /* Class diagram relations */
+    .relation {
+      stroke-width: 2.5px !important;
+    }
+    /* Gantt chart lines */
+    .grid .tick {
+      stroke-width: 1.5px !important;
+    }
+  

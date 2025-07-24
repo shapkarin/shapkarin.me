@@ -2,6 +2,8 @@
   {
     "@context": "https://schema.org",
     "@type": "TechArticle",
+    "learningResourceType": ["tutorial", "reading"],
+    "educationalUse": ["learning", "teaching", "presentation"],
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https://shapkarin.me/articles/structuredClone"
@@ -33,7 +35,6 @@
     "dateModified": "2025-01-28",
     "wordCount": "4100",
     "inLanguage": "en-US",
-    "learningResourceType": "Comprehensive technical guide",
     "proficiencyLevel": ["Beginner", "Intermediate", "Advanced"],
     "keywords": "structuredClone JavaScript, deep cloning JavaScript, shallow clone deep clone, JavaScript object cloning, copy JavaScript objects, JSON parse stringify alternative, structured clone algorithm, JavaScript deep copy, object copying methods, clone complex objects JavaScript, JavaScript cloning performance, circular references cloning, transferable objects JavaScript, ArrayBuffer cloning, Map Set cloning JavaScript, Date RegExp cloning, JavaScript memory management, object serialization JavaScript, deep clone vs shallow clone, JavaScript data structures cloning, browser API cloning, Web Workers data transfer, JavaScript copying best practices, clone JavaScript arrays, nested object cloning, JavaScript object manipulation, modern JavaScript features, ES2022 JavaScript features, JavaScript performance optimization, clone TypedArray JavaScript, JavaScript memory efficiency, object reference copying, JavaScript immutable data, state management cloning, React state cloning, Redux state cloning, JavaScript functional programming, clone JavaScript primitives, JavaScript object methods, browser compatibility cloning, Node.js cloning, JavaScript data persistence",
     "about": [
@@ -350,6 +351,34 @@
     "programmingLanguage": "JavaScript",
     "operatingSystem": "Cross-platform",
     "applicationCategory": "Educational"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "ImageObject",
+    "name": "JavaScript Object Cloning Types Comparison Diagram",
+    "description": "Hierarchical diagram comparing shallow copy versus deep copy in JavaScript, showing how references and nested objects are handled differently",
+    "contentUrl": "https://shapkarin.me/api/articles/structuredClone-0.svg",
+    "encodingFormat": "image/svg+xml",
+    "learningResourceType": "diagram",
+    "educationalUse": ["learning", "presentation"],
+    "about": {
+      "@type": "Thing",
+      "name": "JavaScript Object Cloning"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "ImageObject",
+    "name": "structuredClone Benefits and Features Flowchart",
+    "description": "Flowchart illustrating the key benefits and features of JavaScript's structuredClone() method including deep copying, circular reference handling, and performance advantages",
+    "contentUrl": "https://shapkarin.me/api/articles/structuredClone-1.svg",
+    "encodingFormat": "image/svg+xml",
+    "learningResourceType": "diagram",
+    "educationalUse": ["learning", "presentation"],
+    "about": {
+      "@type": "Thing",
+      "name": "JavaScript structuredClone Method"
+    }
   },
   {
     "@context": "https://schema.org",

@@ -1,0 +1,23 @@
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "CreativeWork",
+    "name": "JavaScript Function Hoisting Behavior Comparison Diagram",
+    "image": "https://shapkarin.me/api/articles/function-declaration-vs-expression-0.svg",
+    "description": "Compilation and execution phase diagram showing the difference between function declarations (fully hoisted) and function expressions (variable name hoisted, assignment stays in place), illustrating why timing of function calls matters."
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "ImageObject",
+    "name": "JavaScript Function Hoisting Comparison Diagram",
+    "description": "Diagram illustrating the difference between function declarations and function expressions during JavaScript's compilation and execution phases, showing how hoisting affects function availability",
+    "contentUrl": "https://shapkarin.me/api/articles/function-declaration-vs-expression-0.svg",
+    "encodingFormat": "image/svg+xml",
+    "learningResourceType": "diagram",
+    "educationalUse": ["learning", "presentation"],
+    "about": {
+      "@type": "Thing",
+      "name": "JavaScript Function Hoisting"
+    }
+  }
+]

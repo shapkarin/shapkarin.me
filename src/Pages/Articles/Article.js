@@ -4,7 +4,7 @@ import matter from 'gray-matter';
 import Markdown from 'react-markdown';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism';
-import rehypeRaw from 'rehype-raw'
+import remarkGfm from 'remark-gfm'
 
 import { fetchArticle, fetchAeoScript } from "@/API";
 import { useQuery } from "react-query";
@@ -88,7 +88,7 @@ const Article = () => {
         <Link relative="path" to="/articles" className="Article__GoBack">{'← All articles'}</Link>
         <div ref={articleRef}>
           <Markdown
-            rehypePlugins={[rehypeRaw]}
+            remarkPlugins={[remarkGfm]}
             components={{
               h1: HeadingMacro,
               h2: HeadingMacro,

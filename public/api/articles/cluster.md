@@ -1,6 +1,11 @@
 ---
-title: "Unlocking Node.js Performance: Harnessing Multi-Core Power with the cluster Module"
-description: "Learn how to effectively utilize all CPU cores in your Node.js applications using the built-in cluster module, improve performance and resilience, and understand when this approach is preferable to other scaling solutions."
+title: >-
+  Unlocking Node.js Performance: Harnessing Multi-Core Power with the cluster
+  Module
+description: >-
+  Learn how to effectively utilize all CPU cores in your Node.js applications
+  using the built-in cluster module, improve performance and resilience, and
+  understand when this approach is preferable to other scaling solutions.
 order: 6
 ---
 
@@ -29,6 +34,7 @@ This article dives into how you can leverage the `cluster` module to effortlessl
 
 Node.js is renowned for its non-blocking, event-driven architecture, making it highly efficient for I/O-bound operations. However, by default, a single Node.js process runs on a single CPU core. If you have a multi-core server, the other cores remain idle, and your application's performance is capped by the capacity of that one core. This is like having a multi-lane highway but forcing all traffic into a single lane.
 
+![Graph diagram](/api/articles/cluster-0.svg)
 ```mermaid
 graph TD
     A[Multi-Core Server] --> B[CPU Core 1]
@@ -49,14 +55,6 @@ graph TD
     N --> K
     N --> L
     N --> M
-    
-    style C fill:#ffcdd2
-    style D fill:#ffcdd2
-    style E fill:#ffcdd2
-    style J fill:#c8e6c9
-    style K fill:#c8e6c9
-    style L fill:#c8e6c9
-    style M fill:#c8e6c9
 ```
 
 ## Enter the `cluster` Module

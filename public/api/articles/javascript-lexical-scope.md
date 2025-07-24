@@ -1,6 +1,8 @@
 ---
-title: "Understanding JavaScript Lexical Scope: The Foundation of Modern JavaScript"
-description: "A comprehensive guide to JavaScript lexical scope, including closures, hoisting, and best practices for writing maintainable code."
+title: 'Understanding JavaScript Lexical Scope: The Foundation of Modern JavaScript'
+description: >-
+  A comprehensive guide to JavaScript lexical scope, including closures,
+  hoisting, and best practices for writing maintainable code.
 order: 3
 ---
 
@@ -40,6 +42,7 @@ Lexical scope is one of the most fundamental concepts in JavaScript that every d
 
 Lexical scope (also called static scope) refers to how variable access is determined based on the physical location of variables in the source code. In JavaScript, the scope of a variable is defined by its location within the code structure.
 
+![Graph diagram](/api/articles/javascript-lexical-scope-0.svg)
 ```mermaid
 graph TD
     A[Global Scope] --> B[Function Scope]
@@ -61,11 +64,6 @@ graph TD
     O --> P{Found in Global?}
     P -->|Yes| K
     P -->|No| Q[ReferenceError]
-    
-    style A fill:#e1f5fe
-    style B fill:#f3e5f5
-    style C fill:#e8f5e8
-    style D fill:#fff3e0
 ```
 
 The term "lexical" comes from the fact that scope is determined during the lexing phase of compilation, when the code is parsed and analyzed before execution.
@@ -227,6 +225,7 @@ Let's explore each variable declaration type in more detail:
 
 Closures are a direct result of lexical scoping. A closure is created when a function retains access to its lexical scope even when executed outside that scope.
 
+![SequenceDiagram diagram](/api/articles/javascript-lexical-scope-1.svg)
 ```mermaid
 sequenceDiagram
     participant Outer as Outer Function

@@ -13,28 +13,6 @@ Below is a (quite long!) tour of curious or surprising expressions in JavaScript
 
 ## 1. Addition and Subtraction with Arrays and Objects
 
-```mermaid
-graph TD
-    A[[] + {}] --> B[Type Coercion]
-    B --> C[[] → toString()]
-    B --> D[{} → toString()]
-    C --> E[""]
-    D --> F["[object Object]"]
-    E --> G[String Concatenation]
-    F --> G
-    G --> H["[object Object]"]
-    
-    I[{} + []] --> J[Block Statement?]
-    J --> K[{} as empty block]
-    J --> L[+[] as unary plus]
-    L --> M[[] → ""]
-    M --> N[+"" → 0]
-    
-    style H fill:#c8e6c9
-    style N fill:#c8e6c9
-    style J fill:#fff3e0
-```
-
 ```js
 [] + {} // "[object Object]"
 ```
