@@ -22,7 +22,7 @@ const config = {
   defaultTheme: 'dark',
   
   // Generate both light and dark versions?
-  generateBothThemes: false,
+  generateBothThemes: true,
   
   // === MARKDOWN GENERATION ===
   // Include original Mermaid source code in the generated markdown?

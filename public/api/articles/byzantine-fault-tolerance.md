@@ -97,7 +97,7 @@ In blockchain networks, BFT is crucial because:
 - **Immutability**: Once recorded, blockchain data cannot be easily changed
 
 
-![BFT network with 7 nodes showing security threshold](/api/articles/byzantine-fault-tolerance-0.svg)
+![Diagram diagram](/api/articles/dark/byzantine-fault-tolerance-0.svg)
 ```mermaid
 %%{init: {'theme':'base', 'themeVariables': {'primaryColor':'#ffffff', 'fontSize':'16px'}}}%%
 flowchart TD
@@ -179,7 +179,7 @@ Imagine several Byzantine army divisions surrounding an enemy city. Each divisio
 
 The challenge: Some generals might be **traitors** who send different messages to different allies.
 
-![Byzantine Generals Problem communication sequence](/api/articles/byzantine-fault-tolerance-1.svg)
+![Diagram diagram](/api/articles/dark/byzantine-fault-tolerance-1.svg)
 ```mermaid
 %%{init: {'theme':'base', 'themeVariables': {'primaryColor':'#ffffff', 'fontSize':'16px'}}}%%
 sequenceDiagram
@@ -248,7 +248,7 @@ Understanding the difference between Byzantine and non-Byzantine fault tolerance
 
 When Satoshi Nakamoto created Bitcoin in 2008, he achieved a major breakthrough by introducing **Proof-of-Work (PoW) as a probabilistic solution to the Byzantine Generals Problem**. This innovation allowed for the first time to achieve consensus in a completely decentralized network without requiring participants to know or trust each other.
 
-![Traditional BFT vs Bitcoin's PoW solution comparison](/api/articles/byzantine-fault-tolerance-2.svg)
+![Diagram diagram](/api/articles/dark/byzantine-fault-tolerance-2.svg)
 ```mermaid
 %%{init: {'theme':'base', 'themeVariables': {'primaryColor':'#ffffff', 'fontSize':'16px'}}}%%
 flowchart TD
@@ -294,7 +294,7 @@ Unlike traditional BFT algorithms that require known participants and complex me
 
 Traditional BFT systems rely on **message passing** between known participants. Bitcoin replaces this with **computational work** that can be verified by anyone:
 
-![Bitcoin mining process and consensus rules](/api/articles/byzantine-fault-tolerance-3.svg)
+![Diagram diagram](/api/articles/dark/byzantine-fault-tolerance-3.svg)
 ```mermaid
 %%{init: {'theme':'base', 'themeVariables': {'primaryColor':'#ffffff', 'fontSize':'16px'}}}%%
 flowchart LR
@@ -353,7 +353,7 @@ Bitcoin's security is rooted in economic game theory. The cost of attacking the 
 - **Opportunity cost**: Forgo legitimate mining profits
 - **Market damage**: Attack destroys Bitcoin's value (and attacker's investment)
 
-![Honest mining vs attack economics comparison](/api/articles/byzantine-fault-tolerance-4.svg)
+![Diagram diagram](/api/articles/dark/byzantine-fault-tolerance-4.svg)
 ```mermaid
 %%{init: {'theme':'base', 'themeVariables': {'primaryColor':'#ffffff', 'fontSize':'16px'}}}%%
 graph TD
@@ -402,7 +402,7 @@ graph TD
 
 Bitcoin's elegant solution to conflicting histories: **always follow the chain with the most accumulated proof-of-work**:
 
-![Blockchain fork scenario and longest chain selection](/api/articles/byzantine-fault-tolerance-5.svg)
+![Diagram diagram](/api/articles/dark/byzantine-fault-tolerance-5.svg)
 ```mermaid
 %%{init: {'theme':'base', 'themeVariables': {'primaryColor':'#ffffff', 'fontSize':'16px'}}}%%
 flowchart TD
@@ -460,7 +460,7 @@ Bitcoin's Proof-of-Work mechanism elegantly handles the classic Byzantine failur
 
 The most common Byzantine attack in digital currencies - attempting to spend the same coins twice:
 
-![Double spending prevention sequence diagram](/api/articles/byzantine-fault-tolerance-6.svg)
+![Diagram diagram](/api/articles/dark/byzantine-fault-tolerance-6.svg)
 ```mermaid
 %%{init: {'theme':'base', 'themeVariables': {'primaryColor':'#ffffff', 'fontSize':'16px'}}}%%
 sequenceDiagram
@@ -511,7 +511,7 @@ sequenceDiagram
 
 When less than 50% of miners attempt to rewrite history:
 
-![Minority attack resistance with hash distribution](/api/articles/byzantine-fault-tolerance-7.svg)
+![Diagram diagram](/api/articles/dark/byzantine-fault-tolerance-7.svg)
 ```mermaid
 %%{init: {'theme':'base', 'themeVariables': {'primaryColor':'#ffffff', 'fontSize':'16px'}}}%%
 graph TD
@@ -556,7 +556,7 @@ graph TD
 
 When the Bitcoin network splits due to connectivity issues:
 
-![Network partition handling and automatic recovery](/api/articles/byzantine-fault-tolerance-8.svg)
+![Diagram diagram](/api/articles/dark/byzantine-fault-tolerance-8.svg)
 ```mermaid
 %%{init: {'theme':'base', 'themeVariables': {'primaryColor':'#ffffff', 'fontSize':'16px'}}}%%
 flowchart TD
@@ -613,7 +613,7 @@ flowchart TD
 
 Bitcoin's security model breaks down when attackers control **more than 50% of network hashrate**. This represents Bitcoin's Byzantine threshold:
 
-![51% attack scenario with capabilities and limitations](/api/articles/byzantine-fault-tolerance-9.svg)
+![Diagram diagram](/api/articles/dark/byzantine-fault-tolerance-9.svg)
 ```mermaid
 %%{init: {'theme':'base', 'themeVariables': {'primaryColor':'#ffffff', 'fontSize':'16px'}}}%%
 flowchart TD
@@ -674,7 +674,7 @@ flowchart TD
 
 The economic reality makes 51% attacks practically impossible:
 
-![Attack economics analysis with required resources](/api/articles/byzantine-fault-tolerance-10.svg)
+![Diagram diagram](/api/articles/dark/byzantine-fault-tolerance-10.svg)
 ```mermaid
 %%{init: {'theme':'base', 'themeVariables': {'primaryColor':'#ffffff', 'fontSize':'16px'}}}%%
 graph LR
@@ -718,7 +718,7 @@ graph LR
 
 Unlike traditional BFT systems with immediate finality, Bitcoin provides **probabilistic finality** that increases exponentially with confirmations:
 
-![Bitcoin probabilistic finality confirmation levels](/api/articles/byzantine-fault-tolerance-11.svg)
+![Diagram diagram](/api/articles/dark/byzantine-fault-tolerance-11.svg)
 ```mermaid
 %%{init: {'theme':'base', 'themeVariables': {'primaryColor':'#ffffff', 'fontSize':'16px'}}}%%
 graph TD
@@ -791,7 +791,7 @@ Where:
 
 Bitcoin's solution to Byzantine Fault Tolerance represents a fundamental paradigm shift in distributed consensus:
 
-![Bitcoin complete BFT architecture layers](/api/articles/byzantine-fault-tolerance-12.svg)
+![Diagram diagram](/api/articles/dark/byzantine-fault-tolerance-12.svg)
 ```mermaid
 %%{init: {'theme':'base', 'themeVariables': {'primaryColor':'#ffffff', 'fontSize':'16px'}}}%%
 graph TB
@@ -911,7 +911,7 @@ This innovation transformed Byzantine Fault Tolerance from a theoretical compute
 
 BFT algorithms in blockchain networks typically follow a **multi-phase consensus process** where nodes communicate to agree on the next block or state transition.
 
-![BFT multi-phase consensus process flowchart](/api/articles/byzantine-fault-tolerance-13.svg)
+![Diagram diagram](/api/articles/dark/byzantine-fault-tolerance-13.svg)
 ```mermaid
 %%{init: {'theme':'base', 'themeVariables': {'primaryColor':'#ffffff', 'fontSize':'16px'}}}%%
 flowchart TD
@@ -978,7 +978,7 @@ flowchart TD
 - Collect `2f + 1` commit messages
 - Execute the request and respond
 
-![pBFT algorithm phases sequence diagram](/api/articles/byzantine-fault-tolerance-14.svg)
+![Diagram diagram](/api/articles/dark/byzantine-fault-tolerance-14.svg)
 ```mermaid
 %%{init: {'theme':'base', 'themeVariables': {'primaryColor':'#ffffff', 'fontSize':'16px'}}}%%
 sequenceDiagram
@@ -1039,7 +1039,7 @@ Ethereum's transition from Proof of Work to Proof of Stake introduced sophistica
 
 **Casper FFG** provides **economic finality** to Ethereum blocks through a BFT-inspired voting mechanism:
 
-![Ethereum Beacon Chain and Casper FFG process](/api/articles/byzantine-fault-tolerance-15.svg)
+![Diagram diagram](/api/articles/dark/byzantine-fault-tolerance-15.svg)
 ```mermaid
 %%{init: {'theme':'base', 'themeVariables': {'primaryColor':'#ffffff', 'fontSize':'16px'}}}%%
 graph TD
@@ -1088,7 +1088,7 @@ graph TD
 
 **Gasper** combines the **Latest Message Driven Greedy Heaviest Observed SubTree (LMD-GHOST)** fork choice rule with Casper FFG finality:
 
-![Gasper LMD-GHOST fork choice mechanism](/api/articles/byzantine-fault-tolerance-16.svg)
+![Diagram diagram](/api/articles/dark/byzantine-fault-tolerance-16.svg)
 ```mermaid
 %%{init: {'theme':'base', 'themeVariables': {'primaryColor':'#ffffff', 'fontSize':'16px'}}}%%
 flowchart TD
@@ -1153,7 +1153,7 @@ BSC implements **Proof of Staked Authority (PoSA)** with BFT characteristics:
 
 Avalanche uses the **Snowman consensus protocol** with unique BFT properties:
 
-![Avalanche Snowman consensus sampling process](/api/articles/byzantine-fault-tolerance-17.svg)
+![Diagram diagram](/api/articles/dark/byzantine-fault-tolerance-17.svg)
 ```mermaid
 %%{init: {'theme':'base', 'themeVariables': {'primaryColor':'#ffffff', 'fontSize':'16px'}}}%%
 graph LR
@@ -1230,7 +1230,7 @@ Understanding various attack vectors helps in designing robust BFT systems and e
 - Economic stake at risk for malicious behavior
 - Clear incentive structure for honest participation
 
-![Nothing-at-stake attack prevention with slashing](/api/articles/byzantine-fault-tolerance-18.svg)
+![Diagram diagram](/api/articles/dark/byzantine-fault-tolerance-18.svg)
 ```mermaid
 %%{init: {'theme':'base', 'themeVariables': {'primaryColor':'#ffffff', 'fontSize':'16px'}}}%%
 sequenceDiagram
@@ -1303,7 +1303,7 @@ BFT algorithms face inherent performance limitations due to their security requi
 
 ### Throughput Limitations
 
-![BFT performance factors and scalability solutions](/api/articles/byzantine-fault-tolerance-19.svg)
+![Diagram diagram](/api/articles/dark/byzantine-fault-tolerance-19.svg)
 ```mermaid
 %%{init: {'theme':'base', 'themeVariables': {'primaryColor':'#ffffff', 'fontSize':'16px'}}}%%
 graph TD
@@ -1372,7 +1372,7 @@ Comprehensive security analysis reveals both strengths and potential vulnerabili
 
 The economic security of BFT systems depends on the cost of mounting attacks:
 
-![Attack cost distribution pie chart](/api/articles/byzantine-fault-tolerance-20.svg)
+![Diagram: Attack Cost Distribution (Larger View)](/api/articles/dark/byzantine-fault-tolerance-20.svg)
 ```mermaid
 %%{init: {'theme':'base', 'themeVariables': {'primaryColor':'#ffffff', 'fontSize':'18px', 'pie1':'#4285f4', 'pie2':'#34a853', 'pie3':'#fbbc04', 'pie4':'#ea4335'}}}%%
 pie title Attack Cost Distribution (Larger View)
@@ -1393,7 +1393,7 @@ pie title Attack Cost Distribution (Larger View)
 
 #### Coordinated Attack with Multiple Vectors
 
-![Coordinated attack with multiple vectors](/api/articles/byzantine-fault-tolerance-21.svg)
+![Diagram diagram](/api/articles/dark/byzantine-fault-tolerance-21.svg)
 ```mermaid
 %%{init: {'theme':'base', 'themeVariables': {'primaryColor':'#ffffff', 'fontSize':'16px'}}}%%
 flowchart TD
@@ -1459,7 +1459,7 @@ The evolution of BFT algorithms continues to address scalability, security, and 
 
 ### Research Directions
 
-![BFT research directions mindmap](/api/articles/byzantine-fault-tolerance-22.svg)
+![Diagram diagram](/api/articles/dark/byzantine-fault-tolerance-22.svg)
 ```mermaid
 %%{init: {'theme':'base', 'themeVariables': {'primaryColor':'#ffffff', 'fontSize':'16px'}}}%%
 mindmap
@@ -1526,7 +1526,7 @@ Implementing robust BFT systems requires careful attention to design, security, 
 
 ### Security Best Practices
 
-![Security best practices implementation phases](/api/articles/byzantine-fault-tolerance-23.svg)
+![Diagram diagram](/api/articles/dark/byzantine-fault-tolerance-23.svg)
 ```mermaid
 %%{init: {'theme':'base', 'themeVariables': {'primaryColor':'#ffffff', 'fontSize':'16px'}}}%%
 flowchart LR
