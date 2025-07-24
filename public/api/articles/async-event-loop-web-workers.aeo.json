@@ -17,11 +17,13 @@
     "author": {
       "@type": "Person",
       "name": "Iurii Shapkarin",
+      "alternateName": "Yury Shapkarin",
       "url": "https://shapkarin.me"
     },
     "publisher": {
       "@type": "Person",
       "name": "Iurii Shapkarin",
+      "alternateName": "Yury Shapkarin",
       "logo": {
         "@type": "ImageObject",
         "url": "https://shapkarin.me/logo.jpg",
@@ -337,6 +339,7 @@
     "encodingFormat": "image/svg+xml",
     "learningResourceType": "diagram",
     "educationalUse": ["learning", "presentation"],
+    "educationalLevel": ["primary", "secondary"],
     "about": {
       "@type": "Thing",
       "name": "JavaScript Event Loop Architecture"
@@ -351,6 +354,7 @@
     "encodingFormat": "image/svg+xml",
     "learningResourceType": "diagram",
     "educationalUse": ["learning", "presentation"],
+    "educationalLevel": ["primary", "secondary"],
     "about": {
       "@type": "Thing",
       "name": "Web Worker Thread Communication"
