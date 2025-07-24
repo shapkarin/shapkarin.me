@@ -21,6 +21,31 @@ Software design might sound like a lofty concept, but at its heart, it's about m
 ### Start Simple Before Getting Fancy
 It's tempting to build a massive, "future-proof" architecture right out of the gate. Resist the urge. You'll rarely guess your future needs correctly, and over-engineering up front often leads to brittle, complicated code. A better strategy is to start with the simplest solution that works. Let the complexities come to you naturally as the product grows and evolves. When patterns or abstractions are really needed, they'll make themselves clear.
 
+```mermaid
+graph TD
+    A[New Project] --> B{Approach?}
+    B -->|Over-Engineering| C[Complex Architecture]
+    B -->|Start Simple| D[Minimal Solution]
+    
+    C --> E[Hard to Change]
+    C --> F[Brittle Code]
+    C --> G[Wrong Assumptions]
+    
+    D --> H[Easy to Understand]
+    D --> I[Natural Evolution]
+    I --> J[Add Complexity When Needed]
+    J --> K[Clear Requirements]
+    K --> L[Right Abstractions]
+    
+    style C fill:#ffcdd2
+    style E fill:#ffcdd2
+    style F fill:#ffcdd2
+    style G fill:#ffcdd2
+    style D fill:#c8e6c9
+    style H fill:#c8e6c9
+    style L fill:#c8e6c9
+```
+
 ### Use SOLID as a Helpful Map, Not a Strict Rulebook
 You might've heard of the SOLID principles. They're common-sense guidelines for writing code that's maintainable and flexible over time:
 

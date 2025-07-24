@@ -24,6 +24,36 @@ In JavaScript, copying objects is a common task, but it's not always straightfor
 
 When you copy an object in JavaScript, you might be creating either a shallow copy or a deep copy.
 
+```mermaid
+graph TD
+    A[Original Object] --> B[name: 'Alice']
+    A --> C[details: Object Reference]
+    C --> D[age: 30]
+    
+    E[Shallow Copy] --> F[name: 'Alice']
+    E --> G[details: Same Reference]
+    G --> D
+    
+    H[Deep Copy] --> I[name: 'Alice']
+    H --> J[details: New Object]
+    J --> K[age: 30]
+    
+    L[Modify Shallow Copy] --> M[details.age = 31]
+    M --> D
+    M --> N[Original Also Changed!]
+    
+    O[Modify Deep Copy] --> P[details.age = 31]
+    P --> K
+    Q[Original Unchanged] --> D
+    
+    style G fill:#ffcdd2
+    style M fill:#ffcdd2
+    style N fill:#ffcdd2
+    style J fill:#c8e6c9
+    style K fill:#c8e6c9
+    style Q fill:#c8e6c9
+```
+
 *   **Shallow Copy:** Only the top-level properties of an object are copied. If a property holds a reference to another object (like an array or another object), the copy will point to the *same* referenced object. Modifying the nested object in the copy will also affect the original, and vice-versa.
 
     ```javascript
@@ -152,6 +182,31 @@ try {
 ```
 
 ### Key Benefits of `structuredClone()`:
+
+```mermaid
+flowchart LR
+    A[structuredClone] --> B[Handles Complex Types]
+    A --> C[Preserves Circular References]
+    A --> D[Better Performance]
+    A --> E[Native Browser Support]
+    
+    B --> F[Date Objects]
+    B --> G[RegExp]
+    B --> H[Map & Set]
+    B --> I[TypedArrays]
+    B --> J[ArrayBuffer]
+    
+    C --> K[No Stack Overflow]
+    C --> L[Maintains Relationships]
+    
+    D --> M[Optimized Algorithm]
+    D --> N[No JSON Conversion]
+    
+    style A fill:#e1f5fe
+    style B fill:#f3e5f5
+    style C fill:#e8f5e8
+    style D fill:#fff3e0
+```
 
 *   **Handles Complex Types:** It can clone a wide variety of JavaScript types beyond what `JSON.parse(JSON.stringify())` supports, including:
     *   `ArrayBuffer`

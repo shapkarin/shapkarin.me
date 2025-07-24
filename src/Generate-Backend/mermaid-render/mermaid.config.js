@@ -13,7 +13,7 @@ const config = {
   // === OUTPUT CONFIGURATION ===
   // Where to save generated SVG files
   outputDir: './public/api/articles',
-  
+
   // Base URL for images in markdown (how they'll appear in ![alt](url))
   baseUrl: '/api/articles',
   

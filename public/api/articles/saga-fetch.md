@@ -52,6 +52,34 @@ Imagine you have some actions: `searchPagesStart`, `searchPagesSuccess`, `search
 const searchPages = ({ payload: { title } }) => fetch(`/search/pages?title=${title}`);
 ```
 
+```mermaid
+sequenceDiagram
+    participant Component as React Component
+    participant Saga as Redux Saga
+    participant API as API Server
+    participant Store as Redux Store
+    
+    Component->>Store: dispatch(SEARCH_PAGE)
+    Store->>Saga: Action received
+    Saga->>Store: dispatch(searchPagesStart)
+    Note over Store: loading: true
+    Saga->>API: fetch(/search/pages)
+    
+    alt Success
+        API->>Saga: Response data
+        Saga->>Store: dispatch(searchPagesSuccess)
+        Note over Store: data updated
+    else Error
+        API->>Saga: Error
+        Saga->>Store: dispatch(searchPagesError)
+        Note over Store: error state
+    end
+    
+    Saga->>Store: dispatch(searchPagesFulfill)
+    Note over Store: loading: false
+    Store->>Component: State updated
+```
+
 Your saga worker could then be:
 
 ```js

@@ -1,6 +1,8 @@
 ---
-title: "Drop React Manual Memoization | The Mutability & Aliasing Model in React"
-description: "Deep dive into the new mutability & aliasing model powering React Compiler (June 2025) and how it eliminates most manual memoization."
+title: Drop React Manual Memoization | The Mutability & Aliasing Model in React
+description: >-
+  Deep dive into the new mutability & aliasing model powering React Compiler
+  (June 2025) and how it eliminates most manual memoization.
 order: 3
 ---
 
@@ -60,12 +62,37 @@ React's analysis operates on three core concepts:
 2. **Effect** – a record describing what a single instruction does (create, alias, mutate…).
 3. **Range** – a pair of instruction IDs `[start, end]` over which a value may mutate.
 
+```mermaid
+graph TD
+    A[React Compiler Analysis] --> B[Places]
+    A --> C[Effects]
+    A --> D[Ranges]
+    
+    B --> E[Variables: a, b, c]
+    B --> F[Properties: obj.x, arr[0]]
+    
+    C --> G[Create: const obj = {}]
+    C --> H[Mutate: obj.x = 1]
+    C --> I[Alias: b = a]
+    C --> J[Freeze: props, hooks]
+    
+    D --> K[Instruction IDs: [1, 5]]
+    D --> L[Mutation Scope]
+    
+    L --> M[Reactive Scopes]
+    M --> N[Memoization Boundaries]
+    
+    style M fill:#c8e6c9
+    style N fill:#c8e6c9
+```
+
 The passes that produce these artefacts run in the following order:
 
 1. `InferMutationAliasingEffects` – emit a *set of effects* for each instruction.
 2. `InferMutationAliasingRanges` – collapse effects into per-value *mutable ranges*.
 3. `InferReactiveScopeVariables` – group Places that mutate together into *reactive scopes* (future memoization boundaries).
 
+![Flowchart diagram](/api/articles/drop-react-manual-memoization-0.svg)
 ```mermaid
 flowchart TD
     subgraph Passes

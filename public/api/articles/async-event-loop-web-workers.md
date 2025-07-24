@@ -150,6 +150,31 @@ Notice how "End" is logged before "Data fetched..." because `processData` is asy
 
 The Event Loop is the heart of JavaScript's concurrency model. It's a mechanism that allows JavaScript to perform non-blocking operations, despite being single-threaded, by offloading operations to the browser's APIs and processing results in a specific order.
 
+```mermaid
+graph TD
+    A[JavaScript Code] --> B[Call Stack]
+    B --> C{Synchronous?}
+    C -->|Yes| D[Execute Immediately]
+    C -->|No| E[Web APIs]
+    E --> F[Task Queue]
+    E --> G[Microtask Queue]
+    H[Event Loop] --> I{Call Stack Empty?}
+    I -->|No| H
+    I -->|Yes| J{Microtasks Available?}
+    J -->|Yes| K[Execute All Microtasks]
+    K --> H
+    J -->|No| L{Tasks Available?}
+    L -->|Yes| M[Execute One Task]
+    M --> H
+    L -->|No| H
+    D --> B
+    
+    style B fill:#e1f5fe
+    style E fill:#f3e5f5
+    style F fill:#fff3e0
+    style G fill:#e8f5e8
+```
+
 ### Components of the Event Loop
 
 Understanding the event loop requires knowing its key components:
@@ -240,6 +265,26 @@ This is where **Web Workers** come in.
 ## Web Workers: True Parallelism in the Browser
 
 Web Workers provide a way to run JavaScript in background threads, separate from the main execution thread that handles the UI. This allows you to perform computationally intensive tasks without freezing the user interface.
+
+```mermaid
+sequenceDiagram
+    participant Main as Main Thread
+    participant Worker as Web Worker
+    participant UI as User Interface
+    
+    Main->>Worker: postMessage(data)
+    Note over Main: Main thread continues
+    Main->>UI: Update UI (non-blocking)
+    
+    Note over Worker: Heavy computation
+    Worker->>Worker: Process data
+    Worker->>Worker: Complex calculations
+    
+    Worker->>Main: postMessage(result)
+    Main->>UI: Update with results
+    
+    Note over Main,UI: UI remains responsive throughout
+```
 
 ### Key Characteristics of Web Workers
 

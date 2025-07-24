@@ -29,6 +29,36 @@ This article dives into how you can leverage the `cluster` module to effortlessl
 
 Node.js is renowned for its non-blocking, event-driven architecture, making it highly efficient for I/O-bound operations. However, by default, a single Node.js process runs on a single CPU core. If you have a multi-core server, the other cores remain idle, and your application's performance is capped by the capacity of that one core. This is like having a multi-lane highway but forcing all traffic into a single lane.
 
+```mermaid
+graph TD
+    A[Multi-Core Server] --> B[CPU Core 1]
+    A --> C[CPU Core 2 - Idle]
+    A --> D[CPU Core 3 - Idle]
+    A --> E[CPU Core 4 - Idle]
+    
+    F[Node.js Process] --> B
+    G[All Requests] --> F
+    
+    H[With Cluster Module] --> I[Master Process]
+    I --> J[Worker 1 - Core 1]
+    I --> K[Worker 2 - Core 2]
+    I --> L[Worker 3 - Core 3]
+    I --> M[Worker 4 - Core 4]
+    
+    N[Load Balancer] --> J
+    N --> K
+    N --> L
+    N --> M
+    
+    style C fill:#ffcdd2
+    style D fill:#ffcdd2
+    style E fill:#ffcdd2
+    style J fill:#c8e6c9
+    style K fill:#c8e6c9
+    style L fill:#c8e6c9
+    style M fill:#c8e6c9
+```
+
 ## Enter the `cluster` Module
 
 The `cluster` module is a native part of Node.js that allows you to create child processes (workers) that can all share server ports. This enables true multi-process parallelism, allowing your application to utilize multiple CPU cores effectively.
