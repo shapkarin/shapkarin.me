@@ -5,9 +5,9 @@
     "filename": "contributions-to-major-web-dev-repos.md"
   },
   {
-    "slug": "higher-order-functions-and-currying",
-    "title": "Higher Order Functions And Currying",
-    "filename": "higher-order-functions-and-currying.md"
+    "slug": "hoc-and-currying",
+    "title": "Hoc And Currying",
+    "filename": "hoc-and-currying.md"
   },
   {
     "slug": "floating-point-precision",
@@ -98,6 +98,11 @@
     "slug": "async-event-loop-web-workers",
     "title": "Async Event Loop Web Workers",
     "filename": "async-event-loop-web-workers.md"
+  },
+  {
+    "slug": "ethereum-abi",
+    "title": "Ethereum Abi",
+    "filename": "ethereum-abi.md"
   },
   {
     "slug": "ethereum-whitepaper-explanation",

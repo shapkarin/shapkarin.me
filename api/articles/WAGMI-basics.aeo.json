@@ -729,7 +729,7 @@
       {
         "@type": "WebPage",
         "name": "Higher-Order Functions and Currying",
-        "url": "https://shapkarin.me/articles/higher-order-functions-and-currying",
+        "url": "https://shapkarin.me/articles/hoc-and-currying",
         "description": "Advanced JavaScript patterns useful for Web3 development and smart contract interactions"
       }
     ]
