@@ -62,26 +62,42 @@ React's analysis operates on three core concepts:
 2. **Effect** – a record describing what a single instruction does (create, alias, mutate…).
 3. **Range** – a pair of instruction IDs `[start, end]` over which a value may mutate.
 
-![Graph diagram](/api/articles/drop-react-manual-memoization-0.svg)
+![Flowchart diagram](/api/articles/drop-react-manual-memoization-0.svg)
 ```mermaid
-graph TD
-    A["React Compiler Analysis"] --> B["Places"]
-    A --> C["Effects"]
-    A --> D["Ranges"]
+flowchart TD
+    A[React<br/>Compiler<br/>Analysis] --> B[Places]
+    A --> C[Effects] 
+    A --> D[Ranges]
     
-    B --> E["Variables: a, b, c"]
-    B --> F["Properties: obj.x, arr[0]"]
+    subgraph Places ["🏷️ Places"]
+        E[Variables<br/>a, b, c]
+        F["Properties<br/>obj.x, arr.0"]
+    end
     
-    C --> G["Create: const obj = {}"]
-    C --> H["Mutate: obj.x = 1"]
-    C --> I["Alias: b = a"]
-    C --> J["Freeze: props, hooks"]
+    subgraph Effects ["⚡ Effects"]
+        G["Create<br/>const obj = {}"]
+        H["Mutate<br/>obj.x = 1"]
+        I["Alias<br/>b = a"]
+        J["Freeze<br/>props, hooks"]
+    end
     
-    D --> K["Instruction IDs: [1, 5]"]
-    D --> L["Mutation Scope"]
+    subgraph Ranges ["📏 Ranges"]
+        K["Instruction IDs<br/>1 to 5"]
+        L[Mutation<br/>Scope]
+    end
     
-    L --> M["Reactive Scopes"]
-    M --> N["Memoization Boundaries"]
+    B --> Places
+    C --> Effects
+    D --> Ranges
+    
+    L --> M[Reactive<br/>Scopes]
+    M --> N[Memoization<br/>Boundaries]
+    
+    classDef concept fill:#e1f5fe,stroke:#01579b,stroke-width:2px
+    classDef output fill:#f3e5f5,stroke:#4a148c,stroke-width:2px
+    
+    class A concept
+    class M,N output
 ```
 
 The passes that produce these artefacts run in the following order:
