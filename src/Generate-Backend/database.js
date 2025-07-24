@@ -29,6 +29,7 @@ export const packages = {
       'saga-fetch',
       'extend-routines',
       'diff-browser-globals',
+      'mermaid-render',
     ];
   },
 
@@ -53,6 +54,13 @@ export const packages = {
         url: 'https://github.com/shapkarin/diff-browser-globals',
         description: `
           Compare your window and browser default scopes.`.trim(),
+        badges: []
+      },
+      'mermaid-render': {
+        title: 'Mermaid Render',
+        url: 'https://github.com/shapkarin/mermaid-render',
+        description: `
+          Render mermaid diagrams as images and insert them into the markdown. Used in this website's articles.`.trim(),
         badges: []
       },
     }
