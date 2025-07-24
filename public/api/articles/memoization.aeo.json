@@ -173,7 +173,38 @@
     ],
     "programmingLanguage": "JavaScript",
     "operatingSystem": "Cross-platform",
-    "applicationCategory": "Educational",
+    "applicationCategory": "Educational"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "ImageObject",
+    "name": "React.memo Component Memoization Diagram",
+    "description": "Diagram illustrating how React.memo prevents unnecessary re-renders by memoizing components, showing the comparison process and performance benefits",
+    "contentUrl": "https://shapkarin.me/api/articles/memoization-0.svg",
+    "encodingFormat": "image/svg+xml",
+    "learningResourceType": "diagram",
+    "educationalUse": ["learning", "presentation"],
+    "about": {
+      "@type": "Thing",
+      "name": "React Component Memoization"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "ImageObject",
+    "name": "React useMemo Hook Optimization Flowchart",
+    "description": "Flowchart showing how useMemo caches expensive calculation results between renders, demonstrating dependency checking and performance optimization",
+    "contentUrl": "https://shapkarin.me/api/articles/memoization-1.svg",
+    "encodingFormat": "image/svg+xml",
+    "learningResourceType": "diagram",
+    "educationalUse": ["learning", "presentation"],
+    "about": {
+      "@type": "Thing",
+      "name": "React useMemo Hook"
+    }
+  },
+  {
+    "@context": "https://schema.org",
     "relatedLink": [
       {
         "@type": "WebPage",

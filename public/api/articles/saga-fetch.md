@@ -1,6 +1,9 @@
 ---
-title: "saga-fetch: Streamline API Calls in Redux Saga Applications"
-description: "Learn how to simplify AJAX requests in Redux Saga with saga-fetch. Handle loading states, success/error responses, and request cancellation with minimal boilerplate code."
+title: 'saga-fetch: Streamline API Calls in Redux Saga Applications'
+description: >-
+  Learn how to simplify AJAX requests in Redux Saga with saga-fetch. Handle
+  loading states, success/error responses, and request cancellation with minimal
+  boilerplate code.
 order: 11
 ---
 
@@ -50,6 +53,35 @@ Imagine you have some actions: `searchPagesStart`, `searchPagesSuccess`, `search
 
 ```js
 const searchPages = ({ payload: { title } }) => fetch(`/search/pages?title=${title}`);
+```
+
+![SequenceDiagram diagram](/api/articles/saga-fetch-0.svg)
+```mermaid
+sequenceDiagram
+    participant Component as React Component
+    participant Saga as Redux Saga
+    participant API as API Server
+    participant Store as Redux Store
+    
+    Component->>Store: dispatch(SEARCH_PAGE)
+    Store->>Saga: Action received
+    Saga->>Store: dispatch(searchPagesStart)
+    Note over Store: loading: true
+    Saga->>API: fetch(/search/pages)
+    
+    alt Success
+        API->>Saga: Response data
+        Saga->>Store: dispatch(searchPagesSuccess)
+        Note over Store: data updated
+    else Error
+        API->>Saga: Error
+        Saga->>Store: dispatch(searchPagesError)
+        Note over Store: error state
+    end
+    
+    Saga->>Store: dispatch(searchPagesFulfill)
+    Note over Store: loading: false
+    Store->>Component: State updated
 ```
 
 Your saga worker could then be:

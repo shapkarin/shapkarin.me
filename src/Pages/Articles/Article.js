@@ -97,6 +97,22 @@ const Article = () => {
               code(props) {
                 const {children, className, node, ...rest} = props;
                 const match = /language-(json|js|javascript|jsx|ts|typescript|bash|sh|python|py|cpp|rust|text|mermaid)/.exec(className || '');
+                const ifMermaid = match && match[1] === 'mermaid';
+                if (ifMermaid) {
+                  return (
+                  <details>
+                    <summary>Show Mermaid Code</summary>
+                    <SyntaxHighlighter
+                        {...rest}
+                        PreTag="div"
+                        language={match[1] === 'js' ? 'javascript' : match[1]}
+                        style={vscDarkPlus}
+                      >
+                        {String(children).replace(/\n$/, '')}
+                    </SyntaxHighlighter>
+                  </details>
+                  )
+                }
                 return match ? (
                   <>
                     <h3 className="Article__CondingLang">{match[1]}:</h3>

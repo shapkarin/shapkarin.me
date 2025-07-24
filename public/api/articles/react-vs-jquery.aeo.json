@@ -185,6 +185,34 @@
   },
   {
     "@context": "https://schema.org",
+    "@type": "ImageObject",
+    "name": "React vs jQuery DOM Update Comparison Flowchart",
+    "description": "Flowchart comparing React's Virtual DOM approach with jQuery's direct DOM manipulation, showing performance differences and update mechanisms",
+    "contentUrl": "https://shapkarin.me/api/articles/react-vs-jquery-0.svg",
+    "encodingFormat": "image/svg+xml",
+    "learningResourceType": "diagram",
+    "educationalUse": ["learning", "presentation"],
+    "about": {
+      "@type": "Thing",
+      "name": "React Virtual DOM vs jQuery DOM Manipulation"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "ImageObject",
+    "name": "XSS Security Vulnerability Comparison Diagram",
+    "description": "Security flowchart showing how React's built-in XSS protection compares to jQuery's vulnerability to Cross-Site Scripting attacks, demonstrating security best practices",
+    "contentUrl": "https://shapkarin.me/api/articles/react-vs-jquery-1.svg",
+    "encodingFormat": "image/svg+xml",
+    "learningResourceType": "diagram",
+    "educationalUse": ["learning", "presentation"],
+    "about": {
+      "@type": "Thing",
+      "name": "Web Security XSS Protection"
+    }
+  },
+  {
+    "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": [
       {

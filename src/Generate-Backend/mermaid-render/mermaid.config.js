@@ -8,12 +8,12 @@
 const config = {
   // === INPUT CONFIGURATION ===
   // Directory containing your markdown files
-  inputDir: '/public/api/articles',
+  inputDir: './public/api/articles',
   
   // === OUTPUT CONFIGURATION ===
   // Where to save generated SVG files
-  outputDir: '/public/api/articles',
-  
+  outputDir: './public/api/articles',
+
   // Base URL for images in markdown (how they'll appear in ![alt](url))
   baseUrl: '/api/articles',
   
@@ -28,10 +28,11 @@ const config = {
   // Include original Mermaid source code in the generated markdown?
   includeSourceCode: true,
   
-  // How to display source code: 'inline', 'blockquote', 'footnote', or 'none'
+  // How to display source code: 'inline', 'blockquote', 'footnote', 'details', or 'none'
   // 'inline' - Direct code block below image
   // 'blockquote' - Source code in a blockquote
   // 'footnote' - Reference-style with code at bottom
+  // 'details' - HTML details/summary collapsible section
   // 'none' - Same as includeSourceCode: false
   sourceCodeStyle: 'inline',
   

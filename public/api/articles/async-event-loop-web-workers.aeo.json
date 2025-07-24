@@ -330,6 +330,34 @@
   },
   {
     "@context": "https://schema.org",
+    "@type": "ImageObject",
+    "name": "JavaScript Event Loop Flow Diagram",
+    "description": "Visual representation of JavaScript event loop components including call stack, Web APIs, task queue, and microtask queue showing the flow of asynchronous operations",
+    "contentUrl": "https://shapkarin.me/api/articles/async-event-loop-web-workers-0.svg",
+    "encodingFormat": "image/svg+xml",
+    "learningResourceType": "diagram",
+    "educationalUse": ["learning", "presentation"],
+    "about": {
+      "@type": "Thing",
+      "name": "JavaScript Event Loop Architecture"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "ImageObject",
+    "name": "Web Worker Communication Sequence Diagram",
+    "description": "Sequence diagram illustrating message passing between main thread and Web Worker, showing how background processing maintains UI responsiveness",
+    "contentUrl": "https://shapkarin.me/api/articles/async-event-loop-web-workers-1.svg",
+    "encodingFormat": "image/svg+xml",
+    "learningResourceType": "diagram",
+    "educationalUse": ["learning", "presentation"],
+    "about": {
+      "@type": "Thing",
+      "name": "Web Worker Thread Communication"
+    }
+  },
+  {
+    "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": [
       {

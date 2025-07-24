@@ -1,6 +1,9 @@
 ---
-title: "JavaScript Higher-Order Functions, Currying & Arrow Functions"
-description: "Master JavaScript's powerful functional programming features with this comprehensive guide to higher-order functions, currying techniques, and arrow functions. Learn with practical examples and best practices."
+title: 'JavaScript Higher-Order Functions, Currying & Arrow Functions'
+description: >-
+  Master JavaScript's powerful functional programming features with this
+  comprehensive guide to higher-order functions, currying techniques, and arrow
+  functions. Learn with practical examples and best practices.
 order: 1
 ---
 
@@ -35,6 +38,21 @@ At its core, functional programming in JavaScript treats functions as first-clas
 A higher-order function is a function that does at least one of the following:
 1.  Takes one or more functions as arguments.
 2.  Returns a function as its result.
+
+![Graph diagram](/api/articles/higher-order-functions-and-currying-0.svg)
+```mermaid
+graph TD
+    A[Higher-Order Function] --> B[Takes Functions as Arguments]
+    A --> C[Returns Functions]
+    
+    B --> D[Array.map]
+    B --> E[Array.filter]
+    B --> F[Array.reduce]
+    
+    C --> G[Function Factories]
+    C --> H[Closures]
+    C --> I[Decorators]
+```
 
 Many built-in JavaScript array methods are excellent examples of HOFs, such as:
 
@@ -105,7 +123,19 @@ Currying is a functional programming technique that transforms a function with m
 
 ### What is Currying?
 
-A function like `f(a, b, c)` is transformed into `f(a)(b)(c)`. Each call to a curried function with an argument returns a new function that expects the next argument, until all arguments have been supplied, at which point the original function's logic is executed.
+A curried function like `f(a, b, c)` is transformed into `f(a)(b)(c)`. Each call to a curried function with an argument returns a new function that expects the next argument, until all arguments have been supplied, at which point the original function's logic is executed.
+
+![Graph diagram](/api/articles/higher-order-functions-and-currying-1.svg)
+```mermaid
+graph LR
+    A["f(a, b, c)"] --> B["Currying Transform"]
+    B --> C["f(a)"]
+    C --> D["returns function"]
+    D --> E["f(a)(b)"]
+    E --> F["returns function"]
+    F --> G["f(a)(b)(c)"]
+    G --> H["executes & returns result"]
+```
 
 ### How to Implement Currying
 

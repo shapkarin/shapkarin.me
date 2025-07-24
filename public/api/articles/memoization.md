@@ -1,6 +1,9 @@
 ---
-title: "Mastering React Performance: memo, useMemo, and useCallback Deep Dive"
-description: "Unlock peak performance in your React applications. Learn how to effectively use React.memo, useMemo, and useCallback for optimal rendering and maintainable code."
+title: 'Mastering React Performance: memo, useMemo, and useCallback Deep Dive'
+description: >-
+  Unlock peak performance in your React applications. Learn how to effectively
+  use React.memo, useMemo, and useCallback for optimal rendering and
+  maintainable code.
 order: 4
 ---
 
@@ -27,6 +30,16 @@ React's performance optimization features align perfectly with the principle of 
 ### React.memo for Component Memoization
 
 React.memo prevents unnecessary re-renders by memoizing components, similar to how Pure Components work in class-based React:
+
+![Graph diagram](/api/articles/memoization-0.svg)
+```mermaid
+graph TD
+    A[Parent Re-renders] --> B{React.memo?}
+    B -->|No| C[Child Always Re-renders]
+    B -->|Yes| D{Props Changed?}
+    D -->|Yes| E[Child Re-renders]
+    D -->|No| F[Skip Re-render - Use Cached]
+```
 
 ```jsx
 // Before: Component re-renders on every parent render
@@ -78,6 +91,17 @@ const CustomComparedProductItem = React.memo(
 ### useMemo for Expensive Calculations
 
 Use `useMemo` to cache the result of expensive calculations between renders:
+
+![Flowchart diagram](/api/articles/memoization-1.svg)
+```mermaid
+flowchart LR
+    A[Component Renders] --> B{Dependencies Changed?}
+    B -->|Yes| C[Recalculate Value]
+    B -->|No| D[Return Cached Value]
+    C --> E[Store in Cache]
+    E --> F[Return New Value]
+    D --> F
+```
 
 ```jsx
 // Before: Expensive calculation runs on every render

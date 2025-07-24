@@ -1,12 +1,33 @@
 ---
-title: "AI in 2016: The First Time I Worked on a Project That Using Machine Learning"
-description: "A personal reflection on working with AI in 2016, before the LLM revolution. Exploring how AI has evolved from specialized applications to becoming accessible to everyone through user-friendly interfaces."
+title: 'AI in 2016: The First Time I Worked on a Project That Using Machine Learning'
+description: >-
+  A personal reflection on working with AI in 2016, before the LLM revolution.
+  Exploring how AI has evolved from specialized applications to becoming
+  accessible to everyone through user-friendly interfaces.
 order: 2
 ---
 
 # Production AI In 2016 Year
 
 The first time I worked on a projects that using machine learning (AI) was in 2016. Back then, the technology hadn't seen the mass adoption it has nowadays, thanks to LLMs. It was Bioinformatics projects, and a one FinTech.
+
+![Diagram: AI Evolution: 2016 vs Today](/api/articles/production-AI-in-2016-year-0.svg)
+```
+timeline
+    title AI Evolution: 2016 vs Today
+    
+    2016 : Specialized Applications
+         : Domain Experts Only
+         : Clean Training Data Required
+         : Limited Adoption
+         : Complex Implementation
+    
+    2024 : Mass Adoption
+         : User-Friendly Interfaces
+         : Unstructured Data Input
+         : Chat-Based Interactions
+         : Accessible to Everyone
+```
 
 That time it was on-site and I saw how colleagues discussed perceptron and even how simulated annealing can be applied to the training. We got together and talked to current bioinformaticians to figure out how to make our apps better, the apps were exclusively for domain experts.
 
