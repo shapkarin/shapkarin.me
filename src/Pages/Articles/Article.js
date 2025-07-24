@@ -5,6 +5,7 @@ import Markdown from 'react-markdown';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import remarkGfm from 'remark-gfm'
+import rehypeRaw from 'rehype-raw'
 
 import { fetchArticle, fetchAeoScript } from "@/API";
 import { useQuery } from "react-query";
@@ -89,6 +90,7 @@ const Article = () => {
         <div ref={articleRef}>
           <Markdown
             remarkPlugins={[remarkGfm]}
+            rehypePlugins={[rehypeRaw]}
             components={{
               h1: HeadingMacro,
               h2: HeadingMacro,
