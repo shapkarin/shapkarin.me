@@ -8,7 +8,7 @@ keywords: >-
   AI automation, business transformation, artificial intelligence, customer
   service automation, sales automation, process optimization, ROI, business
   efficiency, AI implementation, machine learning, workflow automation
-order: 5
+order: 2
 ---
 
 # AI Automation for Business: The Strategic Advantage Every Leader Needs in 2025
@@ -338,7 +338,7 @@ Successful AI automation requires strategic planning, not random technology adop
 3. **Continuous Improvement**: Regular optimization based on performance data
 4. **Strategic Integration**: Align automation with long-term business objectives
 
-![Gantt: AI Automation Implementation Timeline](/api/articles/light/ai-automation-for-business-7.svg)
+![Gantt: AI Automation Implementation Timeline](/api/articles/dark/ai-automation-for-business-7.svg)
 ```mermaid
 gantt
     title AI Automation Implementation Timeline
