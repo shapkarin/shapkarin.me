@@ -4,7 +4,6 @@ import matter from 'gray-matter';
 import Markdown from 'react-markdown';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism';
-import remarkGfm from 'remark-gfm'
 import rehypeRaw from 'rehype-raw'
 
 import { fetchArticle, fetchAeoScript } from "@/API";
@@ -89,7 +88,6 @@ const Article = () => {
         <Link relative="path" to="/articles" className="Article__GoBack">{'← All articles'}</Link>
         <div ref={articleRef}>
           <Markdown
-            remarkPlugins={[remarkGfm]}
             rehypePlugins={[rehypeRaw]}
             components={{
               h1: HeadingMacro,
@@ -99,6 +97,22 @@ const Article = () => {
               code(props) {
                 const {children, className, node, ...rest} = props;
                 const match = /language-(json|js|javascript|jsx|ts|typescript|bash|sh|python|py|cpp|rust|text|mermaid)/.exec(className || '');
+                const ifMermaid = match && match[1] === 'mermaid';
+                if (ifMermaid) {
+                  return (
+                  <details>
+                    <summary>Show Mermaid Code</summary>
+                    <SyntaxHighlighter
+                        {...rest}
+                        PreTag="div"
+                        language={match[1] === 'js' ? 'javascript' : match[1]}
+                        style={vscDarkPlus}
+                      >
+                        {String(children).replace(/\n$/, '')}
+                    </SyntaxHighlighter>
+                  </details>
+                  )
+                }
                 return match ? (
                   <>
                     <h3 className="Article__CondingLang">{match[1]}:</h3>
