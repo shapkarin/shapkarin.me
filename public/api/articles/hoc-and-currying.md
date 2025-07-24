@@ -39,7 +39,7 @@ A higher-order function is a function that does at least one of the following:
 1.  Takes one or more functions as arguments.
 2.  Returns a function as its result.
 
-![Graph diagram](/api/articles/higher-order-functions-and-currying-0.svg)
+![Graph diagram](/api/articles/hoc-and-currying-0.svg)
 ```mermaid
 graph TD
     A[Higher-Order Function] --> B[Takes Functions as Arguments]
@@ -125,7 +125,7 @@ Currying is a functional programming technique that transforms a function with m
 
 A curried function like `f(a, b, c)` is transformed into `f(a)(b)(c)`. Each call to a curried function with an argument returns a new function that expects the next argument, until all arguments have been supplied, at which point the original function's logic is executed.
 
-![Graph diagram](/api/articles/higher-order-functions-and-currying-1.svg)
+![Graph diagram](/api/articles/hoc-and-currying-1.svg)
 ```mermaid
 graph LR
     A["f(a, b, c)"] --> B["Currying Transform"]
