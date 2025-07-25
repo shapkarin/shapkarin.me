@@ -9,13 +9,13 @@ const Structure = () => (
       {PAGES.reduce(
         (acc, { name, path, Page, redirect, redirects }) => [
           ...acc,
+          redirect && <Redirect exact {...redirect} key={`Redirect_${name}`} />,
+          redirects && redirects.map((fromTo, i) => <Redirect exact {...fromTo} key={`Redirect_${name}_${i}`} />),
           <Route exact path={path} key={`Route_${name}`}>
             <PageLayout>
               <Page />
             </PageLayout>
           </Route>,
-          redirect && <Redirect exact {...redirect} key={`Redirect_${name}`} />,
-          redirects && redirects.map((fromTo, i) => <Redirect exact {...fromTo} key={`Redirect_${name}_${i}`} />)
         ],
         []
       )}
