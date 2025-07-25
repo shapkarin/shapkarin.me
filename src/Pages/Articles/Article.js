@@ -98,7 +98,7 @@ const Article = () => {
               table: TableMacro,
               code(props) {
                 const {children, className, node, ...rest} = props;
-                const match = /language-(json|js|javascript|jsx|ts|typescript|bash|sh|python|py|cpp|rust|text|mermaid|solidity)/.exec(className || '');
+                const match = /language-(json|js|javascript|jsx|ts|typescript|bash|sh|python|py|cpp|rust|text|mermaid|solidity|go|toml|yaml|yml)/.exec(className || '');
                 const ifMermaid = match && match[1] === 'mermaid';
                 if (ifMermaid) {
                   return (
