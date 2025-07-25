@@ -177,7 +177,7 @@ Every ABI consists of an array of objects, each describing a contract element:
 
 ### The ABI Encoding Process
 
-![SequenceDiagram diagram](/api/articles/dark/ethereum-abi-1.svg)
+![SequenceDiagram diagram](/api/articles/light/ethereum-abi-1.svg)
 
 ```mermaidsequenceDiagram
     participant App as dApp Frontend
