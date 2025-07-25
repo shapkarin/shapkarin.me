@@ -86,7 +86,7 @@ const Article = () => {
           name="Iurii Shapkarin"
           aeoScript={aeoScript}
         />
-        <Link relative="path" to="/articles" className="Article__GoBack">{'← All articles'}</Link>
+        <Link to="/" className="Article__GoBack">{'← All articles'}</Link>
         <div ref={articleRef}>
           <Markdown
             remarkPlugins={[remarkGfm]}
