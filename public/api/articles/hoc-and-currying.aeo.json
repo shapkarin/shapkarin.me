@@ -1,11 +1,13 @@
 [
   {
     "@context": "https://schema.org",
-    "@type": "TechArticle",
+    "@type": "Article",
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": "https://shapkarin.me/articles/hoc-and-currying"
+      "@id": "https://shapkarin.me/articles/hoc-and-currying/"
     },
+    "url": "https://shapkarin.me/articles/hoc-and-currying/",
+    "isBasedOn": "https://raw.githubusercontent.com/shapkarin/shapkarin.me/refs/heads/gh-pages/api/articles/hoc-and-currying.md",
     "headline": "JavaScript Higher-Order Functions, Currying & Arrow Functions: Complete Guide",
     "description": "Master JavaScript's powerful functional programming features with this comprehensive guide to higher-order functions, currying techniques, and arrow functions. Learn with practical examples, best practices, and real-world applications for modern web development.",
     "image": {

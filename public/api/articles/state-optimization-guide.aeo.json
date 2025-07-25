@@ -1,11 +1,13 @@
 [
   {
     "@context": "https://schema.org",
-    "@type": "TechArticle",
+    "@type": "Article",
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": "https://shapkarin.me/articles/state-optimization-guide"
+      "@id": "https://shapkarin.me/articles/state-optimization-guide/"
     },
+    "url": "https://shapkarin.me/articles/state-optimization-guide/",
+    "isBasedOn": "https://raw.githubusercontent.com/shapkarin/shapkarin.me/refs/heads/gh-pages/api/articles/state-optimization-guide.md",
     "headline": "State Optimization Mastery: From Vanilla JavaScript to Advanced Framework Techniques",
     "description": "Master app state optimization with comprehensive analysis of data structures, Big O complexity, and advanced techniques using Zustand, Redux, and performance patterns. Includes real benchmarks and production insights.",
     "image": {

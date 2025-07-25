@@ -1,11 +1,13 @@
 [
   {
     "@context": "https://schema.org",
-    "@type": "TechArticle",
+    "@type": "Article",
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": "https://shapkarin.me/articles/global-diff"
+      "@id": "https://shapkarin.me/articles/global-diff/"
     },
+    "url": "https://shapkarin.me/articles/global-diff/",
+    "isBasedOn": "https://raw.githubusercontent.com/shapkarin/shapkarin.me/refs/heads/gh-pages/api/articles/global-diff.md",
     "headline": "diff-browser-globals: Track Global Window Object Changes in Web Apps",
     "description": "Discover what's being added to your browser's global scope with diff-browser-globals. A lightweight tool to identify and debug unexpected global variables in your web applications.",
     "image": {

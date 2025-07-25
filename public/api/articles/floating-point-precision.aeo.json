@@ -1,11 +1,13 @@
 [
   {
     "@context": "https://schema.org",
-    "@type": "TechArticle",
+    "@type": "Article",
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": "https://shapkarin.me/articles/floating-point-precision"
+      "@id": "https://shapkarin.me/articles/floating-point-precision/"
     },
+    "url": "https://shapkarin.me/articles/floating-point-precision/",
+    "isBasedOn": "https://raw.githubusercontent.com/shapkarin/shapkarin.me/refs/heads/gh-pages/api/articles/floating-point-precision.md",
     "headline": "Floating-Point Precision: Why 0.1 + 0.2 Isn't 0.3 - Complete Developer Guide",
     "description": "Discover why 0.1 + 0.2 equals 0.30000000000000004 in programming. Learn IEEE 754 standard, binary representation issues, and practical solutions for JavaScript, Python, C++, and Rust with expert examples.",
     "image": {
