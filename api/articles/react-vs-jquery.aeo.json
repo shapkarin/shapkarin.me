@@ -7,7 +7,6 @@
       "@id": "https://shapkarin.me/articles/react-vs-jquery/"
     },
     "url": "https://shapkarin.me/articles/react-vs-jquery/",
-    "isBasedOn": "https://raw.githubusercontent.com/shapkarin/shapkarin.me/refs/heads/gh-pages/api/articles/react-vs-jquery.md",
     "headline": "React vs jQuery 2025: A Complete Guide for Developers & CTOs",
     "description": "A comprehensive, data-driven comparison of React and jQuery for 2025. Explore performance, security (XSS), market trends, business ROI, and decide which is best for your project. Features live data and expert analysis.",
     "image": {

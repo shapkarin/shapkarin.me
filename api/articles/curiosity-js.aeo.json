@@ -7,7 +7,6 @@
       "@id": "https://shapkarin.me/articles/curiosity-js/"
     },
     "url": "https://shapkarin.me/articles/curiosity-js/",
-    "isBasedOn": "https://raw.githubusercontent.com/shapkarin/shapkarin.me/refs/heads/gh-pages/api/articles/curiosity-js.md",
     "headline": "Weird JavaScript Quirks Explained: Type Coercion, Equality & More",
     "description": "Discover the most surprising JavaScript quirks and learn how type coercion, loose equality, and parsing rules lead to unexpected behaviors in your code.",
     "image": {

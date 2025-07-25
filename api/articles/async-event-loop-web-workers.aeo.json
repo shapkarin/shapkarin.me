@@ -7,7 +7,6 @@
       "@id": "https://shapkarin.me/articles/async-event-loop-web-workers/"
     },
     "url": "https://shapkarin.me/articles/async-event-loop-web-workers/",
-    "isBasedOn": "https://raw.githubusercontent.com/shapkarin/shapkarin.me/refs/heads/gh-pages/api/articles/async-event-loop-web-workers.md",
     "headline": "Event Loop, Threads, and Web Workers: Complete Guide to Asynchronous JavaScript",
     "description": "Dive deep into asynchronous JavaScript, understand the event loop, how JavaScript handles concurrency, and leverage Web Workers for true parallelism in your web applications. Complete guide with examples, best practices, and performance insights.",
     "image": {

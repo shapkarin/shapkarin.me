@@ -77,8 +77,7 @@
       "alternateName": "Yury Shapkarin",
       "url": "https://shapkarin.me"
     },
-    "url": "https://shapkarin.me/articles/ethereum-abi/",
-    "isBasedOn": "https://raw.githubusercontent.com/shapkarin/shapkarin.me/refs/heads/gh-pages/api/articles/ethereum-abi.md",  
+    "url": "https://shapkarin.me/articles/ethereum-abi/",  
     "datePublished": "2025-01-27",
     "dateModified": "2025-01-27",
     "mainEntityOfPage": {

@@ -512,8 +512,7 @@
         "https://linkedin.com/in/shapkarin"
       ]
     },
-    "url": "https://shapkarin.me/articles/byzantine-fault-tolerance",
-    "isBasedOn": "https://raw.githubusercontent.com/shapkarin/shapkarin.me/refs/heads/gh-pages/api/articles/byzantine-fault-tolerance.md",  
+    "url": "https://shapkarin.me/articles/byzantine-fault-tolerance",  
     "datePublished": "2025-01-27",
     "dateModified": "2025-01-27",
     "mainEntityOfPage": {
