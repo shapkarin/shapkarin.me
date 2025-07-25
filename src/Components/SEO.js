@@ -5,7 +5,7 @@ const SEO = ({ title, description, name = 'Iurii Shapkarin', type = 'website', a
 
   const { pathname } = useLocation();
   const ArticlesCanonicalUrl = 'https://shapkarin.me';
-  const canonicalUrl = `https://shapkarin.me${pathname}`;
+  const canonicalUrl = `https://shapkarin.me${pathname}`; // TODO: make sure, or with '/' at the end
   
   return (
     <Helmet>
