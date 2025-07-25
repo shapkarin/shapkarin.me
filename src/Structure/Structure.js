@@ -1,19 +1,19 @@
-import { Switch, Route, Redirect } from "react-router-dom";
+import { Routes, Route, Navigate as Redirect } from "react-router-dom";
 import PageLayout from "@/Layouts/Page";
 
 import { PAGES } from ".";
 
 const Structure = () => (
   <div className="Page">
-    <Switch>
+    <Routes>
       {PAGES.reduce(
         (acc, { name, path, Page, redirect, redirects }) => [
           ...acc,
-          <Route exact path={path} key={`Route_${name}`}>
-            <PageLayout>
+          <Route exact path={path} key={`Route_${name}`} element={
+<PageLayout>
               <Page />
             </PageLayout>
-          </Route>,
+          } />,
           redirect && <Redirect {...redirect} key={`Redirect_${name}`} />,
           redirects && redirects.map((fromTo, i) => <Redirect {...fromTo} key={`Redirect_${name}_${i}`} />)
         ],
@@ -30,7 +30,7 @@ const Structure = () => (
         key="Route_GitHub"
       />
       
-    </Switch>
+    </Routes>
   </div>
 );
 
