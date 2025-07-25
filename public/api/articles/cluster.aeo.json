@@ -1,11 +1,13 @@
 [
   {
     "@context": "https://schema.org",
-    "@type": "TechArticle",
+    "@type": "Article",
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": "https://shapkarin.me/articles/cluster"
+      "@id": "https://shapkarin.me/articles/cluster/"
     },
+    "url": "https://shapkarin.me/articles/cluster/",
+    "isBasedOn": "https://raw.githubusercontent.com/shapkarin/shapkarin.me/refs/heads/gh-pages/api/articles/cluster.md",
     "headline": "Unlocking Node.js Performance: Harnessing Multi-Core Power with the cluster Module",
     "description": "Learn how to effectively utilize all CPU cores in your Node.js applications using the built-in cluster module, improve performance and resilience, and understand when this approach is preferable to other scaling solutions.",
     "image": {

@@ -1,12 +1,12 @@
 [
   {
     "@context": "https://schema.org",
-    "@type": "TechArticle",
+    "@type": "Article",
     "learningResourceType": ["tutorial", "reading", "Comprehensive comparison guide"],
     "educationalUse": ["learning", "teaching", "presentation"],
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": "https://shapkarin.me/articles/wagmi-ethers"
+      "@id": "https://shapkarin.me/articles/wagmi-ethers/"
     },
     "headline": "WAGMI vs Ethers.js: Choosing the Right Ethereum Development Library",
     "description": "Compare WAGMI and Ethers.js for Ethereum development. Learn the pros and cons of each library, recent changes in WAGMI v2, and how to choose the best tool for your web3 project.",
