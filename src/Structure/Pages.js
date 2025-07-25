@@ -22,11 +22,12 @@ const PAGES = [
     Icon: () => <RiArticleLine />,
     Page: () => <Article />,
     noInMenu: true,
+    redirect: { from: '/articles/higher-order-functions-and-currying', to: '/articles/hoc-and-currying/' },
   },
   {
     name: 'Repositories',
     path: '/github/repositories/',
-    redirect: { from: '/repositories', to: '/github/repositories' },
+    redirect: { from: '/repositories', to: '/github/repositories/' },
     Icon: () => <GoRepo />,
     Page: () => <Repositories />,
   },
@@ -34,9 +35,9 @@ const PAGES = [
     name: 'Likes',
     path: '/github/likes/',
     redirects: [
-      { from: '/likes', to: '/github/stars' },
-      { from: '/liked', to: '/github/stars' },
-      { from: '/stars', to: '/github/stars' },
+      { from: '/likes', to: '/github/stars/' },
+      { from: '/liked', to: '/github/stars/' },
+      { from: '/stars', to: '/github/stars/' },
     ],
     Icon: () => <GoStar size="1.2em" />,
     Page: () => <Stars />,
@@ -44,7 +45,7 @@ const PAGES = [
   {
     name: 'Packages',
     path: '/packages/',
-    redirect: { from: '/projects', to: '/packages' },
+    redirect: { from: '/projects', to: '/packages/' },
     Icon: () => <RiNpmjsLine size="1.24em" />,
     Page: (props) => <Packages { ...props } />,
   },
@@ -52,8 +53,8 @@ const PAGES = [
     name: 'Creative',
     path: '/creative/',
     redirects: [
-      { from: '/generative', to: '/sketches' },
-      { from: '/sketches', to: '/creative' }
+      { from: '/generative', to: '/sketches/' },
+      { from: '/sketches', to: '/creative/' }
     ],
     Icon: () => <RiPaintBrushFill />,
     Page: () => <Creative />,
