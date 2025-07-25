@@ -186,7 +186,7 @@ var a = 0.1,
     c = a + b
 c === 0.3 // false
 ```
-- **Why**: check this article [Computer Floating-Point Precision](/articles/floating-point-precision)
+- **Why**: check this article [Computer Floating-Point Precision](/articles/floating-point-precision/)
 
 ---
 
