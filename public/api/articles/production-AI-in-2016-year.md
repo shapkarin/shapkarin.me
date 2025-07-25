@@ -11,8 +11,8 @@ order: 2
 
 The first time I worked on a projects that using machine learning (AI) was in 2016. Back then, the technology hadn't seen the mass adoption it has nowadays, thanks to LLMs. It was Bioinformatics projects, and a one FinTech.
 
-![Diagram: AI Evolution: 2016 vs Today](/api/articles/production-AI-in-2016-year-0.svg)
-```
+![Diagram: AI Evolution: 2016 vs Today](/api/articles/dark/production-AI-in-2016-year-0.svg)
+```mermaid
 timeline
     title AI Evolution: 2016 vs Today
     
