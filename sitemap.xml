@@ -19,16 +19,16 @@
     <loc>https://shapkarin.me/creative/</loc>
   </url>
   <url>
-    <loc>https://shapkarin.me/gallery/older/dots.html</loc>
-  </url>
-  <url>
-    <loc>https://shapkarin.me/gallery/older/random_walker.html</loc>
-  </url>
-  <url>
     <loc>https://shapkarin.me/articles/contributions-to-major-web-dev-repos/</loc>
   </url>
   <url>
+    <loc>https://shapkarin.me/articles/byzantine-fault-tolerance/</loc>
+  </url>
+  <url>
     <loc>https://shapkarin.me/articles/hoc-and-currying/</loc>
+  </url>
+  <url>
+    <loc>https://shapkarin.me/articles/ai-automation-for-business/</loc>
   </url>
   <url>
     <loc>https://shapkarin.me/articles/floating-point-precision/</loc>
@@ -85,6 +85,21 @@
     <loc>https://shapkarin.me/articles/async-event-loop-web-workers/</loc>
   </url>
   <url>
+    <loc>https://shapkarin.me/articles/ethereum-abi/</loc>
+  </url>
+  <url>
+    <loc>https://shapkarin.me/articles/ethereum-whitepaper-explanation/</loc>
+  </url>
+  <url>
+    <loc>https://shapkarin.me/articles/WAGMI-basics/</loc>
+  </url>
+  <url>
+    <loc>https://shapkarin.me/gallery/older/dots.html</loc>
+  </url>
+  <url>
+    <loc>https://shapkarin.me/gallery/older/random_walker.html</loc>
+  </url>
+  <url>
     <loc>https://shapkarin.me/gallery/older/</loc>
   </url>
   <url>
@@ -98,5 +113,8 @@
   </url>
   <url>
     <loc>https://shapkarin.me/gallery/p5js/flies-m-acc/</loc>
+  </url>
+  <url>
+    <loc>https://shapkarin.me/ethereum-abi/</loc>
   </url>
 </urlset>
