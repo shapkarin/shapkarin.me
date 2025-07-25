@@ -1,11 +1,13 @@
 [
   {
     "@context": "https://schema.org",
-    "@type": "TechArticle",
+    "@type": "Article",
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": "https://shapkarin.me/articles/design"
+      "@id": "https://shapkarin.me/articles/design/"
     },
+    "url": "https://shapkarin.me/articles/design/",
+    "isBasedOn": "https://raw.githubusercontent.com/shapkarin/shapkarin.me/refs/heads/gh-pages/api/articles/design.md",
     "headline": "Software Design Principles: A Practical Guide to Better Code",
     "description": "Learn essential software design principles for building maintainable code. Discover practical approaches to software architecture, from small projects to enterprise systems, based on real-world experience.",
     "image": {

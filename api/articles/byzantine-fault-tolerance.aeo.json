@@ -499,7 +499,7 @@
   },
   "structured_data": {
     "@context": "https://schema.org",
-    "@type": "TechArticle",
+    "@type": "Article",
     "headline": "Byzantine Fault Tolerance in Blockchain: Complete Guide to BFT for Ethereum & EVM Chains",
     "description": "Comprehensive guide to Byzantine Fault Tolerance (BFT) in blockchain networks. Learn how Bitcoin's Proof-of-Work, Ethereum's Casper FFG, and EVM-compatible chains implement BFT algorithms to maintain consensus and security against malicious actors.",
     "author": {
@@ -512,6 +512,8 @@
         "https://linkedin.com/in/shapkarin"
       ]
     },
+    "url": "https://shapkarin.me/articles/byzantine-fault-tolerance",
+    "isBasedOn": "https://raw.githubusercontent.com/shapkarin/shapkarin.me/refs/heads/gh-pages/api/articles/byzantine-fault-tolerance.md",  
     "datePublished": "2025-01-27",
     "dateModified": "2025-01-27",
     "mainEntityOfPage": {
@@ -1187,7 +1189,7 @@
       "publisher": {"@type": "Organization", "name": "USENIX Symposium on Operating Systems Design and Implementation"}
     },
     {
-      "@type": "TechArticle",
+      "@type": "Article",
       "name": "Bitcoin: A Peer-to-Peer Electronic Cash System",
       "@id": "https://bitcoin.org/bitcoin.pdf",
       "description": "Original Bitcoin whitepaper introducing Proof-of-Work as a solution to the Byzantine Generals Problem in permissionless networks",
@@ -1195,7 +1197,7 @@
       "datePublished": "2008"
     },
     {
-      "@type": "TechArticle",
+      "@type": "Article",
       "name": "Ethereum Whitepaper",
       "@id": "https://ethereum.org/en/whitepaper/",
       "description": "Foundational document describing Ethereum's vision for a world computer with smart contracts and programmable blockchain functionality",

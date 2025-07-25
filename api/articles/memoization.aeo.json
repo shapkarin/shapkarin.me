@@ -1,11 +1,13 @@
 [
   {
     "@context": "https://schema.org",
-    "@type": "TechArticle",
+    "@type": "Article",
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": "https://shapkarin.me/articles/memoization"
+      "@id": "https://shapkarin.me/articles/memoization/"
     },
+    "url": "https://shapkarin.me/articles/memoization/",
+    "isBasedOn": "https://raw.githubusercontent.com/shapkarin/shapkarin.me/refs/heads/gh-pages/api/articles/memoization.md",
     "headline": "Mastering React Performance: memo, useMemo, and useCallback Deep Dive",
     "description": "Unlock peak performance in your React applications. Learn how to effectively use React.memo, useMemo, and useCallback for optimal rendering and maintainable code. Complete guide with examples, best practices, and advanced scenarios.",
     "image": {

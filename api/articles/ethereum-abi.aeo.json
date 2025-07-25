@@ -62,7 +62,7 @@
     "category": "Blockchain Development",
     "difficulty": "Intermediate",
     "author": "Iurii Shapkarin",
-    "canonicalUrl": "https://shapkarin.me/articles/ethereum-abi-guide",
+    "canonicalUrl": "https://shapkarin.me/articles/ethereum-abi",
     "language": "en",
     "publishDate": "2025-01-27"
   },
@@ -77,11 +77,13 @@
       "alternateName": "Yury Shapkarin",
       "url": "https://shapkarin.me"
     },
+    "url": "https://shapkarin.me/articles/ethereum-abi/",
+    "isBasedOn": "https://raw.githubusercontent.com/shapkarin/shapkarin.me/refs/heads/gh-pages/api/articles/ethereum-abi.md",  
     "datePublished": "2025-01-27",
     "dateModified": "2025-01-27",
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": "https://shapkarin.me/articles/ethereum-abi-guide"
+      "@id": "https://shapkarin.me/articles/ethereum-abi/"
     },
     "publisher": {
       "@type": "Person",
@@ -412,105 +414,105 @@
     {
       "@type": "WebPageElement",
       "name": "What is Ethereum ABI (Application Binary Interface)?",
-      "url": "https://shapkarin.me/articles/ethereum-abi-guide#what-is-ethereum-abi-application-binary-interface",
+      "url": "https://shapkarin.me/articles/ethereum-abi#what-is-ethereum-abi-application-binary-interface",
       "description": "Introduction to Ethereum ABI concept, its purpose, and importance in blockchain development",
       "order": 1
     },
     {
       "@type": "WebPageElement",
       "name": "ABI Structure and Components",
-      "url": "https://shapkarin.me/articles/ethereum-abi-guide#abi-structure-and-components",
+      "url": "https://shapkarin.me/articles/ethereum-abi#abi-structure-and-components",
       "description": "Detailed breakdown of ABI structure including functions, events, constructors, and errors",
       "order": 2
     },
     {
       "@type": "WebPageElement", 
       "name": "How ABI Works: Under the Hood",
-      "url": "https://shapkarin.me/articles/ethereum-abi-guide#how-abi-works-under-the-hood",
+      "url": "https://shapkarin.me/articles/ethereum-abi#how-abi-works-under-the-hood",
       "description": "Step-by-step explanation of ABI encoding process from function call to contract execution",
       "order": 3
     },
     {
       "@type": "WebPageElement",
       "name": "ABI Encoding and Decoding Explained", 
-      "url": "https://shapkarin.me/articles/ethereum-abi-guide#abi-encoding-and-decoding-explained",
+      "url": "https://shapkarin.me/articles/ethereum-abi#abi-encoding-and-decoding-explained",
       "description": "Comprehensive guide to ABI encoding rules for different data types and complex structures",
       "order": 4
     },
     {
       "@type": "WebPageElement",
       "name": "Function Signatures and Selectors",
-      "url": "https://shapkarin.me/articles/ethereum-abi-guide#function-signatures-and-selectors",
+      "url": "https://shapkarin.me/articles/ethereum-abi#function-signatures-and-selectors",
       "description": "Understanding function selector generation and canonical function signatures in Ethereum",
       "order": 5
     },
     {
       "@type": "WebPageElement",
       "name": "Event Encoding and Log Parsing",
-      "url": "https://shapkarin.me/articles/ethereum-abi-guide#event-encoding-and-log-parsing", 
+      "url": "https://shapkarin.me/articles/ethereum-abi#event-encoding-and-log-parsing", 
       "description": "How events are encoded in blockchain logs with indexed and non-indexed parameters",
       "order": 6
     },
     {
       "@type": "WebPageElement",
       "name": "Working with ABI in Different Languages",
-      "url": "https://shapkarin.me/articles/ethereum-abi-guide#working-with-abi-in-different-languages",
+      "url": "https://shapkarin.me/articles/ethereum-abi#working-with-abi-in-different-languages",
       "description": "Practical examples of using ABI with JavaScript, Python, Go, and other programming languages",
       "order": 7
     },
     {
       "@type": "WebPageElement",
       "name": "ABI Generation from Smart Contracts",
-      "url": "https://shapkarin.me/articles/ethereum-abi-guide#abi-generation-from-smart-contracts",
+      "url": "https://shapkarin.me/articles/ethereum-abi#abi-generation-from-smart-contracts",
       "description": "Automated ABI generation using Hardhat, Foundry, and other development frameworks",
       "order": 8
     },
     {
       "@type": "WebPageElement", 
       "name": "Advanced ABI Patterns and Best Practices",
-      "url": "https://shapkarin.me/articles/ethereum-abi-guide#advanced-abi-patterns-and-best-practices",
+      "url": "https://shapkarin.me/articles/ethereum-abi#advanced-abi-patterns-and-best-practices",
       "description": "Advanced techniques for ABI versioning, proxy contracts, and dynamic loading",
       "order": 9
     },
     {
       "@type": "WebPageElement",
       "name": "ABI Security Considerations",
-      "url": "https://shapkarin.me/articles/ethereum-abi-guide#abi-security-considerations",
+      "url": "https://shapkarin.me/articles/ethereum-abi#abi-security-considerations",
       "description": "Security best practices including ABI verification, input validation, and collision detection",
       "order": 10
     },
     {
       "@type": "WebPageElement",
       "name": "Debugging ABI-Related Issues",
-      "url": "https://shapkarin.me/articles/ethereum-abi-guide#debugging-abi-related-issues",
+      "url": "https://shapkarin.me/articles/ethereum-abi#debugging-abi-related-issues",
       "description": "Common ABI problems and debugging techniques with practical tools and solutions",
       "order": 11
     },
     {
       "@type": "WebPageElement",
       "name": "ABI in Multi-Chain Development", 
-      "url": "https://shapkarin.me/articles/ethereum-abi-guide#abi-in-multi-chain-development",
+      "url": "https://shapkarin.me/articles/ethereum-abi#abi-in-multi-chain-development",
       "description": "Using ABI across different EVM-compatible chains with chain-specific considerations",
       "order": 12
     },
     {
       "@type": "WebPageElement",
       "name": "Future of ABI and EVM Evolution",
-      "url": "https://shapkarin.me/articles/ethereum-abi-guide#future-of-abi-and-evm-evolution",
+      "url": "https://shapkarin.me/articles/ethereum-abi#future-of-abi-and-evm-evolution",
       "description": "Upcoming improvements to ABI specification and enhanced features in development",
       "order": 13
     },
     {
       "@type": "WebPageElement",
       "name": "Real-World ABI Examples",
-      "url": "https://shapkarin.me/articles/ethereum-abi-guide#real-world-abi-examples", 
+      "url": "https://shapkarin.me/articles/ethereum-abi#real-world-abi-examples", 
       "description": "Complete ABI examples from popular protocols like ERC-20, Uniswap, and OpenZeppelin",
       "order": 14
     },
     {
       "@type": "WebPageElement",
       "name": "Frequently Asked Questions",
-      "url": "https://shapkarin.me/articles/ethereum-abi-guide#frequently-asked-questions",
+      "url": "https://shapkarin.me/articles/ethereum-abi#frequently-asked-questions",
       "description": "Common questions about ABI development, troubleshooting, and best practices",
       "order": 15
     }
