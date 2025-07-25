@@ -10,17 +10,11 @@ import { RiNpmjsLine, RiPaintBrushFill, RiArticleLine } from 'react-icons/ri';
 
 const PAGES = [
   {
-    name: 'Home',
+    name: 'Articles',
     path: '/',
     Icon: () => <RiArticleLine />,
     Page: () => <Articles />,
-    noInMenu: true,
-  },
-  {
-    name: 'Articles',
-    path: '/articles',
-    Icon: () => <RiArticleLine />,
-    Page: () => <Articles />,
+    redirect: { from: '/articles', to: '/' },
   },
   {
     name: 'Articles',

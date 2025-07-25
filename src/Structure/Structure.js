@@ -14,8 +14,8 @@ const Structure = () => (
               <Page />
             </PageLayout>
           </Route>,
-          redirect && <Redirect {...redirect} key={`Redirect_${name}`} />,
-          redirects && redirects.map((fromTo, i) => <Redirect {...fromTo} key={`Redirect_${name}_${i}`} />)
+          redirect && <Redirect exact {...redirect} key={`Redirect_${name}`} />,
+          redirects && redirects.map((fromTo, i) => <Redirect exact {...fromTo} key={`Redirect_${name}_${i}`} />)
         ],
         []
       )}
