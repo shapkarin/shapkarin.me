@@ -18,21 +18,21 @@ const PAGES = [
   },
   {
     name: 'Articles',
-    path: '/articles/:slug',
+    path: '/articles/:slug/',
     Icon: () => <RiArticleLine />,
     Page: () => <Article />,
     noInMenu: true,
   },
   {
     name: 'Repositories',
-    path: '/github/repositories',
+    path: '/github/repositories/',
     redirect: { from: '/repositories', to: '/github/repositories' },
     Icon: () => <GoRepo />,
     Page: () => <Repositories />,
   },
   {
     name: 'Likes',
-    path: '/github/likes',
+    path: '/github/likes/',
     redirects: [
       { from: '/likes', to: '/github/stars' },
       { from: '/liked', to: '/github/stars' },
@@ -43,14 +43,14 @@ const PAGES = [
   },
   {
     name: 'Packages',
-    path: '/packages',
+    path: '/packages/',
     redirect: { from: '/projects', to: '/packages' },
     Icon: () => <RiNpmjsLine size="1.24em" />,
     Page: (props) => <Packages { ...props } />,
   },
   {
     name: 'Creative',
-    path: '/creative',
+    path: '/creative/',
     redirects: [
       { from: '/generative', to: '/sketches' },
       { from: '/sketches', to: '/creative' }

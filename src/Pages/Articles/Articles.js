@@ -25,7 +25,7 @@ function ArticlesList() {
         <ul className="Article__List">
           {articles.map(({ slug, title }) => (
             <li key={slug} className="Article__Item">
-              <Link to={`/articles/${slug}`}>
+              <Link to={`/articles/${slug}/`}>
                 {title}
               </Link>
             </li>

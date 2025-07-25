@@ -44,7 +44,7 @@ The **Ethereum ABI (Application Binary Interface)** is a standardized way to int
 
 In the blockchain development ecosystem, ABI serves as the critical communication layer that enables seamless interaction between off-chain applications and on-chain smart contracts. Without ABI, developers would need to manually handle low-level bytecode operations, making smart contract integration extremely complex and error-prone.
 
-For developers building modern dApps, understanding ABI is not optional—it's fundamental. Every Web3 library, from [WAGMI to Ethers.js](/articles/wagmi-ethers), relies heavily on ABI specifications to provide the developer-friendly interfaces that make blockchain development accessible and efficient.
+For developers building modern dApps, understanding ABI is not optional—it's fundamental. Every Web3 library, from [WAGMI to Ethers.js](/articles/wagmi-ethers/), relies heavily on ABI specifications to provide the developer-friendly interfaces that make blockchain development accessible and efficient.
 
 ### Quick Facts:
 - **Purpose**: Standardizes smart contract interaction
