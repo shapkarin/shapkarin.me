@@ -21,6 +21,7 @@ const Menu = ({ ...rest }) => (
           key={id}
         >
           <NavLink
+            exact
             key={`Menu_${name}`}
             to={path}
             className="Menu__Item"

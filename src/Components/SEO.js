@@ -5,11 +5,7 @@ const SEO = ({ title, description, name = 'Iurii Shapkarin', type = 'website', a
 
   const { pathname } = useLocation();
   const ArticlesCanonicalUrl = 'https://shapkarin.me';
-  if(pathname === '/articles'){
-    <link rel="canonical" href={ArticlesCanonicalUrl} />
-  }
   const canonicalUrl = `https://shapkarin.me${pathname}`;
-  console.log(pathname, 'pathname');
   
   return (
     <Helmet>
@@ -17,7 +13,12 @@ const SEO = ({ title, description, name = 'Iurii Shapkarin', type = 'website', a
       <title>{title}</title>
       <meta name='description' content={description} />
       <meta name="keywords" content={keywords} />
-      <link rel="canonical" href={canonicalUrl} />
+
+      {pathname === '/articles' ? (
+        <link rel="canonical" href={ArticlesCanonicalUrl} />
+      ) : (
+        <link rel="canonical" href={canonicalUrl} />
+      )}
       
       {/* Redirect if we're on .html version, TODO: suync with crawler */}
       {/* <meta httpEquiv="refresh" content={`0;url=${canonicalUrl}`} /> */}
