@@ -18,7 +18,7 @@ keywords: >-
   algorithms, blockchain scalability, decentralized consensus, network security,
   blockchain resilience, validator consensus, ethereum staking, blockchain
   governance, distributed systems security
-order: 1
+order: 2
 ---
 
 # Byzantine Fault Tolerance in Blockchain: Complete Guide to BFT for Ethereum & EVM Chains
