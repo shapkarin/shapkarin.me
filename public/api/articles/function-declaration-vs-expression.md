@@ -4,7 +4,7 @@ description: >-
   Learn the critical differences between JavaScript function declarations and
   expressions, understand hoisting behavior, and discover when to use each
   approach for cleaner, more effective code.
-order: 2
+order: 3
 ---
 
 ## Table of Contents
