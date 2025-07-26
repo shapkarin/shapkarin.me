@@ -5,34 +5,24 @@
     "filename": "contributions-to-major-web-dev-repos.md"
   },
   {
+    "slug": "production-AI-in-2016-year",
+    "title": "Production AI In 2016 Year",
+    "filename": "production-AI-in-2016-year.md"
+  },
+  {
     "slug": "byzantine-fault-tolerance",
     "title": "Byzantine Fault Tolerance",
     "filename": "byzantine-fault-tolerance.md"
   },
   {
-    "slug": "hoc-and-currying",
-    "title": "Hoc And Currying",
-    "filename": "hoc-and-currying.md"
-  },
-  {
-    "slug": "ai-automation-for-business",
-    "title": "Ai Automation For Business",
-    "filename": "ai-automation-for-business.md"
+    "slug": "ethereum-abi",
+    "title": "Ethereum Abi",
+    "filename": "ethereum-abi.md"
   },
   {
     "slug": "floating-point-precision",
     "title": "Floating Point Precision",
     "filename": "floating-point-precision.md"
-  },
-  {
-    "slug": "function-declaration-vs-expression",
-    "title": "Function Declaration Vs Expression",
-    "filename": "function-declaration-vs-expression.md"
-  },
-  {
-    "slug": "production-AI-in-2016-year",
-    "title": "Production AI In 2016 Year",
-    "filename": "production-AI-in-2016-year.md"
   },
   {
     "slug": "back-health-and-therapeutic-exercises",
@@ -45,9 +35,24 @@
     "filename": "drop-react-manual-memoization.md"
   },
   {
+    "slug": "function-declaration-vs-expression",
+    "title": "Function Declaration Vs Expression",
+    "filename": "function-declaration-vs-expression.md"
+  },
+  {
+    "slug": "hoc-and-currying",
+    "title": "Hoc And Currying",
+    "filename": "hoc-and-currying.md"
+  },
+  {
     "slug": "javascript-lexical-scope",
     "title": "Javascript Lexical Scope",
     "filename": "javascript-lexical-scope.md"
+  },
+  {
+    "slug": "ai-automation-for-business",
+    "title": "Ai Automation For Business",
+    "filename": "ai-automation-for-business.md"
   },
   {
     "slug": "memoization",
@@ -108,11 +113,6 @@
     "slug": "async-event-loop-web-workers",
     "title": "Async Event Loop Web Workers",
     "filename": "async-event-loop-web-workers.md"
-  },
-  {
-    "slug": "ethereum-abi",
-    "title": "Ethereum Abi",
-    "filename": "ethereum-abi.md"
   },
   {
     "slug": "ethereum-whitepaper-explanation",

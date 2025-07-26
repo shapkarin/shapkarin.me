@@ -10,6 +10,7 @@ keywords: >-
   Ethereum ABI, Application Binary Interface, Smart Contract ABI, EVM ABI,  ABI
   encoding, ABI decoding, Contract interaction, Web3 ABI, Solidity ABI,  dApp
   development, Blockchain development, Smart contract integration
+order: 2
 ---
 
 # Ethereum ABI Complete Guide: Mastering Application Binary Interface for Smart Contract Development
