@@ -9,7 +9,6 @@
       "@id": "https://shapkarin.me/articles/WAGMI-basics/"
     },
     "url": "https://shapkarin.me/articles/WAGMI-basics/",
-    "isBasedOn": "https://raw.githubusercontent.com/shapkarin/shapkarin.me/refs/heads/gh-pages/api/articles/WAGMI-basics.md",
     "headline": "WAGMI Library Tutorial: Complete Guide to Building dApps with WAGMI and VIEM in 2025",
     "description": "Master WAGMI library for React dApp development. Learn WAGMI hooks, VIEM integration, multichain support, and best practices with practical examples. Complete WAGMI tutorial for beginners to advanced developers.",
     "image": {
