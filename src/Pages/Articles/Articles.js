@@ -7,8 +7,12 @@ import SEO from '@/Components/SEO';
 import './style.less';
 
 function ArticlesList() {
-  const { data: { data: articles } } = useQuery(['Articles'], () => fetchArticles(), 
-    { keepPreviousData : false }
+
+  const { data: { data: articles } } = useQuery(['ArticlesList'], () => fetchArticles(), 
+    { 
+      keepPreviousData : false,
+      retry: true,
+    }
   );
 
   return (
