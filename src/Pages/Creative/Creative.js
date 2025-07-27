@@ -47,7 +47,9 @@ function Intro() {
 
 
 function Collection(){
-  const { data: { data: collection } } = useQuery('Creative', fetchCreative);
+  const { data: { data: collection } } = useQuery('Creative', fetchCreative, {
+    retry: true,
+  });
 
   return <div className="Gal__Wrapper">
     {Object.keys(collection).map(category => (

@@ -13,7 +13,8 @@ const queryClient = new QueryClient({
   defaultOptions: {
      queries: {
        suspense: true,
-       staleTime: 60 * 1000 * 17, // 15 minutes chached data lifetime
+       staleTime: 60 * 1000 * 17, // 15 minutes chached data lifetime]
+       retry: true,
      },
    },
 });
