@@ -17,6 +17,18 @@ import TableMacro from './Macros/TableMacro';
 
 // Maybe make auto aeo schema with Macro or node.js
 
+const CodeBlock = ({ children, className, node, match, ...rest }) => {
+  return (
+  <SyntaxHighlighter
+      {...rest}
+      PreTag="div"
+      language={match[1] === 'js' ? 'javascript' : match[1]}
+      style={vscDarkPlus}
+    >
+      {String(children).replace(/\n$/, '')}
+  </SyntaxHighlighter>
+  )
+}
 
 const Article = () => {
   const { slug: articleName } = useParams();
@@ -104,28 +116,14 @@ const Article = () => {
                   return (
                   <details>
                     <summary>Show Mermaid Code</summary>
-                    <SyntaxHighlighter
-                        {...rest}
-                        PreTag="div"
-                        language={match[1] === 'js' ? 'javascript' : match[1]}
-                        style={vscDarkPlus}
-                      >
-                        {String(children).replace(/\n$/, '')}
-                    </SyntaxHighlighter>
+                    <CodeBlock {...props} match={match} />
                   </details>
                   )
                 }
                 return match ? (
                   <>
                     <h3 className="Article__CondingLang">{match[1]}:</h3>
-                    <SyntaxHighlighter
-                      {...rest}
-                      PreTag="div"
-                      language={match[1] === 'js' ? 'javascript' : match[1]}
-                      style={vscDarkPlus}
-                    >
-                      {String(children).replace(/\n$/, '')}
-                    </SyntaxHighlighter>
+                    <CodeBlock {...props} match={match} />
                   </>
                   ) : (
                     <code {...rest} className={className}>
