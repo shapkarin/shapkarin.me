@@ -28,8 +28,8 @@ export const packages = {
     return [
       'saga-fetch',
       'extend-routines',
-      'diff-browser-globals',
       'mermaid-render',
+      'diff-browser-globals',
     ];
   },
 
