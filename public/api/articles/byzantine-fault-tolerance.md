@@ -208,12 +208,10 @@ For a BFT system to work with `n` total nodes and `f` byzantine nodes:
 n ≥ 3f + 1
 ```
 This means:
-- With 4 nodes: 
+- With 4 nodes: Can tolerate 1 byzantine node
 ```math
 f = 1; 3f + 1 = 4
 ```
-Can tolerate 1 byzantine node
-
 - With 7 nodes: Can tolerate 2 byzantine nodes  
 - With 10 nodes Can tolerate 3 byzantine nodes
 
