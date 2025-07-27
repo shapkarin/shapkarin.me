@@ -58,7 +58,6 @@ const Article = () => {
     {
       enabled: Boolean(articleName),
       keepPreviousData: false,//true,
-      retry: true,
     }
   );
 

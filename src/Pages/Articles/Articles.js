@@ -8,12 +8,7 @@ import './style.less';
 
 function ArticlesList() {
 
-  const { data: { data: articles } } = useQuery('ArticlesList', fetchArticles, 
-    { 
-      keepPreviousData : false,
-      retry: true,
-    }
-  );
+  const { data: { data: articles } } = useQuery('ArticlesList', fetchArticles);
 
   return (
     <div className="Page Page__Article Page__Inner">

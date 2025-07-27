@@ -14,7 +14,8 @@ import './style.less';
 const EMAIL = 'yu.shapkarin@gmail.com';
 
 function About() {
-  const { data: { data: { title, intro, links: { linkedin, github } } } } = useQuery('About', () => fetchAbout());
+  const { data: { data: { title, intro, links: { linkedin, github } } } } = useQuery('About', fetchAbout);
+  
   const [copied, setCopied] = useState(false);
   
   return (
