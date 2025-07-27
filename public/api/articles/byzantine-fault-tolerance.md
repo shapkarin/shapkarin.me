@@ -21,9 +21,9 @@ keywords: >-
 order: 2
 ---
 
-# Byzantine Fault Tolerance in Blockchain: Complete Guide to BFT for Ethereum & EVM Chains
+# Byzantine Fault Tolerance in Blockchain: Complete Guide to BFT for Bitcoin, Ethereum & EVM Chains
 
-Byzantine Fault Tolerance (BFT) stands as one of the most critical security mechanisms in modern blockchain technology, ensuring that decentralized networks can maintain consensus and security even when facing malicious actors. In this comprehensive guide, we'll explore how BFT algorithms protect Ethereum, EVM-compatible chains, and other blockchain networks from various attacks while maintaining network integrity and performance.
+**Byzantine Fault Tolerance (BFT)** stands as one of the most critical security mechanisms in modern blockchain technology, ensuring that decentralized networks can **maintain consensus and security** even when facing **malicious actors**. In this comprehensive guide, we'll explore how BFT algorithms protect Bitcoin, Ethereum and EVM-compatible chains, and other blockchain networks from various attacks while maintaining network integrity and performance.
 
 ## Table of Contents
 
@@ -218,12 +218,18 @@ sequenceDiagram
 
 For a BFT system to work with `n` total nodes and `f` byzantine nodes:
 
-**n ≥ 3f + 1**
-
+```latex
+n ≥ 3f + 1
+```
 This means:
-- With 4 nodes: Can tolerate 1 byzantine node
+- With 4 nodes: 
+```latex
+f = 1; 3f + 1 = 4
+```
+Can tolerate 1 byzantine node
+
 - With 7 nodes: Can tolerate 2 byzantine nodes  
-- With 10 nodes: Can tolerate 3 byzantine nodes
+- With 10 nodes Can tolerate 3 byzantine nodes
 
 ## BFT vs Traditional Fault Tolerance
 
