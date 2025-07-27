@@ -204,12 +204,12 @@ sequenceDiagram
 
 For a BFT system to work with `n` total nodes and `f` byzantine nodes:
 
-```latex
+```math
 n ≥ 3f + 1
 ```
 This means:
 - With 4 nodes: 
-```latex
+```math
 f = 1; 3f + 1 = 4
 ```
 Can tolerate 1 byzantine node
