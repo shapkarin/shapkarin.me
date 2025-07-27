@@ -8,7 +8,7 @@ import './style.less';
 
 function ArticlesList() {
 
-  const { data: { data: articles } } = useQuery(['ArticlesList'], () => fetchArticles(), 
+  const { data: { data: articles } } = useQuery('ArticlesList', fetchArticles, 
     { 
       keepPreviousData : false,
       retry: true,
