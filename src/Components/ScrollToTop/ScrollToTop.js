@@ -5,14 +5,21 @@ import isMobile from 'is-mobile';
 function ScrollToTop({ selector = '.Page' }) {
   const [isVisible, setIsVisible] = useState(false);
 
-  const handleScrollToTop = function() {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+  const handleScrollToTop = function () {
+    const targetElement = document.querySelector(selector);
+
+    if (targetElement) {
+      targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    } else {
+      // Fallback to top of page if target element not found
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
   };
 
   useEffect(() => {
     const handleScroll = () => {
       const targetElement = document.querySelector(selector);
-      
+
       if (targetElement) {
         const rect = targetElement.getBoundingClientRect();
         setIsVisible(rect.top <= 0);
@@ -33,10 +40,10 @@ function ScrollToTop({ selector = '.Page' }) {
   }
 
   return (
-    <button 
+    <button
       className={styles.ScrollToTop}
       onClick={handleScrollToTop}
-      title="Scroll to top of page"
+      title="Scroll to top of content"
     >
       {!isMobile() ? 'Scroll to top' : '↑'}
     </button>
