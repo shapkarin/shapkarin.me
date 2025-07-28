@@ -39,7 +39,7 @@ export const packages = {
         title: 'Extend Routines',
         url: 'https://www.npmjs.com/package/extend-saga-routines',
         description: `
-          Customizable action creator lib for any kind of actions.`
+          Customizable action creator lib for any kind of actions.`,
         badges: [ 'npm/v', 'npm/dm', 'npm/l' ]
       },
       'saga-fetch': {
