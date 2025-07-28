@@ -45,7 +45,7 @@ async function writeData() {
   });
   await writeJSONFile(path.join(CREATIVE_FOLDER, 'collection.json'), database.creative.collection);
   await writeJSONFile(path.join(PACKAGES_FOLDER, 'packages.json'), {
-    packages: database.packages.list.map(({ id, url, title }) => ({ id, url, title })),
+    packages: database.packages.list.map(({ title, ...rest }) => ({ ...rest, title: title.trim(), })),
   });
 
   for (const pkg of database.packages.list) {

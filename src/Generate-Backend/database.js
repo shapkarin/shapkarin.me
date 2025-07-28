@@ -39,28 +39,28 @@ export const packages = {
         title: 'Extend Routines',
         url: 'https://www.npmjs.com/package/extend-saga-routines',
         description: `
-          Customizable action creator lib for any kind of actions.`.trim(),
+          Customizable action creator lib for any kind of actions.`
         badges: [ 'npm/v', 'npm/dm', 'npm/l' ]
       },
       'saga-fetch': {
         title: 'Saga Fetch',
         url: 'https://www.npmjs.com/package/saga-fetch',
         description: `
-          Redux-Saga worker, created to simplify a fetch worker implementation.`.trim(),
+          Redux-Saga worker, created to simplify a fetch worker implementation.`,
         badges: [ 'npm/v', 'npm/dm', 'npm/l' ]
       },
       'diff-browser-globals': {
         title: 'Global diff (suspended)',
         url: 'https://github.com/shapkarin/diff-browser-globals',
         description: `
-          Compare your window and browser default scopes.`.trim(),
+          Compare your window and browser default scopes.`,
         badges: []
       },
       'mermaid-render': {
         title: 'Mermaid Render (in dev)',
         url: 'https://github.com/shapkarin/mermaid-render',
         description: `
-          Render mermaid diagrams as images and insert them into the markdown. Used in this website's articles.`.trim(),
+          Render mermaid diagrams as images and insert them into the markdown. Used in this website's articles.`,
         badges: []
       },
     }
