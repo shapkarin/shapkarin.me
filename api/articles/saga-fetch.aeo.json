@@ -1,0 +1,141 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "saga-fetch: Streamline API Calls in Redux Saga Applications",
+  "description": "Learn how to simplify AJAX requests in Redux Saga with saga-fetch. Handle loading states, success/error responses, and request cancellation with minimal boilerplate code.",
+  "author": {
+    "@type": "Person",
+    "name": "Iurii Shapkarin",
+    "alternateName": "Yury Shapkarin",
+    "url": "https://shapkarin.me"
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": "Iurii Shapkarin",
+    "alternateName": "Yury Shapkarin",
+    "url": "https://shapkarin.me",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://shapkarin.me/logo.jpg"
+    }
+  },
+  "datePublished": "2024-01-01",
+  "dateModified": "2024-01-01",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://shapkarin.me/saga-fetch"
+  },
+  "image": {
+    "@type": "ImageObject",
+    "url": "https://shapkarin.me/api/articles/saga-fetch-0.svg",
+    "width": 800,
+    "height": 600
+  },
+  "keywords": [
+    "Redux Saga",
+    "saga-fetch",
+    "JavaScript",
+    "React",
+    "AJAX",
+    "API calls",
+    "Redux",
+    "Asynchronous programming",
+    "State management",
+    "Boilerplate reduction"
+  ],
+  "about": {
+    "@type": "SoftwareSourceCode",
+    "name": "saga-fetch",
+    "description": "A utility library for streamlining API calls in Redux Saga applications",
+    "programmingLanguage": "JavaScript",
+    "codeRepository": "https://github.com/shapkarin/saga-fetch",
+    "runtimePlatform": [
+      "Node.js",
+      "Web Browser"
+    ],
+    "targetProduct": {
+      "@type": "SoftwareApplication",
+      "name": "Redux Saga",
+      "applicationCategory": "JavaScript Library"
+    }
+  },
+  "teaches": [
+    "How to install and configure saga-fetch",
+    "Understanding saga-fetch configuration options",
+    "Implementing basic API calls with saga-fetch",
+    "Handling loading states and error conditions",
+    "Advanced patterns with axios and cancel tokens",
+    "Integration with redux-saga-routines",
+    "Best practices for async request handling"
+  ],
+  "educationalLevel": "Intermediate",
+  "learningResourceType": "Tutorial",
+  "articleSection": [
+    "Getting Started",
+    "Configuration Options",
+    "Basic Example",
+    "Advanced Example",
+    "Integration Patterns"
+  ],
+  "audience": {
+    "@type": "Audience",
+    "audienceType": "JavaScript Developers"
+  },
+  "mentions": [
+    {
+      "@type": "SoftwareApplication",
+      "name": "Redux Saga",
+      "applicationCategory": "JavaScript Library",
+      "operatingSystem": "Cross-platform"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "Axios",
+      "applicationCategory": "HTTP Client Library",
+      "operatingSystem": "Cross-platform"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "Redux",
+      "applicationCategory": "State Management Library",
+      "operatingSystem": "Cross-platform"
+    }
+  ],
+  "hasPart": [
+    {
+      "@type": "ImageObject",
+      "name": "Redux Saga Fetch Workflow Sequence Diagram",
+      "description": "Detailed sequence diagram showing the complete Redux Saga fetch lifecycle including component dispatch, saga processing, API calls, success/error handling, and Redux store updates",
+      "contentUrl": "https://shapkarin.me/api/articles/saga-fetch-0.svg",
+      "encodingFormat": "image/svg+xml",
+      "learningResourceType": "diagram",
+      "educationalUse": [
+        "learning",
+        "presentation"
+      ],
+      "about": {
+        "@type": "Thing",
+        "name": "Redux Saga Asynchronous Flow"
+      }
+    },
+    {
+      "@type": "SoftwareSourceCode",
+      "name": "Basic saga-fetch Configuration",
+      "description": "Example showing basic configuration of saga-fetch with start, success, error, and fulfill actions",
+      "programmingLanguage": "JavaScript",
+      "text": "yield fork(fetchWorker, {\n  action,\n  method: searchPages,\n  start: searchPagesStart,\n  success: searchPagesSuccess,\n  error: searchPagesError,\n  fulfill: searchPagesFulfill,\n});"
+    },
+    {
+      "@type": "SoftwareSourceCode",
+      "name": "Advanced saga-fetch with Axios",
+      "description": "Advanced example showing integration with axios, cancel tokens, and redux-saga-routines",
+      "programmingLanguage": "JavaScript",
+      "text": "const searchPages = ({ payload: { title } }) => {\n  const source = CancelToken.source();\n  const request = axios.get(`/search/pages?title=${title}`, { cancelToken: source.token });\n  request[CANCEL] = () => source.cancel();\n  return request;\n};"
+    }
+  ],
+  "isPartOf": {
+    "@type": "Blog",
+    "name": "Shapkarin.me Technical Blog",
+    "url": "https://shapkarin.me"
+  }
+}

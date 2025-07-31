@@ -1,0 +1,255 @@
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://shapkarin.me/articles/react-vs-jquery/"
+    },
+    "url": "https://shapkarin.me/articles/react-vs-jquery/",
+    "headline": "React vs jQuery 2025: A Complete Guide for Developers & CTOs",
+    "description": "A comprehensive, data-driven comparison of React and jQuery for 2025. Explore performance, security (XSS), market trends, business ROI, and decide which is best for your project. Features live data and expert analysis.",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://shapkarin.me/logo.jpg",
+        "width": 512,
+        "height": 512
+    },
+    "author": {
+      "@type": "Person",
+      "name": "Iurii Shapkarin",
+      "alternateName": "Yury Shapkarin",
+      "url": "https://shapkarin.me"
+    },
+    "publisher": {
+      "@type": "Person",
+      "name": "Iurii Shapkarin",
+      "alternateName": "Yury Shapkarin",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://shapkarin.me/logo.jpg",
+        "width": 512,
+        "height": 512
+      }
+    },
+    "datePublished": "2023-10-27",
+    "dateModified": "2023-10-27",
+    "wordCount": "2150",
+    "inLanguage": "en-US",
+    "learningResourceType": "Comprehensive guide",
+    "proficiencyLevel": ["Beginner", "Expert"],
+    "keywords": "React vs jQuery, React or jQuery, React jQuery difference, React performance, jQuery security, web development frameworks, JavaScript libraries, front-end 2025, CTO guide, technical comparison, AEO, XSS protection",
+    "about": [
+      {
+        "@type": "Thing",
+        "name": "React (JavaScript library)"
+      },
+      {
+        "@type": "Thing",
+        "name": "jQuery"
+      }
+    ],
+    "audience": [
+      {
+        "@type": "Audience",
+        "audienceType": "Developers",
+        "name": "Frontend Developers"
+      },
+      {
+          "@type": "Audience",
+          "audienceType": "Developers",
+          "name": "Full-Stack Developers"
+      },
+      {
+          "@type": "Audience",
+          "audienceType": "Developers",
+          "name": "React Developers"
+      },
+      {
+          "@type": "Audience",
+          "audienceType": "Technical Leaders",
+          "name": "Software Architects"
+      },
+      {
+          "@type": "Audience",
+          "audienceType": "Technical Leaders",
+          "name": "Engineering Managers"
+      },
+      {
+        "@type": "Audience",
+        "audienceType": "Business Professionals",
+        "name": "Chief Technology Officers (CTOs)"
+      }
+    ],
+    "citation": [
+      {
+        "@type": "WebPage",
+        "name": "React documentation",
+        "@id": "https://react.dev/"
+      },
+      {
+        "@type": "WebPage",
+        "name": "jQuery documentation",
+        "@id": "https://jquery.com/"
+      },
+      {
+        "@type": "WebPage",
+        "name": "React NPM registry",
+        "@id": "https://www.npmjs.com/package/react"
+      },
+      {
+        "@type": "WebPage",
+        "name": "jQuery NPM registry",
+        "@id": "https://www.npmjs.com/package/jquery"
+      },
+      {
+        "@type": "WebPage",
+        "name": "React GitHub repository",
+        "@id": "https://github.com/facebook/react"
+      },
+      {
+        "@type": "WebPage",
+        "name": "React GitHub organization",
+        "@id": "https://github.com/facebook"
+      },
+      {
+        "@type": "WebPage",
+        "name": "jQuery GitHub organization",
+        "@id": "https://github.com/jquery"
+      },
+      {
+        "@type": "WebPage",
+        "name": "jQuery GitHub repository",
+        "@id": "https://github.com/jquery/jquery"
+      }
+    ],
+    "hasPart": [
+      {
+        "@type": "WebPageElement",
+        "name": "Executive Summary: The Winner at a Glance",
+        "url": "https://shapkarin.me/articles/jquery-vs-react/#executive-summary-the-winner-at-a-glance"
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "Market Position & Popularity: A Tale of Two Trends",
+        "url": "https://shapkarin.me/articles/jquery-vs-react/#market-position--popularity-a-tale-of-two-trends"
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "Core Architecture: Virtual DOM vs. Direct Manipulation",
+        "url": "https://shapkarin.me/articles/jquery-vs-react/#core-architecture-virtual-dom-vs-direct-manipulation"
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "Security Deep-Dive: Why React Is Safer by Default",
+        "url": "https://shapkarin.me/articles/jquery-vs-react/#security-deep-dive-why-react-is-safer-by-default"
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "Performance Benchmarks: Speed Under Pressure",
+        "url": "https://shapkarin.me/articles/jquery-vs-react/#performance-benchmarks-speed-under-pressure"
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "Business ROI & Hiring Trends",
+        "url": "https://shapkarin.me/articles/jquery-vs-react/#business-roi--hiring-trends"
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "React: Pros & Cons",
+        "url": "https://shapkarin.me/articles/jquery-vs-react/#react-pros--cons"
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "jQuery: Pros & Cons",
+        "url": "https://shapkarin.me/articles/jquery-vs-react/#jquery-pros--cons"
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "When to Use React vs. When to Use jQuery",
+        "url": "https://shapkarin.me/articles/jquery-vs-react/#when-to-use-react-vs-when-to-use-jquery"
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "FAQ: People Also Ask",
+        "url": "https://shapkarin.me/articles/jquery-vs-react/#faq-people-also-ask"
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "Conclusion: The 30-Second Decision Tree",
+        "url": "https://shapkarin.me/articles/jquery-vs-react/#conclusion-the-30-second-decision-tree"
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "References & Data Sources",
+        "url": "https://shapkarin.me/articles/jquery-vs-react/#references--data-sources"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "ImageObject",
+    "name": "React vs jQuery DOM Update Comparison Flowchart",
+    "description": "Flowchart comparing React's Virtual DOM approach with jQuery's direct DOM manipulation, showing performance differences and update mechanisms",
+    "contentUrl": "https://shapkarin.me/api/articles/react-vs-jquery-0.svg",
+    "encodingFormat": "image/svg+xml",
+    "learningResourceType": "diagram",
+    "educationalUse": ["learning", "presentation"],
+    "about": {
+      "@type": "Thing",
+      "name": "React Virtual DOM vs jQuery DOM Manipulation"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "ImageObject",
+    "name": "XSS Security Vulnerability Comparison Diagram",
+    "description": "Security flowchart showing how React's built-in XSS protection compares to jQuery's vulnerability to Cross-Site Scripting attacks, demonstrating security best practices",
+    "contentUrl": "https://shapkarin.me/api/articles/react-vs-jquery-1.svg",
+    "encodingFormat": "image/svg+xml",
+    "learningResourceType": "diagram",
+    "educationalUse": ["learning", "presentation"],
+    "about": {
+      "@type": "Thing",
+      "name": "Web Security XSS Protection"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Is jQuery dead in 2025?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No, jQuery is not dead, but it is considered a legacy technology. While millions of existing websites still rely on it for maintenance, new projects overwhelmingly prefer modern alternatives like React, Vue, or Svelte for their superior architecture and performance."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I use React and jQuery together?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, you can use React and jQuery together, but it is generally not recommended. Mixing their different approaches to DOM manipulation can lead to unpredictable bugs and maintenance issues. It should only be considered as a temporary solution during a gradual migration from jQuery to React."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Which is faster, React or jQuery?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "For complex and dynamic user interfaces, React is significantly faster than jQuery. React's Virtual DOM minimizes direct DOM operations by batching updates, resulting in performance gains of 2-4x for update-heavy tasks. jQuery's direct DOM manipulation can be inefficient at scale."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "For a beginner, should I learn React or jQuery first?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A beginner should learn React first. The modern front-end job market is built around component-based frameworks like React. Learning it provides more career opportunities and teaches modern development paradigms. jQuery should only be learned if you specifically need to maintain older, legacy codebases."
+        }
+      }
+    ]
+  }
+]

@@ -1,0 +1,341 @@
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://shapkarin.me/articles/memoization/"
+    },
+    "url": "https://shapkarin.me/articles/memoization/",
+    "headline": "Mastering React Performance: memo, useMemo, and useCallback Deep Dive",
+    "description": "Unlock peak performance in your React applications. Learn how to effectively use React.memo, useMemo, and useCallback for optimal rendering and maintainable code. Complete guide with examples, best practices, and advanced scenarios.",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://shapkarin.me/logo.jpg",
+        "width": 512,
+        "height": 512
+    },
+    "author": {
+      "@type": "Person",
+      "name": "Iurii Shapkarin",
+      "alternateName": "Yury Shapkarin",
+      "url": "https://shapkarin.me"
+    },
+    "publisher": {
+      "@type": "Person",
+      "name": "Iurii Shapkarin",
+      "alternateName": "Yury Shapkarin",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://shapkarin.me/logo.jpg",
+        "width": 512,
+        "height": 512
+      }
+    },
+    "datePublished": "2023-08-15",
+    "dateModified": "2024-01-20",
+    "wordCount": "3200",
+    "inLanguage": "en-US",
+    "learningResourceType": "Comprehensive tutorial",
+    "proficiencyLevel": ["Intermediate", "Expert"],
+    "keywords": "React performance, React memo, useMemo, useCallback, React optimization, React hooks, memoization, React performance tuning, component optimization, Virtual DOM optimization, React best practices, frontend performance",
+    "about": [
+      {
+        "@type": "Thing",
+        "name": "React.memo",
+        "description": "React higher-order component for memoizing functional components"
+      },
+      {
+        "@type": "Thing",
+        "name": "useMemo hook",
+        "description": "React hook for memoizing expensive calculations"
+      },
+      {
+        "@type": "Thing",
+        "name": "useCallback hook",
+        "description": "React hook for memoizing function references"
+      },
+      {
+        "@type": "Thing",
+        "name": "React Performance Optimization"
+      }
+    ],
+    "audience": [
+      {
+        "@type": "Audience",
+        "audienceType": "Developers",
+        "name": "Frontend Developers"
+      },
+      {
+        "@type": "Audience",
+        "audienceType": "Developers",
+        "name": "Full-Stack Developers"
+      },
+      {
+        "@type": "Audience",
+        "audienceType": "Developers",
+        "name": "React Developers"
+      },
+      {
+        "@type": "Audience",
+        "audienceType": "Technical Leaders",
+        "name": "Software Architects"
+      },
+      {
+        "@type": "Audience",
+        "audienceType": "Technical Leaders",
+        "name": "Engineering Managers"
+      },
+      {
+        "@type": "Audience",
+        "audienceType": "Business Professionals",
+        "name": "Chief Technology Officers (CTOs)"
+      },
+      {
+        "@type": "Audience",
+        "audienceType": "Developers",
+        "name": "Software Engineers"
+      }
+    ],
+    "citation": [
+      {
+        "@type": "WebPage",
+        "name": "React documentation - memo",
+        "@id": "https://react.dev/reference/react/memo"
+      },
+      {
+        "@type": "WebPage",
+        "name": "React documentation - useMemo",
+        "@id": "https://react.dev/reference/react/useMemo"
+      },
+      {
+        "@type": "WebPage",
+        "name": "React documentation - useCallback", 
+        "@id": "https://react.dev/reference/react/useCallback"
+      },
+      {
+        "@type": "WebPage",
+        "name": "React Performance documentation",
+        "@id": "https://react.dev/learn/render-and-commit"
+      },
+      {
+        "@type": "WebPage",
+        "name": "React Hooks documentation",
+        "@id": "https://react.dev/reference/react"
+      }
+    ],
+    "hasPart": [
+      {
+        "@type": "WebPageElement",
+        "name": "Introduction: Performance Optimization with memo, useMemo, and useCallback",
+        "url": "https://shapkarin.me/articles/memoization#introduction-performance-optimization-with-memo-usememo-and-usecallback"
+      },
+      {
+        "@type": "WebPageElement", 
+        "name": "React.memo for Component Memoization",
+        "url": "https://shapkarin.me/articles/memoization#reactmemo-for-component-memoization"
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "useMemo for Expensive Calculations", 
+        "url": "https://shapkarin.me/articles/memoization#usememo-for-expensive-calculations"
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "useCallback for Stable Function References",
+        "url": "https://shapkarin.me/articles/memoization#usecallback-for-stable-function-references"
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "Using These Hooks Judiciously",
+        "url": "https://shapkarin.me/articles/memoization#using-these-hooks-judiciously"
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "Best Practices and Common Pitfalls",
+        "url": "https://shapkarin.me/articles/memoization#best-practices-and-common-pitfalls"
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "Advanced Scenarios", 
+        "url": "https://shapkarin.me/articles/memoization#advanced-scenarios"
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "Conclusion",
+        "url": "https://shapkarin.me/articles/memoization#conclusion"
+      }
+    ],
+    "teaches": [
+      "How to use React.memo to prevent unnecessary re-renders",
+      "When and how to implement useMemo for expensive calculations", 
+      "Best practices for useCallback to stabilize function references",
+      "Common pitfalls and anti-patterns in React memoization",
+      "Advanced memoization scenarios with Context and custom hooks",
+      "Performance profiling and optimization strategies"
+    ],
+    "programmingLanguage": "JavaScript",
+    "operatingSystem": "Cross-platform",
+    "applicationCategory": "Educational"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "ImageObject",
+    "name": "React.memo Component Memoization Diagram",
+    "description": "Diagram illustrating how React.memo prevents unnecessary re-renders by memoizing components, showing the comparison process and performance benefits",
+    "contentUrl": "https://shapkarin.me/api/articles/memoization-0.svg",
+    "encodingFormat": "image/svg+xml",
+    "learningResourceType": "diagram",
+    "educationalUse": ["learning", "presentation"],
+    "about": {
+      "@type": "Thing",
+      "name": "React Component Memoization"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "ImageObject",
+    "name": "React useMemo Hook Optimization Flowchart",
+    "description": "Flowchart showing how useMemo caches expensive calculation results between renders, demonstrating dependency checking and performance optimization",
+    "contentUrl": "https://shapkarin.me/api/articles/memoization-1.svg",
+    "encodingFormat": "image/svg+xml",
+    "learningResourceType": "diagram",
+    "educationalUse": ["learning", "presentation"],
+    "about": {
+      "@type": "Thing",
+      "name": "React useMemo Hook"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "relatedLink": [
+      {
+        "@type": "WebPage",
+        "name": "State Optimization Guide Article",
+        "url": "https://shapkarin.me/articles/state-optimization-guide",
+        "description": "Related article about state optimization in React applications"
+      },
+      {
+        "@type": "WebPage", 
+        "name": "New Babel Plugin React Compiler Improvements",
+        "url": "https://shapkarin.me/articles/drop-react-manual-memoization",
+        "description": "Article about new babel-plugin-react-compiler improvements that can replace manual memoization"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "When should I use React.memo?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Use React.memo when you have a functional component that receives the same props frequently and re-renders unnecessarily. It's most effective for components that are expensive to render or are rendered many times (like list items). Don't use it for every component - profile first to identify actual performance bottlenecks."
+        }
+      },
+      {
+        "@type": "Question", 
+        "name": "What's the difference between useMemo and useCallback?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "useMemo memoizes the result of a calculation or expression, while useCallback memoizes the function itself. Use useMemo for expensive calculations that return values, and useCallback for functions that are passed as props to optimized child components to maintain stable references."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can memoization hurt performance?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, unnecessary memoization can hurt performance. React needs to store memoized values and compare dependencies on each render. For simple components or calculations, the overhead of memoization might outweigh the benefits. Always profile before optimizing and focus on actual bottlenecks."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are the most common memoization mistakes?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Common mistakes include: 1) Over-memoization without profiling first, 2) Missing dependencies in dependency arrays leading to stale closures, 3) Creating new objects/arrays in render that break memoization, 4) Using memoization for trivial operations, and 5) Not understanding when dependencies actually change."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I know if my memoization is working?",
+        "acceptedAnswer": {
+          "@type": "Answer", 
+          "text": "Use React Developer Tools Profiler to measure component render times and frequency. Add console.log statements in your components to track when they re-render. For memoized calculations, log when the calculation runs vs when cached values are returned. Focus on components that render frequently or take significant time."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Should I memoize every component and function?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No, this is a common anti-pattern. Memoization adds overhead and complexity. Only memoize when you have identified actual performance problems through profiling. Start with a clean, simple implementation and optimize strategically based on real performance data."
+        }
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "How to Optimize React Performance with Memoization",
+    "description": "Step-by-step guide to using React.memo, useMemo, and useCallback for optimal React application performance",
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://shapkarin.me/logo.jpg",
+      "width": 512,
+      "height": 512
+    },
+    "totalTime": "PT30M",
+    "estimatedCost": {
+      "@type": "MonetaryAmount",
+      "currency": "USD",
+      "value": "0"
+    },
+    "supply": [
+      {
+        "@type": "HowToSupply",
+        "name": "React application"
+      },
+      {
+        "@type": "HowToSupply", 
+        "name": "React Developer Tools"
+      }
+    ],
+    "tool": [
+      {
+        "@type": "HowToTool",
+        "name": "React Developer Tools Profiler"
+      }
+    ],
+    "step": [
+      {
+        "@type": "HowToStep",
+        "name": "Profile your application",
+        "text": "Use React Developer Tools Profiler to identify components with performance issues"
+      },
+      {
+        "@type": "HowToStep", 
+        "name": "Apply React.memo selectively",
+        "text": "Wrap components that re-render unnecessarily with React.memo, focusing on expensive or frequently rendered components"
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Optimize expensive calculations",
+        "text": "Use useMemo to cache results of expensive calculations, ensuring proper dependency arrays"
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Stabilize function references", 
+        "text": "Apply useCallback to functions passed as props to memoized components"
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Verify improvements",
+        "text": "Re-profile your application to confirm performance improvements and avoid over-optimization"
+      }
+    ]
+  }
+] 

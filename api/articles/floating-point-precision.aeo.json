@@ -1,0 +1,331 @@
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://shapkarin.me/articles/floating-point-precision/"
+    },
+    "url": "https://shapkarin.me/articles/floating-point-precision/",
+    "headline": "Floating-Point Precision: Why 0.1 + 0.2 Isn't 0.3 - Complete Developer Guide",
+    "description": "Discover why 0.1 + 0.2 equals 0.30000000000000004 in programming. Learn IEEE 754 standard, binary representation issues, and practical solutions for JavaScript, Python, C++, and Rust with expert examples.",
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://shapkarin.me/logo.jpg",
+      "width": 512,
+      "height": 512
+    },
+    "author": {
+      "@type": "Person",
+      "name": "Iurii Shapkarin",
+      "alternateName": "Yury Shapkarin",
+      "url": "https://shapkarin.me"
+    },
+    "publisher": {
+      "@type": "Person",
+      "name": "Iurii Shapkarin",
+      "alternateName": "Yury Shapkarin",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://shapkarin.me/logo.jpg",
+        "width": 512,
+        "height": 512
+      }
+    },
+    "datePublished": "2023-09-20",
+    "dateModified": "2024-02-15",
+    "wordCount": "1850",
+    "inLanguage": "en-US",
+    "learningResourceType": "Technical tutorial",
+    "proficiencyLevel": ["Beginner", "Intermediate", "Advanced"],
+    "keywords": "floating point precision, 0.1 + 0.2, IEEE 754, binary representation, JavaScript floating point, Python decimal precision, C++ double precision, Rust f64, floating point errors, computer arithmetic, binary fractions, decimal arithmetic, BigInt JavaScript, financial calculations, programming mathematics",
+    "about": [
+      {
+        "@type": "Thing",
+        "name": "IEEE 754",
+        "description": "IEEE Standard for Floating-Point Arithmetic defining binary and decimal floating-point formats"
+      },
+      {
+        "@type": "Thing",
+        "name": "Floating-point arithmetic",
+        "description": "Computer representation and manipulation of real numbers in binary format"
+      },
+      {
+        "@type": "Thing",
+        "name": "Binary representation",
+        "description": "How computers store decimal numbers in base-2 binary format"
+      },
+      {
+        "@type": "Thing",
+        "name": "JavaScript Number precision"
+      },
+      {
+        "@type": "Thing",
+        "name": "Computer Mathematics"
+      }
+    ],
+    "audience": [
+      {
+        "@type": "Audience",
+        "audienceType": "Students",
+        "name": "Computer Science Students"
+      },
+      {
+        "@type": "Audience",
+        "audienceType": "Developers",
+        "name": "Full-Stack Developers"
+      },
+      {
+        "@type": "Audience",
+        "audienceType": "Developers",
+        "name": "React Developers"
+      },
+      {
+        "@type": "Audience",
+        "audienceType": "Technical Leaders",
+        "name": "Software Architects"
+      },
+      {
+        "@type": "Audience",
+        "audienceType": "Technical Leaders",
+        "name": "Engineering Managers"
+      },
+      {
+        "@type": "Audience",
+        "audienceType": "Business Professionals",
+        "name": "Chief Technology Officers (CTOs)"
+      },
+      {
+        "@type": "Audience",
+        "audienceType": "Developers",
+        "name": "Software Engineers"
+      }
+    ],
+    "citation": [
+      {
+        "@type": "WebPage",
+        "name": "IEEE 754 Standard",
+        "@id": "https://standards.ieee.org/standard/754-2019.html"
+      },
+      {
+        "@type": "WebPage",
+        "name": "JavaScript Number documentation",
+        "@id": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number"
+      },
+      {
+        "@type": "WebPage",
+        "name": "Python decimal module",
+        "@id": "https://docs.python.org/3/library/decimal.html"
+      },
+      {
+        "@type": "WebPage",
+        "name": "Floating Point Arithmetic: Issues and Limitations",
+        "@id": "https://docs.python.org/3/tutorial/floatingpoint.html"
+      },
+      {
+        "@type": "WebPage",
+        "name": "What Every Computer Scientist Should Know About Floating-Point Arithmetic",
+        "@id": "https://docs.oracle.com/cd/E19957-01/806-3568/ncg_goldberg.html"
+      }
+    ],
+    "hasPart": [
+      {
+        "@type": "WebPageElement",
+        "name": "Why 0.1 + 0.2 Isn't Exactly 0.3 in Most Programming Languages",
+        "url": "https://shapkarin.me/articles/floating-point-precision#why-0-1-0-2-isn-t-exactly-0-3-in-most-programming-languages"
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "The Root Cause: Binary Representation",
+        "url": "https://shapkarin.me/articles/floating-point-precision#the-root-cause-binary-representation"
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "Adding the Inexact Values",
+        "url": "https://shapkarin.me/articles/floating-point-precision#adding-the-inexact-values"
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "The Role of IEEE 754",
+        "url": "https://shapkarin.me/articles/floating-point-precision#the-role-of-ieee-754"
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "Demonstrations in Code",
+        "url": "https://shapkarin.me/articles/floating-point-precision#demonstrations-in-code"
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "Why it Matters and How to Handle It",
+        "url": "https://shapkarin.me/articles/floating-point-precision#why-it-matters-and-how-to-handle-it"
+      }
+    ],
+    "teaches": [
+      "Why 0.1 + 0.2 equals 0.30000000000000004 in programming languages",
+      "How binary representation causes floating-point precision errors",
+      "Understanding IEEE 754 standard and rounding rules",
+      "Practical solutions for exact decimal arithmetic",
+      "When and how to use BigInt in JavaScript for precision",
+      "Best practices for financial calculations in programming",
+      "Cross-language floating-point behavior in JavaScript, Python, C++, and Rust"
+    ],
+    "programmingLanguage": ["JavaScript", "Python", "C++", "Rust"],
+    "operatingSystem": "Cross-platform",
+    "applicationCategory": "Educational"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "ImageObject",
+    "name": "Floating-Point Binary Conversion and Precision Error Diagram",
+    "description": "Flowchart illustrating how decimal numbers 0.1 and 0.2 are converted to binary representation, rounded to fit 64-bit format, and how their addition results in precision errors leading to 0.30000000000000004",
+    "contentUrl": "https://shapkarin.me/api/articles/floating-point-precision-0.svg",
+    "encodingFormat": "image/svg+xml",
+    "learningResourceType": "diagram",
+    "educationalUse": ["learning", "presentation"],
+    "about": {
+      "@type": "Thing",
+      "name": "IEEE 754 Floating-Point Representation"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Why does 0.1 + 0.2 equal 0.30000000000000004 instead of 0.3?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "This happens because computers store decimal numbers in binary format, and many decimal fractions like 0.1 and 0.2 cannot be represented exactly in binary. They are stored as the closest possible binary approximation, and when added together, the result is slightly off from the expected decimal value due to accumulated rounding errors."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is IEEE 754 and how does it affect floating-point precision?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "IEEE 754 is the technical standard for floating-point arithmetic used by most computers and programming languages. It defines how floating-point numbers are represented in binary, including the format for single-precision (32-bit) and double-precision (64-bit) numbers, and the rules for arithmetic operations and rounding. This standard ensures consistent floating-point behavior across different platforms but also introduces the precision limitations we observe."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How can I fix floating-point precision errors in my code?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "There are several solutions: 1) Use dedicated decimal libraries (like Python's decimal module or JavaScript's decimal.js), 2) Work with integers by scaling your numbers (e.g., use cents instead of dollars), 3) Use epsilon comparisons instead of exact equality checks, 4) For JavaScript, consider using BigInt for large integer calculations, or 5) Round results to a specific number of decimal places when displaying to users."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do all programming languages have this floating-point precision issue?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, any programming language that uses IEEE 754 floating-point arithmetic (which includes JavaScript, Python, C++, Java, C#, Rust, and most others) will exhibit this behavior. The issue is not language-specific but rather a fundamental characteristic of how binary floating-point numbers work in computer hardware."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "When should I be concerned about floating-point precision errors?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "You should be most concerned when dealing with: 1) Financial calculations where exact decimal precision is legally required, 2) Equality comparisons between floating-point numbers, 3) Iterative calculations where small errors can accumulate over time, 4) Scientific computations requiring high precision, or 5) Any application where users might notice or be affected by small numerical discrepancies."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the difference between single-precision and double-precision floating-point?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Single-precision (32-bit) floating-point numbers have about 7 decimal digits of precision, while double-precision (64-bit) numbers have about 15-16 decimal digits of precision. Most programming languages use double-precision by default (like JavaScript's Number type, Python's float, C++'s double). Single-precision uses less memory but sacrifices accuracy, while double-precision provides better accuracy at the cost of more memory usage."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does JavaScript's BigInt help with precision issues?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "BigInt in JavaScript provides arbitrary precision integer arithmetic, allowing you to work with integers larger than Number.MAX_SAFE_INTEGER (2^53 - 1) without losing precision. While BigInt doesn't directly solve floating-point decimal issues, it's useful when you can scale your problem to work with integers (like converting dollars to cents) to avoid floating-point arithmetic altogether."
+        }
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "How to Handle Floating-Point Precision Issues in Programming",
+    "description": "Step-by-step guide to identifying, understanding, and solving floating-point precision problems in software development",
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://shapkarin.me/logo.jpg",
+      "width": 512,
+      "height": 512
+    },
+    "totalTime": "PT20M",
+    "estimatedCost": {
+      "@type": "MonetaryAmount",
+      "currency": "USD",
+      "value": "0"
+    },
+    "supply": [
+      {
+        "@type": "HowToSupply",
+        "name": "Programming environment"
+      },
+      {
+        "@type": "HowToSupply",
+        "name": "Code editor or IDE"
+      }
+    ],
+    "tool": [
+      {
+        "@type": "HowToTool",
+        "name": "JavaScript console or Python REPL"
+      },
+      {
+        "@type": "HowToTool",
+        "name": "Decimal arithmetic library"
+      }
+    ],
+    "step": [
+      {
+        "@type": "HowToStep",
+        "name": "Identify floating-point precision issues",
+        "text": "Test your calculations with simple decimal operations like 0.1 + 0.2 and check if the results match your expectations exactly"
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Understand the root cause",
+        "text": "Learn that decimal fractions often cannot be represented exactly in binary floating-point format, leading to small rounding errors"
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Choose appropriate solution",
+        "text": "Select from: decimal libraries for exact arithmetic, integer scaling for fixed-point math, epsilon comparisons for equality checks, or rounding for display purposes"
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Implement the solution",
+        "text": "Apply your chosen method consistently throughout your codebase, especially in critical calculations like financial transactions"
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Test and validate",
+        "text": "Verify that your solution produces the expected results and handles edge cases appropriately"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareSourceCode",
+    "name": "Floating-Point Precision Examples",
+    "description": "Code examples demonstrating floating-point precision issues and solutions across multiple programming languages",
+    "programmingLanguage": ["JavaScript", "Python", "C++", "Rust"],
+    "codeRepository": "https://shapkarin.me/articles/floating-point-precision",
+    "author": {
+      "@type": "Person",
+      "name": "Iurii Shapkarin"
+    },
+    "applicationCategory": "Educational",
+    "operatingSystem": "Cross-platform"
+  }
+]

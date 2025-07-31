@@ -1,0 +1,150 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "extend-routines: Enhanced Redux Action Management for Async Operations",
+  "description": "Learn how to streamline Redux async workflows with extend-routines. Create custom action routines, handle complex async states, and reduce boilerplate in Redux applications.",
+  "author": {
+    "@type": "Person",
+    "name": "Iurii Shapkarin",
+    "alternateName": "Yury Shapkarin",
+    "url": "https://shapkarin.me"
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": "Iurii Shapkarin",
+    "alternateName": "Yury Shapkarin",
+    "url": "https://shapkarin.me",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://shapkarin.me/logo.jpg"
+    }
+  },
+  "datePublished": "2024-01-01",
+  "dateModified": "2024-01-01",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://shapkarin.me/extend-routines"
+  },
+  "image": {
+    "@type": "ImageObject",
+    "url": "https://shapkarin.me/api/articles/extend-routines-0.svg",
+    "width": 800,
+    "height": 600
+  },
+  "keywords": [
+    "Redux",
+    "extend-routines",
+    "Redux Saga",
+    "Action routines",
+    "JavaScript",
+    "Async operations",
+    "State management",
+    "Redux Toolkit",
+    "Boilerplate reduction",
+    "WebSocket actions"
+  ],
+  "about": {
+    "@type": "SoftwareSourceCode",
+    "name": "extend-routines",
+    "description": "A library for creating and extending Redux action routines with custom stages and enhanced async operation management",
+    "programmingLanguage": "JavaScript",
+    "codeRepository": "https://github.com/shapkarin/extend-routines",
+    "runtimePlatform": [
+      "Node.js",
+      "Web Browser"
+    ],
+    "targetProduct": {
+      "@type": "SoftwareApplication",
+      "name": "Redux",
+      "applicationCategory": "JavaScript Library"
+    }
+  },
+  "teaches": [
+    "How to extend existing Redux routines with custom stages",
+    "Creating extended routines with default and custom stages",
+    "Building fully custom routines without default stages",
+    "Implementing socket routines for WebSocket operations",
+    "Creating multiple routines efficiently with createRoutines",
+    "Custom payload and meta creators for action routines",
+    "Advanced Redux action management patterns"
+  ],
+  "educationalLevel": "Intermediate",
+  "learningResourceType": "Tutorial",
+  "articleSection": [
+    "Introduction to extend-routines",
+    "What Are Routines",
+    "Core APIs and Usage",
+    "Extending Existing Routines",
+    "Creating Custom Routines",
+    "Socket Routines",
+    "Advanced Techniques"
+  ],
+  "audience": {
+    "@type": "Audience",
+    "audienceType": "JavaScript Developers"
+  },
+  "mentions": [
+    {
+      "@type": "SoftwareApplication",
+      "name": "Redux",
+      "applicationCategory": "State Management Library",
+      "operatingSystem": "Cross-platform"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "Redux Saga",
+      "applicationCategory": "JavaScript Library",
+      "operatingSystem": "Cross-platform"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "Redux Toolkit",
+      "applicationCategory": "JavaScript Library",
+      "operatingSystem": "Cross-platform"
+    }
+  ],
+  "hasPart": [
+    {
+      "@type": "ImageObject",
+      "name": "Redux Routine Action Stages Flow Diagram",
+      "description": "Flowchart showing how a single routine prefix generates multiple Redux action types including TRIGGER, REQUEST, SUCCESS, FAILURE, and FULFILL stages for managing asynchronous operations",
+      "contentUrl": "https://shapkarin.me/api/articles/extend-routines-0.svg",
+      "encodingFormat": "image/svg+xml",
+      "learningResourceType": "diagram",
+      "educationalUse": [
+        "learning",
+        "presentation"
+      ],
+      "about": {
+        "@type": "Thing",
+        "name": "Redux Action Routine Lifecycle"
+      }
+    },
+    {
+      "@type": "SoftwareSourceCode",
+      "name": "Basic Routine Extension Example",
+      "description": "Example showing how to extend an existing routine with custom stages",
+      "programmingLanguage": "JavaScript",
+      "text": "import extendRoutine from 'extend-routines';\nimport { createRoutine } from 'redux-saga-routines';\n\nconst baseProjects = createRoutine('projects');\nconst projects = extendRoutine(baseProjects, 'TOGGLE_INFO');\n\nconsole.log(projects._STAGES);\n// [\"TRIGGER\", \"REQUEST\", \"SUCCESS\", \"FAILURE\", \"FULFILL\", \"TOGGLE_INFO\"]"
+    },
+    {
+      "@type": "SoftwareSourceCode",
+      "name": "Custom Routine Creation",
+      "description": "Example showing how to create fully custom routines without default stages",
+      "programmingLanguage": "JavaScript",
+      "text": "import { createCustomRoutine } from 'extend-routines';\n\nconst steps = createCustomRoutine('steps', ['NEXT', 'PREVIOUS', 'GO_TO']);\nconsole.log(steps._STAGES);\n// [\"NEXT\", \"PREVIOUS\", \"GO_TO\"]"
+    },
+    {
+      "@type": "SoftwareSourceCode",
+      "name": "Socket Routine Example",
+      "description": "Example showing how to create socket routines for WebSocket operations",
+      "programmingLanguage": "JavaScript",
+      "text": "import { createSocketRoutine } from 'extend-routines';\n\nconst chat = createSocketRoutine('chat');\nconsole.log(chat._STAGES);\n// [\"CONNECTED\", \"DISCONNECTED\", \"JOIN_CHANNEL\", \"CHANNEL_JOINED\", \"LEAVE_CHANNEL\", \"CHANNEL_LEAVED\"]"
+    }
+  ],
+  "isPartOf": {
+    "@type": "Blog",
+    "name": "Shapkarin.me Technical Blog",
+    "url": "https://shapkarin.me"
+  }
+}

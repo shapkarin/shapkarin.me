@@ -1,0 +1,438 @@
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://shapkarin.me/articles/design/"
+    },
+    "url": "https://shapkarin.me/articles/design/",
+    "headline": "Software Design Principles: A Practical Guide to Better Code",
+    "description": "Learn essential software design principles for building maintainable code. Discover practical approaches to software architecture, from small projects to enterprise systems, based on real-world experience.",
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://shapkarin.me/logo.jpg",
+      "width": 512,
+      "height": 512
+    },
+    "author": {
+      "@type": "Person",
+      "name": "Iurii Shapkarin",
+      "alternateName": "Yury Shapkarin",
+      "url": "https://shapkarin.me"
+    },
+    "publisher": {
+      "@type": "Person",
+      "name": "Iurii Shapkarin",
+      "alternateName": "Yury Shapkarin",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://shapkarin.me/logo.jpg",
+        "width": 512,
+        "height": 512
+      }
+    },
+    "datePublished": "2025-02-05",
+    "dateModified": "2025-02-05",
+    "wordCount": "5200",
+    "inLanguage": "en-US",
+    "learningResourceType": "Comprehensive technical guide",
+    "proficiencyLevel": ["Beginner", "Intermediate", "Advanced"],
+    "keywords": "software design principles, software architecture, SOLID principles, React design patterns, design patterns JavaScript, modular design, component-based architecture, maintainable code, scalable software, code reusability, dependency injection, single responsibility principle, open-closed principle, liskov substitution principle, interface segregation principle, dependency inversion principle, YAGNI, feature-sliced design, atomic design, domain-driven design, React project structure, software engineering best practices, code quality, technical debt, refactoring, JavaScript design, frontend architecture, backend design, system design, clean architecture, software development lifecycle, web development best practices, React hooks, custom hooks, React context API, component composition, software documentation, anti-patterns, props drilling, state management",
+    "about": [
+      {
+        "@type": "Thing",
+        "name": "Software Design Principles",
+        "description": "Fundamental guidelines for creating well-structured, maintainable, and scalable software systems."
+      },
+      {
+        "@type": "Thing",
+        "name": "SOLID Principles",
+        "description": "A set of five design principles for object-oriented programming intended to make software designs more understandable, flexible, and maintainable."
+      },
+      {
+        "@type": "Thing",
+        "name": "React Architecture",
+        "description": "Strategies and patterns for structuring React applications, including component design, state management, and project organization."
+      },
+      {
+        "@type": "Thing",
+        "name": "Design Patterns",
+        "description": "Reusable solutions to commonly occurring problems within a given context in software design."
+      },
+      {
+        "@type": "Thing",
+        "name": "Maintainability",
+        "description": "The ease with which a software system or component can be modified to correct faults, improve performance, or adapt to a changed environment."
+      },
+      {
+        "@type": "Thing",
+        "name": "Modularity",
+        "description": "A design technique that separates the functionality of a program into independent, interchangeable modules."
+      },
+      {
+        "@type": "Thing",
+        "name": "Project Architecture",
+        "description": "High-level structure of a software system, including its components, their relationships, and the principles governing its design and evolution."
+      }
+    ],
+    "audience": [
+      {
+        "@type": "Audience",
+        "audienceType": "Developers",
+        "name": "Software Developers"
+      },
+      {
+        "@type": "Audience",
+        "audienceType": "Developers",
+        "name": "Frontend Developers"
+      },
+       {
+        "@type": "Audience",
+        "audienceType": "Developers",
+        "name": "Backend Developers"
+      },
+      {
+        "@type": "Audience",
+        "audienceType": "Developers",
+        "name": "Full-Stack Developers"
+      },
+      {
+        "@type": "Audience",
+        "audienceType": "Technical Leaders",
+        "name": "Software Architects"
+      },
+       {
+        "@type": "Audience",
+        "audienceType": "Technical Leaders",
+        "name": "Tech Leads"
+      },
+      {
+        "@type": "Audience",
+        "audienceType": "Students",
+        "name": "Computer Science Students"
+      },
+      {
+        "@type": "Audience",
+        "audienceType": "Developers",
+        "name": "React Developers"
+      }
+    ],
+    "citation": [
+      {
+        "@type": "WebPage",
+        "name": "SOLID Principles - Wikipedia",
+        "@id": "https://en.wikipedia.org/wiki/SOLID",
+        "description": "An overview of the SOLID principles of object-oriented design."
+      },
+      {
+        "@type": "WebPage",
+        "name": "Design Patterns: Elements of Reusable Object-Oriented Software",
+        "@id": "https://en.wikipedia.org/wiki/Design_Patterns",
+        "description": "Information on the influential book that introduced the concept of design patterns in software development."
+      },
+      {
+        "@type": "WebPage",
+        "name": "You aren't gonna need it (YAGNI)",
+        "@id": "https://en.wikipedia.org/wiki/You_aren%27t_gonna_need_it",
+        "description": "Explanation of the YAGNI principle from Extreme Programming."
+      },
+      {
+        "@type": "WebPage",
+        "name": "React Documentation",
+        "@id": "https://react.dev/",
+        "description": "Official documentation for the React JavaScript library.",
+        "relatedLink": [
+          "https://react.dev/learn",
+          "https://react.dev/reference/react",
+          "https://react.dev/learn/thinking-in-react"
+        ]
+      },
+      {
+        "@type": "WebPage",
+        "name": "Feature-Sliced Design",
+        "@id": "https://feature-sliced.design/",
+        "description": "Official documentation for the Feature-Sliced Design methodology for frontend applications."
+      },
+       {
+        "@type": "WebPage",
+        "name": "Atomic Design by Brad Frost",
+        "@id": "https://atomicdesign.bradfrost.com/",
+        "description": "The official resource for Atomic Design, a methodology for creating design systems."
+      },
+      {
+        "@type": "WebPage",
+        "name": "Domain-Driven Design",
+        "@id": "https://martinfowler.com/tags/domain%20driven%20design.html",
+        "description": "Martin Fowler's articles and resources on Domain-Driven Design (DDD)."
+      }
+    ],
+    "hasPart": [
+      {
+        "@type": "WebPageElement",
+        "name": "Start Simple Before Getting Fancy",
+        "url": "https://shapkarin.me/articles/design#start-simple-before-getting-fancy",
+        "description": "Advocates for starting with minimal, working solutions and evolving architecture naturally to avoid over-engineering and brittle code."
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "Use SOLID as a Helpful Map, Not a Strict Rulebook",
+        "url": "https://shapkarin.me/articles/design#use-solid-as-a-helpful-map-not-a-strict-rulebook",
+        "description": "Introduces the five SOLID principles as flexible guidelines for writing maintainable and organized code."
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "Keep Things Modular",
+        "url": "https://shapkarin.me/articles/design#keep-things-modular",
+        "description": "Explains the importance of containing complexity within self-contained modules with clear purposes to prevent cascading changes."
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "Know a Few Patterns, But Don't Force Them",
+        "url": "https://shapkarin.me/articles/design#know-a-few-patterns-but-dont-force-them",
+        "description": "Advises using design patterns only when they naturally solve a recurring problem, rather than forcing them into the codebase."
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "Make It Easy to Change, Not Just Fast",
+        "url": "https://shapkarin.me/articles/design#make-it-easy-to-change-not-just-fast",
+        "description": "Highlights that maintainability and adaptability are often more important than premature performance optimization."
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "Balance 'You Aren't Gonna Need It' and Future Planning",
+        "url": "https://shapkarin.me/articles/design#balance-you-arent-gonna-need-it-and-future-planning",
+        "description": "Discusses finding a middle ground between the YAGNI principle and strategic future-proofing to build robust software."
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "Applying These Principles in JavaScript",
+        "url": "https://shapkarin.me/articles/design#applying-these-principles-in-javascript",
+        "description": "Translates abstract design principles into concrete JavaScript practices, including ES Modules, SOLID adaptations, and asynchronous design."
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "Real-World Examples: Design Principles in React",
+        "url": "https://shapkarin.me/articles/design#real-world-examples-design-principles-in-react",
+        "description": "Provides concrete React code examples demonstrating the Single Responsibility, Open-Closed, and Dependency Inversion principles in action."
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "SOLID Principles in React: Deeper Applications",
+        "url": "https://shapkarin.me/articles/design#solid-principles-in-react-deeper-applications",
+        "description": "Offers a thorough exploration of each SOLID principle with practical React examples, including specialized hooks and service abstractions."
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "Common Anti-Patterns and Better Solutions",
+        "url": "https://shapkarin.me/articles/design#common-anti-patterns-and-better-solutions",
+        "description": "Identifies common React anti-patterns like components with multiple responsibilities and props drilling, providing improved, SOLID-aligned solutions."
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "React Project Architecture Approaches",
+        "url": "https://shapkarin.me/articles/design#react-project-architecture-approaches",
+        "description": "Surveys popular project architecture patterns like Feature-Sliced Design, Atomic Design, and DDD, offering guidance on choosing the right approach."
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "In the End, It's About Adaptability",
+        "url": "https://shapkarin.me/articles/design#in-the-end-its-about-adaptability",
+        "description": "Concludes that good software design is an ongoing process of refinement and adaptation to changing requirements and technologies."
+      }
+    ],
+    "teaches": [
+      "How to apply fundamental software design principles like SOLID and modularity.",
+      "Strategies for building maintainable and scalable software architecture.",
+      "How to translate abstract design concepts into practical JavaScript and React code.",
+      "Implementing SOLID principles in React using hooks, context, and component composition.",
+      "Recognizing and refactoring common design anti-patterns in React applications.",
+      "How to structure a React project using methodologies like Feature-Sliced Design, Atomic Design, and DDD.",
+      "The importance of balancing simplicity (YAGNI) with future planning.",
+      "Techniques for creating adaptable code that is easy to change and refactor.",
+      "How to use design patterns effectively without over-engineering.",
+      "The role of documentation and testing as part of the software design process."
+    ],
+    "programmingLanguage": ["JavaScript", "JSX"],
+    "operatingSystem": "Cross-platform",
+    "applicationCategory": "Educational"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "ImageObject",
+    "name": "Software Design Approach Comparison Diagram",
+    "description": "Flowchart comparing over-engineering versus starting simple in software design, showing how minimal solutions lead to natural evolution and right abstractions",
+    "contentUrl": "https://shapkarin.me/api/articles/design-0.svg",
+    "encodingFormat": "image/svg+xml",
+    "learningResourceType": "diagram",
+    "educationalUse": ["learning", "presentation"],
+    "about": {
+      "@type": "Thing",
+      "name": "Software Design Methodology"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is the Single Responsibility Principle in React?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The Single Responsibility Principle (SRP) in React means a component or hook should have only one reason to change. This is often achieved by separating concerns: data fetching logic is extracted into custom hooks (e.g., `useUser`), and rendering logic stays in presentational components. This makes components smaller, easier to understand, test, and reuse."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How can I avoid 'props drilling' in my React application?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Props drilling is passing props through multiple layers of components that don't need them. You can avoid it using React's Context API for global or widely-shared state (like theme or user authentication). Create a context provider at the top level and consume the context directly in any child component that needs the data, which is an application of the Dependency Inversion Principle."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the Open-Closed Principle and how does it apply to React components?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The Open-Closed Principle states that software entities should be open for extension but closed for modification. In React, this is often achieved through composition. Instead of adding new logic inside a component (modifying it), you can wrap it with another component to add new functionality (extending it). A base `Button` component, for example, can be extended to create `IconButton` or `LoadingButton` components without altering the original `Button` code."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is Dependency Inversion in React?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The Dependency Inversion Principle (DIP) suggests that high-level modules should not depend on low-level modules, but both should depend on abstractions. In React, this can be implemented using the Context API or service injection. Instead of a component directly creating a service instance (e.g., `new ApiService()`), it receives the service through props or context. This decouples the component from a specific implementation, making it more flexible and easier to test with mock services."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Which React project architecture should I choose?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The best architecture depends on your project's scale and complexity. For small projects, a simple module pattern (organizing by function like `/components`, `/hooks`) is fine. For larger, more complex applications, consider Feature-Sliced Design (FSD) for clear boundaries by business domain, or Domain-Driven Design (DDD). The key is to choose a structure that improves maintainability and is understood by your team, and to be willing to evolve it as the project grows."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why shouldn't I define a React component inside another component's render method?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Defining a component inside another component's render function is an anti-pattern because the inner component gets redeclared on every render of the parent. This causes React to unmount the old component and mount a new one, losing its state and DOM node, which is inefficient and can lead to bugs and performance issues. Always declare components at the top level of the module."
+        }
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "How to Apply SOLID Principles in a React Project",
+    "description": "A practical step-by-step guide to implementing SOLID design principles in your React applications for more maintainable and scalable code.",
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://shapkarin.me/logo.jpg",
+      "width": 512,
+      "height": 512
+    },
+    "totalTime": "PT45M",
+    "supply": [
+      {
+        "@type": "HowToSupply",
+        "name": "A React project environment"
+      }
+    ],
+    "tool": [
+      {
+        "@type": "HowToTool",
+        "name": "Code editor (e.g., VS Code)"
+      },
+      {
+        "@type": "HowToTool",
+        "name": "React Developer Tools"
+      }
+    ],
+    "step": [
+      {
+        "@type": "HowToStep",
+        "name": "Apply Single Responsibility Principle (SRP)",
+        "text": "Separate concerns by extracting logic from components. Move data-fetching and state management into custom hooks (e.g., useUserData). Keep components focused on rendering UI."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Use Open-Closed Principle (OCP)",
+        "text": "Favor composition over modification. Create base components (like a generic Button) and extend their functionality by wrapping them in new components (like IconButton) rather than adding conditional logic to the base."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Adhere to Liskov Substitution Principle (LSP)",
+        "text": "Ensure that your composed or extended components are interchangeable. For example, a PrimaryButton should be usable anywhere a base Button is expected, without breaking the application's behavior."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Implement Interface Segregation Principle (ISP)",
+        "text": "Keep component props focused and minimal. Avoid 'props drilling' by using React Context or state management libraries to provide data directly to the components that need it."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Practice Dependency Inversion Principle (DIP)",
+        "text": "Decouple components from concrete implementations. Use dependency injection via props or the Context API to provide services (like an API client) to your components, making them easier to test and reuse."
+      }
+    ]
+  },
+   {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "How to Choose a React Project Architecture",
+    "description": "A guide to selecting the right architectural approach for your React project based on scale, complexity, and team size.",
+    "totalTime": "PT20M",
+    "step": [
+      {
+        "@type": "HowToStep",
+        "name": "Assess Project Scale and Complexity",
+        "text": "For small projects or prototypes, a simple structure organized by function (e.g., /components, /hooks) is sufficient. For large, complex applications, a more formal structure is needed."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Consider Team Size and Experience",
+        "text": "Larger teams benefit from structured, explicit architectures like Feature-Sliced Design (FSD) that minimize merge conflicts and create clear boundaries between different parts of the application."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Evaluate Business Domain Complexity",
+        "text": "If your application has a complex business domain, a domain-focused structure like Domain-Driven Design (DDD) or FSD can help align the codebase with business requirements."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Start Simple and Evolve",
+        "text": "It's often best to start with a simpler structure and refactor towards a more formal architecture as complexity emerges. Don't over-engineer from the start. Choose an approach that can adapt as the application grows."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Combine Patterns as Needed",
+        "text": "The most effective approach often combines elements from multiple patterns. You might use FSD for overall structure but incorporate principles from Atomic Design for your UI component library."
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareSourceCode",
+    "name": "React Design Patterns and Principles Code Examples",
+    "description": "A collection of React code examples illustrating software design principles like SOLID, modularity, component composition, and architectural patterns.",
+    "programmingLanguage": ["JavaScript", "JSX"],
+    "codeRepository": "https://shapkarin.me/articles/design",
+    "author": {
+      "@type": "Person",
+      "name": "Iurii Shapkarin"
+    },
+    "applicationCategory": "Educational",
+    "teaches": [
+      "Implementing Single Responsibility Principle with custom hooks.",
+      "Using component composition to achieve the Open-Closed Principle.",
+      "Applying the Dependency Inversion Principle with React Context.",
+      "Refactoring components to fix common anti-patterns.",
+      "Structuring components according to architectural patterns like Feature-Sliced Design."
+    ]
+  }
+]

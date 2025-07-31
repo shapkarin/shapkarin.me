@@ -1,0 +1,416 @@
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://shapkarin.me/articles/global-diff/"
+    },
+    "url": "https://shapkarin.me/articles/global-diff/",
+    "headline": "diff-browser-globals: Track Global Window Object Changes in Web Apps",
+    "description": "Discover what's being added to your browser's global scope with diff-browser-globals. A lightweight tool to identify and debug unexpected global variables in your web applications.",
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://shapkarin.me/logo.jpg",
+      "width": 512,
+      "height": 512
+    },
+    "author": {
+      "@type": "Person",
+      "name": "Iurii Shapkarin",
+      "alternateName": "Yury Shapkarin",
+      "url": "https://shapkarin.me"
+    },
+    "publisher": {
+      "@type": "Person",
+      "name": "Iurii Shapkarin",
+      "alternateName": "Yury Shapkarin",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://shapkarin.me/logo.jpg",
+        "width": 512,
+        "height": 512
+      }
+    },
+    "datePublished": "2024-01-20",
+    "dateModified": "2024-01-20",
+    "wordCount": "450",
+    "inLanguage": "en-US",
+    "learningResourceType": "Tool introduction",
+    "proficiencyLevel": ["Beginner", "Intermediate"],
+    "keywords": "diff-browser-globals, global window object, browser globals, web development debugging, JavaScript debugging tools, global scope pollution, window object changes, browser debugging, JavaScript global variables, web application debugging, frontend debugging tools, browser console tools, global namespace, JavaScript environment monitoring, web development utilities, browser compatibility debugging, third-party script debugging, polyfill detection, library detection, JavaScript runtime analysis, global object inspection, browser API changes, web standards debugging, JavaScript development tools, frontend development utilities, browser environment analysis, JavaScript global scope, window object monitoring, web app diagnostics, browser state debugging, JavaScript troubleshooting, web development workflow, browser debugging techniques, JavaScript code quality, global variable tracking, browser extension debugging, JavaScript performance debugging, web application monitoring, browser global state, JavaScript runtime debugging, frontend performance tools, web development best practices, JavaScript code analysis, browser development tools, web debugging utilities, JavaScript environment testing, browser compatibility tools, web application security, JavaScript code review, global scope management, browser API detection, web development productivity, JavaScript debugging strategies",
+    "about": [
+      {
+        "@type": "Thing",
+        "name": "Browser Global Object",
+        "description": "The window object in browsers containing all global variables and functions accessible throughout a web application"
+      },
+      {
+        "@type": "Thing",
+        "name": "Global Scope Pollution",
+        "description": "The practice of adding unwanted variables to the global namespace, which can cause naming conflicts and unpredictable behavior"
+      },
+      {
+        "@type": "Thing",
+        "name": "JavaScript Debugging Tools",
+        "description": "Software utilities and libraries designed to help developers identify and fix issues in JavaScript code"
+      },
+      {
+        "@type": "Thing",
+        "name": "Web Development Utilities",
+        "description": "Tools and libraries that assist developers in building, testing, and debugging web applications"
+      },
+      {
+        "@type": "Thing",
+        "name": "Runtime Environment Analysis",
+        "description": "The process of examining and monitoring the state of a JavaScript runtime environment during application execution"
+      },
+      {
+        "@type": "Thing",
+        "name": "Open Source Development",
+        "description": "Collaborative software development model where source code is made freely available for modification and distribution"
+      }
+    ],
+    "audience": [
+      {
+        "@type": "Audience",
+        "audienceType": "Developers",
+        "name": "Frontend Developers"
+      },
+      {
+        "@type": "Audience",
+        "audienceType": "Developers",
+        "name": "JavaScript Developers"
+      },
+      {
+        "@type": "Audience",
+        "audienceType": "Developers",
+        "name": "Web Developers"
+      },
+      {
+        "@type": "Audience",
+        "audienceType": "Developers",
+        "name": "Full-Stack Developers"
+      },
+      {
+        "@type": "Audience",
+        "audienceType": "Technical Leaders",
+        "name": "Senior Developers"
+      },
+      {
+        "@type": "Audience",
+        "audienceType": "Quality Assurance",
+        "name": "QA Engineers"
+      },
+      {
+        "@type": "Audience",
+        "audienceType": "Students",
+        "name": "Computer Science Students"
+      },
+      {
+        "@type": "Audience",
+        "audienceType": "Developers",
+        "name": "Software Engineers"
+      }
+    ],
+    "citation": [
+      {
+        "@type": "SoftwareSourceCode",
+        "name": "diff-browser-globals GitHub Repository",
+        "@id": "https://github.com/shapkarin/diff-browser-globals",
+        "description": "Open source tool for tracking and identifying changes to the browser's global window object",
+        "programmingLanguage": "JavaScript",
+        "author": {
+          "@type": "Person",
+          "name": "Iurii Shapkarin"
+        }
+      },
+      {
+        "@type": "WebPage",
+        "name": "MDN Window Object Documentation",
+        "@id": "https://developer.mozilla.org/en-US/docs/Web/API/Window",
+        "description": "Comprehensive documentation of the browser's global window object and its properties"
+      },
+      {
+        "@type": "WebPage",
+        "name": "MDN Global Object Documentation",
+        "@id": "https://developer.mozilla.org/en-US/docs/Glossary/Global_object",
+        "description": "Definition and explanation of global objects in JavaScript environments"
+      },
+      {
+        "@type": "WebPage",
+        "name": "JavaScript Global Scope Best Practices",
+        "@id": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Grammar_and_types#Variables",
+        "description": "Guidelines for managing global variables and avoiding scope pollution in JavaScript applications"
+      }
+    ],
+    "hasPart": [
+      {
+        "@type": "WebPageElement",
+        "name": "Why Would You Need This?",
+        "url": "https://shapkarin.me/articles/global-diff#why-would-you-need-this",
+        "description": "Explaining the practical use cases for tracking global window object changes in web development and debugging"
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "How Does It Work?",
+        "url": "https://shapkarin.me/articles/global-diff#how-does-it-work",
+        "description": "Technical overview of how diff-browser-globals compares current window state with baseline global objects"
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "Contributions Welcome",
+        "url": "https://shapkarin.me/articles/global-diff#contributions-welcome",
+        "description": "Information about contributing to the open source diff-browser-globals project"
+      }
+    ],
+    "teaches": [
+      "How to identify unexpected global variables in web applications",
+      "Understanding the browser's global window object and its default properties",
+      "Debugging techniques for tracking third-party script pollution",
+      "Best practices for maintaining clean global scope in JavaScript applications",
+      "How to use diff-browser-globals tool for development and debugging",
+      "Recognizing signs of global scope pollution and naming conflicts",
+      "Contributing to open source debugging tools and utilities"
+    ],
+    "programmingLanguage": "JavaScript",
+    "operatingSystem": "Cross-platform",
+    "applicationCategory": "Development Tool"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "diff-browser-globals",
+    "description": "A lightweight JavaScript tool for identifying and tracking changes to the browser's global window object, helping developers debug global scope pollution and unexpected variable additions",
+    "applicationCategory": "DeveloperApplication",
+    "operatingSystem": "Cross-platform",
+    "programmingLanguage": "JavaScript",
+    "codeRepository": "https://github.com/shapkarin/diff-browser-globals",
+    "downloadUrl": "https://github.com/shapkarin/diff-browser-globals",
+    "author": {
+      "@type": "Person",
+      "name": "Iurii Shapkarin",
+      "alternateName": "Yury Shapkarin",
+      "url": "https://shapkarin.me"
+    },
+    "softwareVersion": "1.0.0",
+    "datePublished": "2024-01-20",
+    "license": "https://opensource.org/licenses/MIT",
+    "requirements": "Modern web browser with JavaScript support",
+    "features": [
+      "Compare current window object with baseline globals",
+      "Identify new global variables added at runtime",
+      "Lightweight and dependency-free implementation",
+      "Easy integration into existing development workflows",
+      "Cross-browser compatibility for debugging",
+      "Command-line interface for automated testing"
+    ],
+    "screenshot": {
+      "@type": "ImageObject",
+      "name": "diff-browser-globals usage example",
+      "description": "Console output showing detected global variable differences"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is diff-browser-globals and why do I need it?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "diff-browser-globals is a debugging tool that identifies which global variables have been added to your browser's window object beyond the standard set. It's useful for detecting global scope pollution from third-party scripts, debugging naming conflicts, and ensuring your code doesn't accidentally create unwanted global variables."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does diff-browser-globals detect new global variables?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The tool works by comparing the current window object properties with a known baseline of standard browser globals. It identifies any properties that exist in the current window but not in the baseline, revealing variables that have been added during runtime by your application or third-party scripts."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can diff-browser-globals help debug third-party script issues?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, it's particularly useful for identifying what global variables third-party scripts (like analytics, advertising, or widget scripts) are adding to your page. This helps you understand potential naming conflicts and track down unexpected behavior caused by global scope pollution."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is diff-browser-globals compatible with all browsers?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The tool is designed to work with modern browsers that support standard JavaScript features. Since different browsers may have slightly different baseline globals, the tool accounts for these variations when detecting new additions to the global scope."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How can I contribute to the diff-browser-globals project?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The project welcomes contributions through its GitHub repository. You can contribute by reporting bugs, suggesting new features, improving documentation, adding support for additional browsers, or enhancing the detection algorithms. Pull requests and issues are actively reviewed and appreciated."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I use diff-browser-globals in my automated testing?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, the tool can be integrated into automated testing workflows to ensure that your application doesn't introduce unexpected global variables. This helps maintain code quality and prevents regression issues related to global scope pollution."
+        }
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "How to Use diff-browser-globals to Debug Global Scope Issues",
+    "description": "Step-by-step guide to using diff-browser-globals for identifying and debugging global variable pollution in web applications",
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://shapkarin.me/logo.jpg",
+      "width": 512,
+      "height": 512
+    },
+    "totalTime": "PT15M",
+    "estimatedCost": {
+      "@type": "MonetaryAmount",
+      "currency": "USD",
+      "value": "0"
+    },
+    "supply": [
+      {
+        "@type": "HowToSupply",
+        "name": "Web browser with developer tools"
+      },
+      {
+        "@type": "HowToSupply",
+        "name": "Web application or website to debug"
+      },
+      {
+        "@type": "HowToSupply",
+        "name": "diff-browser-globals tool"
+      }
+    ],
+    "tool": [
+      {
+        "@type": "HowToTool",
+        "name": "Browser developer console"
+      },
+      {
+        "@type": "HowToTool",
+        "name": "Text editor or IDE"
+      }
+    ],
+    "step": [
+      {
+        "@type": "HowToStep",
+        "name": "Install or include diff-browser-globals",
+        "text": "Download the tool from GitHub or include it in your project. You can use it as a standalone script or integrate it into your development workflow."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Establish a baseline",
+        "text": "Run the tool on a clean page before loading your application or third-party scripts to establish what the default browser globals look like in your environment."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Load your application",
+        "text": "Load your web application or the scripts you want to analyze. This includes any third-party libraries, analytics scripts, or widgets that might modify the global scope."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Run the comparison",
+        "text": "Execute diff-browser-globals to compare the current window object state with the baseline. The tool will output a list of new global variables that have been added."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Analyze the results",
+        "text": "Review the list of new global variables to identify potential issues. Look for unexpected variables, naming conflicts, or signs of global scope pollution from third-party scripts."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Take corrective action",
+        "text": "Based on the results, you can clean up unwanted global variables, resolve naming conflicts, or implement better scoping practices to prevent future pollution."
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo", 
+    "name": "How to Prevent Global Scope Pollution in JavaScript Applications",
+    "description": "Best practices guide for maintaining clean global scope and avoiding unwanted variable additions to the window object",
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://shapkarin.me/logo.jpg",
+      "width": 512,
+      "height": 512
+    },
+    "totalTime": "PT25M",
+    "estimatedCost": {
+      "@type": "MonetaryAmount",
+      "currency": "USD",
+      "value": "0"
+    },
+    "supply": [
+      {
+        "@type": "HowToSupply",
+        "name": "JavaScript development environment"
+      },
+      {
+        "@type": "HowToSupply",
+        "name": "Understanding of JavaScript scoping"
+      }
+    ],
+    "tool": [
+      {
+        "@type": "HowToTool",
+        "name": "ESLint or similar code linter"
+      },
+      {
+        "@type": "HowToTool",
+        "name": "Module bundler (webpack, rollup, etc.)"
+      },
+      {
+        "@type": "HowToTool",
+        "name": "diff-browser-globals for monitoring"
+      }
+    ],
+    "step": [
+      {
+        "@type": "HowToStep",
+        "name": "Use strict mode",
+        "text": "Enable 'use strict' in your JavaScript files to prevent accidental global variable creation. This will throw errors when you try to assign to undeclared variables."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Implement module patterns",
+        "text": "Use ES6 modules, CommonJS, or IIFE (Immediately Invoked Function Expression) patterns to encapsulate your code and prevent variables from leaking to the global scope."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Configure linting rules",
+        "text": "Set up ESLint with rules like 'no-implicit-globals' and 'no-global-assign' to catch potential global scope pollution during development."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Use namespace objects",
+        "text": "If you must create global variables, use a single namespace object to contain all your global properties rather than adding individual variables to the window object."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Monitor third-party scripts",
+        "text": "Use tools like diff-browser-globals to regularly check what global variables third-party scripts are adding and ensure they don't conflict with your code."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Implement testing",
+        "text": "Include global scope pollution tests in your test suite to automatically detect when new global variables are introduced during development."
+      }
+    ]
+  }
+] 

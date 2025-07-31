@@ -1,0 +1,1005 @@
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "learningResourceType": ["tutorial", "reading"],
+    "educationalUse": ["learning", "teaching", "presentation"],
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://shapkarin.me/articles/WAGMI-basics/"
+    },
+    "url": "https://shapkarin.me/articles/WAGMI-basics/",
+    "headline": "WAGMI Library Tutorial: Complete Guide to Building dApps with WAGMI and VIEM in 2025",
+    "description": "Master WAGMI library for React dApp development. Learn WAGMI hooks, VIEM integration, multichain support, and best practices with practical examples. Complete WAGMI tutorial for beginners to advanced developers.",
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://shapkarin.me/logo.jpg",
+      "width": 512,
+      "height": 512
+    },
+    "author": {
+      "@type": "Person",
+      "name": "Iurii Shapkarin",
+      "alternateName": "Yury Shapkarin",
+      "url": "https://shapkarin.me"
+    },
+    "publisher": {
+      "@type": "Person",
+      "name": "Iurii Shapkarin",
+      "alternateName": "Yury Shapkarin",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://shapkarin.me/logo.jpg",
+        "width": 512,
+        "height": 512
+      }
+    },
+    "datePublished": "2025-01-15",
+    "dateModified": "2025-01-15",
+    "wordCount": "12500",
+    "inLanguage": "en-US",
+    "proficiencyLevel": ["Beginner", "Intermediate", "Advanced"],
+    "keywords": "WAGMI, WAGMI library, WAGMI dApp, WAGMI VIEM, React Web3, Ethereum development, dApp tutorial, blockchain hooks, multichain dApp, Web3 development, React hooks, TypeScript dApp, DeFi development, NFT development, smart contract interaction, blockchain integration, Ethereum dApp, Web3 React, WAGMI hooks, useAccount, useBalance, useReadContract, useWriteContract, blockchain development, Web3 tutorial, dApp building, Ethereum integration, multichain development, Web3 best practices, WAGMI configuration, VIEM integration, wallet connection, Web3Modal, WalletConnect, MetaMask integration, DeFi protocols, NFT marketplace, governance voting, transaction simulation, Web3 performance, WAGMI optimization, React performance, Web3 security, production dApp, WAGMI troubleshooting, ABI management, TypeScript Web3, WAGMI patterns, blockchain UX, Web3 state management, dApp architecture, smart contract ABI, Web3 error handling, WAGMI testing, blockchain debugging, Web3 monitoring",
+    "about": [
+      {
+        "@type": "Thing",
+        "name": "WAGMI Library",
+        "description": "Collection of React hooks for building Ethereum dApps with TypeScript support and multichain capabilities"
+      },
+      {
+        "@type": "Thing",
+        "name": "VIEM",
+        "description": "Modern, lightweight Ethereum library that powers WAGMI v2 with optimal performance and bundle size"
+      },
+      {
+        "@type": "Thing",
+        "name": "React Web3 Development",
+        "description": "Building decentralized applications using React framework with Web3 integration"
+      },
+      {
+        "@type": "Thing",
+        "name": "dApp Development",
+        "description": "Decentralized application development with focus on user experience and performance"
+      },
+      {
+        "@type": "Thing",
+        "name": "Multichain Development",
+        "description": "Building applications that work across multiple blockchain networks"
+      },
+      {
+        "@type": "Thing",
+        "name": "Smart Contract Interaction",
+        "description": "Reading from and writing to smart contracts using React hooks and TypeScript"
+      },
+      {
+        "@type": "Thing",
+        "name": "Web3 Hooks",
+        "description": "React hooks specifically designed for Web3 and blockchain interactions"
+      },
+      {
+        "@type": "Thing",
+        "name": "Blockchain Integration",
+        "description": "Integrating blockchain functionality into modern web applications"
+      },
+      {
+        "@type": "Thing",
+        "name": "DeFi Development",
+        "description": "Building decentralized finance applications with modern tooling"
+      },
+      {
+        "@type": "Thing",
+        "name": "NFT Development",
+        "description": "Creating non-fungible token applications and marketplaces"
+      }
+    ],
+    "audience": [
+      {
+        "@type": "Audience",
+        "audienceType": "Developers",
+        "name": "Web3 Developers"
+      },
+      {
+        "@type": "Audience",
+        "audienceType": "Developers",
+        "name": "Frontend Developers"
+      },
+      {
+        "@type": "Audience",
+        "audienceType": "Developers",
+        "name": "React Developers"
+      },
+      {
+        "@type": "Audience",
+        "audienceType": "Developers",
+        "name": "Full-Stack Developers"
+      },
+      {
+        "@type": "Audience",
+        "audienceType": "Developers",
+        "name": "Blockchain Developers"
+      },
+      {
+        "@type": "Audience",
+        "audienceType": "Developers",
+        "name": "dApp Developers"
+      },
+      {
+        "@type": "Audience",
+        "audienceType": "Students",
+        "name": "Computer Science Students"
+      },
+      {
+        "@type": "Audience",
+        "audienceType": "Technical Leaders",
+        "name": "Software Architects"
+      },
+      {
+        "@type": "Audience",
+        "audienceType": "Technical Leaders",
+        "name": "Engineering Managers"
+      },
+      {
+        "@type": "Audience",
+        "audienceType": "Business Professionals",
+        "name": "Technical Product Managers"
+      },
+      {
+        "@type": "Audience",
+        "audienceType": "Developers",
+        "name": "DeFi Developers"
+      },
+      {
+        "@type": "Audience",
+        "audienceType": "Developers",
+        "name": "NFT Developers"
+      }
+    ],
+    "citation": [
+      {
+        "@type": "WebPage",
+        "name": "Official WAGMI Documentation",
+        "@id": "https://wagmi.sh/",
+        "description": "Complete API reference and guides for WAGMI library",
+        "relatedLink": [
+          "https://wagmi.sh/react",
+          "https://wagmi.sh/react/api/hooks",
+          "https://wagmi.sh/react/getting-started",
+          "https://wagmi.sh/core",
+          "https://wagmi.sh/cli"
+        ]
+      },
+      {
+        "@type": "WebPage",
+        "name": "WAGMI v1 Documentation",
+        "@id": "https://wagmi.sh/v1",
+        "description": "Legacy WAGMI v1 documentation for migration reference",
+        "relatedLink": [
+          "https://wagmi.sh/react/guides/migrate-from-v1-to-v2",
+          "https://wagmi.sh/v1/react/hooks/useContractRead",
+          "https://wagmi.sh/v1/react/hooks/useContractWrite"
+        ]
+      },
+      {
+        "@type": "WebPage",
+        "name": "VIEM Documentation",
+        "@id": "https://viem.sh/",
+        "description": "Modern, lightweight Ethereum library powering WAGMI v2",
+        "relatedLink": [
+          "https://viem.sh/docs/getting-started",
+          "https://viem.sh/docs/clients/public",
+          "https://viem.sh/docs/clients/wallet",
+          "https://viem.sh/docs/contract/readContract",
+          "https://viem.sh/docs/contract/writeContract",
+          "https://viem.sh/docs/contract/simulateContract",
+          "https://viem.sh/docs/chains/introduction"
+        ]
+      },
+      {
+        "@type": "WebPage",
+        "name": "WAGMI GitHub Repository",
+        "@id": "https://github.com/wevm/wagmi",
+        "description": "Official WAGMI source code, issues, and community discussions",
+        "relatedLink": [
+          "https://github.com/wevm/wagmi/issues",
+          "https://github.com/wevm/wagmi/discussions",
+          "https://github.com/wevm/wagmi/releases"
+        ]
+      },
+      {
+        "@type": "WebPage",
+        "name": "React Hooks Documentation",
+        "@id": "https://react.dev/reference/react",
+        "description": "Official React hooks API reference",
+        "relatedLink": [
+          "https://react.dev/reference/react/hooks",
+          "https://react.dev/reference/react/useState",
+          "https://react.dev/reference/react/useEffect",
+          "https://react.dev/reference/react/useMemo",
+          "https://react.dev/reference/react/useCallback"
+        ]
+      },
+      {
+        "@type": "WebPage",
+        "name": "WalletConnect Project Setup",
+        "@id": "https://cloud.walletconnect.com/",
+        "description": "WalletConnect Cloud setup for dApp wallet connections",
+        "relatedLink": [
+          "https://docs.walletconnect.com/",
+          "https://docs.walletconnect.com/web3modal/react/wagmi",
+          "https://docs.walletconnect.com/walletkit/overview"
+        ]
+      },
+      {
+        "@type": "WebPage",
+        "name": "Web3Modal Documentation",
+        "@id": "https://docs.walletconnect.com/web3modal/react/wagmi",
+        "description": "Web3Modal integration guide for WAGMI applications",
+        "relatedLink": [
+          "https://docs.walletconnect.com/web3modal/about",
+          "https://docs.walletconnect.com/web3modal/react/installation",
+          "https://docs.walletconnect.com/web3modal/options"
+        ]
+      },
+      {
+        "@type": "WebPage",
+        "name": "TanStack Query Guide",
+        "@id": "https://tanstack.com/query/latest",
+        "description": "Data fetching and caching library used by WAGMI",
+        "relatedLink": [
+          "https://tanstack.com/query/latest/docs/react/guides/queries",
+          "https://tanstack.com/query/latest/docs/react/guides/query-keys",
+          "https://tanstack.com/query/latest/docs/react/guides/caching",
+          "https://tanstack.com/query/latest/docs/react/guides/performance"
+        ]
+      },
+      {
+        "@type": "WebPage",
+        "name": "Ethereum Development Documentation",
+        "@id": "https://ethereum.org/developers/",
+        "description": "Official Ethereum development resources and guides",
+        "relatedLink": [
+          "https://ethereum.org/developers/docs/",
+          "https://ethereum.org/developers/docs/smart-contracts/",
+          "https://ethereum.org/developers/docs/apis/json-rpc/",
+          "https://ethereum.org/developers/tutorials/"
+        ]
+      },
+      {
+        "@type": "WebPage",
+        "name": "OpenZeppelin Contracts",
+        "@id": "https://docs.openzeppelin.com/contracts/",
+        "description": "Secure smart contract patterns and implementations",
+        "relatedLink": [
+          "https://docs.openzeppelin.com/contracts/4.x/erc20",
+          "https://docs.openzeppelin.com/contracts/4.x/erc721",
+          "https://docs.openzeppelin.com/contracts/4.x/governance",
+          "https://docs.openzeppelin.com/contracts/4.x/security"
+        ]
+      },
+      {
+        "@type": "WebPage",
+        "name": "OpenZeppelin Governance",
+        "@id": "https://docs.openzeppelin.com/contracts/4.x/governance",
+        "description": "Smart contract governance patterns and implementation guides",
+        "relatedLink": [
+          "https://docs.openzeppelin.com/contracts/4.x/api/governance",
+          "https://docs.openzeppelin.com/contracts/4.x/governance#governor"
+        ]
+      },
+      {
+        "@type": "WebPage",
+        "name": "Compound Governor",
+        "@id": "https://compound.finance/docs/governance",
+        "description": "Compound protocol governance implementation reference",
+        "relatedLink": [
+          "https://compound.finance/governance",
+          "https://compound.finance/docs"
+        ]
+      },
+      {
+        "@type": "WebPage",
+        "name": "DAO Tooling Comparison",
+        "@id": "https://www.tally.xyz/",
+        "description": "DAO governance tooling and analytics platform",
+        "relatedLink": [
+          "https://docs.tally.xyz/",
+          "https://www.tally.xyz/gov"
+        ]
+      },
+      {
+        "@type": "WebPage",
+        "name": "OpenSea NFT API",
+        "@id": "https://docs.opensea.io/reference/api-overview",
+        "description": "OpenSea API for NFT marketplace integration",
+        "relatedLink": [
+          "https://docs.opensea.io/reference/get-nft-by-contract-address-and-token-id",
+          "https://docs.opensea.io/reference/get-collection",
+          "https://opensea.io/developers"
+        ]
+      },
+      {
+        "@type": "WebPage",
+        "name": "IPFS for NFT Storage",
+        "@id": "https://docs.ipfs.tech/",
+        "description": "InterPlanetary File System documentation for decentralized storage",
+        "relatedLink": [
+          "https://docs.ipfs.tech/concepts/",
+          "https://docs.ipfs.tech/how-to/",
+          "https://ipfs.io/"
+        ]
+      },
+      {
+        "@type": "WebPage",
+        "name": "ERC-721 Standard",
+        "@id": "https://eips.ethereum.org/EIPS/eip-721",
+        "description": "Non-Fungible Token Standard specification",
+        "relatedLink": [
+          "https://eips.ethereum.org/EIPS/eip-165",
+          "https://eips.ethereum.org/EIPS/eip-1155"
+        ]
+      },
+      {
+        "@type": "WebPage",
+        "name": "Chain List",
+        "@id": "https://chainlist.org/",
+        "description": "Comprehensive list of EVM networks and their configurations",
+        "relatedLink": [
+          "https://chainlist.org/chain/1",
+          "https://chainlist.org/chain/137",
+          "https://chainlist.org/chain/42161"
+        ]
+      },
+      {
+        "@type": "WebPage",
+        "name": "L2BEAT Analytics",
+        "@id": "https://l2beat.com/",
+        "description": "Layer 2 scaling solutions analytics and research",
+        "relatedLink": [
+          "https://l2beat.com/scaling/summary",
+          "https://l2beat.com/bridges/summary"
+        ]
+      },
+      {
+        "@type": "WebPage",
+        "name": "Multichain Bridge Protocols",
+        "@id": "https://defillama.com/bridges",
+        "description": "DeFi bridge protocols and cross-chain infrastructure",
+        "relatedLink": [
+          "https://defillama.com/",
+          "https://defillama.com/protocols"
+        ]
+      },
+      {
+        "@type": "WebPage",
+        "name": "React Performance Optimization Guide",
+        "@id": "https://react.dev/learn/render-and-commit",
+        "description": "Official React performance optimization best practices",
+        "relatedLink": [
+          "https://react.dev/reference/react/memo",
+          "https://react.dev/reference/react/useMemo",
+          "https://react.dev/reference/react/useCallback",
+          "https://react.dev/learn/keeping-components-pure"
+        ]
+      },
+      {
+        "@type": "WebPage",
+        "name": "Web3 Development Best Practices",
+        "@id": "https://ethereum.org/developers/",
+        "description": "Comprehensive Web3 development guidelines and best practices",
+        "relatedLink": [
+          "https://ethereum.org/developers/docs/web2-vs-web3/",
+          "https://ethereum.org/developers/docs/dapps/",
+          "https://ethereum.org/developers/docs/frameworks/"
+        ]
+      },
+      {
+        "@type": "WebPage",
+        "name": "Web3 Security Best Practices",
+        "@id": "https://consensys.github.io/smart-contract-best-practices/",
+        "description": "Smart contract and Web3 application security guidelines",
+        "relatedLink": [
+          "https://consensys.github.io/smart-contract-best-practices/development-recommendations/",
+          "https://consensys.github.io/smart-contract-best-practices/attacks/"
+        ]
+      },
+      {
+        "@type": "WebPage",
+        "name": "MetaMask Integration Guide",
+        "@id": "https://docs.metamask.io/guide/",
+        "description": "MetaMask wallet integration patterns and best practices",
+        "relatedLink": [
+          "https://docs.metamask.io/guide/ethereum-provider.html",
+          "https://docs.metamask.io/guide/rpc-api.html",
+          "https://docs.metamask.io/guide/signing-data.html"
+        ]
+      },
+      {
+        "@type": "WebPage",
+        "name": "Ethereum EIP Standards",
+        "@id": "https://eips.ethereum.org/",
+        "description": "Ethereum Improvement Proposals and protocol specifications",
+        "relatedLink": [
+          "https://eips.ethereum.org/EIPS/eip-1",
+          "https://eips.ethereum.org/EIPS/eip-20",
+          "https://eips.ethereum.org/EIPS/eip-1559"
+        ]
+      },
+      {
+        "@type": "WebPage",
+        "name": "WAGMI CLI Documentation",
+        "@id": "https://wagmi.sh/cli/getting-started",
+        "description": "WAGMI CLI for automatic ABI generation and type safety",
+        "relatedLink": [
+          "https://wagmi.sh/cli/commands/generate",
+          "https://wagmi.sh/cli/plugins/foundry",
+          "https://wagmi.sh/cli/plugins/hardhat"
+        ]
+      },
+      {
+        "@type": "WebPage",
+        "name": "ABI Specification",
+        "@id": "https://docs.soliditylang.org/en/latest/abi-spec.html",
+        "description": "Application Binary Interface specification for Ethereum smart contracts",
+        "relatedLink": [
+          "https://docs.soliditylang.org/en/latest/",
+          "https://docs.soliditylang.org/en/latest/contracts.html"
+        ]
+      },
+      {
+        "@type": "WebPage",
+        "name": "Contract Verification on Etherscan",
+        "@id": "https://docs.etherscan.io/tutorials/verifying-contracts-programmatically",
+        "description": "Smart contract verification and ABI extraction from Etherscan",
+        "relatedLink": [
+          "https://etherscan.io/apis",
+          "https://docs.etherscan.io/"
+        ]
+      }
+    ],
+    "hasPart": [
+      {
+        "@type": "WebPageElement",
+        "name": "What is WAGMI Library?",
+        "url": "https://shapkarin.me/articles/WAGMI-basics#what-is-wagmi-library",
+        "description": "Introduction to WAGMI as the de facto standard for React-based Web3 development with key features overview"
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "Key Features of WAGMI Library",
+        "url": "https://shapkarin.me/articles/WAGMI-basics#key-features-of-wagmi-library",
+        "description": "React-first architecture, TypeScript support, multichain capabilities, and modern tech stack benefits"
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "WAGMI vs Traditional Web3 Libraries",
+        "url": "https://shapkarin.me/articles/WAGMI-basics#wagmi-vs-traditional-web3-libraries",
+        "description": "Comprehensive comparison between WAGMI and traditional Web3 libraries with bundle size analysis"
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "Bundle Size Comparison (2025)",
+        "url": "https://shapkarin.me/articles/WAGMI-basics#bundle-size-comparison-2025",
+        "description": "Current bundle size metrics and performance comparisons for Web3 libraries"
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "Developer Experience: WAGMI v1 vs v2",
+        "url": "https://shapkarin.me/articles/WAGMI-basics#developer-experience-wagmi-v1-vs-v2",
+        "description": "Side-by-side comparison of WAGMI v1 and v2 APIs with migration examples"
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "Breaking Changes from v1 to v2",
+        "url": "https://shapkarin.me/articles/WAGMI-basics#breaking-changes-from-v1-to-v2",
+        "description": "Detailed breakdown of breaking changes and migration requirements from WAGMI v1 to v2"
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "WAGMI and VIEM Integration",
+        "url": "https://shapkarin.me/articles/WAGMI-basics#wagmi-and-viem-integration",
+        "description": "Understanding how VIEM powers WAGMI v2 for optimal performance and developer experience"
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "Why WAGMI Uses VIEM",
+        "url": "https://shapkarin.me/articles/WAGMI-basics#why-wagmi-uses-viem",
+        "description": "Technical benefits of VIEM integration including performance, bundle size, and type safety"
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "VIEM Standalone Example",
+        "url": "https://shapkarin.me/articles/WAGMI-basics#viem-standalone-example",
+        "description": "Complete example of using VIEM directly for token transfers with client setup and transaction simulation"
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "Setting Up Your First WAGMI dApp",
+        "url": "https://shapkarin.me/articles/WAGMI-basics#setting-up-your-first-wagmi-dapp",
+        "description": "Step-by-step guide to setting up a production-ready WAGMI application with proper project structure"
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "Project Structure for ABI Management",
+        "url": "https://shapkarin.me/articles/WAGMI-basics#project-structure-for-abi-management",
+        "description": "Best practices for organizing ABI files and smart contract interfaces in WAGMI projects"
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "Installation and Configuration",
+        "url": "https://shapkarin.me/articles/WAGMI-basics#installation-and-configuration",
+        "description": "Complete installation guide for WAGMI, VIEM, and required dependencies"
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "Basic WAGMI Configuration",
+        "url": "https://shapkarin.me/articles/WAGMI-basics#basic-wagmi-configuration",
+        "description": "Setting up WAGMI with Web3Modal, multiple chains, and production-ready configuration"
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "Essential WAGMI Hooks for dApp Development",
+        "url": "https://shapkarin.me/articles/WAGMI-basics#essential-wagmi-hooks-for-dapp-development",
+        "description": "Comprehensive guide to core WAGMI hooks for account management and contract interactions"
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "Core Account Management Hooks",
+        "url": "https://shapkarin.me/articles/WAGMI-basics#core-account-management-hooks",
+        "description": "Using useAccount, useConnect, useDisconnect, useBalance, and ENS hooks with practical examples"
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "Contract Interaction Hooks",
+        "url": "https://shapkarin.me/articles/WAGMI-basics#contract-interaction-hooks",
+        "description": "Complete guide to useReadContract, useWriteContract, and useWaitForTransactionReceipt hooks"
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "Building NFT Components with WAGMI",
+        "url": "https://shapkarin.me/articles/WAGMI-basics#building-nft-components-with-wagmi",
+        "description": "Creating production-ready NFT components with metadata fetching, IPFS integration, and error handling"
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "Complete NFT Marketplace Component",
+        "url": "https://shapkarin.me/articles/WAGMI-basics#complete-nft-marketplace-component",
+        "description": "Full-featured NFT card and collection components with caching, error states, and loading optimization"
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "WAGMI Multichain dApp Development",
+        "url": "https://shapkarin.me/articles/WAGMI-basics#wagmi-multichain-dapp-development",
+        "description": "Building applications that work across multiple blockchain networks with chain switching and portfolio tracking"
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "Advanced Multichain DeFi Dashboard",
+        "url": "https://shapkarin.me/articles/WAGMI-basics#advanced-multichain-defi-dashboard",
+        "description": "Complete multichain dashboard with Aave integration, native token balances, and chain switching functionality"
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "Advanced WAGMI Patterns: Simulate-Write Flow",
+        "url": "https://shapkarin.me/articles/WAGMI-basics#advanced-wagmi-patterns-simulate-write-flow",
+        "description": "Transaction simulation patterns for safer smart contract interactions and gas estimation"
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "Governance Voting with Transaction Simulation",
+        "url": "https://shapkarin.me/articles/WAGMI-basics#governance-voting-with-transaction-simulation",
+        "description": "Complete governance voting component with transaction simulation, gas estimation, and error handling"
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "WAGMI Performance Optimization",
+        "url": "https://shapkarin.me/articles/WAGMI-basics#wagmi-performance-optimization",
+        "description": "Comprehensive performance optimization strategies for WAGMI applications including bundle size and React Query optimization"
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "Bundle Size Optimization",
+        "url": "https://shapkarin.me/articles/WAGMI-basics#bundle-size-optimization",
+        "description": "Techniques for reducing bundle size through selective imports and dynamic loading"
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "React Query Optimization",
+        "url": "https://shapkarin.me/articles/WAGMI-basics#react-query-optimization",
+        "description": "Optimizing data fetching and caching with React Query configuration and prefetching strategies"
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "WAGMI Best Practices for Production",
+        "url": "https://shapkarin.me/articles/WAGMI-basics#wagmi-best-practices-for-production",
+        "description": "Production-ready patterns for error handling, user experience, and environment configuration"
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "Error Handling and User Experience",
+        "url": "https://shapkarin.me/articles/WAGMI-basics#error-handling-and-user-experience",
+        "description": "Robust error handling patterns with user-friendly error messages and recovery strategies"
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "Production Environment Configuration",
+        "url": "https://shapkarin.me/articles/WAGMI-basics#production-environment-configuration",
+        "description": "Production-ready WAGMI configuration with environment variables, RPC optimization, and monitoring"
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "Troubleshooting Common WAGMI Issues",
+        "url": "https://shapkarin.me/articles/WAGMI-basics#troubleshooting-common-wagmi-issues",
+        "description": "Solutions to common WAGMI development issues including hydration errors, chain switching, and contract interactions"
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "Common Issues and Solutions",
+        "url": "https://shapkarin.me/articles/WAGMI-basics#common-issues-and-solutions",
+        "description": "Practical solutions to frequent WAGMI development challenges with code examples"
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "Debug Tools and Monitoring",
+        "url": "https://shapkarin.me/articles/WAGMI-basics#debug-tools-and-monitoring",
+        "description": "Development debugging tools and production monitoring strategies for WAGMI applications"
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "Working with ABI Files: Best Practices",
+        "url": "https://shapkarin.me/articles/WAGMI-basics#working-with-abi-files-best-practices",
+        "description": "Comprehensive guide to ABI management, generation, validation, and TypeScript integration"
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "Generating ABI Files from Smart Contracts",
+        "url": "https://shapkarin.me/articles/WAGMI-basics#generating-abi-files-from-smart-contracts",
+        "description": "Methods for extracting ABI files from Hardhat, Foundry, and verified contracts"
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "TypeScript Integration for Better DX",
+        "url": "https://shapkarin.me/articles/WAGMI-basics#typescript-integration-for-better-dx",
+        "description": "Leveraging TypeScript for type-safe ABI management and improved developer experience"
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "Validating ABI Files",
+        "url": "https://shapkarin.me/articles/WAGMI-basics#validating-abi-files",
+        "description": "Automated ABI validation scripts and best practices for maintaining ABI integrity"
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "Related Articles and Resources",
+        "url": "https://shapkarin.me/articles/WAGMI-basics#related-articles-and-resources",
+        "description": "Comprehensive collection of related learning resources, documentation, and development tools"
+      }
+    ],
+    "teaches": [
+      "How to set up and configure WAGMI for React dApp development",
+      "Understanding WAGMI hooks for account management and smart contract interactions",
+      "Building production-ready NFT components with metadata handling",
+      "Implementing multichain dApp functionality with chain switching",
+      "Advanced patterns like transaction simulation and governance voting",
+      "Performance optimization techniques for WAGMI applications",
+      "Error handling and user experience best practices",
+      "ABI management and TypeScript integration strategies",
+      "Production deployment and monitoring for Web3 applications",
+      "Migration strategies from WAGMI v1 to v2",
+      "Debugging and troubleshooting common WAGMI issues",
+      "Security best practices for dApp development"
+    ],
+    "programmingLanguage": ["JavaScript", "TypeScript"],
+    "operatingSystem": "Cross-platform",
+    "applicationCategory": "Educational"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "ImageObject",
+    "name": "WAGMI vs Traditional Web3 Libraries Comparison Diagram",
+    "description": "Comparison diagram showing WAGMI's advantages over traditional Web3 libraries including React hooks integration, TypeScript support, and developer experience improvements",
+    "contentUrl": "https://shapkarin.me/api/articles/WAGMI-basics-0.svg",
+    "encodingFormat": "image/svg+xml",
+    "learningResourceType": "diagram",
+    "educationalUse": ["learning", "presentation"],
+    "about": {
+      "@type": "Thing",
+      "name": "WAGMI Web3 Development"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "relatedLink": [
+      {
+        "@type": "WebPage",
+        "name": "Memoization Article",
+        "url": "https://shapkarin.me/articles/memoization",
+        "description": "Related article about React performance optimization with memo, useMemo, and useCallback"
+      },
+      {
+        "@type": "WebPage",
+        "name": "State Optimization Guide",
+        "url": "https://shapkarin.me/articles/state-optimization-guide", 
+        "description": "Comprehensive guide to state optimization techniques for high-performance applications"
+      },
+      {
+        "@type": "WebPage",
+        "name": "Event Loop and Web Workers",
+        "url": "https://shapkarin.me/articles/async-event-loop-web-workers",
+        "description": "Understanding asynchronous JavaScript, event loop, and Web Workers for better dApp performance"
+      },
+      {
+        "@type": "WebPage",
+        "name": "Higher-Order Functions and Currying",
+        "url": "https://shapkarin.me/articles/hoc-and-currying",
+        "description": "Advanced JavaScript patterns useful for Web3 development and smart contract interactions"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is WAGMI and why should I use it for React dApp development?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "WAGMI (Web3 Application Generator for Multiple Interfaces) is a collection of React hooks that make building Ethereum dApps faster and more reliable. You should use WAGMI because it provides first-class TypeScript support, works with 100+ EVM networks out of the box, has built-in caching with TanStack Query, and offers a modern React-first API. It's powered by VIEM for optimal performance and has become the de facto standard for React Web3 development since its rewrite in v2."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What's the difference between WAGMI v1 and v2?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "WAGMI v2 introduced significant breaking changes: hooks were renamed (useContractRead → useReadContract), the package structure was split into separate react and core packages, VIEM replaced ethers.js for better performance, configuration was unified with createConfig, and function arguments are now provided as arrays. V2 also exposes BigInt values by default and has improved error handling following EIP-1474 conventions."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I handle multichain functionality in WAGMI?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "WAGMI supports multichain development through its configuration system. You can define multiple chains in your config, use the useSwitchChain hook to switch between networks, and use useReadContracts to read from multiple chains simultaneously. The chainId parameter allows you to specify exact networks for each operation, and WAGMI handles the complexity of managing different RPC endpoints and chain-specific logic."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the simulate-write pattern and why is it important?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The simulate-write pattern uses useSimulateContract to test transactions before execution, preventing failed transactions and providing accurate gas estimates. This pattern first simulates the transaction to ensure it will succeed, then uses the simulation result with useWriteContract to execute it. This approach saves users gas fees from failed transactions and provides better UX with reliable transaction previews and error handling."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I optimize WAGMI application performance?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Optimize WAGMI performance by: importing only needed hooks to reduce bundle size, configuring React Query with appropriate staleTime and cacheTime values, using selective subscriptions to prevent unnecessary re-renders, implementing proper loading states and error boundaries, prefetching related data with queryClient.prefetchQuery(), and using dynamic imports for heavy components. WAGMI's built-in caching and VIEM's performance optimizations already provide significant benefits."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How should I structure and manage ABI files in my WAGMI project?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Create a dedicated 'abis' directory in your src folder and organize ABI files by contract type (erc20Abi.json, nftAbi.json, etc.). Use TypeScript for better type safety by importing ABIs as 'Abi' type from VIEM. Consider using WAGMI CLI for automatic ABI generation from your smart contracts. Validate ABI files with automated scripts and maintain them separately from component logic for better reusability and maintainability."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are the common WAGMI issues and how do I fix them?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Common WAGMI issues include: hydration errors in Next.js (fix with mounted state checks), chain switching failures (handle specific error codes and user rejection), contract interaction failures (use simulation before writes), and stale data (configure appropriate refetch intervals). Use React Developer Tools for debugging, implement proper error boundaries, and always handle loading and error states in your components."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I build NFT components with WAGMI?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Build NFT components by using useReadContract to fetch tokenURI and owner data, implement metadata fetching with useQuery for caching, handle IPFS URL conversion, add proper loading states and error handling, and optimize with lazy loading for collections. Structure your components to handle both individual NFTs and collections, implement proper fallbacks for failed image loads, and use React Query for efficient metadata caching."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What's the relationship between WAGMI and VIEM?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "VIEM is the modern, lightweight Ethereum library that powers WAGMI v2. WAGMI provides React-specific abstractions and hooks, while VIEM handles the low-level blockchain interactions. VIEM offers better performance, smaller bundle size (~70kB), native TypeScript support, and optimized JSON-RPC batching. You can use VIEM directly for framework-agnostic code or within WAGMI for React applications."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I handle errors and improve user experience in WAGMI dApps?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Implement robust error handling by checking for specific error types (user rejection, insufficient funds, network issues), providing user-friendly error messages, implementing retry mechanisms for network failures, using transaction simulation to prevent errors, adding proper loading states throughout the user journey, and implementing analytics tracking for error monitoring. Always handle both connection errors and transaction failures gracefully."
+        }
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "How to Build a dApp with WAGMI and React",
+    "description": "Complete step-by-step guide to building a production-ready decentralized application using WAGMI library and React",
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://shapkarin.me/logo.jpg",
+      "width": 512,
+      "height": 512
+    },
+    "totalTime": "PT120M",
+    "estimatedCost": {
+      "@type": "MonetaryAmount",
+      "currency": "USD",
+      "value": "0"
+    },
+    "supply": [
+      {
+        "@type": "HowToSupply",
+        "name": "React knowledge"
+      },
+      {
+        "@type": "HowToSupply",
+        "name": "TypeScript understanding"
+      },
+      {
+        "@type": "HowToSupply",
+        "name": "Basic Web3 concepts"
+      },
+      {
+        "@type": "HowToSupply",
+        "name": "Node.js and npm installed"
+      }
+    ],
+    "tool": [
+      {
+        "@type": "HowToTool",
+        "name": "Code editor (VS Code recommended)"
+      },
+      {
+        "@type": "HowToTool",
+        "name": "Web browser with wallet extension"
+      },
+      {
+        "@type": "HowToTool",
+        "name": "React Developer Tools"
+      }
+    ],
+    "step": [
+      {
+        "@type": "HowToStep",
+        "name": "Set up project structure",
+        "text": "Create a new React project, install WAGMI, VIEM, and TanStack Query dependencies. Set up proper folder structure with separate directories for components, hooks, and ABI files."
+      },
+      {
+        "@type": "HowToStep", 
+        "name": "Configure WAGMI with multichain support",
+        "text": "Create WAGMI configuration with multiple chains, set up Web3Modal for wallet connections, and configure React Query client for optimal caching and performance."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Implement wallet connection",
+        "text": "Build robust wallet connection component with error handling, support for multiple wallet types, and proper loading and error states for better user experience."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Add smart contract interactions",
+        "text": "Implement contract reading and writing functionality using useReadContract and useWriteContract hooks, with proper ABI management and TypeScript integration."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Build user interface components",
+        "text": "Create reusable components for displaying account information, contract data, and transaction states. Implement proper loading states and error handling throughout."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Add transaction simulation",
+        "text": "Implement the simulate-write pattern for safer transactions, gas estimation, and transaction previews to improve user experience and prevent failed transactions."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Optimize performance",
+        "text": "Configure React Query for optimal caching, implement selective imports to reduce bundle size, and add performance monitoring for production deployment."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Test and deploy",
+        "text": "Test your dApp across different networks and wallet types, implement proper error handling for production, and deploy with environment-specific configurations."
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo", 
+    "name": "How to Migrate from WAGMI v1 to v2",
+    "description": "Step-by-step migration guide for updating WAGMI applications from v1 to v2 with breaking changes and new features",
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://shapkarin.me/logo.jpg",
+      "width": 512,
+      "height": 512
+    },
+    "totalTime": "PT60M",
+    "estimatedCost": {
+      "@type": "MonetaryAmount",
+      "currency": "USD", 
+      "value": "0"
+    },
+    "supply": [
+      {
+        "@type": "HowToSupply",
+        "name": "Existing WAGMI v1 application"
+      },
+      {
+        "@type": "HowToSupply",
+        "name": "Understanding of breaking changes"
+      }
+    ],
+    "tool": [
+      {
+        "@type": "HowToTool",
+        "name": "Migration documentation"
+      },
+      {
+        "@type": "HowToTool",
+        "name": "TypeScript compiler"
+      }
+    ],
+    "step": [
+      {
+        "@type": "HowToStep",
+        "name": "Update dependencies",
+        "text": "Install WAGMI v2, VIEM, and updated TanStack Query. Remove ethers.js dependencies that are no longer needed as VIEM replaces them."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Update configuration",
+        "text": "Replace multiple providers with unified createConfig, update chain and connector imports, and restructure your configuration for the new API."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Rename hooks",
+        "text": "Update useContractRead to useReadContract, useContractWrite to useWriteContract, and other renamed hooks throughout your application."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Update function arguments",
+        "text": "Change spread arguments to args arrays, update error handling to use new error objects, and handle BigInt values properly in your components."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Test and validate",
+        "text": "Thoroughly test all functionality with the new API, verify type safety improvements, and ensure proper error handling with the updated system."
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareSourceCode",
+    "name": "WAGMI React dApp Development Examples",
+    "description": "Complete code examples for building React decentralized applications with WAGMI library including NFT components, multichain functionality, and governance patterns",
+    "programmingLanguage": ["JavaScript", "TypeScript"],
+    "codeRepository": "https://shapkarin.me/articles/WAGMI-basics",
+    "author": {
+      "@type": "Person",
+      "name": "Iurii Shapkarin"
+    },
+    "applicationCategory": "Educational",
+    "operatingSystem": "Cross-platform",
+    "teaches": [
+      "WAGMI configuration and setup for production applications",
+      "React hooks for Web3 development and smart contract interactions",
+      "NFT component development with metadata fetching and IPFS integration",
+      "Multichain dApp development with chain switching and portfolio tracking",
+      "Governance voting implementation with transaction simulation",
+      "Performance optimization techniques for WAGMI applications",
+      "Error handling and user experience patterns for dApps",
+      "ABI management and TypeScript integration best practices"
+    ]
+  }
+] 

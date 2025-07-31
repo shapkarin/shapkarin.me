@@ -1,0 +1,460 @@
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://shapkarin.me/articles/curiosity-js/"
+    },
+    "url": "https://shapkarin.me/articles/curiosity-js/",
+    "headline": "Weird JavaScript Quirks Explained: Type Coercion, Equality & More",
+    "description": "Discover the most surprising JavaScript quirks and learn how type coercion, loose equality, and parsing rules lead to unexpected behaviors in your code.",
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://shapkarin.me/logo.jpg",
+      "width": 512,
+      "height": 512
+    },
+    "author": {
+      "@type": "Person",
+      "name": "Iurii Shapkarin",
+      "alternateName": "Yury Shapkarin",
+      "url": "https://shapkarin.me"
+    },
+    "publisher": {
+      "@type": "Person",
+      "name": "Iurii Shapkarin",
+      "alternateName": "Yury Shapkarin",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://shapkarin.me/logo.jpg",
+        "width": 512,
+        "height": 512
+      }
+    },
+    "datePublished": "2024-03-15",
+    "dateModified": "2024-03-15",
+    "wordCount": "8500",
+    "inLanguage": "en-US",
+    "learningResourceType": "Comprehensive technical guide",
+    "proficiencyLevel": ["Intermediate", "Advanced"],
+    "keywords": "JavaScript quirks, type coercion, loose equality, JavaScript weird behavior, ECMAScript specification, JavaScript operators, NaN JavaScript, typeof operator, parseInt quirks, floating point JavaScript, JavaScript arrays, JSON stringify, JavaScript parsing, JavaScript type conversion, JavaScript gotchas, JavaScript edge cases, JavaScript tricks, JavaScript WTF, JavaScript anti-patterns, JavaScript debugging, JavaScript interview questions, JavaScript fundamentals, JavaScript operators precedence, JavaScript equality comparison, JavaScript implicit conversion, JavaScript type system, JavaScript language features, JavaScript language design, JavaScript surprising behavior, JavaScript corner cases, JavaScript language quirks, JavaScript operator overloading, JavaScript automatic type conversion, JavaScript string coercion, JavaScript numeric conversion, JavaScript boolean conversion, JavaScript array coercion, JavaScript object coercion, JavaScript primitive coercion, JavaScript reference equality, JavaScript value equality, JavaScript strict equality, JavaScript abstract equality, JavaScript comparison operators, JavaScript arithmetic operators, JavaScript bitwise operators, JavaScript logical operators, JavaScript ternary operator, JavaScript nullish coalescing",
+    "about": [
+      {
+        "@type": "Thing",
+        "name": "JavaScript Type Coercion",
+        "description": "Automatic conversion of values from one data type to another in JavaScript operations"
+      },
+      {
+        "@type": "Thing",
+        "name": "ECMAScript Specification",
+        "description": "The official standard that defines JavaScript language behavior and type conversion rules"
+      },
+      {
+        "@type": "Thing",
+        "name": "Loose Equality",
+        "description": "JavaScript's == operator that performs type coercion before comparison, leading to unexpected results"
+      },
+      {
+        "@type": "Thing",
+        "name": "JavaScript Operators",
+        "description": "Mathematical and logical symbols that perform operations on operands, with complex coercion rules"
+      },
+      {
+        "@type": "Thing",
+        "name": "JavaScript Parsing",
+        "description": "How JavaScript engines interpret and convert string values to numbers using parseInt and parseFloat"
+      },
+      {
+        "@type": "Thing",
+        "name": "JavaScript Arrays",
+        "description": "JavaScript array objects and their surprising behavior in type conversion contexts"
+      },
+      {
+        "@type": "Thing",
+        "name": "JavaScript Objects",
+        "description": "JavaScript object literals and their toString() and valueOf() conversion methods"
+      },
+      {
+        "@type": "Thing",
+        "name": "JavaScript NaN",
+        "description": "The special 'Not a Number' value and its unique equality and comparison behaviors"
+      }
+    ],
+    "audience": [
+      {
+        "@type": "Audience",
+        "audienceType": "Developers",
+        "name": "JavaScript Developers"
+      },
+      {
+        "@type": "Audience",
+        "audienceType": "Developers",
+        "name": "Frontend Developers"
+      },
+      {
+        "@type": "Audience",
+        "audienceType": "Developers",
+        "name": "Full-Stack Developers"
+      },
+      {
+        "@type": "Audience",
+        "audienceType": "Developers",
+        "name": "Node.js Developers"
+      },
+      {
+        "@type": "Audience",
+        "audienceType": "Students",
+        "name": "Computer Science Students"
+      },
+      {
+        "@type": "Audience",
+        "audienceType": "Students",
+        "name": "Programming Students"
+      },
+      {
+        "@type": "Audience",
+        "audienceType": "Technical Leaders",
+        "name": "Senior Developers"
+      },
+      {
+        "@type": "Audience",
+        "audienceType": "Developers",
+        "name": "Web Developers"
+      },
+      {
+        "@type": "Audience",
+        "audienceType": "Developers",
+        "name": "Software Engineers"
+      }
+    ],
+    "citation": [
+      {
+        "@type": "WebPage",
+        "name": "ECMAScript Language Specification",
+        "@id": "https://tc39.es/ecma262/",
+        "description": "Official ECMAScript specification defining JavaScript language behavior and type conversion rules"
+      },
+      {
+        "@type": "WebPage",
+        "name": "Iurii Shapkarin JavaScript Gist Collection",
+        "@id": "https://gist.github.com/shapkarin/b3fbeaca95ef69df177b",
+        "description": "Collection of JavaScript curiosities and code examples demonstrating language quirks"
+      },
+      {
+        "@type": "WebPage",
+        "name": "MDN JavaScript Equality comparisons",
+        "@id": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Equality_comparisons_and_sameness",
+        "description": "Comprehensive guide to JavaScript equality operators and type coercion behavior"
+      },
+      {
+        "@type": "WebPage",
+        "name": "MDN Type coercion",
+        "@id": "https://developer.mozilla.org/en-US/docs/Glossary/Type_coercion",
+        "description": "Definition and examples of automatic type conversion in JavaScript"
+      },
+      {
+        "@type": "WebPage",
+        "name": "MDN parseInt() Documentation",
+        "@id": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/parseInt",
+        "description": "Complete reference for JavaScript parseInt() function and its parsing behavior"
+      },
+      {
+        "@type": "WebPage",
+        "name": "MDN parseFloat() Documentation",
+        "@id": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/parseFloat",
+        "description": "Documentation for JavaScript parseFloat() function and numeric parsing rules"
+      },
+      {
+        "@type": "WebPage",
+        "name": "MDN Array.prototype.toString()",
+        "@id": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/toString",
+        "description": "Documentation for array toString() method and string conversion behavior"
+      },
+      {
+        "@type": "WebPage",
+        "name": "MDN Object.prototype.toString()",
+        "@id": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/toString",
+        "description": "Reference for object toString() method and type coercion in JavaScript"
+      }
+    ],
+    "hasPart": [
+      {
+        "@type": "WebPageElement",
+        "name": "Addition and Subtraction with Arrays and Objects",
+        "url": "https://shapkarin.me/articles/curiosity-js#1-addition-and-subtraction-with-arrays-and-objects",
+        "description": "Exploring how JavaScript handles arithmetic operations between arrays and objects through type coercion"
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "Adding Booleans and Arrays",
+        "url": "https://shapkarin.me/articles/curiosity-js#2-adding-booleans-and-arrays",
+        "description": "Understanding how booleans and arrays interact in addition operations with string concatenation"
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "Loose Equality Oddities",
+        "url": "https://shapkarin.me/articles/curiosity-js#3-loose-equality-oddities",
+        "description": "Comprehensive examples of JavaScript's == operator and its surprising type coercion behavior"
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "Negation and Boolean Coercion",
+        "url": "https://shapkarin.me/articles/curiosity-js#4-negation-and-boolean-coercion",
+        "description": "How logical NOT operators and boolean conversion create unexpected results in JavaScript"
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "Strict Equality vs. Loose Equality",
+        "url": "https://shapkarin.me/articles/curiosity-js#5-strict-equality-vs-loose-equality",
+        "description": "Comparing === and == operators with examples of type coercion and reference equality"
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "Floating-Point Issues",
+        "url": "https://shapkarin.me/articles/curiosity-js#6-floating-point-issues",
+        "description": "Demonstration of IEEE 754 floating-point precision problems in JavaScript arithmetic"
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "Compound and Weird Arithmetic",
+        "url": "https://shapkarin.me/articles/curiosity-js#7-compound-and-weird-arithmetic",
+        "description": "Complex arithmetic expressions that showcase JavaScript's operator precedence and coercion rules"
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "Comparing Extremes",
+        "url": "https://shapkarin.me/articles/curiosity-js#8-comparing-extremes",
+        "description": "Edge cases with Math.max(), Math.min(), and special numeric values like Infinity"
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "Types and NaN",
+        "url": "https://shapkarin.me/articles/curiosity-js#9-types-and-nan",
+        "description": "Understanding typeof operator results and NaN's unique equality behavior in JavaScript"
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "Reference Equality",
+        "url": "https://shapkarin.me/articles/curiosity-js#10-reference-equality",
+        "description": "How JavaScript compares objects by reference rather than by value, with practical examples"
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "Weird String Addition",
+        "url": "https://shapkarin.me/articles/curiosity-js#11-weird-string-addition",
+        "description": "Array concatenation and string conversion behavior when using the + operator"
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "Date Conversions",
+        "url": "https://shapkarin.me/articles/curiosity-js#13-date-conversions",
+        "description": "How Date objects behave in numeric and string contexts with type coercion"
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "parseInt vs parseFloat",
+        "url": "https://shapkarin.me/articles/curiosity-js#15-parseint-vs-parsefloat",
+        "description": "Detailed analysis of JavaScript's parsing functions and their surprising behavior with different bases"
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "Bitwise Operators and PI",
+        "url": "https://shapkarin.me/articles/curiosity-js#16-bitwise-operators-and-pi",
+        "description": "How bitwise operations truncate floating-point numbers and work with type coercion"
+      },
+      {
+        "@type": "WebPageElement", 
+        "name": "parseInt on an Array via map",
+        "url": "https://shapkarin.me/articles/curiosity-js#17-parseint-on-an-array-via-map",
+        "description": "The famous ['1', '7', '11'].map(parseInt) problem and why it returns [1, NaN, 3]"
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "Implementing Your Own myMap Function",
+        "url": "https://shapkarin.me/articles/curiosity-js#23-implementing-your-own-mymap-function",
+        "description": "Creating a custom map function that avoids the parseInt quirks and handles edge cases properly"
+      }
+    ],
+    "teaches": [
+      "Understanding JavaScript's automatic type coercion system and when it occurs",
+      "Mastering the difference between == and === equality operators",
+      "Recognizing common JavaScript gotchas and how to avoid them in production code", 
+      "How ECMAScript specification rules govern type conversion behavior",
+      "Understanding parseInt() and parseFloat() parsing rules and base conversion",
+      "Why floating-point arithmetic can produce unexpected results in JavaScript",
+      "How arrays and objects are converted to primitives in different contexts",
+      "Understanding NaN's unique properties and equality behavior",
+      "Mastering JavaScript's typeof operator and its limitations",
+      "How to write defensive code that avoids common JavaScript pitfalls",
+      "Understanding operator precedence and associativity in complex expressions",
+      "Best practices for type checking and validation in JavaScript",
+      "How to implement reliable comparison and conversion functions",
+      "Understanding the difference between primitives and objects in JavaScript",
+      "Advanced debugging techniques for JavaScript type-related issues"
+    ],
+    "programmingLanguage": "JavaScript",
+    "operatingSystem": "Cross-platform",
+    "applicationCategory": "Educational"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Why does [] + {} return '[object Object]' in JavaScript?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "When using the + operator with objects, JavaScript converts them to primitives. An empty array [] converts to an empty string '', while an empty object {} converts to '[object Object]' via its toString() method. The result is '' + '[object Object]' = '[object Object]'."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why does ['1', '7', '11'].map(parseInt) return [1, NaN, 3]?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The map() method passes both the element and index to the callback function. So parseInt receives: parseInt('1', 0) → 1, parseInt('7', 1) → NaN (base 1 is invalid), parseInt('11', 2) → 3 (binary 11 = 3 in decimal). The fix is to use map(x => parseInt(x, 10)) or map(Number)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why is 0.1 + 0.2 not equal to 0.3 in JavaScript?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "JavaScript uses IEEE 754 double-precision floating-point numbers. Many decimal fractions cannot be represented exactly in binary, so 0.1 and 0.2 are stored as approximations. When added, the result is 0.30000000000000004 due to accumulated rounding errors. Use epsilon comparisons or decimal libraries for exact arithmetic."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why does typeof null return 'object' in JavaScript?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "This is a well-known bug in JavaScript that dates back to the language's creation. In the original implementation, values were represented by a type tag and value, where objects had a type tag of 0. null was represented as all zeros, so it was incorrectly identified as an object. This behavior is preserved for backward compatibility."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why does NaN === NaN return false?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "This is defined by the IEEE 754 standard for floating-point arithmetic. NaN (Not a Number) represents an undefined or unrepresentable value, and by definition, no two undefined values should be considered equal. Use Number.isNaN() or isNaN() to check if a value is NaN."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What's the difference between == and === in JavaScript?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The == operator performs loose equality with type coercion, automatically converting operands to comparable types before comparison. The === operator performs strict equality without type coercion, comparing both value and type. For reliable comparisons, prefer === to avoid unexpected type conversion behavior."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why does [] == ![] return true in JavaScript?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "First, ![] evaluates to false (arrays are truthy, so negation gives false). Then [] == false becomes a loose equality comparison. The array [] converts to '' (empty string), false converts to 0, and '' converts to 0, so we get 0 == 0 which is true."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How can I avoid JavaScript type coercion issues?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Use strict equality (===) instead of loose equality (==), explicitly convert types with Number(), String(), Boolean(), use parseInt() with a radix parameter, enable strict mode ('use strict'), use TypeScript for compile-time type checking, and write unit tests for edge cases."
+        }
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "How to Avoid JavaScript Type Coercion Pitfalls",
+    "description": "A practical guide to writing defensive JavaScript code that avoids common type coercion issues and unexpected behavior",
+    "image": {
+      "@type": "ImageObject",  
+      "url": "https://shapkarin.me/logo.jpg",
+      "width": 512,
+      "height": 512
+    },
+    "totalTime": "PT30M",
+    "supply": [
+      {
+        "@type": "HowToSupply",
+        "name": "JavaScript development environment"
+      },
+      {
+        "@type": "HowToSupply",
+        "name": "Code editor with linting support"
+      }
+    ],
+    "tool": [
+      {
+        "@type": "HowToTool",
+        "name": "ESLint or similar JavaScript linter"
+      },
+      {
+        "@type": "HowToTool", 
+        "name": "TypeScript (optional but recommended)"
+      }
+    ],
+    "step": [
+      {
+        "@type": "HowToStep",
+        "name": "Use strict equality operators",
+        "text": "Always use === and !== instead of == and != to avoid automatic type coercion. This prevents unexpected comparisons like '0' == 0 returning true."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Explicitly convert types",
+        "text": "Use Number(), String(), Boolean() for explicit type conversion instead of relying on implicit coercion. For example, use Number(value) instead of +value."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Always specify radix in parseInt()",
+        "text": "Use parseInt(string, 10) to explicitly specify base 10, avoiding issues with octal interpretation of strings starting with '0'."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Use proper array methods",
+        "text": "When using map() with parsing functions, wrap them: array.map(x => parseInt(x, 10)) instead of array.map(parseInt) to avoid passing index as radix."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Handle floating-point comparisons",
+        "text": "For decimal precision, use libraries like decimal.js or compare with epsilon: Math.abs(a - b) < Number.EPSILON instead of direct equality."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Enable strict mode and linting",
+        "text": "Use 'use strict' directive and configure ESLint rules to catch potential type coercion issues during development."
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareSourceCode",
+    "name": "JavaScript Quirks and Type Coercion Examples",
+    "description": "Comprehensive collection of JavaScript code examples demonstrating type coercion, equality operators, and language quirks with detailed explanations",
+    "programmingLanguage": "JavaScript",
+    "codeRepository": "https://shapkarin.me/articles/curiosity-js",
+    "author": {
+      "@type": "Person",
+      "name": "Iurii Shapkarin"
+    },
+    "applicationCategory": "Educational",
+    "operatingSystem": "Cross-platform",
+    "teaches": [
+      "JavaScript type coercion mechanisms and rules",
+      "Equality operator behavior and comparison algorithms", 
+      "parseInt and parseFloat parsing quirks and solutions",
+      "Array and object conversion to primitive values",
+      "Floating-point arithmetic precision issues",
+      "NaN behavior and proper testing methods",
+      "Bitwise operator type conversion",
+      "Custom implementation of array methods",
+      "Defensive programming techniques for JavaScript"
+    ]
+  }
+] 
