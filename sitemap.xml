@@ -4,9 +4,6 @@
     <loc>https://shapkarin.me/</loc>
   </url>
   <url>
-    <loc>https://shapkarin.me/articles/</loc>
-  </url>
-  <url>
     <loc>https://shapkarin.me/github/repositories/</loc>
   </url>
   <url>
@@ -22,22 +19,16 @@
     <loc>https://shapkarin.me/articles/contributions-to-major-web-dev-repos/</loc>
   </url>
   <url>
+    <loc>https://shapkarin.me/articles/production-AI-in-2016-year/</loc>
+  </url>
+  <url>
     <loc>https://shapkarin.me/articles/byzantine-fault-tolerance/</loc>
   </url>
   <url>
-    <loc>https://shapkarin.me/articles/hoc-and-currying/</loc>
-  </url>
-  <url>
-    <loc>https://shapkarin.me/articles/ai-automation-for-business/</loc>
+    <loc>https://shapkarin.me/articles/ethereum-abi/</loc>
   </url>
   <url>
     <loc>https://shapkarin.me/articles/floating-point-precision/</loc>
-  </url>
-  <url>
-    <loc>https://shapkarin.me/articles/function-declaration-vs-expression/</loc>
-  </url>
-  <url>
-    <loc>https://shapkarin.me/articles/production-AI-in-2016-year/</loc>
   </url>
   <url>
     <loc>https://shapkarin.me/articles/back-health-and-therapeutic-exercises/</loc>
@@ -46,7 +37,16 @@
     <loc>https://shapkarin.me/articles/drop-react-manual-memoization/</loc>
   </url>
   <url>
+    <loc>https://shapkarin.me/articles/function-declaration-vs-expression/</loc>
+  </url>
+  <url>
+    <loc>https://shapkarin.me/articles/higher-order-functions-and-currying/</loc>
+  </url>
+  <url>
     <loc>https://shapkarin.me/articles/javascript-lexical-scope/</loc>
+  </url>
+  <url>
+    <loc>https://shapkarin.me/articles/ai-automation-for-business/</loc>
   </url>
   <url>
     <loc>https://shapkarin.me/articles/memoization/</loc>
@@ -83,9 +83,6 @@
   </url>
   <url>
     <loc>https://shapkarin.me/articles/async-event-loop-web-workers/</loc>
-  </url>
-  <url>
-    <loc>https://shapkarin.me/articles/ethereum-abi/</loc>
   </url>
   <url>
     <loc>https://shapkarin.me/articles/ethereum-whitepaper-explanation/</loc>
