@@ -22,7 +22,7 @@ const PAGES = [
     Icon: () => <RiArticleLine />,
     Page: () => <Article />,
     noInMenu: true,
-    redirect: { from: '/articles/higher-order-functions-and-currying', to: '/articles/hoc-and-currying/' },
+    redirect: { from: '/articles/hoc-and-currying/', to: '/articles/higher-order-functions-and-currying/' },
   },
   {
     name: 'Repositories',
