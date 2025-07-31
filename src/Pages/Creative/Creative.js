@@ -19,8 +19,6 @@ export default function Creative() {
       <div className="Page__Creative Page__Inner">
         <Preloader>
           <Intro />
-        </Preloader>
-        <Preloader>
           <Collection />
         </Preloader>
       </div>
