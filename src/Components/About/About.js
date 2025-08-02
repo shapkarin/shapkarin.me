@@ -13,11 +13,14 @@ import './style.less';
 
 const EMAIL = 'yu.shapkarin@gmail.com';
 
+
+const isMobileDevice = isMobile();
+
 function About() {
   const { data: { data: { title, intro, links: { linkedin, github } } } } = useQuery('About', fetchAbout);
   
   const [copied, setCopied] = useState(false);
-  
+
   return (
     <>
       <div className={clsx('About', {
@@ -25,9 +28,9 @@ function About() {
         })}>
         <Link to="/" className='About_greeting'>{title}</Link>
         {' '}{intro}
-        {isMobile() && <br />}
+        {isMobileDevice && <br />}
         <a href={linkedin.link} className={clsx('Social_Link', {
-          'Social_Link__mobile': isMobile()
+          'Social_Link__mobile': isMobileDevice
         })} target="_blank" rel="noreferrer">{linkedin.text}<FiExternalLink /></a>
         <a href={github.link} className="Social_Link" target="_blank" rel="noreferrer">{github.text}<FiExternalLink /></a>
         <CopyToClipboard text={EMAIL}
@@ -44,5 +47,5 @@ function About() {
 
 
 export default function SuspensedAbout() {
-  return <Preloader><About /></Preloader>
+  return <Preloader height={isMobileDevice ? 260 : 170} lines={isMobileDevice ? 12 : 7}><About /></Preloader>
 }
