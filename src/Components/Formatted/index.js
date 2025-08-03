@@ -1,3 +1,7 @@
+/*
+  TODO: remove or rethink this component, due the src/Generate-Backend/database-to-json.js
+        and src/Generate-Backend/database.js latest updates
+*/
 import { Fragment } from 'react';
 import PropTypes from 'prop-types';
 
