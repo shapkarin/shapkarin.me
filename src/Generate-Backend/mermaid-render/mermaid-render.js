@@ -156,8 +156,8 @@ class MermaidProcessor {
       // Ensure output directory exists
       await fs.mkdir(path.dirname(outputPath), { recursive: true });
       
-      // Use mermaid CLI with stdin input (no temp files)
-      const command = `echo "${mermaidCode.replace(/"/g, '\\"')}" | npx mmdc -i /dev/stdin -o "${outputPath}" -t ${theme} -b transparent`;
+      // Use mermaid CLI with stdin input and explicit width/height to avoid percentage viewBox
+      const command = `echo "${mermaidCode.replace(/"/g, '\\"')}" | npx mmdc -i /dev/stdin -o "${outputPath}" -t ${theme} -b transparent -w 778 -H 600`;
       
       if (this.config.verbose) {
         console.log(`🎨 Generating: ${path.basename(outputPath)} (${theme})`);
