@@ -1,7 +1,7 @@
 import { useState, useMemo } from "react";
 import { useQuery } from "react-query";
 import { GoChevronRight, GoChevronDown } from "react-icons/go";
-import { isMobile } from "react-device-detect";
+import { isMobile } from "is-mobile";
 
 import { fetchPackageInfo } from "@/API";
 import Collapse from "@/Components/Collapse";
