@@ -1,6 +1,7 @@
 import { useState, useMemo } from "react";
 import { useQuery } from "react-query";
 import { GoChevronRight, GoChevronDown } from "react-icons/go";
+import { isMobile } from "react-device-detect";
 
 import { fetchPackageInfo } from "@/API";
 import Collapse from "@/Components/Collapse";
@@ -35,13 +36,17 @@ function PackageInfoContent({ id }) {
 export default function PackageInfo({ id }) {
   const [isOpen, setIsOpen] = useState(false);
   const collapsed = useMemo(() => isOpen, [isOpen]);
+  const isMobileDevice = isMobile();
 
   return (
     <>
       <div className="toggle_info" onClick={() => setIsOpen((prev) => !prev)}>
         package info {isOpen ? <GoChevronDown /> : <GoChevronRight />}
       </div>
-      <Preloader height="355" lines="2">
+      <Preloader
+        height={isMobileDevice ? 300 : 200} 
+        lines={isMobileDevice ? 4 : 3}
+      >
         <Collapse open={collapsed}>
           <PackageInfoContent id={id} />
         </Collapse>
