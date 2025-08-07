@@ -44,7 +44,7 @@ export default function PackageInfo({ id }) {
         package info {isOpen ? <GoChevronDown /> : <GoChevronRight />}
       </div>
       <Preloader
-        height={isMobileDevice ? 300 : 200} 
+        height={isMobileDevice ? 300 : 95} 
         lines={isMobileDevice ? 4 : 3}
       >
         <Collapse open={collapsed}>
