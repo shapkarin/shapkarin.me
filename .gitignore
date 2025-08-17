@@ -38,3 +38,7 @@ public/api/about.json
 
 # TODO: rewrite this article 
 public/api/articles/wagmi-ethers_NEW.md
+
+# Do not track the generated diagrams
+public/api/articles/light
+public/api/articles/dark
