@@ -117,7 +117,7 @@ graph TD
 2. **Automatic Execution**: No human intervention needed
 3. **Immutable**: Once deployed, contracts can't be changed easily
 4. **Transparent**: Everyone can see the code and verify it works
-5. **Check about ABI**: [Application Binary Interface](/ethereum-abi) article
+5. **Check about ABI**: [Application Binary Interface](/articles/ethereum-abi) article
 
 ![SequenceDiagram diagram](/api/articles/dark/ethereum-whitepaper-explanation-1.svg)
 ```mermaid
