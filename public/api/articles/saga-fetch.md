@@ -56,7 +56,6 @@ const searchPages = ({ payload: { title } }) => fetch(`/search/pages?title=${tit
 ```
 
 ![SequenceDiagram diagram](/api/articles/dark/saga-fetch-0.svg)
-
 ```mermaid
 sequenceDiagram
     participant Component as React Component

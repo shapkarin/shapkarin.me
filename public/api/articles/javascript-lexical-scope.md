@@ -42,6 +42,7 @@ Lexical scope is one of the most fundamental concepts in JavaScript that every d
 
 Lexical scope (also called static scope) refers to how variable access is determined based on the physical location of variables in the source code. In JavaScript, the scope of a variable is defined by its location within the code structure.
 
+![Graph diagram](/api/articles/dark/javascript-lexical-scope-0.svg)
 ```mermaid
 graph TD
     A[Global Scope] --> B[Function Scope]

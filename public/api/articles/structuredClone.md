@@ -28,7 +28,6 @@ In JavaScript, copying objects is a common task, but it's not always straightfor
 When you copy an object in JavaScript, you might be creating either a shallow copy or a deep copy.
 
 ![Graph diagram](/api/articles/dark/structuredClone-0.svg)
-
 ```mermaid
 graph TD
     A[Original Object] --> B[name: 'Alice']
@@ -182,7 +181,6 @@ try {
 ### Key Benefits of `structuredClone()`:
 
 ![Flowchart diagram](/api/articles/dark/structuredClone-1.svg)
-
 ```mermaid
 flowchart LR
     A[structuredClone] --> B[Handles Complex Types]
