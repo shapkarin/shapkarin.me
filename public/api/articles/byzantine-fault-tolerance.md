@@ -1299,13 +1299,11 @@ graph TD
     subgraph "Scalability Solutions"
         SH["<br/>Sharding<br/><br/>"]
         LR["<br/>Layer 2<br/><br/>"]
-        OPT["<br/>Optimistic<br/>Execution<br/><br/>"]
         PAR["<br/>Parallel<br/>Processing<br/><br/>"]
     end
     
     TH --> SH
     TH --> LR
-    TH --> OPT
     TH --> PAR
     
     subgraph "Trade-offs"
@@ -1324,7 +1322,6 @@ graph TD
     style PERF fill:#c8e6c9,stroke:#388e3c,stroke-width:3px
     style SH fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px
     style LR fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px
-    style OPT fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px
     style PAR fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px
 ```
 
