@@ -57,8 +57,8 @@ A routine is essentially a structured set of related action types generated from
 - `projects/FULFILL`
 
 ![Graph diagram](/api/articles/dark/extend-routines-0.svg)
-
-```mermaidgraph LR
+```mermaid
+graph LR
     A[Routine Prefix: 'projects'] --> B[TRIGGER]
     A --> C[REQUEST]
     A --> D[SUCCESS]
@@ -69,7 +69,7 @@ A routine is essentially a structured set of related action types generated from
     C --> H[projects/REQUEST]
     D --> I[projects/SUCCESS]
     E --> J[projects/FAILURE]
-    F --> K[projects/FULFILL]</code></pre>
+    F --> K[projects/FULFILL]
 ```
 
 This grouping lets you write cleaner code. Instead of manually defining and maintaining multiple action types for each async flow, you define them once and access them through a routine object.

@@ -68,8 +68,8 @@ For developers building modern dApps, understanding ABI is not optional—it's f
 The importance of ABI extends beyond mere convenience—it's a critical component that enables the entire Web3 ecosystem to function cohesively, allowing developers to build complex applications that interact with multiple smart contracts across different protocols and chains.
 
 ![Graph diagram](/api/articles/dark/ethereum-abi-0.svg)
-
-```mermaidgraph TD
+```mermaid
+graph TD
     A[Smart Contract] --> B[ABI Definition]
     B --> C[Function Signatures]
     B --> D[Event Definitions]
@@ -87,7 +87,7 @@ The importance of ABI extends beyond mere convenience—it's a critical componen
     G --> K[User Interactions]
     H --> L[Automated Systems]
     I --> M[Developer Tools]
-    J --> N[Contract Verification]</code></pre>
+    J --> N[Contract Verification]
 ```
 
 ---
@@ -213,9 +213,9 @@ This process happens transparently when you use Web3 libraries, but understandin
 
 The ABI encoding process is a multi-step procedure that bridges the gap between human-readable function calls and EVM-executable bytecode. This process ensures type safety, data integrity, and consistent behavior across all EVM-compatible blockchains.
 
-![SequenceDiagram diagram](/api/articles/light/ethereum-abi-1.svg)
-
-```mermaidsequenceDiagram
+![SequenceDiagram diagram](/api/articles/dark/ethereum-abi-1.svg)
+```mermaid
+sequenceDiagram
     participant App as dApp Frontend
     participant Lib as Web3 Library
     participant EVM as Ethereum Virtual Machine
@@ -229,7 +229,7 @@ The ABI encoding process is a multi-step procedure that bridges the gap between 
     Contract->>EVM: Return encoded result
     EVM->>Lib: Receive encoded response
     Lib->>Lib: Decode response using ABI
-    Lib->>App: Return typed result</code></pre>
+    Lib->>App: Return typed result
 ```
 
 ### Step-by-Step Interaction Example

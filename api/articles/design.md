@@ -25,8 +25,8 @@ Software design might sound like a lofty concept, but at its heart, it's about m
 It's tempting to build a massive, "future-proof" architecture right out of the gate. Resist the urge. You'll rarely guess your future needs correctly, and over-engineering up front often leads to brittle, complicated code. A better strategy is to start with the simplest solution that works. Let the complexities come to you naturally as the product grows and evolves. When patterns or abstractions are really needed, they'll make themselves clear.
 
 ![Graph diagram](/api/articles/dark/design-0.svg)
-
-```mermaidgraph TD
+```mermaid
+graph TD
     A[New Project] --> B{Approach?}
     B -->|Over-Engineering| C[Complex Architecture]
     B -->|Start Simple| D[Minimal Solution]
@@ -39,7 +39,7 @@ It's tempting to build a massive, "future-proof" architecture right out of the g
     D --> I[Natural Evolution]
     I --> J[Add Complexity When Needed]
     J --> K[Clear Requirements]
-    K --> L[Right Abstractions]</code></pre>
+    K --> L[Right Abstractions]
 ```
 
 ### Use SOLID as a Helpful Map, Not a Strict Rulebook

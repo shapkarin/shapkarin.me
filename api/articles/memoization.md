@@ -32,13 +32,13 @@ React's performance optimization features align perfectly with the principle of 
 React.memo prevents unnecessary re-renders by memoizing components, similar to how Pure Components work in class-based React:
 
 ![Graph diagram](/api/articles/dark/memoization-0.svg)
-
-```mermaidgraph TD
+```mermaid
+graph TD
     A[Parent Re-renders] --> B{React.memo?}
     B -->|No| C[Child Always Re-renders]
     B -->|Yes| D{Props Changed?}
     D -->|Yes| E[Child Re-renders]
-    D -->|No| F[Skip Re-render - Use Cached]</code></pre>
+    D -->|No| F[Skip Re-render - Use Cached]
 ```
 
 ```jsx
@@ -93,14 +93,14 @@ const CustomComparedProductItem = React.memo(
 Use `useMemo` to cache the result of expensive calculations between renders:
 
 ![Flowchart diagram](/api/articles/dark/memoization-1.svg)
-
-```mermaidflowchart LR
+```mermaid
+flowchart LR
     A[Component Renders] --> B{Dependencies Changed?}
     B -->|Yes| C[Recalculate Value]
     B -->|No| D[Return Cached Value]
     C --> E[Store in Cache]
     E --> F[Return New Value]
-    D --> F</code></pre>
+    D --> F
 ```
 
 ```jsx

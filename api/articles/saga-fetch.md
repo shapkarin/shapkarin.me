@@ -56,8 +56,8 @@ const searchPages = ({ payload: { title } }) => fetch(`/search/pages?title=${tit
 ```
 
 ![SequenceDiagram diagram](/api/articles/dark/saga-fetch-0.svg)
-
-```mermaidsequenceDiagram
+```mermaid
+sequenceDiagram
     participant Component as React Component
     participant Saga as Redux Saga
     participant API as API Server
@@ -81,7 +81,7 @@ const searchPages = ({ payload: { title } }) => fetch(`/search/pages?title=${tit
     
     Saga->>Store: dispatch(searchPagesFulfill)
     Note over Store: loading: false
-    Store->>Component: State updated</code></pre>
+    Store->>Component: State updated
 ```
 
 Your saga worker could then be:
