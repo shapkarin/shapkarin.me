@@ -36,8 +36,8 @@ When working with JavaScript, you'll frequently create functions using one of tw
 The most significant difference between these approaches is how JavaScript's hoisting mechanism treats them:
 
 ![Graph diagram](/api/articles/dark/function-declaration-vs-expression-0.svg)
-
-```mermaidgraph TD
+```mermaid
+graph TD
     A[JavaScript Code] --> B[Compilation Phase]
     B --> C[Function Declarations]
     B --> D[Variable Declarations]
@@ -50,7 +50,7 @@ The most significant difference between these approaches is how JavaScript's hoi
     H --> I[Function Expression Not Available]
     
     J[Execution Phase] --> K[Function Declaration: Works]
-    J --> L[Function Expression: Error/Undefined]</code></pre>
+    J --> L[Function Expression: Error/Undefined]
 ```
 
 ```javascript

@@ -275,7 +275,9 @@ class MermaidProcessor {
       
       // Replace SVG + mermaid combinations with just the mermaid block temporarily
       for (const [fullMatch, mermaidCode] of cleanupMatches) {
-        const mermaidBlock = `\`\`\`mermaid\n${mermaidCode}\n\`\`\``;
+        const mermaidBlock = `\`\`\`mermaid
+${mermaidCode}
+\`\`\``;
         processedContent = processedContent.replace(fullMatch, mermaidBlock);
         
         if (this.config.verbose) {

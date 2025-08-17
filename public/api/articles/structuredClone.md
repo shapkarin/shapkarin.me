@@ -29,7 +29,8 @@ When you copy an object in JavaScript, you might be creating either a shallow co
 
 ![Graph diagram](/api/articles/dark/structuredClone-0.svg)
 
-```mermaidgraph TD
+```mermaid
+graph TD
     A[Original Object] --> B[name: 'Alice']
     A --> C[details: Object Reference]
     C --> D[age: 30]
@@ -48,7 +49,7 @@ When you copy an object in JavaScript, you might be creating either a shallow co
     
     O[Modify Deep Copy] --> P[details.age = 31]
     P --> K
-    Q[Original Unchanged] --> D</code></pre>
+    Q[Original Unchanged] --> D
 ```
 
 *   **Shallow Copy:** Only the top-level properties of an object are copied. If a property holds a reference to another object (like an array or another object), the copy will point to the *same* referenced object. Modifying the nested object in the copy will also affect the original, and vice-versa.
@@ -182,7 +183,8 @@ try {
 
 ![Flowchart diagram](/api/articles/dark/structuredClone-1.svg)
 
-```mermaidflowchart LR
+```mermaid
+flowchart LR
     A[structuredClone] --> B[Handles Complex Types]
     A --> C[Preserves Circular References]
     A --> D[Better Performance]
@@ -198,7 +200,7 @@ try {
     C --> L[Maintains Relationships]
     
     D --> M[Optimized Algorithm]
-    D --> N[No JSON Conversion]</code></pre>
+    D --> N[No JSON Conversion]
 ```
 
 *   **Handles Complex Types:** It can clone a wide variety of JavaScript types beyond what `JSON.parse(JSON.stringify())` supports, including:

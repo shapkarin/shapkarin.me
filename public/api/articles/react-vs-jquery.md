@@ -76,7 +76,8 @@ The fundamental difference between React and jQuery lies in *how* they update wh
 
 ![Flowchart diagram](/api/articles/dark/react-vs-jquery-0.svg)
 
-```mermaidflowchart TD
+```mermaid
+flowchart TD
     subgraph React["<b>React</b><br/><i>Declarative & Efficient</i>"]
         direction TB
         ReactDesc["<b>Smart Updates:</b><br/>Calculate what changed,<br/>then update efficiently"]
@@ -121,7 +122,7 @@ The fundamental difference between React and jQuery lies in *how* they update wh
     class A1,A2,A3,A7 reactStyle
     class A4,A5 processStyle
     class A6,B5 domStyle
-    class B1,B2,B3,B4,B6 jqueryStyle</code></pre>
+    class B1,B2,B3,B4,B6 jqueryStyle
 ```
 
 | Feature | React | jQuery |
@@ -175,7 +176,8 @@ Security is not optional. React was designed with modern web threats in mind, of
 
 ![Flowchart diagram](/api/articles/dark/react-vs-jquery-1.svg)
 
-```mermaidflowchart TD
+```mermaid
+flowchart TD
     A["User Input"] --> B{"Framework?"}
     B -->|React| C["JSX Automatic Escaping"]
     B -->|jQuery| D["Manual Sanitization Required"]
@@ -187,7 +189,7 @@ Security is not optional. React was designed with modern web threats in mind, of
     
     G --> I["Safe Output"]
     H --> J["XSS Vulnerability"]
-    E --> I</code></pre>
+    E --> I
 ```
 
 ### How React Prevents XSS

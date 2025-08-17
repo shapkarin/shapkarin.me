@@ -35,8 +35,8 @@ This article dives into how you can leverage the `cluster` module to effortlessl
 Node.js is renowned for its non-blocking, event-driven architecture, making it highly efficient for I/O-bound operations. However, by default, a single Node.js process runs on a single CPU core. If you have a multi-core server, the other cores remain idle, and your application's performance is capped by the capacity of that one core. This is like having a multi-lane highway but forcing all traffic into a single lane.
 
 ![Graph diagram](/api/articles/dark/cluster-0.svg)
-
-```mermaidgraph TD
+```mermaid
+graph TD
     A[Multi-Core Server] --> B[CPU Core 1]
     A --> C[CPU Core 2 - Idle]
     A --> D[CPU Core 3 - Idle]
@@ -54,7 +54,7 @@ Node.js is renowned for its non-blocking, event-driven architecture, making it h
     N[Load Balancer] --> J
     N --> K
     N --> L
-    N --> M</code></pre>
+    N --> M
 ```
 
 ## Enter the `cluster` Module

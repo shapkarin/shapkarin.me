@@ -69,8 +69,8 @@ Before diving into Ethereum, the whitepaper explains Bitcoin as the starting poi
 **Ethereum**: A complete programming platform that can run any computation
 
 ![Graph diagram](/api/articles/dark/ethereum-whitepaper-explanation-0.svg)
-
-```mermaidgraph TD
+```mermaid
+graph TD
     A[Blockchain Technology] --> B[Bitcoin]
     A --> C[Ethereum]
     
@@ -83,7 +83,7 @@ Before diving into Ethereum, the whitepaper explains Bitcoin as the starting poi
     C --> I[Programmable Money]
     C --> J[DeFi Protocols]
     C --> K[NFTs]
-    C --> L[DAOs]</code></pre>
+    C --> L[DAOs]
 ```
 
 ### Ethereum's Revolutionary Features:
@@ -119,9 +119,9 @@ Before diving into Ethereum, the whitepaper explains Bitcoin as the starting poi
 4. **Transparent**: Everyone can see the code and verify it works
 5. **Check about ABI**: [Application Binary Interface](/ethereum-abi) article
 
-![SequenceDiagram diagram](/api/articles/light/ethereum-whitepaper-explanation-1.svg)
-
-```mermaidsequenceDiagram
+![SequenceDiagram diagram](/api/articles/dark/ethereum-whitepaper-explanation-1.svg)
+```mermaid
+sequenceDiagram
     participant User as User
     participant Contract as Smart Contract
     participant Blockchain as Ethereum Network
@@ -135,7 +135,7 @@ Before diving into Ethereum, the whitepaper explains Bitcoin as the starting poi
     else Conditions Not Met
         Contract->>User: Reject transaction
         Note over User,Contract: No action taken
-    end</code></pre>
+    end
 ```
 
 ### Real-World Example:

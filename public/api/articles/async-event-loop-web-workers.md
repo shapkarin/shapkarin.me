@@ -154,8 +154,8 @@ Notice how "End" is logged before "Data fetched..." because `processData` is asy
 The Event Loop is the heart of JavaScript's concurrency model. It's a mechanism that allows JavaScript to perform non-blocking operations, despite being single-threaded, by offloading operations to the browser's APIs and processing results in a specific order.
 
 ![Graph diagram](/api/articles/dark/async-event-loop-web-workers-0.svg)
-
-```mermaidgraph TD
+```mermaid
+graph TD
     A[JavaScript Code] --> B[Call Stack]
     B --> C{Synchronous?}
     C -->|Yes| D[Execute Immediately]
@@ -176,7 +176,7 @@ The Event Loop is the heart of JavaScript's concurrency model. It's a mechanism 
     style B fill:#e1f5fe
     style E fill:#f3e5f5
     style F fill:#fff3e0
-    style G fill:#e8f5e8</code></pre>
+    style G fill:#e8f5e8
 ```
 
 ### Components of the Event Loop
@@ -271,8 +271,8 @@ This is where **Web Workers** come in.
 Web Workers provide a way to run JavaScript in background threads, separate from the main execution thread that handles the UI. This allows you to perform computationally intensive tasks without freezing the user interface.
 
 ![SequenceDiagram diagram](/api/articles/dark/async-event-loop-web-workers-1.svg)
-
-```mermaidsequenceDiagram
+```mermaid
+sequenceDiagram
     participant Main as Main Thread
     participant Worker as Web Worker
     participant UI as User Interface
@@ -288,7 +288,7 @@ Web Workers provide a way to run JavaScript in background threads, separate from
     Worker->>Main: postMessage(result)
     Main->>UI: Update with results
     
-    Note over Main,UI: UI remains responsive throughout</code></pre>
+    Note over Main,UI: UI remains responsive throughout
 ```
 
 ### Key Characteristics of Web Workers
