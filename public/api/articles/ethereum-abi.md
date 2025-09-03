@@ -213,8 +213,9 @@ This process happens transparently when you use Web3 libraries, but understandin
 
 The ABI encoding process is a multi-step procedure that bridges the gap between human-readable function calls and EVM-executable bytecode. This process ensures type safety, data integrity, and consistent behavior across all EVM-compatible blockchains.
 
-![SequenceDiagram diagram](/api/articles/dark/ethereum-abi-1.svg)
+![Diagram diagram](/api/articles/dark/ethereum-abi-1.svg)
 ```mermaid
+%%{init: {'theme':'dark', 'themeVariables': {'signalTextColor': '#1f2020'}}}%%
 sequenceDiagram
     participant App as dApp Frontend
     participant Lib as Web3 Library
@@ -231,6 +232,7 @@ sequenceDiagram
     Lib->>Lib: Decode response using ABI
     Lib->>App: Return typed result
 ```
+
 
 ### Step-by-Step Interaction Example
 
