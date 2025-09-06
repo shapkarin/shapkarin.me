@@ -60,6 +60,11 @@
     "filename": "memoization.md"
   },
   {
+    "slug": "node.js-multi-core-cluster",
+    "title": "Node.Js Multi Core Cluster",
+    "filename": "node.js-multi-core-cluster.md"
+  },
+  {
     "slug": "state-optimization-guide",
     "title": "State Optimization Guide",
     "filename": "state-optimization-guide.md"
@@ -68,11 +73,6 @@
     "slug": "structuredClone",
     "title": "StructuredClone",
     "filename": "structuredClone.md"
-  },
-  {
-    "slug": "cluster",
-    "title": "Cluster",
-    "filename": "cluster.md"
   },
   {
     "slug": "curiosity-js",
