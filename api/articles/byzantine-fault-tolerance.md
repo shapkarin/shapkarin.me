@@ -493,9 +493,7 @@ sequenceDiagram
 4. **Economic Deterrent**: Attack costs far exceed potential gains
 
 **Merchant Protection**:
-- **1 confirmation**: Suitable for small purchases (~$100)
-- **3 confirmations**: Standard for retail (~$1,000-10,000)  
-- **6+ confirmations**: Required for large amounts (>$10,000)
+The more confirmations the more confident the merchant is that the transaction is valid and permanently recorded on the blockchain.
 
 #### **Minority Attack Resistance**
 
