@@ -57,7 +57,7 @@ const Article = () => {
     },
     {
       enabled: Boolean(articleName),
-      keepPreviousData: false,//true,
+      keepPreviousData: process.env.NODE_ENV === 'production' ? true : false,//fasle,
     }
   );
 
