@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react';
 import { useTOC } from '@/Contexts/TOCContext';
 
 const TOCMacro = ({ hasUpdatedTOC, children, ...props }) => {
-  const { updateTOC, tocData } = useTOC();
+  const { updateTOC } = useTOC();
   console.log('hasUpdatedTOC', hasUpdatedTOC);
 
   useEffect(() => {
@@ -43,12 +43,13 @@ const TOCMacro = ({ hasUpdatedTOC, children, ...props }) => {
     const tocTexts = extractTextValues(props.node);
     
     // Only update if we have meaningful TOC data
-    if (tocTexts.length > 0) {
+    if (tocTexts.length > 0 && !hasUpdatedTOC.current) {
       console.log('TOC Links:', tocTexts);
       updateTOC(tocTexts);
+      console.log('hasUpdatedTOC => ', hasUpdatedTOC);
       hasUpdatedTOC.current = true;
     }
-  }, [props.node, updateTOC]);
+  }, [props.node, updateTOC, hasUpdatedTOC]);
 
   return <ol {...props}>{children}</ol>;
 };

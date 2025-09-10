@@ -18,6 +18,7 @@ import TOCMacro from './Macros/TOCMacro';
 // Maybe make auto aeo schema with Macro or node.js
 
 import TOCSidebar from '@/Components/TOCSidebar';
+import { useTOC } from '@/Contexts/TOCContext';
 
 const CodeBlock = ({ children, className, node, match, ...rest }) => {
   return (
@@ -35,6 +36,7 @@ const CodeBlock = ({ children, className, node, match, ...rest }) => {
 const Article = () => {
   const { slug: articleName } = useParams();
   const hasUpdatedTOC = useRef(false);
+  const { clearTOC } = useTOC();
 
   const { data: { data: content } } = useQuery(['Articles', articleName], () => fetchArticle(articleName), 
     { 
@@ -86,6 +88,7 @@ const Article = () => {
       if (articleRef.current) {
         articleRef.current = null;
         hasUpdatedTOC.current = false;
+        clearTOC()
       }
     };
   }, [markdownContent])
