@@ -5,6 +5,7 @@ import '@/Components/Background';
 import About from '@/Components/About';
 import Menu from '@/Components/Menu';
 import Structure from './Structure';
+import { TOCProvider } from '@/Contexts/TOCContext';
 
 import './App.less';
 import Footer from '@/Components/Footer';
@@ -22,6 +23,7 @@ const queryClient = new QueryClient({
 export default function App () {
   return (
     <QueryClientProvider client={queryClient}>
+      <TOCProvider>
         <a href="#menu" className="a11y hidden">Go to Menu</a>
         <BrowserRouter>
         <About />
@@ -31,6 +33,7 @@ export default function App () {
         </div>
         <Footer />
         </BrowserRouter>
+      </TOCProvider>
     </QueryClientProvider>
   );
 }
