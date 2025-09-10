@@ -14,8 +14,10 @@ import { SCROLL_OFFSET } from '@/constants';
 import HeadingMacro from './Macros/HeadingMacro';
 import LinkMacro from './Macros/LinkMacro';
 import TableMacro from './Macros/TableMacro';
-
+import TOCMacro from './Macros/TOCMacro';
 // Maybe make auto aeo schema with Macro or node.js
+
+import TOCSidebar from '@/Components/TOCSidebar';
 
 const CodeBlock = ({ children, className, node, match, ...rest }) => {
   return (
@@ -32,6 +34,7 @@ const CodeBlock = ({ children, className, node, match, ...rest }) => {
 
 const Article = () => {
   const { slug: articleName } = useParams();
+  const hasUpdatedTOC = useRef(false);
 
   const { data: { data: content } } = useQuery(['Articles', articleName], () => fetchArticle(articleName), 
     { 
@@ -82,6 +85,7 @@ const Article = () => {
     return () => {
       if (articleRef.current) {
         articleRef.current = null;
+        hasUpdatedTOC.current = false;
       }
     };
   }, [markdownContent])
@@ -98,6 +102,7 @@ const Article = () => {
           aeoScript={aeoScript}
         />
         <Link to="/" className="Article__GoBack">{'← All articles'}</Link>
+        <TOCSidebar />
         <div ref={articleRef}>
           <Markdown
             remarkPlugins={[remarkGfm]}
@@ -105,6 +110,7 @@ const Article = () => {
               h1: HeadingMacro,
               h2: HeadingMacro,
               h3: HeadingMacro,
+              ol: (props) => <TOCMacro {...props} hasUpdatedTOC={hasUpdatedTOC} />,
               a: LinkMacro,
               table: TableMacro,
               code(props) {
