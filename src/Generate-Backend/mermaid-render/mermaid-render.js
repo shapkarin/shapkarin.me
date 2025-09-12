@@ -486,7 +486,7 @@ ${mermaidCode}
 // CLI usage
 async function main() {
   const args = process.argv.slice(2);
-  const preset = args.find(arg => arg.startsWith('--preset='))?.split('=')[1] || 'shapkarin';
+  const preset = args.find(arg => arg.startsWith('--preset='))?.split('=')[1] || 'default'; // 'default' can be removed or replaced with preset name
   const verbose = args.includes('--verbose') || args.includes('-v');
   
   // Get configuration from external config file
