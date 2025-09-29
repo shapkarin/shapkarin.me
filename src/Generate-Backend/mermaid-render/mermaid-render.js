@@ -217,7 +217,7 @@ class MermaidProcessor {
       return `${type.charAt(0).toUpperCase() + type.slice(1)}: ${title}`;
     }
     
-    return `${type.charAt(0).toUpperCase() + type.slice(1)} diagram`;
+    return `${type.charAt(0).toUpperCase() + type.slice(1)}${type === 'diagram' ? '' : ' diagram'}`;
   }
 
   /**
@@ -328,8 +328,7 @@ ${mermaidCode}
             continue;
           }
           
-          // Use dark theme as default for now
-          imageUrl = `${this.config.baseUrl}/dark/${filename}.svg`;
+          imageUrl = `${this.config.baseUrl}/${this.config.defaultTheme}/${filename}.svg`;
         } else {
           // Generate single theme
           const outputPath = path.join(this.config.outputDir, `${filename}.svg`);
@@ -343,7 +342,6 @@ ${mermaidCode}
           imageUrl = `${this.config.baseUrl}/${filename}.svg`;
         }
         
-        // Create replacement markdown - just the image, no mermaid block
         const altText = this.generateAltText(mermaidCode);
         let replacement = `![${altText}](${imageUrl})`;
         
