@@ -19,7 +19,7 @@ const config = {
   
   // === THEME CONFIGURATION ===
   // Default theme: 'light', 'dark', 'neutral', 'forest', 'base'
-  defaultTheme: 'dark',
+  defaultTheme: 'light',
   
   // Generate both light and dark versions?
   generateBothThemes: true,
