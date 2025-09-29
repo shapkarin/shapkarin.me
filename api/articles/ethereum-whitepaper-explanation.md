@@ -68,7 +68,7 @@ Before diving into Ethereum, the whitepaper explains Bitcoin as the starting poi
 **Bitcoin**: A simple state machine for transferring value
 **Ethereum**: A complete programming platform that can run any computation
 
-![Graph diagram](/api/articles/dark/ethereum-whitepaper-explanation-0.svg)
+![Graph diagram](/api/articles/light/ethereum-whitepaper-explanation-0.svg)
 ```mermaid
 graph TD
     A[Blockchain Technology] --> B[Bitcoin]
@@ -119,7 +119,7 @@ graph TD
 4. **Transparent**: Everyone can see the code and verify it works
 5. **Check about ABI**: [Application Binary Interface](/articles/ethereum-abi) article
 
-![SequenceDiagram diagram](/api/articles/dark/ethereum-whitepaper-explanation-1.svg)
+![SequenceDiagram diagram](/api/articles/light/ethereum-whitepaper-explanation-1.svg)
 ```mermaid
 sequenceDiagram
     participant User as User

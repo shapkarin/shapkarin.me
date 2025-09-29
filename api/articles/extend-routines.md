@@ -56,7 +56,7 @@ A routine is essentially a structured set of related action types generated from
 - `projects/FAILURE`
 - `projects/FULFILL`
 
-![Graph diagram](/api/articles/dark/extend-routines-0.svg)
+![Graph diagram](/api/articles/light/extend-routines-0.svg)
 ```mermaid
 graph LR
     A[Routine Prefix: 'projects'] --> B[TRIGGER]

@@ -76,7 +76,7 @@ keywords: >-
 
 ## WAGMI vs Traditional Web3 Libraries
 
-![Graph diagram](/api/articles/dark/WAGMI-basics-0.svg)
+![Graph diagram](/api/articles/light/WAGMI-basics-0.svg)
 ```mermaid
 graph TD
     A[Web3 Development] --> B[Traditional Libraries]

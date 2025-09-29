@@ -24,7 +24,7 @@ As a software engineer with over a decade of experience, one of the fundamental 
 
 Computers store numbers using binary (base 2). Integers are straightforward, but representing fractional numbers in binary can be tricky. While some decimal fractions, like 0.5 (which is `0.1` in binary), can be represented exactly, many others cannot.
 
-![Graph diagram](/api/articles/dark/floating-point-precision-0.svg)
+![Graph diagram](/api/articles/light/floating-point-precision-0.svg)
 ```mermaid
 graph TD
     A[Decimal Number 0.1] --> B[Convert to Binary]

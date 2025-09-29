@@ -67,7 +67,7 @@ For developers building modern dApps, understanding ABI is not optional—it's f
 
 The importance of ABI extends beyond mere convenience—it's a critical component that enables the entire Web3 ecosystem to function cohesively, allowing developers to build complex applications that interact with multiple smart contracts across different protocols and chains.
 
-![Graph diagram](/api/articles/dark/ethereum-abi-0.svg)
+![Graph diagram](/api/articles/light/ethereum-abi-0.svg)
 ```mermaid
 graph TD
     A[Smart Contract] --> B[ABI Definition]
@@ -213,7 +213,7 @@ This process happens transparently when you use Web3 libraries, but understandin
 
 The ABI encoding process is a multi-step procedure that bridges the gap between human-readable function calls and EVM-executable bytecode. This process ensures type safety, data integrity, and consistent behavior across all EVM-compatible blockchains.
 
-![Diagram diagram](/api/articles/dark/ethereum-abi-1.svg)
+![Diagram](/api/articles/light/ethereum-abi-1.svg)
 ```mermaid
 %%{init: {'theme':'dark', 'themeVariables': {'signalTextColor': '#1f2020'}}}%%
 sequenceDiagram
