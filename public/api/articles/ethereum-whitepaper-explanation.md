@@ -119,7 +119,7 @@ graph TD
 4. **Transparent**: Everyone can see the code and verify it works
 5. **Check about ABI**: [Application Binary Interface](/articles/ethereum-abi) article
 
-![SequenceDiagram diagram](/api/articles/dark/ethereum-whitepaper-explanation-1.svg)
+![SequenceDiagram diagram](/api/articles/light/ethereum-whitepaper-explanation-1.svg)
 ```mermaid
 sequenceDiagram
     participant User as User
