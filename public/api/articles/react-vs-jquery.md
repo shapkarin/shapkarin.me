@@ -74,7 +74,7 @@ React's adoption continues to climb, while jQuery's usage, though still vast on 
 
 The fundamental difference between React and jQuery lies in *how* they update what you see on the screen.
 
-![Flowchart diagram](/api/articles/dark/react-vs-jquery-0.svg)
+![Flowchart diagram](/api/articles/light/react-vs-jquery-0.svg)
 ```mermaid
 flowchart TD
     subgraph React["<b>React</b><br/><i>Declarative & Efficient</i>"]
@@ -173,7 +173,7 @@ function updateUserProfile(user) {
 
 Security is not optional. React was designed with modern web threats in mind, offering crucial protections that jQuery lacks out of the box. The most common vulnerability is Cross-Site Scripting (XSS).
 
-![Flowchart diagram](/api/articles/dark/react-vs-jquery-1.svg)
+![Flowchart diagram](/api/articles/light/react-vs-jquery-1.svg)
 ```mermaid
 flowchart TD
     A["User Input"] --> B{"Framework?"}

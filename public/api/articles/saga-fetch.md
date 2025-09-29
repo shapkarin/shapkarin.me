@@ -55,7 +55,7 @@ Imagine you have some actions: `searchPagesStart`, `searchPagesSuccess`, `search
 const searchPages = ({ payload: { title } }) => fetch(`/search/pages?title=${title}`);
 ```
 
-![SequenceDiagram diagram](/api/articles/dark/saga-fetch-0.svg)
+![SequenceDiagram diagram](/api/articles/light/saga-fetch-0.svg)
 ```mermaid
 sequenceDiagram
     participant Component as React Component

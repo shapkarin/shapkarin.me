@@ -24,7 +24,7 @@ Software design might sound like a lofty concept, but at its heart, it's about m
 ### Start Simple Before Getting Fancy
 It's tempting to build a massive, "future-proof" architecture right out of the gate. Resist the urge. You'll rarely guess your future needs correctly, and over-engineering up front often leads to brittle, complicated code. A better strategy is to start with the simplest solution that works. Let the complexities come to you naturally as the product grows and evolves. When patterns or abstractions are really needed, they'll make themselves clear.
 
-![Graph diagram](/api/articles/dark/design-0.svg)
+![Graph diagram](/api/articles/light/design-0.svg)
 ```mermaid
 graph TD
     A[New Project] --> B{Approach?}
