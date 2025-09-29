@@ -157,7 +157,7 @@ class MermaidProcessor {
       await fs.mkdir(path.dirname(outputPath), { recursive: true });
       
       // Use mermaid CLI with stdin input and explicit width/height to avoid percentage viewBox
-      const command = `echo "${mermaidCode.replace(/"/g, '\\"')}" | npx mmdc -i /dev/stdin -o "${outputPath}" -t ${theme} -b transparent -w 778 -H 600`;
+      const command = `echo "${mermaidCode.replace(/"/g, '\\"')}" | npx @mermaid-js/mermaid-cli -i /dev/stdin -o "${outputPath}" -t ${theme} -b transparent -w 778 -H 600`;
       
       if (this.config.verbose) {
         console.log(`🎨 Generating: ${path.basename(outputPath)} (${theme})`);
