@@ -1675,7 +1675,7 @@ jq '.abi' artifacts/contracts/Token.sol/Token.json > src/abis/tokenAbi.json
 **wagmi.config.ts** (for automatic ABI generation)
 ```typescript
 import { defineConfig } from '@wagmi/cli'
-import { foundry, hardhat } from '@wagmi/cli/plugins'
+import { foundry, hardhat, react } from '@wagmi/cli/plugins'
 
 export default defineConfig({
   out: 'src/generated/wagmi.ts',
@@ -1688,6 +1688,7 @@ export default defineConfig({
     hardhat({
       project: './contracts',
     }),
+    react(), // To generating type-safe Wagmi Hooks. Defaults is `use${type}${contractName}`
   ],
 })
 ```
