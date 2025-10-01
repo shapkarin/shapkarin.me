@@ -6,7 +6,7 @@ description: >-
   Master app state optimization with comprehensive analysis of data structures,
   Big O complexity, and advanced techniques using Zustand, Redux, and
   performance patterns.
-order: 5
+order: 2
 ---
 
 # State Optimization Mastery: From Vanilla JavaScript to Advanced Framework Techniques

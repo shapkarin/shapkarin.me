@@ -25,6 +25,11 @@
     "filename": "floating-point-precision.md"
   },
   {
+    "slug": "state-optimization-guide",
+    "title": "State Optimization Guide",
+    "filename": "state-optimization-guide.md"
+  },
+  {
     "slug": "back-health-and-therapeutic-exercises",
     "title": "Back Health And Therapeutic Exercises",
     "filename": "back-health-and-therapeutic-exercises.md"
@@ -63,11 +68,6 @@
     "slug": "node.js-multi-core-cluster",
     "title": "Node.Js Multi Core Cluster",
     "filename": "node.js-multi-core-cluster.md"
-  },
-  {
-    "slug": "state-optimization-guide",
-    "title": "State Optimization Guide",
-    "filename": "state-optimization-guide.md"
   },
   {
     "slug": "structuredClone",
