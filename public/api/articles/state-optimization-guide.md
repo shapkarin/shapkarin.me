@@ -14,8 +14,8 @@ order: 2
 ## Table of Contents
 - [Introduction: The Foundation of Performance](#introduction-the-foundation-of-performance)
 - [Basic Principles of State Optimization](#basic-principles-of-state-optimization)
-- [Data Structure Choices: Objects vs Arrays](#data-structure-choices-objects-vs-arrays)
-- [Big O Analysis: Understanding Performance Complexity](#big-o-analysis-understanding-performance-complexity)
+- [Data Structure Choices: Objects vs Arrays](#data-structure-choices-objects-maps-vs-arrays)
+- [Hash Maps: Fast Lookups by Arbitrary Keys](#hash-maps-fast-lookups-by-arbitrary-keys)
 - [Vanilla JavaScript State Optimization](#vanilla-javascript-state-optimization)
 - [Zustand State Optimization](#zustand-state-optimization)
 - [Redux State Optimization](#redux-state-optimization)
@@ -50,13 +50,13 @@ Flattening nested data structures reduces complexity and enables more efficient 
 ### 4. Selective Updates
 Only updating the parts of state that actually changed prevents unnecessary re-renders and computations.
 
-## Data Structure Choices: Objects vs Arrays
+## Data Structure Choices: Objects & Maps vs Arrays
 
 ![Graph diagram](/api/articles/light/state-optimization-guide-0.svg)
 ```mermaid
 graph TD
     A["Data Structure Choice"] --> B["Arrays"]
-    A --> C["Objects"]
+    A --> C["Objects & Maps"]
     
     B --> D["O(n) Search"]
     B --> E["O(n) Update"]
@@ -135,7 +135,27 @@ function deleteUser(id) {
 }
 ```
 
-## Big O Analysis: Understanding Performance Complexity
+### Hash Maps: Fast Lookups by Arbitrary Keys
+
+While objects provide O(1) access for known keys (like ids), sometimes you need to search or associate data by arbitrary values (such as email, username, or composite keys). In these cases, JavaScript's built-in `Map` object (a JS hash map equivalent) offers both performance and flexibility.
+
+#### Why Use a Hash Map?
+
+- **Objects**: Best for static, string/symbol keys (e.g., id).
+- **Arrays**: Only O(1) for numeric indices, O(n) for search.
+- **Map**: O(1) for any key type (including objects, functions, or composite values).
+
+#### Fast Lookup by email code example
+
+```javascript
+// Using Map for fast lookup by email
+const usersByEmail = new Map();
+usersByEmail.set('alice@example.com', { id: 1, name: 'Alice' });
+usersByEmail.set('bob@example.com', { id: 2, name: 'Bob' });
+
+// O(1) lookup by email
+const user = usersByEmail.get('alice@example.com');
+```
 
 ### Array Operations Complexity
 
@@ -145,41 +165,6 @@ function deleteUser(id) {
 | **Insert** | O(n) worst case | O(1) average | Constant vs linear scaling |
 | **Update** | O(n) | O(1) | Predictable performance |
 | **Delete** | O(n) | O(1) | No shifting elements needed |
-
-### Performance Scaling Example
-
-```javascript
-// Performance comparison with different dataset sizes
-const performanceTest = (size) => {
-  // Array setup
-  const arrayData = Array.from({ length: size }, (_, i) => ({ 
-    id: i, 
-    value: `item-${i}` 
-  }));
-  
-  // Object setup  
-  const objectData = {};
-  for (let i = 0; i < size; i++) {
-    objectData[i] = { id: i, value: `item-${i}` };
-  }
-  
-  // Test search performance
-  const searchId = Math.floor(size * 0.8); // Search near end
-  
-  console.time(`Array search (n=${size})`);
-  arrayData.find(item => item.id === searchId);
-  console.timeEnd(`Array search (n=${size})`);
-  
-  console.time(`Object search (n=${size})`);
-  objectData[searchId];
-  console.timeEnd(`Object search (n=${size})`);
-};
-
-// Results show dramatic scaling differences:
-performanceTest(1000);    // Array: 0.1ms,  Object: 0.001ms
-performanceTest(10000);   // Array: 1.2ms,  Object: 0.001ms  
-performanceTest(100000);  // Array: 15ms,   Object: 0.001ms
-```
 
 ## Vanilla JavaScript State Optimization
 
@@ -1247,6 +1232,10 @@ const batchUserUpdates = (updates) => {
 const expensiveComputation = useMemo(() => {
   return users.filter(user => complexCondition(user));
 }, [users]);
+
+// 5. Use Map for lookups by arbitrary keys
+const usersByEmail = new Map();
+usersByEmail.set(user.email, user);
 ```
 
 ### ❌ Anti-patterns to Avoid
