@@ -83,11 +83,6 @@ graph TD
     F --> H[Backend Services]
     F --> I[CLI Tools]
     F --> J[Block Explorers]
-    
-    G --> K[User Interactions]
-    H --> L[Automated Systems]
-    I --> M[Developer Tools]
-    J --> N[Contract Verification]
 ```
 
 ---
