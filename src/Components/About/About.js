@@ -47,5 +47,13 @@ function About() {
 
 
 export default function SuspensedAbout() {
-  return <Preloader height={isMobileDevice ? 260 : 170} lines={isMobileDevice ? 12 : 7}><About /></Preloader>
+  return (
+    <Preloader
+      height={isMobileDevice ? 260 : 100}
+      lines={isMobileDevice ? 12 : 4}
+      className="About"
+    >
+      <About />
+    </Preloader>
+  )
 }

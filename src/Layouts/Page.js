@@ -4,12 +4,29 @@ import Close from "@/Components/Close";
 import Preloader from "@/Components/Preloader";
 import ScrollToTop from '@/Components/ScrollToTop';
 
-// TODO: refact
+// TODO: refact and add better preloader props config, by mapping, use obj, etc
 const PageLayout = ({ children }) => {
   const location = useLocation();
+  const defaultProps = {};
+  const preloaderConfig = [
+    { urls: ['/', 'articles', 'github'], props: { lines: 100, height: 842 } },
+    { urls: ['packages'], props: { lines: 20, height: 503 } },
+    { urls: ['creative'], props: { lines: 15, height: 450 } }
+  ];
+  
+  function getPreloaderProps(pathname) {
+    for (const cfg of preloaderConfig) {
+      if (cfg.urls.some(prefix => prefix === '/' ? pathname === '/' : pathname.startsWith(`/${prefix}`))) {
+        return cfg.props;
+      }
+    }
+    return defaultProps;
+  }
+  
+  const preloaderProps = { ...getPreloaderProps(location?.pathname) };
   return (
-    <Preloader>
-      {location.pathname !== '/' && <Close />}
+    <Preloader {...preloaderProps}>
+      {location?.pathname !== '/' && <Close />}
     {children}
     <ScrollToTop />
   </Preloader>
