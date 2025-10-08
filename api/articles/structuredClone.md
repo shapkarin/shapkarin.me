@@ -315,6 +315,27 @@ While powerful, `structuredClone()` is not a silver bullet and has limitations. 
 
 5.  **Other Non-Serializable Objects:** Certain built-in types like `WeakMap`, `WeakSet`, and some platform-specific objects might not be cloneable. The exact list can be nuanced and environment-dependent. Always refer to the latest MDN documentation.
 
+6. **Variables for objects:** Compared to the `JSON.parse(JSON.stringify(object))` method, `structuredClone()` also clones links (variables). A developer can change links's array(arrays are also objects in JS) or object values across all object at once, but it does not affect the original object, only the cloned one. Basically, `structuredClone()` makes a clone of links and keeps them as links, which is predictable and not so limiting overall, but compared to JSON.parse(JSON.stringify(object)) it's limitation.
+
+    ```javascript
+    const link = ['foo', 'bar']
+
+    const myObj = {
+      one: link,
+      two: link,
+    }
+
+    const myObjCloned = structuredClone(myObj)
+    
+    console.log(myObjCloned);
+    // {"one": ["foo", "bar"], "two": ["foo", "bar"]}
+
+    myObjCloned.one[0] = 'baz'
+
+    console.log(myObjCloned);
+    // {"one": ["baz", "bar"], "two": ["baz", "bar"]}
+    ```
+
 ## When to Use `structuredClone()`
 
 `structuredClone()` is an excellent choice for many deep cloning scenarios:
