@@ -9,7 +9,7 @@ const github = {
   },
   get repositories() {
     // TODO: pagination
-    const perPage = 64;
+    const perPage = 100;
     const page = 1;
     return `${this.user}/repos?sort=updated&per_page=${perPage}&page=${page}`;
   },
