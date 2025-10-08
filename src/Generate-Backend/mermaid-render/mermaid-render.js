@@ -138,10 +138,7 @@ class MermaidProcessor {
   async generateSVG(mermaidCode, outputPath, theme = 'dark') {
     try {
       // Generate content hash for caching (include output path to handle same content in different files)
-      const contentHash = crypto
-        .createHash('md5')
-        .update(mermaidCode.trim() + theme + outputPath)
-        .digest('hex');
+      const contentHash = this.generateDiagramId(mermaidCode, theme, outputPath);
 
       // Check if we already have this SVG cached
       const cachedPath = await this.checkCachedSVG(contentHash);
@@ -194,12 +191,11 @@ class MermaidProcessor {
   /**
    * Generate unique diagram ID from content
    */
-  generateDiagramId(mermaidCode) {
+  generateDiagramId(mermaidCode, theme, outputPath) {
     return crypto
-      .createHash('md5')
-      .update(mermaidCode.trim())
-      .digest('hex')
-      .substring(0, 8);
+    .createHash('md5')
+    .update(mermaidCode.trim() + theme + outputPath)
+    .digest('hex');
   }
 
   /**
