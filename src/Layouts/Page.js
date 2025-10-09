@@ -4,7 +4,10 @@ import Close from "@/Components/Close";
 import Preloader from "@/Components/Preloader";
 import ScrollToTop from '@/Components/ScrollToTop';
 
-// TODO: refact and add better preloader props config, by mapping, use obj, etc
+/* 
+  TODO: 
+  perf: create cached object from `preloaderConfig` list, use each url as key
+*/
 const PageLayout = ({ children }) => {
   const location = useLocation();
   const defaultProps = {};
