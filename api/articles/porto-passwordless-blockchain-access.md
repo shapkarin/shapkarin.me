@@ -13,6 +13,7 @@ keywords: >-
   Wagmi, Viem, developer onboarding, programmable crypto, Web3 payments,
   stablecoins, open-source DeFi, TypeScript SDK, cross-chain, secure Web3,
   Ethereum, React
+order: 2
 ---
 
 # Porto: Developer-First Toolkit for Passwordless Blockchain Access
@@ -184,7 +185,3 @@ Audited and proactively patched via industry security experts ([details](https:/
 - [GitHub – Ithaca Relay](https://github.com/ithacaxyz/relay)
 - [Telegram Dev Chat](https://t.me/porto_devs)
 - [Ithaca.xyz](https://ithaca.xyz)
-
----
-
-This article was last updated: 2025-10-09.

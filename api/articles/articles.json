@@ -25,6 +25,11 @@
     "filename": "floating-point-precision.md"
   },
   {
+    "slug": "porto-passwordless-blockchain-access",
+    "title": "Porto Passwordless Blockchain Access",
+    "filename": "porto-passwordless-blockchain-access.md"
+  },
+  {
     "slug": "state-optimization-guide",
     "title": "State Optimization Guide",
     "filename": "state-optimization-guide.md"
@@ -118,11 +123,6 @@
     "slug": "ethereum-whitepaper-explanation",
     "title": "Ethereum Whitepaper Explanation",
     "filename": "ethereum-whitepaper-explanation.md"
-  },
-  {
-    "slug": "porto-passwordless-blockchain-access",
-    "title": "Porto Passwordless Blockchain Access",
-    "filename": "porto-passwordless-blockchain-access.md"
   },
   {
     "slug": "WAGMI-basics",
