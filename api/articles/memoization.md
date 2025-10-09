@@ -11,9 +11,9 @@ order: 4
 
 ## Table of Contents
 - [Introduction: Performance Optimization with memo, useMemo, and useCallback](#introduction-performance-optimization-with-memo-usememo-and-usecallback)
-- [React.memo for Component Memoization](#reactmemo-for-component-memoization)
-- [useMemo for Expensive Calculations](#usememo-for-expensive-calculations)
-- [useCallback for Stable Function References](#usecallback-for-stable-function-references)
+- [`React.memo` for Component Memoization](#reactmemo-for-component-memoization)
+- [`useMemo` for Expensive Calculations](#usememo-for-expensive-calculations)
+- [`useCallback` for Stable Function References](#usecallback-for-stable-function-references)
 - [Using These Hooks Judiciously](#using-these-hooks-judiciously)
 - [Best Practices and Common Pitfalls](#best-practices-and-common-pitfalls)
 - [Advanced Scenarios](#advanced-scenarios)
