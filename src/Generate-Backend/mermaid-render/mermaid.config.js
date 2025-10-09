@@ -16,6 +16,9 @@ const config = {
 
   // Base URL for images in markdown (how they'll appear in ![alt](url))
   baseUrl: '/api/articles',
+
+  // Database path
+  dbPath: '../data/mermaid-hashes.db',
   
   // === THEME CONFIGURATION ===
   // Default theme: 'light', 'dark', 'neutral', 'forest', 'base'

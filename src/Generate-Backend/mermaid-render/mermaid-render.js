@@ -25,7 +25,7 @@ class MermaidProcessor {
     };
 
     this.db = null;
-    this.dbPath = path.join(__dirname, 'mermaid-hashes.db');
+    this.dbPath = path.join(__dirname, this.config.dbPath);
   }
 
   /**

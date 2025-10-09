@@ -3,7 +3,7 @@ const path = require('path');
 
 // Assuming 'esm' and 'database' modules are necessary and correctly imported.
 const require_esm = require('esm')(module);
-const database = require_esm('./database');
+const database = require_esm('./data/database');
 
 const API_FOLDER = path.join(__dirname, '../..', 'public', 'api');
 const ABOUT_FILE = path.join(API_FOLDER, 'about.json');
