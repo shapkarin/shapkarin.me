@@ -5,7 +5,8 @@ import { SCROLL_OFFSET } from '@/constants';
 const LinkMacro = ({ href, children }) => {
   const isAnchorLink = href.startsWith('#');
   const isExternalLink = href.startsWith('http://') || href.startsWith('https://');
-  const isInternalLink = !isAnchorLink && !isExternalLink;
+  const isEmailLink = href.startsWith('mailto:');
+  const isInternalLink = !isAnchorLink && !isExternalLink && !isEmailLink;
   
   // For internal links, use react-router-dom Link
   if (isInternalLink) {
