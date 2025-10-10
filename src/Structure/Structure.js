@@ -19,8 +19,9 @@ const Structure = () => (
         ],
         []
       )}
+      {/* I use 404.html for same */}
       {/* Redirect to my GitHub profile :-)  */}
-      <Route
+      {/* <Route
         exact
         path="/github"
         render={() => {
@@ -28,7 +29,7 @@ const Structure = () => (
           return "Congrats! Redirecting to my GitHub profile...";
         }}
         key="Route_GitHub"
-      />
+      /> */}
       
     </Switch>
   </div>

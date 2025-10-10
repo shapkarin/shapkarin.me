@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Page Not Found</title>
+    <script type="text/javascript">
+    // I use that bcs of static and gh-pages, check issue https://github.com/shapkarin/shapkarin.me/issues/94 
+    (function() {
+      'use strict';
+    
+      // Configurable redirects for non-existent pages. Keep in mind that gh-pages adds trailing slashes
+      const redirects = {
+        '/articles/hoc-and-currying': '/articles/higher-order-functions-and-currying/',
+        '/articles/cluster': '/articles/node.js-multi-core-cluster/',
+        '/articles': '/',
+        '/sketches': '/creative/',
+        '/repositories': '/github/repositories/',
+        '/likes': '/github/likes/',
+        '/liked': '/github/likes/',
+        '/stars': '/github/likes/',
+        '/github': 'https://github.com/shapkarin/',
+      };
+
+      // Add keys with trailing slash
+      Object.keys(redirects).forEach(key => redirects[`${key}/`] = redirects[key]);
+    
+      function initRedirect() {
+        const l = window.location;
+    
+        let newPathname = l.pathname;
+        let didRedirect = false;
+    
+        // Check for specific redirects, emulate 301
+        for (const [oldPath, newPath] of Object.entries(redirects)) {
+          if (l.pathname === oldPath || l.pathname.endsWith(oldPath)) {
+            newPathname = newPath;
+            didRedirect = true;
+            console.log(`Redirected specific path: ${oldPath} -> ${newPath}`);
+            break;
+          }
+        }
+    
+        // Apply the change if needed
+        if (newPathname !== l.pathname) {
+          window.location.replace(newPathname + l.search + l.hash);
+        }
+      }
+    
+      initRedirect();
+    })();
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>404</h1>
+        <p>Oops! The page you're looking for doesn't exist.</p>
+        <p><a href="/">Go back home</a></p>
+        <p>NOTE: If a redirect exists, it will take you to the right page. Just wait a bit.</p>
+    </div>
+</body>
+</html>
