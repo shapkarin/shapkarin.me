@@ -4,8 +4,8 @@ import { useLocation } from 'react-router-dom';
 const SEO = ({ title, description, name = 'Iurii Shapkarin', type = 'website', aeoScript, keywords = '' }) => {
 
   const { pathname } = useLocation();
-  const ArticlesCanonicalUrl = 'https://shapkarin.me';
-  const canonicalUrl = `https://shapkarin.me${pathname}/`;
+  const ArticlesListCanonicalUrl = 'https://shapkarin.me';
+  const canonicalUrl = `https://shapkarin.me${pathname}`;
   
   return (
     <Helmet>
@@ -15,7 +15,7 @@ const SEO = ({ title, description, name = 'Iurii Shapkarin', type = 'website', a
       <meta name="keywords" content={keywords} />
 
       {pathname === '/articles' ? (
-        <link rel="canonical" href={ArticlesCanonicalUrl} />
+        <link rel="canonical" href={ArticlesListCanonicalUrl} />
       ) : (
         <link rel="canonical" href={canonicalUrl} />
       )}
