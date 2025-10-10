@@ -73,7 +73,7 @@ export default function Repositories() {
               )}
               {language && (
                 <>
-                Language:
+                Lang:
                   {' '}
                   <a href={languages_url}>
                     { language }

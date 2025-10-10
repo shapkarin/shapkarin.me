@@ -76,7 +76,7 @@ export default function Liked() {
               )}
               {language && (
               <>
-              Language:
+              Lang:
                 {' '}
                 <a href={languages_url} target="_blank" rel="noreferrer">
                   { language }
