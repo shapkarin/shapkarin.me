@@ -49,13 +49,6 @@ export default function Liked() {
                 {' '}
                 {(new Date(updated_at)).toLocaleDateString('ru-RU')}
               </div>
-              { !!homepage && (
-              <div className="centered-label">
-                <GoBrowser style={{ paddingLeft: 2 }} />
-                {' '}
-                <a href={homepage} target="_blank" rel="noreferrer">{homepage}</a>
-              </div>
-              ) }
               { stargazers_count > 0 && (
               <div className="centered-label">
                 <GoStar size="20px" />
@@ -74,7 +67,14 @@ export default function Liked() {
                 <a className="IssuesCount" href={`${html_url}/issues`} target="_blank" rel="noreferrer">{open_issues_count}</a>
               </div>
               )}
-            {language && (
+              {homepage && (
+                <div className="centered-label">
+                  <GoBrowser style={{ paddingLeft: 2 }} />
+                  {' '}
+                  <a href={homepage} target="_blank" rel="noreferrer">{homepage}</a>
+                </div>
+              )}
+              {language && (
               <>
               Language:
                 {' '}

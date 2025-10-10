@@ -63,14 +63,14 @@ export default function Repositories() {
                 {' '}
                 <a className="IssuesCount" href={`${html_url}/issues`} target="_blank" rel="noreferrer">{open_issues_count}</a>
               </div>
-              ) }
-              { homepage && (
+              )}
+              {homepage && (
               <div className="centered-label">
                 <GoBrowser style={{ paddingLeft: 2 }} />
                 {' '}
                 <a href={homepage} target="_blank" rel="noreferrer">{homepage}</a>
               </div>
-              ) }
+              )}
               {language && (
                 <>
                 Language:
