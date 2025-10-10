@@ -28,13 +28,6 @@ const PAGES = [
     ],
   },
   {
-    name: 'Repositories',
-    path: '/github/repositories/',
-    redirect: { from: '/repositories', to: '/github/repositories/' },
-    Icon: () => <GoRepo />,
-    Page: () => <Repositories />,
-  },
-  {
     name: 'Likes',
     path: '/github/likes/',
     redirects: [
@@ -44,6 +37,13 @@ const PAGES = [
     ],
     Icon: () => <GoStar size="1.2em" />,
     Page: () => <Stars />,
+  },
+  {
+    name: 'Repositories',
+    path: '/github/repositories/',
+    redirect: { from: '/repositories', to: '/github/repositories/' },
+    Icon: () => <GoRepo />,
+    Page: () => <Repositories />,
   },
   {
     name: 'Packages',
