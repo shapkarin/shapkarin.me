@@ -1,8 +1,9 @@
+// TODO: refactor
 import { useQuery } from 'react-query';
 import ReactTooltip from 'react-tooltip';
-import { GoRepoForked, GoPulse, GoIssueOpened } from 'react-icons/go';
-import { MdWeb } from 'react-icons/md';
-import { TiStarOutline } from 'react-icons/ti';
+
+import {  GoStar, GoClock, GoRepoForked, GoBrowser } from 'react-icons/go';
+import { LuMessageCircle } from 'react-icons/lu';
 import SEO from '@/Components/SEO';
 import Button from '@/Components/Button';
 
@@ -42,22 +43,22 @@ export default function Liked() {
                 {full_name}
                 {fork && <GoRepoForked data-tip="fork" />}
               </a>
-              <div className="centered-label" style={{ lineHeight: '20px', marginBottom: '6px' }}>{description}</div>
+              <div className="centered-label" style={{ lineHeight: '20px', paddingBottom: '6px' }}>{description}</div>
               <div className="centered-label">
-                <GoPulse data-tip="Last update" />
+                <GoClock data-tip="Last update" size="19px" />
                 {' '}
                 {(new Date(updated_at)).toLocaleDateString('ru-RU')}
               </div>
               { !!homepage && (
               <div className="centered-label">
-                <MdWeb />
+                <GoBrowser style={{ paddingLeft: 2 }} />
                 {' '}
                 <a href={homepage} target="_blank" rel="noreferrer">Website</a>
               </div>
               ) }
               { stargazers_count > 0 && (
               <div className="centered-label">
-                <TiStarOutline size="18px" />
+                <GoStar size="20px" />
                 {' '}
                 Stars:
                 {' '}
@@ -66,7 +67,7 @@ export default function Liked() {
               )}
               { open_issues_count > 0 && (
               <div className="centered-label">
-                <GoIssueOpened />
+                <LuMessageCircle size="20px" style={{ strokeWidth: 1.5 }} />
                 {' '}
                 Open issues:
                 {' '}
