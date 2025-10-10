@@ -4,16 +4,19 @@
     
       // Configurable redirects for non-existent pages. Keep in mind that gh-pages adds trailing slashes
       const redirects = {
-        '/articles/hoc-and-currying/': '/articles/higher-order-functions-and-currying/',
-        '/articles/cluster/': '/articles/node.js-multi-core-cluster/',
-        '/articles/': '/',
-        '/sketches/': '/creative/',
+        '/articles/hoc-and-currying': '/articles/higher-order-functions-and-currying/',
+        '/articles/cluster': '/articles/node.js-multi-core-cluster/',
+        '/articles': '/',
+        '/sketches': '/creative/',
         '/repositories': '/github/repositories/',
-        '/likes/': '/github/likes/',
-        '/liked/': '/github/likes/',
-        '/stars/': '/github/likes/',
-        '/github/': 'https://github.com/shapkarin/',
+        '/likes': '/github/likes/',
+        '/liked': '/github/likes/',
+        '/stars': '/github/likes/',
+        '/github': 'https://github.com/shapkarin/',
       };
+
+      // Add keys with trailing slash
+      Object.keys(redirects).forEach(key => redirects[`${key}/`] = redirects[key]);
     
       function initRedirect() {
         const l = window.location;
