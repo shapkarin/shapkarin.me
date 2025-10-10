@@ -9,9 +9,9 @@
         '/articles/': '/',
         '/sketches/': '/creative/',
         '/repositories': '/github/repositories/',
-        '/likes/': '/github/stars/',
-        '/liked/': '/github/stars/',
-        '/stars/': '/github/stars/',
+        '/likes/': '/github/likes/',
+        '/liked/': '/github/likes/',
+        '/stars/': '/github/likes/',
         '/github/': 'https://github.com/shapkarin/',
       };
     
@@ -21,7 +21,7 @@
         let newPathname = l.pathname;
         let didRedirect = false;
     
-        // Check for specific redirects first
+        // Check for specific redirects, emulate 301
         for (const [oldPath, newPath] of Object.entries(redirects)) {
           if (l.pathname === oldPath || l.pathname.endsWith(oldPath)) {
             newPathname = newPath;
@@ -31,18 +31,11 @@
           }
         }
     
-        // If no specific redirect, check for double trailing slashes
-        if (!didRedirect && l.pathname.endsWith('//')) {
-          newPathname = l.pathname.slice(0, -1);
-          console.log('Normalized double trailing slash:', newPathname + l.search + l.hash);
-        }
-    
         // Apply the change if needed
         if (newPathname !== l.pathname) {
           window.location.replace(newPathname + l.search + l.hash);
         }
       }
     
-      // Run immediately—no event needed
       initRedirect();
     })();</script></head><body><div class="container"><h1>404</h1><p>Oops! The page you're looking for doesn't exist.</p><p><a href="/">Go back home</a></p><p>NOTE: If a redirect exists, it will take you to the right page. Just wait a bit.</p></div></body></html>
