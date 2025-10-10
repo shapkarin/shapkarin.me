@@ -53,7 +53,7 @@ export default function Liked() {
               <div className="centered-label">
                 <GoBrowser style={{ paddingLeft: 2 }} />
                 {' '}
-                <a href={homepage} target="_blank" rel="noreferrer">Website</a>
+                <a href={homepage} target="_blank" rel="noreferrer">{homepage}</a>
               </div>
               ) }
               { stargazers_count > 0 && (
