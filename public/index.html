@@ -27,12 +27,19 @@
       
           // If no specific redirect, check for double trailing slashes
           if (!didRedirect && l.pathname.endsWith('//')) {
-            newPathname = l.pathname.slice(0, -1);
+            newPathname = l.pathname.replace(/\/+$/, '/') || '/';
             console.log('Normalized double trailing slash:', newPathname + l.search + l.hash);
           }
       
           // Apply the change if needed
           if (newPathname !== l.pathname) {
+            // Create and add the <link rel="canonical"> element
+            var link = document.createElement('link');
+            link.setAttribute('rel', 'canonical');
+            link.setAttribute('href', newPathname);
+            document.head.appendChild(link);
+
+            // Redirect (the most suitable equivalent)
             window.location.replace(newPathname + l.search + l.hash);
           }
         }

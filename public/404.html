@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>404 - Page Not Found</title>
     <script type="text/javascript">
-    // I use that bcs of static and gh-pages, check issue https://github.com/shapkarin/shapkarin.me/issues/94 
+    // Google crawler and GitHub Pages workaround
     (function() {
       'use strict';
     
@@ -43,6 +43,13 @@
     
         // Apply the change if needed
         if (newPathname !== l.pathname) {
+          // Create and add the <link rel="canonical"> element
+          var link = document.createElement('link');
+          link.setAttribute('rel', 'canonical');
+          link.setAttribute('href', newPathname);
+          document.head.appendChild(link);
+
+          // Redirect (the most suitable equivalent)
           window.location.replace(newPathname + l.search + l.hash);
         }
       }
