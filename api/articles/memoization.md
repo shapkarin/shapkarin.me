@@ -210,7 +210,7 @@ function ProductList({ products }) {
 }
 ```
 
-#### Using These Hooks Judiciously
+### Using These Hooks Judiciously
 
 While these hooks are powerful, they should be used strategically:
 
