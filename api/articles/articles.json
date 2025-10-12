@@ -75,11 +75,6 @@
     "filename": "node.js-multi-core-cluster.md"
   },
   {
-    "slug": "back-health-and-therapeutic-exercises",
-    "title": "Back Health And Therapeutic Exercises",
-    "filename": "back-health-and-therapeutic-exercises.md"
-  },
-  {
     "slug": "structuredClone",
     "title": "StructuredClone",
     "filename": "structuredClone.md"
@@ -93,6 +88,11 @@
     "slug": "react-vs-jquery",
     "title": "React Vs Jquery",
     "filename": "react-vs-jquery.md"
+  },
+  {
+    "slug": "back-health-and-therapeutic-exercises",
+    "title": "Back Health And Therapeutic Exercises",
+    "filename": "back-health-and-therapeutic-exercises.md"
   },
   {
     "slug": "design",

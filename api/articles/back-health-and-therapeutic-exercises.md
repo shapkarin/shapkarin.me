@@ -1,7 +1,7 @@
 ---
 title: "Back Health for Software Developers: Therapeutic Exercises for Core Strength"
 description: "Learn essential therapeutic exercises and principles to maintain back health as a software developer, including bodyweight exercises, resistance band workouts, and office-specific movements to counteract the effects of prolonged sitting."
-order: 5
+order: 8
 ---
 
 # Back Health for Software Developers: Therapeutic Exercises for Core Strength
