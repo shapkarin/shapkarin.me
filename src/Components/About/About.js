@@ -1,13 +1,12 @@
 import { useState } from 'react';
 import { useQuery } from 'react-query';
-import { Link } from 'react-router-dom';
 import clsx from 'clsx';
 import isMobile from 'is-mobile';
 import {CopyToClipboard} from 'react-copy-to-clipboard';
 
-import { FiExternalLink } from 'react-icons/fi';
 import { fetchAbout } from '@/API';
 import Preloader from '@/Components/Preloader';
+import Link from '@/Components/Link';
 
 import './style.less';
 
@@ -29,16 +28,16 @@ function About() {
         <Link to="/" className='About_greeting'>{title}</Link>
         {' '}{intro}
         {isMobileDevice && <br />}
-        <a href={linkedin.link} className={clsx('Social_Link', {
+        <Link href={linkedin.link} className={clsx('Social_Link', {
           'Social_Link__mobile': isMobileDevice
-        })} target="_blank" rel="noreferrer">{linkedin.text}<FiExternalLink /></a>
-        <a href={github.link} className="Social_Link" target="_blank" rel="noreferrer">{github.text}<FiExternalLink /></a>
+        })} target="_blank" rel="noreferrer">{linkedin.text}</Link>
+        <Link href={github.link} className="Social_Link">{github.text}</Link>
         <CopyToClipboard text={EMAIL}
           onCopy={() => setCopied(true)}>
           {copied ? <>{<a href={`mailto:${EMAIL}`}>{EMAIL}</a>} [in clipboard!]</> : <span className="About_email">Get my email</span>}
         </CopyToClipboard>
         <em className="Disclaimer">
-          Disclaimer: homepage has been gradually developed <a href="https://web.archive.org/web/20130801000000*/shapkarin.me" target="_blank" rel="noreferrer">since 2013<FiExternalLink /></a> with limited time {' | '} <a href="https://github.com/shapkarin/shapkarin.me" target="_blank" rel="noreferrer">cource code<FiExternalLink /></a>
+          Disclaimer: homepage has been gradually developed <Link href="https://web.archive.org/web/20130801000000*/shapkarin.me">since 2013</Link> with limited time {' | '} <Link href="https://github.com/shapkarin/shapkarin.me">cource code</Link>
         </em>
       </div>
     </>

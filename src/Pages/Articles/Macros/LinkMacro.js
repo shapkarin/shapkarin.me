@@ -1,5 +1,5 @@
 import { createElement } from 'react';
-import { Link } from 'react-router-dom';
+import Link from '@/Components/Link';
 import { SCROLL_OFFSET } from '@/constants';
 
 const LinkMacro = ({ href, children }) => {
@@ -38,10 +38,19 @@ const LinkMacro = ({ href, children }) => {
     }
   };
 
-  return createElement('a', { 
+  if(isAnchorLink){
+    return createElement('a', { 
+      target, 
+      href: href,
+      external: false,
+      ...(!supportsScrollBehavior ? { onClick: handleAnchorClick } : {})
+    }, children);
+  }
+
+  return createElement(Link, { 
     target, 
-    href: href, 
-    ...(isAnchorLink && !supportsScrollBehavior ? { onClick: handleAnchorClick } : {})
+    href: href,
+    external: isExternalLink,
   }, children);
 };
 
