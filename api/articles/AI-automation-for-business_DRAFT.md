@@ -32,7 +32,7 @@ Having worked on AI projects since 2016, I've witnessed the dramatic evolution f
 
 The transformation isn't just technological—it's fundamentally changing how businesses operate, compete, and create value.
 
-![Diagram: AI Evolution in Business Context](/api/articles/light/ai-automation-for-business-0.svg)
+![Diagram: AI Evolution in Business Context](/api/articles/light/AI-automation-for-business_DRAFT-0.svg)
 ```mermaid
 timeline
     title AI Evolution in Business Context
@@ -59,7 +59,7 @@ The data speaks volumes: companies implementing AI automation are seeing 40% imp
 
 For founders, this represents competitive differentiation. For CTOs, it's about scalable infrastructure. For investors, it's about sustainable growth and margin expansion. According to [McKinsey's 2024 AI Report](https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai), organizations using AI automation see average revenue increases of 15% and cost reductions of 20%.
 
-![Graph diagram](/api/articles/light/ai-automation-for-business-1.svg)
+![Graph diagram](/api/articles/light/AI-automation-for-business_DRAFT-1.svg)
 ```mermaid
 graph TD
     A[Business Challenge] --> B{AI Automation Assessment}
@@ -92,7 +92,7 @@ Modern AI customer service systems handle up to 80% of Level 1 and 2 customer qu
 - **Knowledge Base Integration**: Instant access to company information with contextual responses ([Ada's AI chatbot](https://ada.cx/) resolves 70% of inquiries without human intervention)
 - **Multi-channel Consistency**: Unified experience across email, chat, phone, and social media ([LivePerson's Conversational Cloud](https://www.liveperson.com/platform/) maintains context across all channels)
 
-![Flowchart diagram](/api/articles/light/ai-automation-for-business-2.svg)
+![Flowchart diagram](/api/articles/light/AI-automation-for-business_DRAFT-2.svg)
 ```mermaid
 flowchart TD
     A[Customer Inquiry] --> B{AI Analysis}
@@ -135,7 +135,7 @@ AI-driven sales automation transforms the entire revenue pipeline from lead gene
 - **Sales Forecasting**: Accurate pipeline predictions for better resource allocation
 - **Competitive Intelligence**: Real-time market analysis and positioning strategies
 
-![Graph diagram](/api/articles/light/ai-automation-for-business-3.svg)
+![Graph diagram](/api/articles/light/AI-automation-for-business_DRAFT-3.svg)
 ```mermaid
 graph LR
     A[Raw Leads] --> B[AI Scoring Engine]
@@ -175,7 +175,7 @@ Business process automation extends beyond simple task completion—it's about i
 - **Financial Operations**: Automated invoice processing, expense categorization, and compliance monitoring
 - **Quality Assurance**: Real-time monitoring and anomaly detection across business processes
 
-![Flowchart diagram](/api/articles/light/ai-automation-for-business-4.svg)
+![Flowchart diagram](/api/articles/light/AI-automation-for-business_DRAFT-4.svg)
 ```mermaid
 flowchart TB
     subgraph "Input Layer"
@@ -229,7 +229,7 @@ AI transforms data analysis from periodic reporting to continuous intelligence. 
 - **Competitive Analysis**: Monitor market positioning and competitor activities ([Crayon's competitive intelligence](https://www.crayon.co/competitive-intelligence-software) tracks 10M+ data points daily)
 - **Performance Optimization**: Continuous improvement recommendations based on data analysis ([Google's Smart Bidding](https://support.google.com/google-ads/answer/7065882) improves ad performance by 15% on average)
 
-![Graph diagram](/api/articles/light/ai-automation-for-business-5.svg)
+![Graph diagram](/api/articles/light/AI-automation-for-business_DRAFT-5.svg)
 ```mermaid
 graph TD
     subgraph "Data Sources"
@@ -283,7 +283,7 @@ Human Resources automation elevates HR from administrative functions to strategi
 - **Performance Analytics**: Data-driven insights into team productivity and satisfaction ([Workday's People Analytics](https://www.workday.com/en-us/products/human-capital-management/workforce-planning-analytics.html) helps predict performance outcomes)
 - **Retention Prediction**: Early identification of flight risks and intervention strategies ([IBM Watson Career Coach](https://www.ibm.com/watson/hr) reduces turnover by 25% through early intervention)
 
-![Flowchart diagram](/api/articles/light/ai-automation-for-business-6.svg)
+![Flowchart diagram](/api/articles/light/AI-automation-for-business_DRAFT-6.svg)
 ```mermaid
 flowchart LR
     subgraph ACQUIRE ["🎯 Talent Acquisition"]
@@ -338,7 +338,7 @@ Successful AI automation requires strategic planning, not random technology adop
 3. **Continuous Improvement**: Regular optimization based on performance data
 4. **Strategic Integration**: Align automation with long-term business objectives
 
-![Gantt: AI Automation Implementation Timeline](/api/articles/light/ai-automation-for-business-7.svg)
+![Gantt: AI Automation Implementation Timeline](/api/articles/light/AI-automation-for-business_DRAFT-7.svg)
 ```mermaid
 gantt
     title AI Automation Implementation Timeline
@@ -378,7 +378,7 @@ AI automation investments must deliver measurable business value. Success metric
 - **Months 7-12**: Strategic advantages from advanced capabilities (40%+ total improvement)
 - **Year 2+**: Competitive differentiation and market expansion opportunities
 
-![Diagram: "AI Automation ROI Progression"](/api/articles/light/ai-automation-for-business-8.svg)
+![Diagram: "AI Automation ROI Progression"](/api/articles/light/AI-automation-for-business_DRAFT-8.svg)
 ```mermaid
 xychart-beta
     title "AI Automation ROI Progression"
