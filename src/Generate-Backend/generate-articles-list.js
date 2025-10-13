@@ -38,7 +38,7 @@ function getArticleFiles() {
   try {
     return fs.readdirSync(CONFIG.ARTICLES_PATH)
       .filter(file => file.endsWith(CONFIG.FILE_EXTENSION))
-      .filter(file => !file.includes('_NEW')); // Exclude files with "_NEW" in the name
+      .filter(file => !file.includes('_DRAFT')); // Exclude files with "_DRAFT" in the name
   } catch (error) {
     throw new Error(`Failed to read articles directory: ${error.message}`);
   }
