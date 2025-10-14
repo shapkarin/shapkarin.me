@@ -38,7 +38,7 @@ const LinkMacro = ({ href, children }) => {
     }
   };
 
-  if(isAnchorLink){
+  if(isAnchorLink || isEmailLink){
     return createElement('a', { 
       target, 
       href: href,
