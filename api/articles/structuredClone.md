@@ -11,8 +11,8 @@ order: 5
 
 *   [Shallow vs. Deep Cloning: The Core Difference](#shallow-vs-deep-cloning-the-core-difference)
 *   [Traditional Deep Cloning Methods (and Their Issues)](#traditional-deep-cloning-methods-and-their-issues)
-    *   [`JSON.parse(JSON.stringify(object))`](#1-jsonparsejsonstringifyobject)
-    *   [Recursive Manual Cloning / Third-Party Libraries](#2-recursive-manual-cloning--third-party-libraries)
+    *   [`JSON.parse(JSON.stringify(object))`](#1-json-parse-json-stringify-object)
+    *   [Recursive Manual Cloning / Third-Party Libraries](#2-recursive-manual-cloning-third-party-libraries)
 *   [Introducing `structuredClone()`: The Modern Solution](#introducing-structuredclone-the-modern-solution)
     *   [Key Benefits of `structuredClone()`](#key-benefits-of-structuredclone)
 *   [Limitations of `structuredClone()`](#limitations-of-structuredclone)
