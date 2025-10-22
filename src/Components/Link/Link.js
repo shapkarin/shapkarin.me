@@ -4,7 +4,7 @@ import { FiExternalLink } from 'react-icons/fi';
 const LinkComponent = ({ href, to, children, external, ...props }) => {
   const address = href || to;
   const isExternal = external ?? (address.startsWith('http://') || address.startsWith('https://'));
-  const externalAttr = external ? {
+  const externalAttr = isExternal ? {
     target: '_blank',
     rel: 'noreferrer'
   } : {};
