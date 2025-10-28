@@ -1352,7 +1352,7 @@
     {
       "@type": "WebPageElement",
       "name": "Bitcoin's Probabilistic Finality",
-      "url": "https://shapkarin.me/articles/byzantine-fault-tolerance#bitcoins-probabilistic-finality",
+      "url": "https://shapkarin.me/articles/byzantine-fault-tolerance#bitcoin-s-probabilistic-finality",
       "description": "How Bitcoin achieves security through exponentially increasing confirmation depth",
       "order": 13,
       "relatedLinks": [
@@ -1362,7 +1362,7 @@
     {
       "@type": "WebPageElement",
       "name": "Bitcoin's Complete BFT Architecture",
-      "url": "https://shapkarin.me/articles/byzantine-fault-tolerance#bitcoins-complete-bft-architecture",
+      "url": "https://shapkarin.me/articles/byzantine-fault-tolerance#bitcoin-s-complete-bft-architecture",
       "description": "Comprehensive overview of Bitcoin's complete Byzantine fault tolerance solution",
       "order": 14,
       "relatedLinks": [
@@ -1695,7 +1695,7 @@
     {
       "@type": "WebPageElement",
       "name": "Ethereum 2.0 Case Study",
-      "url": "https://shapkarin.me/articles/byzantine-fault-tolerance#ethereum-20-case-study",
+      "url": "https://shapkarin.me/articles/byzantine-fault-tolerance#ethereum-2-0-case-study",
       "description": "Detailed analysis of Ethereum's successful transition to proof-of-stake BFT",
       "order": 46,
       "relatedLinks": [
