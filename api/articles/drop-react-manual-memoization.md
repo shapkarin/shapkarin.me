@@ -21,6 +21,8 @@ order: 3
 ## Note
 - Check [memoization article](/articles/memoization/).
 - And [React document](https://github.com/facebook/react/blob/156b7a96f5669470182ad226306184576d6f150f/compiler/packages/babel-plugin-react-compiler/src/Inference/MUTABILITY_ALIASING_MODEL.md).
+- UPDs: https://react.dev/reference/react-compiler/directives/use-memo
+- UPDs: https://react.dev/reference/eslint-plugin-react-hooks/lints/preserve-manual-memoization
 
 ## Introduction
 
