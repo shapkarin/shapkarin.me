@@ -1,11 +1,9 @@
-import { useState, useMemo } from "react";
+import { useState, useMemo, Activity } from "react";
 import { useQuery } from "react-query";
 import { GoChevronRight, GoChevronDown } from "react-icons/go";
-import { isMobile } from "is-mobile";
 
 import { fetchPackageInfo } from "@/API";
-import Collapse from "@/Components/Collapse";
-import Preloader from "@/Components/Preloader";
+// import Collapse from "@/Components/Collapse";
 import Formatted from "@/Components/Formatted";
 
 function PackageInfoContent({ id }) {
@@ -36,21 +34,15 @@ function PackageInfoContent({ id }) {
 export default function PackageInfo({ id }) {
   const [isOpen, setIsOpen] = useState(false);
   const collapsed = useMemo(() => isOpen, [isOpen]);
-  const isMobileDevice = isMobile();
 
   return (
     <>
       <div className="toggle_info" onClick={() => setIsOpen((prev) => !prev)}>
         package info {isOpen ? <GoChevronDown /> : <GoChevronRight />}
       </div>
-      <Preloader
-        height={isMobileDevice ? 300 : 95} 
-        lines={isMobileDevice ? 4 : 3}
-      >
-        <Collapse open={collapsed}>
-          <PackageInfoContent id={id} />
-        </Collapse>
-      </Preloader>
+      <Activity mode={collapsed ? 'visible' : 'hidden'}>
+        <PackageInfoContent id={id} isOpen={isOpen} />
+      </Activity>
     </>
   );
 }
