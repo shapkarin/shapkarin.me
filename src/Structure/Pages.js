@@ -52,10 +52,13 @@ const PAGES = [
   {
     name: 'Creative',
     path: '/creative/',
+    /*
+    // SEO redirect for URL renamces are in the public/404.html
     redirects: [
       { from: '/generative', to: '/sketches/' },
       { from: '/sketches', to: '/creative/' }
     ],
+    */
     Icon: () => <RiPaintBrushFill />,
     Page: () => <Creative />,
   },

@@ -62,7 +62,7 @@ This compartmentalization ensures that even if a dependency is compromised, its 
 
 Outline the key features and their categories:
 
-![Diagram](/api/articles/light/LavaMoat-supply-chain-attacks-protection-0.svg)
+![Diagram](/api/articles/light/LavaMoat-against-JS-supply-chain-attacks-0.svg)
 ```mermaid
 mindmap
   root((LavaMoat Features))
@@ -192,7 +192,7 @@ This creates a `policy.json` file in `./lavamoat/node/`.
 
  Runtime protection process:
 
-![SequenceDiagram diagram](/api/articles/light/LavaMoat-supply-chain-attacks-protection-1.svg)
+![SequenceDiagram diagram](/api/articles/light/LavaMoat-against-JS-supply-chain-attacks-1.svg)
 ```mermaid
 sequenceDiagram
     participant User
@@ -286,7 +286,7 @@ Override defaults in `policy-override.json` to grant or restrict access. For ins
 
 Structure of a LavaMoat policy:
 
-![ClassDiagram diagram](/api/articles/light/LavaMoat-supply-chain-attacks-protection-2.svg)
+![ClassDiagram diagram](/api/articles/light/LavaMoat-against-JS-supply-chain-attacks-2.svg)
 ```mermaid
 classDiagram
     Policy --> Resources

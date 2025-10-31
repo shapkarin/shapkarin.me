@@ -20,15 +20,15 @@
       },
       {
         "@type": "ImageObject",
-        "url": "https://shapkarin.me/api/articles/dark/LavaMoat-supply-chain-attacks-protection-1.svg"
+        "url": "https://shapkarin.me/api/articles/dark/LavaMoat-against-JS-supply-chain-attacks-1.svg"
       },
       {
         "@type": "ImageObject",
-        "url": "https://shapkarin.me/api/articles/light/LavaMoat-supply-chain-attacks-protection-2.svg"
+        "url": "https://shapkarin.me/api/articles/light/LavaMoat-against-JS-supply-chain-attacks-2.svg"
       },
       {
         "@type": "ImageObject",
-        "url": "https://shapkarin.me/api/articles/light/LavaMoat-supply-chain-attacks-protection-3.svg"
+        "url": "https://shapkarin.me/api/articles/light/LavaMoat-against-JS-supply-chain-attacks-3.svg"
       }
     ],
     "author": {
