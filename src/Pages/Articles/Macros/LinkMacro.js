@@ -42,7 +42,6 @@ const LinkMacro = ({ href, children }) => {
     return createElement('a', { 
       target, 
       href: href,
-      external: false,
       ...(!supportsScrollBehavior ? { onClick: handleAnchorClick } : {})
     }, children);
   }
