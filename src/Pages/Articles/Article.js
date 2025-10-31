@@ -36,7 +36,7 @@ const Article = () => {
   const { data: { data: content } } = useQuery(['Articles', articleName], () => fetchArticle(articleName), 
     { 
       enabled: Boolean(articleName),
-      keepPreviousData : true,
+      keepPreviousData : process.env.NODE_ENV === 'production' ? true : false,
     },
   );
 
@@ -57,7 +57,7 @@ const Article = () => {
     },
     {
       enabled: Boolean(articleName),
-      keepPreviousData: process.env.NODE_ENV === 'production' ? true : false,//fasle,
+      keepPreviousData: process.env.NODE_ENV === 'production' ? true : false, //fasle,
     }
   );
 
