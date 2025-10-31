@@ -5,7 +5,8 @@ const path = require('path');
 const CONFIG = {
   ARTICLES_PATH: path.join(__dirname, '../../public/api/articles'),
   OUTPUT_FILENAME: 'articles.json',
-  FILE_EXTENSION: '.md'
+  FILE_EXTENSION: '.md',
+  PREFIX_TO_SKIP: '_',
 };
 
 // Extracts frontmatter from markdown content
@@ -33,15 +34,18 @@ function extractFrontmatter(content) {
     }, {});
 }
 
-// Reads all markdown files from the articles directory
 function getArticleFiles() {
   try {
-    return fs.readdirSync(CONFIG.ARTICLES_PATH)
-      .filter(file => file.endsWith(CONFIG.FILE_EXTENSION))
-      .filter(file => !file.includes('_DRAFT')); // Exclude files with "_DRAFT" in the name
+    return filterRules(fs.readdirSync(CONFIG.ARTICLES_PATH))
   } catch (error) {
     throw new Error(`Failed to read articles directory: ${error.message}`);
   }
+}
+
+function filterRules(file) {
+  return file
+    .filter(file => file.endsWith(CONFIG.FILE_EXTENSION))
+    .filter(file => !file.startsWith(CONFIG.PREFIX_TO_SKIP))
 }
 
 // Extracts article data from a markdown file
