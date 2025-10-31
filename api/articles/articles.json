@@ -55,9 +55,9 @@
     "filename": "javascript-lexical-scope.md"
   },
   {
-    "slug": "LavaMoat-supply-chain-attacks-protection",
-    "title": "LavaMoat Supply Chain Attacks Protection",
-    "filename": "LavaMoat-supply-chain-attacks-protection.md"
+    "slug": "LavaMoat-against-JS-supply-chain-attacks",
+    "title": "LavaMoat Against JS Supply Chain Attacks",
+    "filename": "LavaMoat-against-JS-supply-chain-attacks.md"
   },
   {
     "slug": "memoization",
