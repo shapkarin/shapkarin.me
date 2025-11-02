@@ -92,17 +92,13 @@ html {
 .Article__Item {
   list-style-type: none;
   position: relative;
-  animation-duration: 30s !important; // TODO
-  // border-radius: @card-border-radius;
-  border-bottom: 1px solid transparent;
+  border-radius: @border-radius-base;
+  border: 1px solid transparent;
+  transition: all 0.3s ease;
 
   &:hover {
-    .barberpole-animation(2, 0.07);
-    border-bottom-color: darken(@color-gray, 30%);
-    background-color: darken(@color-gray, 3%);
-      // > a {
-      //   color: @color-white;
-      // }
+    border-color: darken(@color-gray, 12%);
+    background-color: @color-white;
   }
 
   > a {
