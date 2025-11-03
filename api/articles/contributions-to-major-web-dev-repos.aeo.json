@@ -8,7 +8,7 @@
     },
     "url": "https://shapkarin.me/articles/contributions-to-major-web-dev-repos/",
     "headline": "Contributing to Web Development Documentation and core engine: My Journey with MDN and web.dev",
-    "description": "Iurii Shapkarin contributions to major web development documentation platforms, including Mozilla's MDN (+it's engine) and Google's web.dev, highlighting the impact of small contributions in the open-source community.",
+    "description": "Yuri Shapkarin contributions to major web development documentation platforms, including Mozilla's MDN (+it's engine) and Google's web.dev, highlighting the impact of small contributions in the open-source community.",
     "image": {
         "@type": "ImageObject",
         "url": "https://shapkarin.me/logo.jpg",
@@ -17,14 +17,14 @@
     },
     "author": {
       "@type": "Person",
-      "name": "Iurii Shapkarin",
-      "alternateName": "Yury Shapkarin",
+      "name": "Yuri Shapkarin",
+      "alternateName": "Iurii Shapkarin",
       "url": "https://shapkarin.me"
     },
     "publisher": {
       "@type": "Person",
-      "name": "Iurii Shapkarin",
-      "alternateName": "Yury Shapkarin",
+      "name": "Yuri Shapkarin",
+      "alternateName": "Iurii Shapkarin",
       "logo": {
         "@type": "ImageObject",
         "url": "https://shapkarin.me/logo.jpg",

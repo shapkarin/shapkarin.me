@@ -52,7 +52,7 @@
     "readingTime": "12 minutes",
     "category": "Blockchain Technology",
     "difficulty": "Beginner",
-    "author": "Iurii Shapkarin",
+    "author": "Yuri Shapkarin",
     "canonicalUrl": "https://shapkarin.me/articles/ethereum-whitepaper-explanation",
     "language": "en",
     "publishDate": "2025-01-27"
@@ -64,8 +64,8 @@
     "description": "Complete beginner-friendly explanation of Vitalik Buterin's Ethereum Whitepaper covering smart contracts, DeFi, NFTs, and how Ethereum works",
     "author": {
       "@type": "Person",
-      "name": "Iurii Shapkarin",
-      "alternateName": "Yury Shapkarin",
+      "name": "Yuri Shapkarin",
+      "alternateName": "Iurii Shapkarin",
       "url": "https://shapkarin.me"
     },
     "url": "https://shapkarin.me/articles/ethereum-whitepaper-explanation/",  
@@ -77,8 +77,8 @@
     },
     "publisher": {
       "@type": "Person",
-      "name": "Iurii Shapkarin",
-      "alternateName": "Yury Shapkarin",
+      "name": "Yuri Shapkarin",
+      "alternateName": "Iurii Shapkarin",
       "logo": {
         "@type": "ImageObject",
         "url": "https://shapkarin.me/logo.jpg"

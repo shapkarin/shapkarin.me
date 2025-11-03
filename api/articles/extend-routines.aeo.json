@@ -5,14 +5,14 @@
   "description": "Learn how to streamline Redux async workflows with extend-routines. Create custom action routines, handle complex async states, and reduce boilerplate in Redux applications.",
   "author": {
     "@type": "Person",
-    "name": "Iurii Shapkarin",
-    "alternateName": "Yury Shapkarin",
+    "name": "Yuri Shapkarin",
+    "alternateName": "Iurii Shapkarin",
     "url": "https://shapkarin.me"
   },
   "publisher": {
     "@type": "Person",
-    "name": "Iurii Shapkarin",
-    "alternateName": "Yury Shapkarin",
+    "name": "Yuri Shapkarin",
+    "alternateName": "Iurii Shapkarin",
     "url": "https://shapkarin.me",
     "logo": {
       "@type": "ImageObject",

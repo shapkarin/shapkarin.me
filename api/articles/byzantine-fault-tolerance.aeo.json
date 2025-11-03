@@ -492,7 +492,7 @@
     "readingTime": "25 minutes",
     "category": "Blockchain Security",
     "difficulty": "Intermediate to Advanced",
-    "author": "Iurii Shapkarin",
+    "author": "Yuri Shapkarin",
     "canonicalUrl": "https://shapkarin.me/articles/byzantine-fault-tolerance",
     "language": "en",
     "publishDate": "2025-01-27"
@@ -504,8 +504,8 @@
     "description": "Comprehensive guide to Byzantine Fault Tolerance (BFT) in blockchain networks. Learn how Bitcoin's Proof-of-Work, Ethereum's Casper FFG, and EVM-compatible chains implement BFT algorithms to maintain consensus and security against malicious actors.",
     "author": {
       "@type": "Person",
-      "name": "Iurii Shapkarin",
-      "alternateName": "Yury Shapkarin",
+      "name": "Yuri Shapkarin",
+      "alternateName": "Iurii Shapkarin",
       "url": "https://shapkarin.me",
       "sameAs": [
         "https://github.com/shapkarin",
@@ -521,8 +521,8 @@
     },
     "publisher": {
       "@type": "Person",
-      "name": "Iurii Shapkarin",
-      "alternateName": "Yury Shapkarin",
+      "name": "Yuri Shapkarin",
+      "alternateName": "Iurii Shapkarin",
       "logo": {
         "@type": "ImageObject",
         "url": "https://shapkarin.me/logo.jpg"

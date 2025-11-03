@@ -17,14 +17,14 @@
     },
     "author": {
       "@type": "Person",
-      "name": "Iurii Shapkarin",
-      "alternateName": "Yury Shapkarin",
+      "name": "Yuri Shapkarin",
+      "alternateName": "Iurii Shapkarin",
       "url": "https://shapkarin.me"
     },
     "publisher": {
       "@type": "Person",
-      "name": "Iurii Shapkarin",
-      "alternateName": "Yury Shapkarin",
+      "name": "Yuri Shapkarin",
+      "alternateName": "Iurii Shapkarin",
       "logo": {
         "@type": "ImageObject",
         "url": "https://shapkarin.me/logo.jpg",
@@ -137,7 +137,7 @@
       },
       {
         "@type": "WebPage",
-        "name": "Iurii Shapkarin JavaScript Gist Collection",
+        "name": "Yuri Shapkarin JavaScript Gist Collection",
         "@id": "https://gist.github.com/shapkarin/b3fbeaca95ef69df177b",
         "description": "Collection of JavaScript curiosities and code examples demonstrating language quirks"
       },
@@ -441,7 +441,7 @@
     "codeRepository": "https://shapkarin.me/articles/curiosity-js",
     "author": {
       "@type": "Person",
-      "name": "Iurii Shapkarin"
+      "name": "Yuri Shapkarin"
     },
     "applicationCategory": "Educational",
     "operatingSystem": "Cross-platform",
