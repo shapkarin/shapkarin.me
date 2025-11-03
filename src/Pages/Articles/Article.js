@@ -90,11 +90,11 @@ const Article = () => {
   return (
     <div className="Article Page__Article Page__Inner">
         <SEO 
-          title={`${frontMatter.title || articleName} | Iurii Shapkarin`}
+          title={`${frontMatter.title || articleName} | Yuri Shapkarin`}
           description={frontMatter.description || `Article about ${articleName}`}
           keywords={frontMatter.keywords || ''}
           type="article"
-          name="Iurii Shapkarin"
+          name="Yuri Shapkarin"
           aeoScript={aeoScript}
         />
         <Link to="/" className="Article__GoBack">{'← All articles'}</Link>

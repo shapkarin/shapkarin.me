@@ -17,14 +17,14 @@
     },
     "author": {
       "@type": "Person",
-      "name": "Iurii Shapkarin",
-      "alternateName": "Yury Shapkarin",
+      "name": "Yuri Shapkarin",
+      "alternateName": "Iurii Shapkarin",
       "url": "https://shapkarin.me"
     },
     "publisher": {
       "@type": "Person",
-      "name": "Iurii Shapkarin",
-      "alternateName": "Yury Shapkarin",
+      "name": "Yuri Shapkarin",
+      "alternateName": "Iurii Shapkarin",
       "logo": {
         "@type": "ImageObject",
         "url": "https://shapkarin.me/logo.jpg",
@@ -587,7 +587,7 @@
     "codeRepository": "https://shapkarin.me/articles/async-event-loop-web-workers",
     "author": {
       "@type": "Person",
-      "name": "Iurii Shapkarin"
+      "name": "Yuri Shapkarin"
     },
     "applicationCategory": "Educational",
     "operatingSystem": "Cross-platform",

@@ -17,14 +17,14 @@
     },
     "author": {
       "@type": "Person",
-      "name": "Iurii Shapkarin",
-      "alternateName": "Yury Shapkarin",
+      "name": "Yuri Shapkarin",
+      "alternateName": "Iurii Shapkarin",
       "url": "https://shapkarin.me"
     },
     "publisher": {
       "@type": "Person",
-      "name": "Iurii Shapkarin",
-      "alternateName": "Yury Shapkarin",
+      "name": "Yuri Shapkarin",
+      "alternateName": "Iurii Shapkarin",
       "logo": {
         "@type": "ImageObject",
         "url": "https://shapkarin.me/logo.jpg",
@@ -122,7 +122,7 @@
         "programmingLanguage": "JavaScript",
         "author": {
           "@type": "Person",
-          "name": "Iurii Shapkarin"
+          "name": "Yuri Shapkarin"
         }
       },
       {
@@ -189,8 +189,8 @@
     "downloadUrl": "https://github.com/shapkarin/diff-browser-globals",
     "author": {
       "@type": "Person",
-      "name": "Iurii Shapkarin",
-      "alternateName": "Yury Shapkarin",
+      "name": "Yuri Shapkarin",
+      "alternateName": "Iurii Shapkarin",
       "url": "https://shapkarin.me"
     },
     "softwareVersion": "1.0.0",

@@ -1,4 +1,4 @@
-# Hello everyone! My name is Iurii Shapkarin. 
+# Hello everyone! My name is Yuri Shapkarin. 
 
 I am a software engineer with over a decade of experience and a solid foundation in Computer Science. My work reflects a firm commitment to innovation, problem-solving, and delivering exceptional user experiences.
 

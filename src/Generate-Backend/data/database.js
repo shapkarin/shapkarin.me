@@ -4,7 +4,7 @@ import { createHash } from 'crypto';
 export const about = {
   title: `Hello everyone!`,
   intro: clean(`
-    My name is Iurii Shapkarin. 
+    My name is Yuri Shapkarin. 
     I am a software engineer with over a decade of experience and a solid foundation in Computer Science.
     My work reflects a firm commitment to innovation, problem-solving, and delivering exceptional user experiences.
   `),

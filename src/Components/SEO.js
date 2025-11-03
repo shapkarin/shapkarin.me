@@ -5,7 +5,7 @@ import { useLocation } from "react-router-dom";
 const SEO = ({
   title,
   description,
-  name = "Iurii Shapkarin",
+  name = "Yuri Shapkarin",
   type = "website",
   aeoScript,
   keywords = "",

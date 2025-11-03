@@ -11,10 +11,10 @@ export default function Creative() {
   return (
     <>
       <SEO 
-        title="Creative Coding & Generative Art | Iurii Shapkarin"
+        title="Creative Coding & Generative Art | Yuri Shapkarin"
         description="Explore my collection of creative coding experiments, generative art, and interactive animations. Algorithmic drawings and visual experiments created with JavaScript and creative coding libraries."
         type="website"
-        name="Iurii Shapkarin"
+        name="Yuri Shapkarin"
       />
       <div className="Page__Creative Page__Inner">
         <Preloader>

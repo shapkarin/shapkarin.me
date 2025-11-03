@@ -14,10 +14,10 @@ export default function Packages() {
   return (
     <>
       <SEO 
-        title="JavaScript & TypeScript NPM Packages | Iurii Shapkarin"
+        title="JavaScript & TypeScript NPM Packages | Yuri Shapkarin"
         description="Explore a collection of JavaScript, TypeScript, and Node.js NPM packages for modern web development. Open-source modules for Redux, React, and more."
         type="website"
-        name="Iurii Shapkarin"
+        name="Yuri Shapkarin"
       />
       <div className="PagePackages Page__Inner">
         <div>
