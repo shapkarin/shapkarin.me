@@ -3,7 +3,8 @@ import { IoIosRefresh } from 'react-icons/io';
 import isMobile from 'is-mobile';
 
 import RandomButton from '@/Components/RandomButton';
-import { PAGES } from '../../Structure';
+import Search from '@/Components/Search';
+import { PAGES } from '@/Structure';
 
 import './Menu.less';
 
@@ -35,6 +36,7 @@ const Menu = ({ ...rest }) => (
       );
     })}
     </ul>
+    <Search />
     {isMobile && <RandomButton className="Menu__Item Menu__Item--unselect Menu__Item--bg">
       <IoIosRefresh/> bg upd
     </RandomButton>}

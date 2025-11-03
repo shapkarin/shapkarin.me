@@ -12,7 +12,7 @@ import './style.less';
 
 const EMAIL = 'yu.shapkarin@gmail.com';
 
-
+// TODO: use one isMobile for all app
 const isMobileDevice = isMobile();
 
 function About() {

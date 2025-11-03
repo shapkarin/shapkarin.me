@@ -32,7 +32,8 @@ const backend = {
   },
   articles: '/api/articles/articles.json',
   article: (name) => `${rawPrefix}/api/articles/${name}.md`,
-  aeoScript: (name) => `${rawPrefix}/api/articles/${name}.aeo.json`,
+  aeo: (name) => `${rawPrefix}/api/articles/${name}.aeo.json`,
+  search: '/api/search-index.json',
 }
 
 const URLS = {

@@ -32,7 +32,10 @@ export const fetchContributions = () => githubRequest.get(URLS.activity);
 export const fetchArticle = (name) => markdownRequest.get(URLS.article(name));
 
 // Fetch AeoScript for related articles
-export const fetchAeoScript = (name) => axios.get(URLS.aeoScript(name));
+export const fetchAeoScript = (name) => axios.get(URLS.aeo(name));
+
+// Search index
+export const fetchSearchIndex = () => axios.get(URLS.search);
 
 // maybe add it later, get repo languages statistic
 // export const fetchRepoLangs = url => axios.get(url);
