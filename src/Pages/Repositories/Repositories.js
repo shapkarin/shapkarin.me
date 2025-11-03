@@ -21,8 +21,6 @@ export default function Repositories() {
       <SEO 
         title="GitHub Repositories | Yuri Shapkarin"
         description="Browse my open-source projects and contributions on GitHub. Collection of web development repositories focusing on JavaScript, React, Redux, and modern web technologies."
-        type="website"
-        name="Yuri Shapkarin"
       />
       <ReactTooltip
         place="left"

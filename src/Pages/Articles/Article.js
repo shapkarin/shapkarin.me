@@ -94,7 +94,6 @@ const Article = () => {
           description={frontMatter.description || `Article about ${articleName}`}
           keywords={frontMatter.keywords || ''}
           type="article"
-          name="Yuri Shapkarin"
           aeoScript={aeoScript}
         />
         <Link to="/" className="Article__GoBack">{'← All articles'}</Link>

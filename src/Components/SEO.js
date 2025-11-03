@@ -7,8 +7,8 @@ const SEO = ({
   description,
   name = "Yuri Shapkarin",
   type = "website",
-  aeoScript,
   keywords = "",
+  aeoScript,
 }) => {
   const { pathname } = useLocation();
   const HOST = "https://shapkarin.me";

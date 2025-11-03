@@ -16,8 +16,6 @@ function ArticlesList() {
       <SEO 
         title="Software Development Articles & Tutorials | Yuri Shapkarin"
         description="Read technical articles about JavaScript development, React ecosystem, Redux patterns, and software engineering. In-depth tutorials and guides about my open-source packages."
-        type="blog"
-        name="Yuri Shapkarin"
       />
       <div className="Page__Inner">
         <h1 className="Page__ArticlesTitle">Articles</h1>

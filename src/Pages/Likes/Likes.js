@@ -17,8 +17,6 @@ export default function Liked() {
       <SEO 
         title="Starred GitHub Projects | Yuri Shapkarin"
         description="Discover my curated collection of starred GitHub repositories. A handpicked selection of innovative open-source projects, development tools, and libraries that I find valuable."
-        type="website"
-        name="Yuri Shapkarin"
       />
       <ReactTooltip
         place="left"
