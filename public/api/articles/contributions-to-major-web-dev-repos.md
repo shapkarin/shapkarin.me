@@ -18,8 +18,8 @@ That contributions made in 2021.
 - [https://github.com/mdn/yari/issues?q=is%3Aissue%20state%3Aclosed%20author%3Ashapkarin](https://github.com/mdn/yari/issues?q=is%3Aissue%20state%3Aclosed%20author%3Ashapkarin)
 
 ## PRs:
-- [https://github.com/mdn/yari/commit/c1db1d2c0babd2c4e4e8a4a33585f8272eddc756](https://github.com/mdn/yari/commit/c1db1d2c0babd2c4e4e8a4a33585f8272eddc756) (this one has parts from my closed PR so author mentioned me in commit)
-- [https://github.com/mdn/yari/pull/4437](My PR that solves the MDN engine URL encoding issue became part of another PR)
+- [This commit has parts from my closed PR (next link) so author mentioned me in commit](https://github.com/mdn/yari/commit/c1db1d2c0babd2c4e4e8a4a33585f8272eddc756)
+- [My PR that solves the MDN engine URL encoding issue became part of another PR](https://github.com/mdn/yari/pull/4437)
 - [https://github.com/mdn/content/pull/7725](https://github.com/mdn/content/pull/7725)
 - [https://github.com/mdn/translated-content/pulls?q=is%3Apr+author%3Ashapkarin+is%3Aclosed](https://github.com/mdn/translated-content/pulls?q=is%3Apr+author%3Ashapkarin+is%3Aclosed)
 
