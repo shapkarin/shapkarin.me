@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import axios from 'axios';
 import { useQuery } from 'react-query';
 import lunr from 'lunr';
 import React from 'react';
@@ -9,6 +10,7 @@ import styles from './Search.module.less';
 
 const Search = () => {
   const [query, setQuery] = useState('');
+  const [index, setIndex] = useState(null);
 
   const { data: indexJson, isLoading, isError } = useQuery(
     'search-index',
@@ -17,17 +19,27 @@ const Search = () => {
         const response = await fetchSearchIndex();
         return response.data;
       } catch (error) {
-        console.log(`No search index file`, error);
+        // If endpoint doesn't exist (404) or any other error, return null
+        console.log(`No search index`);
         return null;
       }
     },
     {
+      enabled: query.length > 1,
       keepPreviousData: process.env.NODE_ENV === 'production' ? true : false, //fasle,
     }
   );
 
-  // lunr index is rebuilt every render
-  const index = indexJson ? lunr.Index.load(indexJson) : null;
+  useEffect(() => {
+    if(indexJson){
+      setIndex(
+        lunr.Index.load(
+          indexJson
+        )
+      )
+    }
+  }, [indexJson])
+
 
   // search results for the current query/index
   const results = (index && query.length >= 2) ? index.search(query) : [];
