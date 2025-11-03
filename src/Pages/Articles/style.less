@@ -67,6 +67,16 @@ html {
       padding: 10px 20px;
     }
   }
+
+  & a:not(.Article__Item a) {
+    &:hover {
+      color: @color-link-blue !important; 
+    }
+    // not sure that I need that on this website
+    // &:not(.Article__List a):not(.Article__GoBack):visited {
+    //   color: #800080 !important;
+    // }
+  }
 }
 
 .Article__List {
@@ -97,7 +107,7 @@ html {
   transition: all 0.3s ease-out;
 
   &:hover {
-    border-color: darken(@color-gray, 12%);
+    border-color: darken(@color-gray, 27%);
     background-color: @color-white;
   }
 
