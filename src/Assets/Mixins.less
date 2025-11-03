@@ -1,10 +1,10 @@
-.barberpole-animation() {
+.barberpole-animation(@scale: 1, @tr: 0.2) {
   background-image: repeating-linear-gradient(
     -45deg,
     transparent,
-    transparent 4px,
-    rgba(0,0,0, 0.2) 4px,
-    rgba(0,0,0,0) 8px
+    transparent 4px * @scale,
+    rgba(0,0,0, @tr) 4px * @scale,
+    rgba(0,0,0,0) 8px * @scale
   );
   background-size: 200% 200%;
   animation: barberpole 10s linear infinite;

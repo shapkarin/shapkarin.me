@@ -48,7 +48,7 @@ Porto is built on a modern, modular open-source stack:
 - **Wagmi Integration:** Deep integration with [`wagmi`](https://wagmi.sh) for plug-and-play connectivity. Porto provides a direct Wagmi connector (`porto()`), exposing all Wagmi hooks for onboarding, account, and permissions management.
 - **Viem:** Uses [`viem`](https://viem.sh) underneath for Ethereum RPC, transaction, and serialization. Ensures low-level performance and compatibility with 100+ EVM chains.
 - **Headless & UI Agnostic:** Works with React, Vanilla JS, and headless flows. Use React hooks or direct actions for any frontend framework.
-- **Account Abstraction:** Implements a reconsumed EIP-7702-based programmable account system. Fully compatible with passkeys, OAuth (Privy), or custom key management.
+- **Account Abstraction:** Implements a reconsumed [EIP-7702](https://eips.ethereum.org/EIPS/eip-7702)-based programmable account system. Fully compatible with passkeys, OAuth (Privy), or custom key management.
 - **Authentication:** Passkeys (WebAuthn) as first-class auth. Now with optional email recovery and OAuth support (Privy, Turnkey).
 - **Backend:** Ships with a production-grade relay and execution backend ([Ithaca Relay, Rust](https://github.com/ithacaxyz/relay)).
 
