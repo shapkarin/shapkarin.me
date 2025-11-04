@@ -1,0 +1,1 @@
+TODO: add constats.js or config.js one for all scripts

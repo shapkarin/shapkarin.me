@@ -8,6 +8,7 @@
     "gray-matter": "^4.0.3",
     "is-mobile": "^5.0.0",
     "lodash.random": "^3.2.0",
+    "lunr": "^2.3.9",
     "react": "^18.3.1",
     "react-content-loader": "^7.1.1",
     "react-copy-to-clipboard": "^5.1.0",
@@ -35,12 +36,12 @@
     "build:diagrams": "node src/Generate-Backend/mermaid-render/mermaid-render.js",
     "build:spa": "craco build",
     "build:html-gallery": "node src/Generate-Backend/deploy-html-gallery.js",
-    "build": "npm run build:api && npm run build:diagrams && npm run generate:articles && NODE_ENV=production BUILD_PATH='./dist' npm run build:spa",
-    "build:local": "npm run build:api && npm run build:diagrams && npm run generate:articles && npm run build:html-gallery",
-    "crawl": "react-snap",
+    "build:articles": "node src/Generate-Backend/generate-articles-list.js",
+    "build:sitemap-manually": "sitemap-generator https://shapkarin.me -f public/sitemap.xml",
+    "build:search": "node src/Generate-Backend/search-indexer.js",
+    "build": "npm run build:api && npm run build:diagrams && npm run build:articles && npm run build:search && NODE_ENV=production BUILD_PATH='./dist' npm run build:spa",
+    "build:local": "npm run build:api && npm run build:diagrams && npm run build:articles && npm run build:html-gallery && npm run build:search",
     "test": "craco test",
-    "generate:articles": "node src/Generate-Backend/generate-articles-list.js",
-    "generate:sitemap-manually": "sitemap-generator https://shapkarin.me -f public/sitemap.xml",
     "fix-react-snap": "node src/Generate-Backend/fix-react-snap-canvas.js",
     "lint": "eslint src/**/*.js"
   },
@@ -82,13 +83,9 @@
     "craco-less": "^3.0.1",
     "esm": "^3.2.25",
     "react-helmet-async": "^2.0.5",
-    "react-snap": "^1.23.0",
     "sitemap-generator-cli": "^7.5.0",
-    "sqlite3": "^5.1.7"
-  },
-  "reactSnap": {
-    "source": "dist",
-    "navigationTimeout": 900000,
-    "waitFor": 1000
+    "sqlite3": "^5.1.7",
+    "marked": "^16.4.1",
+    "glob": "^11.0.3"
   }
 }
