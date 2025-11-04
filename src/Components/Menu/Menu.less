@@ -20,7 +20,7 @@
     cursor: pointer;
     text-decoration: none;
     line-height: 1.5em;
-    color: @color-black;//white;
+    color: @color-black;
     margin-right: 10px;
     white-space: nowrap;
 
@@ -34,15 +34,17 @@
 
     &--active {
       text-decoration: none;
+
       &::after {
         margin-left: 5px;
         content: "✓";
-        border-radius: 50%;
       }
     }
+
     &--unselect {
       user-select: none;
     }
+    
     &--bg {
       margin-left: auto;
       margin-right: 0;
