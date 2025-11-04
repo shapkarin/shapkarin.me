@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import axios from 'axios';
 import { useQuery } from 'react-query';
 import lunr from 'lunr';
 import React from 'react';
@@ -14,6 +13,7 @@ const Search = () => {
 
   const { data: indexJson, isLoading, isError } = useQuery(
     'search-index',
+    // todoL move that all to @/API
     async () => {
       try {
         const response = await fetchSearchIndex();
