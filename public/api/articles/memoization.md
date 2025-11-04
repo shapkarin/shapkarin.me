@@ -19,7 +19,9 @@ order: 4
 - [Advanced Scenarios](#advanced-scenarios)
 - [Conclusion](#conclusion)
 
-## Notes: 
+## Notes:
+- UPDs: [react.dev "use-memo"](https://react.dev/reference/react-compiler/directives/use-memo)
+- UPDs: [react.dev "preserve-manual-memoization"](https://react.dev/reference/eslint-plugin-react-hooks/lints/preserve-manual-memoization)
 - Check [state Optimization Guide Article](/articles/state-optimization-guide/).
 - It can use a lot of resources. It's not needed if input values change often.
 - Check article about [new babel-plugin-react-compiler improvements](/articles/drop-react-manual-memoization/).
