@@ -11,9 +11,9 @@ order: 8
 - [Start Simple Before Getting Fancy](#start-simple-before-getting-fancy)
 - [Use SOLID as a Helpful Map, Not a Strict Rulebook](#use-solid-as-a-helpful-map-not-a-strict-rulebook)
 - [Keep Things Modular](#keep-things-modular)
-- [Know a Few Patterns, But Don't Force Them](#know-a-few-patterns-but-dont-force-them)
+- [Know a Few Patterns, But Don't Force Them](#know-a-few-patterns-but-don-t-force-them)
 - [Make It Easy to Change, Not Just Fast](#make-it-easy-to-change-not-just-fast)
-- [Balance "You Aren't Gonna Need It" and Future Planning](#balance-you-arent-gonna-need-it-and-future-planning)
+- [Balance "You Aren't Gonna Need It" and Future Planning](#balance-you-aren-t-gonna-need-it-and-future-planning)
 - [Applying These Principles in JavaScript](#applying-these-principles-in-javascript)
 - [Real-World Examples: Design Principles in React](#real-world-examples-design-principles-in-react)
 
