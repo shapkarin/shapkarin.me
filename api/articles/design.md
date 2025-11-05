@@ -16,8 +16,6 @@ order: 8
 - [Balance "You Aren't Gonna Need It" and Future Planning](#balance-you-arent-gonna-need-it-and-future-planning)
 - [Applying These Principles in JavaScript](#applying-these-principles-in-javascript)
 - [Real-World Examples: Design Principles in React](#real-world-examples-design-principles-in-react)
-- [Testing and Tooling Are Part of Design](#testing-and-tooling-are-part-of-design)
-- [Document the Why](#document-the-why)
 
 Software design might sound like a lofty concept, but at its heart, it's about making your code easier to work with over the long haul. Whether you're building a tiny side project or architecting a sprawling enterprise system, good design choices help you avoid headaches later on. After more than a decade of writing and maintaining software, I've learned that it's not about memorizing fancy patterns—it's about understanding a handful of guiding principles and being willing to adapt as you go.
 
@@ -1424,7 +1422,7 @@ Feature-Sliced Design is a methodology for organizing code in frontend applicati
 
 **Example FSD Structure:**
 
-```
+```text
 src/
   app/
     providers/       # Global providers (Store, Router, etc.)
@@ -1594,7 +1592,7 @@ Atomic Design is a methodology for creating design systems developed by Brad Fro
 
 **Example Atomic Design Structure:**
 
-```
+```text
 src/
   components/
     atoms/
@@ -1627,7 +1625,7 @@ Domain-Driven Design focuses on modeling software based on the business domain. 
 
 **Example DDD Structure:**
 
-```
+```text
 src/
   domains/
     users/
@@ -1660,7 +1658,7 @@ This approach organizes code by technical function rather than business domain. 
 
 **Example Module Pattern Structure:**
 
-```
+```text
 src/
   components/     # All React components
     common/
@@ -1679,7 +1677,7 @@ Vertical slices architecture organizes code by user-facing features, cutting acr
 
 **Example Vertical Slices Structure:**
 
-```
+```text
 src/
   features/
     authentication/
