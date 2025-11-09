@@ -7,6 +7,7 @@ import ScrollToTop from '@/Components/ScrollToTop';
 
 const commonProps = { lines: 100, height: 842 };
 
+// TODO: move to the or Pages.js (or Structure.js)
 const preloaderConfig = {
   '/': { ...commonProps },
   '/articles/': { ...commonProps },
@@ -22,7 +23,8 @@ const PageLayout = ({ children }) => {
   const { pathname } = useLocation();
   
   const preloaderProps = useMemo(() => {
-    return preloaderConfig[pathname] || defaultProps;
+    return preloaderConfig[pathname] || 
+           (pathname.startsWith('/articles/') ? preloaderConfig['/articles/'] : defaultProps);
   }, [pathname]);
 
   return (
