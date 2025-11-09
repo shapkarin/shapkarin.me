@@ -1,11 +1,12 @@
 // TODO: refactor
 import { useQuery } from 'react-query';
 import ReactTooltip from 'react-tooltip';
-
 import {  GoStar, GoClock, GoRepoForked, GoBrowser } from 'react-icons/go';
 import { LuMessageCircle } from 'react-icons/lu';
+
 import SEO from '@/Components/SEO';
 import Button from '@/Components/Button';
+import { plural } from '@/utils';
 
 import { fetchLikes } from '@/API';
 
@@ -45,7 +46,7 @@ export default function Liked() {
               <div className="centered-label">
                 <GoClock data-tip="Last update" size="19px" />
                 {' '}
-                {(new Date(updated_at)).toLocaleDateString('ru-RU')}
+                {(new Date(updated_at)).toLocaleDateString('de-DE')}
               </div>
               { stargazers_count > 0 && (
               <div className="centered-label">
@@ -59,10 +60,7 @@ export default function Liked() {
               { open_issues_count > 0 && (
               <div className="centered-label">
                 <LuMessageCircle size="20px" style={{ strokeWidth: 1.5 }} />
-                {' '}
-                Open issues:
-                {' '}
-                <a className="IssuesCount" href={`${html_url}/issues`} target="_blank" rel="noreferrer">{open_issues_count}</a>
+                <a className="IssuesCount" href={`${html_url}/issues`} target="_blank" rel="noreferrer">{plural({ count: open_issues_count, word: 'issue' })}</a>
               </div>
               )}
               {homepage && (

@@ -22,6 +22,10 @@ const defaultProps = {};
 const PageLayout = ({ children }) => {
   const { pathname } = useLocation();
   
+  /*
+    useMemo is not super necessary bcs we don't have preloader for loaded pages
+    but it can improve props lookup a bit
+  */
   const preloaderProps = useMemo(() => {
     return preloaderConfig[pathname] || 
            (pathname.startsWith('/articles/') ? preloaderConfig['/articles/'] : defaultProps);
