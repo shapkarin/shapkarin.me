@@ -16,7 +16,7 @@ const EMAIL = 'yu.shapkarin@gmail.com';
 const isMobileDevice = isMobile();
 
 function About() {
-  const { data: { data: { title, intro, links: { linkedin, github } } } } = useQuery('About', fetchAbout);
+  const { data: { data: { greeting, links: { linkedin, github } } } } = useQuery('About', fetchAbout);
   
   const [copied, setCopied] = useState(false);
 
@@ -25,8 +25,7 @@ function About() {
       <div className={clsx('About', {
           'About_dark': false
         })}>
-        <Link to="/" className='About_greeting'>{title}</Link>
-        {' '}{intro}
+        <Link to="/" className='About_greeting'>{greeting}</Link>
         {isMobileDevice && <br />}
         <Link href={linkedin.link} className={clsx('Social_Link', {
           'Social_Link__mobile': isMobileDevice

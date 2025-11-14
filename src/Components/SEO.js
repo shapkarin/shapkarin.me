@@ -14,7 +14,10 @@ const SEO = ({
   const HOST = "https://shapkarin.me";
   const ARTICLES_LIST_CANONICAL_URL = HOST;
   const canonicalUrl = `${HOST}${pathname}`;
+  const ROOT_PATH = '/';
   const ARTICLES_URL_PATH = "/articles";
+
+  console.log(pathname, pathname === ROOT_PATH)
   // // eslint-disable-next-line
   // const isMetaRedirect = useCallback(
   //   () =>
@@ -31,7 +34,7 @@ const SEO = ({
       <meta name="description" content={description} />
       <meta name="keywords" content={keywords} />
 
-      {pathname === ARTICLES_URL_PATH ? (
+      {pathname === ROOT_PATH ? (
         <link rel="canonical" href={ARTICLES_LIST_CANONICAL_URL} />
       ) : (
         <link rel="canonical" href={canonicalUrl} />
