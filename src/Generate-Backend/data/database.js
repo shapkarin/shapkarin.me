@@ -115,7 +115,7 @@ export const creative = {
     'Archive ≈2012': [
       {
         title: 'Dots',
-        href: '/gallery/older/dots.html',
+        href: '/gallery/older/dots',
       },
       {
         title: 'Walkers',
@@ -123,7 +123,7 @@ export const creative = {
       },
       {
         title: 'Painter Walk',
-        href: '/gallery/older/random_walker.html',
+        href: '/gallery/older/random_walker',
       },
     ],
 
