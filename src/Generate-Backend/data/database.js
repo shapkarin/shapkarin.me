@@ -115,34 +115,34 @@ export const creative = {
     'Archive ≈2012': [
       {
         title: 'Dots',
-        href: '/gallery/older/dots',
+        href: '/gallery/older/dots/',
       },
       {
         title: 'Walkers',
-        href: '/gallery/older',
+        href: '/gallery/older/',
       },
       {
         title: 'Painter Walk',
-        href: '/gallery/older/random_walker',
+        href: '/gallery/older/random_walker/',
       },
     ],
 
     'Archive ≈2016': [
       {
         title: '☆ Draw Walk ☆',
-        href: '/gallery/p5js/draw_walk',
+        href: '/gallery/p5js/draw_walk/',
       },
       {
         title: '☆ Cursor magic ☆',
-        href: '/gallery/p5js/magic',
+        href: '/gallery/p5js/magic/',
       },
       {
         title: 'Flies',
-        href: '/gallery/p5js/flies',
+        href: '/gallery/p5js/flies/',
       },
       {
         title: 'Flies Mouse Acceleration',
-        href: '/gallery/p5js/flies-m-acc',
+        href: '/gallery/p5js/flies-m-acc/',
       },
     ],
 
