@@ -14,7 +14,7 @@ function ArticlesList() {
     <div className="Page Page__Article Page__Inner">
     {/*'Page_Articles">'*/}
       <SEO 
-        title="Software Development Articles & Tutorials | Yuri Shapkarin"
+        title="Yuri Shapkarin Homepage | Software Developer"
         description="Read technical articles about JavaScript development, React ecosystem, Redux patterns, and software engineering. In-depth tutorials and guides about my open-source packages."
       />
       <div className="Page__Inner">
