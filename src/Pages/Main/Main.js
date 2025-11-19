@@ -1,5 +1,7 @@
 
 import { useQuery } from 'react-query';
+
+import SEO from '@/Components/SEO';
 import { fetchMainPage } from '@/API';
 
 export default function Main() {
@@ -7,6 +9,10 @@ export default function Main() {
 
   return (
     <div className='Page Page__Main'>
+      <SEO
+        title="Yuri Shapkarin | Software Engineer"
+        description="Yuri Shapkarin's personal website. Experienced Software Engineer."
+      />
       {mainPageContent}
     </div>
   )
