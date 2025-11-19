@@ -9,7 +9,7 @@ const commonProps = { lines: 100, height: 842 };
 
 // TODO: move to the or Pages.js (or Structure.js)
 const preloaderConfig = {
-  '/': { ...commonProps },
+  '/': { lines: 8, height: 204 },
   '/articles/': { ...commonProps },
   '/github/repositories/': { ...commonProps },
   '/github/likes/': { ...commonProps },
