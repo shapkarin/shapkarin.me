@@ -22,6 +22,7 @@ export const fetchAbout = () => axios.get(URLS.about);
 export const fetchPackages = () => axios.get(URLS.packages);
 export const fetchPackageInfo = (id) => axios.get(URLS.packages.info(id));
 export const fetchArticles = () => axios.get(URLS.articles);
+export const fetchMainPage = () => axios.get(URLS.main)
 
 // GitHub API
 export const fetchLikes = () => githubRequest.get(URLS.likes);

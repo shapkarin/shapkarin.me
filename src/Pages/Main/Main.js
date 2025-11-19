@@ -1,11 +1,13 @@
 
 import { useQuery } from 'react-query';
-import { fetchAbout } from '@/API';
+import { fetchMainPage } from '@/API';
 
 export default function Main() {
-  const { data: { data: { intro } } } = useQuery('Main', fetchAbout);
+  const { data: { data: { data: mainPageContent } } } = useQuery('Main', fetchMainPage);
 
   return (
-    <div className='Page Page__Main'>{intro}</div>
+    <div className='Page Page__Main'>
+      {mainPageContent}
+    </div>
   )
 }
