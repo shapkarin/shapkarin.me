@@ -20,13 +20,16 @@ export const about = {
   },
 }
 
-export const main = `Welcome to my homepage.
-"Articles" is a page with a list of articles,
-"Repositories" page is a list of my GitHub repos with metadata for each,
-"Likes" is a page with GitHub repositories that I've starred,
-"Packages" is a list of personal npm packages and in progress OSS projects,
-"Creative" contains a part of my creative coding
-`
+export const main = {
+  title: 'Welcome to my homepage.',
+  list: [
+    "Articles is a page with a list of software development articles.",
+    "Repositories page is a list of my GitHub repos with metadata for each.",
+    "Likes is a page with GitHub repositories that I've starred.",
+    "Packages is a list of personal npm packages and in progress OSS projects.",
+    "Creative contains a part of my creative coding.",
+  ]
+}
 
 export const packages = {
   author: 'shapkarin',
