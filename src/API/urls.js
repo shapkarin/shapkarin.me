@@ -22,6 +22,7 @@ const rawPrefix = process.env.NODE_ENV === 'production' ? 'https://raw.githubuse
 
 const backend = {
   about: '/api/about.json',
+  main: '/api/mainpage.json',
   packages: Object.assign(
     '/api/packages/packages.json', {
     info: (id) => `/api/packages/${id}.json`,

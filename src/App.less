@@ -52,11 +52,17 @@ body {
 .Page__GithubItem,
 .PagePackages__Item_more,
 .Page__Article,
-.Page__Creative
+.Page__Creative,
+.Page__Main
  {
   border-radius: @card-border-radius;
   background-color: @color-gray; //rgba(0, 0, 0, 0.28);
   border: 1px solid @color-black;
+}
+
+.Page__Main {
+  padding: 20px;
+  white-space: pre-line; // use \n as new line
 }
 
 .PagePackages__Item,
@@ -71,8 +77,6 @@ body {
   justify-content: space-between;
   gap: 20px;
 }
-
-
 
 .Page__GithubItem {
   padding: 0px 7px;

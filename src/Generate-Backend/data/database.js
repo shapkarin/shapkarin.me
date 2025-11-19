@@ -2,7 +2,7 @@
 import { createHash } from 'crypto';
 
 export const about = {
-  title: `Hello everyone!`,
+  greeting: `Hello everyone!`,
   intro: clean(`
     My name is Yuri Shapkarin. 
     I am a software engineer with over a decade of experience and a solid foundation in Computer Science.
@@ -19,6 +19,14 @@ export const about = {
     },
   },
 }
+
+export const main = `Welcome to my homepage.
+"Articles" is a page with a list of articles,
+"Repositories" page is a list of my GitHub repos with metadata for each,
+"Likes" is a page with GitHub repositories that I've starred,
+"Packages" is a list of personal npm packages and in progress OSS projects,
+"Creative" contains a part of my creative coding
+`
 
 export const packages = {
   author: 'shapkarin',
