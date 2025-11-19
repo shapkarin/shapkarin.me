@@ -12,9 +12,7 @@ const SEO = ({
 }) => {
   const { pathname } = useLocation();
   const HOST = "https://shapkarin.me";
-  const ARTICLES_LIST_CANONICAL_URL = HOST;
   const canonicalUrl = `${HOST}${pathname}`;
-  const ROOT_PATH = '/';
 
   // // eslint-disable-next-line
   // const isMetaRedirect = useCallback(
