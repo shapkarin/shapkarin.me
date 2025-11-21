@@ -4,7 +4,7 @@ import clsx from 'clsx';
 import isMobile from 'is-mobile';
 import {CopyToClipboard} from 'react-copy-to-clipboard';
 
-import { fetchAbout } from '@/API';
+import { fetchAbout } from '@/DAL';
 import Preloader from '@/Components/Preloader';
 import Link from '@/Components/Link';
 

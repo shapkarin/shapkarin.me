@@ -3,7 +3,7 @@ import { useQuery } from "react-query";
 import { GoChevronRight, GoChevronDown } from "react-icons/go";
 import { isMobile } from "is-mobile";
 
-import { fetchPackageInfo } from "@/API";
+import { fetchPackageInfo } from "@/DAL";
 import Collapse from "@/Components/Collapse";
 import Preloader from "@/Components/Preloader";
 import Formatted from "@/Components/Formatted";

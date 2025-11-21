@@ -6,7 +6,7 @@ import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import remarkGfm from 'remark-gfm'
 
-import { fetchArticle, fetchAeoScript } from "@/API";
+import { fetchArticle, fetchAeoScript } from "@/DAL";
 import { useQuery } from "react-query";
 import SEO from '@/Components/SEO';
 import { SCROLL_OFFSET } from '@/constants';

@@ -7,7 +7,7 @@ import { LuMessageCircle } from 'react-icons/lu';
 import SEO from '@/Components/SEO';
 import Button from '@/Components/Button';
 
-import { fetchLikes } from '@/API';
+import { fetchLikes } from '@/DAL';
 
 export default function Liked() {
   const { data: { data: list } } = useQuery('Liked', fetchLikes);

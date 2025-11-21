@@ -2,7 +2,7 @@
 import { useQuery } from 'react-query';
 
 import SEO from '@/Components/SEO';
-import { fetchMainPage } from '@/API';
+import { fetchMainPage } from '@/DAL';
 
 export default function Main() {
   const { data: { data: { data: { title, list } } } } = useQuery('Main', fetchMainPage);

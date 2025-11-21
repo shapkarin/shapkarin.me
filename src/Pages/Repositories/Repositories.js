@@ -5,7 +5,7 @@ import { GoClock, GoRepoForked, GoBrowser } from 'react-icons/go';
 import { LuMessageCircle } from 'react-icons/lu';
 import SEO from '@/Components/SEO';
 import Button from '@/Components/Button';
-import { fetchRepositories } from "@/API";
+import { fetchRepositories } from "@/DAL";
 import { useQuery } from "react-query";
 
 import './style.less';

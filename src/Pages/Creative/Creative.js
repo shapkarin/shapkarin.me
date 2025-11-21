@@ -3,7 +3,7 @@ import SEO from '@/Components/SEO';
 
 import Preloader from '@/Components/Preloader';
 import Formatted from '@/Components/Formatted';
-import { fetchCreativeIntro, fetchCreative } from '@/API';
+import { fetchCreativeIntro, fetchCreative } from '@/DAL';
 
 import './style.less';
 
