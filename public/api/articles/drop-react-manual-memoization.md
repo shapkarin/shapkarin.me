@@ -115,7 +115,7 @@ flowchart TD
         A[InferMutationAliasingEffects] --> B[InferMutationAliasingRanges] --> C[InferReactiveScopeVariables]
     end
     subgraph Output
-        R[Reactive Scope &#x25B8; memoization block]
+        R[Reactive Scope ▸ memoization block]
     end
     C --> R
 ```
