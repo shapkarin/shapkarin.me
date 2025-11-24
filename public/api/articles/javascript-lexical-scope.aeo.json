@@ -1,13 +1,30 @@
 [
   {
     "@context": "https://schema.org",
-    "@type": "CreativeWork",
+    "@type": "TechArticle",
     "name": "JavaScript Lexical Scope Chain and Closure Mechanism Diagrams",
+    "headline": "Understanding JavaScript Lexical Scope and Closures Through Visual Diagrams",
+    "description": "Comprehensive diagrams illustrating JavaScript's lexical scope hierarchy from global to function to block scope, variable lookup chain process, and closure creation sequence showing how inner functions capture and maintain access to outer scope variables.",
     "image": [
       "https://shapkarin.me/api/articles/javascript-lexical-scope-0.svg",
       "https://shapkarin.me/api/articles/javascript-lexical-scope-1.svg"
     ],
-    "description": "Comprehensive diagrams illustrating JavaScript's lexical scope hierarchy from global to function to block scope, variable lookup chain process, and closure creation sequence showing how inner functions capture and maintain access to outer scope variables."
+    "programmingLanguage": {
+      "@type": "ComputerLanguage",
+      "name": "JavaScript",
+      "url": "https://en.wikipedia.org/wiki/JavaScript"
+    },
+    "about": [
+      {
+        "@type": "Thing",
+        "name": "JavaScript Lexical Scope"
+      }
+    ],
+    "learningResourceType": "tutorial",
+    "educationalUse": ["learning", "reference"],
+    "keywords": ["JavaScript", "lexical scope", "closures", "scope chain", "variable lookup", "ES6"],
+    "articleSection": "JavaScript Fundamentals",
+    "lastUpdated": "2025-11-25"
   },
   {
     "@context": "https://schema.org",
