@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { QueryClient } from '@tanstack/react-query';
 
 import URLS from './urls';
 
@@ -13,6 +14,16 @@ const markdownRequest = axios.create({
     'Accept': 'text/markdown, text/plain, */*',
     'Content-Type': 'text/plain; charset=UTF-8',
   },
+});
+
+export const queryClient = new QueryClient({
+  defaultOptions: {
+     queries: {
+       suspense: true,
+       staleTime: 60 * 1000 * 17, // 15 minutes chached data lifetime]
+       retry: 3,
+     },
+   },
 });
 
 // From generated JSON files

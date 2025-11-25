@@ -31,7 +31,7 @@ jobs:
           npm install -g npm@8.3.0
           echo "Updated npm version: $(npm --version)"
     
-      # react-snap has build-in "npm i" and "npm run build"
+      # react-snap has build-in "npm сi" and "npm run build"
       - name: Server-side render by crawler
         uses: brycedorn/react-snap-action@v1.0.2
 

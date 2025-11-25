@@ -1,5 +1,5 @@
 // TODO: refactor
-import { useQuery } from 'react-query';
+import { useQuery } from '@tanstack/react-query';
 import ReactTooltip from 'react-tooltip';
 
 import {  GoStar, GoClock, GoRepoForked, GoBrowser } from 'react-icons/go';
@@ -10,7 +10,7 @@ import Button from '@/Components/Button';
 import { fetchLikes } from '@/DAL';
 
 export default function Liked() {
-  const { data: { data: list } } = useQuery('Liked', fetchLikes);
+  const { data: { data: list } } = useQuery({ queryKey: 'Liked', queryFn: fetchLikes });
 
   return (
     <>

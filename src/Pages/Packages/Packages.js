@@ -1,4 +1,4 @@
-import { useQuery } from 'react-query';
+import { useQuery } from '@tanstack/react-query';
 import { FiExternalLink } from 'react-icons/fi';
 import SEO from '@/Components/SEO';
 
@@ -9,7 +9,10 @@ import Additional from './Additional';
 import './style.less';
 
 export default function Packages() {
-  const { data: { data: { packages } } } = useQuery('Packages', fetchPackages); 
+  const { data: { data: { packages } } } = useQuery({
+    queryKey: 'Packages',
+    queryFn: fetchPackages
+  }); 
 
   return (
     <>

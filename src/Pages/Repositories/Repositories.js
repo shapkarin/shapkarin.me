@@ -6,15 +6,17 @@ import { LuMessageCircle } from 'react-icons/lu';
 import SEO from '@/Components/SEO';
 import Button from '@/Components/Button';
 import { fetchRepositories } from "@/DAL";
-import { useQuery } from "react-query";
+import { useQuery } from "@tanstack/react-query";
 
 import './style.less';
 
 export default function Repositories() {
   // const [page, setPage] = useState(1)
-  const { data: { data: list } } = useQuery(['Repositories', 1], () => fetchRepositories(1), 
+  const { data: { data: list } } = useQuery({
+    queryKey: ['Repositories', 1],
+    queryFn: () => fetchRepositories(1), 
     // { keepPreviousData : true }
-  );
+  });
 
   return (
     <>

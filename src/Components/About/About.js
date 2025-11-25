@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useQuery } from 'react-query';
+import { useQuery } from '@tanstack/react-query';
 import clsx from 'clsx';
 import isMobile from 'is-mobile';
 import {CopyToClipboard} from 'react-copy-to-clipboard';
@@ -16,7 +16,7 @@ const EMAIL = 'yu.shapkarin@gmail.com';
 const isMobileDevice = isMobile();
 
 function About() {
-  const { data: { data: { greeting, intro, links: { linkedin, github } } } } = useQuery('About', fetchAbout);
+  const { data: { data: { greeting, intro, links: { linkedin, github } } } } = useQuery({ queryKey: 'About', queryFn: fetchAbout });
   
   const [copied, setCopied] = useState(false);
 

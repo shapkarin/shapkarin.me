@@ -1,14 +1,14 @@
 import { Link } from 'react-router-dom';
 
 import { fetchArticles } from "@/DAL";
-import { useQuery } from "react-query";
+import { useQuery } from "@tanstack/react-query";
 import SEO from '@/Components/SEO';
 
 import './style.less';
 
 function ArticlesList() {
 
-  const { data: { data: articles } } = useQuery('ArticlesList', fetchArticles);
+  const { data: { data: articles } } = useQuery({ queryKey: 'ArticlesList', queryFn: fetchArticles });
 
   return (
     <div className="Page Page__Article Page__Inner">

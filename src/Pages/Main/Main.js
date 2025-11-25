@@ -1,11 +1,14 @@
 
-import { useQuery } from 'react-query';
+import { useQuery } from '@tanstack/react-query';
 
 import SEO from '@/Components/SEO';
 import { fetchMainPage } from '@/DAL';
 
 export default function Main() {
-  const { data: { data: { data: { title, list } } } } = useQuery('Main', fetchMainPage);
+  const { data: { data: { data: { title, list } } } } = useQuery({
+    queryKey: 'Main',
+    queryFn: fetchMainPage
+  });
 
   return (
     <div className='Page__Main'>

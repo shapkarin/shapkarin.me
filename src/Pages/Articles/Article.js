@@ -7,7 +7,7 @@ import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import remarkGfm from 'remark-gfm'
 
 import { fetchArticle, fetchAeoScript } from "@/DAL";
-import { useQuery } from "react-query";
+import { useQuery } from "@tanstack/react-query";
 import SEO from '@/Components/SEO';
 import { SCROLL_OFFSET } from '@/constants';
 // Markdown macros
@@ -33,19 +33,19 @@ const CodeBlock = ({ children, className, node, match, ...rest }) => {
 const Article = () => {
   const { slug: articleName } = useParams();
 
-  const { data: { data: content } } = useQuery(['Articles', articleName], () => fetchArticle(articleName), 
-    { 
-      enabled: Boolean(articleName),
-      keepPreviousData : process.env.NODE_ENV === 'production' ? true : false,
-    },
-  );
+  const { data: { data: content } } = useQuery({
+    queryKey: ['Articles', articleName], 
+    queryFn: () => fetchArticle(articleName), 
+    enabled: Boolean(articleName),
+    keepPreviousData : process.env.NODE_ENV === 'production' ? true : false,
+  });
 
   const { data: frontMatter, content: markdownContent } = matter(content);
 
   // Dynamically load AEO script based on article name
-  const { data: aeoScript } = useQuery(
-    ['AeoScript', articleName], 
-    async () => {
+  const { data: aeoScript } = useQuery({
+    queryKey: ['AeoScript', articleName], 
+    queryFn: async () => {
       try {
         const response = await fetchAeoScript(articleName);
         return response.data;
@@ -55,11 +55,9 @@ const Article = () => {
         return null;
       }
     },
-    {
-      enabled: Boolean(articleName),
-      keepPreviousData: process.env.NODE_ENV === 'production' ? true : false, //fasle,
-    }
-  );
+    enabled: Boolean(articleName),
+    keepPreviousData: process.env.NODE_ENV === 'production' ? true : false, //fasle,
+  });
 
   const articleRef = useRef(null);
 

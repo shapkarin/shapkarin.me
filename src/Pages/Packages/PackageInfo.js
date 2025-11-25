@@ -1,5 +1,5 @@
 import { useState, useMemo } from "react";
-import { useQuery } from "react-query";
+import { useQuery } from "@tanstack/react-query";
 import { GoChevronRight, GoChevronDown } from "react-icons/go";
 import { isMobile } from "is-mobile";
 
@@ -9,10 +9,10 @@ import Preloader from "@/Components/Preloader";
 import Formatted from "@/Components/Formatted";
 
 function PackageInfoContent({ id }) {
-  const { data: { data: { description, badges } = {} } = {} } = useQuery(
-    ["PackageIntro", id],
-    () => fetchPackageInfo(id)
-  );
+  const { data: { data: { description, badges } = {} } = {} } = useQuery({
+    queryKey: ["PackageIntro", id],
+    queryFn: () => fetchPackageInfo(id)
+  });
 
   return (
     <div className="Package__Info">
