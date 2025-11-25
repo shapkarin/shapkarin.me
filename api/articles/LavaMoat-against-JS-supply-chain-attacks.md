@@ -8,7 +8,7 @@ keywords: >-
   LavaMoat, JavaScript security, supply chain attacks, npm security, runtime
   protection, allow-scripts, lavamoat-node, SES, compartmentalization,
   dependency sandboxing
-order: 4
+order: 1
 ---
 
 # LavaMoat: Protecting JavaScript from Supply Chain Attacks

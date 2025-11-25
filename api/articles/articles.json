@@ -5,9 +5,9 @@
     "filename": "contributions-to-major-web-dev-repos.md"
   },
   {
-    "slug": "production-AI-in-2016-year",
-    "title": "Production AI In 2016 Year",
-    "filename": "production-AI-in-2016-year.md"
+    "slug": "LavaMoat-against-JS-supply-chain-attacks",
+    "title": "LavaMoat Against JS Supply Chain Attacks",
+    "filename": "LavaMoat-against-JS-supply-chain-attacks.md"
   },
   {
     "slug": "byzantine-fault-tolerance",
@@ -28,6 +28,11 @@
     "slug": "porto-passwordless-blockchain-access",
     "title": "Porto Passwordless Blockchain Access",
     "filename": "porto-passwordless-blockchain-access.md"
+  },
+  {
+    "slug": "production-AI-in-2016-year",
+    "title": "Production AI In 2016 Year",
+    "filename": "production-AI-in-2016-year.md"
   },
   {
     "slug": "state-optimization-guide",
@@ -53,11 +58,6 @@
     "slug": "javascript-lexical-scope",
     "title": "Javascript Lexical Scope",
     "filename": "javascript-lexical-scope.md"
-  },
-  {
-    "slug": "LavaMoat-against-JS-supply-chain-attacks",
-    "title": "LavaMoat Against JS Supply Chain Attacks",
-    "filename": "LavaMoat-against-JS-supply-chain-attacks.md"
   },
   {
     "slug": "memoization",
