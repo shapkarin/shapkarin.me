@@ -1,0 +1,12 @@
+name: asdasd
+
+on:
+  schedule:
+    - cron: '0 0 */5 * *'
+
+jobs:
+  call-deploy:
+    uses: ./.github/workflows/reusable.yml
+    with:
+      environment-name: github-pages
+      deployment-description: "Autodeploy by cron schedule. $(date +'%Y-%m-%d')"

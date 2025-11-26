@@ -1,10 +1,14 @@
 name: Build and publish
 on:
-  schedule:
-    - cron: '0 0 */5 * *'
-  push:
-    branches: [ "main" ]
-  workflow_dispatch:
+  workflow_call:
+    inputs:
+      environment-name:
+        required: true
+        type: string
+      deployment-description:
+        required: false
+        type: string
+        default: "Deploy from ${{ github.ref_name }}"
 
 jobs:
   deploy:
