@@ -1,4 +1,5 @@
-name: Build and publish
+name: Build and publish (reusable job)
+
 on:
   workflow_call:
     inputs:

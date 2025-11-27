@@ -1,4 +1,4 @@
-name: Deploy on Push to Main
+name: Deploy on changes in main
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
 
 jobs:
   call-deploy:
-    uses: ./.github/workflows/reusable.yml
+    uses: ./.github/workflows/job.yml
     with:
       environment-name: github-pages
       deployment-description: "Deploy on main changes. ${{ github.ref_name }}"

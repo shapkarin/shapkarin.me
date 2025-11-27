@@ -1,4 +1,4 @@
-name: asdasd
+name: Autodeploy
 
 on:
   schedule:
@@ -6,7 +6,7 @@ on:
 
 jobs:
   call-deploy:
-    uses: ./.github/workflows/reusable.yml
+    uses: ./.github/workflows/job.yml
     with:
       environment-name: github-pages
       deployment-description: "Autodeploy by cron schedule. $(date +'%Y-%m-%d')"
