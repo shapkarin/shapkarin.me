@@ -2,7 +2,7 @@ name: Autodeploy
 
 on:
   schedule:
-    - cron: '0 0 */5 * *'
+    - cron: '0 0 */15 * *'
 
 jobs:
   call-deploy:

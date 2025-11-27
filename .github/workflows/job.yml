@@ -50,7 +50,7 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
-          # TODO: if onSchedule print "autodeploy"
+          # TODO: if onSchedule print "autodeploy", use github.event_name == 'schedule'
           commit_message: ${{ github.event.head_commit.message }}
         
       - run: printf Deployed!
