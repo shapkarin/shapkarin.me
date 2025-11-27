@@ -1,0 +1,9 @@
+name: Deploy on changes in main
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  call-deploy:
+    uses: ./.github/workflows/job.yml
