@@ -1,18 +1,24 @@
-name: Build and publish
-on:
-  schedule:
-    - cron: '0 0 */5 * *'
-  push:
-    branches: [ "main" ]
-  workflow_dispatch:
+name: Reusable job
 
+on:
+  workflow_call:
+    # inputs:
+    #   environment-name:
+    #     required: false
+    #     type: string
+    #     default: github-pages # only this one in use rn
+
+# TODO: decompose to "build" and "deploy" steps
 jobs:
   deploy:
+    # do not deploy if [skip-ci] is in a commit message
     if: |
       !contains(github.event.head_commit.message, '[skip-ci]')
     runs-on: ubuntu-22.04
+
     permissions:
       contents: write
+      deployments: write
     
     steps:
       - name: Checkout 
@@ -39,11 +45,12 @@ jobs:
         run: |
           npm run build:html-gallery 
           npm run fix-react-snap
-        
+
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
-      
+        
       - run: printf Deployed!
+

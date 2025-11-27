@@ -1,0 +1,9 @@
+name: Autodeploy
+
+on:
+  schedule:
+    - cron: '0 0 */5 * *'
+
+jobs:
+  call-deploy:
+    uses: ./.github/workflows/job.yml
