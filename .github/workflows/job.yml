@@ -1,23 +1,24 @@
-name: Build and publish (reusable job)
+name: Reusable job
 
 on:
   workflow_call:
     inputs:
       environment-name:
-        required: true
-        type: string
-      deployment-description:
         required: false
         type: string
-        default: "Deploy from ${{ github.ref_name }}"
+        default: github-pages # only this one in use rn
 
+# TODO: decompose to "build" and "deploy" steps
 jobs:
   deploy:
+    # do not deploy if [skip-ci] is in a commit message
     if: |
       !contains(github.event.head_commit.message, '[skip-ci]')
     runs-on: ubuntu-22.04
+
     permissions:
       contents: write
+      deployments: write
     
     steps:
       - name: Checkout 
@@ -44,11 +45,33 @@ jobs:
         run: |
           npm run build:html-gallery 
           npm run fix-react-snap
-        
+
+      - name: Create Deployment Entry
+        id: deployment
+        uses: chrnorm/deployment-action@v2
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          environment: github-pages
+          environment-url: http://shapkarin.me
+
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
+        id: actions-gh-pages
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
-      
+          environment: ${{ inputs.environment-name }}
+
+      - name: Update Deployment Status
+        if: always()
+        uses: chrnorm/deployment-status@v2
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          environment: ${{ steps.deployment.outputs.environment }}
+          state: ${{ job.status == 'success' && 'success' || 'failure' }}
+          deployment-id: ${{ steps.deployment.outputs.deployment_id }}
+          environment-url: ${{ steps.deployment.outputs.deployment-url }}
+          # TODO: if inputs == onSchedule then write: autodeployed and current date
+          description: "Completed ${{ job.status == 'success' && 'successful' || 'failed' }} deploy to gh-pages"
+
       - run: printf Deployed!
