@@ -38,6 +38,7 @@ const backend = {
 
 // too much data in payload....
 const npm = {
+  allPackages: "https://api.npms.io/v2/search?q=author:shapkarin",
   info: (name) => `https://registry.npmjs.org/${name}`
 }
 
