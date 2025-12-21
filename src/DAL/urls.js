@@ -36,9 +36,15 @@ const backend = {
   aeoScript: (name) => `${rawPrefix}/api/articles/${name}.aeo.json`,
 }
 
+// too much data in payload....
+const npm = {
+  info: (name) => `https://registry.npmjs.org/${name}`
+}
+
 const URLS = {
   ...backend,
   ...github,
+  ...npm,
 }
 
 export default URLS;
