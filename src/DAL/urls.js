@@ -36,9 +36,9 @@ const backend = {
   aeoScript: (name) => `${rawPrefix}/api/articles/${name}.aeo.json`,
 }
 
-// too much data in payload....
 const npm = {
-  allPackages: "https://api.npms.io/v2/search?q=author:shapkarin",
+  allPackages: "https://api.npms.io/v2/search?q=author:shapkarin+not:deprecated+not:unstable+not:insecure",
+  // too much data in payload....
   info: (name) => `https://registry.npmjs.org/${name}`
 }
 
