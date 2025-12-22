@@ -1,10 +1,13 @@
 import React from 'react';
-import { hydrate } from 'react-dom';
+import { createRoot, hydrateRoot } from 'react-dom/client';
 import App from './App';
 // import reportWebVitals from './reportWebVitals';
 
 const rootElement = document.getElementById('root');
-hydrate(<App />, rootElement);
+
+process.env.NODE_ENV === 'production'
+  ? hydrateRoot(rootElement, <App />)
+  : createRoot(rootElement).render(<App />);
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
