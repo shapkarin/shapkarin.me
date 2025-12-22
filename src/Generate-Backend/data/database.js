@@ -47,24 +47,12 @@ export const packages = {
   get database() {
     return {
       'extend-routines': {
-        title: 'Extend Routines',
-        url: 'https://www.npmjs.com/package/extend-saga-routines',
-        description: `
-          Customizable action creator lib for any kind of actions.`,
         badges: [ 'npm/v', 'npm/dm', 'npm/l' ]
       },
       'saga-fetch': {
-        title: 'Saga Fetch',
-        url: 'https://www.npmjs.com/package/saga-fetch',
-        description: `
-          Redux-Saga worker, created to simplify a fetch worker implementation.`,
         badges: [ 'npm/v', 'npm/dm', 'npm/l' ]
       },
       'diff-browser-globals': {
-        title: 'Global diff (suspended)',
-        url: 'https://github.com/shapkarin/diff-browser-globals',
-        description: `
-          Compare your window and browser default scopes.`,
         badges: []
       },
       'mermaid-render': {
