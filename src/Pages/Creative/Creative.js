@@ -26,11 +26,11 @@ export default function Creative() {
 
 
 const CreativeProofLink = () =>
-  <a target="_blank" rel="noreferrer" href="https://github.com/shapkarin/sketches" style={{ marginBottom: '10px' }}>=> from 9 y.o. repository</a>;
+  <a target="_blank" rel="noreferrer" href="https://github.com/shapkarin/sketches" style={{ marginBottom: '10px' }}>{"=> from 9 y.o. repository"}</a>;
 
 function Intro() {
   const { data: { data: { title, description } } } = useQuery({
-    queryKey: 'CreativeIntro',
+    queryKey: ['CreativeIntro'],
     queryFn: fetchCreativeIntro
   });
 
@@ -47,7 +47,7 @@ function Intro() {
 
 function Collection(){
   const { data: { data: collection } } = useQuery({
-    queryKey: 'Creative',
+    queryKey: ['Creative'],
     queryFn: fetchCreative,
     retry: true,
   });

@@ -8,7 +8,7 @@ import './style.less';
 
 function ArticlesList() {
 
-  const { data: { data: articles } } = useQuery({ queryKey: 'ArticlesList', queryFn: fetchArticles });
+  const { data: { data: articles } } = useQuery({ queryKey: ['ArticlesList'], queryFn: fetchArticles });
 
   return (
     <div className="Page Page__Article Page__Inner">

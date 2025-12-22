@@ -10,7 +10,7 @@ import './style.less';
 
 export default function Packages() {
   const { data: { data: { packages } } } = useQuery({
-    queryKey: 'Packages',
+    queryKey: ['Packages'],
     queryFn: fetchPackages
   }); 
 

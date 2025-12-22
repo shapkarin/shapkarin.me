@@ -6,7 +6,7 @@ import { fetchMainPage } from '@/DAL';
 
 export default function Main() {
   const { data: { data: { data: { title, list } } } } = useQuery({
-    queryKey: 'Main',
+    queryKey: ['Main'],
     queryFn: fetchMainPage
   });
 

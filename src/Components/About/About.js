@@ -16,7 +16,7 @@ const EMAIL = 'yu.shapkarin@gmail.com';
 const isMobileDevice = isMobile();
 
 function About() {
-  const { data: { data: { greeting, intro, links: { linkedin, github } } } } = useQuery({ queryKey: 'About', queryFn: fetchAbout });
+  const { data: { data: { greeting, intro, links: { linkedin, github } } } } = useQuery({ queryKey: ['About'], queryFn: fetchAbout });
   
   const [copied, setCopied] = useState(false);
 

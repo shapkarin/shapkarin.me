@@ -10,7 +10,7 @@ import Button from '@/Components/Button';
 import { fetchLikes } from '@/DAL';
 
 export default function Liked() {
-  const { data: { data: list } } = useQuery({ queryKey: 'Liked', queryFn: fetchLikes });
+  const { data: { data: list } } = useQuery({ queryKey: ['Liked'], queryFn: fetchLikes });
 
   return (
     <>

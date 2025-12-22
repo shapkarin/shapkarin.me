@@ -13,8 +13,8 @@ import './style.less';
 export default function Repositories() {
   // const [page, setPage] = useState(1)
   const { data: { data: list } } = useQuery({
-    queryKey: ['Repositories', 1],
-    queryFn: () => fetchRepositories(1), 
+    queryKey: ['Repositories'],
+    queryFn: () => fetchRepositories(), 
     // { keepPreviousData : true }
   });
 
