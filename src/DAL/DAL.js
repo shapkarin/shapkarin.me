@@ -47,7 +47,7 @@ export const fetchArticle = (name) => markdownRequest.get(URLS.article(name));
 export const fetchAeoScript = (name) => axios.get(URLS.aeoScript(name));
 
 // npmjs.org API
-export const fetchNpmAllPackages = () => axios.get(URLS.npm.allPackages);
-export const fetchNpmPackageData = (name) => axios.get(URLS.npm.info(name));
+export const fetchNpmAllPackages = () => axios.get(URLS.allPackages);
+// export const fetchNpmPackageData = (name) => axios.get(URLS.npm.info(name));
 
 
