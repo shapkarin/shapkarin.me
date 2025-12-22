@@ -18,8 +18,8 @@ export default function Main() {
       />
       {title}
       <ul>
-        {list.map(item => (
-          <li>{item}</li>
+        {list.map((item, id) => (
+          <li key={`${id}-main`}>{item}</li>
         ))}
       </ul>
     </div>
