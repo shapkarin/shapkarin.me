@@ -1,18 +1,21 @@
+// import { useState } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import { FiExternalLink } from 'react-icons/fi';
 import SEO from '@/Components/SEO';
 
-import { fetchPackages } from '@/DAL';
+import { fetchNpmAllPackages } from '@/DAL';
 import PackageInfo from './PackageInfo';
-import Additional from './Additional';
+// import Additional from './Additional';
 
 import './style.less';
 
 export default function Packages() {
-  const { data: { data: { packages } } } = useQuery({
+  const { data: { data: { results: packages } } } = useQuery({
     queryKey: 'Packages',
-    queryFn: fetchPackages
-  }); 
+    queryFn: fetchNpmAllPackages
+  });
+
+  console.log({ packages })
 
   return (
     <>
@@ -23,20 +26,31 @@ export default function Packages() {
       <div className="PagePackages Page__Inner">
         <div>
           {packages.map(({
-            title,
-            url,
-            id,
+            package: {
+              name,
+              links: {
+                npm,
+                // repository
+              }
+            },
           }) => (
-            <div key={id} className="PagePackages__Item">
-              <a target="_blank" rel="noreferrer" href={url}>
-                { title }
-                {' '}
-                <FiExternalLink />
-              </a>
-              <PackageInfo id={id} />
+            <div key={name} className="PagePackages__Item">
+              <a target="_blank" rel="noreferrer" href={npm}>{name}</a>
+              {' '}
+              <FiExternalLink />
+              <PackageInfo data={name} />
             </div>
+            // <div key={name} className="PagePackages__Item">
+            //   <a target="_blank" rel="noreferrer" href={npm}>
+            //     { name }
+            //     {' '}
+            //     <FiExternalLink />
+            //   </a>
+            //   {/* <PackageInfo id={id} /> */}
+            //   <PackageInfo id={id} />
+            // </div>
           ))}
-        <Additional />
+        {/* <Additional /> */}
         </div>
       </div>
     </>

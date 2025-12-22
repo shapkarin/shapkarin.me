@@ -46,5 +46,8 @@ export const fetchArticle = (name) => markdownRequest.get(URLS.article(name));
 // Fetch AeoScript for related articles
 export const fetchAeoScript = (name) => axios.get(URLS.aeoScript(name));
 
-// maybe add it later, get repo languages statistic
-// export const fetchRepoLangs = url => axios.get(url);
+// npmjs.org API
+export const fetchNpmAllPackages = () => axios.get(URLS.allPackages);
+// export const fetchNpmPackageData = (name) => axios.get(URLS.npm.info(name));
+
+
