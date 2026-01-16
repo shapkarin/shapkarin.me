@@ -3,7 +3,7 @@
 I am a software engineer with over a decade of experience and a solid foundation in Computer Science. My work reflects a firm commitment to innovation, problem-solving, and delivering exceptional user experiences.
 
 ```
-Disclaimer: This project is only a homepage, not an example of application architecture.
+Disclaimer: This project is only a homepage, with a long story. It's not an example of application architecture.
 ```
 
 This website has been under gradual development since 2013, with limited time dedicated to its progress.
