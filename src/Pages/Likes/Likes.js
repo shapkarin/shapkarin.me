@@ -31,7 +31,7 @@ export default function Liked() {
           stargazers_count,
           homepage,
           fork,
-          updated_at,
+          pushed_at,
           language,
           languages_url
         }) => (
@@ -45,7 +45,7 @@ export default function Liked() {
               <div className="centered-label">
                 <GoClock data-tip="Last update" size="19px" />
                 {' '}
-                {(new Date(updated_at)).toLocaleDateString('ru-RU')}
+                {(new Date(pushed_at)).toLocaleDateString('de-DE')}
               </div>
               { stargazers_count > 0 && (
               <div className="centered-label">
