@@ -8,10 +8,9 @@ const github = {
     return `${this.user}/events/public?per_page=100`;
   },
   get repositories() {
-    // TODO: pagination
     const perPage = 100;
     const page = 1;
-    return `${this.user}/repos?sort=updated&per_page=${perPage}&page=${page}`;
+    return `${this.user}/repos?sort=pushed&per_page=${perPage}&page=${page}`;
   },
   get likes() {
     return `${this.user}/starred`;
