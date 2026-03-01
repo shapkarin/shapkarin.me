@@ -45,7 +45,7 @@ export default function Liked() {
               <div className="centered-label">
                 <GoClock data-tip="Last update" size="19px" />
                 {' '}
-                {(new Date(pushed_at)).toLocaleDateString('de-DE')}
+                {(new Date(pushed_at)).toLocaleDateString('de-DE', { day: '2-digit', month: '2-digit', year: 'numeric' })}
               </div>
               { stargazers_count > 0 && (
               <div className="centered-label">
