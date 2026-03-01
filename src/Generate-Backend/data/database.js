@@ -113,6 +113,9 @@ export const packages = {
   },
 }
 
+const P5_GALLERY_PATH = '/gallery/p5js';
+const OLD_GALLERY_PATH = `/gallery/older`;
+
 export const creative = {
   title: 'A part of my creative coding artworks',
   description: clean(`
@@ -125,34 +128,34 @@ export const creative = {
     'Archive ≈2012': [
       {
         title: 'Dots',
-        href: '/gallery/older/dots/',
+        href: `${OLD_GALLERY_PATH}/dots`,
       },
       {
         title: 'Walkers',
-        href: '/gallery/older/',
+        href: OLD_GALLERY_PATH,
       },
       {
         title: 'Painter Walk',
-        href: '/gallery/older/random_walker/',
+        href: `${OLD_GALLERY_PATH}/random_walker`,
       },
     ],
 
     'Archive ≈2016': [
       {
         title: '☆ Draw Walk ☆',
-        href: '/gallery/p5js/draw_walk/',
+        href: `${P5_GALLERY_PATH}/draw_walk`,
       },
       {
         title: '☆ Cursor magic ☆',
-        href: '/gallery/p5js/magic/',
+        href: `${P5_GALLERY_PATH}/magic`,
       },
       {
         title: 'Flies',
-        href: '/gallery/p5js/flies/',
+        href: `${P5_GALLERY_PATH}/flies`,
       },
       {
         title: 'Flies Mouse Acceleration',
-        href: '/gallery/p5js/flies-m-acc/',
+        href: `${P5_GALLERY_PATH}/flies-m-acc`,
       },
     ],
 
