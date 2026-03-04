@@ -1,4 +1,4 @@
-import scene from '../Background';
+import { sceneInstance as scene } from '../Background';
 
 const RandomButton = ({ children, ...rest }) => {
   const randomize = function(){
