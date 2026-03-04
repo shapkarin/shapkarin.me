@@ -41,9 +41,7 @@ jobs:
         uses: brycedorn/react-snap-action@v1.0.2
 
       - name: Copy HTML gallery
-        run: |
-          npm run build:html-gallery 
-          npm run fix-react-snap
+        run: npm run build:html-gallery 
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
