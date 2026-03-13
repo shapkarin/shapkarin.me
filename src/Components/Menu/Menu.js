@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, startTransition } from 'react';
 import { NavLink } from 'react-router-dom';
 import { MdOutlineSearch } from "react-icons/md";
 import { IoIosRefresh } from 'react-icons/io';
@@ -41,7 +41,7 @@ const Menu = ({ ...rest }) => {
           );
         })}
         {isMobile && <li>
-          <MdOutlineSearch onClick={() => setIsShowSearch(currentState => !currentState)}>Search</MdOutlineSearch>
+          <MdOutlineSearch onClick={() => startTransition(() => setIsShowSearch(currentState => !currentState))}>Search</MdOutlineSearch>
         </li>}
       </ul>
       {(isShowSearch || !isMobile) && <Search />}
