@@ -8,6 +8,8 @@ import { fetchSearchIndex } from '@/DAL';
 
 import styles from './Search.module.less';
 
+const MIN_SYMBOLS = 3;
+
 const Search = () => {
   const [query, setQuery] = useState('');
   const [index, setIndex] = useState(null);
@@ -38,7 +40,6 @@ const Search = () => {
     }
   }, [indexData]);
 
-  // Close dropdown on click outside
   useEffect(() => {
     const handleClickOutside = (e) => {
       if (rootRef.current && !rootRef.current.contains(e.target)) {
@@ -49,7 +50,6 @@ const Search = () => {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
-  // Close on Escape
   const handleKeyDown = useCallback((e) => {
     if (e.key === 'Escape') {
       setIsOpen(false);
@@ -57,10 +57,8 @@ const Search = () => {
     }
   }, []);
 
-  // Partial + fuzzy search: wildcard for prefix matching, fuzzy (~1) for typo tolerance
-  // Deduplicates and merges scores from all strategies
   let results = [];
-  if (index && query.length >= 2) {
+  if (index && query.length >= MIN_SYMBOLS) {
     const terms = query.trim().split(/\s+/).filter(Boolean);
     const seen = new Map();
 
@@ -79,11 +77,8 @@ const Search = () => {
       try { return index.search(q); } catch { return []; }
     };
 
-    // Exact match
     mergeResults(trySearch(terms.join(' ')));
-    // Wildcard (prefix) — each term gets a trailing *
     mergeResults(trySearch(terms.map((t) => `${t}*`).join(' ')));
-    // Fuzzy (~1 edit distance) for typo tolerance
     mergeResults(trySearch(terms.map((t) => `${t}~1`).join(' ')));
 
     results = Array.from(seen.values()).sort((a, b) => b.score - a.score);
@@ -105,7 +100,7 @@ const Search = () => {
           }}
           onFocus={() => setIsOpen(true)}
           onKeyDown={handleKeyDown}
-          placeholder="Search articles..."
+          placeholder="Search for articles..."
         />
         {query && (
           <button
@@ -121,9 +116,9 @@ const Search = () => {
           </button>
         )}
       </div>
-      {isLoading && query.length > 1 && <div className={styles.loading}>Loading...</div>}
+      {isLoading && query.length >= MIN_SYMBOLS && <div className={styles.loading}>Loading...</div>}
       {isError && <div className={styles.error}>Error loading search index.</div>}
-      {isOpen && query.length >= 2 && (
+      {isOpen && query.length >= MIN_SYMBOLS && (
         <ul className={styles.results}>
           {hasResults ? (
             results.map((result) => {

@@ -40,7 +40,7 @@ const Menu = ({ ...rest }) => {
             </li>
           );
         })}
-        {isMobile && <li>
+        {isMobile && <li className="Menu__Item">
           <MdOutlineSearch onClick={() => startTransition(() => setIsShowSearch(currentState => !currentState))}>Search</MdOutlineSearch>
         </li>}
       </ul>
