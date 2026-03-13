@@ -1,0 +1,135 @@
+@import "../../Assets/Variables.less";
+
+.root {
+  position: relative;
+}
+
+.inputWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input {
+  display: block;
+  width: 100%;
+  line-height: 1.5em;
+  font-size: 17px;
+  border: none;
+  outline: none;
+  background: transparent;
+  position: relative;
+  cursor: pointer;
+  padding-right: 28px;
+}
+
+.clearButton {
+  position: absolute;
+  right: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 2px;
+  color: @color-dark-transparent-45;
+  font-size: 18px;
+  line-height: 1;
+  transition: color 0.15s;
+}
+.clearButton:hover {
+  color: @color-black;
+}
+.input:focus {
+  border-color: @color-gray;
+  background: #fff;
+  box-shadow: 0 0 0 2px fade(@color-gray, 20%);
+}
+
+.loading, .error {
+  margin-bottom: 1rem;
+  font-size: 0.97rem;
+}
+.loading {
+  color: @color-black;
+}
+.error {
+  color: @color-error;
+}
+
+.results {
+  position: absolute;
+  top: 48px;
+  left: 0;
+  width: 100%;
+  min-width: 280px;
+  background: @color-white;
+  border-radius: 0 0 @border-radius-base @border-radius-base;
+  box-shadow: 0 6px 32px rgba(0,0,0,0.11), 0 2px 8px rgba(0,0,0,0.09);
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  z-index: 1000;
+  border: 1px solid @color-gray;
+  max-height: 400px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+.resultItem {
+  border-bottom: 1px dashed @color-gray;
+  transition: background 0.18s;
+}
+.resultItem:last-child {
+  border-bottom: none;
+}
+.resultItem:hover {
+  background: fade(@color-black, 5%);
+}
+
+.resultLink {
+  display: block;
+  padding: 0.6rem 0.8rem;
+  color: @color-black;
+  text-decoration: none;
+}
+.resultLink:hover {
+  text-decoration: none;
+}
+
+.resultTitle {
+  display: block;
+  font-weight: 500;
+  font-size: 1.05rem;
+  line-height: 1.4;
+}
+
+.resultDescription {
+  display: block;
+  font-size: 0.88rem;
+  color: @color-dark-transparent-50;
+  margin-top: 2px;
+  line-height: 1.35;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.noResults {
+  padding: 0.8rem;
+  color: @color-dark-transparent-50;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 600px) {
+  .root {
+    max-width: 99vw;
+    padding: 1.1rem 0.3rem 1rem 0.3rem;
+  }
+  .results {
+    max-height: 280px;
+    min-width: 200px;
+    font-size: 0.99rem;
+  }
+}
