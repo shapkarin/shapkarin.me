@@ -1,18 +1,15 @@
-const fs = require('fs');
-const path = require('path');
-const glob = require('glob');
-const markedPromise = import('marked');
-const lunr = require('lunr');
-const matter = require('gray-matter');
+import fs from 'fs';
+import path from 'path';
+import { globSync } from 'glob';
+import { marked } from 'marked';
+import lunr from 'lunr';
+import matter from 'gray-matter';
 
-const API_FOLDER = path.join(__dirname, '../../public/api');
+const API_FOLDER = path.join(import.meta.dirname, '../../public/api');
 const ARTICLES_DIR = path.join(API_FOLDER, 'articles');
 const OUTPUT_FILE = path.join(API_FOLDER, 'search-index.json');
 
-const mdFiles = glob.sync(`${ARTICLES_DIR}/**/*.md`);
-
-(async () => {
-const marked = (await markedPromise).marked;
+const mdFiles = globSync(`${ARTICLES_DIR}/**/*.md`);
 
 const articles = mdFiles.map((file) => {
   const rawContent = fs.readFileSync(file, 'utf8');
@@ -65,4 +62,3 @@ articles.forEach((article) => {
 fs.writeFileSync(OUTPUT_FILE, JSON.stringify({ index, store }));
 
 console.log(`Search index generated at ${OUTPUT_FILE}`);
-})();
