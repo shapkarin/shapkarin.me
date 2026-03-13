@@ -4,8 +4,9 @@ import App from './App';
 // import reportWebVitals from './reportWebVitals';
 
 const rootElement = document.getElementById('root');
+const GH_PAGES_CANT_HYDRATE = false;
 
-process.env.NODE_ENV === 'production'
+process.env.NODE_ENV === 'production' && GH_PAGES_CANT_HYDRATE
   ? hydrateRoot(rootElement, <App />)
   : createRoot(rootElement).render(<App />);
 

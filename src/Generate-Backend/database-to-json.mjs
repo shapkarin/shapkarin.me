@@ -1,11 +1,8 @@
-const fsPromises = require('fs/promises');
-const path = require('path');
+import fsPromises from 'node:fs/promises';
+import path from 'node:path';
+import * as database from './data/database.mjs';
 
-// Assuming 'esm' and 'database' modules are necessary and correctly imported.
-const require_esm = require('esm')(module);
-const database = require_esm('./data/database');
-
-const API_FOLDER = path.join(__dirname, '../..', 'public', 'api');
+const API_FOLDER = path.join(import.meta.dirname, '../..', 'public', 'api');
 const ABOUT_FILE = path.join(API_FOLDER, 'about.json');
 const CREATIVE_FOLDER = path.join(API_FOLDER, 'creative');
 const PACKAGES_FOLDER = path.join(API_FOLDER, 'packages');

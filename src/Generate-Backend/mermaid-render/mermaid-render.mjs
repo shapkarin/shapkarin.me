@@ -1,10 +1,12 @@
-const fs = require('fs').promises;
-const path = require('path');
-const { execSync } = require('child_process');
-const matter = require('gray-matter');
-const crypto = require('crypto');
-const sqlite3 = require('sqlite3').verbose();
-const mermaidConfig = require('./mermaid.config.js');
+import fs from 'node:fs/promises';
+import path from 'node:path';
+import { execSync } from 'node:child_process';
+import matter from 'gray-matter';
+import crypto from 'node:crypto';
+import sqlite3Pkg from 'sqlite3';
+import mermaidConfig, { getConfig } from './mermaid.config.mjs';
+
+const sqlite3 = sqlite3Pkg.verbose();
 
 /**
  * Simple Mermaid SVG Generator with SQLite Hash Cache
@@ -25,7 +27,7 @@ class MermaidProcessor {
     };
 
     this.db = null;
-    this.dbPath = path.join(__dirname, this.config.dbPath);
+    this.dbPath = path.join(import.meta.dirname, this.config.dbPath);
   }
 
   /**
@@ -192,10 +194,7 @@ class MermaidProcessor {
    * Generate unique diagram ID from content
    */
   generateDiagramId(mermaidCode, theme, outputPath) {
-    return crypto
-    .createHash('md5')
-    .update(mermaidCode.trim() + theme + outputPath)
-    .digest('hex');
+    return crypto.hash('md5', mermaidCode.trim() + theme + outputPath, 'hex');
   }
 
   /**
@@ -484,7 +483,7 @@ async function main() {
   const verbose = args.includes('--verbose') || args.includes('-v');
   
   // Get configuration from external config file
-  const config = mermaidConfig.getConfig(preset);
+  const config = getConfig(preset);
   
   // Override with CLI flags
   if (verbose !== undefined) {
@@ -517,8 +516,8 @@ async function main() {
 }
 
 // Run if called directly
-if (require.main === module) {
+if (import.meta.url === `file://${process.argv[1]}`) {
   main();
 }
 
-module.exports = { MermaidProcessor, config: mermaidConfig };
+export { MermaidProcessor, mermaidConfig as config };
