@@ -28,7 +28,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
-          node-version: '16.20.2'
+          node-version: '25.2.1'
           registry-url: 'https://registry.npmjs.org'
 
       - name: Enforce npm version 8.3.0
