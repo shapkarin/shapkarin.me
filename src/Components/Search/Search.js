@@ -3,6 +3,7 @@ import { useQuery } from '@tanstack/react-query';
 import { Link } from 'react-router-dom';
 import lunr from 'lunr';
 
+import { IoMdClose } from 'react-icons/io';
 import { fetchSearchIndex } from '@/DAL';
 
 import styles from './Search.module.less';
@@ -92,19 +93,34 @@ const Search = () => {
 
   return (
     <div className={styles.root} ref={rootRef}>
-      <input
-        ref={inputRef}
-        className={styles.input}
-        type="text"
-        value={query}
-        onChange={(e) => {
-          setQuery(e.target.value);
-          setIsOpen(true);
-        }}
-        onFocus={() => setIsOpen(true)}
-        onKeyDown={handleKeyDown}
-        placeholder="Search articles..."
-      />
+      <div className={styles.inputWrapper}>
+        <input
+          ref={inputRef}
+          className={styles.input}
+          type="text"
+          value={query}
+          onChange={(e) => {
+            setQuery(e.target.value);
+            setIsOpen(true);
+          }}
+          onFocus={() => setIsOpen(true)}
+          onKeyDown={handleKeyDown}
+          placeholder="Search articles..."
+        />
+        {query && (
+          <button
+            className={styles.clearButton}
+            onClick={() => {
+              setQuery('');
+              setIsOpen(false);
+              inputRef.current?.focus();
+            }}
+            aria-label="Clear search"
+          >
+            <IoMdClose />
+          </button>
+        )}
+      </div>
       {isLoading && query.length > 1 && <div className={styles.loading}>Loading...</div>}
       {isError && <div className={styles.error}>Error loading search index.</div>}
       {isOpen && query.length >= 2 && (
