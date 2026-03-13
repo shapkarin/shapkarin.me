@@ -95,15 +95,5 @@
     "source": "dist",
     "navigationTimeout": 900000,
     "waitFor": 1000
-    "@craco/craco": "^7.1.0",
-    "@mermaid-js/mermaid-cli": "^10.9.1",
-    "buffer": "^6.0.3",
-    "craco-less": "^3.0.1",
-    "esm": "^3.2.25",
-    "react-helmet-async": "^2.0.5",
-    "sitemap-generator-cli": "^7.5.0",
-    "sqlite3": "^5.1.7",
-    "marked": "^16.4.1",
-    "glob": "^11.0.3"
   }
 }
