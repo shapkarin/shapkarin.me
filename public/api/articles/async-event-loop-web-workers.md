@@ -368,24 +368,6 @@ self.onerror = function(error) {
 console.log("Worker: Event listener set up");
 ```
 
-**To run this example:**
-1.  Save the above code into `main.js` and `worker.js` in the same directory.
-2.  Create an `index.html` file that includes `main.js`:
-    ```html
-    <!DOCTYPE html>
-    <html>
-    <head>
-        <title>Web Worker Demo</title>
-    </head>
-    <body>
-        <h1>Web Worker Demo</h1>
-        <p>Check the console for messages. An alert will show the result of the calculation from the worker.</p>
-        <script src="main.js"></script>
-    </body>
-    </html>
-    ```
-3.  Open `index.html` in your browser and check the console.
-
 You'll observe that "Main: Script end" logs before the worker finishes its calculation and sends back the result, demonstrating non-blocking behavior. The UI (if there were more interactive elements) would remain responsive during the worker's heavy computation.
 
 ### When to Use Web Workers

@@ -32,9 +32,9 @@ public/gallery/older
 # Do not commit the generated files
 public/api/articles/articles.json
 public/api/about.json
+public/api/mainpage.json
 /public/api/packages
 /public/api/creative
-
 
 # TODO: rewrite this article 
 public/api/articles/wagmi-ethers_NEW.md

@@ -1,23 +1,21 @@
 import { Link } from 'react-router-dom';
 
-import { fetchArticles } from "@/API";
-import { useQuery } from "react-query";
+import { fetchArticles } from "@/DAL";
+import { useQuery } from "@tanstack/react-query";
 import SEO from '@/Components/SEO';
 
 import './style.less';
 
 function ArticlesList() {
 
-  const { data: { data: articles } } = useQuery('ArticlesList', fetchArticles);
+  const { data: { data: articles } } = useQuery({ queryKey: ['ArticlesList'], queryFn: fetchArticles });
 
   return (
     <div className="Page Page__Article Page__Inner">
     {/*'Page_Articles">'*/}
       <SEO 
-        title="Software Development Articles & Tutorials | Iurii Shapkarin"
+        title="Yuri Shapkarin | Software Development Articles"
         description="Read technical articles about JavaScript development, React ecosystem, Redux patterns, and software engineering. In-depth tutorials and guides about my open-source packages."
-        type="blog"
-        name="Iurii Shapkarin"
       />
       <div className="Page__Inner">
         <h1 className="Page__ArticlesTitle">Articles</h1>

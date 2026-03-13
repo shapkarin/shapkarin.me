@@ -61,7 +61,7 @@
     "readingTime": "18 minutes",
     "category": "Blockchain Development",
     "difficulty": "Intermediate",
-    "author": "Iurii Shapkarin",
+    "author": "Yuri Shapkarin",
     "canonicalUrl": "https://shapkarin.me/articles/ethereum-abi",
     "language": "en",
     "publishDate": "2025-01-27"
@@ -73,8 +73,8 @@
     "description": "Master Ethereum ABI (Application Binary Interface) for smart contract interaction. Learn ABI encoding, decoding, function calls, events, and best practices for EVM-compatible chains with comprehensive examples.",
     "author": {
       "@type": "Person",
-      "name": "Iurii Shapkarin",
-      "alternateName": "Yury Shapkarin",
+      "name": "Yuri Shapkarin",
+      "alternateName": "Iurii Shapkarin",
       "url": "https://shapkarin.me"
     },
     "url": "https://shapkarin.me/articles/ethereum-abi/",  
@@ -86,8 +86,8 @@
     },
     "publisher": {
       "@type": "Person",
-      "name": "Iurii Shapkarin",
-      "alternateName": "Yury Shapkarin",
+      "name": "Yuri Shapkarin",
+      "alternateName": "Iurii Shapkarin",
       "logo": {
         "@type": "ImageObject",
         "url": "https://shapkarin.me/logo.jpg"

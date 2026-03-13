@@ -1,5 +1,5 @@
 // TODO: refactor
-import { useQuery } from 'react-query';
+import { useQuery } from '@tanstack/react-query';
 import ReactTooltip from 'react-tooltip';
 
 import {  GoStar, GoClock, GoRepoForked, GoBrowser } from 'react-icons/go';
@@ -7,18 +7,16 @@ import { LuMessageCircle } from 'react-icons/lu';
 import SEO from '@/Components/SEO';
 import Button from '@/Components/Button';
 
-import { fetchLikes } from '@/API';
+import { fetchLikes } from '@/DAL';
 
 export default function Liked() {
-  const { data: { data: list } } = useQuery('Liked', fetchLikes);
+  const { data: { data: list } } = useQuery({ queryKey: ['Liked'], queryFn: fetchLikes });
 
   return (
     <>
       <SEO 
-        title="Starred GitHub Projects | Iurii Shapkarin"
+        title="Starred GitHub Projects | Yuri Shapkarin"
         description="Discover my curated collection of starred GitHub repositories. A handpicked selection of innovative open-source projects, development tools, and libraries that I find valuable."
-        type="website"
-        name="Iurii Shapkarin"
       />
       <ReactTooltip
         place="left"
@@ -33,7 +31,7 @@ export default function Liked() {
           stargazers_count,
           homepage,
           fork,
-          updated_at,
+          pushed_at,
           language,
           languages_url
         }) => (
@@ -47,7 +45,7 @@ export default function Liked() {
               <div className="centered-label">
                 <GoClock data-tip="Last update" size="19px" />
                 {' '}
-                {(new Date(updated_at)).toLocaleDateString('ru-RU')}
+                {(new Date(pushed_at)).toLocaleDateString('de-DE', { day: '2-digit', month: '2-digit', year: 'numeric' })}
               </div>
               { stargazers_count > 0 && (
               <div className="centered-label">

@@ -1,23 +1,24 @@
-import { useQuery } from 'react-query';
+import { useQuery } from '@tanstack/react-query';
 import { FiExternalLink } from 'react-icons/fi';
 import SEO from '@/Components/SEO';
 
-import { fetchPackages } from '@/API';
+import { fetchPackages } from '@/DAL';
 import PackageInfo from './PackageInfo';
 import Additional from './Additional';
 
 import './style.less';
 
 export default function Packages() {
-  const { data: { data: { packages } } } = useQuery('Packages', fetchPackages); 
+  const { data: { data: { packages } } } = useQuery({
+    queryKey: ['Packages'],
+    queryFn: fetchPackages
+  }); 
 
   return (
     <>
       <SEO 
-        title="JavaScript & TypeScript NPM Packages | Iurii Shapkarin"
+        title="JavaScript & TypeScript NPM Packages | Yuri Shapkarin"
         description="Explore a collection of JavaScript, TypeScript, and Node.js NPM packages for modern web development. Open-source modules for Redux, React, and more."
-        type="website"
-        name="Iurii Shapkarin"
       />
       <div className="PagePackages Page__Inner">
         <div>

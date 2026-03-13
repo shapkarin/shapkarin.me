@@ -1,10 +1,10 @@
 import { useState } from 'react';
-import { useQuery } from 'react-query';
+import { useQuery } from '@tanstack/react-query';
 import clsx from 'clsx';
 import isMobile from 'is-mobile';
 import {CopyToClipboard} from 'react-copy-to-clipboard';
 
-import { fetchAbout } from '@/API';
+import { fetchAbout } from '@/DAL';
 import Preloader from '@/Components/Preloader';
 import Link from '@/Components/Link';
 
@@ -16,7 +16,7 @@ const EMAIL = 'yu.shapkarin@gmail.com';
 const isMobileDevice = isMobile();
 
 function About() {
-  const { data: { data: { title, intro, links: { linkedin, github } } } } = useQuery('About', fetchAbout);
+  const { data: { data: { greeting, intro, links: { linkedin, github } } } } = useQuery({ queryKey: ['About'], queryFn: fetchAbout });
   
   const [copied, setCopied] = useState(false);
 
@@ -25,7 +25,7 @@ function About() {
       <div className={clsx('About', {
           'About_dark': false
         })}>
-        <Link to="/" className='About_greeting'>{title}</Link>
+        <Link to="/" className='About_greeting'>{greeting}</Link>
         {' '}{intro}
         {isMobileDevice && <br />}
         <Link href={linkedin.link} className={clsx('Social_Link', {

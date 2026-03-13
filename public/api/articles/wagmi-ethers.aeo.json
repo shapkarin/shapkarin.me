@@ -18,12 +18,12 @@
     },
     "author": {
       "@type": "Person",
-      "name": "Iurii Shapkarin"
+      "name": "Yuri Shapkarin"
     },
     "publisher": {
       "@type": "Person",
-      "name": "Iurii Shapkarin",
-      "alternateName": "Yury Shapkarin",
+      "name": "Yuri Shapkarin",
+      "alternateName": "Iurii Shapkarin",
       "logo": {
         "@type": "ImageObject",
         "url": "https://shapkarin.me/logo.jpg",
@@ -517,7 +517,7 @@
     "codeRepository": "https://shapkarin.me/articles/wagmi-ethers",
     "author": {
       "@type": "Person",
-      "name": "Iurii Shapkarin"
+      "name": "Yuri Shapkarin"
     },
     "applicationCategory": "Educational",
     "operatingSystem": "Cross-platform",

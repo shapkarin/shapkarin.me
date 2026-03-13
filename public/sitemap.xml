@@ -4,6 +4,9 @@
     <loc>https://shapkarin.me/</loc>
   </url>
   <url>
+    <loc>https://shapkarin.me/articles/</loc>
+  </url>
+  <url>
     <loc>https://shapkarin.me/github/repositories/</loc>
   </url>
   <url>
@@ -37,9 +40,6 @@
     <loc>https://shapkarin.me/articles/state-optimization-guide/</loc>
   </url>
   <url>
-    <loc>https://shapkarin.me/articles/back-health-and-therapeutic-exercises/</loc>
-  </url>
-  <url>
     <loc>https://shapkarin.me/articles/drop-react-manual-memoization/</loc>
   </url>
   <url>
@@ -52,10 +52,7 @@
     <loc>https://shapkarin.me/articles/javascript-lexical-scope/</loc>
   </url>
   <url>
-    <loc>https://shapkarin.me/articles/ai-automation-for-business/</loc>
-  </url>
-  <url>
-    <loc>https://shapkarin.me/articles/LavaMoat-supply-chain-attacks-protection/</loc>
+    <loc>https://shapkarin.me/articles/LavaMoat-against-JS-supply-chain-attacks/</loc>
   </url>
   <url>
     <loc>https://shapkarin.me/articles/memoization/</loc>
@@ -73,10 +70,10 @@
     <loc>https://shapkarin.me/articles/react-vs-jquery/</loc>
   </url>
   <url>
-    <loc>https://shapkarin.me/articles/extend-routines/</loc>
+    <loc>https://shapkarin.me/articles/design/</loc>
   </url>
   <url>
-    <loc>https://shapkarin.me/articles/design/</loc>
+    <loc>https://shapkarin.me/articles/extend-routines/</loc>
   </url>
   <url>
     <loc>https://shapkarin.me/articles/global-diff/</loc>
@@ -97,12 +94,6 @@
     <loc>https://shapkarin.me/articles/WAGMI-basics/</loc>
   </url>
   <url>
-    <loc>https://shapkarin.me/gallery/older/dots.html</loc>
-  </url>
-  <url>
-    <loc>https://shapkarin.me/gallery/older/random_walker.html</loc>
-  </url>
-  <url>
     <loc>https://shapkarin.me/gallery/older/</loc>
   </url>
   <url>
@@ -116,5 +107,11 @@
   </url>
   <url>
     <loc>https://shapkarin.me/gallery/p5js/flies-m-acc/</loc>
+  </url>
+  <url>
+    <loc>https://shapkarin.me/gallery/older/random_walker.html</loc>
+  </url>
+  <url>
+    <loc>https://shapkarin.me/gallery/older/dots.html</loc>
   </url>
 </urlset>

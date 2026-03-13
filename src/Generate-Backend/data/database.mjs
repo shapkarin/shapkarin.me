@@ -1,12 +1,11 @@
 /* eslint-disable no-multi-str */
-import { createHash } from 'crypto';
+import { hash } from 'node:crypto';
 
 export const about = {
-  title: `Hello everyone!`,
+  greeting: `Hello everyone!`,
   intro: clean(`
-    My name is Iurii Shapkarin. 
+    My name is Yuri Shapkarin. 
     I am a software engineer with over a decade of experience and a solid foundation in Computer Science.
-    My work reflects a firm commitment to innovation, problem-solving, and delivering exceptional user experiences.
   `),
   links: {
     linkedin: {
@@ -18,6 +17,17 @@ export const about = {
       text: 'GitHub',
     },
   },
+}
+
+export const main = {
+  title: 'Welcome to my homepage.',
+  list: [
+    "Articles is a page with a list of software development articles.",
+    "Repositories page is a list of my GitHub repos with metadata for each.",
+    "Likes is a page with GitHub repositories that I've starred.",
+    "Packages is a list of personal npm packages and in progress OSS projects.",
+    "Creative contains a part of my creative coding.",
+  ]
 }
 
 export const packages = {
@@ -39,7 +49,7 @@ export const packages = {
         title: 'Extend Routines',
         url: 'https://www.npmjs.com/package/extend-saga-routines',
         description: `
-          Customizable action creator lib for any kind of actions.`,
+          Customizable action creator lib for any kind of actions. Note: There was no "createSlice" API in Redux Toolkit (RTK) in 2018 when this package was published + package don't relay on Redux`,
         badges: [ 'npm/v', 'npm/dm', 'npm/l' ]
       },
       'saga-fetch': {
@@ -103,6 +113,9 @@ export const packages = {
   },
 }
 
+const P5_GALLERY_PATH = '/gallery/p5js';
+const OLD_GALLERY_PATH = `/gallery/older`;
+
 export const creative = {
   title: 'A part of my creative coding artworks',
   description: clean(`
@@ -115,34 +128,34 @@ export const creative = {
     'Archive ≈2012': [
       {
         title: 'Dots',
-        href: '/gallery/older/dots.html',
+        href: `${OLD_GALLERY_PATH}/dots`,
       },
       {
         title: 'Walkers',
-        href: '/gallery/older',
+        href: OLD_GALLERY_PATH,
       },
       {
         title: 'Painter Walk',
-        href: '/gallery/older/random_walker.html',
+        href: `${OLD_GALLERY_PATH}/random_walker`,
       },
     ],
 
     'Archive ≈2016': [
       {
         title: '☆ Draw Walk ☆',
-        href: '/gallery/p5js/draw_walk',
+        href: `${P5_GALLERY_PATH}/draw_walk`,
       },
       {
         title: '☆ Cursor magic ☆',
-        href: '/gallery/p5js/magic',
+        href: `${P5_GALLERY_PATH}/magic`,
       },
       {
         title: 'Flies',
-        href: '/gallery/p5js/flies',
+        href: `${P5_GALLERY_PATH}/flies`,
       },
       {
         title: 'Flies Mouse Acceleration',
-        href: '/gallery/p5js/flies-m-acc',
+        href: `${P5_GALLERY_PATH}/flies-m-acc`,
       },
     ],
 
@@ -172,9 +185,7 @@ export const creative = {
 }
 
 function generateChecksum(str, algorithm, encoding){
-    return createHash(algorithm || 'md5')
-        .update(str, 'utf8')
-        .digest(encoding || 'hex');
+    return hash(algorithm || 'md5', str, encoding || 'hex');
 }
 
 function clean(string){

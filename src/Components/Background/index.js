@@ -1,6 +1,4 @@
-import Background from './Background';
-import isMobile from 'is-mobile';
+import Background, { sceneInstance }  from './Background';
 
-const scene = isMobile() ? null : new Background();
-
-export default scene;
+export { sceneInstance };
+export default Background;

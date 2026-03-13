@@ -4,14 +4,21 @@ import Stars from '@/Pages/Likes';
 import Creative from '@/Pages/Creative';
 import Articles from '@/Pages/Articles/Articles';
 import Article from '@/Pages/Articles/Article';
+import Main from '@/Pages/Main';
 
-import { GoRepo, GoStar } from 'react-icons/go';
+import { GoRepo, GoStar, GoHome } from 'react-icons/go';
 import { RiNpmjsLine, RiPaintBrushFill, RiArticleLine } from 'react-icons/ri';
 
 const PAGES = [
   {
-    name: 'Articles',
+    name: 'Home',
     path: '/',
+    Page: () => <Main />,
+    Icon: () => <GoHome size="1.2em" />,
+  },
+  {
+    name: 'Articles',
+    path: '/articles/',
     Icon: () => <RiArticleLine />,
     Page: () => <Articles />,
   },

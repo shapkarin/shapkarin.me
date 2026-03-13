@@ -5,16 +5,15 @@ import { useLocation } from "react-router-dom";
 const SEO = ({
   title,
   description,
-  name = "Iurii Shapkarin",
+  name = "Yuri Shapkarin",
   type = "website",
-  aeoScript,
   keywords = "",
+  aeoScript,
 }) => {
   const { pathname } = useLocation();
   const HOST = "https://shapkarin.me";
-  const ARTICLES_LIST_CANONICAL_URL = HOST;
   const canonicalUrl = `${HOST}${pathname}`;
-  const ARTICLES_URL_PATH = "/articles";
+
   // // eslint-disable-next-line
   // const isMetaRedirect = useCallback(
   //   () =>
@@ -31,11 +30,7 @@ const SEO = ({
       <meta name="description" content={description} />
       <meta name="keywords" content={keywords} />
 
-      {pathname === ARTICLES_URL_PATH ? (
-        <link rel="canonical" href={ARTICLES_LIST_CANONICAL_URL} />
-      ) : (
-        <link rel="canonical" href={canonicalUrl} />
-      )}
+      <link rel="canonical" href={canonicalUrl} />
 
       {/* Redirect if we're on .html version, TODO: suync with crawler */}
       {/* <meta httpEquiv="refresh" content={`0;url=${canonicalUrl}`} /> */}

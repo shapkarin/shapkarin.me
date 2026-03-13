@@ -5,14 +5,14 @@
   "description": "Learn how to simplify AJAX requests in Redux Saga with saga-fetch. Handle loading states, success/error responses, and request cancellation with minimal boilerplate code.",
   "author": {
     "@type": "Person",
-    "name": "Iurii Shapkarin",
-    "alternateName": "Yury Shapkarin",
+    "name": "Yuri Shapkarin",
+    "alternateName": "Iurii Shapkarin",
     "url": "https://shapkarin.me"
   },
   "publisher": {
     "@type": "Person",
-    "name": "Iurii Shapkarin",
-    "alternateName": "Yury Shapkarin",
+    "name": "Yuri Shapkarin",
+    "alternateName": "Iurii Shapkarin",
     "url": "https://shapkarin.me",
     "logo": {
       "@type": "ImageObject",

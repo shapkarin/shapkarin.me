@@ -1,16 +1,21 @@
-name: Build and publish
-on:
-  schedule:
-    - cron: '0 0 */5 * *'
-  push:
-    branches: [ "main" ]
-  workflow_dispatch:
+name: Reusable job
 
+on:
+  workflow_call:
+    # inputs:
+    #   environment-name:
+    #     required: false
+    #     type: string
+    #     default: github-pages # only this one in use rn
+
+# TODO: decompose to "build" and "deploy" steps
 jobs:
   deploy:
+    # do not deploy if [skip-ci] is in a commit message
     if: |
       !contains(github.event.head_commit.message, '[skip-ci]')
     runs-on: ubuntu-22.04
+
     permissions:
       contents: write
     
@@ -23,7 +28,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
-          node-version: '16.20.2'
+          node-version: '25.2.1'
           registry-url: 'https://registry.npmjs.org'
 
       - name: Enforce npm version 8.3.0
@@ -31,19 +36,20 @@ jobs:
           npm install -g npm@8.3.0
           echo "Updated npm version: $(npm --version)"
     
-      # react-snap has build-in "npm i" and "npm run build"
+      # react-snap has build-in "npm сi" and "npm run build"
       - name: Server-side render by crawler
         uses: brycedorn/react-snap-action@v1.0.2
 
       - name: Copy HTML gallery
-        run: |
-          npm run build:html-gallery 
-          npm run fix-react-snap
-        
+        run: npm run build:html-gallery 
+
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
-      
+          # TODO: if onSchedule print "autodeploy", use github.event_name == 'schedule'
+          commit_message: ${{ github.event.head_commit.message }}
+        
       - run: printf Deployed!
+

@@ -1,9 +1,9 @@
-import { useQuery } from 'react-query';
+import { useQuery } from '@tanstack/react-query';
 import SEO from '@/Components/SEO';
 
 import Preloader from '@/Components/Preloader';
 import Formatted from '@/Components/Formatted';
-import { fetchCreativeIntro, fetchCreative } from '@/API';
+import { fetchCreativeIntro, fetchCreative } from '@/DAL';
 
 import './style.less';
 
@@ -11,10 +11,8 @@ export default function Creative() {
   return (
     <>
       <SEO 
-        title="Creative Coding & Generative Art | Iurii Shapkarin"
+        title="Creative Coding & Generative Art | Yuri Shapkarin"
         description="Explore my collection of creative coding experiments, generative art, and interactive animations. Algorithmic drawings and visual experiments created with JavaScript and creative coding libraries."
-        type="website"
-        name="Iurii Shapkarin"
       />
       <div className="Page__Creative Page__Inner">
         <Preloader>
@@ -28,10 +26,13 @@ export default function Creative() {
 
 
 const CreativeProofLink = () =>
-  <a target="_blank" rel="noreferrer" href="https://github.com/shapkarin/sketches" style={{ marginBottom: '10px' }}>=> from 9 y.o. repository</a>;
+  <a target="_blank" rel="noreferrer" href="https://github.com/shapkarin/sketches" style={{ marginBottom: '10px' }}>{"=> from 9 y.o. repository"}</a>;
 
 function Intro() {
-  const { data: { data: { title, description } } } = useQuery('CreativeIntro', fetchCreativeIntro);
+  const { data: { data: { title, description } } } = useQuery({
+    queryKey: ['CreativeIntro'],
+    queryFn: fetchCreativeIntro
+  });
 
   return <>
     <h1>{ title }{' '}<CreativeProofLink /></h1>
@@ -45,7 +46,9 @@ function Intro() {
 
 
 function Collection(){
-  const { data: { data: collection } } = useQuery('Creative', fetchCreative, {
+  const { data: { data: collection } } = useQuery({
+    queryKey: ['Creative'],
+    queryFn: fetchCreative,
     retry: true,
   });
 

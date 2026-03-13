@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { QueryClient } from '@tanstack/react-query';
 
 import URLS from './urls';
 
@@ -15,6 +16,16 @@ const markdownRequest = axios.create({
   },
 });
 
+export const queryClient = new QueryClient({
+  defaultOptions: {
+     queries: {
+       suspense: true,
+       staleTime: 60 * 1000 * 17, // 15 minutes chached data lifetime]
+       retry: 3,
+     },
+   },
+});
+
 // From generated JSON files
 export const fetchCreativeIntro = () => axios.get(URLS.creative.intro);
 export const fetchCreative = () => axios.get(URLS.creative.collection);
@@ -22,6 +33,7 @@ export const fetchAbout = () => axios.get(URLS.about);
 export const fetchPackages = () => axios.get(URLS.packages);
 export const fetchPackageInfo = (id) => axios.get(URLS.packages.info(id));
 export const fetchArticles = () => axios.get(URLS.articles);
+export const fetchMainPage = () => axios.get(URLS.main)
 
 // GitHub API
 export const fetchLikes = () => githubRequest.get(URLS.likes);

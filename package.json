@@ -3,37 +3,38 @@
   "homepage": "https://shapkarin.me",
   "private": true,
   "dependencies": {
-    "axios": "^0.21.4",
-    "clsx": "^2.1.1",
-    "gray-matter": "^4.0.3",
-    "is-mobile": "^5.0.0",
-    "lodash.random": "^3.2.0",
+    "@tanstack/react-query": "5.90.10",
+    "axios": "0.21.4",
+    "clsx": "2.1.1",
+    "gray-matter": "4.0.3",
+    "is-mobile": "5.0.0",
+    "lodash.random": "3.2.0",
+    "react": "18.3.1",
+    "react-content-loader": "7.1.1",
+    "react-copy-to-clipboard": "5.1.0",
+    "react-dom": "18.3.1",
+    "react-helmet": "6.1.0",
+    "react-icons": "4.12.0",
+    "react-markdown": "8.0.7",
+    "react-router-dom": "5.3.0",
     "lunr": "^2.3.9",
-    "react": "^18.3.1",
-    "react-content-loader": "^7.1.1",
-    "react-copy-to-clipboard": "^5.1.0",
-    "react-dom": "^18.3.1",
-    "react-helmet": "^6.1.0",
-    "react-icons": "^4.2.0",
-    "react-markdown": "^8.0.7",
-    "react-query": "^3.24.4",
-    "react-router-dom": "^5.3.0",
     "react-scripts": "5.0.1",
-    "react-syntax-highlighter": "^15.6.1",
-    "react-tooltip": "^4.2.21",
-    "remark-gfm": "^3.0.0"
+    "react-syntax-highlighter": "15.6.1",
+    "react-tooltip": "4.2.21",
+    "remark-gfm": "3.0.0"
   },
   "overrides": {
-    "@babel/core": "^7.16.0"
+    "@babel/core": "7.16.0",
+    "react-dom": "$react"
   },
   "engines": {
-    "node": ">=14.0.0 <=16.20.2"
+    "node": ">=20.11.0"
   },
   "scripts": {
     "start": "npm run build:local && craco start",
     "dev": "npm run start",
-    "build:api": "node src/Generate-Backend/database-to-json.js",
-    "build:diagrams": "node src/Generate-Backend/mermaid-render/mermaid-render.js",
+    "build:api": "node src/Generate-Backend/database-to-json.mjs",
+    "build:diagrams": "node src/Generate-Backend/mermaid-render/mermaid-render.mjs",
     "build:spa": "craco build",
     "build:html-gallery": "node src/Generate-Backend/deploy-html-gallery.js",
     "build:articles": "node src/Generate-Backend/generate-articles-list.js",
@@ -42,7 +43,8 @@
     "build": "npm run build:api && npm run build:diagrams && npm run build:articles && npm run build:search && NODE_ENV=production BUILD_PATH='./dist' npm run build:spa",
     "build:local": "npm run build:api && npm run build:diagrams && npm run build:articles && npm run build:html-gallery && npm run build:search",
     "test": "craco test",
-    "fix-react-snap": "node src/Generate-Backend/fix-react-snap-canvas.js",
+    "generate:articles": "node src/Generate-Backend/generate-articles-list.js",
+    "generate:sitemap-manually": "sitemap-generator https://shapkarin.me -f public/sitemap.xml",
     "lint": "eslint src/**/*.js"
   },
   "pre-commit": "lint",
@@ -58,14 +60,15 @@
           "vars": "all",
           "args": "after-used",
           "ignoreRestSiblings": true,
-          "varsIgnorePattern": "^_",
-          "argsIgnorePattern": "^_"
+          "varsIgnorePattern": "_",
+          "argsIgnorePattern": "_"
         }
       ]
     }
   },
   "browserslist": {
     "production": [
+      "chrome >= 70",
       ">0.2%",
       "not dead",
       "not op_mini all"
@@ -77,6 +80,21 @@
     ]
   },
   "devDependencies": {
+    "@craco/craco": "7.1.0",
+    "@mermaid-js/mermaid-cli": "10.9.1",
+    "buffer": "6.0.3",
+    "craco-less": "3.0.1",
+
+    "glob": "11.0.3",
+    "marked": "16.4.1",
+    "react-helmet-async": "2.0.5",
+    "sitemap-generator-cli": "7.5.0",
+    "sqlite3": "5.1.7"
+  },
+  "reactSnap": {
+    "source": "dist",
+    "navigationTimeout": 900000,
+    "waitFor": 1000
     "@craco/craco": "^7.1.0",
     "@mermaid-js/mermaid-cli": "^10.9.1",
     "buffer": "^6.0.3",

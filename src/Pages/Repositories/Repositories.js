@@ -5,24 +5,24 @@ import { GoClock, GoRepoForked, GoBrowser } from 'react-icons/go';
 import { LuMessageCircle } from 'react-icons/lu';
 import SEO from '@/Components/SEO';
 import Button from '@/Components/Button';
-import { fetchRepositories } from "@/API";
-import { useQuery } from "react-query";
+import { fetchRepositories } from "@/DAL";
+import { useQuery } from "@tanstack/react-query";
 
 import './style.less';
 
 export default function Repositories() {
   // const [page, setPage] = useState(1)
-  const { data: { data: list } } = useQuery(['Repositories', 1], () => fetchRepositories(1), 
+  const { data: { data: list } } = useQuery({
+    queryKey: ['Repositories'],
+    queryFn: () => fetchRepositories(), 
     // { keepPreviousData : true }
-  );
+  });
 
   return (
     <>
       <SEO 
-        title="GitHub Repositories | Iurii Shapkarin"
+        title="GitHub Repositories | Yuri Shapkarin"
         description="Browse my open-source projects and contributions on GitHub. Collection of web development repositories focusing on JavaScript, React, Redux, and modern web technologies."
-        type="website"
-        name="Iurii Shapkarin"
       />
       <ReactTooltip
         place="left"
@@ -39,7 +39,7 @@ export default function Repositories() {
           open_issues_count,
           homepage,
           fork,
-          updated_at,
+          pushed_at,
           language,
           languages_url
         }) => (
@@ -53,7 +53,7 @@ export default function Repositories() {
               <div className="centered-label">
                 <GoClock data-tip="Last update" size="19px" />
                 {' '}
-                {(new Date(updated_at)).toLocaleDateString('ru-RU')}
+                {(new Date(pushed_at)).toLocaleDateString('de-DE', { day: '2-digit', month: '2-digit', year: 'numeric' })}
               </div>
               { open_issues_count > 0 && (
               <div className="centered-label">

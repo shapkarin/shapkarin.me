@@ -8,10 +8,9 @@ const github = {
     return `${this.user}/events/public?per_page=100`;
   },
   get repositories() {
-    // TODO: pagination
     const perPage = 100;
     const page = 1;
-    return `${this.user}/repos?sort=updated&per_page=${perPage}&page=${page}`;
+    return `${this.user}/repos?sort=pushed&per_page=${perPage}&page=${page}`;
   },
   get likes() {
     return `${this.user}/starred`;
@@ -22,6 +21,7 @@ const rawPrefix = process.env.NODE_ENV === 'production' ? 'https://raw.githubuse
 
 const backend = {
   about: '/api/about.json',
+  main: '/api/mainpage.json',
   packages: Object.assign(
     '/api/packages/packages.json', {
     info: (id) => `/api/packages/${id}.json`,

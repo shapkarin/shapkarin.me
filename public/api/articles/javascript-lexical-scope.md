@@ -406,11 +406,11 @@ To avoid memory issues with closures:
 
 ## The Temporal Dead Zone
 
-Variables declared with `let` and `const` exist in what's called the "Temporal Dead Zone" (TDZ) from the start of the block until the line where they are initialized.
+Variables declared with `let` and `const` exist in what's called the "Temporal Dead Zone" (TDZ) from the start of the block until code execution reaches the place where the variable is declared.
 
 ```javascript
 {
-  // TDZ for x starts here
+  // The Temporal Dead Zone (TDZ) for x starts here
   console.log(x); // ReferenceError: Cannot access 'x' before initialization
   let x = 10;     // TDZ ends here
   console.log(x); // 10
