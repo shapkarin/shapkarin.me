@@ -1,10 +1,9 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
-import { useQuery } from '@tanstack/react-query';
 import { Link } from 'react-router-dom';
 import lunr from 'lunr';
 
 import { IoMdClose } from 'react-icons/io';
-import { fetchSearchIndex } from '@/DAL';
+import { queryClient, fetchSearchIndex } from '@/DAL';
 
 import styles from './Search.module.less';
 
@@ -15,30 +14,33 @@ const Search = () => {
   const [index, setIndex] = useState(null);
   const [store, setStore] = useState(null);
   const [isOpen, setIsOpen] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [isError, setIsError] = useState(false);
   const rootRef = useRef(null);
   const inputRef = useRef(null);
 
-  const { data: indexData, isLoading, isError } = useQuery({
-    queryKey: ['search-index'],
-    queryFn: async () => {
-      try {
-        const response = await fetchSearchIndex();
-        return response.data;
-      } catch (error) {
-        console.log('No search index');
-        return null;
-      }
-    },
-    enabled: query.length > 1,
-    staleTime: Infinity,
-  });
+  const handleFocus = useCallback(async () => {
+    setIsOpen(true);
+    if (index) return;
 
-  useEffect(() => {
-    if (indexData) {
-      setIndex(lunr.Index.load(indexData.index));
-      setStore(indexData.store);
+    setIsLoading(true);
+    try {
+      const data = await queryClient.fetchQuery({
+        queryKey: ['search-index'],
+        queryFn: async () => {
+          const response = await fetchSearchIndex();
+          return response.data;
+        },
+        staleTime: Infinity,
+      });
+      setIndex(lunr.Index.load(data.index));
+      setStore(data.store);
+    } catch {
+      setIsError(true);
+    } finally {
+      setIsLoading(false);
     }
-  }, [indexData]);
+  }, [index]);
 
   useEffect(() => {
     const handleClickOutside = (e) => {
@@ -98,9 +100,9 @@ const Search = () => {
             setQuery(e.target.value);
             setIsOpen(true);
           }}
-          onFocus={() => setIsOpen(true)}
+          onFocus={handleFocus}
           onKeyDown={handleKeyDown}
-          placeholder="Search for articles..."
+          placeholder={isLoading ? 'Fetching...' : 'Search for articles...'}
           name="search"
         />
         {query && (
