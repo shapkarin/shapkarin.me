@@ -101,6 +101,7 @@ const Search = () => {
           onFocus={() => setIsOpen(true)}
           onKeyDown={handleKeyDown}
           placeholder="Search for articles..."
+          name="search"
         />
         {query && (
           <button
