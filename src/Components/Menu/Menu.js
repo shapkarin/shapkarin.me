@@ -44,10 +44,10 @@ const Menu = ({ ...rest }) => {
           <MdOutlineSearch onClick={() => startTransition(() => setIsShowSearch(currentState => !currentState))}>Search</MdOutlineSearch>
         </li>}
       </ul>
-      {(isShowSearch || !isMobile) && <Search />}
-      {isMobile && <RandomButton className="Menu__Item Menu__Item--unselect Menu__Item--bg">
+      {!isMobile && <RandomButton className="Menu__Item Menu__Item--unselect Menu__Item--bg">
         <IoIosRefresh/> bg upd
       </RandomButton>}
+      {(isShowSearch || !isMobile) && <Search />}
     </nav>
   )
 };

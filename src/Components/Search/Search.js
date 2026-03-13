@@ -102,7 +102,7 @@ const Search = () => {
           }}
           onFocus={handleFocus}
           onKeyDown={handleKeyDown}
-          placeholder={isLoading ? 'Fetching...' : 'Search for articles...'}
+          placeholder={isLoading ? 'Fetching...' : 'Search...'}
           name="search"
         />
         {query && (

@@ -42,3 +42,6 @@ public/api/articles/wagmi-ethers_NEW.md
 # Do not track the generated diagrams
 public/api/articles/light
 public/api/articles/dark
+
+# Lunr search index
+public/api/search-index.json
