@@ -79,7 +79,7 @@ const Search = () => {
 
     mergeResults(trySearch(terms.join(' ')));
     mergeResults(trySearch(terms.map((t) => `${t}*`).join(' ')));
-    mergeResults(trySearch(terms.map((t) => `${t}~1`).join(' ')));
+    // remove that due it's too sensetive, for example `memo` match with `mode`, `more` mergeResults(trySearch(terms.map((t) => `${t}~1`).join(' ')));
 
     results = Array.from(seen.values()).sort((a, b) => b.score - a.score);
   }
