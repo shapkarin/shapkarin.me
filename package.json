@@ -27,13 +27,13 @@
     "react-dom": "$react"
   },
   "engines": {
-    "node": ">=14.0.0 <=16.20.2"
+    "node": ">=20.11.0"
   },
   "scripts": {
     "start": "npm run build:local && craco start",
     "dev": "npm run start",
-    "build:api": "node src/Generate-Backend/database-to-json.js",
-    "build:diagrams": "node src/Generate-Backend/mermaid-render/mermaid-render.js",
+    "build:api": "node src/Generate-Backend/database-to-json.mjs",
+    "build:diagrams": "node src/Generate-Backend/mermaid-render/mermaid-render.mjs",
     "build:spa": "craco build",
     "build:html-gallery": "node src/Generate-Backend/deploy-html-gallery.js",
     "build": "npm run build:api && npm run build:diagrams && npm run generate:articles && NODE_ENV=production BUILD_PATH='./dist' npm run build:spa",
@@ -80,7 +80,7 @@
     "@mermaid-js/mermaid-cli": "10.9.1",
     "buffer": "6.0.3",
     "craco-less": "3.0.1",
-    "esm": "3.2.25",
+
     "glob": "11.0.3",
     "marked": "16.4.1",
     "react-helmet-async": "2.0.5",

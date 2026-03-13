@@ -68,14 +68,12 @@ if (process.env.NODE_ENV === 'development') {
   config.verbose = true;
 }
 
-module.exports = {
-  default: config,
-  
-  // Helper function to get config with preset
-  getConfig: (presetName = 'default') => {
-    if (presetName === 'default') return config;
-    
-    console.warn(`⚠️  Preset '${presetName}' not found, using default config`);
-    return config;
-  }
-}; 
+// Helper function to get config with preset
+export const getConfig = (presetName = 'default') => {
+  if (presetName === 'default') return config;
+
+  console.warn(`⚠️  Preset '${presetName}' not found, using default config`);
+  return config;
+};
+
+export default config;

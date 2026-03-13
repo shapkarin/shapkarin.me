@@ -1,5 +1,5 @@
 /* eslint-disable no-multi-str */
-import { createHash } from 'crypto';
+import { hash } from 'node:crypto';
 
 export const about = {
   greeting: `Hello everyone!`,
@@ -185,9 +185,7 @@ export const creative = {
 }
 
 function generateChecksum(str, algorithm, encoding){
-    return createHash(algorithm || 'md5')
-        .update(str, 'utf8')
-        .digest(encoding || 'hex');
+    return hash(algorithm || 'md5', str, encoding || 'hex');
 }
 
 function clean(string){
