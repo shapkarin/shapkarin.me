@@ -56,19 +56,36 @@ const Search = () => {
     }
   }, []);
 
-  // Search with error handling for bad lunr queries
+  // Partial + fuzzy search: wildcard for prefix matching, fuzzy (~1) for typo tolerance
+  // Deduplicates and merges scores from all strategies
   let results = [];
   if (index && query.length >= 2) {
-    try {
-      results = index.search(query);
-    } catch {
-      // Fallback: search with wildcard for partial matches
-      try {
-        results = index.search(`${query}*`);
-      } catch {
-        results = [];
+    const terms = query.trim().split(/\s+/).filter(Boolean);
+    const seen = new Map();
+
+    const mergeResults = (hits) => {
+      for (const hit of hits) {
+        const prev = seen.get(hit.ref);
+        if (prev) {
+          prev.score = Math.max(prev.score, hit.score);
+        } else {
+          seen.set(hit.ref, { ...hit });
+        }
       }
-    }
+    };
+
+    const trySearch = (q) => {
+      try { return index.search(q); } catch { return []; }
+    };
+
+    // Exact match
+    mergeResults(trySearch(terms.join(' ')));
+    // Wildcard (prefix) — each term gets a trailing *
+    mergeResults(trySearch(terms.map((t) => `${t}*`).join(' ')));
+    // Fuzzy (~1 edit distance) for typo tolerance
+    mergeResults(trySearch(terms.map((t) => `${t}~1`).join(' ')));
+
+    results = Array.from(seen.values()).sort((a, b) => b.score - a.score);
   }
 
   const hasResults = results.length > 0;
