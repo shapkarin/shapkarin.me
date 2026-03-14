@@ -1348,10 +1348,10 @@ graph TD
 
 | Network | TPS | Finality | Validator Count | BFT Algorithm |
 |---------|-----|----------|-----------------|---------------|
-| **Ethereum 2.0** | ~100,000 | 2 epochs (12.8 min) | ~1,000,000 | Gasper |
-| **Solana** | ~65,000 | 400ms | ~3,000 | Tower BFT |
-| **Polygon** | ~7,000 | 2-3 sec | 100+ | Heimdall BFT |
-| **Avalanche** | ~4,500 | 1-2 sec | 2,000+ | Snowman |
+| **Ethereum 2.0** | ~15 (L1) | 2 epochs (12.8 min) | ~1,000,000 | Gasper |
+| **Solana** | ~2,000–4,000 | ~13 sec | ~1,500–2,000 | Tower BFT |
+| **Polygon** | ~2,000–5,000 | ~5 sec | 100+ | CometBFT |
+| **Avalanche** | ~4,500 | 1-2 sec | ~1,200 | Snowman |
 
 ## Security Analysis and Attack Vectors
 
