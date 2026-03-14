@@ -1,7 +1,7 @@
 ---
 title: >-
   What is Byzantine Fault Tolerance? Complete BFT Guide for Bitcoin, Ethereum &
-  Blockchain Security 2025
+  Blockchain Security 2026
 description: >-
   Learn Byzantine Fault Tolerance (BFT) explained simply: how Bitcoin, Ethereum
   & blockchain networks prevent attacks from malicious nodes. Complete guide
@@ -237,7 +237,7 @@ Understanding the difference between Byzantine and non-Byzantine fault tolerance
 | **Failure Types** | Node crashes, network partitions | Malicious behavior, arbitrary failures |
 | **Trust Model** | Nodes are honest but may fail | Some nodes may be malicious |
 | **Complexity** | Lower (n/2 + 1 consensus) | Higher (2n/3 + 1 consensus) |
-| **Examples** | Raft, PBFT for crashes | PBFT, Tendermint, Casper |
+| **Examples** | Raft, Paxos, ZooKeeper | PBFT, Tendermint, Casper |
 | **Use Cases** | Internal systems | Public blockchains |
 
 ### Why Blockchain Needs BFT
@@ -320,7 +320,7 @@ flowchart LR
     subgraph "Consensus Rules"
         DIFF["<br/>Target Difficulty<br/>(~10 min blocks)<br/><br/>"]
         HASH["<br/>Hash < Target<br/>(Billions of attempts)<br/><br/>"]
-        REW["<br/>Block Reward<br/>(6.25 BTC + fees)<br/><br/>"]
+        REW["<br/>Block Reward<br/>(3.125 BTC + fees)<br/><br/>"]
     end
     
     POW --> DIFF
@@ -345,14 +345,14 @@ flowchart LR
 Bitcoin's security is rooted in economic game theory. The cost of attacking the network must exceed the potential benefit:
 
 **Honest Mining Incentives**:
-- **Block rewards**: Currently 6.25 BTC per block (~$250,000)
+- **Block rewards**: Currently 3.125 BTC per block
 - **Transaction fees**: Additional 0.5-2 BTC per block
 - **Long-term appreciation**: Bitcoin holdings increase in value
 - **Predictable income**: Steady revenue stream for honest miners
 
 **Attack Requirements**:
-- **Hardware costs**: $15-20 billion for 51% hashrate
-- **Electricity costs**: $10+ million daily to maintain attack
+- **Hardware costs**: $5-10 billion for 51% hashrate
+- **Electricity costs**: $15-20 million daily to maintain attack
 - **Opportunity cost**: Forgo legitimate mining profits
 - **Market damage**: Attack destroys Bitcoin's value (and attacker's investment)
 
@@ -362,20 +362,20 @@ Bitcoin's security is rooted in economic game theory. The cost of attacking the 
 graph TD
     subgraph "Honest Mining Economics"
         HM["<br/>Honest Miner<br/><br/>"]
-        HR["<br/>Block Rewards<br/>6.25 BTC/block<br/><br/>"]
+        HR["<br/>Block Rewards<br/>3.125 BTC/block<br/><br/>"]
         HF["<br/>Transaction Fees<br/>~0.5-2 BTC/block<br/><br/>"]
         HC["<br/>Hardware Costs<br/>ASIC Miners<br/><br/>"]
         HE["<br/>Electricity Costs<br/>~$5000-8000/block<br/><br/>"]
-        HP["<br/>Honest Profit<br/>~$50,000/block<br/><br/>"]
+        HP["<br/>Honest Profit<br/>Block reward + fees<br/><br/>"]
     end
     
     subgraph "Attack Economics"
         AM["<br/>Attacker<br/><br/>"]
-        AH["<br/>51% Hashrate<br/>$15-20B Hardware<br/><br/>"]
-        AE["<br/>Daily Electricity<br/>$10M+ per day<br/><br/>"]
+        AH["<br/>51% Hashrate<br/>$5-10B Hardware<br/><br/>"]
+        AE["<br/>Daily Electricity<br/>$15-20M per day<br/><br/>"]
         AO["<br/>Opportunity Cost<br/>Lost mining rewards<br/><br/>"]
         AR["<br/>Reputation Damage<br/>Bitcoin price crash<br/><br/>"]
-        AL["<br/>Total Attack Cost<br/>>>$20B investment<br/><br/>"]
+        AL["<br/>Total Attack Cost<br/>>>$10B investment<br/><br/>"]
     end
     
     HM --> HR
@@ -527,8 +527,8 @@ graph TD
     end
     
     subgraph "Economic Reality"
-        HE["<br/>Honest Economics<br/>+65% of rewards<br/>~$390k/hour<br/><br/>"]
-        ME["<br/>Malicious Economics<br/>-35% opportunity cost<br/>-$210k/hour loss<br/><br/>"]
+        HE["<br/>Honest Economics<br/>+65% of rewards<br/>Profitable<br/><br/>"]
+        ME["<br/>Malicious Economics<br/>-35% opportunity cost<br/>Continuous loss<br/><br/>"]
     end
     
     HN --> HC
@@ -638,7 +638,7 @@ flowchart TD
     end
     
     subgraph "Economic Consequences"
-        COST["<br/>Attack Costs<br/>$15-20B hardware<br/>$10M+/day electricity<br/><br/>"]
+        COST["<br/>Attack Costs<br/>$5-10B hardware<br/>$15-20M/day electricity<br/><br/>"]
         DAMAGE["<br/>Price Collapse<br/>Destroys attacker's<br/>bitcoin holdings<br/><br/>"]
         LOSS["<br/>Net Result<br/>Massive economic loss<br/>for attacker<br/><br/>"]
     end
@@ -680,21 +680,21 @@ The economic reality makes 51% attacks practically impossible:
 %%{init: {'theme':'base', 'themeVariables': {'primaryColor':'#ffffff', 'fontSize':'16px'}}}%%
 graph LR
     subgraph "Required Resources"
-        HR["<br/>51% Hashrate<br/>~160 EH/s<br/><br/>"]
-        HW["<br/>Hardware Cost<br/>~2M ASIC miners<br/>$15-20 Billion<br/><br/>"]
-        EC["<br/>Electricity Cost<br/>~15 GW power<br/>$10M+ daily<br/><br/>"]
+        HR["<br/>51% Hashrate<br/>~500+ EH/s<br/><br/>"]
+        HW["<br/>Hardware Cost<br/>ASIC miners<br/>$5-10 Billion<br/><br/>"]
+        EC["<br/>Electricity Cost<br/>~15 GW power<br/>$15-20M daily<br/><br/>"]
         TIME["<br/>Setup Time<br/>6-12 months<br/>Market detection<br/><br/>"]
     end
     
     subgraph "Economic Consequences"
         PD["<br/>Price Decline<br/>-50% to -90%<br/>Market panic<br/><br/>"]
         REV["<br/>Revenue Loss<br/>Bitcoin holdings<br/>worthless<br/><br/>"]
-        OC["<br/>Opportunity Cost<br/>Lost mining rewards<br/>$600M+/month<br/><br/>"]
+        OC["<br/>Opportunity Cost<br/>Lost mining rewards<br/><br/>"]
         LEG["<br/>Legal Risk<br/>Government action<br/>Criminal charges<br/><br/>"]
     end
     
     subgraph "Final Outcome"
-        LOSS["<br/>Net Economic Loss<br/>>$20B investment<br/>>$300M/month losses<br/><br/>"]
+        LOSS["<br/>Net Economic Loss<br/>>$10B investment<br/>Ongoing losses<br/><br/>"]
     end
     
     HR --> HW
@@ -779,11 +779,11 @@ Where:
 - p = honest network hash rate proportion  
 - n = number of confirmations
 
-**Example with 25% attacker:**
-- 1 confirmation: 25% chance
-- 3 confirmations: 1.56% chance  
-- 6 confirmations: 0.024% chance
-- 10 confirmations: 0.00006% chance
+**Example with 25% attacker (q=0.25, p=0.75):**
+- 1 confirmation: 33% chance
+- 3 confirmations: 3.7% chance
+- 6 confirmations: 0.14% chance
+- 10 confirmations: 0.0017% chance
 ```
 
 **Trade-off Principle**: Bitcoin **sacrifices speed for security**, allowing operation in a completely trustless, permissionless environment while maintaining mathematical security guarantees.
@@ -864,9 +864,9 @@ graph TB
 ### Acknowledged Limitations and Trade-offs
 
 #### **Energy Consumption**
-- **Current Usage**: ~150 TWh annually (comparable to Argentina)
+- **Current Usage**: ~170-200 TWh annually
 - **Economic Justification**: Security cost scales with secured value
-- **Efficiency Improvements**: Hardware efficiency increases ~30% annually
+- **Efficiency Improvements**: Hardware efficiency increases ~10-15% annually
 - **Renewable Trend**: 50%+ of mining uses renewable energy sources
 
 #### **Transaction Throughput**
@@ -886,7 +886,7 @@ graph TB
 Bitcoin's breakthrough has catalyzed an entire industry of blockchain innovations:
 
 #### **Direct Influence**
-- **1000+ Cryptocurrencies**: Most use variants of Bitcoin's model
+- **10,000+ Cryptocurrencies**: Many use variants of Bitcoin's model
 - **$2+ Trillion Market**: Created an entirely new asset class
 - **Central Bank Interest**: CBDCs inspired by Bitcoin's technology
 - **Enterprise Adoption**: Major corporations hold Bitcoin as treasury asset
@@ -1139,7 +1139,7 @@ Different EVM-compatible chains have implemented various BFT consensus mechanism
 
 Polygon uses a **dual-chain architecture** with BFT consensus:
 
-- **Heimdall**: Tendermint-based BFT chain for checkpointing
+- **Heimdall**: CometBFT-based chain for checkpointing
 - **Bor**: Block production layer with PBFT elements
 
 ### Avalanche - Snowman Consensus
@@ -1247,8 +1247,8 @@ sequenceDiagram
     
     rect rgb(240, 255, 240)
         Note over V,S: Slashing Execution
-        S->>+V: Slash 50% of stake
-        S->>-V: Jail validator for 21 days
+        S->>+V: Slash portion of stake
+        S->>-V: Remove validator from active set
     end
 ```
 
@@ -1278,7 +1278,7 @@ Different BFT algorithms offer various trade-offs between security, performance,
 |-----------|-------------------------|---------|------------|-----------------|-----------|
 | **pBFT** | O(n²) | 3 rounds | Medium | n ≥ 3f + 1 | Permissioned networks |
 | **Tendermint** | O(n²) | 3+ rounds | Medium-High | n ≥ 3f + 1 | Cosmos ecosystem |
-| **HotStuff** | O(n) | 4 rounds | High | n ≥ 3f + 1 | Libra/Diem (Meta) |
+| **HotStuff** | O(n) | 4 rounds | High | n ≥ 3f + 1 | Aptos (HotStuff variant) |
 | **Casper FFG** | O(n) | 2 epochs | High | n ≥ 3f + 1 | Ethereum 2.0 |
 | **IBFT** | O(n²) | 3 rounds | Medium | n ≥ 3f + 1 | Enterprise blockchains |
 
@@ -1361,14 +1361,12 @@ Comprehensive security analysis reveals both strengths and potential vulnerabili
 
 The economic security of BFT systems depends on the cost of mounting attacks:
 
-![Diagram: Attack Cost Distribution (Larger View)](/api/articles/light/byzantine-fault-tolerance-20.svg)
+![Diagram: BFT Stake Distribution](/api/articles/light/byzantine-fault-tolerance-20.svg)
 ```mermaid
 %%{init: {'theme':'base', 'themeVariables': {'primaryColor':'#ffffff', 'fontSize':'18px', 'pie1':'#4285f4', 'pie2':'#34a853', 'pie3':'#fbbc04', 'pie4':'#ea4335'}}}%%
-pie title Attack Cost Distribution (Larger View)
-    "Honest Stake (67%)" : 67
-    "Attack Threshold (33%)" : 33
-    "Economic Buffer (15%)" : 15
-    "Slashing Penalty (18%)" : 18
+pie title BFT Stake Distribution
+    "Honest Stake" : 67
+    "Attack Threshold" : 33
 ```
 
 ### Security Assumptions
@@ -1431,9 +1429,9 @@ Examining successful BFT deployments provides insights into practical considerat
 **Solution**: Tendermint BFT with Application Blockchain Interface (ABCI).
 
 **Results**:
-- Powers 200+ interconnected blockchains
+- Powers 100+ interconnected blockchains via IBC
 - Processes millions of transactions daily
-- Maintains sub-second finality
+- Maintains ~6-7 second finality
 
 ## Future of BFT in Blockchain
 

@@ -723,7 +723,7 @@
     },
     {
       "question": "How do EVM-compatible chains implement BFT?",
-      "answer": "EVM-compatible chains use various BFT approaches: Polygon uses Tendermint-based consensus with checkpointing, BSC employs Proof-of-Staked-Authority with 21 validators, and Avalanche uses Snowman consensus with sub-second finality. Each balances security, speed, and decentralization differently.",
+      "answer": "EVM-compatible chains use various BFT approaches: Polygon uses CometBFT-based consensus with checkpointing, BSC employs Proof-of-Staked-Authority with 21 validators, and Avalanche uses Snowman consensus with 1-2 second finality. Each balances security, speed, and decentralization differently.",
       "category": "evm-chains",
       "relatedLinks": [
         "https://polygon.technology/",
@@ -769,7 +769,7 @@
     },
     {
       "question": "How fast is finality in different BFT systems?",
-      "answer": "Finality speed varies by implementation: Bitcoin has probabilistic finality (~1 hour for high security), Ethereum has 2-epoch finality (~13 minutes), BSC has 3-second finality, and Avalanche achieves sub-second finality. Faster finality often requires trade-offs in decentralization.",
+      "answer": "Finality speed varies by implementation: Bitcoin has probabilistic finality (~1 hour for high security), Ethereum has 2-epoch finality (~13 minutes), BSC has 3-second finality, and Avalanche achieves 1-2 second finality. Faster finality often requires trade-offs in decentralization.",
       "category": "performance",
       "relatedLinks": [
         "https://ethereum.org/en/developers/docs/consensus-mechanisms/pos/#finality",
@@ -809,7 +809,7 @@
     },
     {
       "query": "EVM compatible chains consensus mechanisms",
-      "answer": "EVM-compatible chains use various BFT consensus: Polygon (Tendermint-based with checkpointing), BSC (Proof-of-Staked-Authority with 21 validators), Avalanche (Snowman consensus), Arbitrum (optimistic rollups), and Optimism (fraud proofs). Each balances security, speed, and decentralization differently.",
+      "answer": "EVM-compatible chains use various BFT consensus: Polygon (CometBFT-based with checkpointing), BSC (Proof-of-Staked-Authority with 21 validators), Avalanche (Snowman consensus), Arbitrum (optimistic rollups), and Optimism (fraud proofs). Each balances security, speed, and decentralization differently.",
       "confidence": 0.94
     },
     {
@@ -834,7 +834,7 @@
     },
     {
       "query": "tendermint byzantine fault tolerance implementation",
-      "answer": "Tendermint implements BFT through a three-phase protocol (propose, prevote, precommit) with immediate finality. Used by Cosmos and adapted by Polygon, it supports up to 300 validators and achieves consensus in seconds while maintaining Byzantine fault tolerance guarantees.",
+      "answer": "Tendermint (now CometBFT) implements BFT through a three-phase protocol (propose, prevote, precommit) with ~6-7 second finality. Used by Cosmos and adapted by Polygon, it supports up to 300 validators and achieves consensus in seconds while maintaining Byzantine fault tolerance guarantees.",
       "confidence": 0.94
     }
   ],
@@ -1031,7 +1031,7 @@
     {
       "name": "Polygon",
       "type": "Technology",
-      "description": "EVM-compatible layer 2 solution using Tendermint-based BFT consensus",
+      "description": "EVM-compatible layer 2 solution using CometBFT-based BFT consensus",
       "importance": "medium",
       "relatedLinks": [
         "https://polygon.technology/",
@@ -1489,7 +1489,7 @@
       "@type": "WebPageElement",
       "name": "Polygon (MATIC) - Heimdall and Bor",
       "url": "https://shapkarin.me/articles/byzantine-fault-tolerance#polygon-matic---heimdall-and-bor",
-      "description": "Dual-chain architecture with Tendermint-based BFT consensus for checkpointing",
+      "description": "Dual-chain architecture with CometBFT-based BFT consensus for checkpointing",
       "order": 26,
       "relatedLinks": [
         "https://polygon.technology/"
@@ -1509,7 +1509,7 @@
       "@type": "WebPageElement",
       "name": "Avalanche - Snowman Consensus",
       "url": "https://shapkarin.me/articles/byzantine-fault-tolerance#avalanche---snowman-consensus",
-      "description": "Unique sampling-based consensus protocol with sub-second finality",
+      "description": "Unique sampling-based consensus protocol with 1-2 second finality",
       "order": 28,
       "relatedLinks": [
         "https://www.avax.network/"
