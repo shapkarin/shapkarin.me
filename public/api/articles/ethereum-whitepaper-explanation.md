@@ -31,10 +31,10 @@ keywords: >-
 
 ## What is the Ethereum Whitepaper?
 
-The **Ethereum Whitepaper** is a foundational document written by Vitalik Buterin in 2014 that introduced the world to Ethereum - a revolutionary blockchain platform that goes far beyond digital currency.
+The **Ethereum Whitepaper** is a foundational document written by Vitalik Buterin in late 2013 that introduced the world to Ethereum - a revolutionary blockchain platform that goes far beyond digital currency.
 
 ### Quick Facts:
-- **Published**: 2014 by Vitalik Buterin
+- **Published**: Late 2013 by Vitalik Buterin
 - **Purpose**: Introduce a "world computer" concept
 - **Key Innovation**: Smart contracts on blockchain
 - **Impact**: Enabled decentralized applications (dApps)
@@ -197,7 +197,7 @@ Current State + Transaction = New State
 - Decentralized exchanges (DEXs)
 - Yield farming protocols
 
-**Real Impact**: Over $200 billion in value locked in DeFi protocols
+**Real Impact**: Billions of dollars in value locked in DeFi protocols
 
 ### 2. **Non-Fungible Tokens (NFTs)**
 **What it is**: Unique digital assets that can't be replicated
@@ -235,7 +235,7 @@ Current State + Transaction = New State
 **Problem**: Ethereum can only process ~15 transactions per second
 **Solutions**:
 - **Layer 2 Solutions**: Polygon, Arbitrum, Optimism
-- **Ethereum 2.0**: Proof-of-Stake and sharding
+- **Rollup-centric roadmap**: Proto-danksharding (EIP-4844) and future danksharding
 - **State Channels**: Off-chain transaction processing
 
 ### 2. **High Gas Fees**
@@ -243,7 +243,7 @@ Current State + Transaction = New State
 **Solutions**:
 - **Optimistic Rollups**: Bundle multiple transactions
 - **ZK-Rollups**: Zero-knowledge proofs for scaling
-- **Alternative Networks**: Binance Smart Chain, Avalanche
+- **Alternative Networks**: BNB Chain, Avalanche
 
 ### 3. **Energy Consumption**
 **Problem**: Proof-of-Work mining consumes significant energy
@@ -303,7 +303,7 @@ Current State + Transaction = New State
 **A**: They serve different purposes. Bitcoin is digital gold (store of value), while Ethereum is a platform for building applications. Both have value in the ecosystem.
 
 ### Q: How much does it cost to use Ethereum?
-**A**: Costs vary based on network congestion. Gas fees can range from $1 to $100+ during peak times. Layer 2 solutions offer much lower costs.
+**A**: Costs vary based on network congestion. L1 gas fees have dropped significantly since EIP-4844 (2024), and Layer 2 solutions offer fees as low as fractions of a cent.
 
 ### Q: Is Ethereum secure?
 **A**: The Ethereum network itself is very secure, but individual smart contracts can have bugs. Always use audited and well-tested applications.

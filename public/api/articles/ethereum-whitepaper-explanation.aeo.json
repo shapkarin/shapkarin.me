@@ -46,9 +46,9 @@
       "decentralized applications",
       "ethereum gas fees",
       "proof of stake",
-      "ethereum 2.0"
+      "ethereum roadmap"
     ],
-    "lastUpdated": "2025-10-11",
+    "lastUpdated": "2026-03-15",
     "readingTime": "12 minutes",
     "category": "Blockchain Technology",
     "difficulty": "Beginner",
@@ -70,7 +70,7 @@
     },
     "url": "https://shapkarin.me/articles/ethereum-whitepaper-explanation/",  
     "datePublished": "2025-01-27",
-    "dateModified": "2025-01-27",
+    "dateModified": "2026-03-15",
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https://shapkarin.me/articles/ethereum-whitepaper-explanation/"
@@ -87,7 +87,7 @@
   },
   "featured_snippet": {
     "question": "What is the Ethereum Whitepaper?",
-    "answer": "The Ethereum Whitepaper is a foundational document written by Vitalik Buterin in 2014 that introduced Ethereum - a revolutionary blockchain platform that goes far beyond digital currency. Think of it as the blueprint for building a global, decentralized computer that anyone can use to create applications without needing permission from any central authority.",
+    "answer": "The Ethereum Whitepaper is a foundational document written by Vitalik Buterin in late 2013 that introduced Ethereum - a revolutionary blockchain platform that goes far beyond digital currency. Think of it as the blueprint for building a global, decentralized computer that anyone can use to create applications without needing permission from any central authority.",
     "type": "definition"
   },
   "key_concepts": [
@@ -120,7 +120,7 @@
   "faq": [
     {
       "question": "What is the Ethereum Whitepaper?",
-      "answer": "The Ethereum Whitepaper is a foundational document written by Vitalik Buterin in 2014 that introduced the world to Ethereum - a revolutionary blockchain platform that enables smart contracts and decentralized applications, going far beyond just digital currency.",
+      "answer": "The Ethereum Whitepaper is a foundational document written by Vitalik Buterin in late 2013 that introduced the world to Ethereum - a revolutionary blockchain platform that enables smart contracts and decentralized applications, going far beyond just digital currency.",
       "category": "basics"
     },
     {
@@ -145,7 +145,7 @@
     },
     {
       "question": "How much does it cost to use Ethereum?",
-      "answer": "Costs vary based on network congestion. Gas fees can range from $1 to $100+ during peak times. Layer 2 solutions like Polygon and Arbitrum offer much lower costs.",
+      "answer": "Costs vary based on network congestion. L1 gas fees have dropped significantly since EIP-4844 (2024), and Layer 2 solutions offer fees as low as fractions of a cent.",
       "category": "practical"
     },
     {
@@ -160,7 +160,7 @@
     },
     {
       "question": "Who created Ethereum?",
-      "answer": "Ethereum was created by Vitalik Buterin, who wrote the original whitepaper in 2014 when he was just 19 years old. The platform launched in 2015 with help from other co-founders.",
+      "answer": "Ethereum was created by Vitalik Buterin, who wrote the original whitepaper in late 2013 when he was 19 years old. The platform launched in 2015 with help from other co-founders.",
       "category": "history"
     },
     {
@@ -172,7 +172,7 @@
   "quick_answers": [
     {
       "query": "ethereum whitepaper summary",
-      "answer": "Vitalik Buterin's 2014 Ethereum Whitepaper introduced a blockchain platform that goes beyond Bitcoin by enabling smart contracts and decentralized applications. It envisions a 'world computer' where anyone can build applications without permission.",
+      "answer": "Vitalik Buterin's late 2013 Ethereum Whitepaper introduced a blockchain platform that goes beyond Bitcoin by enabling smart contracts and decentralized applications. It envisions a 'world computer' where anyone can build applications without permission.",
       "confidence": 0.95
     },
     {
@@ -452,7 +452,7 @@
       "order": 10
     }
   ],
-  "last_updated": "2025-01-27T00:00:00Z",
+  "last_updated": "2026-03-15T00:00:00Z",
   "version": "1.0"
   }
 ] 
