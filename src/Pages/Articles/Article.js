@@ -9,7 +9,7 @@ import remarkGfm from 'remark-gfm'
 import { fetchArticle, fetchAeo } from "@/DAL";
 import { useQuery } from "@tanstack/react-query";
 import SEO from '@/Components/SEO';
-import { SCROLL_OFFSET } from '@/constants';
+import { SCROLL_OFFSET, IS_PRODUCTION } from '@/constants';
 // Markdown macros
 import HeadingMacro from './Macros/HeadingMacro';
 import LinkMacro from './Macros/LinkMacro';
@@ -37,7 +37,7 @@ const Article = () => {
     queryKey: ['Articles', articleName], 
     queryFn: () => fetchArticle(articleName), 
     enabled: Boolean(articleName),
-    keepPreviousData : process.env.NODE_ENV === 'production' ? true : false,
+    keepPreviousData : IS_PRODUCTION,
   });
 
   const { data: frontMatter, content: markdownContent } = matter(content);
@@ -56,7 +56,7 @@ const Article = () => {
       }
     },
     enabled: Boolean(articleName),
-    keepPreviousData: process.env.NODE_ENV === 'production' ? true : false, //fasle,
+    keepPreviousData: IS_PRODUCTION, //fasle,
   });
 
   const articleRef = useRef(null);

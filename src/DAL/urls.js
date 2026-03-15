@@ -1,3 +1,5 @@
+import { IS_PRODUCTION } from '@/constants';
+
 const GITHUB_API_URL = 'https://api.github.com';
 
 const github = {
@@ -17,7 +19,7 @@ const github = {
   },
 }
 
-const rawPrefix = process.env.NODE_ENV === 'production' ? 'https://raw.githubusercontent.com/shapkarin/shapkarin.me/refs/heads/gh-pages' : '';
+const rawPrefix = IS_PRODUCTION ? 'https://raw.githubusercontent.com/shapkarin/shapkarin.me/refs/heads/gh-pages' : '';
 
 const backend = {
   about: '/api/about.json',

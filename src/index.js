@@ -1,12 +1,13 @@
 import React from 'react';
 import { createRoot, hydrateRoot } from 'react-dom/client';
 import App from './App';
+import { IS_PRODUCTION } from '@/constants';
 // import reportWebVitals from './reportWebVitals';
 
 const rootElement = document.getElementById('root');
 const GH_PAGES_CANT_HYDRATE = false;
 
-process.env.NODE_ENV === 'production' && GH_PAGES_CANT_HYDRATE
+IS_PRODUCTION && GH_PAGES_CANT_HYDRATE
   ? hydrateRoot(rootElement, <App />)
   : createRoot(rootElement).render(<App />);
 
