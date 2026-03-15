@@ -104,7 +104,7 @@ const Search = () => {
           onKeyDown={handleKeyDown}
           placeholder={isLoading ? 'Fetching...' : 'Search...'}
           name="search"
-          autocomplete="off"
+          autoComplete="off"
         />
         {query && (
           <button
