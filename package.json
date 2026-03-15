@@ -31,11 +31,11 @@
     "node": ">=20.11.0"
   },
   "scripts": {
-    "start": "npm run build:local && craco start",
+    "start": "npm run build:local && REACT_APP_COMMIT_HASH=$(git rev-parse HEAD) craco start",
     "dev": "npm run start",
     "build:api": "node src/Generate-Backend/database-to-json.mjs",
     "build:diagrams": "node src/Generate-Backend/mermaid-render/mermaid-render.mjs",
-    "build:spa": "craco build",
+    "build:spa": "REACT_APP_COMMIT_HASH=$(git rev-parse HEAD) craco build",
     "build:html-gallery": "node src/Generate-Backend/deploy-html-gallery.js",
     "build:articles": "node src/Generate-Backend/generate-articles-list.js",
     "build:sitemap-manually": "sitemap-generator https://shapkarin.me -f public/sitemap.xml",
