@@ -50,14 +50,14 @@ export const packages = {
         url: 'https://www.npmjs.com/package/extend-saga-routines',
         description: `
           Customizable action creator lib for any kind of actions. Note: There was no "createSlice" API in Redux Toolkit (RTK) in 2018 when this package was published + package don't relay on Redux`,
-        badges: [ 'npm/v', 'npm/dm', 'npm/l' ]
+        badges: [ 'npm/v', 'npm/dy', 'npm/l' ]
       },
       'saga-fetch': {
         title: 'Saga Fetch',
         url: 'https://www.npmjs.com/package/saga-fetch',
         description: `
           Redux-Saga worker, created to simplify a fetch worker implementation.`,
-        badges: [ 'npm/v', 'npm/dm', 'npm/l' ]
+        badges: [ 'npm/v', 'npm/dy', 'npm/l' ]
       },
       'diff-browser-globals': {
         title: 'Global diff (suspended)',
