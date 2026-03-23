@@ -117,7 +117,7 @@ const P5_GALLERY_PATH = '/gallery/p5js';
 const OLD_GALLERY_PATH = `/gallery/older`;
 
 export const creative = {
-  title: 'A part of my creative coding artworks',
+  title: 'A few of my creative coding artworks',
   description: clean(`
     The rest can be shown upon personal request.
     Generative art, animation, and music visualization experiments for learning, researching, and practicing.
@@ -154,14 +154,14 @@ export const creative = {
         href: `${P5_GALLERY_PATH}/flies`,
       },
       {
-        title: 'Flies Mouse Acceleration',
+        title: 'Mouse Acceleration',
         href: `${P5_GALLERY_PATH}/flies-m-acc`,
       },
     ],
 
     After: [
       {
-        title: 'Sound Terrain (FFT + Three.js)',
+        title: 'Sound Terrain',
         href: 'http://joy.shapkarin.me',
       },
       {

@@ -26,7 +26,7 @@ export default function Creative() {
 
 
 const CreativeProofLink = () =>
-  <a target="_blank" rel="noreferrer" href="https://github.com/shapkarin/sketches" style={{ marginBottom: '10px' }}>{"=> from 9 y.o. repository"}</a>;
+  <a target="_blank" rel="noreferrer" href="https://github.com/shapkarin/sketches" style={{ marginBottom: '10px' }}>[9 y.o. repo]</a>;
 
 function Intro() {
   const { data: { data: { title, description } } } = useQuery({
