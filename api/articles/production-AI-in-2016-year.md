@@ -9,6 +9,10 @@ order: 2
 
 # Production AI In 2016 Year
 
+refs: 
+1. https://www.linkedin.com/posts/shapkarin_ai-ml-llm-share-7444364079034683392-FgPT
+2. https://www.linkedin.com/posts/shapkarin_ai-ml-activity-7428858006001352705-4vlg
+
 > I don’t think LLMs alone are gonna get us to AGI, but they’re the main reason why AI got mass adoption. Obviously LLMs are a type of machine learning (AI). The thing is, for a ton of tasks they’re total overkill, like smashing a nail with an anvil when a hammer would do the job. I mean AI is not only about LLMs but AI includes other phorms of ML.
 > AGI gonna come from orchestrating a bunch of different AIs (specialized models, ML stuff, whatever you wanna call them) all playing together nicely. One big Swiss Army knife instead of just one giant blade. (c) [from my LinkedIn post](https://www.linkedin.com/posts/shapkarin_ai-ml-philosophy-activity-7416732830384369664-abHO)
 
