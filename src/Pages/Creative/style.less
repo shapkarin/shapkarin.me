@@ -1,6 +1,7 @@
 @import "../../Assets/Variables.less";
 @import "../../Assets/Mixins.less";
 
+@padding: 12px;
 
 .Gal__Wrapper {
   display: flex;
@@ -16,19 +17,22 @@
 }
 
 .Gal--Item {
-  padding: 12px;
-  margin-right: 20px;
+  padding: @padding @padding*2 @padding 0;  
 
   @media (min-width: @mobile-width) {
     text-decoration: none;
   }
   
   &:hover {
+    padding-left: @padding;
+    padding-right: @padding;
+    transition: .18s padding linear;
     .barberpole-animation();
   }
 }
 
 .Gal__Column {
+  column-span: all;
   margin-bottom: 5px;
   display: flex;
   flex-direction: column;
