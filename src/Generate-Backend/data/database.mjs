@@ -1,6 +1,3 @@
-/* eslint-disable no-multi-str */
-import { hash } from 'node:crypto';
-
 export const about = {
   greeting: `Hello everyone!`,
   intro: clean(`
@@ -97,12 +94,12 @@ export const packages = {
   },
 
   get list(){
-    return this.order.map((name) => {
+    return this.order.map((name, id) => {
       const { title, url, description, badges = [] } = this.database[name];
       const descriptionCleared = clean(description);
       
       return {
-        id: generateChecksum(descriptionCleared),
+        id,
         url,
         title,
         name,
@@ -182,10 +179,6 @@ export const creative = {
       },
     ],
   }
-}
-
-function generateChecksum(str, algorithm, encoding){
-    return hash(algorithm || 'md5', str, encoding || 'hex');
 }
 
 function clean(string){
