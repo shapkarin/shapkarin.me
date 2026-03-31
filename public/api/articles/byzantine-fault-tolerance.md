@@ -1361,7 +1361,7 @@ Comprehensive security analysis reveals both strengths and potential vulnerabili
 
 The economic security of BFT systems depends on the cost of mounting attacks:
 
-![Diagram: Attack Cost Distribution (Larger View)](/api/articles/light/byzantine-fault-tolerance-20.svg)
+![Diagram: BFT Stake Distribution](/api/articles/light/byzantine-fault-tolerance-20.svg)
 ```mermaid
 %%{init: {'theme':'base', 'themeVariables': {'primaryColor':'#ffffff', 'fontSize':'18px', 'pie1':'#4285f4', 'pie2':'#34a853', 'pie3':'#fbbc04', 'pie4':'#ea4335'}}}%%
 pie title BFT Stake Distribution
