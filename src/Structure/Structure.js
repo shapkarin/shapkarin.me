@@ -1,3 +1,4 @@
+import { Suspense } from 'react';
 import { Switch, Route, Redirect } from "react-router-dom";
 import PageLayout from "@/Layouts/Page";
 
@@ -5,7 +6,8 @@ import { PAGES } from ".";
 
 const Structure = () => (
   <div className="Page">
-    <Switch>
+    <Suspense fallback={null}>
+      <Switch>
       {PAGES.reduce(
         (acc, { name, path, Page, redirect, redirects }) => [
           ...acc,
@@ -21,17 +23,17 @@ const Structure = () => (
       )}
       {/* I use 404.html for same */}
       {/* Redirect to my GitHub profile :-)  */}
-      {/* <Route
-        exact
-        path="/github"
-        render={() => {
-          window.location = "https://github.com/shapkarin";
-          return "Congrats! Redirecting to my GitHub profile...";
-        }}
-        key="Route_GitHub"
-      /> */}
-      
-    </Switch>
+        {/* <Route
+          exact
+          path="/github"
+          render={() => {
+            window.location = "https://github.com/shapkarin";
+            return "Congrats! Redirecting to my GitHub profile...";
+          }}
+          key="Route_GitHub"
+        /> */}
+      </Switch>
+    </Suspense>
   </div>
 );
 

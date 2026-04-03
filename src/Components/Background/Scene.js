@@ -20,8 +20,10 @@ export default class Scene {
     this.canvas.height = this.height;
 
     this.ctx = this.canvas.getContext('2d');
-    this.ctx.lineWidth = 1;
-    // this.ctx.fillStyle = "";
+    if (this.ctx) {
+      this.ctx.lineWidth = 1;
+      // this.ctx.fillStyle = "";
+    }
     if(!isMobile()){
       this.array2D = this.createArray();
       this.draw();
@@ -61,6 +63,7 @@ export default class Scene {
 
   // TODO..
   draw = () => {
+    if (!this.ctx) return;
     this.ctx.beginPath();
     this.ctx.fillStyle = '#ffffff';
     this.ctx.fillRect(0, 0, this.width, this.height);
@@ -81,6 +84,7 @@ export default class Scene {
   getRandomItem = () => this.array2D[random(1, this.array2D.length - 1)][random(1, this.countX - 1)];
 
   drawCross = () => {
+    if (!this.ctx) return;
     const randomItem = this.getRandomItem();
     // const randomItem = this.array2D[4][4];
     this.ctx.strokeStyle = STROKE_COLOR;
