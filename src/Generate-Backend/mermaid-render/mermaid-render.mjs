@@ -1,12 +1,15 @@
+#!/usr/bin/env node
 import fs from 'node:fs/promises';
 import path from 'node:path';
-import { execSync } from 'node:child_process';
+import { exec } from 'node:child_process';
+import { promisify } from 'node:util';
+
+const execAsync = promisify(exec);
 import matter from 'gray-matter';
 import crypto from 'node:crypto';
-import sqlite3Pkg from 'sqlite3';
+import { DatabaseSync } from 'node:sqlite';
 import mermaidConfig, { getConfig } from './mermaid.config.mjs';
 
-const sqlite3 = sqlite3Pkg.verbose();
 
 /**
  * Simple Mermaid SVG Generator with SQLite Hash Cache
@@ -14,6 +17,9 @@ const sqlite3 = sqlite3Pkg.verbose();
  * Uses SQLite to cache diagram hashes and avoid regenerating unchanged content
  */
 class MermaidProcessor {
+  #db;
+  #dbPath;
+
   constructor(config = {}) {
     this.config = {
       ...config
@@ -26,58 +32,50 @@ class MermaidProcessor {
       errors: 0
     };
 
-    this.db = null;
-    this.dbPath = path.join(import.meta.dirname, this.config.dbPath);
+    this.#db = null;
+    this.#dbPath = this.config.dbPath ? path.join(import.meta.dirname, this.config.dbPath) : ':memory:';
   }
 
   /**
    * Initialize SQLite database for hash caching
    */
   async initDatabase() {
-    return new Promise((resolve, reject) => {
-      this.db = new sqlite3.Database(this.dbPath, (err) => {
-        if (err) {
-          reject(err);
-          return;
-        }
-        
-        if (this.config.verbose) {
-          console.log(`📊 Connected to SQLite database: ${this.dbPath}`);
-        }
-        
-        // Create table if it doesn't exist
-        this.db.run(`
-          CREATE TABLE IF NOT EXISTS mermaid_hashes (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            content_hash TEXT UNIQUE NOT NULL,
-            svg_path TEXT NOT NULL,
-            created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
-            updated_at DATETIME DEFAULT CURRENT_TIMESTAMP
-          )
-        `, (err) => {
-          if (err) {
-            reject(err);
-          } else {
-            resolve();
-          }
-        });
-      });
-    });
+    try {
+      // Ensure directory exists
+      await fs.mkdir(path.dirname(this.#dbPath), { recursive: true });
+      this.#db = new DatabaseSync(this.#dbPath);
+
+      if (this.config.verbose) {
+        console.log(`📊 Connected to SQLite database: ${this.#dbPath}`);
+      }
+
+      // Create table if it doesn't exist
+      this.#db.exec(`
+        CREATE TABLE IF NOT EXISTS mermaid_hashes (
+          id INTEGER PRIMARY KEY AUTOINCREMENT,
+          content_hash TEXT UNIQUE NOT NULL,
+          svg_path TEXT NOT NULL,
+          created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+          updated_at DATETIME DEFAULT CURRENT_TIMESTAMP
+        );
+        CREATE INDEX IF NOT EXISTS idx_mermaid_hashes_content_hash ON mermaid_hashes(content_hash);
+      `);
+    } catch (err) {
+      console.error('Failed to initialize database:', err);
+      throw err;
+    }
   }
 
   /**
    * Close database connection
    */
   async closeDatabase() {
-    if (this.db) {
-      return new Promise((resolve) => {
-        this.db.close((err) => {
-          if (err) {
-            console.error('Error closing database:', err);
-          }
-          resolve();
-        });
-      });
+    if (this.#db) {
+      try {
+        this.#db.close();
+      } catch (err) {
+        console.error('Error closing database:', err);
+      }
     }
   }
 
@@ -85,53 +83,48 @@ class MermaidProcessor {
    * Check if SVG exists in cache and file system
    */
   async checkCachedSVG(contentHash) {
-    return new Promise((resolve, reject) => {
-      this.db.get(
-        'SELECT svg_path FROM mermaid_hashes WHERE content_hash = ?',
-        [contentHash],
-        async (err, row) => {
-          if (err) {
-            reject(err);
-            return;
-          }
-          
-          if (!row) {
-            resolve(null);
-            return;
-          }
-          
-          // Check if SVG file actually exists
-          try {
-            await fs.access(row.svg_path);
-            resolve(row.svg_path);
-          } catch {
-            // File doesn't exist, remove from cache
-            this.db.run('DELETE FROM mermaid_hashes WHERE content_hash = ?', [contentHash]);
-            resolve(null);
-          }
-        }
-      );
-    });
+    try {
+      const stmt = this.#db.prepare('SELECT svg_path FROM mermaid_hashes WHERE content_hash = ?');
+      const row = stmt.get(contentHash);
+
+      if (!row) {
+        return null;
+      }
+
+      // Check if SVG file actually exists
+      try {
+        await fs.access(row.svg_path);
+        return row.svg_path;
+      } catch {
+        // File doesn't exist, remove from cache
+        const delStmt = this.#db.prepare('DELETE FROM mermaid_hashes WHERE content_hash = ?');
+        delStmt.run(contentHash);
+        return null;
+      }
+    } catch (err) {
+      console.error('Error checking cached SVG:', err);
+      throw err;
+    }
   }
 
   /**
    * Store SVG path in cache
    */
   async storeCachedSVG(contentHash, svgPath) {
-    return new Promise((resolve, reject) => {
-      this.db.run(
-        `INSERT OR REPLACE INTO mermaid_hashes (content_hash, svg_path, updated_at) 
-         VALUES (?, ?, CURRENT_TIMESTAMP)`,
-        [contentHash, svgPath],
-        function(err) {
-          if (err) {
-            reject(err);
-          } else {
-            resolve(this.lastID);
-          }
-        }
-      );
-    });
+    try {
+      const stmt = this.#db.prepare(`
+        INSERT INTO mermaid_hashes (content_hash, svg_path, updated_at)
+        VALUES (?, ?, CURRENT_TIMESTAMP)
+        ON CONFLICT(content_hash) DO UPDATE SET
+          svg_path=excluded.svg_path,
+          updated_at=CURRENT_TIMESTAMP
+      `);
+      const info = stmt.run(contentHash, svgPath);
+      return info.lastInsertRowid;
+    } catch (err) {
+      console.error('Error storing cached SVG:', err);
+      throw err;
+    }
   }
 
   /**
@@ -162,8 +155,7 @@ class MermaidProcessor {
         console.log(`🎨 Generating: ${path.basename(outputPath)} (${theme})`);
       }
       
-      execSync(command, { 
-        stdio: this.config.verbose ? 'inherit' : 'pipe',
+      await execAsync(command, {
         cwd: process.cwd()
       });
       
@@ -194,7 +186,7 @@ class MermaidProcessor {
    * Generate unique diagram ID from content
    */
   generateDiagramId(mermaidCode, theme, outputPath) {
-    return crypto.hash('md5', mermaidCode.trim() + theme + outputPath, 'hex');
+    return crypto.hash('sha256', mermaidCode.trim() + theme + outputPath, 'hex');
   }
 
   /**
@@ -217,7 +209,9 @@ class MermaidProcessor {
 
   /**
    * Check if file has unprocessed mermaid blocks
-   * Returns an object with information about processed/unprocessed blocks
+   * @param {string} markdownContent - The content of the markdown file
+   * @param {string} filePath - The path to the markdown file
+   * @returns {{ totalMermaidBlocks: number, hasUnprocessedBlocks: boolean, needsProcessing: boolean }} Information about processed/unprocessed blocks
    */
   analyzeFileProcessingStatus(markdownContent, filePath) {
     
@@ -428,7 +422,7 @@ ${mermaidCode}
     console.log(`📂 Input: ${this.config.inputDir}`);
     console.log(`📂 Output: ${this.config.outputDir}`);
     console.log(`🎨 Theme: ${this.config.defaultTheme}${this.config.generateBothThemes ? ' (both themes)' : ''}`);
-    console.log(`📊 Database: ${this.dbPath}`);
+    console.log(`📊 Database: ${this.#dbPath}`);
 
     try {
       // Initialize database
@@ -448,10 +442,12 @@ ${mermaidCode}
       
       let totalDiagrams = 0;
       
-      // Process each file
-      for (const file of markdownFiles) {
-        const diagramCount = await this.processMarkdownFile(file);
-        totalDiagrams += diagramCount;
+      // Process files concurrently
+      const concurrentLimit = this.config.concurrent || 2;
+      for (let i = 0; i < markdownFiles.length; i += concurrentLimit) {
+        const batch = markdownFiles.slice(i, i + concurrentLimit);
+        const results = await Promise.all(batch.map(file => this.processMarkdownFile(file)));
+        totalDiagrams += results.reduce((sum, count) => sum + count, 0);
       }
       
       // Print summary
@@ -466,7 +462,7 @@ ${mermaidCode}
       console.log(`❌ Errors: ${this.stats.errors}`);
       console.log(`⏱️  Duration: ${duration}s`);
       console.log(`📂 Output directory: ${this.config.outputDir}`);
-      console.log(`📊 Cache database: ${this.dbPath}`);
+      console.log(`📊 Cache database: ${this.#dbPath}`);
       console.log('═'.repeat(50));
 
     } finally {
@@ -479,11 +475,24 @@ ${mermaidCode}
 // CLI usage
 async function main() {
   const args = process.argv.slice(2);
-  const preset = args.find(arg => arg.startsWith('--preset='))?.split('=')[1] || 'default'; // 'default' can be removed or replaced with preset name
+  const configPathArg = args.find(arg => arg.startsWith('--config='));
+  const configPath = configPathArg ? configPathArg.split('=')[1] : null;
   const verbose = args.includes('--verbose') || args.includes('-v');
   
+  let userConfig = {};
+  try {
+    const configModulePath = configPath ? path.resolve(process.cwd(), configPath) : path.resolve(process.cwd(), 'mermaid.config.mjs');
+    const { default: loadedConfig } = await import(configModulePath);
+    userConfig = loadedConfig;
+  } catch (err) {
+    if (configPath) {
+      console.warn(`⚠️  Could not load config from ${configPath}, using default config.`);
+    }
+  }
+
   // Get configuration from external config file
-  const config = getConfig(preset);
+  const baseConfig = getConfig();
+  const config = { ...baseConfig, ...userConfig };
   
   // Override with CLI flags
   if (verbose !== undefined) {
@@ -492,17 +501,7 @@ async function main() {
   
   let processor;
   
-  try {
-    processor = new MermaidProcessor(config);
-    await processor.processAllMarkdownFiles();
-    process.exit(0);
-  } catch (error) {
-    console.error('💥 Fatal error:', error.message);
-    if (config.verbose) {
-      console.error(error.stack);
-    }
-    
-    // Ensure database is closed even on error
+  const cleanup = async () => {
     if (processor) {
       try {
         await processor.closeDatabase();
@@ -510,7 +509,25 @@ async function main() {
         console.error('Error closing database:', dbError.message);
       }
     }
-    
+  };
+
+  process.on('SIGINT', async () => {
+    console.log('\nCaught interrupt signal. Cleaning up...');
+    await cleanup();
+    process.exit(0);
+  });
+
+  try {
+    processor = new MermaidProcessor(config);
+    await processor.processAllMarkdownFiles();
+    await cleanup();
+    process.exit(0);
+  } catch (error) {
+    console.error('💥 Fatal error:', error.message);
+    if (config.verbose) {
+      console.error(error.stack);
+    }
+    await cleanup();
     process.exit(1);
   }
 }

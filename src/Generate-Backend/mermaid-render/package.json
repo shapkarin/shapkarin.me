@@ -1,0 +1,20 @@
+{
+  "name": "mermaid-render",
+  "version": "1.0.0",
+  "description": "Simple Mermaid SVG Generator with SQLite Hash Cache",
+  "main": "mermaid-render.mjs",
+  "type": "module",
+  "bin": {
+    "mermaid-render": "./mermaid-render.mjs"
+  },
+  "scripts": {
+    "test": "node --test tests/"
+  },
+  "dependencies": {
+    "@mermaid-js/mermaid-cli": "^10.9.1",
+    "gray-matter": "^4.0.3"
+  },
+  "engines": {
+    "node": ">=22.5.0"
+  }
+}
