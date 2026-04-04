@@ -19,6 +19,9 @@ import TableMacro from './Macros/TableMacro';
 
 import { SCROLL_OFFSET, IS_PRODUCTION } from '@/constants';
 
+// TODO: switch to CSS Modules (issue #93)
+import './style.less';
+
 const CodeBlock = ({ children, className, node, match, ...rest }) => {
   return (
   <SyntaxHighlighter

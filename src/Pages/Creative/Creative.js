@@ -1,7 +1,6 @@
 import { useQuery } from '@tanstack/react-query';
 import SEO from '@/Components/SEO';
 
-import Preloader from '@/Components/Preloader';
 import Formatted from '@/Components/Formatted';
 import { fetchCreativeIntro, fetchCreative } from '@/DAL';
 
@@ -15,10 +14,8 @@ export default function Creative() {
         description="Explore my collection of creative coding experiments, generative art, and interactive animations. Algorithmic drawings and visual experiments created with JavaScript and creative coding libraries."
       />
       <div className="Page__Creative Page__Inner">
-        <Preloader>
-          <Intro />
-          <Collection />
-        </Preloader>
+        <Intro />
+        <Collection />
       </div>
     </>
   );

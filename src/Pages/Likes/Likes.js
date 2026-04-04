@@ -9,6 +9,8 @@ import Button from '@/Components/Button';
 
 import { fetchLikes } from '@/DAL';
 
+import '../Repositories/style.less';
+
 export default function Liked() {
   const { data: { data: list } } = useQuery({ queryKey: ['Liked'], queryFn: fetchLikes });
 

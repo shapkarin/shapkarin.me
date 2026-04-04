@@ -1,13 +1,23 @@
-import Packages from '@/Pages/Packages';
-import Repositories from '@/Pages/Repositories';
-import Stars from '@/Pages/Likes';
-import Creative from '@/Pages/Creative';
-import Articles from '@/Pages/Articles/Articles';
-import Article from '@/Pages/Articles/Article';
-import Main from '@/Pages/Main';
+// import Packages from '@/Pages/Packages';
+// import Repositories from '@/Pages/Repositories';
+// import Stars from '@/Pages/Likes';
+// import Creative from '@/Pages/Creative';
+// import Articles from '@/Pages/Articles/Articles';
+// import Article from '@/Pages/Articles/Article';
+// import Main from '@/Pages/Main';
+
+import { lazy } from 'react';
 
 import { GoRepo, GoStar, GoHome } from 'react-icons/go';
 import { RiNpmjsLine, RiPaintBrushFill, RiArticleLine } from 'react-icons/ri';
+
+const Packages = lazy(() => import('@/Pages/Packages'));
+const Repositories = lazy(() => import('@/Pages/Repositories'));
+const Stars = lazy(() => import('@/Pages/Likes'));
+const Creative = lazy(() => import('@/Pages/Creative'));
+const Articles = lazy(() => import('@/Pages/Articles/Articles'));
+const Article = lazy(() => import('@/Pages/Articles/Article'));
+const Main = lazy(() => import('@/Pages/Main'));
 
 const PAGES = [
   {
