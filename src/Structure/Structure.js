@@ -1,11 +1,15 @@
+import { Suspense } from "react";
 import { Switch, Route, Redirect } from "react-router-dom";
 import PageLayout from "@/Layouts/Page";
+import Preloader from "@/Components/Preloader";
 
 import { PAGES } from ".";
 
 const Structure = () => (
   <div className="Page">
-    <Switch>
+    {/* ⚡ Bolt: Provide a Suspense boundary for lazy-loaded route pages. */}
+    <Suspense fallback={<Preloader height={200} lines={10} />}>
+      <Switch>
       {PAGES.reduce(
         (acc, { name, path, Page, redirect, redirects }) => [
           ...acc,
@@ -31,7 +35,8 @@ const Structure = () => (
         key="Route_GitHub"
       /> */}
       
-    </Switch>
+      </Switch>
+    </Suspense>
   </div>
 );
 

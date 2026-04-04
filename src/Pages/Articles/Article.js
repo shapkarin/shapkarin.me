@@ -2,7 +2,8 @@ import { useParams, Link } from 'react-router-dom';
 import { useRef, useEffect } from 'react';
 import matter from 'gray-matter';
 import Markdown from 'react-markdown';
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+// ⚡ Bolt: Switch to PrismAsync to dynamically load languages only when needed, avoiding massive bundle additions
+import { PrismAsync as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import remarkGfm from 'remark-gfm'
 
