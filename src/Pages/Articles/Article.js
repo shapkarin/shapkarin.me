@@ -1,21 +1,23 @@
 import { useParams, Link } from 'react-router-dom';
 import { useRef, useEffect } from 'react';
+
 import matter from 'gray-matter';
 import Markdown from 'react-markdown';
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+
+import { PrismAsyncLight as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import remarkGfm from 'remark-gfm'
 
 import { fetchArticle, fetchAeo } from "@/DAL";
 import { useQuery } from "@tanstack/react-query";
 import SEO from '@/Components/SEO';
-import { SCROLL_OFFSET, IS_PRODUCTION } from '@/constants';
+
 // Markdown macros
 import HeadingMacro from './Macros/HeadingMacro';
 import LinkMacro from './Macros/LinkMacro';
 import TableMacro from './Macros/TableMacro';
 
-// Maybe make auto aeo schema with Macro or node.js
+import { SCROLL_OFFSET, IS_PRODUCTION } from '@/constants';
 
 const CodeBlock = ({ children, className, node, match, ...rest }) => {
   return (
