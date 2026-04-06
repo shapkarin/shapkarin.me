@@ -1,0 +1,76 @@
+{
+  "resources": {
+    "@craco/craco": {
+      "globals": {
+        "console.log": true,
+        "process.argv.slice": true,
+        "process.exit": true
+      },
+      "packages": {
+        "@craco/craco>cross-spawn": true
+      }
+    },
+    "@craco/craco>cross-spawn": {
+      "builtin": {
+        "child_process.spawn": true,
+        "child_process.spawnSync": true,
+        "fs.closeSync": true,
+        "fs.openSync": true,
+        "fs.readSync": true,
+        "path.delimiter": true,
+        "path.normalize": true,
+        "path.resolve": true
+      },
+      "globals": {
+        "Buffer.alloc": true,
+        "process.chdir": true,
+        "process.cwd": true,
+        "process.env": true,
+        "process.platform": true
+      },
+      "packages": {
+        "@craco/craco>cross-spawn>path-key": true,
+        "@craco/craco>cross-spawn>shebang-command": true,
+        "sqlite3>node-gyp>which": true
+      }
+    },
+    "sqlite3>node-gyp>which>isexe": {
+      "builtin": {
+        "fs": true
+      },
+      "globals": {
+        "TESTING_WINDOWS": true,
+        "process.env.PATHEXT": true,
+        "process.getgid": true,
+        "process.getuid": true,
+        "process.platform": true
+      }
+    },
+    "@craco/craco>cross-spawn>path-key": {
+      "globals": {
+        "process.env": true,
+        "process.platform": true
+      }
+    },
+    "@craco/craco>cross-spawn>shebang-command": {
+      "packages": {
+        "@craco/craco>cross-spawn>shebang-command>shebang-regex": true
+      }
+    },
+    "sqlite3>node-gyp>which": {
+      "builtin": {
+        "path.join": true
+      },
+      "globals": {
+        "process.cwd": true,
+        "process.env.OSTYPE": true,
+        "process.env.PATH": true,
+        "process.env.PATHEXT": true,
+        "process.platform": true
+      },
+      "packages": {
+        "sqlite3>node-gyp>which>isexe": true
+      }
+    }
+  }
+}
