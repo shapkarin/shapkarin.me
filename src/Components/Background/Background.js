@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import Scene from './Scene';
-import isMobile from 'is-mobile';
+import { isMobile } from '@/constants';
 
 export let sceneInstance = null;
 
@@ -9,7 +9,7 @@ const Background = () => {
 
   useEffect(() => {
     if (canvasRef.current && !sceneInstance) {
-      sceneInstance = isMobile() ? null : new Scene(canvasRef.current);
+      sceneInstance = isMobile ? null : new Scene(canvasRef.current);
     }
   }, []);
 

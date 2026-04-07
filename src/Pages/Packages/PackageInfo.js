@@ -1,9 +1,8 @@
 import { useState, useMemo } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { GoChevronRight, GoChevronDown } from "react-icons/go";
-import { isMobile } from "is-mobile";
-
 import { fetchPackageInfo } from "@/DAL";
+import { isMobile } from "@/constants";
 import Collapse from "@/Components/Collapse";
 import Preloader from "@/Components/Preloader";
 import Formatted from "@/Components/Formatted";
@@ -36,7 +35,7 @@ function PackageInfoContent({ id }) {
 export default function PackageInfo({ id }) {
   const [isOpen, setIsOpen] = useState(false);
   const collapsed = useMemo(() => isOpen, [isOpen]);
-  const isMobileDevice = isMobile();
+  const isMobileDevice = isMobile;
 
   return (
     <>

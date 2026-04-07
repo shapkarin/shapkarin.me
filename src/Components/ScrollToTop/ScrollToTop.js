@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import styles from './ScrollToTop.module.less';
-import isMobile from 'is-mobile';
+import { isMobile } from '@/constants';
 
 function ScrollToTop({ selector = '.CloseButton' }) {
   const [isVisible, setIsVisible] = useState(false);
@@ -45,7 +45,7 @@ function ScrollToTop({ selector = '.CloseButton' }) {
       onClick={handleScrollToTop}
       title="Scroll to top of content"
     >
-      {!isMobile() ? 'Scroll to top' : '↑'}
+      {!isMobile ? 'Scroll to top' : '↑'}
     </button>
   );
 }

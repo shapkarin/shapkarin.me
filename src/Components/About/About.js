@@ -1,20 +1,16 @@
 import { useState } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import clsx from 'clsx';
-import isMobile from 'is-mobile';
 import {CopyToClipboard} from 'react-copy-to-clipboard';
 
 import { fetchAbout } from '@/DAL';
 import Preloader from '@/Components/Preloader';
 import Link from '@/Components/Link';
-import { GITHUB_REPO_URL } from '@/constants';
+import { GITHUB_REPO_URL, isMobile as isMobileDevice } from '@/constants';
 
 import './style.less';
 
 const EMAIL = 'yu.shapkarin@gmail.com';
-
-// TODO: use one isMobile for all app
-const isMobileDevice = isMobile();
 
 function About() {
   const { data: { data: { greeting, intro, links: { linkedin, github } } } } = useQuery({ queryKey: ['About'], queryFn: fetchAbout });
