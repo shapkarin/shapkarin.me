@@ -40,9 +40,22 @@ export default function PackageInfo({ id }) {
 
   return (
     <>
-      <div className="toggle_info" onClick={() => setIsOpen((prev) => !prev)}>
-        package info {isOpen ? <GoChevronDown /> : <GoChevronRight />}
-      </div>
+      <button 
+        type="button"
+        className="toggle_info" 
+        onClick={() => setIsOpen((prev) => !prev)}
+        aria-expanded={isOpen}
+        aria-controls={`package-details-${id}`}
+        aria-label="Toggle package details"
+      >
+        package info 
+        <span
+          aria-hidden="true"
+          id={`package-details-${id}`}
+        >
+          {isOpen ? <GoChevronDown /> : <GoChevronRight />}
+        </span>
+      </button>
       <Preloader
         height={isMobileDevice ? 300 : 95} 
         lines={isMobileDevice ? 4 : 3}

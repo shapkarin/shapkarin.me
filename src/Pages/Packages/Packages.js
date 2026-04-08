@@ -21,23 +21,21 @@ export default function Packages() {
         description="Explore a collection of JavaScript, TypeScript, and Node.js NPM packages for modern web development. Open-source modules for Redux, React, and more."
       />
       <div className="PagePackages Page__Inner">
-        <div>
-          {packages.map(({
-            title,
-            url,
-            id,
-          }) => (
-            <div key={id} className="PagePackages__Item">
-              <a target="_blank" rel="noreferrer" href={url}>
-                { title }
-                {' '}
-                <FiExternalLink />
-              </a>
-              <PackageInfo id={id} />
-            </div>
-          ))}
+        {packages.map(({
+          title,
+          url,
+          id,
+        }) => (
+          <div key={id} className="PagePackages__Item">
+            <a target="_blank" rel="noreferrer" href={url}>
+              { title }
+              {' '}
+              <FiExternalLink />
+            </a>
+            <PackageInfo id={id} />
+          </div>
+        ))}
         <Additional />
-        </div>
       </div>
     </>
   );
