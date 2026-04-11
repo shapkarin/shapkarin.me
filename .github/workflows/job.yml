@@ -19,11 +19,17 @@ jobs:
     permissions:
       contents: write
     
-    steps:
+steps:
       - name: Checkout 
         uses: actions/checkout@v4
         with:
           fetch-depth: 2
+
+      - name: Run Socket Security
+        uses: SocketDev/action@v1 
+        env:
+          # REQUIRED: API key to link scans to your dashboard and avoid CI rate limits
+          SOCKET_SECURITY_API_KEY: ${{ secrets.SOCKET_SECURITY_API_KEY }}
       
       - name: Setup Node
         uses: actions/setup-node@v3
@@ -35,17 +41,24 @@ jobs:
         run: |
           npm install -g npm@8.3.0
           echo "Updated npm version: $(npm --version)"
+
+      - name: Install Socket Security CLI
+        # This globally installs the 'sfw' binary on the runner
+        run: npm install -g @socketsecurity/cli
     
-      # react-snap has build-in "npm сi" and "npm run build"
+      - name: Install Dependencies Securely
+        # Using the Socket Firewall to intercept the installation
+        run: sfw npm ci
+
       - name: Server-side render by crawler
-        uses: brycedorn/react-snap-action@v1.0.2
+        # Replaced the black-box action with explicit, Native commands
+        # Assumes 'react-snap' is in your package.json or available via npx
+        run: |
+          npm run build
+          npx react-snap
 
       - name: Copy HTML gallery
         run: npm run build:html-gallery 
-
-      # - name: Set deploy date
-      #   id: deploy-date
-      #   run: echo "value=$(date +'%Y-%m-%d')" >> $GITHUB_OUTPUT
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
@@ -54,5 +67,4 @@ jobs:
           publish_dir: ./dist
           commit_message: ${{ github.event_name == 'schedule' && 'autodeploy commit' || github.event.head_commit.message }}
         
-      - run: printf Deployed!
-
+      - run: printf "Deployed!"
