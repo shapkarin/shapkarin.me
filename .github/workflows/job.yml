@@ -26,7 +26,7 @@ steps:
           fetch-depth: 2
 
       - name: Run Socket Security
-        uses: SocketDev/action@v1 
+        uses: SocketDev/action@ba6de6cc0565af1f42295590380973573297e31f
         env:
           # REQUIRED: API key to link scans to your dashboard and avoid CI rate limits
           SOCKET_SECURITY_API_KEY: ${{ secrets.SOCKET_SECURITY_API_KEY }}
