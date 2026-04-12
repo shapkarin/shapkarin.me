@@ -38,7 +38,7 @@ function About() {
           {copied ? <>{<a href={`mailto:${EMAIL}`}>{EMAIL}</a>} [in clipboard!]</> : <span className="About_email">Get my email</span>}
         </CopyToClipboard>
         <em className="Disclaimer">
-          Disclaimer: homepage has been gradually developed <Link href="https://web.archive.org/web/20130801000000*/shapkarin.me">since 2013</Link> with limited time {' | '} <Link href={GITHUB_REPO_URL}>cource code</Link>
+          Disclaimer: homepage has been gradually developed <Link href="https://web.archive.org/web/20170709213808/https://shapkarin.me/" target="_blank">since 2013</Link> with limited time {' | '} <Link href={GITHUB_REPO_URL}>cource code</Link>
         </em>
       </div>
     </>
