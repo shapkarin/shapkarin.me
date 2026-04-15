@@ -19,7 +19,7 @@ const github = {
   },
 }
 
-const rawPrefix = IS_PRODUCTION ? 'https://raw.githubusercontent.com/shapkarin/shapkarin.me/refs/heads/gh-pages' : '';
+const rawPrefix = IS_PRODUCTION ? 'https://raw.githubusercontent.com/shapkarin/shapkarin.me/refs/heads/main/public' : '';
 
 const backend = {
   about: '/api/about.json',
