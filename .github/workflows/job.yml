@@ -43,16 +43,20 @@ jobs:
       - name: Copy HTML gallery
         run: npm run build:html-gallery 
 
-      # - name: Set deploy date
-      #   id: deploy-date
-      #   run: echo "value=$(date +'%Y-%m-%d')" >> $GITHUB_OUTPUT
+      - name: Install AWS CLI
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y awscli
 
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
-          commit_message: ${{ github.event_name == 'schedule' && 'autodeploy commit' || github.event.head_commit.message }}
-        
+      - name: Deploy to S3
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.S3_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.S3_SECRET_ACCESS_KEY }}
+          AWS_DEFAULT_REGION: ru-central1
+        run: |
+          aws --endpoint-url=https://storage.yandexcloud.net \
+          s3 sync ./dist/ s3://shapkarin.me/ \
+          --delete
+
       - run: printf Deployed!
 
