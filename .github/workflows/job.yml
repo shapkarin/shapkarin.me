@@ -25,12 +25,12 @@ jobs:
     
     steps:
       - name: Checkout 
-        uses: actions/checkout@v4
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5
         with:
           fetch-depth: 2
       
       - name: Setup Node
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@3235b876344d2a9aa001b8d1453c930bba69e610
         with:
           node-version: '25.2.1'
           registry-url: 'https://registry.npmjs.org'
@@ -42,7 +42,7 @@ jobs:
     
       # react-snap has build-in "npm сi" and "npm run build"
       - name: Server-side render by crawler
-        uses: brycedorn/react-snap-action@v1.0.2
+        uses: brycedorn/react-snap-action@3c747b86c6373ead5460fcd8e3807f1999ebf71f
 
       - name: Copy HTML gallery
         run: npm run build:html-gallery 
