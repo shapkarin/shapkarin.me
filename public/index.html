@@ -24,6 +24,10 @@
       
           let newPathname = l.pathname;
           let didRedirect = false;
+
+          if (window.location.host.includes('yandexcloud.net')) {
+            window.location.replace('https://shapkarin.me');
+          }
       
           // If no specific redirect, check for double trailing slashes
           if (!didRedirect && l.pathname.endsWith('//')) {
