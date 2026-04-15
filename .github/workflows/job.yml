@@ -16,6 +16,10 @@ jobs:
       !contains(github.event.head_commit.message, '[skip-ci]')
     runs-on: ubuntu-22.04
 
+    environment:
+      name: s3-unchained
+      url: https://shapkarin.me
+
     permissions:
       contents: write
     
