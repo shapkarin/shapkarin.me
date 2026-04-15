@@ -5,8 +5,7 @@ import './style.less';
 
 const Footer = () =>
     <footer className="Footer">
-        The API for this site <Link href={`${GITHUB_REPO_URL}/tree/master/src/Generate-Backend`}>is generated</Link> and stored as <Link href={`${GITHUB_REPO_URL}/tree/gh-pages/api`}>JSON and Markdown</Link> on GitHub Pages.<br />
-        It <Link href={`${GITHUB_REPO_URL}/blob/main/.github/workflows`}>uses Github Actions</Link> to help with CI and generates a static version. Latest commit: <Link href={`${GITHUB_REPO_URL}/commit/${COMMIT_HASH}`}>{COMMIT_HASH && COMMIT_HASH.slice(0, 7)}</Link>
+        <Link href={`${GITHUB_REPO_URL}/blob/main/.github/workflows`}>Github Actions</Link> to help with CI, generate API as flat files and static version. Latest commit: <Link href={`${GITHUB_REPO_URL}/commit/${COMMIT_HASH}`}>{COMMIT_HASH && COMMIT_HASH.slice(0, 7)}</Link>
     </footer>
 
 export default Footer;
