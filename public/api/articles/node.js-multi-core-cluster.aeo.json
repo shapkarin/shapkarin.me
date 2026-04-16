@@ -1,1 +1,102 @@
-[{"test": "for react-snap on github pages"}]
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "TechArticle",
+      "headline": "Unlocking Node.js Performance: Harnessing Multi-Core Power with the cluster Module",
+      "description": "Learn how to effectively utilize all CPU cores in your Node.js applications using the built-in cluster module, improve performance and resilience, and understand when this approach is preferable to other scaling solutions.",
+      "inLanguage": "en",
+      "proficiencyLevel": "Intermediate",
+      "keywords": "Node.js, cluster module, multi-core, worker_threads, performance, scaling, IPC, PM2, Docker, Kubernetes, Graceful Shutdown",
+      "about": [
+        {
+          "@type": "SoftwareApplication",
+          "name": "Node.js"
+        },
+        {
+          "@type": "Thing",
+          "name": "cluster module"
+        },
+        {
+          "@type": "Thing",
+          "name": "worker_threads"
+        }
+      ],
+      "articleSection": [
+        "The Single-Core Bottleneck",
+        "Enter the cluster Module",
+        "A Simple Clustering Example",
+        "cluster vs. worker_threads: Understanding the Difference",
+        "Why Not Just Use PM2, Docker, or Kubernetes?",
+        "Benefits of Using cluster",
+        "Graceful Shutdown and Inter-Process Communication (IPC)",
+        "When is cluster the Right Choice?",
+        "When to Look Beyond cluster (or use it in conjunction)",
+        "Conclusion: Don't Leave Performance on the Table"
+      ],
+      "hasPart": {
+        "@type": "SoftwareSourceCode",
+        "name": "Simple Node.js Clustering Example",
+        "programmingLanguage": "JavaScript",
+        "description": "A basic clustered HTTP server utilizing the node:cluster, node:http, node:os, and node:process modules."
+      },
+      "citation": [
+        {
+          "@type": "WebPage",
+          "url": "https://nodejs.org/api/cluster.html",
+          "name": "Node.js Cluster Documentation"
+        },
+        {
+          "@type": "WebPage",
+          "url": "https://nodejs.org/api/worker_threads.html",
+          "name": "Node.js Worker Threads Documentation"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Why is my Node.js application only using a single CPU core?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "By default, a single Node.js process runs on a single CPU core. If you have a multi-core server without utilizing tools like the built-in cluster module, your other cores remain idle, capping your performance to that single core."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the difference between the Node.js cluster module and worker_threads?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The cluster module scales I/O-bound workloads by creating separate processes, each with its own memory space. worker_threads offload CPU-intensive tasks to separate threads within the same process, sharing memory space without blocking the main event loop."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why should I use the cluster module instead of PM2, Docker, or Kubernetes?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "While Docker and Kubernetes are for orchestration at scale, the cluster module is a simpler, dependency-free solution for utilizing multiple CPU cores for a single app on a single machine. PM2 actually uses the cluster module under the hood."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "When is the cluster module the right choice for my application?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It is the ideal choice for I/O-bound applications like web servers, improving throughput on multi-core machines, and adding basic fault tolerance by restarting crashed workers."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does graceful shutdown work with the cluster module?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Using Inter-Process Communication (IPC), the primary process can catch shutdown signals and instruct workers to stop accepting new connections and finish existing requests before exiting, preventing abrupt disconnections."
+          }
+        }
+      ]
+    }
+  ]
+}

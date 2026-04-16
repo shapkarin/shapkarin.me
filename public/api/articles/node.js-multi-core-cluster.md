@@ -217,6 +217,23 @@ Before reaching for complex orchestration tools or simply spinning up one contai
 
 **So, have you shipped a clustered Node.js app? Or are you still letting those extra CPU cores gather dust?** It's time to understand your runtime and unlock the full potential of your Node.js applications.
 
+## Frequently Asked Questions (FAQ)
+
+**Why is my Node.js application only using a single CPU core?**
+By default, Node.js is renowned for its non-blocking, event-driven architecture, but a single Node.js process runs on a single CPU core. If you have a multi-core server without utilizing tools like the built-in `cluster` module, your other cores remain idle, capping your performance to that single core.
+
+**What is the difference between the Node.js `cluster` module and `worker_threads`?**
+The `cluster` module scales **I/O-bound workloads** (like web servers) by creating separate **processes**, each with its own memory space and event loop. Conversely, `worker_threads` offload **CPU-intensive tasks** to separate **threads** within the *same* process, allowing them to share memory without blocking the main event loop.
+
+**Why should I use the `cluster` module instead of PM2, Docker, or Kubernetes?**
+While Docker and Kubernetes are fantastic for containerization and large-scale orchestration, the `cluster` module is a simpler, direct, and dependency-free solution for utilizing multiple CPU cores for a single app on a single machine. PM2's cluster mode actually uses the native `cluster` module under the hood!
+
+**When is the `cluster` module the right choice for my application?**
+It is the ideal choice for I/O-bound applications (like web servers and API backends), for improving throughput on multi-core machines when a single process becomes a bottleneck, and for adding basic fault tolerance by allowing the primary process to restart crashed workers.
+
+**How does graceful shutdown work with the `cluster` module?**
+The `cluster` module uses Inter-Process Communication (IPC). The primary process can catch termination signals (like SIGINT) and send a disconnect message to its workers. The workers will then stop accepting new connections and safely exit only after finishing their existing requests, preventing abrupt disconnections for your users.
+
 ---
 
 **Further Reading:**
