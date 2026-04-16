@@ -19,8 +19,6 @@ const github = {
   },
 }
 
-const rawPrefix = IS_PRODUCTION ? '' : '';
-
 const backend = {
   about: '/api/about.json',
   main: '/api/mainpage.json',
@@ -33,8 +31,8 @@ const backend = {
     collection: '/api/creative/collection.json',
   },
   articles: '/api/articles/articles.json',
-  article: (name) => `${rawPrefix}/api/articles/${name}.md`,
-  aeo: (name) => `${rawPrefix}/api/articles/${name}.aeo.json`,
+  article: (name) => `/api/articles/${name}.md`,
+  aeo: (name) => `/api/articles/${name}.aeo.json`,
   search: '/api/search-index.json',
 }
 
