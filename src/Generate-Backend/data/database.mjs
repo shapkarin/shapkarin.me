@@ -158,7 +158,7 @@ export const creative = {
 
     After: [
       {
-        title: 'Sound Terrain',
+        title: '☆ Sound Terrain ☆',
         href: 'http://joy.shapkarin.me',
       },
       {
