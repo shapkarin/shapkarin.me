@@ -14,4 +14,4 @@ Proof: https://web.archive.org/web/20130801000000*/shapkarin.me
 - `2017` version is pretty cool as well (`React.js` with `React Transition Group` and `Three.js`)\
 Check: https://web.archive.org/web/20170709213808/https://shapkarin.me/
 
-- Generative art is from from 9 y.o. repository: [https://github.com/shapkarin/sketches](https://github.com/shapkarin/sketches)
+- Generative art is from from 10 y.o. repository: [https://github.com/shapkarin/sketches](https://github.com/shapkarin/sketches)
