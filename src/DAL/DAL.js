@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { QueryClient } from '@tanstack/react-query';
 
-import URLS from './urls';
+import URLS from './URL';
 
 const githubRequest = axios.create({
   headers: {
