@@ -1,10 +1,7 @@
-const fs = require('fs');
-const path = require('path');
+import fs from 'fs';
+import path from 'path';
 
-const sourceDir = path.join(__dirname, '../..', 'src', 'HTML-Gallery');
-const destDir = path.join(__dirname, '../..', 'dist', 'gallery');
-
-function copyDirectory(src, dest) {
+export default function copyDirectory(src, dest) {
   try {
     // Ensure destination directory exists, create if not
     if (!fs.existsSync(dest)) {
@@ -35,6 +32,3 @@ function copyDirectory(src, dest) {
     process.exit(1); // Exit with error code
   }
 }
-
-// Execute the copy operation
-copyDirectory(sourceDir, destDir);
