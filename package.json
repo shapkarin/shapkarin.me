@@ -37,7 +37,7 @@
     "build:diagrams": "node src/Generate-Backend/mermaid-render/mermaid-render.mjs",
     "build:spa": "REACT_APP_COMMIT_HASH=$(git rev-parse main) craco build",
     "build:html-gallery": "node src/Generate-Backend/deploy-html-gallery.js",
-    "build:articles": "node src/Generate-Backend/generate-articles-list.js",
+    "build:articles": "node src/Generate-Backend/generate-articles-list.mjs",
     "build:sitemap-manually": "sitemap-generator https://shapkarin.me -f public/sitemap.xml",
     "build:search": "node src/Generate-Backend/search-indexer.mjs",
     "build": "npm run build:api && npm run build:diagrams && npm run build:articles && npm run build:search && NODE_ENV=production BUILD_PATH='./dist' npm run build:spa",
