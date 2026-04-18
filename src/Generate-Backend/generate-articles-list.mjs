@@ -1,10 +1,11 @@
 import fs from 'fs';
 import path from 'path';
+const __dirname = import.meta.dirname;
 
 // Configuration constants
 const CONFIG = {
-  ARTICLES_PATH: path.join(__dirname, '../../public/api/articles'),
-  OUTPUT_FILENAME: 'articles.json',
+  ARTICLES_PATH: path.join(__dirname, '../../', 'public/articles'),
+  OUTPUT: path.join(__dirname, '../../', 'public/api/articles.json'),
   FILE_EXTENSION: '.md',
   PREFIX_TO_SKIP: '_',
 };
@@ -112,10 +113,9 @@ function prepareForOutput(articles) {
 // Writes the articles list to a JSON file
 function writeArticlesJson(articles) {
   try {
-    const outputPath = path.join(CONFIG.ARTICLES_PATH, CONFIG.OUTPUT_FILENAME);
     const jsonContent = JSON.stringify(articles, null, 2);
-    fs.writeFileSync(outputPath, jsonContent);
-    console.log(`Generated articles list with ${articles.length} articles at ${outputPath}`);
+    fs.writeFileSync(CONFIG.OUTPUT, jsonContent);
+    console.log(`Generated articles list with ${articles.length} articles at ${CONFIG.OUTPUT}`);
   } catch (error) {
     throw new Error(`Failed to write articles JSON: ${error.message}`);
   }

@@ -8,14 +8,14 @@
 const config = {
   // === INPUT CONFIGURATION ===
   // Directory containing your markdown files
-  inputDir: './public/api/articles',
+  inputDir: './public/articles',
   
   // === OUTPUT CONFIGURATION ===
   // Where to save generated SVG files
-  outputDir: './public/api/articles',
+  outputDir: './public/articles',
 
   // Base URL for images in markdown (how they'll appear in ![alt](url))
-  baseUrl: '/api/articles',
+  baseUrl: '/articles',
 
   // Database path
   dbPath: '../data/mermaid-hashes.db',
