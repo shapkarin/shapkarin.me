@@ -5,7 +5,7 @@ import { IS_PRODUCTION } from '@/constants';
 // import reportWebVitals from './reportWebVitals';
 
 const rootElement = document.getElementById('root');
-const GH_PAGES_CANT_HYDRATE = false;
+const GH_PAGES_CANT_HYDRATE = true; // turn on gydration
 
 IS_PRODUCTION && GH_PAGES_CANT_HYDRATE
   ? hydrateRoot(rootElement, <App />)

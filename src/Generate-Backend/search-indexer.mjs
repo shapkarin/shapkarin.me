@@ -5,7 +5,7 @@ import { marked } from 'marked';
 import lunr from 'lunr';
 import matter from 'gray-matter';
 
-const API_FOLDER = path.join(import.meta.dirname, '../../public/api');
+const API_FOLDER = path.join(import.meta.dirname, '../../public');
 const ARTICLES_DIR = path.join(API_FOLDER, 'articles');
 const OUTPUT_FILE = path.join(API_FOLDER, 'search-index.json');
 
