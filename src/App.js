@@ -1,5 +1,9 @@
 import { BrowserRouter } from 'react-router-dom';
-import { QueryClientProvider } from '@tanstack/react-query';
+import {
+  QueryClientProvider,
+  dehydrate,
+  HydrationBoundary
+} from '@tanstack/react-query';
 
 import Background from '@/Components/Background';
 import About from '@/Components/About';
@@ -10,9 +14,17 @@ import './App.less';
 import Footer from '@/Components/Footer';
 import { queryClient } from '@/DAL';
 
+window.snapSaveState = () => dehydrate(queryClient);
+
+const preloadedState = window.queries ? {
+  mutations: window.mutations || [],
+  queries: window.queries || []
+} : undefined;
+
 export default function App () {
   return (
     <QueryClientProvider client={queryClient}>
+      <HydrationBoundary state={preloadedState}>
         <Background />
         <a href="#menu" className="a11y hidden">Go to Menu</a>
         <BrowserRouter>
@@ -23,6 +35,7 @@ export default function App () {
         </div>
         <Footer />
         </BrowserRouter>
+      </HydrationBoundary>
     </QueryClientProvider>
   );
 }
