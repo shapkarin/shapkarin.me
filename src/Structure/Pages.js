@@ -4,7 +4,7 @@
 // import Creative from '@/Pages/Creative';
 // import Articles from '@/Pages/Articles/Articles';
 // import Article from '@/Pages/Articles/Article';
-// import Main from '@/Pages/Main';
+import Main from '@/Pages/Main';
 
 import { lazy } from 'react';
 
@@ -17,7 +17,7 @@ const Stars = lazy(() => import('@/Pages/Likes'));
 const Creative = lazy(() => import('@/Pages/Creative'));
 const Articles = lazy(() => import('@/Pages/Articles/Articles'));
 const Article = lazy(() => import('@/Pages/Articles/Article'));
-const Main = lazy(() => import('@/Pages/Main'));
+// const Main = lazy(() => import('@/Pages/Main'));
 
 const PAGES = [
   {
