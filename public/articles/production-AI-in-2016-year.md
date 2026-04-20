@@ -1,46 +1,69 @@
 ---
-title: 'AI in 2016: The First Time I Worked on a Project That Using Machine Learning'
+title: 'AI in 2016: The First Time I Worked on a Project Using Machine Learning'
 description: >-
-  A personal reflection on working with AI in 2016, before the LLM revolution.
-  Exploring how AI has evolved from specialized applications to becoming
-  accessible to everyone through user-friendly interfaces.
+  A personal reflection on working with Machine Learning in 2016, before the LLM
+  revolution.  Exploring the history of AI, from 1800s gradient descent to
+  modern RAG and LangChain.
 order: 2
 ---
 
-# Production AI In 2016 Year
-
-refs: 
-1. https://www.linkedin.com/posts/shapkarin_ai-ml-llm-share-7444364079034683392-FgPT
-2. https://www.linkedin.com/posts/shapkarin_ai-ml-activity-7428858006001352705-4vlg
+# Production AI in 2016: Machine Learning Before the LLM Boom
 
 > I don’t think LLMs alone are gonna get us to AGI, but they’re the main reason why AI got mass adoption. Obviously LLMs are a type of machine learning (AI). The thing is, for a ton of tasks they’re total overkill, like smashing a nail with an anvil when a hammer would do the job. I mean AI is not only about LLMs but AI includes other phorms of ML.
 > AGI gonna come from orchestrating a bunch of different AIs (specialized models, ML stuff, whatever you wanna call them) all playing together nicely. One big Swiss Army knife instead of just one giant blade. (c) [from my LinkedIn post](https://www.linkedin.com/posts/shapkarin_ai-ml-philosophy-activity-7416732830384369664-abHO)
 
-The first time I worked on a projects that using machine learning (AI) was in 2016. Back then, the technology hadn't seen the mass adoption it has nowadays, thanks to LLMs. It was Bioinformatics projects, and a one FinTech.
+refs: 
+1. https://www.linkedin.com/posts/shapkarin_ai-ml-llm-share-7444364079034683392-FgPT
+2. https://www.linkedin.com/posts/shapkarin_ai-ml-activity-7428858006001352705-4vlg
+3. https://www.linkedin.com/posts/shapkarin_ai-ml-llm-activity-7444364079584014336-hwG_
 
-That time it was on-site and I saw how colleagues discussed perceptron and even how simulated annealing can be applied to the training. We got together and talked to current bioinformaticians to figure out how to make our apps better, the apps were exclusively for domain experts.
+If you see “AI in the BMHI (Biomedical and Health Informatics) field (2016)” in my professional headline, let me clear something up: it doesn’t mean I was chatting with Claude, Qwen, or MiMo a decade ago. What it *does* mean is that my understanding of this foundation and technology runs deep and long before the current hype cycle.
 
-The training data had to be extremely clean. In some implementations, this is still true for most of the model training process (work of data engineers and etc)
+## AI vs. Machine Learning: The Technical Reality
 
-In past, we had ways to input unorganized data (not for training), but it wasn't like today's chat interfaces where you can attach or even search (crawl) any kind of unstructured data and get high-quality results: well-structured (in various formats, tailored to the user) and easy for everyone to understand.
+Let's get the terminology straight for the modern web: **AI is largely a marketing term, whereas Machine Learning (ML) is the technical reality.** Not all AI is about Large Language Models (LLMs). Humanity has had robust ML frameworks and libraries since well before 2016. Heavyweights like **Torch, PyTorch, scikit-learn (sklearn), NumPy, and TensorFlow** are practically veterans in the tech world. 
 
-It's ironic that, despite those projects yielding solid results, almost no one took the AI approach seriously, even in niche applications. Now, the tech is used everywhere, sometimes even where it's not really needed — just because of user-friendly chat interfaces and cheaper computation. Back then, it was the realm of futurists and dreamers. Now it's serious business. In my view the key driver of real progress wasn't just optimization or lower computing costs but the convenience that brought AI to the masses. LLMs changed the game.
+Tthe foundational blocks of today's AI are actually centuries old:
+* **1800s:** The mathematical concepts of linear regression and gradient descent were established.
+* **1950s:** The perceptron, a fundamental building block of neural networks, was born. 
 
+Naturally, it took decades of research papers, computational upgrades, and iterative improvements to get where we are today, but the roots are deeply historical.
 
-![Diagram: AI Evolution: 2016 vs Today](/articles/light/production-AI-in-2016-year-0.svg)
+## The 2016 Experience: Niche Apps
+
+The first time I worked on projects using production machine learning was in 2016, bridging Bioinformatics and FinTech. Back then, working on-site, I remember colleagues deeply discussing how to apply those 1950s perceptrons and concepts like simulated annealing to model training. We collaborated closely with bioinformaticians to optimize applications built *exclusively* for domain experts. 
+
+A massive hurdle back then was data quality. **The training data had to be meticulously clean and structured.** To be fair, this is still true for most core model training processes today, shoutout to the data engineers doing the heavy lifting behind the scenes.
+
+In addition, your translator and voice recognition tools have been using AI for a long time as well.
+
+Today, the industry focus has overwhelmingly shifted toward LLMs and that’s not a bad thing!
+
+![Diagram: The Deep Evolution of AI & ML](/articles/light/production-AI-in-2016-year-0.svg)
 ```mermaid
 timeline
-    title AI Evolution: 2016 vs Today
+    title The Deep Evolution of AI & ML
     
-    2016 : Specialized Applications
+    1800s : Linear Regression
+          : Gradient Descent
+    
+    1950s : The Perceptron
+    
+    Pre-2016 : Frameworks emerge
+             : NumPy, scikit-learn, TensorFlow, Torch)
+    
+    2016 : Specialized Applications (BMHI, FinTech)
          : Domain Experts Only
-         : Clean Training Data Required
-         : Limited Adoption
          : Complex Implementation
     
-    2024 : Mass Adoption
-         : User-Friendly Interfaces
-         : Unstructured Data Input
-         : Chat-Based Interactions
-         : Accessible to Everyone
+    Today : Mass Adoption via LLMs (Claude, Qwen, etc.)
+          : Unstructured Data Input
+          : Node-based workflow automation builder
+          : User-friendly via Chat UX
 ```
+
+## Conclusion: UX Changed the Game
+
+It's ironic. Despite our 2016 projects yielding solid, tangible results, almost no one took the ML approach seriously outside of highly niche applications. It was considered the realm of futurists and dreamers. 
+
+Now, it's serious business. AI is used everywhere—sometimes even where it's not really needed (like smashing a nail with an anvil)—simply because computation is cheaper and chat interfaces have made it frictionless. In my view, the key driver of real progress wasn't just algorithmic optimization. It also was the UX convenience that finally brought AI to the masses. **LLMs changed the game by making the complex accessible.**
