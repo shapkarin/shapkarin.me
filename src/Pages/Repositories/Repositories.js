@@ -15,7 +15,8 @@ export default function Repositories() {
   const { data: { data: list } } = useQuery({
     queryKey: ['Repositories'],
     queryFn: () => fetchRepositories(), 
-    // { keepPreviousData : true }
+    staleTime: 1000 * 60 * 60 * 24, // 24h
+    // { keepPreviousData : true } for pagination
   });
 
   return (

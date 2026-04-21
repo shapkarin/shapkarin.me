@@ -20,7 +20,7 @@ export const queryClient = new QueryClient({
   defaultOptions: {
      queries: {
        suspense: true,
-       staleTime: 60 * 1000 * 17, // 15 minutes chached data lifetime]
+       staleTime: 1000 * 60 * 60 * 24 * 7, // 7 days
        retry: 3,
      },
    },

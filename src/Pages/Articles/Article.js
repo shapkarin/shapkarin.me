@@ -42,7 +42,8 @@ const Article = () => {
     queryKey: ['Articles', articleName], 
     queryFn: () => fetchArticle(articleName), 
     enabled: Boolean(articleName),
-    keepPreviousData : IS_PRODUCTION,
+    // keepPreviousData : IS_PRODUCTION,
+    staleTime: 1000 * 60 * 60 * 24, // 24h
   });
 
   const { data: frontMatter, content: markdownContent } = matter(content);
