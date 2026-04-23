@@ -1,4 +1,5 @@
 import { Component } from 'react';
+import styles from './ErrorBoundary.module.css';
 
 class ErrorBoundary extends Component {
   state = { error: null };
@@ -20,14 +21,9 @@ class ErrorBoundary extends Component {
 
     if (!error) return this.props.children;
 
-    return <div style={{ color: 'red', fontSize: 18, padding: 10, width: 742 }}>
-      <details>
-        <summary style={{ fontSize: 22, fontWeight: 'bold' }}>Error :-(</summary>
-        <div>
-          {error.message}<br/>
-          {error.response?.data?.message}
-        </div>
-      </details>
+    return <div className={styles.container}>
+        {error.message}<br/>
+        {error.response?.data?.message}
     </div>;
   }
 }
