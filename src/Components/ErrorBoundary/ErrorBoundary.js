@@ -25,6 +25,7 @@ class ErrorBoundary extends Component {
         <summary style={{ fontSize: 22, fontWeight: 'bold' }}>Error :-(</summary>
         <div>
           {error.message}<br/>
+          {error.response?.data?.message}
         </div>
       </details>
     </div>;
