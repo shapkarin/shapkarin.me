@@ -20,9 +20,9 @@ const SkeletonLoader = ({ height, width, lines, className }) => (
   </ContentLoader>
 );
 
-const Preloader = function({ children, height = 200, width = '100%', lines = 7, className }) {
+const Preloader = function({ children, height = 200, width = '100%', lines = 7, className, location }) {
   return (
-    <ErrorBoundary>
+    <ErrorBoundary location={location}>
       <Suspense
         className="Suspense"
         fallback={<SkeletonLoader height={height} width={width} lines={lines} className={className} />}

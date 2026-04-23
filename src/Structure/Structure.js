@@ -28,7 +28,7 @@ const Structure = () => {
     
   return (
     <div className="Page">
-      <Preloader {...preloaderProps}> 
+      <Preloader {...preloaderProps} location={pathname}> 
         <Switch>
           {PAGES.reduce(
             (acc, { name, path, Page, redirect, redirects }) => [
