@@ -46,7 +46,7 @@ export const packages = {
         title: 'Extend Routines',
         url: 'https://www.npmjs.com/package/extend-saga-routines',
         description: `
-          Customizable action creator lib for any kind of actions. Note: There was no "createSlice" API in Redux Toolkit (RTK) in 2018 when this package was published + package it don't relay on Redux or redux-saga`,
+          Customizable action creator lib for any kind of actions. Note: There was no "createSlice" API in Redux Toolkit (RTK) in 2018 when this package was published + package it don't relay on Redux`,
         badges: [ 'npm/v', 'npm/dy', 'npm/l' ]
       },
       'saga-fetch': {
