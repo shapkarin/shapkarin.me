@@ -28,7 +28,7 @@ function About() {
         })}>
         <Link to="/" className='About_greeting'>{greeting}</Link>
         {' '}{intro}
-        {isMobileDevice && <br />}
+        {isMobileDevice}
         <Link href={linkedin.link} className={clsx('Social_Link', {
           'Social_Link__mobile': isMobileDevice
         })} target="_blank" rel="noreferrer">{linkedin.text}</Link>
@@ -49,8 +49,8 @@ function About() {
 export default function SuspensedAbout() {
   return (
     <Preloader
-      height={isMobileDevice ? 260 : 100}
-      lines={isMobileDevice ? 12 : 4}
+      height={isMobileDevice ? 143 : 75}
+      lines={isMobileDevice ? 6 : 3}
       className="About"
     >
       <About />

@@ -28,6 +28,10 @@ const Preloader = function({ children, height = 200, width = '100%', lines = 7, 
         fallback={<SkeletonLoader height={height} width={width} lines={lines} className={className} />}
       >
         {children}
+        {/* 
+          in case of preloader height test 
+          <SkeletonLoader height={height} width={width} lines={lines} className={className} /> 
+        */}
       </Suspense>
     </ErrorBoundary>
   )
