@@ -15,3 +15,5 @@ Proof: https://web.archive.org/web/20130801000000*/shapkarin.me
 Check: https://web.archive.org/web/20170709213808/https://shapkarin.me/
 
 - Generative art is from from 10 y.o. repository: [https://github.com/shapkarin/sketches](https://github.com/shapkarin/sketches)
+- It uses [Github Actions](https://github.com/shapkarin/shapkarin.me/tree/main/.github/workflows) to help with `CI`, and create a `static version`.
+- The API for this static site is [build with scripts](https://github.com/shapkarin/shapkarin.me/tree/main/src/Generate-Backend) and stored as flat JSON and Markdown.
