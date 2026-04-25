@@ -10,9 +10,10 @@ import About from '@/Components/About';
 import Menu from '@/Components/Menu';
 import Structure from './Structure';
 
-import './App.less';
 import Footer from '@/Components/Footer';
 import { queryClient } from '@/DAL';
+
+import './App.less';
 
 window.snapSaveState = () => dehydrate(queryClient);
 

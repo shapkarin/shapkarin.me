@@ -1,6 +1,7 @@
 const path = require("path");
 const CracoLessPlugin = require("craco-less");
 const webpack = require("webpack");
+const FontPreloadPlugin = require("webpack-font-preload-plugin");
 
 module.exports = {
   webpack: {
@@ -19,6 +20,10 @@ module.exports = {
       // Exclude Generate-Backend directory from build
       new webpack.IgnorePlugin({
         resourceRegExp: /src\/Generate-Backend/,
+      }),
+      // preload fonts using html <link> preload
+      new FontPreloadPlugin({
+        extensions: ['woff2'],
       }),
     ],
   },

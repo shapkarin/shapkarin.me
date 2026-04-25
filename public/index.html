@@ -1,75 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/png" href="%PUBLIC_URL%/favicon/favicon-96x96.png" sizes="96x96" />
-    <link rel="icon" type="image/svg+xml" href="%PUBLIC_URL%/favicon/favicon.svg" />
-    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="%PUBLIC_URL%/favicon/apple-touch-icon.png" />
-    <meta name="apple-mobile-web-app-title" content="shapkarin.me" />
-    <link rel="manifest" href="%PUBLIC_URL%/favicon/site.webmanifest" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    
-    <title>Yuri Shapkarin | Software Engineer</title>
-    <meta name='description' content="Yuri Shapkarin's personal website. Experienced Software Engineer." />
 
-    <script type="text/javascript">
-      // I use that bcs of static and gh-pages, check issue https://github.com/shapkarin/shapkarin.me/issues/94 
-      (function() {
-        'use strict';
-      
-        function initRedirect() {
-          const l = window.location;
-      
-          let newPathname = l.pathname;
-          let didRedirect = false;
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" type="image/png" href="%PUBLIC_URL%/favicon/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="%PUBLIC_URL%/favicon/favicon.svg" />
+  <link rel="shortcut icon" href="%PUBLIC_URL%/favicon/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="%PUBLIC_URL%/favicon/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-title" content="shapkarin.me" />
+  <link rel="manifest" href="%PUBLIC_URL%/favicon/site.webmanifest" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
 
-          if (window.location.host.includes('yandexcloud.net')) {
-            window.location.replace('https://shapkarin.me');
-          }
-      
-          // If no specific redirect, check for double trailing slashes
-          if (!didRedirect && l.pathname.endsWith('//')) {
-            newPathname = l.pathname.replace(/\/+$/, '/') || '/';
-            console.log('Normalized double trailing slash:', newPathname + l.search + l.hash);
-          }
-      
-          // Apply the change if needed
-          if (newPathname !== l.pathname) {
-            // Create and add the <link rel="canonical"> element
-            var link = document.createElement('link');
-            link.setAttribute('rel', 'canonical');
-            link.setAttribute('href', newPathname);
-            document.head.appendChild(link);
+  <title>Yuri Shapkarin | Software Engineer</title>
+  <meta name='description' content="Yuri Shapkarin's personal website. Experienced Software Engineer." />
 
-            // Redirect (the most suitable equivalent)
-            window.location.replace(newPathname + l.search + l.hash);
-          }
+  <script type="text/javascript">
+    // I use that bcs of static and gh-pages, check issue https://github.com/shapkarin/shapkarin.me/issues/94 
+    (function () {
+      'use strict';
+
+      function initRedirect() {
+        const l = window.location;
+
+        let newPathname = l.pathname;
+        let didRedirect = false;
+
+        if (window.location.host.includes('yandexcloud.net')) {
+          window.location.replace('https://shapkarin.me');
         }
-      
-        initRedirect();
-      })();
-    </script>
-    
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="Yuri Shapkarin | Software Developer" />
-    <meta property="og:description" content="Yuri Shapkarin's personal website" />
-    <meta property="og:url" content="https://shapkarin.me" />
 
-    <meta name="twitter:creator" content="Yuri Shapkarin" />
-    <meta name="twitter:card" content="website" />
-    <meta name="twitter:title" content="Yuri Shapkarin | Software Developer" />
-    <meta name="twitter:description" content="Yuri Shapkarin's personal website" />
-    
+        // If no specific redirect, check for double trailing slashes
+        if (!didRedirect && l.pathname.endsWith('//')) {
+          newPathname = l.pathname.replace(/\/+$/, '/') || '/';
+          console.log('Normalized double trailing slash:', newPathname + l.search + l.hash);
+        }
 
-    <link href="https://fonts.googleapis.com/css?family=Lato:300" rel="stylesheet">
-    <title>Yuri Shapkarin</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-  </head>
-  <body>
-    <div id="root"></div>
-  </body>
+        // Apply the change if needed
+        if (newPathname !== l.pathname) {
+          // Create and add the <link rel="canonical"> element
+          var link = document.createElement('link');
+          link.setAttribute('rel', 'canonical');
+          link.setAttribute('href', newPathname);
+          document.head.appendChild(link);
+
+          // Redirect (the most suitable equivalent)
+          window.location.replace(newPathname + l.search + l.hash);
+        }
+      }
+
+      initRedirect();
+    })();
+  </script>
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Yuri Shapkarin | Software Developer" />
+  <meta property="og:description" content="Yuri Shapkarin's personal website" />
+  <meta property="og:url" content="https://shapkarin.me" />
+
+  <meta name="twitter:creator" content="Yuri Shapkarin" />
+  <meta name="twitter:card" content="website" />
+  <meta name="twitter:title" content="Yuri Shapkarin | Software Developer" />
+  <meta name="twitter:description" content="Yuri Shapkarin's personal website" />
+
+  <title>Yuri Shapkarin</title>
+</head>
+
+<body>
+  <div id="root"></div>
+</body>
+
 </html>
