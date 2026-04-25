@@ -17,7 +17,7 @@ jobs:
     runs-on: ubuntu-22.04
 
     environment:
-      name: unchained
+      name: s3-unchained
       url: https://shapkarin.me
 
     permissions:
