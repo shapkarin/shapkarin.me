@@ -158,6 +158,10 @@ export const creative = {
 
     After: [
       {
+        title: '☆ latest (2022-24) ☆',
+        href: 'https://github.com/shapkarin/shapkarin.me/wiki/Another-creative-codging-(js-only)',
+      },
+      {
         title: '☆ Sound Terrain ☆',
         href: 'http://joy.shapkarin.me',
       },
