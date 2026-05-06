@@ -708,35 +708,6 @@
   },
   {
     "@context": "https://schema.org",
-    "relatedLink": [
-      {
-        "@type": "WebPage",
-        "name": "Memoization Article",
-        "url": "https://shapkarin.me/articles/memoization",
-        "description": "Related article about React performance optimization with memo, useMemo, and useCallback"
-      },
-      {
-        "@type": "WebPage",
-        "name": "State Optimization Guide",
-        "url": "https://shapkarin.me/articles/state-optimization-guide", 
-        "description": "Comprehensive guide to state optimization techniques for high-performance applications"
-      },
-      {
-        "@type": "WebPage",
-        "name": "Event Loop and Web Workers",
-        "url": "https://shapkarin.me/articles/async-event-loop-web-workers",
-        "description": "Understanding asynchronous JavaScript, event loop, and Web Workers for better dApp performance"
-      },
-      {
-        "@type": "WebPage",
-        "name": "Higher-Order Functions and Currying",
-        "url": "https://shapkarin.me/articles/hoc-and-currying",
-        "description": "Advanced JavaScript patterns useful for Web3 development and smart contract interactions"
-      }
-    ]
-  },
-  {
-    "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": [
       {
