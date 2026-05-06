@@ -125,7 +125,7 @@ export const creative = {
     'Archive ≈2012': [
       {
         title: 'Dots',
-        href: `${OLD_GALLERY_PATH}/dots`,
+        href: `${OLD_GALLERY_PATH}/dots.html`,
       },
       {
         title: 'Walkers',
@@ -133,14 +133,14 @@ export const creative = {
       },
       {
         title: 'Painter Walk',
-        href: `${OLD_GALLERY_PATH}/random_walker`,
+        href: `${OLD_GALLERY_PATH}/random_walker.html`,
       },
     ],
 
     'Archive ≈2016': [
       {
         title: '☆ Draw Walk ☆',
-        href: `${P5_GALLERY_PATH}/draw_walk`,
+        href: `${P5_GALLERY_PATH}/draw_walk.html`,
       },
       {
         title: '☆ Cursor magic ☆',
