@@ -5,7 +5,7 @@ import ReactTooltip from 'react-tooltip';
 import {  GoStar, GoClock, GoRepoForked, GoBrowser } from 'react-icons/go';
 import { LuMessageCircle } from 'react-icons/lu';
 import SEO from '@/Components/SEO';
-import Button from '@/Components/Button';
+import Link from '@/Components/Link';
 
 import { fetchLikes } from '@/DAL';
 
@@ -90,7 +90,7 @@ export default function Liked() {
             </div>
           </div>
         ))}
-        <Button url="https://github.com/shapkarin?tab=stars" />
+        <Link to="https://github.com/shapkarin?tab=stars" wide>More</Link>
       </div>
     </>
   );

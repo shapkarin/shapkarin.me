@@ -4,7 +4,7 @@ import ReactTooltip from 'react-tooltip';
 import { GoClock, GoRepoForked, GoBrowser } from 'react-icons/go';
 import { LuMessageCircle } from 'react-icons/lu';
 import SEO from '@/Components/SEO';
-import Button from '@/Components/Button';
+import Link from '@/Components/Link';
 import { fetchRepositories } from "@/DAL";
 import { useQuery } from "@tanstack/react-query";
 
@@ -84,7 +84,7 @@ export default function Repositories() {
             </div>
           </div>
         ))}
-        <Button url="https://github.com/shapkarin?tab=repositories" />
+        <Link to="https://github.com/shapkarin?tab=repositories" wide>More</Link>
       </div>
     </>
   );
