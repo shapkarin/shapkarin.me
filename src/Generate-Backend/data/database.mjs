@@ -35,8 +35,8 @@ export const packages = {
     return [
       'saga-fetch',
       'extend-saga-routines',
-      'mermaid-render',
       'diff-browser-globals',
+      'mermaid-render',
     ];
   },
 
