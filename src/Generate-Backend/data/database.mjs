@@ -174,10 +174,6 @@ export const creative = {
         href: 'https://editor.p5js.org/yu.shapkarin/sketches/CBHJckI9b',
       },
       {
-        title: 'Cubes',
-        href: 'https://codepen.io/shapkarin/full/doRpxy'
-      },
-      {
         title: 'My codepen profile',
         href: 'https://codepen.io/shapkarin',
       },
