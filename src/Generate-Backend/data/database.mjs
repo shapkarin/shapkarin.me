@@ -139,8 +139,8 @@ export const creative = {
 
     'Archive ≈2016': [
       {
-        title: '☆ Draw Walk ☆',
-        href: `${P5_GALLERY_PATH}/draw_walk.html`,
+        title: '☆ Flower ☆',
+        href: `${P5_GALLERY_PATH}/draw_walk`,
       },
       {
         title: '☆ Cursor magic ☆',

@@ -96,7 +96,7 @@
     "navigationTimeout": 900000,
     "waitFor": 1000,
     "puppeteer": {
-      "timeout": 100000
+      "timeout": 140000
     },
     "waitUntil": "networkidle2"
   }
