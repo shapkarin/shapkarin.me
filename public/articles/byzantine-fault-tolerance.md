@@ -49,8 +49,8 @@ order: 2
   - [pBFT Algorithm Phases](#pbft-algorithm-phases)
   - [pBFT Properties](#pbft-properties)
 - [BFT in Ethereum: Casper FFG and Gasper](#bft-in-ethereum-casper-ffg-and-gasper)
-  - [Casper FFG (Friendly Finality Gadget)](#casper-ffg-friendly-finality-gadget)
   - [Gasper: LMD-GHOST + Casper FFG](#gasper-lmd-ghost-casper-ffg)
+  - [Casper FFG (Friendly Finality Gadget)](#casper-ffg-friendly-finality-gadget)
 - [BFT Implementations in EVM-Compatible Chains](#bft-implementations-in-evm-compatible-chains)
   - [Polygon (MATIC) - Heimdall and Bor](#polygon-matic-heimdall-and-bor)
   - [Avalanche - Snowman Consensus](#avalanche---snowman-consensus)
@@ -1036,11 +1036,57 @@ sequenceDiagram
 
 Ethereum's transition from Proof of Work to Proof of Stake introduced sophisticated BFT mechanisms to secure the network while maintaining decentralization and performance.
 
+### Gasper: LMD-GHOST + Casper FFG
+
+**Gasper** combines the **Latest Message Driven Greedy Heaviest Observed SubTree (LMD-GHOST)** fork choice rule with Casper FFG finality:
+
+![Diagram](/articles/light/byzantine-fault-tolerance-15.svg)
+```mermaid
+%%{init: {'theme':'base', 'themeVariables': {'primaryColor':'#ffffff', 'fontSize':'16px'}}}%%
+flowchart TD
+    subgraph "LMD-GHOST Fork Choice"
+        G["<br/>Genesis Block<br/><br/>"]
+        G --> B1["<br/>Block 1<br/><br/>"]
+        G --> B1'["<br/>Block 1'<br/><br/>"]
+        
+        B1 --> B2["<br/>Block 2<br/><br/>"]
+        B1' --> B2'["<br/>Block 2'<br/><br/>"]
+        
+        B2 --> B3["<br/>Block 3<br/><br/>"]
+        B2' --> B3'["<br/>Block 3'<br/><br/>"]
+        
+        A1["<br/>3 Attestations<br/><br/>"] --> B1
+        A2["<br/>5 Attestations<br/><br/>"] --> B1'
+        A3["<br/>2 Attestations<br/><br/>"] --> B2'
+        A4["<br/>4 Attestations<br/><br/>"] --> B3'
+    end
+    
+    subgraph "Selection Process"
+        S1["<br/>Sum Attestations<br/><br/>"]
+        S2["<br/>Choose Heavier Branch<br/><br/>"]
+        S3["<br/>B1' → B2' → B3'<br/>Selected<br/><br/>"]
+    end
+    
+    B1 -.->|"Weight: 3"| S1
+    B1' -.->|"Weight: 5+2+4=11"| S1
+    S1 --> S2
+    S2 --> S3
+    
+    style G fill:#f5f5f5,stroke:#333,stroke-width:3px
+    style B1' fill:#c8e6c9,stroke:#388e3c,stroke-width:3px
+    style B2' fill:#c8e6c9,stroke:#388e3c,stroke-width:3px
+    style B3' fill:#c8e6c9,stroke:#388e3c,stroke-width:3px
+    style S3 fill:#e1f5fe,stroke:#1976d2,stroke-width:3px
+    style A2 fill:#fff3e0,stroke:#f57c00,stroke-width:2px
+    style A3 fill:#fff3e0,stroke:#f57c00,stroke-width:2px
+    style A4 fill:#fff3e0,stroke:#f57c00,stroke-width:2px
+```
+
 ### Casper FFG (Friendly Finality Gadget)
 
 **Casper FFG** provides **economic finality** to Ethereum blocks through a BFT-inspired voting mechanism:
 
-![Diagram](/articles/light/byzantine-fault-tolerance-15.svg)
+![Diagram](/articles/light/byzantine-fault-tolerance-16.svg)
 ```mermaid
 %%{init: {'theme':'base', 'themeVariables': {'primaryColor':'#ffffff', 'fontSize':'16px'}}}%%
 graph TD
@@ -1084,52 +1130,6 @@ graph TD
 2. **Two-Phase Finality**: Justification followed by finalization
 3. **Economic Incentives**: Validators stake ETH and face slashing penalties
 4. **Supermajority Requirement**: Needs 2/3 of validators for finality
-
-### Gasper: LMD-GHOST + Casper FFG
-
-**Gasper** combines the **Latest Message Driven Greedy Heaviest Observed SubTree (LMD-GHOST)** fork choice rule with Casper FFG finality:
-
-![Diagram](/articles/light/byzantine-fault-tolerance-16.svg)
-```mermaid
-%%{init: {'theme':'base', 'themeVariables': {'primaryColor':'#ffffff', 'fontSize':'16px'}}}%%
-flowchart TD
-    subgraph "LMD-GHOST Fork Choice"
-        G["<br/>Genesis Block<br/><br/>"]
-        G --> B1["<br/>Block 1<br/><br/>"]
-        G --> B1'["<br/>Block 1'<br/><br/>"]
-        
-        B1 --> B2["<br/>Block 2<br/><br/>"]
-        B1' --> B2'["<br/>Block 2'<br/><br/>"]
-        
-        B2 --> B3["<br/>Block 3<br/><br/>"]
-        B2' --> B3'["<br/>Block 3'<br/><br/>"]
-        
-        A1["<br/>3 Attestations<br/><br/>"] --> B1
-        A2["<br/>5 Attestations<br/><br/>"] --> B1'
-        A3["<br/>2 Attestations<br/><br/>"] --> B2'
-        A4["<br/>4 Attestations<br/><br/>"] --> B3'
-    end
-    
-    subgraph "Selection Process"
-        S1["<br/>Sum Attestations<br/><br/>"]
-        S2["<br/>Choose Heavier Branch<br/><br/>"]
-        S3["<br/>B1' → B2' → B3'<br/>Selected<br/><br/>"]
-    end
-    
-    B1 -.->|"Weight: 3"| S1
-    B1' -.->|"Weight: 5+2+4=11"| S1
-    S1 --> S2
-    S2 --> S3
-    
-    style G fill:#f5f5f5,stroke:#333,stroke-width:3px
-    style B1' fill:#c8e6c9,stroke:#388e3c,stroke-width:3px
-    style B2' fill:#c8e6c9,stroke:#388e3c,stroke-width:3px
-    style B3' fill:#c8e6c9,stroke:#388e3c,stroke-width:3px
-    style S3 fill:#e1f5fe,stroke:#1976d2,stroke-width:3px
-    style A2 fill:#fff3e0,stroke:#f57c00,stroke-width:2px
-    style A3 fill:#fff3e0,stroke:#f57c00,stroke-width:2px
-    style A4 fill:#fff3e0,stroke:#f57c00,stroke-width:2px
-```
 
 ## BFT Implementations in EVM-Compatible Chains
 
