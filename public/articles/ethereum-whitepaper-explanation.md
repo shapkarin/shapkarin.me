@@ -14,6 +14,9 @@ keywords: >-
 
 # Ethereum Whitepaper Explanation: A Simple Guide to Understanding Ethereum's Revolutionary Vision
 
+## Related articles:
+- [Byzantine Fault Tolerance in Blockchain](/articles/byzantine-fault-tolerance/)
+
 ## Table of Contents
 
 1. [What is the Ethereum Whitepaper?](#what-is-the-ethereum-whitepaper)
