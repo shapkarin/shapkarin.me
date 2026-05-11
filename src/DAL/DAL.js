@@ -12,7 +12,6 @@ const githubRequest = axios.create({
 const markdownRequest = axios.create({
   headers: {
     'Accept': 'text/markdown, text/plain, */*',
-    'Content-Type': 'text/plain; charset=UTF-8',
   },
 });
 
