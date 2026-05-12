@@ -33,8 +33,8 @@ export const packages = {
 
   get order(){
     return [
-      'saga-fetch',
       'extend-saga-routines',
+      'saga-fetch',
       'diff-browser-globals',
       'mermaid-render',
     ];
