@@ -10,7 +10,7 @@ const github = {
   get repositories() {
     const perPage = 100;
     const page = 1;
-    return `${this.user}/repos?sort=pushed&per_page=${perPage}&page=${page}`;
+    return ({ sort, direction }) => `${this.user}/repos?sort=${sort}&direction=${direction}&per_page=${perPage}&page=${page}`;
   },
   get likes() {
     return `${this.user}/starred`;

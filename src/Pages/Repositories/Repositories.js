@@ -14,7 +14,10 @@ export default function Repositories() {
   // const [page, setPage] = useState(1)
   const { data: { data: list } } = useQuery({
     queryKey: ['Repositories'],
-    queryFn: () => fetchRepositories(), 
+    queryFn: () => fetchRepositories({ 
+      sort: 'created', 
+      direction: 'desc'
+    }), 
     staleTime: 1000 * 60 * 60 * 24, // 24h
     // { keepPreviousData : true } for pagination
   });
@@ -40,9 +43,9 @@ export default function Repositories() {
           open_issues_count,
           homepage,
           fork,
-          pushed_at,
+          created_at,
           language,
-          languages_url
+          languages_url,
         }) => (
           <div key={id} className="Page__GithubItem">
             <div className="Page__GithubItemInner">
@@ -52,9 +55,9 @@ export default function Repositories() {
               </a>
               <div className="centered-label" style={{ lineHeight: '20px', paddingBottom: '6px' }}>{description}</div>
               <div className="centered-label">
-                <GoClock data-tip="Last update" size="19px" />
+                <GoClock data-tip="Repo creation date" size="19px" />
                 {' '}
-                {(new Date(pushed_at)).toLocaleDateString('de-DE', { day: '2-digit', month: '2-digit', year: 'numeric' })}
+                {(new Date(created_at)).toLocaleDateString('de-DE', { day: '2-digit', month: '2-digit', year: 'numeric' })}
               </div>
               { open_issues_count > 0 && (
               <div className="centered-label">
