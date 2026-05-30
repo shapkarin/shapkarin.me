@@ -2,6 +2,7 @@ import axios from 'axios';
 import { QueryClient } from '@tanstack/react-query';
 
 import URLS from './URL';
+import { IS_PRODUCTION, IS_DEVELOPMENT } from '@/constants'
 
 const githubRequest = axios.create({
   headers: {
@@ -19,8 +20,8 @@ export const queryClient = new QueryClient({
   defaultOptions: {
      queries: {
        suspense: true,
-       staleTime: 1000 * 60 * 60 * 24 * 7, // 7 days
-       retry: 3,
+       staleTime: IS_PRODUCTION ? 1000 * 60 * 60 * 24 * 7 : 0,
+       retry: IS_PRODUCTION,
      },
    },
 });

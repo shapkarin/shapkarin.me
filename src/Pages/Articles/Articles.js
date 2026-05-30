@@ -11,7 +11,6 @@ function ArticlesList() {
   const { data: { data: articles } } = useQuery({
     queryKey: ['ArticlesList'],
     queryFn: fetchArticles,
-    staleTime: 1000 * 60 * 60 * 24, // 24h
   });
 
   return (

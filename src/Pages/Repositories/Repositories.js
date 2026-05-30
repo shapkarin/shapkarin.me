@@ -17,9 +17,7 @@ export default function Repositories() {
     queryFn: () => fetchRepositories({ 
       sort: 'created', 
       direction: 'desc'
-    }), 
-    staleTime: 1000 * 60 * 60 * 24, // 24h
-    // { keepPreviousData : true } for pagination
+    }),
   });
 
   return (

@@ -15,7 +15,6 @@ export default function Liked() {
   const { data: { data: list } } = useQuery({
     queryKey: ['Liked'],
     queryFn: fetchLikes,
-    staleTime: 1000 * 60 * 60 * 24, // 24h
   });
 
   return (

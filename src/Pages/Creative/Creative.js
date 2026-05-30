@@ -46,7 +46,6 @@ function Collection(){
   const { data: { data: collection } } = useQuery({
     queryKey: ['Creative'],
     queryFn: fetchCreative,
-    retry: true,
   });
 
   return <div className="Gal__Wrapper">
