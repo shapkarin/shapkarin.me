@@ -18,12 +18,25 @@ const markdownRequest = axios.create({
 
 export const queryClient = new QueryClient({
   defaultOptions: {
-     queries: {
-       suspense: true,
-       staleTime: IS_PRODUCTION ? 1000 * 60 * 60 * 24 * 7 : 0,
-       retry: IS_PRODUCTION,
-     },
-   },
+    queries: {
+      suspense: true,
+      staleTime: IS_PRODUCTION ? 1000 * 60 * 60 * 24 * 7 : 0,
+      retry: (_, error) => {
+        if (IS_DEVELOPMENT) {
+          return false;
+        }
+        /*
+          S3 and Github API workaroud
+          unfortunately we can get these codes
+          and it's not because of this website
+        */
+        if ([400, 401, 403, 429, 404].includes(error?.response?.status || error?.status)) {
+          return false;
+        }
+        return true; // each new request is twice as long
+      }
+    },
+  },
 });
 
 // From generated JSON files
