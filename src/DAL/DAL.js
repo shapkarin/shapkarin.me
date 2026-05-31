@@ -51,6 +51,7 @@ export const fetchMainPage = () => axios.get(URLS.main)
 // GitHub API
 export const fetchLikes = () => githubRequest.get(URLS.likes);
 export const fetchRepositories = (params) => githubRequest.get(URLS.repositories(params));
+export const fetchIssues = () => githubRequest.get(URLS.issues);
 export const fetchContributions = () => githubRequest.get(URLS.activity);
 
 // Articles (MD files)

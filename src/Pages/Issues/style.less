@@ -1,0 +1,52 @@
+@import "../../Assets/Variables.less";
+
+.Page__Issues {
+  .Issues__Summary {
+    flex: 1 0 100%;
+    line-height: 23px;
+  }
+
+  .IssueItem__Title {
+    font-weight: bold;
+  }
+
+  .IssueItem__Meta,
+  .IssueItem__Labels {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    gap: 8px 14px;
+  }
+
+  .IssueItem__Meta {
+    margin-top: 6px;
+    font-size: 15px;
+    line-height: 22px;
+  }
+
+  .IssueItem__State,
+  .IssueItem__Label {
+    border-radius: @border-radius-base;
+    padding: 0 7px;
+    line-height: 22px;
+  }
+
+  .IssueItem__State {
+    border: 1px solid @color-dark-transparent-10;
+    text-transform: capitalize;
+  }
+
+  .IssueItem__State--open {
+    background-color: #e6f4ea;
+  }
+
+  .IssueItem__State--closed {
+    background-color: #fce8e6;
+  }
+
+  .IssueItem__Labels {
+    margin-top: 10px;
+    font-size: 13px;
+    line-height: 22px;
+  }
+}

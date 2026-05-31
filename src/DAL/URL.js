@@ -12,6 +12,9 @@ const github = {
     const page = 1;
     return ({ sort, direction }) => `${this.user}/repos?sort=${sort}&direction=${direction}&per_page=${perPage}&page=${page}`;
   },
+  get issues() {
+    return `${GITHUB_API_URL}/search/issues?q=author:shapkarin+is:issue&sort=created&order=desc&per_page=100`;
+  },
   get likes() {
     return `${this.user}/starred`;
   },

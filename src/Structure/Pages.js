@@ -1,5 +1,6 @@
 import Packages from '@/Pages/Packages';
 import Repositories from '@/Pages/Repositories';
+import Issues from '@/Pages/Issues';
 import Stars from '@/Pages/Likes';
 import Creative from '@/Pages/Creative';
 import Articles from '@/Pages/Articles/Articles';
@@ -9,6 +10,7 @@ import Main from '@/Pages/Main';
 // import { lazy } from 'react';
 
 import { GoRepo, GoStar, GoHome } from 'react-icons/go';
+import { LuMessageCircle } from 'react-icons/lu';
 import { RiNpmjsLine, RiPaintBrushFill, RiArticleLine } from 'react-icons/ri';
 
 // const Packages = lazy(() => import('@/Pages/Packages'));
@@ -46,6 +48,12 @@ const PAGES = [
     // redirect: { from: '/repositories', to: '/github/repositories/' },
     Icon: () => <GoRepo />,
     Page: () => <Repositories />,
+  },
+  {
+    name: 'Issues',
+    path: '/github/issues/',
+    Icon: () => <LuMessageCircle />,
+    Page: () => <Issues />,
   },
   {
     name: 'Likes',

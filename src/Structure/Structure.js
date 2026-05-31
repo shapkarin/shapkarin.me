@@ -13,6 +13,7 @@ const preloaderConfig = {
   '/': { lines: 8, height: 204 },
   '/articles/': { ...commonPreloaderProps },
   '/github/repositories/': { ...commonPreloaderProps },
+  '/github/issues/': { ...commonPreloaderProps },
   '/github/likes/': { ...commonPreloaderProps },
   '/packages/': { lines: 20, height: 503 },
   '/creative/': { lines: 15, height: 450 }
