@@ -7,6 +7,7 @@ import SEO from '@/Components/SEO';
 import Link from '@/Components/Link';
 import { fetchRepositories } from "@/DAL";
 import { useQuery } from "@tanstack/react-query";
+import { RepositoryDescription } from './RepositoryDescription';
 
 import './style.less';
 
@@ -51,7 +52,9 @@ export default function Repositories() {
                 {name}
                 {fork && <GoRepoForked data-tip="fork" />}
               </a>
-              <div className="centered-label" style={{ lineHeight: '20px', paddingBottom: '6px' }}>{description}</div>
+              <div className="GithubItem__Description">
+                <RepositoryDescription text={description} />
+              </div>
               <div className="centered-label">
                 <GoClock data-tip="Repo creation date" size="19px" />
                 {' '}
