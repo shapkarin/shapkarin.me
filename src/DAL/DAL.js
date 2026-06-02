@@ -30,7 +30,7 @@ export const queryClient = new QueryClient({
           unfortunately we can get these codes
           and it's not because of this website
         */
-        if ([400, 401, 403, 429, 404].includes(error?.response?.status || error?.status)) {
+        if ([401, 403, 429, 404].includes(error?.response?.status || error?.status)) {
           return false;
         }
         return true; // each new request is twice as long
