@@ -19,9 +19,6 @@ jobs:
     environment:
       name: s3-unchained
       url: https://shapkarin.me
-
-    permissions:
-      contents: write
     
     steps:
       - name: Checkout 
