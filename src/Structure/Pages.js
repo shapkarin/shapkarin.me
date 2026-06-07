@@ -27,19 +27,6 @@ const PAGES = [
     Icon: () => <GoHome size="1.2em" />,
   },
   {
-    name: 'Articles',
-    path: '/articles/',
-    Icon: () => <RiArticleLine />,
-    Page: () => <Articles />,
-  },
-  {
-    name: 'Articles',
-    path: '/articles/:slug/',
-    Icon: () => <RiArticleLine />,
-    Page: () => <Article />,
-    noInMenu: true,
-  },
-  {
     name: 'Repositories',
     path: '/github/repositories/',
     // I use use public/404.html and public/index.html pages instead
@@ -58,6 +45,19 @@ const PAGES = [
     // ],
     Icon: () => <GoStar size="1.2em" />,
     Page: () => <Stars />,
+  },
+  {
+    name: 'Articles',
+    path: '/articles/',
+    Icon: () => <RiArticleLine />,
+    Page: () => <Articles />,
+  },
+  {
+    name: 'Articles',
+    path: '/articles/:slug/',
+    Icon: () => <RiArticleLine />,
+    Page: () => <Article />,
+    noInMenu: true,
   },
   {
     name: 'Packages',
