@@ -42,12 +42,7 @@ jobs:
         uses: brycedorn/react-snap-action@3c747b86c6373ead5460fcd8e3807f1999ebf71f
 
       - name: Copy HTML gallery
-        run: npm run build:html-gallery 
-
-      - name: Install AWS CLI
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y awscli
+        run: npm run build:html-gallery
 
       - name: Deploy to S3
         env:
