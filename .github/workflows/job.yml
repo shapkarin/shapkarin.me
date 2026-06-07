@@ -19,8 +19,16 @@ jobs:
     environment:
       name: s3-unchained
       url: https://shapkarin.me
+
+    permissions:
+      contents: read
     
     steps:
+      - name: Step Security harden
+        uses: step-security/harden-runner@9af89fc71515a100421586dfdb3dc9c984fbf411
+        with:
+          egress-policy: audit
+
       - name: Checkout 
         uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5
         with:
