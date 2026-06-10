@@ -33,6 +33,9 @@ export default function Repositories() {
       {/* <div>
         <button onClick={() => setPage(page + 1)}>Next Page</button>
       </div> */}
+      <Link to="/articles/contributions-to-major-web-dev-repos/" className="ref-link">
+        Check out the article about other contributions I chose to highlight.
+      </Link>
       <div className="Page__Github Page__Inner">
         {list.map(({
           id,
@@ -88,7 +91,7 @@ export default function Repositories() {
             </div>
           </div>
         ))}
-        <Link to="https://github.com/shapkarin?tab=repositories" wide>More</Link>
+        <Link to="https://github.com/shapkarin?tab=stars" wide>More</Link>
       </div>
     </>
   );
