@@ -7,22 +7,34 @@
       "@id": "https://shapkarin.me/articles/contributions-to-major-web-dev-repos/",
       "url": "https://shapkarin.me/articles/contributions-to-major-web-dev-repos/",
       "relatedLink": [
-        "https://github.com/modelcontextprotocol/inspector/issues/1401",
         "https://github.com/modelcontextprotocol/inspector/issues/1388",
+        "https://github.com/modelcontextprotocol/inspector/issues/1401",
         "https://github.com/modelcontextprotocol/inspector/issues/1400",
-        "https://github.com/modelcontextprotocol/inspector/issues?q=is%3Aissue%20author%3Ashapkarin",
-        "https://github.com/mdn/yari/issues?q=is%3Aissue%20state%3Aclosed%20author%3Ashapkarin",
-        "https://github.com/mdn/yari/commit/c1db1d2c0babd2c4e4e8a4a33585f8272eddc756",
+        "https://github.com/txkit/mono/issues/1",
+        "https://github.com/txkit/mono/issues/3",
+        "https://github.com/mdn/yari/pull/4438",
         "https://github.com/mdn/yari/pull/4437",
+        "https://github.com/mdn/yari/commit/c1db1d2c0babd2c4e4e8a4a33585f8272eddc756",
         "https://github.com/mdn/content/pull/7725",
         "https://github.com/mdn/translated-content/pulls?q=is%3Apr+author%3Ashapkarin+is%3Aclosed",
-        "https://github.com/GoogleChrome/web.dev/issues?q=is%3Aissue%20state%3Aclosed%20author%3Ashapkarin",
-        "https://github.com/GoogleChrome/web.dev/pulls?q=is%3Apr+is%3Aclosed+author%3Ashapkarin"
+        "https://github.com/GoogleChrome/web.dev/issues/5879",
+        "https://github.com/GoogleChrome/web.dev/issues/5888",
+        "https://github.com/GoogleChrome/web.dev/issues/5875",
+        "https://github.com/GoogleChrome/web.dev/pull/5880",
+        "https://github.com/GoogleChrome/web.dev/pull/5878",
+        "https://github.com/orgs/community/discussions",
+        "https://github.com/orgs/community/discussions/5575",
+        "https://github.com/orgs/community/discussions/102510",
+        "https://github.com/orgs/community/discussions/5503",
+        "https://github.com/orgs/community/discussions/4779",
+        "https://github.com/orgs/community/discussions/4778",
+        "https://github.com/shapkarin",
+        "https://gist.github.com/shapkarin"
       ]
     },
     "url": "https://shapkarin.me/articles/contributions-to-major-web-dev-repos/",
-    "headline": "Contributing to Web Development Documentation and core engine: My Journey with MCP, Model Context Protocol, MDN and web.dev",
-    "description": "Yuri Shapkarin contributions to major web development platforms, including Model Context Protocol (MCP inspector repo by Agentic AI Foundation) ecosystem, Mozilla's MDN (+it's engine) and Google's web.dev, highlighting the impact of small contributions in the open-source community",
+    "headline": "My contributions to the MCP (Model Context Protocol) ecosystem, Agentic payments, Google (web.dev) and Mozilla (MDN engine) repositories, plus proposals to the GitHub service itself",
+    "description": "Yuri Shapkarin contributions to major web development platforms, including Model Context Protocol (MCP inspector repo by Agentic AI Foundation) ecosystem, Mozilla's MDN (+it's engine) and Google's web.dev, Proposals to the GitHub service itself, highlighting the impact of contributions in the open-source community.",
     "image": {
       "@type": "ImageObject",
       "url": "https://shapkarin.me/logo.jpg",
@@ -48,7 +60,7 @@
     },
     "datePublished": "2023-10-27T00:00:00+02:00",
     "dateModified": "2026-06-04T00:00:00+02:00",
-    "wordCount": "350",
+    "wordCount": "401",
     "inLanguage": "en-US",
     "learningResourceType": "Case Study",
     "proficiencyLevel": [
@@ -64,8 +76,8 @@
       },
       {
         "@type": "Thing",
-        "name": "Open Source Contribution",
-        "description": "Contributing code, documentation, and translations to open-source projects."
+        "name": "Safe bridge between AI agents and Web3 transactions CAIP-2 / EIP-5792 / EIP-712",
+        "description": "Contributing proposals to the safe bridge between AI agents and Web3 transactions."
       },
       {
         "@type": "Thing",
@@ -81,6 +93,11 @@
         "@type": "Thing",
         "name": "Git & GitHub",
         "description": "Version control system and platform for hosting and collaborating on code."
+      },
+      {
+        "@type": "Thing",
+        "name": "Open Source Contribution",
+        "description": "Contributing code, documentation, and translations to open-source projects."
       }
     ],
     "audience": [
@@ -103,37 +120,55 @@
     "hasPart": [
       {
         "@type": "WebPage",
-        "name": "Tool for MCP (Model Context Protocol) servers",
-        "url": "https://shapkarin.me/articles/contributions-to-major-web-dev-repos#tool-for-mcp-model-context-protocol-servers",
+        "name": "Debugging tool for MCP (Model Context Protocol) servers",
+        "url": "https://shapkarin.me/articles/contributions-to-major-web-dev-repos#debugging-tool-for-mcp-model-context-protocol-servers",
         "description": "Summary of contributions made to MCP ecosystem."
       },
       {
+        "@type": "WebPage",
+        "name": "Safe bridge between AI agents and Web3 transactions.",
+        "url": "https://shapkarin.me/articles/contributions-to-major-web-dev-repos#safe-bridge-between-ai-agents-and-web3-transactions",
+        "description": "Summary of contributions made to safe agentic Web3 transaction patterns."
+      },
+      {
         "@type": "WebPageElement",
-        "name": "Mozilla (MDN engine, yari)",
-        "url": "https://shapkarin.me/articles/contributions-to-major-web-dev-repos#mozilla-mdn-engine-yari",
+        "name": "Mozilla (MDN engine, yari) The platform code behind MDN Web Docs",
+        "url": "https://shapkarin.me/articles/contributions-to-major-web-dev-repos#mozilla-mdn-engine-yari-the-platform-code-behind-mdn-web-docs",
         "description": "Details of contributions to Mozilla's MDN project, including the Yari engine, content, and translations."
       },
       {
         "@type": "WebPageElement",
-        "name": "Google (web.dev)",
-        "url": "https://shapkarin.me/articles/contributions-to-major-web-dev-repos#google-webdev",
+        "name": "Google (web.dev) The frontend, backend, and content source code for web.dev",
+        "url": "https://shapkarin.me/articles/contributions-to-major-web-dev-repos#google-web-dev-the-frontend-backend-and-content-source-code-for-web-dev",
         "description": "Summary of contributions made to Google's web.dev platform for web developers."
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "Proposals to the GitHub itself, not a specific repo but orgs/community/discussions",
+        "url": "https://shapkarin.me/articles/contributions-to-major-web-dev-repos#proposals-to-the-github-itself-not-a-specific-repo-but-orgs-community-discussions",
+        "description": "Summary of proposals made in GitHub Community Discussions."
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "More",
+        "url": "https://shapkarin.me/articles/contributions-to-major-web-dev-repos#more",
+        "description": "Additional links to the author's GitHub profile and GitHub Gists."
       }
     ],
     "mentions": [
-      {
-        "@type": "WebPage",
-        "name": "[enhancement] Keep MCP tool property descriptions visible for filled inputs",
-        "@id": "https://github.com/modelcontextprotocol/inspector/issues/1401",
-        "description": "Related to the proposal below.",
-        "url": "https://github.com/modelcontextprotocol/inspector/issues/1401"
-      },
       {
         "@type": "WebPage",
         "name": "[enhancement] Show expected format from MCP tool inputSchema",
         "@id": "https://github.com/modelcontextprotocol/inspector/issues/1388",
         "description": "Got community support.",
         "url": "https://github.com/modelcontextprotocol/inspector/issues/1388"
+      },
+      {
+        "@type": "WebPage",
+        "name": "[enhancement] Keep MCP tool property descriptions visible for filled inputs",
+        "@id": "https://github.com/modelcontextprotocol/inspector/issues/1401",
+        "description": "Related to the proposal below.",
+        "url": "https://github.com/modelcontextprotocol/inspector/issues/1401"
       },
       {
         "@type": "WebPage",
@@ -144,14 +179,31 @@
       },
       {
         "@type": "WebPage",
-        "name": "Author's Closed Issues on mdn/yari",
-        "@id": "https://github.com/mdn/yari/issues?q=is%3Aissue%20state%3Aclosed%20author%3Ashapkarin",
-        "description": "List of closed issues submitted by the author to the MDN Yari repository.",
-        "relatedLink": [
-          "https://github.com/mdn/yari/blob/main/CONTRIBUTING.md",
-          "https://github.com/mdn/yari"
-        ],
-        "url": "https://github.com/mdn/yari/issues?q=is%3Aissue%20state%3Aclosed%20author%3Ashapkarin"
+        "name": "Get chain IDs from VIEM",
+        "@id": "https://github.com/txkit/mono/issues/1",
+        "description": "Reduce maintenance workload.",
+        "url": "https://github.com/txkit/mono/issues/1"
+      },
+      {
+        "@type": "WebPage",
+        "name": "Add security tools (LavaMoat, StepSecurity, Socket)",
+        "@id": "https://github.com/txkit/mono/issues/3",
+        "description": "Increase CI/CD and local development security.",
+        "url": "https://github.com/txkit/mono/issues/3"
+      },
+      {
+        "@type": "WebPage",
+        "name": "Update pegjs docs link",
+        "@id": "https://github.com/mdn/yari/pull/4438",
+        "description": "Contribution to the MDN Yari repository.",
+        "url": "https://github.com/mdn/yari/pull/4438"
+      },
+      {
+        "@type": "WebPage",
+        "name": "Ability to define sampleId in different languages. fix EmbedLiveSample macros",
+        "@id": "https://github.com/mdn/yari/pull/4437",
+        "description": "Contribution to the MDN Yari repository.",
+        "url": "https://github.com/mdn/yari/pull/4437"
       },
       {
         "@type": "WebPage",
@@ -165,22 +217,9 @@
       },
       {
         "@type": "WebPage",
-        "name": "Author's Pull Request to mdn/yari for URL encoding issue",
-        "@id": "https://github.com/mdn/yari/pull/4437",
-        "description": "The author's original pull request to fix a URL encoding issue in the MDN engine.",
-        "relatedLink": [
-          "https://github.com/mdn/yari/commit/c1db1d2c0babd2c4e4e8a4a33585f8272eddc756"
-        ],
-        "url": "https://github.com/mdn/yari/pull/4437"
-      },
-      {
-        "@type": "WebPage",
         "name": "Author's Pull Request to mdn/content",
         "@id": "https://github.com/mdn/content/pull/7725",
         "description": "A pull request by the author to the MDN content repository.",
-        "relatedLink": [
-          "https://github.com/mdn/content/blob/main/CONTRIBUTING.md"
-        ],
         "url": "https://github.com/mdn/content/pull/7725"
       },
       {
@@ -188,31 +227,84 @@
         "name": "Author's closed Pull Requests to mdn/translated-content",
         "@id": "https://github.com/mdn/translated-content/pulls?q=is%3Apr+author%3Ashapkarin+is%3Aclosed",
         "description": "List of closed pull requests for translations on MDN.",
-        "relatedLink": [
-          "https://github.com/mdn/translated-content#contributing"
-        ],
         "url": "https://github.com/mdn/translated-content/pulls?q=is%3Apr+author%3Ashapkarin+is%3Aclosed"
       },
       {
         "@type": "WebPage",
-        "name": "Author's Closed Issues on GoogleChrome/web.dev",
-        "@id": "https://github.com/GoogleChrome/web.dev/issues?q=is%3Aissue%20state%3Aclosed%20author%3Ashapkarin",
-        "description": "List of closed issues submitted by the author to Google's web.dev repository.",
-        "relatedLink": [
-          "https://github.com/GoogleChrome/web.dev/blob/main/CONTRIBUTING.md",
-          "https://web.dev/how-to-contribute/"
-        ],
-        "url": "https://github.com/GoogleChrome/web.dev/issues?q=is%3Aissue%20state%3Aclosed%20author%3Ashapkarin"
+        "name": "Hardcoded IDs and HREFs at the https://web.dev/learn",
+        "@id": "https://github.com/GoogleChrome/web.dev/issues/5879",
+        "description": "Issue submitted to Google's web.dev repository.",
+        "url": "https://github.com/GoogleChrome/web.dev/issues/5879"
       },
       {
         "@type": "WebPage",
-        "name": "Author's closed Pull Requests to GoogleChrome/web.dev",
-        "@id": "https://github.com/GoogleChrome/web.dev/pulls?q=is%3Apr+is%3Aclosed+author%3Ashapkarin",
-        "description": "List of closed pull requests by the author to Google's web.dev repository.",
-        "relatedLink": [
-          "https://github.com/GoogleChrome/web.dev/blob/main/CONTRIBUTING.md"
-        ],
-        "url": "https://github.com/GoogleChrome/web.dev/pulls?q=is%3Apr+is%3Aclosed+author%3Ashapkarin"
+        "name": "Wrong link \"Chrome updates\" at the footer",
+        "@id": "https://github.com/GoogleChrome/web.dev/issues/5888",
+        "description": "Issue submitted to Google's web.dev repository.",
+        "url": "https://github.com/GoogleChrome/web.dev/issues/5888"
+      },
+      {
+        "@type": "WebPage",
+        "name": "Href values of the links at the \"Table of Contents\" section are not processed by i18n",
+        "@id": "https://github.com/GoogleChrome/web.dev/issues/5875",
+        "description": "Issue submitted to Google's web.dev repository.",
+        "url": "https://github.com/GoogleChrome/web.dev/issues/5875"
+      },
+      {
+        "@type": "WebPage",
+        "name": "Fix headline anchors navigation at \"/learn\" page by removing hardcoded values",
+        "@id": "https://github.com/GoogleChrome/web.dev/pull/5880",
+        "description": "Pull request submitted to Google's web.dev repository.",
+        "url": "https://github.com/GoogleChrome/web.dev/pull/5880"
+      },
+      {
+        "@type": "WebPage",
+        "name": "Fix TOC links for the learn pages",
+        "@id": "https://github.com/GoogleChrome/web.dev/pull/5878",
+        "description": "Pull request submitted to Google's web.dev repository.",
+        "url": "https://github.com/GoogleChrome/web.dev/pull/5878"
+      },
+      {
+        "@type": "WebPage",
+        "name": "GitHub Community Discussions",
+        "@id": "https://github.com/orgs/community/discussions",
+        "description": "GitHub Community Discussions home for proposals and feedback.",
+        "url": "https://github.com/orgs/community/discussions"
+      },
+      {
+        "@type": "WebPage",
+        "name": "Sorting the insights dependency graph lists",
+        "@id": "https://github.com/orgs/community/discussions/5575",
+        "description": "GitHub Community Discussion proposal.",
+        "url": "https://github.com/orgs/community/discussions/5575"
+      },
+      {
+        "@type": "WebPage",
+        "name": "Markdown: links target _blank",
+        "@id": "https://github.com/orgs/community/discussions/102510",
+        "description": "GitHub Community Discussion proposal.",
+        "url": "https://github.com/orgs/community/discussions/102510"
+      },
+      {
+        "@type": "WebPage",
+        "name": "Search improvements",
+        "@id": "https://github.com/orgs/community/discussions/5503",
+        "description": "GitHub Community Discussion proposal.",
+        "url": "https://github.com/orgs/community/discussions/5503"
+      },
+      {
+        "@type": "WebPage",
+        "name": "Find a compatible way to store and share branch descriptions to show it at the Github next",
+        "@id": "https://github.com/orgs/community/discussions/4779",
+        "description": "GitHub Community Discussion proposal.",
+        "url": "https://github.com/orgs/community/discussions/4779"
+      },
+      {
+        "@type": "WebPage",
+        "name": "Show a branch PRs directly at the dropdown list inside a repo page",
+        "@id": "https://github.com/orgs/community/discussions/4778",
+        "description": "GitHub Community Discussion proposal.",
+        "url": "https://github.com/orgs/community/discussions/4778"
       },
       {
         "@type": "WebPage",

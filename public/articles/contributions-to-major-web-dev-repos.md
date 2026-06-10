@@ -1,25 +1,48 @@
 ---
 title: "Contributing to Web Development Documentation and core engine: My Journey with MCP, Model Context Protocol, MDN and web.dev"
-description: "Yuri Shapkarin contributions to major web development platforms, including Model Context Protocol (MCP inspector repo by Agentic AI Foundation) ecosystem, Mozilla's MDN (+it's engine) and Google's web.dev, highlighting the impact of small contributions in the open-source community."
+description: "Yuri Shapkarin contributions to major web development platforms, including Model Context Protocol (MCP inspector repo by Agentic AI Foundation) ecosystem, Mozilla's MDN (+it's engine) and Google's web.dev, Proposals to the GitHub itself, highlighting the impact of contributions in the open-source community."
 order: 0
 ---
 
-# My contributions to the MCP (Model Context Protocol) ecosystem, Google (web.dev) and Mozilla (MDN engine) repositories. 
+# My contributions to the MCP (Model Context Protocol) ecosystem, Agentic payments, Google (web.dev) and Mozilla (MDN engine) repositories, plus proposals to the GitHub service itself. 
 
 ---
+
+## Table of Contents
+
+- [Debugging tool for MCP (Model Context Protocol) servers](#debugging-tool-for-mcp-model-context-protocol-servers)
+- [Safe bridge between AI agents and Web3 transactions](#safe-bridge-between-ai-agents-and-web3-transactions)
+- [Mozilla (MDN engine, yari) The platform code behind MDN Web Docs](#mozilla-mdn-engine-yari-the-platform-code-behind-mdn-web-docs)
+- [Google (web.dev) The frontend, backend, and content source code for web.dev](#google-web-dev-the-frontend-backend-and-content-source-code-for-web-dev)
+- [Proposals to the GitHub itself, not a specific repo but orgs/community/discussions](#proposals-to-the-github-itself-not-a-specific-repo-but-orgs-community-discussions)
+- [More](#more)
 
 ## Debugging tool for MCP (Model Context Protocol) servers
+`2026 year`
 
-- [[enhancement] Keep MCP tool property descriptions visible for filled inputs](https://github.com/modelcontextprotocol/inspector/issues/1401) | related to the proposal below
-- [[enhancement] Show expected format from MCP tool inputSchema](https://github.com/modelcontextprotocol/inspector/issues/1388) | got community support 
-- [[enhancement] Local development sandbox](https://github.com/modelcontextprotocol/inspector/issues/1400) | Implemented (docker)
+- [[enhancement] Show expected format from MCP tool inputSchema](https://github.com/modelcontextprotocol/inspector/issues/1388)
+- [[enhancement] Keep MCP tool property descriptions visible for filled inputs](https://github.com/modelcontextprotocol/inspector/issues/1401)
+- [[enhancement] Local development sandbox](https://github.com/modelcontextprotocol/inspector/issues/1400)
 
 ---
 
-## Mozilla (MDN engine, yari)
+## Safe bridge between AI agents and Web3 transactions.
+`2026 year`
+
+Open-source kit + protocol with anti-phishing patterns built in.
+Open envelope spec: CAIP-2 / EIP-5792 / EIP-712
+
+- [Get chain IDs from VIEM](https://github.com/txkit/mono/issues/1)
+- [Add security tools (LavaMoat, StepSecurity, Socket)](https://github.com/txkit/mono/issues/3)
+
+---
+
+## Mozilla (MDN engine, yari) The platform code behind MDN Web Docs
+`2021 year`
 
 ### Issues: 
-- [https://github.com/mdn/yari/issues?q=is%3Aissue%20state%3Aclosed%20author%3Ashapkarin](https://github.com/mdn/yari/issues?q=is%3Aissue%20state%3Aclosed%20author%3Ashapkarin)
+- [Update pegjs docs link](https://github.com/mdn/yari/pull/4438)
+- [Ability to define sampleId in different languages. fix EmbedLiveSample macros](https://github.com/mdn/yari/pull/4437)
 
 ### PRs:
 - [This commit has parts from my closed PR (next link) so author mentioned me in commit](https://github.com/mdn/yari/commit/c1db1d2c0babd2c4e4e8a4a33585f8272eddc756)
@@ -31,16 +54,37 @@ In addition I made small commits to the mdn/content and mdn/translated-content.
 
 ---
 
-## Google (web.dev)
+## Google (web.dev) The frontend, backend, and content source code for web.dev
+`2021 year`
 
 ### Issues:
-- [https://github.com/GoogleChrome/web.dev/issues?q=is%3Aissue%20state%3Aclosed%20author%3Ashapkarin](https://github.com/GoogleChrome/web.dev/issues?q=is%3Aissue%20state%3Aclosed%20author%3Ashapkarin)
+- [Hardcoded IDs and HREFs at the https://web.dev/learn](https://github.com/GoogleChrome/web.dev/issues/5879)
+- [Wrong link "Chrome updates" at the footer](https://github.com/GoogleChrome/web.dev/issues/5888)
+- [Href values of the links at the "Table of Contents" section are not processed by i18n](https://github.com/GoogleChrome/web.dev/issues/5875)
+
 
 ### PRs:
-- [https://github.com/GoogleChrome/web.dev/pulls?q=is%3Apr+is%3Aclosed+author%3Ashapkarin](https://github.com/GoogleChrome/web.dev/pulls?q=is%3Apr+is%3Aclosed+author%3Ashapkarin)
+- [Fix headline anchors navigation at "/learn" page by removing hardcoded values](https://github.com/GoogleChrome/web.dev/pull/5880)
+- [Fix TOC links for the learn pages](https://github.com/GoogleChrome/web.dev/pull/5878)
 
+---
 
-# More  
-- [https://github.com/shapkarin](https://github.com/shapkarin) can be found on my GitHub Account
-- gist [https://gist.github.com/shapkarin](https://gist.github.com/shapkarin) and GitHub Gist
+## Proposals to the GitHub itself, not a specific repo but orgs/community/discussions
+`2021 year`
+
+I also made many proposals for GitHub service itself. https://github.com/orgs/community/discussions
+That was a long time ago, and my English wasn’t good back then.
+
+- [Sorting the insights dependency graph lists](https://github.com/orgs/community/discussions/5575)
+- [Markdown: links target _blank](https://github.com/orgs/community/discussions/102510)
+- [Search improvements](https://github.com/orgs/community/discussions/5503)
+- [Find a compatible way to store and share branch descriptions to show it at the Github next (as well as at other apps and git itself)](https://github.com/orgs/community/discussions/4779)
+- [Show a branch PRs directly at the dropdown list inside a repo page](https://github.com/orgs/community/discussions/4778)
+
+---
+
+## More  
+- [GitHub Account](https://github.com/shapkarin) 
+- [GitHub Gist](https://gist.github.com/shapkarin) 
+- [Repositories tracking page](/github/repositories/)
 
