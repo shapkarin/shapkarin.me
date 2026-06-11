@@ -1,13 +1,11 @@
 // TODO: refactor
 import ReactTooltip from 'react-tooltip';
 
-import { GoClock, GoRepoForked, GoBrowser } from 'react-icons/go';
-import { LuMessageCircle } from 'react-icons/lu';
 import SEO from '@/Components/SEO';
 import Link from '@/Components/Link';
 import { fetchRepositories } from "@/DAL";
 import { useQuery } from "@tanstack/react-query";
-import { RepositoryDescription } from './RepositoryDescription';
+import { RepositoryCard, RepositoryDescription } from '@/Components/RepoCard';
 
 import './style.less';
 
@@ -49,47 +47,19 @@ export default function Repositories() {
           language,
           languages_url,
         }) => (
-          <div key={id} className="Page__GithubItem">
-            <div className="Page__GithubItemInner">
-              <a className="GithubItem__Link centered-label" href={html_url} target="_blank" rel="noreferrer">
-                {name}
-                {fork && <GoRepoForked data-tip="fork" />}
-              </a>
-              <div className="GithubItem__Description">
-                <RepositoryDescription text={description} />
-              </div>
-              <div className="centered-label">
-                <GoClock data-tip="Repo creation date" size="19px" />
-                {' '}
-                {(new Date(created_at)).toLocaleDateString('de-DE', { day: '2-digit', month: '2-digit', year: 'numeric' })}
-              </div>
-              { open_issues_count > 0 && (
-              <div className="centered-label">
-                <LuMessageCircle size="20px" style={{ strokeWidth: 1.5 }} />
-                {' '}
-                Open issues:
-                {' '}
-                <a className="IssuesCount" href={`${html_url}/issues`} target="_blank" rel="noreferrer">{open_issues_count}</a>
-              </div>
-              )}
-              {homepage && (
-              <div className="centered-label">
-                <GoBrowser style={{ paddingLeft: 2 }} />
-                {' '}
-                <a href={homepage} target="_blank" rel="noreferrer">{homepage}</a>
-              </div>
-              )}
-              {language && (
-                <>
-                Lang:
-                  {' '}
-                  <a href={languages_url}>
-                    { language }
-                  </a>
-                </>
-              )}
-            </div>
-          </div>
+          <RepositoryCard
+            key={id}
+            title={name}
+            htmlUrl={html_url}
+            description={<RepositoryDescription text={description} />}
+            isFork={fork}
+            date={created_at}
+            dateTooltip="Repo creation date"
+            openIssuesCount={open_issues_count}
+            homepage={homepage}
+            language={language}
+            languagesUrl={languages_url}
+          />
         ))}
         <Link to="https://github.com/shapkarin?tab=stars" wide>More</Link>
       </div>
