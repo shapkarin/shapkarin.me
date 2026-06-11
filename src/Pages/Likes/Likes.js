@@ -2,12 +2,11 @@
 import { useQuery } from '@tanstack/react-query';
 import ReactTooltip from 'react-tooltip';
 
-import {  GoStar, GoClock, GoRepoForked, GoBrowser } from 'react-icons/go';
-import { LuMessageCircle } from 'react-icons/lu';
 import SEO from '@/Components/SEO';
 import Link from '@/Components/Link';
 
 import { fetchLikes } from '@/DAL';
+import { RepositoryCard } from '@/Components/RepoCard';
 
 import '../Repositories/style.less';
 
@@ -40,54 +39,20 @@ export default function Liked() {
           language,
           languages_url
         }) => (
-          <div key={id} className="Page__GithubItem">
-            <div className="Page__GithubItemInner">
-              <a className="GithubItem__Link centered-label" href={html_url} target="_blank" rel="noreferrer">
-                {full_name}
-                {fork && <GoRepoForked data-tip="fork" />}
-              </a>
-              <div className="centered-label" style={{ lineHeight: '20px', paddingBottom: '6px' }}>{description}</div>
-              <div className="centered-label">
-                <GoClock data-tip="Last update" size="19px" />
-                {' '}
-                {(new Date(pushed_at)).toLocaleDateString('de-DE', { day: '2-digit', month: '2-digit', year: 'numeric' })}
-              </div>
-              { stargazers_count > 0 && (
-              <div className="centered-label">
-                <GoStar size="20px" />
-                {' '}
-                Stars:
-                {' '}
-                {stargazers_count}
-              </div>
-              )}
-              { open_issues_count > 0 && (
-              <div className="centered-label">
-                <LuMessageCircle size="20px" style={{ strokeWidth: 1.5 }} />
-                {' '}
-                Open issues:
-                {' '}
-                <a className="IssuesCount" href={`${html_url}/issues`} target="_blank" rel="noreferrer">{open_issues_count}</a>
-              </div>
-              )}
-              {homepage && (
-                <div className="centered-label">
-                  <GoBrowser style={{ paddingLeft: 2 }} />
-                  {' '}
-                  <a href={homepage} target="_blank" rel="noreferrer">{homepage}</a>
-                </div>
-              )}
-              {language && (
-              <>
-              Lang:
-                {' '}
-                <a href={languages_url} target="_blank" rel="noreferrer">
-                  { language }
-                </a>
-              </>
-              )}
-            </div>
-          </div>
+          <RepositoryCard
+            key={id}
+            title={full_name}
+            htmlUrl={html_url}
+            description={description}
+            isFork={fork}
+            date={pushed_at}
+            dateTooltip="Last update"
+            starsCount={stargazers_count}
+            openIssuesCount={open_issues_count}
+            homepage={homepage}
+            language={language}
+            languagesUrl={languages_url}
+          />
         ))}
         <Link to="https://github.com/shapkarin?tab=stars" wide>More</Link>
       </div>

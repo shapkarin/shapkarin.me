@@ -35,7 +35,7 @@ const getSafeHref = (value) => {
   }
 };
 
-export const RepositoryDescription = ({ text }) => {
+export const RepositoryDescription = ({ text = '' }) => {
   if (!text) {
     return null;
   }
@@ -83,8 +83,4 @@ export const RepositoryDescription = ({ text }) => {
 
 RepositoryDescription.propTypes = {
   text: PropTypes.string,
-};
-
-RepositoryDescription.defaultProps = {
-  text: '',
 };
