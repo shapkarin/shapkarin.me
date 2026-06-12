@@ -20,6 +20,8 @@ order: 0
 ## Debugging tool for MCP (Model Context Protocol) servers
 `2026 year`
 
+Anthropic donated MCP to Agentic AI Foundation (AAIF) so it can remain a vendor-neutral, open, community-driven standard for connecting AI agents to tools and data instead of being controlled by one company.
+
 - [[enhancement] Show expected format from MCP tool inputSchema](https://github.com/modelcontextprotocol/inspector/issues/1388)
 - [[enhancement] Keep MCP tool property descriptions visible for filled inputs](https://github.com/modelcontextprotocol/inspector/issues/1401)
 - [[enhancement] Local development sandbox](https://github.com/modelcontextprotocol/inspector/issues/1400)
