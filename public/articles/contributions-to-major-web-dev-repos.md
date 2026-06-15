@@ -31,8 +31,10 @@ Anthropic donated MCP to Agentic AI Foundation (AAIF) so it can remain a vendor-
 ## Safe bridge between AI agents and Web3 transactions.
 `2026 year`
 
-Open-source kit + protocol with anti-phishing patterns built in.
-Open envelope spec: CAIP-2 / EIP-5792 / EIP-712
+Open-source kit and protocol with anti-phishing patterns built in.
+Open envelope spec: CAIP-2 / EIP-5792 / EIP-712 aligned.
+AI agent prepares ERC-8265 envelopes.
+x402-adapter included.
 
 - [Get chain IDs from VIEM](https://github.com/txkit/mono/issues/1)
 - [Add security tools (LavaMoat, StepSecurity, Socket)](https://github.com/txkit/mono/issues/3)
