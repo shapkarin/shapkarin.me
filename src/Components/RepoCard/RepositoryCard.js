@@ -76,6 +76,11 @@ export const RepositoryCard = ({
           </a>
         </>
       )}
+      {
+        isFork && <a href={languagesUrl} target="_blank" rel="noreferrer">
+          Langs link
+        </a>
+      }
     </div>
   </div>
 );
