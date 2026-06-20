@@ -71,13 +71,13 @@ export const RepositoryCard = ({
         <>
           Lang:
           {' '}
-          <a href={languagesUrl} target="_blank" rel="noreferrer">
+          <a href={languagesUrl} target="_blank" rel="noreferrer" data-tip={"Click for additional stat."}>
             {language}
           </a>
         </>
       )}
       {
-        isFork && <a href={languagesUrl} target="_blank" rel="noreferrer">
+        isFork && <a href={languagesUrl} target="_blank" rel="noreferrer" data-tip={"The GitHub API doesn’t show the one primary language for forks."}>
           Langs link
         </a>
       }
