@@ -23,6 +23,8 @@ export default function Liked() {
         description="Discover my curated collection of starred GitHub repositories. A handpicked selection of innovative open-source projects, development tools, and libraries that I find valuable."
       />
       <ReactTooltip
+        className="GithubTooltip"
+        multiline
         place="left"
       />
       <div className="Page__Github Page__Inner">

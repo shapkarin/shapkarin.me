@@ -26,6 +26,8 @@ export default function Repositories() {
         description="Browse my open-source projects and contributions on GitHub. Collection of web development repositories focusing on JavaScript, React, Redux, and modern web technologies."
       />
       <ReactTooltip
+        className="GithubTooltip"
+        multiline
         place="left"
       />
       {/* <div>
