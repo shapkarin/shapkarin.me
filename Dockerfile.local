@@ -1,0 +1,45 @@
+ARG NODE_VERSION=25.2.1
+
+FROM node:${NODE_VERSION}-bookworm-slim AS deps
+
+WORKDIR /app
+
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends \
+        ca-certificates \
+        g++ \
+        make \
+        python3 \
+    && rm -rf /var/lib/apt/lists/*
+
+RUN npm install -g npm@8.3.0
+
+COPY package.json package-lock.json ./
+RUN npm ci
+
+FROM node:${NODE_VERSION}-bookworm-slim
+
+WORKDIR /app
+
+ENV BROWSER=none \
+    CI=false \
+    HOST=0.0.0.0 \
+    PORT=3000 \
+    PUPPETEER_EXECUTABLE_PATH=/usr/bin/chromium \
+    PUPPETEER_SKIP_DOWNLOAD=true
+
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends \
+        ca-certificates \
+        chromium \
+        fonts-liberation \
+    && rm -rf /var/lib/apt/lists/*
+
+RUN npm install -g npm@8.3.0
+
+COPY --from=deps /app/node_modules ./node_modules
+COPY . .
+
+EXPOSE 3000
+
+CMD ["npm", "run", "dev"]

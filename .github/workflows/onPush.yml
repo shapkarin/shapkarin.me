@@ -3,6 +3,10 @@ name: Deploy on changes in main
 on:
   push:
     branches: [ "main" ]
+    paths-ignore:
+      - ".dockerignore"
+      - "Dockerfile.local"
+      - "compose.local.yaml"
 
 jobs:
   call-deploy:

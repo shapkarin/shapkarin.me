@@ -1,0 +1,40 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile.local
+    command: npm run dev
+    environment:
+      BROWSER: none
+      CHOKIDAR_USEPOLLING: "true"
+      HOST: 0.0.0.0
+      PORT: 3000
+      WATCHPACK_POLLING: "true"
+      WDS_SOCKET_HOST: localhost
+    init: true
+    ports:
+      - "3000:3000"
+    develop:
+      watch:
+        - action: sync
+          path: ./src
+          target: /app/src
+        - action: sync
+          path: ./public
+          target: /app/public
+        - action: sync+restart
+          path: ./craco.config.js
+          target: /app/craco.config.js
+        - action: sync+restart
+          path: ./jsconfig.json
+          target: /app/jsconfig.json
+        - action: sync+exec
+          path: ./package.json
+          target: /app/package.json
+          exec:
+            command: npm i
+        - action: sync+exec
+          path: ./package-lock.json
+          target: /app/package-lock.json
+          exec:
+            command: npm ci
