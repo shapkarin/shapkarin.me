@@ -14,7 +14,7 @@ jobs:
     # do not deploy if [skip-ci] is in a commit message
     if: |
       !contains(github.event.head_commit.message, '[skip-ci]')
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
 
     environment:
       name: s3-unchained
@@ -29,22 +29,11 @@ jobs:
         with:
           egress-policy: audit
 
-      - name: Checkout 
+      - name: Checkout
         uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5
         with:
-          fetch-depth: 2
-      
-      - name: Setup Node
-        uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e
-        with:
-          node-version: '25.2.1'
-          registry-url: 'https://registry.npmjs.org'
+          fetch-depth: 1
 
-      - name: Enforce npm version 8.3.0
-        run: |
-          npm install -g npm@8.3.0
-          echo "Updated npm version: $(npm --version)"
-    
       # react-snap has build-in "npm сi" and "npm run build"
       - name: Server-side render by crawler
         uses: brycedorn/react-snap-action@3c747b86c6373ead5460fcd8e3807f1999ebf71f
@@ -61,4 +50,3 @@ jobs:
         run: aws s3 sync ./dist/ s3://shapkarin.me/ --delete
 
       - run: printf Deployed!
-
