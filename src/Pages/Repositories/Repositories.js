@@ -1,4 +1,3 @@
-// TODO: refactor
 import ReactTooltip from 'react-tooltip';
 
 import SEO from '@/Components/SEO';
@@ -26,7 +25,7 @@ export default function Repositories() {
         description="Browse my open-source projects and contributions on GitHub. Collection of web development repositories focusing on JavaScript, React, Redux, and modern web technologies."
       />
       <ReactTooltip
-        place="left"
+        place="top"
       />
       {/* <div>
         <button onClick={() => setPage(page + 1)}>Next Page</button>
