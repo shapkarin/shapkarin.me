@@ -250,3 +250,13 @@ html {
   }
 }
 
+@keyframes heading-highlight {
+  0% { background-color: rgba(255, 213, 79, 0.35); }
+  100% { background-color: transparent; }
+}
+
+.Article__heading-highlight {
+  animation: heading-highlight 3s ease-out;
+  border-radius: @border-radius-base;
+}
+
