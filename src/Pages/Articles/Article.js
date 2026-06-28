@@ -18,6 +18,7 @@ import LinkMacro from './Macros/LinkMacro';
 import TableMacro from './Macros/TableMacro';
 
 import { SCROLL_OFFSET, IS_PRODUCTION } from '@/constants';
+import { highlightHeading } from '@/highlightHeading';
 
 // TODO: switch to CSS Modules (issue #93)
 import './style.less';
@@ -77,6 +78,8 @@ const Article = () => {
           top: offsetPosition,
           behavior: 'smooth'
         });
+
+        setTimeout(() => highlightHeading(element), 300);
       }
     }
 

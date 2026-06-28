@@ -1,6 +1,7 @@
 import { createElement } from 'react';
 import Link from '@/Components/Link';
 import { SCROLL_OFFSET } from '@/constants';
+import { highlightHeading } from '@/highlightHeading';
 
 const LinkMacro = ({ href, children }) => {
   const isAnchorLink = href.startsWith('#');
@@ -8,14 +9,12 @@ const LinkMacro = ({ href, children }) => {
   const isEmailLink = href.startsWith('mailto:');
   const isInternalLink = !isAnchorLink && !isExternalLink && !isEmailLink;
   
-  // For internal links, use react-router-dom Link
   if (isInternalLink) {
     return createElement(Link, { to: href }, children);
   }
   
   const target = isAnchorLink ? '_self' : '_blank';
   
-  // Check if browser supports CSS scroll-behavior
   const supportsScrollBehavior = CSS.supports('scroll-behavior', 'smooth');
   
   const handleAnchorClick = (e) => {
@@ -35,14 +34,21 @@ const LinkMacro = ({ href, children }) => {
         top: offsetPosition,
         behavior: 'smooth'
       });
+
+      highlightHeading(targetElement);
     }
+  };
+
+  const handleAnchorHighlight = () => {
+    if (!isAnchorLink) return;
+    highlightHeading(document.getElementById(href.substring(1)));
   };
 
   if(isAnchorLink || isEmailLink){
     return createElement('a', { 
       target, 
       href: href,
-      ...(!supportsScrollBehavior ? { onClick: handleAnchorClick } : {})
+      onClick: supportsScrollBehavior ? handleAnchorHighlight : handleAnchorClick
     }, children);
   }
 
