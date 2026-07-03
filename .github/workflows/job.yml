@@ -8,32 +8,27 @@ on:
     #     type: string
     #     default: github-pages # only this one in use rn
 
-# TODO: decompose to "build" and "deploy" steps
 jobs:
-  deploy:
-    # do not deploy if [skip-ci] is in a commit message
+  build:
+    # do not build/deploy if [skip-ci] is in a commit message
     if: |
       !contains(github.event.head_commit.message, '[skip-ci]')
     runs-on: ubuntu-22.04
 
-    environment:
-      name: s3-unchained
-      url: https://shapkarin.me
-
     permissions:
       contents: read
-    
+
     steps:
       - name: Step Security harden
         uses: step-security/harden-runner@9af89fc71515a100421586dfdb3dc9c984fbf411
         with:
           egress-policy: audit
 
-      - name: Checkout 
+      - name: Checkout
         uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5
         with:
           fetch-depth: 2
-      
+
       - name: Setup Node
         uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e
         with:
@@ -44,13 +39,42 @@ jobs:
         run: |
           npm install -g npm@8.3.0
           echo "Updated npm version: $(npm --version)"
-    
+
       # react-snap has build-in "npm сi" and "npm run build"
       - name: Server-side render by crawler
         uses: brycedorn/react-snap-action@3c747b86c6373ead5460fcd8e3807f1999ebf71f
 
       - name: Copy HTML gallery
         run: npm run build:html-gallery
+
+      - name: Upload dist artifact
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        with:
+          name: dist
+          path: dist/
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-slim
+
+    environment:
+      name: s3-unchained
+      url: https://shapkarin.me
+
+    permissions:
+      contents: read
+
+    steps:
+      - name: Step Security harden
+        uses: step-security/harden-runner@9af89fc71515a100421586dfdb3dc9c984fbf411
+        with:
+          egress-policy: audit
+
+      - name: Download dist artifact
+        uses: actions/download-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        with:
+          name: dist
+          path: dist/
 
       - name: Deploy to S3
         env:
