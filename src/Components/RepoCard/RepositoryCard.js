@@ -81,6 +81,9 @@ export const RepositoryCard = ({
           Langs link
         </a>
       }
+      {
+        isFork && !language && <><br/><a target="_blank" rel="noreferrer" href='https://github.com/github-linguist/linguist/discussions/5260' data-tip="github-linguist/linguist/discussions/5260">Proof</a></>
+      }
     </div>
   </div>
 );
