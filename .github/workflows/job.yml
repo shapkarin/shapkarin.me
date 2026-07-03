@@ -2,63 +2,18 @@ name: Reusable job
 
 on:
   workflow_call:
-    # inputs:
-    #   environment-name:
-    #     required: false
-    #     type: string
-    #     default: github-pages # only this one in use rn
+    inputs:
+      target:
+        required: true
+        type: string
+        description: "Deployment target: gh-pages or s3-unchained"
 
-# TODO: decompose to "build" and "deploy" steps
 jobs:
-  deploy:
-    # do not deploy if [skip-ci] is in a commit message
-    if: |
-      !contains(github.event.head_commit.message, '[skip-ci]')
-    runs-on: ubuntu-22.04
+  call-gh-pages:
+    if: inputs.target == 'gh-pages'
+    uses: ./.github/workflows/gh-pages.yml
 
-    environment:
-      name: s3-unchained
-      url: https://shapkarin.me
-
-    permissions:
-      contents: read
-    
-    steps:
-      - name: Step Security harden
-        uses: step-security/harden-runner@9af89fc71515a100421586dfdb3dc9c984fbf411
-        with:
-          egress-policy: audit
-
-      - name: Checkout 
-        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5
-        with:
-          fetch-depth: 2
-      
-      - name: Setup Node
-        uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e
-        with:
-          node-version: '25.2.1'
-          registry-url: 'https://registry.npmjs.org'
-
-      - name: Enforce npm version 8.3.0
-        run: |
-          npm install -g npm@8.3.0
-          echo "Updated npm version: $(npm --version)"
-    
-      # react-snap has build-in "npm сi" and "npm run build"
-      - name: Server-side render by crawler
-        uses: brycedorn/react-snap-action@3c747b86c6373ead5460fcd8e3807f1999ebf71f
-
-      - name: Copy HTML gallery
-        run: npm run build:html-gallery
-
-      - name: Deploy to S3
-        env:
-          AWS_ACCESS_KEY_ID: ${{ secrets.S3_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.S3_SECRET_ACCESS_KEY }}
-          AWS_DEFAULT_REGION: ${{ vars.S3_REGION }}
-          AWS_ENDPOINT_URL_S3: ${{ vars.S3_ENDPOINT_URL }}
-        run: aws s3 sync ./dist/ s3://shapkarin.me/ --delete
-
-      - run: printf Deployed!
-
+  call-s3-unchained:
+    if: inputs.target == 's3-unchained'
+    uses: ./.github/workflows/s3-unchained.yml
+    secrets: inherit
