@@ -1,0 +1,358 @@
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "learningResourceType": ["tutorial", "reading"],
+    "educationalUse": ["learning", "teaching", "professional development"],
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://shapkarin.me/articles/mcp-inspector-debugging/"
+    },
+    "url": "https://shapkarin.me/articles/mcp-inspector-debugging/",
+    "headline": "MCP Inspector: A Complete Debugging Workflow for MCP Servers",
+    "description": "A practical debugging loop for MCP servers with the MCP Inspector: the client-proxy-server architecture, the stderr rule, reading the inputSchema contract your agent actually sees, sandboxed local development, and what the 2026-07-28 stateless spec changes.",
+    "image": [
+      {
+        "@type": "ImageObject",
+        "url": "https://shapkarin.me/logo.jpg",
+        "width": 512,
+        "height": 512
+      },
+      {
+        "@type": "ImageObject",
+        "url": "https://shapkarin.me/articles/light/mcp-inspector-debugging-0.svg"
+      },
+      {
+        "@type": "ImageObject",
+        "url": "https://shapkarin.me/articles/light/mcp-inspector-debugging-1.svg"
+      }
+    ],
+    "author": {
+      "@type": "Person",
+      "name": "Yuri Shapkarin",
+      "alternateName": "Iurii Shapkarin",
+      "url": "https://shapkarin.me",
+      "sameAs": ["https://github.com/shapkarin"]
+    },
+    "publisher": {
+      "@type": "Person",
+      "name": "Yuri Shapkarin",
+      "alternateName": "Iurii Shapkarin",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://shapkarin.me/logo.jpg",
+        "width": 512,
+        "height": 512
+      }
+    },
+    "datePublished": "2026-07-26",
+    "dateModified": "2026-07-26",
+    "wordCount": 4610,
+    "inLanguage": "en-US",
+    "proficiencyLevel": ["Intermediate", "Expert"],
+    "keywords": "MCP Inspector, debug MCP server, test MCP server, MCP Inspector CLI, Model Context Protocol, inputSchema, MCP server debugging, MCP_PROXY_AUTH_TOKEN, DANGEROUSLY_OMIT_AUTH, MCP_SERVER_REQUEST_TIMEOUT, mcp.json config, stdio transport, Streamable HTTP, MCP 2026-07-28, stateless MCP, CVE-2025-49596, MCP tools, JSON-RPC",
+    "about": [
+      {
+        "@type": "Thing",
+        "name": "MCP Inspector",
+        "description": "Official interactive developer tool for testing and debugging Model Context Protocol servers, consisting of a React web client and a Node.js proxy"
+      },
+      {
+        "@type": "Thing",
+        "name": "Model Context Protocol",
+        "description": "Open standard for connecting AI agents to tools and data, governed by the Agentic AI Foundation under the Linux Foundation"
+      },
+      {
+        "@type": "Thing",
+        "name": "inputSchema",
+        "description": "JSON Schema contract published by an MCP tool that an LLM or agent uses to determine how to call that tool correctly"
+      },
+      {
+        "@type": "Thing",
+        "name": "stdio transport",
+        "description": "MCP transport where stdout carries the JSON-RPC message stream and stderr serves as the server log channel"
+      },
+      {
+        "@type": "Thing",
+        "name": "Streamable HTTP transport",
+        "description": "MCP transport for remote servers, made stateless and horizontally scalable in the 2026-07-28 specification revision"
+      },
+      {
+        "@type": "Thing",
+        "name": "MCP Inspector CLI mode",
+        "description": "The --cli flag that runs the Inspector without a browser, printing machine-readable JSON for scripting, CI, and AI coding assistant feedback loops"
+      },
+      {
+        "@type": "Thing",
+        "name": "MCP Inspector proxy authentication",
+        "description": "A randomly generated session token required by default, settable via MCP_PROXY_AUTH_TOKEN and disableable only via the dangerous DANGEROUSLY_OMIT_AUTH flag"
+      },
+      {
+        "@type": "Thing",
+        "name": "MCP Inspector request timeouts",
+        "description": "Client-side timeout settings independent of server timeouts, where MCP_REQUEST_MAX_TOTAL_TIMEOUT acts as the hard ceiling once progress notifications reset the per-request clock"
+      },
+      {
+        "@type": "Thing",
+        "name": "CVE-2025-49596",
+        "description": "Critical remote code execution vulnerability in MCP Inspector below version 0.14.1, CVSS 9.4, caused by an unauthenticated proxy and exploitable via DNS rebinding"
+      },
+      {
+        "@type": "Thing",
+        "name": "JSON Schema 2020-12",
+        "description": "Schema dialect that MCP tool input and output schemas were lifted to in the 2026-07-28 revision, enabling composition, conditionals, and references"
+      }
+    ],
+    "audience": [
+      {
+        "@type": "Audience",
+        "audienceType": "Developers",
+        "name": "JavaScript Developers"
+      },
+      {
+        "@type": "Audience",
+        "audienceType": "Developers",
+        "name": "TypeScript Developers"
+      },
+      {
+        "@type": "Audience",
+        "audienceType": "Developers",
+        "name": "Node.js Developers"
+      },
+      {
+        "@type": "Audience",
+        "audienceType": "Developers",
+        "name": "AI Engineers"
+      },
+      {
+        "@type": "Audience",
+        "audienceType": "Developers",
+        "name": "Platform Engineers"
+      },
+      {
+        "@type": "Audience",
+        "audienceType": "Developers",
+        "name": "Security Engineers"
+      }
+    ],
+    "citation": [
+      {
+        "@type": "WebPage",
+        "name": "GitHub Repo - MCP Inspector",
+        "@id": "https://github.com/modelcontextprotocol/inspector",
+        "description": "Source code and issue tracker for the MCP Inspector, the official visual testing tool for MCP servers",
+        "relatedLink": [
+          "https://github.com/modelcontextprotocol/inspector/issues/1388",
+          "https://github.com/modelcontextprotocol/inspector/issues/1400",
+          "https://github.com/modelcontextprotocol/inspector/issues/1401"
+        ]
+      },
+      {
+        "@type": "WebPage",
+        "name": "GitHub Organisation - modelcontextprotocol",
+        "@id": "https://github.com/modelcontextprotocol",
+        "description": "GitHub organization hosting the MCP specification, official SDKs, registry, conformance suite, and the Inspector"
+      },
+      {
+        "@type": "WebPage",
+        "name": "MCP Inspector README",
+        "@id": "https://github.com/modelcontextprotocol/inspector/blob/main/README.md",
+        "description": "Repository documentation covering the MCPI/MCPP architecture, CLI mode, configuration settings and timeouts, security environment variables, config-file format, and container image"
+      },
+      {
+        "@type": "WebPage",
+        "name": "MCP Inspector Documentation",
+        "@id": "https://modelcontextprotocol.io/docs/tools/inspector",
+        "description": "Official documentation covering Inspector installation, feature panes, and development workflow"
+      },
+      {
+        "@type": "WebPage",
+        "name": "The 2026-07-28 MCP Specification Release Candidate",
+        "@id": "https://blog.modelcontextprotocol.io/posts/2026-07-28-release-candidate/",
+        "description": "Announcement of the stateless protocol core, Extensions framework, authorization hardening, and deprecation policy"
+      },
+      {
+        "@type": "WebPage",
+        "name": "MCP joins the Agentic AI Foundation",
+        "@id": "https://blog.modelcontextprotocol.io/posts/2025-12-09-mcp-joins-agentic-ai-foundation/",
+        "description": "Announcement of MCP's donation to the Agentic AI Foundation, a directed fund under the Linux Foundation"
+      },
+      {
+        "@type": "WebPage",
+        "name": "Critical RCE in MCP Inspector (CVE-2025-49596)",
+        "@id": "https://www.oligo.security/blog/critical-rce-vulnerability-in-anthropic-mcp-inspector-cve-2025-49596",
+        "description": "Oligo Security disclosure of the unauthenticated proxy and DNS rebinding remote code execution chain, fixed in Inspector 0.14.1"
+      }
+    ],
+    "hasPart": [
+      {
+        "@type": "WebPageElement",
+        "name": "What the MCP Inspector Actually Is",
+        "url": "https://shapkarin.me/articles/mcp-inspector-debugging/#what-the-mcp-inspector-actually-is",
+        "description": "The two-process architecture of browser client, Node proxy, and MCP server, plus default ports and governance under the Agentic AI Foundation"
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "The Debugging Loop",
+        "url": "https://shapkarin.me/articles/mcp-inspector-debugging/#the-debugging-loop",
+        "description": "Edit, rebuild, reconnect, call, assert, read stderr - and why reconnecting after every rebuild is mandatory"
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "The stderr Rule",
+        "url": "https://shapkarin.me/articles/mcp-inspector-debugging/#the-stderr-rule",
+        "description": "Why console.log corrupts the JSON-RPC stream on stdio transports and console.error is the correct log channel"
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "Reading the Schema Contract Your Agent Sees",
+        "url": "https://shapkarin.me/articles/mcp-inspector-debugging/#reading-the-schema-contract-your-agent-sees",
+        "description": "Reviewing raw inputSchema JSON for types, formats, bounds, descriptions, and required fields"
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "What the Inspector UI Hides: Three Issues I Filed Upstream",
+        "url": "https://shapkarin.me/articles/mcp-inspector-debugging/#what-the-inspector-ui-hides-three-issues-i-filed-upstream",
+        "description": "Inspector issues 1388 and 1401 on missing type and validation display and placeholder-hidden descriptions, plus a raw JSON workaround"
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "CLI Mode: The Inspector Without a Browser",
+        "url": "https://shapkarin.me/articles/mcp-inspector-debugging/#cli-mode-the-inspector-without-a-browser",
+        "description": "Using --cli for tools/list, tools/call with scalar and JSON arguments, remote servers over HTTP with custom headers, and a UI versus CLI comparison"
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "Configuration That Changes What You See",
+        "url": "https://shapkarin.me/articles/mcp-inspector-debugging/#configuration-that-changes-what-you-see",
+        "description": "Timeout settings and the ceiling that overrides them, mcp.json config files with transport detection, the Servers File export buttons, and query-param overrides"
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "Debugging in an Isolated Sandbox",
+        "url": "https://shapkarin.me/articles/mcp-inspector-debugging/#debugging-in-an-isolated-sandbox",
+        "description": "Inspector issue 1400: a Docker Compose sandbox with one-way sync, and how the published container image and dev scripts each cover only half the gap"
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "Security Hygiene: The Inspector Is an Attack Surface",
+        "url": "https://shapkarin.me/articles/mcp-inspector-debugging/#security-hygiene-the-inspector-is-an-attack-surface",
+        "description": "CVE-2025-49596, the DNS rebinding chain, the session token and Host/Origin validation fix, and three resulting habits"
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "What Changes with the 2026-07-28 Spec",
+        "url": "https://shapkarin.me/articles/mcp-inspector-debugging/#what-changes-with-the-2026-07-28-spec",
+        "description": "Removed handshake and sessions, server/discover, Mcp-Method and Mcp-Name headers, the -32602 error code, and full JSON Schema 2020-12"
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "Edge Cases Worth Scripting",
+        "url": "https://shapkarin.me/articles/mcp-inspector-debugging/#edge-cases-worth-scripting",
+        "description": "A table of failure cases to automate: missing arguments, wrong types, bounds, concurrency, oversized responses, nested schemas"
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "Contributing Back to the Inspector",
+        "url": "https://shapkarin.me/articles/mcp-inspector-debugging/#contributing-back-to-the-inspector",
+        "description": "A five-point template for filing an actionable MCP Inspector issue"
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "Frequently Asked Questions",
+        "url": "https://shapkarin.me/articles/mcp-inspector-debugging/#frequently-asked-questions-faq",
+        "description": "Common MCP Inspector debugging questions on parse errors, stale builds, schema visibility, safety, and spec compatibility"
+      }
+    ],
+    "teaches": [
+      "How the MCP Inspector's browser client, Node proxy, and server processes fit together",
+      "Running the MCP Inspector against local, npm, and Python MCP servers with npx",
+      "Passing arguments and environment variables to a server under inspection, including the -- separator",
+      "Why console.log breaks stdio MCP servers and how to log correctly with console.error",
+      "Auditing a tool's inputSchema as the contract an LLM agent actually reads",
+      "How the Inspector handles empty optional fields, explicit defaults, and required fields",
+      "Working around missing type, validation, and description display in the Inspector UI",
+      "Using MCP Inspector CLI mode for tools/list, tools/call, remote servers, and CI checks",
+      "Configuring Inspector timeouts so long-running and elicitation tools do not appear to hang",
+      "Using mcp.json config files, transport detection, and query-param overrides",
+      "Setting up an isolated Docker Compose sandbox for MCP development",
+      "Hardening an MCP Inspector setup against CVE-2025-49596 style attacks",
+      "Adapting debugging habits to the stateless 2026-07-28 MCP specification",
+      "Scripting MCP server edge cases into automated tests",
+      "Filing an actionable enhancement issue against the MCP Inspector"
+    ],
+    "programmingLanguage": ["JavaScript", "TypeScript"],
+    "operatingSystem": "Cross-platform",
+    "applicationCategory": "Educational"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Why does my MCP server disconnect with JSON parse errors?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Almost always console.log on a stdio server. stdout is the JSON-RPC channel, so any plain-text logging written there is injected into the message stream and breaks the parser. Use console.error instead, which the MCP Inspector renders in its server output pane. Dependencies matter too: a library that logs to stdout can poison the stream without any logging in your own code."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why don't my code changes show up in the MCP Inspector?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The Inspector proxy spawned your server as a child process when you connected, and rebuilding does not restart it. You must reconnect in the Inspector after every rebuild, or you are testing the previous build."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I see a tool's data types and validation rules in the MCP Inspector UI?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Not currently. The tool form renders fields from inputSchema without surfacing data types or validation constraints, which is tracked as issue 1388 in the MCP Inspector repository. Until it lands, read the raw tools/list JSON through the Inspector's raw message view, or run the Inspector in CLI mode with --method tools/list piped through jq, which prints the contract exactly as an agent receives it."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is the MCP Inspector safe to run?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "On a current version with its auth token intact, it is reasonable. Below version 0.14.1 it is not: CVE-2025-49596, rated CVSS 9.4, allowed remote code execution through an unauthenticated proxy and was exploitable via DNS rebinding from a web page. Stay current, never set DANGEROUSLY_OMIT_AUTH, leave the default localhost-only binding in place rather than setting HOST=0.0.0.0, and treat inspecting an untrusted server as running that server, ideally via the published container image."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I use the MCP Inspector in CI or a script?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, that is what the --cli flag is for. CLI mode drops the browser and prints JSON, so --method tools/list and --method tools/call --tool-name X --tool-arg key=value can be piped into jq and asserted in a shell script. It also works against remote servers with --transport http and --header for authentication. The repository positions this as the loop to use with AI coding assistants because the output is machine-readable."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why does the MCP Inspector time out on a tool that works fine?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Inspector timeouts are independent of your server's, and whichever fires first is the one you see. MCP_SERVER_REQUEST_TIMEOUT defaults to 300000 ms, but MCP_REQUEST_MAX_TOTAL_TIMEOUT defaults to 60000 ms and acts as the hard ceiling once progress notifications begin resetting the per-request clock. Raise both for long-running operations or anything involving elicitation, where a human is in the loop."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does the MCP Inspector work with the 2026-07-28 stateless specification?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The Inspector tracks the specification, so check its release notes against the revision you are targeting. In raw traffic the practical difference is that there is no initialize handshake and no Mcp-Session-Id header: requests are self-contained and carry protocol version, client info, and capabilities in _meta, with server/discover available for fetching capabilities up front."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Should I test MCP servers only through the MCP Inspector?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No, but more of it can be automated than most people realize. UI mode is for interactive work such as exploring, diagnosing, and reading protocol traffic. CLI mode covers scripted checks and CI. For unit-test-speed coverage, the official Python and TypeScript SDKs both support in-process clients, so a test suite can drive a server directly with no subprocess and no port."
+        }
+      }
+    ]
+  }
+]

@@ -1,0 +1,319 @@
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "learningResourceType": ["tutorial", "guide", "reading"],
+    "educationalUse": ["learning", "teaching", "professional development"],
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://shapkarin.me/articles/mcp-server-typescript/"
+    },
+    "url": "https://shapkarin.me/articles/mcp-server-typescript/",
+    "headline": "Build an MCP Server in TypeScript: The 2026 Guide",
+    "description": "Build a production MCP server in TypeScript against SDK v2 and the 2026-07-28 protocol revision: registerTool with Standard Schema, resources and prompts, serveStdio and createMcpHandler, Inspector verification, and a deployment checklist.",
+    "image": [
+      {
+        "@type": "ImageObject",
+        "url": "https://shapkarin.me/logo.jpg",
+        "width": 512,
+        "height": 512
+      },
+      {
+        "@type": "ImageObject",
+        "url": "https://shapkarin.me/articles/light/mcp-server-typescript-0.svg"
+      },
+      {
+        "@type": "ImageObject",
+        "url": "https://shapkarin.me/articles/light/mcp-server-typescript-1.svg"
+      }
+    ],
+    "author": {
+      "@type": "Person",
+      "name": "Yuri Shapkarin",
+      "alternateName": "Iurii Shapkarin",
+      "url": "https://shapkarin.me",
+      "sameAs": ["https://github.com/shapkarin"]
+    },
+    "publisher": {
+      "@type": "Person",
+      "name": "Yuri Shapkarin",
+      "alternateName": "Iurii Shapkarin",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://shapkarin.me/logo.jpg",
+        "width": 512,
+        "height": 512
+      }
+    },
+    "datePublished": "2026-07-26",
+    "dateModified": "2026-07-26",
+    "wordCount": 3400,
+    "inLanguage": "en-US",
+    "proficiencyLevel": ["Beginner", "Intermediate", "Expert"],
+    "keywords": "MCP server TypeScript, build MCP server, Model Context Protocol, MCP TypeScript SDK v2, registerTool, Standard Schema, createMcpHandler, serveStdio, stdio transport, Streamable HTTP, 2026-07-28, stateless MCP, Zod 4, MCP tools resources prompts",
+    "about": [
+      {
+        "@type": "Thing",
+        "name": "Model Context Protocol",
+        "description": "Open standard for connecting AI agents to tools and data, governed by the Agentic AI Foundation under the Linux Foundation"
+      },
+      {
+        "@type": "Thing",
+        "name": "MCP TypeScript SDK v2",
+        "description": "Major SDK revision split into @modelcontextprotocol/server, /client, /core and thin runtime adapters, implementing the 2026-07-28 protocol revision"
+      },
+      {
+        "@type": "Thing",
+        "name": "MCP tools",
+        "description": "Callable functions an MCP server publishes, described to models entirely through their inputSchema contract"
+      },
+      {
+        "@type": "Thing",
+        "name": "MCP resources",
+        "description": "Read-only data an MCP server exposes by URI for hosts to attach as context"
+      },
+      {
+        "@type": "Thing",
+        "name": "MCP prompts",
+        "description": "Parameterized templates a user deliberately invokes to package a workflow"
+      },
+      {
+        "@type": "Thing",
+        "name": "Standard Schema",
+        "description": "Schema interface specification used for MCP tool and prompt schemas, implemented by Zod v4, Valibot, and ArkType"
+      },
+      {
+        "@type": "Thing",
+        "name": "createMcpHandler",
+        "description": "The v2 HTTP serving entry point that serves the 2026-07-28 revision per request and 2025-era traffic from the same endpoint"
+      },
+      {
+        "@type": "Thing",
+        "name": "serveStdio",
+        "description": "The v2 stdio serving entry point that pins one server factory instance per connection and selects the protocol era at the opening exchange"
+      },
+      {
+        "@type": "Thing",
+        "name": "JSON Schema 2020-12",
+        "description": "Schema dialect MCP tool input and output schemas were lifted to in the 2026-07-28 revision, enabling composition, conditionals, and internal references"
+      }
+    ],
+    "audience": [
+      {
+        "@type": "Audience",
+        "audienceType": "Developers",
+        "name": "TypeScript Developers"
+      },
+      {
+        "@type": "Audience",
+        "audienceType": "Developers",
+        "name": "JavaScript Developers"
+      },
+      {
+        "@type": "Audience",
+        "audienceType": "Developers",
+        "name": "Node.js Developers"
+      },
+      {
+        "@type": "Audience",
+        "audienceType": "Developers",
+        "name": "AI Engineers"
+      },
+      {
+        "@type": "Audience",
+        "audienceType": "Developers",
+        "name": "Backend Developers"
+      },
+      {
+        "@type": "Audience",
+        "audienceType": "Developers",
+        "name": "Platform Engineers"
+      }
+    ],
+    "citation": [
+      {
+        "@type": "WebPage",
+        "name": "GitHub Repo - MCP TypeScript SDK",
+        "@id": "https://github.com/modelcontextprotocol/typescript-sdk",
+        "description": "Official TypeScript SDK for MCP servers and clients; v2 on main, v1 on the v1.x branch",
+        "relatedLink": [
+          "https://github.com/modelcontextprotocol/typescript-sdk/blob/main/docs/migration/upgrade-to-v2.md",
+          "https://github.com/modelcontextprotocol/typescript-sdk/blob/main/docs/migration/support-2026-07-28.md"
+        ]
+      },
+      {
+        "@type": "WebPage",
+        "name": "MCP TypeScript SDK v2 documentation",
+        "@id": "https://ts.sdk.modelcontextprotocol.io/v2/",
+        "description": "Full v2 guides covering tools, resources, prompts, serving over HTTP and stdio, clients, OAuth, and migration"
+      },
+      {
+        "@type": "WebPage",
+        "name": "The 2026-07-28 MCP Specification Release Candidate",
+        "@id": "https://blog.modelcontextprotocol.io/posts/2026-07-28-release-candidate/",
+        "description": "Announcement of the stateless protocol core, Extensions framework, authorization hardening, and formal deprecation policy"
+      },
+      {
+        "@type": "WebPage",
+        "name": "Beta SDKs for the 2026-07-28 MCP Spec Release Candidate",
+        "@id": "https://blog.modelcontextprotocol.io/posts/sdk-betas-2026-07-28/",
+        "description": "Beta releases of the Python, TypeScript, Go, and C# SDKs with migration guidance and version pinning advice"
+      },
+      {
+        "@type": "WebPage",
+        "name": "Standard Schema",
+        "@id": "https://standardschema.dev/",
+        "description": "Common interface specification for TypeScript schema libraries, used by MCP tool and prompt schemas"
+      },
+      {
+        "@type": "WebPage",
+        "name": "MCP joins the Agentic AI Foundation",
+        "@id": "https://blog.modelcontextprotocol.io/posts/2025-12-09-mcp-joins-agentic-ai-foundation/",
+        "description": "Announcement of MCP's donation to the Agentic AI Foundation, a directed fund under the Linux Foundation"
+      }
+    ],
+    "hasPart": [
+      {
+        "@type": "WebPageElement",
+        "name": "What You're Actually Building",
+        "url": "https://shapkarin.me/articles/mcp-server-typescript/#what-youre-actually-building",
+        "description": "Tools, resources, and prompts as the three primitives an MCP server publishes to any compliant host"
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "Prerequisites and a Warning About Versions",
+        "url": "https://shapkarin.me/articles/mcp-server-typescript/#prerequisites-and-a-warning-about-versions",
+        "description": "Node 20+, module format, and whether to build on SDK v1.x or the v2 beta right now"
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "Project Setup",
+        "url": "https://shapkarin.me/articles/mcp-server-typescript/#project-setup",
+        "description": "Installing the split v2 packages, why Zod 4.2 or later matters, and a working tsconfig"
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "Your First Tool",
+        "url": "https://shapkarin.me/articles/mcp-server-typescript/#your-first-tool",
+        "description": "registerTool with a Standard Schema input schema, and what each schema constraint prevents"
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "Structured Output",
+        "url": "https://shapkarin.me/articles/mcp-server-typescript/#structured-output",
+        "description": "Declaring outputSchema, returning structuredContent, and the JSON Schema 2020-12 changes in 2026-07-28"
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "Resources and Prompts: Choosing the Right Primitive",
+        "url": "https://shapkarin.me/articles/mcp-server-typescript/#resources-and-prompts-choosing-the-right-primitive",
+        "description": "When to use a tool versus a resource versus a prompt, with registerResource and registerPrompt examples"
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "Serving It: stdio",
+        "url": "https://shapkarin.me/articles/mcp-server-typescript/#serving-it-stdio",
+        "description": "StdioServerTransport for 2025-era serving versus serveStdio for 2026-07-28, and the stdout JSON-RPC rule"
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "Serving It: HTTP",
+        "url": "https://shapkarin.me/articles/mcp-server-typescript/#serving-it-http",
+        "description": "createMcpHandler, toNodeHandler, sessionless state via explicit handles and sealed requestState, routable headers, cache hints"
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "Verifying with the MCP Inspector",
+        "url": "https://shapkarin.me/articles/mcp-server-typescript/#verifying-with-the-mcp-inspector",
+        "description": "A four-step verification pass before wiring the server into a host client"
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "Testing Without a Socket",
+        "url": "https://shapkarin.me/articles/mcp-server-typescript/#testing-without-a-socket",
+        "description": "InMemoryTransport for 2025-era tests and driving createMcpHandler through its fetch function for 2026-07-28"
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "Deployment Checklist",
+        "url": "https://shapkarin.me/articles/mcp-server-typescript/#deployment-checklist",
+        "description": "Pre-ship checks, HTTP deployment requirements, what to monitor, and the deprecated roots, sampling, and logging features"
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "Frequently Asked Questions",
+        "url": "https://shapkarin.me/articles/mcp-server-typescript/#frequently-asked-questions-faq",
+        "description": "Common questions on SDK version choice, protocol opt-in, missing descriptions, transport choice, and stateless state"
+      }
+    ],
+    "teaches": [
+      "Setting up a TypeScript MCP server project on the v2 SDK packages",
+      "Registering tools with registerTool and Standard Schema input schemas",
+      "Writing inputSchema contracts a model can call correctly without source access",
+      "Declaring outputSchema and returning structuredContent for machine-readable results",
+      "Choosing between tools, resources, and prompts for a given capability",
+      "Serving an MCP server over stdio with serveStdio and over HTTP with createMcpHandler",
+      "Replacing session state with explicit handles and sealed requestState",
+      "Verifying a server in the MCP Inspector before wiring it into a host",
+      "Testing MCP servers in process without a subprocess or port",
+      "Deploying and monitoring an MCP server in production"
+    ],
+    "programmingLanguage": ["TypeScript", "JavaScript"],
+    "operatingSystem": "Cross-platform",
+    "applicationCategory": "Educational"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Should I build an MCP server on TypeScript SDK v1 or v2?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "For a new project shipping in the next few months, build on v2 with exact version pins and expect one bump when the stable release lands. For a production server today, stay on v1.x: it is the maintainers' supported production release until v2 ships stable, and it continues to receive bug fixes and security updates for at least six months afterward."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do I have to adopt the 2026-07-28 protocol revision when I upgrade to SDK v2?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. The two migrations are independent. Nothing in v2 puts a 2026-07-28 byte on the wire by default, so a hand-constructed Server or McpServer keeps speaking the 2025-era protocol. You opt in explicitly per entry point using serveStdio for stdio or createMcpHandler for HTTP."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why do my MCP tool argument descriptions disappear from the schema?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Almost certainly Zod 4.0 or 4.1. Those versions lack the ~standard.jsonSchema provider, so the SDK falls back to its bundled Zod for JSON Schema conversion, and .describe() descriptions live in the authoring Zod's registry, so the fallback drops them. Upgrade to zod ^4.2.0. The fallback path also emits a one-time [mcp-sdk] console warning."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Should an MCP server use stdio or Streamable HTTP?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Use stdio when the host runs your server as a local child process: developer tooling, filesystem access, single-user cases. Use Streamable HTTP when it is a networked service, multi-tenant, or needs its own authorization. Transport is a wiring choice at the end of your code rather than an architecture, so supporting both from one codebase is normal."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I keep state across MCP tool calls without sessions?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Mint an explicit handle from a tool, such as a basket_id, and have the model pass it back as an ordinary argument on later calls. This is what HTTP APIs have always done, it composes better than hidden session state because the model can reason about the handle, and it stays visible in the Inspector while debugging. For input needed mid-call, return inputRequired(...) with a sealed requestState."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I write MCP tool schemas as plain JSON Schema instead of Zod?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. The fromJsonSchema() helper from @modelcontextprotocol/server accepts raw JSON Schema. The default validator accepts the 2020-12 dialect only, and external $ref URIs are not dereferenced, so inline your definitions under $defs and reference them as #/$defs/Name."
+        }
+      }
+    ]
+  }
+]

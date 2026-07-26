@@ -1,0 +1,290 @@
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "learningResourceType": ["tutorial", "guide", "reading"],
+    "educationalUse": ["learning", "professional development"],
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://shapkarin.me/articles/mcp-typescript-sdk-v2-migration/"
+    },
+    "url": "https://shapkarin.me/articles/mcp-typescript-sdk-v2-migration/",
+    "headline": "MCP TypeScript SDK v1 to v2: A Migration Guide",
+    "description": "Migrate from @modelcontextprotocol/sdk to the v2 packages: the codemod, the package split, the Zod 4.2 trap that fails silently, renamed errors and context, removed transports, and why adopting 2026-07-28 is a separate decision.",
+    "image": [
+      {
+        "@type": "ImageObject",
+        "url": "https://shapkarin.me/logo.jpg",
+        "width": 512,
+        "height": 512
+      },
+      {
+        "@type": "ImageObject",
+        "url": "https://shapkarin.me/articles/light/mcp-typescript-sdk-v2-migration-0.svg"
+      }
+    ],
+    "author": {
+      "@type": "Person",
+      "name": "Yuri Shapkarin",
+      "alternateName": "Iurii Shapkarin",
+      "url": "https://shapkarin.me",
+      "sameAs": ["https://github.com/shapkarin"]
+    },
+    "publisher": {
+      "@type": "Person",
+      "name": "Yuri Shapkarin",
+      "alternateName": "Iurii Shapkarin",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://shapkarin.me/logo.jpg",
+        "width": 512,
+        "height": 512
+      }
+    },
+    "datePublished": "2026-07-26",
+    "dateModified": "2026-07-26",
+    "wordCount": 3100,
+    "inLanguage": "en-US",
+    "proficiencyLevel": ["Intermediate", "Expert"],
+    "keywords": "MCP TypeScript SDK v2 migration, @modelcontextprotocol/server, @modelcontextprotocol/client, MCP codemod, Zod 4 Standard Schema, registerTool, ProtocolError, SdkHttpError, StreamableHTTPServerTransport, serveStdio, createMcpHandler, MCP breaking changes",
+    "about": [
+      {
+        "@type": "Thing",
+        "name": "MCP TypeScript SDK v2",
+        "description": "Major SDK revision replacing the monolithic @modelcontextprotocol/sdk package with split server, client, core, and adapter packages"
+      },
+      {
+        "@type": "Thing",
+        "name": "MCP codemod",
+        "description": "The @modelcontextprotocol/codemod tool that mechanically applies v1-to-v2 import, symbol, and call-shape rewrites and marks sites it cannot safely change"
+      },
+      {
+        "@type": "Thing",
+        "name": "Standard Schema",
+        "description": "Schema interface specification adopted for v2 tool and prompt schemas, requiring Zod 4, Valibot, ArkType, or another compatible library"
+      },
+      {
+        "@type": "Thing",
+        "name": "Zod 4",
+        "description": "Required schema library major for SDK v2; version 4.2.0 or later self-converts to JSON Schema and preserves .describe() field descriptions"
+      },
+      {
+        "@type": "Thing",
+        "name": "Protocol revision 2026-07-28",
+        "description": "Stateless MCP protocol revision that v2 can serve, opted into per entry point rather than enabled by upgrading the SDK"
+      },
+      {
+        "@type": "Thing",
+        "name": "Streamable HTTP transport",
+        "description": "The remaining HTTP transport in v2, split into Node and web-standard runtime variants after SSEServerTransport was removed"
+      },
+      {
+        "@type": "Thing",
+        "name": "structuredContent",
+        "description": "Tool result field widened from an object type to unknown in v2, requiring narrowing before property access and an explicit undefined presence check"
+      }
+    ],
+    "audience": [
+      {
+        "@type": "Audience",
+        "audienceType": "Developers",
+        "name": "TypeScript Developers"
+      },
+      {
+        "@type": "Audience",
+        "audienceType": "Developers",
+        "name": "Node.js Developers"
+      },
+      {
+        "@type": "Audience",
+        "audienceType": "Developers",
+        "name": "JavaScript Developers"
+      },
+      {
+        "@type": "Audience",
+        "audienceType": "Developers",
+        "name": "AI Engineers"
+      },
+      {
+        "@type": "Audience",
+        "audienceType": "Developers",
+        "name": "Platform Engineers"
+      }
+    ],
+    "citation": [
+      {
+        "@type": "WebPage",
+        "name": "Upgrading from v1 to v2 - MCP TypeScript SDK",
+        "@id": "https://github.com/modelcontextprotocol/typescript-sdk/blob/main/docs/migration/upgrade-to-v2.md",
+        "description": "Authoritative migration guide covering the codemod, package split, registration API, renames, transports, and behavioral changes"
+      },
+      {
+        "@type": "WebPage",
+        "name": "Supporting protocol revision 2026-07-28",
+        "@id": "https://github.com/modelcontextprotocol/typescript-sdk/blob/main/docs/migration/support-2026-07-28.md",
+        "description": "How to opt a v2 server or client into the 2026-07-28 wire revision via createMcpHandler, serveStdio, and versionNegotiation"
+      },
+      {
+        "@type": "WebPage",
+        "name": "GitHub Repo - MCP TypeScript SDK",
+        "@id": "https://github.com/modelcontextprotocol/typescript-sdk",
+        "description": "Official TypeScript SDK repository; v2 on main, v1 maintained on the long-lived v1.x branch"
+      },
+      {
+        "@type": "WebPage",
+        "name": "Beta SDKs for the 2026-07-28 MCP Spec Release Candidate",
+        "@id": "https://blog.modelcontextprotocol.io/posts/sdk-betas-2026-07-28/",
+        "description": "Beta release announcement with support timelines, version pinning guidance, and per-language migration notes"
+      },
+      {
+        "@type": "WebPage",
+        "name": "Zod v4 changelog",
+        "@id": "https://zod.dev/v4/changelog",
+        "description": "Zod's own v3 to v4 breaking changes, including removal of z.ZodTypeDef and changes to z.ZodType generics"
+      }
+    ],
+    "hasPart": [
+      {
+        "@type": "WebPageElement",
+        "name": "Should You Migrate Yet?",
+        "url": "https://shapkarin.me/articles/mcp-typescript-sdk-v2-migration/#should-you-migrate-yet",
+        "description": "v2 beta status, v1.x support window, and a decision table by situation"
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "Run the Codemod First",
+        "url": "https://shapkarin.me/articles/mcp-typescript-sdk-v2-migration/#run-the-codemod-first",
+        "description": "The dry-run, marker grep, type-check, format, test loop and what the codemod does and does not handle"
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "The Package Split",
+        "url": "https://shapkarin.me/articles/mcp-typescript-sdk-v2-migration/#the-package-split",
+        "description": "Mapping the single v1 package to server, client, core, and adapter packages, plus framework peers and monorepo handling"
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "Node 20, ESM, and CommonJS",
+        "url": "https://shapkarin.me/articles/mcp-typescript-sdk-v2-migration/#node-20-esm-and-commonjs",
+        "description": "Runtime requirements, the CommonJS build shipped alongside ESM, and the flat dist layout change"
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "The Zod Trap",
+        "url": "https://shapkarin.me/articles/mcp-typescript-sdk-v2-migration/#the-zod-trap",
+        "description": "Why a Zod 3 range typechecks then fails at the first tools/list, why Zod 4.0-4.1 silently drops descriptions, and the fix ladder"
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "Registration API Changes",
+        "url": "https://shapkarin.me/articles/mcp-typescript-sdk-v2-migration/#registration-api-changes",
+        "description": "Variadic .tool() removed in favor of registerTool config objects, required resource metadata, context-argument shape, completable inversion"
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "Renames: Errors, Context, Handlers",
+        "url": "https://shapkarin.me/articles/mcp-typescript-sdk-v2-migration/#renames-errors-context-handlers",
+        "description": "ProtocolError and SdkError split, ctx replacing extra, Web Standard Headers reads, method-string handler registration"
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "Transports: Moved, Renamed, Removed",
+        "url": "https://shapkarin.me/articles/mcp-typescript-sdk-v2-migration/#transports-moved-renamed-removed",
+        "description": "Choosing the Node or web-standard Streamable HTTP transport, stdio subpaths, removed SSE and WebSocket transports, auth split by role"
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "The Quiet Ones",
+        "url": "https://shapkarin.me/articles/mcp-typescript-sdk-v2-migration/#the-quiet-ones",
+        "description": "Five changes that compile cleanly and behave differently, including structuredContent narrowing and the 2020-12 validator default"
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "Turning On 2026-07-28, Later",
+        "url": "https://shapkarin.me/articles/mcp-typescript-sdk-v2-migration/#turning-on-2026-07-28-later",
+        "description": "Opting into the new wire revision with createMcpHandler, serveStdio, and client versionNegotiation once v2 is green"
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "A Staged Migration Plan",
+        "url": "https://shapkarin.me/articles/mcp-typescript-sdk-v2-migration/#a-staged-migration-plan",
+        "description": "A nine-step ordering that separates the package migration from the protocol opt-in"
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "Frequently Asked Questions",
+        "url": "https://shapkarin.me/articles/mcp-typescript-sdk-v2-migration/#frequently-asked-questions-faq",
+        "description": "Deadlines, wire behavior after upgrade, module format, the tools/list failure, codemod gaps, and monorepo staging"
+      }
+    ],
+    "teaches": [
+      "Deciding whether to migrate to MCP TypeScript SDK v2 now or stay on v1.x",
+      "Running the @modelcontextprotocol/codemod v1-to-v2 migration and working its markers",
+      "Mapping the monolithic v1 SDK onto the v2 server, client, core, and adapter packages",
+      "Diagnosing and fixing the Zod 3 and Zod 4.0-4.1 failure modes under v2",
+      "Converting variadic .tool() registrations to registerTool config objects",
+      "Updating renamed error classes, handler context, and header reads",
+      "Choosing the correct Streamable HTTP transport for Node versus web-standard runtimes",
+      "Catching behavioral changes that compile cleanly, such as structuredContent narrowing",
+      "Opting into the 2026-07-28 protocol revision as a separate, later change",
+      "Sequencing a staged migration so the package change and protocol change ship independently"
+    ],
+    "programmingLanguage": ["TypeScript", "JavaScript"],
+    "operatingSystem": "Cross-platform",
+    "applicationCategory": "Educational"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Do I have to migrate to MCP TypeScript SDK v2 by July 28, 2026?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. July 28, 2026 is when the 2026-07-28 specification text publishes, not a switch-off for anything. Existing clients and servers keep working. The v1.x SDK line remains supported with bug fixes and security updates for at least six months after v2 ships stable."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does upgrading to MCP TypeScript SDK v2 change what my server puts on the wire?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No, and this is the key property of the migration. A hand-constructed Server or McpServer on v2 speaks the same 2025-era protocol it spoke on v1. Serving the 2026-07-28 revision requires explicitly moving to createMcpHandler for HTTP or serveStdio for stdio."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is MCP TypeScript SDK v2 ESM-only?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No, although early beta announcements described it that way. v2 is ESM-first but ships a CommonJS build alongside ESM, so CommonJS projects can require the packages directly without a dynamic import shim. It requires Node.js 20 or newer and runs on Node, Bun, and Deno."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why does my MCP server start fine and then fail on the first tools/list after migrating?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Zod 3. A Zod 3 range that satisfied the v1 peer dependency installs and typechecks cleanly under v2, then the first tools/list answers with an error pointing at fromJsonSchema() while the process keeps running. Check the declared range in package.json rather than the installed version and bump to zod ^4.2.0."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What does the MCP codemod not handle that will actually cause problems?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Three things. The Zod version, which is a pre-flight fix rather than a rewrite. Files that receive SDK surfaces through dependency injection and therefore have no imports to rewrite, where v1 idioms fail at runtime rather than compile time. And behavioral changes with no rename attached, such as structuredContent narrowing and the switch to a 2020-12 JSON Schema validator default."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I migrate a monorepo to MCP TypeScript SDK v2 one package at a time?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, and it is the recommended approach. Run the codemod against each member directory, since the manifest summary is computed from that member's own imports. For a workspace pinned to Zod 3, add a zod-v4 alias dependency resolving to zod ^4.2.0 in only the migrating member and author SDK-bound schemas with it."
+        }
+      }
+    ]
+  }
+]

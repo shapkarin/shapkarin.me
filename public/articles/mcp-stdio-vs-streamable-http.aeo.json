@@ -1,0 +1,309 @@
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "learningResourceType": ["reading", "guide"],
+    "educationalUse": ["learning", "professional development"],
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://shapkarin.me/articles/mcp-stdio-vs-streamable-http/"
+    },
+    "url": "https://shapkarin.me/articles/mcp-stdio-vs-streamable-http/",
+    "headline": "stdio vs Streamable HTTP: Picking an MCP Transport",
+    "description": "A threshold-based comparison of the two MCP transports: what each looks like at the byte level, what the 2026-07-28 stateless revision changed about the tradeoff, which capabilities exist on only one side, and how to support both.",
+    "image": [
+      {
+        "@type": "ImageObject",
+        "url": "https://shapkarin.me/logo.jpg",
+        "width": 512,
+        "height": 512
+      },
+      {
+        "@type": "ImageObject",
+        "url": "https://shapkarin.me/articles/light/mcp-stdio-vs-streamable-http-0.svg"
+      },
+      {
+        "@type": "ImageObject",
+        "url": "https://shapkarin.me/articles/light/mcp-stdio-vs-streamable-http-1.svg"
+      }
+    ],
+    "author": {
+      "@type": "Person",
+      "name": "Yuri Shapkarin",
+      "alternateName": "Iurii Shapkarin",
+      "url": "https://shapkarin.me",
+      "sameAs": ["https://github.com/shapkarin"]
+    },
+    "publisher": {
+      "@type": "Person",
+      "name": "Yuri Shapkarin",
+      "alternateName": "Iurii Shapkarin",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://shapkarin.me/logo.jpg",
+        "width": 512,
+        "height": 512
+      }
+    },
+    "datePublished": "2026-07-26",
+    "dateModified": "2026-07-26",
+    "wordCount": 2650,
+    "inLanguage": "en-US",
+    "proficiencyLevel": ["Beginner", "Intermediate", "Expert"],
+    "keywords": "MCP stdio vs HTTP, MCP transport, Streamable HTTP, stdio transport, Model Context Protocol transport, MCP transport comparison, Mcp-Method header, Mcp-Param, x-mcp-header, MRTR, 2026-07-28, stateless MCP, HTTP+SSE deprecated, custom MCP transport",
+    "about": [
+      {
+        "@type": "Thing",
+        "name": "MCP stdio transport",
+        "description": "Transport binding where the client launches the server as a subprocess and exchanges newline-delimited JSON-RPC messages over standard streams"
+      },
+      {
+        "@type": "Thing",
+        "name": "MCP Streamable HTTP transport",
+        "description": "Transport binding where each JSON-RPC message is an HTTP POST to a single MCP endpoint, answered with a JSON object or a request-scoped SSE stream"
+      },
+      {
+        "@type": "Thing",
+        "name": "Transport binding",
+        "description": "In MCP, a definition of message framing, delivery, request metadata carriage, and cancellation signaling; protocol semantics are identical across bindings"
+      },
+      {
+        "@type": "Thing",
+        "name": "Standard request headers",
+        "description": "MCP-Protocol-Version, Mcp-Method, and Mcp-Name headers mirrored from the body on Streamable HTTP so intermediaries can route without parsing it"
+      },
+      {
+        "@type": "Thing",
+        "name": "x-mcp-header",
+        "description": "Tool schema annotation that mirrors a primitive tool argument into an Mcp-Param-{Name} HTTP header for gateway-level routing"
+      },
+      {
+        "@type": "Thing",
+        "name": "Multi Round-Trip Requests",
+        "description": "The pattern replacing server-initiated JSON-RPC requests: a server returns an InputRequiredResult and the client retries the original call with responses"
+      },
+      {
+        "@type": "Thing",
+        "name": "HTTP+SSE transport",
+        "description": "The 2024-11-05 transport with separate SSE and POST endpoints, deprecated since 2025-03-26 and eligible for removal under the feature lifecycle policy"
+      },
+      {
+        "@type": "Thing",
+        "name": "Custom MCP transports",
+        "description": "Non-standard bindings that must preserve JSON-RPC format, message patterns, and per-request metadata; byte-stream channels should reuse stdio framing"
+      }
+    ],
+    "audience": [
+      {
+        "@type": "Audience",
+        "audienceType": "Developers",
+        "name": "TypeScript Developers"
+      },
+      {
+        "@type": "Audience",
+        "audienceType": "Developers",
+        "name": "JavaScript Developers"
+      },
+      {
+        "@type": "Audience",
+        "audienceType": "Developers",
+        "name": "Node.js Developers"
+      },
+      {
+        "@type": "Audience",
+        "audienceType": "Developers",
+        "name": "Backend Developers"
+      },
+      {
+        "@type": "Audience",
+        "audienceType": "Developers",
+        "name": "Platform Engineers"
+      },
+      {
+        "@type": "Audience",
+        "audienceType": "Developers",
+        "name": "AI Engineers"
+      }
+    ],
+    "citation": [
+      {
+        "@type": "WebPage",
+        "name": "MCP Transports Overview",
+        "@id": "https://modelcontextprotocol.io/specification/draft/basic/transports",
+        "description": "Specification page defining what a transport binding must provide, the standard bindings, and requirements for custom transports",
+        "relatedLink": [
+          "https://modelcontextprotocol.io/specification/draft/basic/transports/stdio",
+          "https://modelcontextprotocol.io/specification/draft/basic/transports/streamable-http"
+        ]
+      },
+      {
+        "@type": "WebPage",
+        "name": "stdio transport specification",
+        "@id": "https://modelcontextprotocol.io/specification/draft/basic/transports/stdio",
+        "description": "Newline-delimited JSON-RPC over subprocess standard streams, including stderr rules, cancellation, shutdown, and restart behavior"
+      },
+      {
+        "@type": "WebPage",
+        "name": "Streamable HTTP transport specification",
+        "@id": "https://modelcontextprotocol.io/specification/draft/basic/transports/streamable-http",
+        "description": "Single POST endpoint, request-scoped SSE responses, required standard headers, header-body validation, and backward compatibility rules"
+      },
+      {
+        "@type": "WebPage",
+        "name": "Multi Round-Trip Requests (MRTR)",
+        "@id": "https://modelcontextprotocol.io/specification/draft/basic/patterns/mrtr",
+        "description": "The in-band pattern that replaced server-initiated JSON-RPC requests for elicitation, sampling, and roots"
+      },
+      {
+        "@type": "WebPage",
+        "name": "The 2026-07-28 MCP Specification Release Candidate",
+        "@id": "https://blog.modelcontextprotocol.io/posts/2026-07-28-release-candidate/",
+        "description": "Announcement of the stateless protocol core and the Streamable HTTP changes that removed sessions and the standalone GET stream"
+      },
+      {
+        "@type": "WebPage",
+        "name": "The 2026 MCP Roadmap",
+        "@id": "https://blog.modelcontextprotocol.io/posts/2026-mcp-roadmap/",
+        "description": "Priority areas for 2026, including the explicit decision to evolve the existing transport rather than add new official transports"
+      }
+    ],
+    "hasPart": [
+      {
+        "@type": "WebPageElement",
+        "name": "The Short Answer",
+        "url": "https://shapkarin.me/articles/mcp-stdio-vs-streamable-http/#the-short-answer",
+        "description": "The single question that decides most cases, and why transport is a binding rather than an architecture"
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "stdio at the Byte Level",
+        "url": "https://shapkarin.me/articles/mcp-stdio-vs-streamable-http/#stdio-at-the-byte-level",
+        "description": "Newline-delimited JSON-RPC over standard streams, the stdout rule, the single shared channel, and process lifecycle requirements"
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "Streamable HTTP at the Byte Level",
+        "url": "https://shapkarin.me/articles/mcp-stdio-vs-streamable-http/#streamable-http-at-the-byte-level",
+        "description": "One POST endpoint, JSON or request-scoped SSE responses, required standard headers, header-body validation, and Origin checks"
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "The Decision Table",
+        "url": "https://shapkarin.me/articles/mcp-stdio-vs-streamable-http/#the-decision-table",
+        "description": "Thirteen concrete conditions that decide the transport, plus a decision-tree diagram"
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "What Only stdio Gives You",
+        "url": "https://shapkarin.me/articles/mcp-stdio-vs-streamable-http/#what-only-stdio-gives-you",
+        "description": "Local machine access, zero network surface, inherited credentials, free per-user isolation, and notifications/cancelled"
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "What Only Streamable HTTP Gives You",
+        "url": "https://shapkarin.me/articles/mcp-stdio-vs-streamable-http/#what-only-streamable-http-gives-you",
+        "description": "Horizontal scale, header-level and argument-level gateway routing via x-mcp-header, centralized operations, and response caching"
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "What 2026-07-28 Changed",
+        "url": "https://shapkarin.me/articles/mcp-stdio-vs-streamable-http/#what-2026-07-28-changed",
+        "description": "Removed sessions, handshake, GET stream, server-initiated requests, and stream resumption, and how that moved the break-even point"
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "Supporting Both From One Codebase",
+        "url": "https://shapkarin.me/articles/mcp-stdio-vs-streamable-http/#supporting-both-from-one-codebase",
+        "description": "Factory-based serveStdio and createMcpHandler entry points, and the two things that do not transfer between transports"
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "Why MCP Won't Add a Third Transport",
+        "url": "https://shapkarin.me/articles/mcp-stdio-vs-streamable-http/#why-mcp-wont-add-a-third-transport",
+        "description": "The roadmap decision to keep the transport set small, the custom-transport escape hatch, and the deprecated HTTP+SSE binding"
+      },
+      {
+        "@type": "WebPageElement",
+        "name": "Frequently Asked Questions",
+        "url": "https://shapkarin.me/articles/mcp-stdio-vs-streamable-http/#frequently-asked-questions-faq",
+        "description": "Transport choice for local tools, supporting both, HTTP scaling, stdout parse errors, the two meanings of SSE, WebSocket, and stateless state"
+      }
+    ],
+    "teaches": [
+      "Choosing between the stdio and Streamable HTTP MCP transports from concrete conditions",
+      "How stdio frames JSON-RPC over subprocess standard streams and why stdout must stay clean",
+      "How Streamable HTTP maps each JSON-RPC message onto a single POST endpoint",
+      "Which MCP capabilities exist only on stdio and which only on Streamable HTTP",
+      "Using Mcp-Method, Mcp-Name, and x-mcp-header for gateway-level routing",
+      "What the 2026-07-28 revision removed from Streamable HTTP and how it changed the scaling tradeoff",
+      "Supporting both transports from one codebase with factory-based entry points",
+      "Keeping state across tool calls with explicit handles instead of sessions",
+      "When and how to implement a custom MCP transport by reusing stdio framing"
+    ],
+    "programmingLanguage": ["TypeScript", "JavaScript"],
+    "operatingSystem": "Cross-platform",
+    "applicationCategory": "Educational"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Which MCP transport should I use for a local developer tool?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "stdio. The host spawns your server as a child process, it inherits the user's environment and privileges, and you get per-user isolation for free with no network surface, no TLS, and no authorization layer to design."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can one MCP server support both stdio and Streamable HTTP?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, and it is normal. Protocol semantics are identical across transports, so you register tools, resources, and prompts once and wire two entry points around them: serveStdio(factory) and createMcpHandler(factory) in the TypeScript SDK. The only things that do not transfer are local machine access and anything built assuming session state."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is Streamable HTTP still hard to scale horizontally?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Not the way it was. The 2026-07-28 revision removed the Mcp-Session-Id header and the protocol-level session, so any request can land on any instance and a plain round-robin load balancer is sufficient. The sticky sessions and shared session store that horizontal deployments needed under 2025-11-25 are no longer required at the protocol layer."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why does my stdio MCP server disconnect with JSON parse errors?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Something is writing to stdout that is not an MCP message. On stdio, stdout is the JSON-RPC channel and messages are newline-delimited with no embedded newlines permitted, so a single console.log from your code or a dependency corrupts the stream. Log to stderr instead: the specification explicitly permits it and clients should not treat stderr output as an error signal."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What happened to SSE as an MCP transport?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Two different things get called SSE. The 2024-11-05 HTTP+SSE transport with separate SSE and POST endpoints is deprecated and eligible for removal. Separately, Streamable HTTP still uses SSE, but as a response format scoped to a single request rather than a long-lived channel for server-initiated messages. The standalone GET stream was removed in 2026-07-28."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I use WebSocket or gRPC with MCP?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Not as a standard transport, and the 2026 roadmap states no new official transports this cycle. You may implement a custom transport provided you preserve the JSON-RPC message format, the message patterns, and the per-request metadata model. If your channel is a reliable bidirectional byte stream such as a Unix domain socket or TCP, the specification recommends reusing the stdio framing, which existing implementations already speak."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I keep state between MCP tool calls if there is no session?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Mint an explicit handle from a tool and have the model pass it back as an ordinary argument on later calls. It works identically on both transports, it survives an instance dying or a stdio process restarting, and it stays visible during debugging rather than hidden in transport metadata."
+        }
+      }
+    ]
+  }
+]
