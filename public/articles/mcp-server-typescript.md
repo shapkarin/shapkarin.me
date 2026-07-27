@@ -35,7 +35,15 @@ This guide builds a server against the current generation: v2 packages, Standard
 
 ## What You're Actually Building
 
-An MCP server is a program that publishes three kinds of thing to an AI host — Claude, ChatGPT, Cursor, VS Code, your own agent — over a standard protocol:
+Roughly speaking, MCP is a standard bridge between a model and everything outside it, tools, data, other systems. The point isn't that models can't handle an API. In theory a model can read and call an API just fine, as long as the instructions, docs, and Swagger are good and it can write against one too with a help of good harness. The real point is that without a standard you end up building a custom integration for every model-plus-service pair, and MCP collapses that into one protocol.
+
+A good MCP server carries the what, why, and how inside itself, tool descriptions, schemas, resources for context, prompt templates, so the model doesn't have to guess what to call or when. You can bake prompts right in, that's an actual primitive, not a hack. Which is really the same job good docs do, just delivered in a form the model gets automatically instead of having to be handed.
+
+So a lot of what a typical server does you could get from a well-documented API. What you can't get that way is the rest of the protocol: capability discovery and change notifications, sampling (the server asks the client's model to do the reasoning, so it needs no API key of its own), and elicitation for pulling extra input from the user mid-task.
+
+Honestly, most servers out there are thin wrappers over an API and use none of that. Not many people know how to build a good, complete one.
+
+An MCP server is a program that publishes three kinds of thing to an AI host, Claude, ChatGPT, Cursor, VS Code, your own agent, over a standard protocol:
 
 - **Tools** — functions the model can call. Side effects live here.
 - **Resources** — data the host can read, addressed by URI. Read-only context.
