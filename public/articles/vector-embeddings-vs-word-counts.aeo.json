@@ -1,0 +1,303 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "TechArticle",
+      "@id": "https://shapkarin.me/articles/vector-embeddings-vs-word-counts#article",
+      "headline": "Vector Embeddings vs Word Counts: K-Means Uses Both",
+      "alternativeHeadline": "K-means clustering and vector embeddings are not competing choices",
+      "description": "K-means clustering doesn't compete with vector embeddings — it consumes them. The real tradeoff is vector embeddings vs word counts, illustrated with a 7-year-old movie-plot clustering experiment.",
+      "abstract": "Asking whether to use k-means or embeddings is a category error: embeddings produce vectors and k-means consumes them. The genuine competition is between text representations — word counts such as TF-IDF versus dense vector embeddings. The shapkarin/movies experiment used word counts seven years ago and fragmented into 371 clusters. A controlled rerun shows the cause was not the curse of dimensionality, which sparse text data largely escapes, but a one-line slice that kept the first 1,000 alphabetically ordered features and destroyed the L2 normalization TfidfVectorizer produces.",
+      "url": "https://shapkarin.me/articles/vector-embeddings-vs-word-counts",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://shapkarin.me/articles/vector-embeddings-vs-word-counts"
+      },
+      "datePublished": "2026-08-07",
+      "dateModified": "2026-08-07",
+      "inLanguage": "en",
+      "wordCount": 1850,
+      "timeRequired": "PT10M",
+      "articleSection": "Machine Learning",
+      "proficiencyLevel": "Intermediate",
+      "dependencies": "Python 3, NumPy, scikit-learn, sentence-transformers",
+      "author": { "@id": "https://shapkarin.me/#person" },
+      "publisher": { "@id": "https://shapkarin.me/#person" },
+      "keywords": [
+        "vector embeddings vs word counts",
+        "k-means clustering",
+        "TF-IDF",
+        "bag of words",
+        "text clustering",
+        "unsupervised machine learning",
+        "latent semantic analysis",
+        "TruncatedSVD",
+        "sentence transformers",
+        "HDBSCAN",
+        "silhouette score",
+        "Matryoshka representation learning"
+      ],
+      "about": [
+        { "@type": "Thing", "name": "word embedding", "sameAs": "https://en.wikipedia.org/wiki/Word_embedding" },
+        { "@type": "Thing", "name": "tf–idf", "sameAs": "https://en.wikipedia.org/wiki/Tf%E2%80%93idf" },
+        { "@type": "Thing", "name": "bag-of-words model", "sameAs": "https://en.wikipedia.org/wiki/Bag-of-words_model" },
+        { "@type": "Thing", "name": "k-means clustering", "sameAs": "https://en.wikipedia.org/wiki/K-means_clustering" },
+        { "@type": "Thing", "name": "latent semantic analysis", "sameAs": "https://en.wikipedia.org/wiki/Latent_semantic_analysis" },
+        { "@type": "Thing", "name": "curse of dimensionality", "sameAs": "https://en.wikipedia.org/wiki/Curse_of_dimensionality" },
+        { "@type": "Thing", "name": "mean shift", "sameAs": "https://en.wikipedia.org/wiki/Mean_shift" },
+        { "@type": "Thing", "name": "cluster analysis", "sameAs": "https://en.wikipedia.org/wiki/Cluster_analysis" },
+        { "@type": "Thing", "name": "feature extraction", "sameAs": "https://en.wikipedia.org/wiki/Feature_extraction" }
+      ],
+      "mentions": [
+        {
+          "@type": "SoftwareSourceCode",
+          "name": "shapkarin/movies",
+          "description": "A pet project and experiment from roughly seven years ago that clustered movie plot summaries using TF-IDF word counts with NumPy and scikit-learn, and MeanShift for grouping. It produced 371 estimated clusters after slicing the TF-IDF matrix to its first 1,000 alphabetically ordered features.",
+          "codeRepository": "https://github.com/shapkarin/movies",
+          "programmingLanguage": "Python",
+          "runtimePlatform": "Python 3",
+          "author": { "@id": "https://shapkarin.me/#person" }
+        },
+        {
+          "@type": "SoftwareApplication",
+          "name": "scikit-learn",
+          "applicationCategory": "DeveloperApplication",
+          "url": "https://scikit-learn.org/"
+        },
+        {
+          "@type": "SoftwareApplication",
+          "name": "Sentence-Transformers",
+          "applicationCategory": "DeveloperApplication",
+          "url": "https://www.sbert.net/"
+        },
+        {
+          "@type": "SoftwareApplication",
+          "name": "NumPy",
+          "applicationCategory": "DeveloperApplication",
+          "url": "https://numpy.org/"
+        }
+      ],
+      "citation": [
+        {
+          "@type": "ScholarlyArticle",
+          "name": "When Is \"Nearest Neighbor\" Meaningful?",
+          "author": "Kevin Beyer, Jonathan Goldstein, Raghu Ramakrishnan, Uri Shaft",
+          "datePublished": "1999",
+          "isPartOf": { "@type": "Periodical", "name": "International Conference on Database Theory (ICDT)" },
+          "url": "https://link.springer.com/chapter/10.1007/3-540-49257-7_15"
+        },
+        {
+          "@type": "ScholarlyArticle",
+          "name": "Least Squares Quantization in PCM",
+          "author": "Stuart P. Lloyd",
+          "datePublished": "1982",
+          "isPartOf": { "@type": "Periodical", "name": "IEEE Transactions on Information Theory" },
+          "url": "https://ieeexplore.ieee.org/document/1056489"
+        },
+        {
+          "@type": "ScholarlyArticle",
+          "name": "Some Methods for Classification and Analysis of Multivariate Observations",
+          "author": "James MacQueen",
+          "datePublished": "1967",
+          "url": "https://projecteuclid.org/euclid.bsmsp/1200512992"
+        },
+        {
+          "@type": "WebPage",
+          "name": "Clustering text documents using k-means — scikit-learn example",
+          "url": "https://scikit-learn.org/stable/auto_examples/text/plot_document_clustering.html"
+        },
+        {
+          "@type": "WebPage",
+          "name": "scikit-learn: Clustering",
+          "url": "https://scikit-learn.org/stable/modules/clustering.html"
+        },
+        {
+          "@type": "WebPage",
+          "name": "TfidfVectorizer — scikit-learn API reference",
+          "url": "https://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.TfidfVectorizer.html"
+        },
+        {
+          "@type": "WebPage",
+          "name": "sentence-transformers/all-MiniLM-L6-v2 model card",
+          "url": "https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2"
+        }
+      ],
+      "isAccessibleForFree": true,
+      "license": "https://creativecommons.org/licenses/by/4.0/",
+      "hasPart": [
+        {
+          "@type": "WebPageElement",
+          "name": "The Two Layers of Any Clustering Pipeline",
+          "url": "https://shapkarin.me/articles/vector-embeddings-vs-word-counts#the-two-layers-of-any-clustering-pipeline"
+        },
+        {
+          "@type": "WebPageElement",
+          "name": "The Real Competition: Word Counts vs Vector Embeddings",
+          "url": "https://shapkarin.me/articles/vector-embeddings-vs-word-counts#the-real-competition-word-counts-vs-vector-embeddings"
+        },
+        {
+          "@type": "WebPageElement",
+          "name": "What Actually Broke in the 7-Year-Old Experiment",
+          "url": "https://shapkarin.me/articles/vector-embeddings-vs-word-counts#what-actually-broke-in-the-7-year-old-experiment"
+        },
+        {
+          "@type": "WebPageElement",
+          "name": "When Word Counts Still Beat Embeddings",
+          "url": "https://shapkarin.me/articles/vector-embeddings-vs-word-counts#when-word-counts-still-beat-embeddings"
+        },
+        {
+          "@type": "WebPageElement",
+          "name": "Choosing the Algorithm — A Separate Decision",
+          "url": "https://shapkarin.me/articles/vector-embeddings-vs-word-counts#choosing-the-algorithm--a-separate-decision"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://shapkarin.me/articles/vector-embeddings-vs-word-counts#faq",
+      "url": "https://shapkarin.me/articles/vector-embeddings-vs-word-counts#faq",
+      "isPartOf": { "@id": "https://shapkarin.me/articles/vector-embeddings-vs-word-counts#article" },
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Are k-means clustering and vector embeddings competing choices?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. They operate at different layers of the pipeline. Embeddings are a representation — they turn text into vectors. K-means is an algorithm that groups whatever vectors it is given. The genuinely competing pair is vector embeddings versus word counts, since both are representations."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What actually competes with vector embeddings?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Word counts: bag-of-words, TF-IDF, BM25 weighting and hashing vectorizers. Also topic models such as LDA and hand-engineered features. These are the alternative ways to turn documents into the numeric vectors that clustering, search and classification all consume."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does the curse of dimensionality break TF-IDF clustering?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Usually not. Sparse text collections are a documented exception to the distance concentration effect described by Beyer et al. in 1999, and scikit-learn's own example clusters TF-IDF vectors with k-means successfully. In a controlled rerun on synthetic data with planted topics, full sparse TF-IDF reached 0.833 cluster purity against a chance level of 0.167. Reducing with TruncatedSVD improved it to 0.944, but the unreduced version was already usable."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why did the shapkarin/movies experiment produce 371 clusters?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A representation bug, not an algorithm failure. The code sliced the TF-IDF matrix to its first 1,000 alphabetically ordered features, which discarded most discriminative terms and destroyed the L2 unit-norm that TfidfVectorizer produces by default. MeanShift's estimated bandwidth then reflected corrupted geometry and fragmented the data. Swapping in k-means would not have helped; applying TruncatedSVD would have."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Should I use TF-IDF or vector embeddings for clustering short documents?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Embeddings, in most cases — short texts share few exact terms, so TF-IDF vectors become extremely sparse and unreliable. The exception is when the short text is itself an identifier, such as SKUs, error codes or command strings, where exact matching is the point."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I need a GPU to generate vector embeddings?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Small models such as all-MiniLM-L6-v2, which has roughly 22.7 million parameters and an 80 MB model file, run comfortably on CPU. A GPU helps at the hundreds-of-thousands scale, and hosted embedding APIs remove the hardware question entirely at the cost of sending data to a third party."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How many embedding dimensions do I need for clustering?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "384 dimensions is a solid default. Larger models, reaching 3,840 dimensions among current MTEB leaders, improve retrieval more than clustering. Many recent models are trained with Matryoshka Representation Learning, which front-loads information into the early dimensions so a truncated vector retains most of its quality."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does all-MiniLM-L6-v2 truncate long documents?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Input longer than 256 word pieces is truncated by default, so long documents such as full movie plot summaries lose their tail. For longer text use a long-context embedding model such as nomic-embed-text, which handles 8,192 tokens, or chunk the document and pool the resulting vectors."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "HowTo",
+      "@id": "https://shapkarin.me/articles/vector-embeddings-vs-word-counts#howto",
+      "name": "How to choose a text representation and clustering algorithm",
+      "description": "Treat representation and algorithm as two independent decisions: pick word counts or vector embeddings first, fix the vector geometry, then pick a clustering algorithm based on whether the cluster count is known.",
+      "totalTime": "PT30M",
+      "tool": [
+        { "@type": "HowToTool", "name": "Python 3" },
+        { "@type": "HowToTool", "name": "scikit-learn" },
+        { "@type": "HowToTool", "name": "sentence-transformers" }
+      ],
+      "step": [
+        {
+          "@type": "HowToStep",
+          "position": 1,
+          "name": "Choose the representation (Layer 1)",
+          "text": "Use word counts such as TF-IDF when exact terms carry the signal, when clusters must be explainable, when documents exceed a model's context window, or when latency and scale are binding. Use vector embeddings when meaning matters more than exact wording, especially for short or paraphrase-heavy text."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 2,
+          "name": "Fix the geometry before clustering",
+          "text": "With word counts, reduce dimensions with TruncatedSVD (latent semantic analysis) and re-normalize afterwards, because SVD output is not unit length. Never slice feature columns by index: TfidfVectorizer orders features alphabetically, so slicing selects terms by spelling rather than by information and breaks the L2 normalization."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 3,
+          "name": "Normalize embeddings if using them",
+          "text": "Encode with normalize_embeddings=True. For unit vectors the squared Euclidean distance equals 2 minus twice the cosine similarity, so k-means then effectively clusters by cosine similarity, which is the metric embedding models are trained for."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 4,
+          "name": "Choose the algorithm (Layer 2)",
+          "text": "Use k-means when the number of clusters is known or can be searched for. Use HDBSCAN, available in sklearn.cluster since version 1.3, when the cluster count is unknown and outliers are present. Use agglomerative clustering when a hierarchy is needed. Avoid MeanShift at scale: its complexity approaches O(T*n^2) in higher dimensions and estimate_bandwidth is the bottleneck."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 5,
+          "name": "Select k with evidence",
+          "text": "Fit k-means across a range of k values, score each with silhouette_score, and keep the highest. Set n_init explicitly, since the default changed to 'auto' in scikit-learn 1.4 and runs fewer restarts than the previous default of 10."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 6,
+          "name": "Inspect the vectors when results look wrong",
+          "text": "Before changing algorithms, check row norms, variance and how much of each document survived preprocessing. Absurd cluster counts usually indicate a representation bug rather than a bad clustering algorithm."
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://shapkarin.me/#person",
+      "name": "Shapkarin",
+      "url": "https://shapkarin.me",
+      "sameAs": ["https://github.com/shapkarin"],
+      "knowsAbout": [
+        "machine learning",
+        "clustering algorithms",
+        "vector embeddings",
+        "information retrieval",
+        "Python",
+        "scikit-learn",
+        "natural language processing"
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://shapkarin.me/articles/vector-embeddings-vs-word-counts#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://shapkarin.me/" },
+        { "@type": "ListItem", "position": 2, "name": "Articles", "item": "https://shapkarin.me/articles" },
+        { "@type": "ListItem", "position": 3, "name": "Vector Embeddings vs Word Counts: K-Means Uses Both" }
+      ]
+    }
+  ]
+}
