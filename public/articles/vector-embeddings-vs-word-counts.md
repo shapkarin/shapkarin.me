@@ -20,7 +20,16 @@ It's a category error. K-means clustering and vector embeddings sit at different
 
 The choice that *is* real — with genuine tradeoffs, cost implications, and an answer that depends on your data — is **vector embeddings vs word counts**. Both produce the numeric representation your clustering algorithm needs, and they produce very different geometry.
 
-Seven years ago I picked word counts for a pet project, [shapkarin/movies](https://github.com/shapkarin/movies), which clustered movies by their plot summaries. It committed a result of 371 clusters. This article uses that experiment to show where the real decision lives — and, because I re-ran the analysis before publishing, to correct the explanation I originally gave for what went wrong.
+Seven years ago I picked word counts for a pet project, [https://github.com/shapkarin/movies](https://github.com/shapkarin/movies), which clustered movies by their plot summaries. This article uses that experiment to show where the real decision lives — and, because I re-ran the analysis before publishing, to correct the explanation I originally gave for what went wrong.
+
+## Table of Contents
+- [The Two Layers of Any Clustering Pipeline](#the-two-layers-of-any-clustering-pipeline)
+- [The Real Competition: Word Counts vs Vector Embeddings](#the-real-competition-word-counts-vs-vector-embeddings)
+- [What Actually Broke in the 7-Year-Old Experiment](#what-actually-broke-in-the-7-year-old-experiment)
+- [When Word Counts Still Beat Embeddings](#when-word-counts-still-beat-embeddings)
+- [Choosing the Algorithm — A Separate Decision](#choosing-the-algorithm-a-separate-decision)
+- [FAQ](#faq)
+- [Conclusion](#conclusion)
 
 ---
 
