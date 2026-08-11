@@ -20,7 +20,9 @@ It's a category error. K-means clustering and vector embeddings sit at different
 
 The choice that *is* real — with genuine tradeoffs, cost implications, and an answer that depends on your data — is **vector embeddings vs word counts**. Both produce the numeric representation your clustering algorithm needs, and they produce very different geometry.
 
-Seven years ago I picked word counts for a pet project, [https://github.com/shapkarin/movies](https://github.com/shapkarin/movies), which clustered movies by their plot summaries. This article uses that experiment to show where the real decision lives — and, because I re-ran the analysis before publishing, to correct the explanation I originally gave for what went wrong.
+Seven years ago I picked word counts for a pet project, [https://github.com/shapkarin/movies](https://github.com/shapkarin/movies), which clustered movies by their plot summaries. One detail matters for everything below: **that project did not use k-means — it used MeanShift.** I had no idea how many genres the data contained and wanted the algorithm to infer the count for me. K-means was always available and would have run on exactly the same vectors; it just needs a `k`, and I didn't have one.
+
+This article uses that experiment to show where the real decision lives — and, because I re-ran the analysis before publishing, to correct the explanation I originally gave for what went wrong.
 
 ## Table of Contents
 - [The Two Layers of Any Clustering Pipeline](#the-two-layers-of-any-clustering-pipeline)
@@ -118,15 +120,15 @@ Here I have to correct myself. The easy story is "high-dimensional sparse vector
 
 Beyer et al.'s 1999 paper *When Is "Nearest Neighbor" Meaningful?* is the standard citation for distance concentration — but the same paper explicitly identifies workloads where the effect doesn't occur, and sparse text collections are a known exception. scikit-learn ships an [official example](https://scikit-learn.org/stable/auto_examples/text/plot_document_clustering.html) that clusters documents with TF-IDF and k-means precisely because it works.
 
-I rebuilt the pipeline on a controlled synthetic corpus (900 documents, six planted topics, ~8,500-term Zipfian vocabulary) to test which layer failed. Cluster purity against the known labels, where 0.167 is chance:
+I rebuilt the pipeline on a controlled synthetic corpus (900 documents, six planted topics, ~8,500-term Zipfian vocabulary) to test which layer failed. The original project ran MeanShift; for this rerun I deliberately swapped in **k-means**, holding Layer 2 fixed and varying only the representation. Cluster purity against the known labels, where 0.167 is chance:
 
-| Representation | K-means purity |
+| Representation (Layer 2 = k-means, k=6) | Purity |
 |---|---|
 | Full TF-IDF, L2-normalized, ~8,500 sparse dims | **0.833** |
 | TF-IDF sliced to the first 1,000 features | **0.693** |
 | TF-IDF → TruncatedSVD(100) → re-normalized | **0.944** |
 
-Full high-dimensional sparse TF-IDF clusters fine. The dimensionality was never the problem.
+Full high-dimensional sparse TF-IDF clusters fine. The dimensionality was never the problem — and note that k-means handled these vectors perfectly well, which is the first hint that the algorithm was never the issue either.
 
 ### The actual culprit
 
@@ -140,7 +142,7 @@ That line keeps the first 1,000 columns of an alphabetically-ordered vocabulary.
 
 **It silently un-normalizes every vector.** `TfidfVectorizer` returns unit-length rows; after slicing, row norms fell to a range of **0.215–0.599** instead of a uniform 1.0. Documents whose vocabulary happened to sit late in the alphabet collapsed toward the origin.
 
-That second effect is what makes MeanShift explode. MeanShift is a density algorithm operating on Euclidean distance, and `estimate_bandwidth` derives its scale from neighbour distances. In the synthetic run the estimated bandwidth dropped from **1.359** on full TF-IDF to **0.455** on the sliced matrix — a range comparable to the spread in row norms. The algorithm ends up partitioning documents partly by *vector length*, an artifact of the slice, rather than by topic. Hence 371 groups where a dozen or two exist.
+That second effect is what makes MeanShift — the algorithm the repo actually used — explode. MeanShift is a density algorithm operating on Euclidean distance, and `estimate_bandwidth` derives its scale from neighbour distances. In the synthetic run the estimated bandwidth dropped from **1.359** on full TF-IDF to **0.455** on the sliced matrix — a range comparable to the spread in row norms. The algorithm ends up partitioning documents partly by *vector length*, an artifact of the slice, rather than by topic. Hence 371 groups where a dozen or two exist.
 
 ```python
 bandwidth = estimate_bandwidth(X2)   # scale inherited from corrupted geometry
@@ -148,7 +150,7 @@ ms = MeanShift(bandwidth=bandwidth)
 ms.fit(X2)
 ```
 
-**The crucial point for this article's thesis: swapping MeanShift for k-means would not have fixed it.** The bug was in Layer 1. The correct fix — one line — was TruncatedSVD, which is latent semantic analysis and the standard companion to TF-IDF, followed by re-normalization because SVD output isn't unit-length:
+**The crucial point for this article's thesis: swapping MeanShift for k-means would not have fixed it.** K-means was a perfectly legitimate choice here — the rerun above shows it clustering the same kind of vectors at 0.833 purity — but pointed at the sliced matrix it would have inherited the same broken geometry and produced its own flavour of nonsense. The bug was in Layer 1. The correct fix — one line — was TruncatedSVD, which is latent semantic analysis and the standard companion to TF-IDF, followed by re-normalization because SVD output isn't unit-length:
 
 ```python
 from sklearn.decomposition import TruncatedSVD
@@ -192,7 +194,9 @@ Once the representation is settled, Layer 2 is answered by the shape of your pro
 | You want a hierarchy to cut at any level | **Agglomerative** |
 | Small data, arbitrary cluster shapes | **DBSCAN** or **MeanShift** |
 
-MeanShift is a poor default at scale regardless of representation: scikit-learn's docs put it near O(T·n²) in higher dimensions, and note that `estimate_bandwidth` is *less* scalable than the clustering itself and becomes the bottleneck. My 2019 self reached for it to avoid choosing `k`. HDBSCAN is the better answer to that same wish today.
+MeanShift is a poor default at scale regardless of representation: scikit-learn's docs put it near O(T·n²) in higher dimensions, and note that `estimate_bandwidth` is *less* scalable than the clustering itself and becomes the bottleneck. My 2019 self reached for it precisely to avoid choosing `k` — that was the whole appeal, and it's why the movies repo runs `MeanShift` rather than `KMeans`.
+
+Given the same data today I'd do one of two things instead. Either run **k-means** and stop treating `k` as unknowable — a silhouette sweep over `range(5, 31)` costs seconds and answers the question empirically. Or run **HDBSCAN**, which infers the cluster count like MeanShift does but is far better behaved and labels outliers explicitly instead of promoting them to singleton clusters.
 
 Two practical notes if you do run k-means on embeddings:
 
@@ -232,9 +236,17 @@ Word counts: bag-of-words, TF-IDF, BM25 weighting, and hashing vectorizers. Also
 
 Usually not. Sparse text collections are a documented exception to distance concentration, and scikit-learn's own example clusters TF-IDF vectors with k-means successfully. In a controlled rerun, full sparse TF-IDF reached 0.833 cluster purity against planted labels. Reducing with TruncatedSVD improved it to 0.944, but the unreduced version was already usable.
 
+### Did the shapkarin/movies project use k-means?
+
+No — it used **MeanShift**, from `sklearn.cluster`. The reason was that the number of movie genres in the data was unknown, and MeanShift infers the cluster count from a bandwidth parameter instead of requiring one upfront. K-means was a perfectly viable alternative on the identical TF-IDF vectors; it simply needs `k` supplied, which can be found with a silhouette sweep rather than guessed.
+
 ### Why did the shapkarin/movies experiment produce 371 clusters?
 
-A Layer 1 bug, not an algorithm failure. The code sliced the TF-IDF matrix to its first 1,000 alphabetically-ordered features, which discarded most of the discriminative terms and destroyed the L2 unit-norm that `TfidfVectorizer` produces. MeanShift's bandwidth estimate then reflected corrupted geometry and fragmented the data. Swapping in k-means would not have helped; TruncatedSVD would have.
+A Layer 1 bug, not an algorithm failure. The code sliced the TF-IDF matrix to its first 1,000 alphabetically-ordered features, which discarded most of the discriminative terms and destroyed the L2 unit-norm that `TfidfVectorizer` produces. MeanShift's bandwidth estimate then reflected corrupted geometry and fragmented the data. Swapping in k-means would not have helped — it would have inherited the same broken vectors. TruncatedSVD would have.
+
+### Can k-means replace MeanShift for this kind of task?
+
+Yes, and it usually should. MeanShift's one real advantage is that it doesn't need `k`, but it pays for that with near O(T·n²) complexity in higher dimensions and extreme sensitivity to bandwidth. K-means plus a silhouette search over a range of `k` gives you the cluster count empirically at a fraction of the cost. If you'd rather the algorithm still decide for itself, HDBSCAN is the better modern successor to MeanShift.
 
 ### Should I use TF-IDF or vector embeddings for clustering short documents?
 
@@ -254,6 +266,6 @@ No. Small models like `all-MiniLM-L6-v2` (about 22 million parameters, ~80 MB) r
 
 K-means clustering and vector embeddings were never rivals. K-means consumes vectors and is indifferent to where they came from — it works the way Lloyd described in 1957, and it will faithfully cluster whatever you hand it, well or badly.
 
-The decision that carries real weight is **vector embeddings vs word counts**. Seven years ago in [shapkarin/movies](https://github.com/shapkarin/movies) I chose word counts, which was the reasonable call at the time — and then broke them with a one-line slice that no clustering algorithm could have recovered from.
+The decision that carries real weight is **vector embeddings vs word counts**. Seven years ago in [shapkarin/movies](https://github.com/shapkarin/movies) I chose word counts, which was the reasonable call at the time — and then broke them with a one-line slice that no clustering algorithm could have recovered from. The repo runs MeanShift rather than k-means, but that choice is incidental to the failure: k-means on the same sliced matrix would have failed too, and k-means on the *unsliced* matrix would have worked.
 
 That's the lesson worth keeping. When a clustering result looks absurd, the instinct is to try a different algorithm. Check the geometry of your vectors first: their norms, their variance, how much of each document actually survived preprocessing. The bug is usually upstream of Layer 2.

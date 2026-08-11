@@ -7,7 +7,7 @@
       "headline": "Vector Embeddings vs Word Counts: K-Means Uses Both",
       "alternativeHeadline": "K-means clustering and vector embeddings are not competing choices",
       "description": "K-means clustering doesn't compete with vector embeddings — it consumes them. The real tradeoff is vector embeddings vs word counts, illustrated with a 7-year-old movie-plot clustering experiment.",
-      "abstract": "Asking whether to use k-means or embeddings is a category error: embeddings produce vectors and k-means consumes them. The genuine competition is between text representations — word counts such as TF-IDF versus dense vector embeddings. The shapkarin/movies experiment used word counts seven years ago and fragmented into 371 clusters. A controlled rerun shows the cause was not the curse of dimensionality, which sparse text data largely escapes, but a one-line slice that kept the first 1,000 alphabetically ordered features and destroyed the L2 normalization TfidfVectorizer produces.",
+      "abstract": "Asking whether to use k-means or embeddings is a category error: embeddings produce vectors and k-means consumes them. The genuine competition is between text representations — word counts such as TF-IDF versus dense vector embeddings. The shapkarin/movies experiment used word counts seven years ago and clustered them with MeanShift, not k-means, because the number of genres was unknown; it fragmented into 371 clusters. A controlled rerun using k-means shows the cause was not the curse of dimensionality, which sparse text data largely escapes, nor the choice of clustering algorithm, but a one-line slice that kept the first 1,000 alphabetically ordered features and destroyed the L2 normalization TfidfVectorizer produces.",
       "url": "https://shapkarin.me/articles/vector-embeddings-vs-word-counts",
       "mainEntityOfPage": {
         "@type": "WebPage",
@@ -52,7 +52,7 @@
         {
           "@type": "SoftwareSourceCode",
           "name": "shapkarin/movies",
-          "description": "A pet project and experiment from roughly seven years ago that clustered movie plot summaries using TF-IDF word counts with NumPy and scikit-learn, and MeanShift for grouping. It produced 371 estimated clusters after slicing the TF-IDF matrix to its first 1,000 alphabetically ordered features.",
+          "description": "A pet project and experiment from roughly seven years ago that clustered movie plot summaries using TF-IDF word counts with NumPy and scikit-learn. It used the MeanShift algorithm rather than k-means, because the number of movie genres was unknown and MeanShift infers the cluster count from a bandwidth parameter. It produced 371 estimated clusters after slicing the TF-IDF matrix to its first 1,000 alphabetically ordered features.",
           "codeRepository": "https://github.com/shapkarin/movies",
           "programmingLanguage": "Python",
           "runtimePlatform": "Python 3",
@@ -184,10 +184,26 @@
         },
         {
           "@type": "Question",
+          "name": "Did the shapkarin/movies project use k-means?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. It used MeanShift from sklearn.cluster, not k-means. The reason was that the number of movie genres in the data was unknown, and MeanShift infers the cluster count from a bandwidth parameter instead of requiring one upfront. K-means was a perfectly viable alternative on the identical TF-IDF vectors; it simply needs a value for k, which can be found with a silhouette sweep rather than guessed."
+          }
+        },
+        {
+          "@type": "Question",
           "name": "Why did the shapkarin/movies experiment produce 371 clusters?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "A representation bug, not an algorithm failure. The code sliced the TF-IDF matrix to its first 1,000 alphabetically ordered features, which discarded most discriminative terms and destroyed the L2 unit-norm that TfidfVectorizer produces by default. MeanShift's estimated bandwidth then reflected corrupted geometry and fragmented the data. Swapping in k-means would not have helped; applying TruncatedSVD would have."
+            "text": "A representation bug, not an algorithm failure. The code sliced the TF-IDF matrix to its first 1,000 alphabetically ordered features, which discarded most discriminative terms and destroyed the L2 unit-norm that TfidfVectorizer produces by default. MeanShift's estimated bandwidth then reflected corrupted geometry and fragmented the data. Swapping in k-means would not have helped, since it would have inherited the same broken vectors; applying TruncatedSVD would have."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can k-means replace MeanShift for text clustering?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, and it usually should. MeanShift's one real advantage is that it does not require the cluster count upfront, but it pays for that with complexity approaching O(T*n^2) in higher dimensions and extreme sensitivity to bandwidth. K-means combined with a silhouette search over a range of k determines the cluster count empirically at a fraction of the cost. If you prefer the algorithm to decide for itself, HDBSCAN is the better modern successor to MeanShift."
           }
         },
         {
