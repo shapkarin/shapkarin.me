@@ -7,4 +7,6 @@ on:
 jobs:
   call-deploy:
     uses: ./.github/workflows/job.yml
+    with:
+      target: gh-pages
     secrets: inherit
