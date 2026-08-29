@@ -2,7 +2,8 @@ import { BrowserRouter } from 'react-router-dom';
 import {
   QueryClientProvider,
   dehydrate,
-  HydrationBoundary
+  HydrationBoundary,
+  defaultShouldDehydrateQuery
 } from '@tanstack/react-query';
 
 import Background from '@/Components/Background';
@@ -15,11 +16,18 @@ import { queryClient } from '@/DAL';
 
 import './App.less';
 
-window.snapSaveState = () => dehydrate(queryClient);
+const AEO_SCRIPT_QUERY_KEY = 'AeoScript';
+const isAeoScriptQuery = ({ queryKey }) => queryKey?.[0] === AEO_SCRIPT_QUERY_KEY;
+
+const shouldDehydrateQuery = (query) => (
+  defaultShouldDehydrateQuery(query) && !isAeoScriptQuery(query)
+);
+
+window.snapSaveState = () => dehydrate(queryClient, { shouldDehydrateQuery });
 
 const preloadedState = window.queries ? {
   mutations: window.mutations || [],
-  queries: window.queries || []
+  queries: (window.queries || []).filter((query) => !isAeoScriptQuery(query))
 } : undefined;
 
 export default function App () {
