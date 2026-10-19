@@ -2,23 +2,17 @@ name: Reusable job
 
 on:
   workflow_call:
-    # inputs:
-    #   environment-name:
-    #     required: false
-    #     type: string
-    #     default: github-pages # only this one in use rn
 
-# TODO: decompose to "build" and "deploy" steps
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
 jobs:
-  deploy:
+  build:
     # do not deploy if [skip-ci] is in a commit message
     if: |
       !contains(github.event.head_commit.message, '[skip-ci]')
     runs-on: ubuntu-22.04
-
-    environment:
-      name: s3-unchained
-      url: https://shapkarin.me
 
     permissions:
       contents: read
@@ -52,13 +46,34 @@ jobs:
       - name: Copy HTML gallery
         run: npm run build:html-gallery
 
-      - name: Deploy to S3
-        env:
-          AWS_ACCESS_KEY_ID: ${{ secrets.S3_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.S3_SECRET_ACCESS_KEY }}
-          AWS_DEFAULT_REGION: ${{ vars.S3_REGION }}
-          AWS_ENDPOINT_URL_S3: ${{ vars.S3_ENDPOINT_URL }}
-        run: aws s3 sync ./dist/ s3://shapkarin.me/ --delete
+      - name: Check custom domain
+        run: test -f dist/CNAME
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@56afc609e74202658d3ffba0e8f6dda462b719fa
+        with:
+          path: dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-22.04
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    permissions:
+      pages: write
+      id-token: write
+
+    steps:
+      - name: Step Security harden
+        uses: step-security/harden-runner@9af89fc71515a100421586dfdb3dc9c984fbf411
+        with:
+          egress-policy: audit
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@d6db90164ac5ed86f2b6aed7e0febac5b3c0c03e
 
       - run: printf Deployed!
-
